@@ -1,5 +1,0 @@
-requests
-pandas
-python-dateutil
-pytz
-numpy
