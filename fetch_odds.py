@@ -52,10 +52,43 @@ DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 # -------------------------- Odds fetcher (Rows are one set of odds for one outcome) ---------------------- #
 def fetch_odds() -> pd.DataFrame:
     """
-    Fetches head-to-head (h2h) betting odds from The Odds API.
+    Fetches head-to-head (h2h) betting odds from The Odds API. Pulls in a JSON response formatted as:
+[
+  {
+    "id": "...",
+    "sport_key": "...",
+    "sport_title": "...",
+    "commence_time": "2025-09-01T23:00:00Z",
+    "home_team": "...",
+    "away_team": "...",
+    "bookmakers": [
+      {
+        "key": "...",
+        "title": "...",
+        "last_update": "2025-09-01T22:45:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {
+                "name": "...",      # team name
+                "price": ...        # odds
+              },
+              # ... more outcomes
+            ]
+          }
+        ]
+      },
+      # ... more bookmakers
+    ]
+  },
+  # ... more games
+]
+
+Then loops through games, and bookmakers for games, noting price for outcomes.
 
     Returns:
-        pd.DataFrame: A DataFrame containing bookmaker odds data for each outcome in each game.
+        pd.DataFrame: A DataFrame containing bookmaker odds data for each outcome (W,L,D) in each game.
                       Each row represents one team's odds from one bookmaker.
     """
     # Construct API URL and parameters
@@ -122,10 +155,6 @@ def fetch_odds() -> pd.DataFrame:
 
                 # Only process "h2h" markets for now
                 for market in book.get("markets", []):
-                    if market["key"] != "h2h":
-                        print("Non-h2h market found, refactor code")
-                        continue
-
                     for outcome in market.get("outcomes", []):
                         # Append a row with all necessary data
                         rows.append({
