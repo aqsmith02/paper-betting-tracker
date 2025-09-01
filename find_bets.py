@@ -719,8 +719,8 @@ if __name__ == "__main__":
     avg_summary = summarize_avg(avg_df)
 
     if not avg_summary.empty:
-        log_unique_bets(avg_summary, "master_avg_bets.csv")
-        log_full_rows(avg_df, pd.read_csv("master_avg_bets.csv"), "master_avg_full.csv")
+            log_unique_bets(avg_summary, "data/master_avg_bets.csv")
+            log_full_rows(avg_df, pd.read_csv("data/master_avg_bets.csv"), "data/master_avg_full.csv")
     else:
         print("No bets found for average-edge bets")
 
@@ -729,8 +729,8 @@ if __name__ == "__main__":
     z_summary = summarize_zscores(z_df)
 
     if not z_summary.empty:
-        log_unique_bets(z_summary, "master_zscore_bets.csv")
-        log_full_rows(z_df, pd.read_csv("master_zscore_bets.csv"), "master_zscore_full.csv")
+            log_unique_bets(z_summary, "data/master_zscore_bets.csv")
+            log_full_rows(z_df, pd.read_csv("data/master_zscore_bets.csv"), "data/master_zscore_full.csv")
     else:
         print("No bets found for Z-score bets")
 
@@ -739,8 +739,8 @@ if __name__ == "__main__":
     mod_z_summary = summarize_mod_zscores(mod_z_df)
 
     if not mod_z_summary.empty:
-        log_unique_bets(mod_z_summary, "master_mod_zscore_bets.csv")
-        log_full_rows(mod_z_df, pd.read_csv("master_mod_zscore_bets.csv"), "master_mod_zscore_full.csv")
+            log_unique_bets(mod_z_summary, "data/master_mod_zscore_bets.csv")
+            log_full_rows(mod_z_df, pd.read_csv("data/master_mod_zscore_bets.csv"), "data/master_mod_zscore_full.csv")
     else:
         print("No bets found for Modified Z-score bets")
 
@@ -750,8 +750,8 @@ if __name__ == "__main__":
         pin_summary = summarize_pin(pin_df)
 
         if not pin_summary.empty:
-            log_unique_bets(pin_summary, "master_pin_bets.csv")
-            log_full_rows(pin_df, pd.read_csv("master_pin_bets.csv"), "master_pin_full.csv")
+                log_unique_bets(pin_summary, "data/master_pin_bets.csv")
+                log_full_rows(pin_df, pd.read_csv("data/master_pin_bets.csv"), "data/master_pin_full.csv")
         else:
             print("No bets found for Pinnacle-edge bets")
     else:
