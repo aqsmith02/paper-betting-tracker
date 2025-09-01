@@ -89,17 +89,17 @@ sports_with_results = [
 if __name__ == "__main__":
     # Create file paths
     bet_files = [
-        "master_avg_bets.csv",
-        "master_mod_zscore_bets.csv",
-        "master_pin_bets.csv",
-        "master_zscore_bets.csv",
+        "data/master_avg_bets.csv",
+        "data/master_mod_zscore_bets.csv",
+        "data/master_pin_bets.csv",
+        "data/master_zscore_bets.csv",
     ]
 
     full_files = [
-        "master_avg_full.csv",
-        "master_mod_zscore_full.csv",
-        "master_pin_full.csv",
-        "master_zscore_full.csv",
+        "data/master_avg_full.csv",
+        "data/master_mod_zscore_full.csv",
+        "data/master_pin_full.csv",
+        "data/master_zscore_full.csv",
     ]
 
     # Loop through files
