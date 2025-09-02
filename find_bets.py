@@ -9,750 +9,658 @@ Pinnacle sportsbook (a known "sharp" sportsbook). Profitable bets are then saved
 Author: Andrew Smith
 Date: July 2025
 """
-# ---------------------------------------------- Imports ------------------------------------------------ #
+# ---------------------------------------- Imports ---------------------------------------- #
 import os
 from datetime import datetime
 from zoneinfo import ZoneInfo
+from dataclasses import dataclass
+from typing import List, Optional, Dict, Any
 import numpy as np
 import pandas as pd
 from fetch_odds import fetch_odds, organize
 
 
-# ------------------------------------- Start time to date helper --------------------------------------- #
-def _start_date(ts) -> str:
-    """
-    Convert a timestamp / datetime-like / ISO string to "YYYY-MM-DD".
+# ---------------------------------------- Configuration ---------------------------------------- #
+# Betting thresholds
+EDGE_THRESHOLD = 0.05
+Z_SCORE_THRESHOLD = 2.0
+MAX_Z_SCORE = 6.0
+MIN_BOOKMAKERS = 5
+MAX_ODDS = 50
+MAX_MISSING_VIGFREE_ODDS = 2
 
-    Args:
-        ts (Any): Timestamp to convert to date.
+# File paths
+DATA_DIR = "data"
+DATE_FORMAT = "%Y-%m-%d"
+TIMESTAMP_FORMAT = "%Y-%m-%d %H:%M:%S"
 
-    Returns:
-        str: Date string.
-    """
-    return pd.to_datetime(ts).strftime("%Y-%m-%d")
-
-
-# --------------------------------------- Bookmaker Columns Helper --------------------------------------- #
-def _find_bookmakers(df: pd.DataFrame,
-                     additional_cols: list[str] | None = None) -> list[str]:
-    """
-    Given a DataFrame, and possibly a list of non-bookmaker columns, find the bookmaker columns.
-
-    Args:
-        df (pd.DataFrame): Any DataFrame with bookmaker columns.
-        additional_cols (list[str]): A list of columns to not include in the bookmaker columns.
-
-    Returns:
-        list[str]: The bookmaker column names for a DataFrame.
-    """
-    # Create a list of columns that may be interpreted as a float or int that we do not want
-    excluded_cols = ["Best Odds","Start Time", "Last Update"]
-    if additional_cols:
-        excluded_cols += additional_cols
-
-    bm_cols = [
-        c for c in df.select_dtypes(include=["float", "int"]).columns
-        if c not in excluded_cols
-    ]
-    return bm_cols
+# Betting strategy definitions
+@dataclass
+class BettingStrategy:
+    name: str
+    summary_file: str
+    full_file: str
+    score_column: str
+    summary_func: callable
+    analysis_func: callable
 
 
-# ----------------------------------------- Cleaning functions ------------------------------------------- #
-def _prettify_headers(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Makes column names uppercase and replaces underscores with spaces.
-
-    Args: 
-        df (pd.DataFrame): Any DataFrame with a header row that needs to be formatted.
-
-    Returns:
-        pd.DataFrame: A DataFrame with nicely formatted headers.
-    """
-    mapping = {c: c.replace("_", " ").title() for c in df.columns}
-    return df.rename(columns=mapping)
+# ---------------------------------------- Utility Functions ---------------------------------------- #
+def start_date_from_timestamp(timestamp: Any) -> str:
+    """Convert a timestamp to YYYY-MM-DD format."""
+    return pd.to_datetime(timestamp).strftime(DATE_FORMAT)
 
 
-def _clean_odds(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Replace any odds equal to 1.0 with NaN.
+def find_bookmaker_columns(df: pd.DataFrame, exclude_columns: Optional[List[str]] = None) -> List[str]:
+    """Find columns that contain bookmaker odds (numeric columns, excluding metadata)."""
+    excluded = {"Best Odds", "Start Time", "Last Update"}
+    if exclude_columns:
+        excluded.update(exclude_columns)
     
-    Args:
-        df (pd.DataFrame): A DataFrame with bookmaker columns. Need to edit bm_cols if DataFrame includes vig columns.
-
-    Returns:
-        pd.DataFrame: A DataFrame with all float or int values that are equal to 1 converted to NaN.
-    """
-    bm_cols = _find_bookmakers(df)
-    df[bm_cols] = df[bm_cols].where(df[bm_cols] != 1, np.nan)
-    return df
+    return [col for col in df.select_dtypes(include=["float", "int"]).columns 
+            if col not in excluded]
 
 
-def _safe_float(x) -> float:
-    """
-    Attempt to convert x to a float. Returns -np.inf if conversion fails.
-
-    Args:
-        x (Any): The input to convert.
-
-    Returns:
-        float: A float value or -np.inf if conversion fails.
-    """
+def safe_float_conversion(value: Any) -> float:
+    """Convert value to float, returning -inf if conversion fails."""
     try:
-        return float(x)
+        return float(value)
     except (ValueError, TypeError):
         return -np.inf
 
 
-def _requirements(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Filter DataFrame such that rows with <5 bookmakers are dropped, and rows with decimal odds over 50
-    are dropped.
+def validate_dataframe(df: pd.DataFrame, required_columns: List[str], name: str = "DataFrame") -> None:
+    """Validate DataFrame meets basic requirements."""
+    if df.empty:
+        raise ValueError(f"{name} cannot be empty")
+    
+    missing_columns = set(required_columns) - set(df.columns)
+    if missing_columns:
+        raise ValueError(f"{name} missing required columns: {missing_columns}")
 
-    Args:
-        df (pd.DataFrame): A DataFrame that has been fetched and organized, with no additional information
-            added (no vig free odds, no z score info, etc.).
 
-    Returns:
-        pd.DataFrame: A DataFrame that has been filtered with the aforementioned requirements.
-    """
+# ---------------------------------------- Data Cleaning ---------------------------------------- #
+def clean_odds_data(df: pd.DataFrame) -> pd.DataFrame:
+    """Replace odds equal to 1.0 with NaN (invalid odds)."""
     df = df.copy()
-    bm_cols = _find_bookmakers(df)
+    bookmaker_columns = find_bookmaker_columns(df)
+    df[bookmaker_columns] = df[bookmaker_columns].where(df[bookmaker_columns] != 1, np.nan)
+    return df
 
-    def _row_filter(row):
-        # Count number of non-nan rows
-        num_valid = sum(
-            pd.notna(row[b]) and isinstance(_safe_float(row[b]), float)
-            for b in bm_cols
-        )
-        # Check minimum non-nan odds condition
-        if num_valid < 5:
-            return False
-        
-        # Check maximum odds condition
-        if row["Best Odds"] > 50:
-            return False
-        
-        return True
 
-    filtered_df = df[df.apply(_row_filter, axis=1)]
-    print(f"Filtered: {len(df)} → {len(filtered_df)} rows")
+def prettify_column_headers(df: pd.DataFrame) -> pd.DataFrame:
+    """Convert column names to Title Case and replace underscores with spaces."""
+    column_mapping = {col: col.replace("_", " ").title() for col in df.columns}
+    return df.rename(columns=column_mapping)
+
+
+def validate_betting_requirements(row: pd.Series, bookmaker_columns: List[str]) -> bool:
+    """Check if row meets minimum requirements for betting analysis."""
+    # Count valid bookmaker odds
+    valid_odds_count = sum(
+        1 for bm in bookmaker_columns
+        if pd.notna(row[bm]) and isinstance(safe_float_conversion(row[bm]), float) and row[bm] > 0
+    )
+    
+    # Check requirements
+    return (valid_odds_count >= MIN_BOOKMAKERS and 
+            row.get("Best Odds", 0) <= MAX_ODDS)
+
+
+def filter_valid_betting_rows(df: pd.DataFrame) -> pd.DataFrame:
+    """Remove rows that don't meet betting analysis requirements."""
+    df = df.copy()
+    bookmaker_columns = find_bookmaker_columns(df)
+    
+    valid_mask = df.apply(lambda row: validate_betting_requirements(row, bookmaker_columns), axis=1)
+    filtered_df = df[valid_mask]
+    
+    print(f"Filtered betting data: {len(df)} → {len(filtered_df)} rows")
     return filtered_df
 
 
-def clean(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Remove odds equal to one, make headers neat, and filter out rows that have less than 5 bookmakers or
-    have decimal odds greater than 50.
-
-    Args:
-        df (pd.DataFrame): A DataFrame that has been fetched and organized, with no additional information
-            added (no vig free odds, no z score info, etc.).
-
-    Returns:
-        pd.DataFrame: A DataFrame that meets all the requirements for bet finding analysis.
-    """
-    df = _clean_odds(df)
-    df = _prettify_headers(df)
-    df = _requirements(df)
-    return df
-
-
-# ----------------------------------------- Dataframe appender -------------------------------------------- #
-def _unique_cols(filename: str):
-    """
-    Return list of columns that are unique to a filename.
-
-    Args:
-        filename (str): The name of the file.
-
-    Returns:
-        Any: A list of column names, or None if no match.
-    """
-    mapping = {
-        "master_avg_full.csv": ["Avg Edge Pct", "Fair Odds Avg"],
-        "master_mod_zscore_full.csv": ["Modified Z Score"],
-        "master_pin_full.csv": ["Pinnacle Fair Odds", "Pin Edge Pct"],
-        "master_zscore_full.csv": ["Z Score"]
-    }
-    return mapping.get(filename)
-
-
-def _append_unique(df_to_append: pd.DataFrame,
-                   csv_path: str,) -> None:
-    """
-    Append rows to csv_path unless a row with the same defining attributes (Match, Date) already
-    exists. Adds a "Scrape Time" column. 
-
-    Args:
-        df_to_append (pd.DataFrame): DataFrame with the new bets to be added.
-        csv_path (str): Path leading to the master data set where bets will be appended.
-    """
-    df_to_append = df_to_append.copy()
-    df_to_append["Scrape Time"] = datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d %H:%M:%S")
-
-    # If no CSV yet, write it
-    if not os.path.exists(csv_path):
-        df_to_append.to_csv(csv_path, index=False)
-        print(f"Created {csv_path} ({len(df_to_append)} rows)")
-        return
-
-    # Load existing, align schemas (for full .csv files, where new columns may arise)
-    existing = pd.read_csv(csv_path)
-
-    # Union of columns (keeps order: old cols first, then any new ones)
-    all_cols = list(existing.columns)
-    for c in df_to_append.columns:
-        if c not in all_cols:
-            all_cols.append(c)
-
-    # Move specific columns to the end
-    cols_to_move = (_unique_cols(csv_path) or []) + ["Best Odds", "Best Bookmaker", "Result", "Scrape Time"] 
-    all_cols = [c for c in all_cols if c not in cols_to_move] + [c for c in cols_to_move if c in all_cols]
-
-    # Add missing cols with NaN
-    for c in all_cols:
-        if c not in existing.columns and c != "Result":
-            existing[c] = np.nan
-        elif c not in existing.columns and c == "Result":
-            existing[c] = "Not Found"
-        if c not in df_to_append.columns and c != "Result":
-            df_to_append[c] = np.nan
-        elif c not in df_to_append.columns and c == "Result":
-            df_to_append[c] = "Not Found"
-
-    # Re‑order both DataFrames
-    existing = existing[all_cols]
-    df_to_append = df_to_append[all_cols]
-
-    # Build a set of existing keys (match, date)
-    existing_keys = {
-        (row["Match"], _start_date(row["Start Time"]))
-        for _, row in existing.iterrows()
-    }
-
-    # Find rows whose (match, date) combo is new
-    new_rows_mask = df_to_append.apply(
-        lambda r: (r["Match"], _start_date(r["Start Time"])) not in existing_keys,
-        axis=1,
-    )
-    new_rows = df_to_append[new_rows_mask]
-
-
-    if new_rows.empty:
-        print(f"No new rows for {csv_path}, only duplicates")
-        return
-
-    # Concatenate & rewrite entire CSV
-    combined = pd.concat([existing, new_rows], ignore_index=True)
-    combined.to_csv(csv_path, index=False)
-    print(f"Appended {len(new_rows)} rows to {csv_path}")
-
-
-# ----------------------------- Logging profitable bets into master .csv files ----------------------------- #
-def log_unique_bets(summary_df: pd.DataFrame,
-                    csv_path: str) -> None:
-    """
-    Deduplicate summary_df so only the most profitable side per
-    (Match, Start Time) is kept, then append to csv_path.
-
-    Args:
-        summary_df (pd.DataFrame): A DataFrame of paper bets with only essential information included.
-        csv_path (str): Path leading to the master data set of minimal bet information.
-    """
-    conflict_key = ["Match", "Start Time"]
-
-    # Infer score column name
-    for candidate in ("Avg Edge Pct", "Z Score", "Modified Z Score", "Pin Edge Pct"):
-        if candidate in summary_df.columns:
-            score_col = candidate
-            break
-    else:
-        raise ValueError("No score column found in summary DataFrame.")
-
-    # Drop bets that conflict
-    best_side = (
-        summary_df.sort_values(score_col, ascending=False)
-                  .drop_duplicates(subset=conflict_key, keep="first")
-    )
-    _append_unique(best_side, csv_path)
-
-
-def log_full_rows(source_df: pd.DataFrame,
-                  summary_df: pd.DataFrame,
-                  csv_path: str) -> None:
-    """
-    Copy all columns from source_df that correspond to bets in summary_df,
-    except the vigfree columns, and append to full_csv_path.
-
-    Args:
-        source_df (pd.DataFrame): A DataFrame containing all information available for each bet.
-        summary_df (pd.DataFrame): A DataFrame of paper bets with only essential information included.
-        full_csv_path: Path leading to the master data set of maximal bet information.
-    """
-    # Combine source and summary df based on key columns
-    key = ["Match", "Team", "Start Time"]
-    merged = pd.merge(summary_df[key], source_df, on=key, how="left")
-
-    # Drop columns we do not want carrying over
-    drop_prefixes = ("Vigfree ",)
-    keep_cols = [c for c in merged.columns if not c.startswith(drop_prefixes)]
-    output = merged[keep_cols]
-
-    # Infer score column name for sorting
-    for candidate in ("Avg Edge Pct", "Z Score", "Modified Z Score", "Pin Edge Pct"):
-        if candidate in output.columns:
-            score_col = candidate
-            break
-    else:
-        raise ValueError("No score column found in summary DataFrame.")
-
-    # Sort to match "log_unique_bets"
-    sorted = (output.sort_values(score_col, ascending=False))
-
-    _append_unique(sorted, csv_path)
-
-
-# ----------------------------------- Vig‑free implied probabilities ----------------------------------- #
-def add_vig_free_implied_probs(df: pd.DataFrame,
-                               min_outcomes: int | None = None) -> pd.DataFrame:
-    """
-    Adds "Vigfree <Bookmaker>" columns that contain the implied probability of a bookmakers odds, after
-    removing the vig. A bookmaker is processed only if it has odds for all outcomes in the match
-    (or at least "min_outcomes" if you pass one). This is because all outcomes are needed for 
-    normalization of probabilites, or "de-vigging".
-
-    Args:
-        df (pd.DataFrame): A cleaned DataFrame with odds.
-        min_outcomes (int): The minimum number of outcomes of a match for the function to run.
-
-    Returns:
-        pd.DataFrame: A DataFrame where each bookmaker for each match either has fair probs added, or nan
-            added.
-    """
-    df = df.copy()
-    bm_cols = _find_bookmakers(df)
-
-    for bm in bm_cols:
-        # Create vigfree columns for each bookmaker
-        vf_col = f"Vigfree {bm}"
-        df[vf_col] = np.nan
-
-        for match, sub in df.groupby("Match", sort=False):
-            # Calculate how many sides of an outcome there are, and after dropping na vals and odds less than 
-            # or equal to zero for a bm, check to see if all sides of an outcome are offered (or at least 
-            # min_outcomes are offered)
-            needed = len(sub) if min_outcomes is None else min_outcomes
-            odds = sub[bm].where(sub[bm] > 0).dropna()
-            if len(odds) < needed:        
-                continue                
-
-            # Create fair probability and add to DataFrame
-            probs = 1 / odds
-            probs /= probs.sum()          
-            df.loc[odds.index, vf_col] = probs.values
-    return df
-
-
-# --------------------------------------------  Average‑edge  -------------------------------------------- #
-def _vigfree_test(bm_cols: list[str],
-                  row: pd.Series,
-                  max: int) -> bool:
-    """
-    Tests to see if the amount of bookmakers with odds but no vigfree odds is over max.
-
-    Args:
-        bm_cols (list[str]): A list of bookmakers in the row.
-        row (pd.Series): A row for an outcome.
-        max (int): The maximum number of bookmakers in a row who have odds, but no
-            vig-free odds.
-
-    Returns:
-        bool: Returns True if the amount of bookmakers with odds but no vigfree odds is less than or
-            equal to max, returns False otherwise.
-    """
-    missing_vf_with_odds = 0
-
-    # Count how many columns do not meet conditon
-    for bm in bm_cols:
-        if pd.notna(row[bm]):  # Has odds
-            vf_col = f"Vigfree {bm}"
-            if vf_col in row and pd.isna(row[vf_col]): # Does not have vig free odds
-                missing_vf_with_odds += 1
-
-    if missing_vf_with_odds > max:
-        return False
-    else:
-        return True
-
-
-def add_avg_edge_info(df: pd.DataFrame,
-                      edge_threshold: float = 0.05,
-                      max_missing_vf_with_odds: int = 2) -> pd.DataFrame:
-    """
-    Checks if "Best Odds" are a higher payout than the average fair odds of the bookmakers. Creates columns
-    "Avg Edge Pct" and "Fair Odds Avg". Values are only added to columns if no more than 
-    max_missing_vf_with_odds bookmakers have odds but lack a vig-free probability (otherwise filled with None).
-    This is to limit bets where the average fair odds does not represent the sample of odds available.
-
-    Args:
-        df (pd.DataFrame): A DataFrame that is cleaned and contains vig-free implied odds.
-        edge_threshold (float): The lowest edge percentage acceptable to place a bet.
-        max_missing_vf_with_odds (int): The maximum number of bookmakers in a row who have odds, but no
-            vig-free implied odds.
-
-    Returns:
-        pd.DataFrame: A DataFrame with columns "Avg Edge Pct" and "Fair Odds Avg". Columns
-            are filled with expected results or None.
-    """
-    df = df.copy()
-    vf_cols = [c for c in df.columns if c.startswith("Vigfree ")]
-    bm_cols = _find_bookmakers(df, vf_cols)
-    best_edge, fair_odds_list = [], []
-
-    for _, row in df.iterrows():
-        # Test to see how many bookmakers have odds but no vig-free prob
-        pass_vig_test = _vigfree_test(bm_cols, row, max_missing_vf_with_odds)
-        if not pass_vig_test:
-            best_edge.append(None); fair_odds_list.append(None); continue
-
-        # Collect probabilities
-        probs = [row[c] for c in vf_cols if pd.notnull(row[c])]
-        if not probs:
-            best_edge.append(None); fair_odds_list.append(None); continue
-
-        # Calculate fair odds and append
-        fair_odds = 1 / np.mean(probs)
-        fair_odds_list.append(round(fair_odds, 3))
-
-        # Calculate edge
-        best_odds = row["Best Odds"]
-        edge = best_odds / fair_odds - 1
-
-        # Check edge threshold
-        if edge > edge_threshold:
-            best_edge.append(round(edge * 100, 2))
-        else:
-            best_edge.append(None)
-
-    df["Fair Odds Avg"] = fair_odds_list
-    df["Avg Edge Pct"] = best_edge
-    return df
-
-
-# --------------------------------------- Z‑score outliers --------------------------------------- #
-def add_largest_zscore_info(df: pd.DataFrame, 
-                            z_thresh: float = 2) -> pd.DataFrame:
-    """
-    Checks if "Best Odds" Z-score is greater than z_thresh. Creates column "Z Score".
-
-    Args:
-        df (pd.DataFrame): A cleaned DataFrame.
-        z_thresh (float): The lowest Z-score acceptable for a profitable bet.
-
-    Returns:
-        pd.DataFrame: A DataFrame with added column "Z Score". The value in the column is the Z-score of 
-            the best odds of the row if higher than the threshold.
-    """
-    df = df.copy()
-    bm_cols = _find_bookmakers(df)
-    zscores = []
-
-    for _, row in df.iterrows():
-        # Collect odds
-        odds = [row[c] for c in bm_cols if pd.notnull(row[c])]
-        if not odds:
-            zscores.append(None); continue
-
-        # Note best odds
-        best_odds = row["Best Odds"]
-
-        # Calculate Z-score
-        mean = np.mean(odds)
-        sd = np.std(odds, ddof=1)
-        z = np.maximum(0, best_odds - mean) / (sd or 1e-6)
-
-        # Append if Z-score meets threshold and is less than 6 (too extreme)
-        if z > z_thresh and z < 6:
-            zscores.append(round(z, 2))
-        else:
-            zscores.append(None)
-
-    df["Z Score"] = zscores
-    return df
-
-
-# ---------------------------------------  Modified Z‑score outliers --------------------------------------- #
-def add_largest_mod_zscore_info(df: pd.DataFrame,
-                                z_thresh: float = 2) -> pd.DataFrame:
-    """
-    Checks if "Best Odds" Modified Z-score is greater than z_thresh. Creates column "Modified Z Score".
-
-    Args:
-        df (pd.DataFrame): A cleaned DataFrame.
-        z_thresh (float): The lowest Z-score acceptable for a profitable bet.
-
-    Returns:
-        pd.DataFrame: A DataFrame with added column "Modified Z Score". The value in the column is the 
-            Z-score of the best odds of the row if higher than the threshold.
-    """
-    df = df.copy()
-    bm_cols = _find_bookmakers(df)
-    mod_zscores = []
-
-    for _, row in df.iterrows():
-        # Collect odds
-        odds = [row[c] for c in bm_cols if pd.notnull(row[c])]
-        if not odds:
-            mod_zscores.append(None); continue
-
-        # Note best odds
-        best_odds = row["Best Odds"]
-
-        # Calculate Modified Z-score
-        median = np.median(odds)
-        mad = np.median(np.abs(odds - median)) or 1e-6
-        z = 0.6745 * np.maximum(0, best_odds - median) / mad
-
-        # Append if Z-score meets threshold and is less than 6 (too extreme)
-        if z > z_thresh and z < 6:
-            mod_zscores.append(round(z, 2))
-        else:
-            mod_zscores.append(None)
-
-    df["Modified Z Score"] = mod_zscores
-    return df
-
-
-# ---------------------------------------------  Pinnacle edge --------------------------------------------- #
-def add_pinnacle_edge_info(df: pd.DataFrame,
-                           pinnacle_col: str = "Pinnacle",
-                           edge_threshold: float = 0.05) -> pd.DataFrame:
-    """
-    Checks if "Best Odds" are a greater payout than Pinnacle sportsbook's fair odds. Creates columns
-    "Pinnacle Fair Odds" and "Pin Edge Pct".
-
-    Args:
-        df (pd.DataFrame): A cleaned DataFrame with fair implied odds of each bookmaker.
-        pinnacle_col (str): The title of the column for Pinnacle's odds.
-        edge_threshold (float): The lowest edge percentage acceptable for odds.
-
-    Returns:
-        pd.DataFrame: A DataFrame with columns "Pinnacle Fair Odds" and "Pin Edge Pct". Columns
-            are filled with expected results or None.
-    """
-    df = df.copy()
-    vf_pin = f"Vigfree {pinnacle_col}"
-    if vf_pin not in df.columns: # Throw error if no Vigfree Pinnacle column
-        raise ValueError(f"{vf_pin} column missing - run vig-free step first")
-    pin_fair, edge_pct = [], [],
-
-    for _, row in df.iterrows():
-        # Note Pinnacles fair probability
-        pin_prob = row[vf_pin]
-        if pd.isna(pin_prob) or pin_prob <= 0:
-            pin_fair.append(None); edge_pct.append(None); continue
-
-        # Calculate the fair odds
-        fair_odds = 1 / pin_prob
-        pin_fair.append(round(fair_odds, 3))
-
-        # Calculate edge
-        best_odds = row["Best Odds"]
-        edge = best_odds / fair_odds - 1
-
-        # Check edge threshold
-        if edge > edge_threshold:
-            edge_pct.append(round(edge * 100, 2))
-        else:
-            edge_pct.append(None)
-
-    df["Pinnacle Fair Odds"] = pin_fair
-    df["Pin Edge Pct"]       = edge_pct
-    return df
-
-
-# ------------------------------------------ Summary Dataframes ------------------------------------------ #
-def summarize_avg(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Build tidy summary of average-edge bets.
-
-    Args:
-        df (pd.DataFrame): A DataFrame that contains average-edge info.
-
-    Returns:
-        pd.DataFrame: DataFrame with only 6 essential columns per average-edge bet.
-    """
-    rows = []
-
-    # Return empty DataFrame if input is None or empty
-    if df is None or df.empty:
-        return pd.DataFrame()
-
-    for _, r in df.iterrows():
-        if pd.isna(r["Avg Edge Pct"]) or pd.isna(r["Fair Odds Avg"]):
-            continue
-
-        rows.append({
-            "Match": r["Match"],
-            "League": r["League"],
-            "Team": r["Team"],
-            "Start Time": r["Start Time"],
-            "Avg Edge Book": r["Best Bookmaker"],
-            "Avg Edge Odds": r["Best Odds"],
-            "Avg Edge Pct": r["Avg Edge Pct"],
-            "Result": r["Result"],
-        })
-    return pd.DataFrame(rows)
-
-
-def summarize_zscores(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Build tidy summary of Z-score bets.
-
-    Args:
-        df (pd.DataFrame): A DataFrame that contains Z-score info.
-
-    Returns:
-        pd.DataFrame: DataFrame with only 6 essential columns per Z-score bet.
-    """
-    rows = []
-
-    # Return empty DataFrame if input is None or empty
-    if df is None or df.empty:
-        return pd.DataFrame()
-
-    for _, r in df.iterrows():
-        if pd.isna(r["Z Score"]):
-            continue
-
-        rows.append({
-            "Match": r["Match"],
-            "League": r["League"],
-            "Team": r["Team"],
-            "Start Time": r["Start Time"],
-            "Outlier Book": r["Best Bookmaker"],
-            "Outlier Odds": r["Best Odds"],
-            "Z Score": r["Z Score"],
-            "Result": r["Result"],
-        })
-    return pd.DataFrame(rows)
-
-
-def summarize_mod_zscores(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Build tidy summary of Modified Z-score bets.
-
-    Args:
-        df (pd.DataFrame): A DataFrame that contains Modified Z-score info.
-
-    Returns:
-        pd.DataFrame: DataFrame with only 6 essential columns per Modified Z-score bet.
-    """
-    rows = []
-
-    # Return empty DataFrame if input is None or empty
-    if df is None or df.empty:
-        return pd.DataFrame()
-
-    for _, r in df.iterrows():
-        if pd.isna(r["Modified Z Score"]):
-            continue
-
-        rows.append({
-            "Match": r["Match"],
-            "League": r["League"],
-            "Team": r["Team"],
-            "Start Time": r["Start Time"],
-            "Outlier Book": r["Best Bookmaker"],
-            "Outlier Odds": r["Best Odds"],
-            "Modified Z Score": r["Modified Z Score"],
-            "Result": r["Result"],
-        })
-    return pd.DataFrame(rows)
-
-
-def summarize_pin(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Build tidy summary of Pinnacle-edge bets.
-
-    Args:
-        df (pd.DataFrame): A DataFrame that contains Pinnacle odds info.
+def clean_betting_data(df: pd.DataFrame) -> pd.DataFrame:
+    """Complete data cleaning pipeline for betting analysis."""
+    validate_dataframe(df, ["Best Odds"], "Input DataFrame")
     
-    Returns:
-        pd.DataFrame: DataFrame with only 7 essential columns per Pinnacle bet.
+    df = clean_odds_data(df)
+    df = prettify_column_headers(df) 
+    df = filter_valid_betting_rows(df)
+    return df
+
+
+# ---------------------------------------- Vig-Free Probability Calculation ---------------------------------------- #
+def calculate_vigfree_probabilities(df: pd.DataFrame, min_outcomes: Optional[int] = None) -> pd.DataFrame:
     """
-    rows = []
+    Add vig-free implied probability columns for each bookmaker.
+    Only processes bookmakers that have odds for all outcomes in a match.
+    """
+    df = df.copy()
+    bookmaker_columns = find_bookmaker_columns(df)
+    
+    # Add vig-free columns for each bookmaker
+    for bookmaker in bookmaker_columns:
+        vigfree_column = f"Vigfree {bookmaker}"
+        df[vigfree_column] = np.nan
+        
+        # Process each match separately
+        for match_name, match_group in df.groupby("Match", sort=False):
+            required_outcomes = len(match_group) if min_outcomes is None else min_outcomes
+            
+            # Get valid odds for this bookmaker in this match
+            valid_odds = match_group[bookmaker].where(match_group[bookmaker] > 0).dropna()
+            
+            if len(valid_odds) < required_outcomes:
+                continue
+            
+            # Calculate vig-free probabilities
+            implied_probs = 1 / valid_odds
+            normalized_probs = implied_probs / implied_probs.sum()
+            
+            # Update DataFrame with vig-free probabilities
+            df.loc[valid_odds.index, vigfree_column] = normalized_probs.values
+    
+    return df
 
-    # Return empty DataFrame if input is None or empty
-    if df is None or df.empty:
-        return pd.DataFrame()
 
-    for _, r in df.iterrows():
-        if pd.isna(r["Pinnacle Fair Odds"]) or pd.isna(r["Pin Edge Pct"]):
+# ---------------------------------------- Betting Strategy Analysis ---------------------------------------- #
+def count_missing_vigfree_odds(bookmaker_columns: List[str], row: pd.Series, max_missing: int) -> bool:
+    """Check if row has too many bookmakers with odds but no vig-free probability."""
+    missing_vigfree_count = 0
+    
+    for bookmaker in bookmaker_columns:
+        if pd.notna(row[bookmaker]):  # Has odds
+            vigfree_col = f"Vigfree {bookmaker}"
+            if vigfree_col in row and pd.isna(row[vigfree_col]):  # Missing vig-free odds
+                missing_vigfree_count += 1
+    
+    return missing_vigfree_count <= max_missing
+
+
+def analyze_average_edge_bets(df: pd.DataFrame, edge_threshold: float = EDGE_THRESHOLD) -> pd.DataFrame:
+    """Find bets where best odds exceed average fair odds by threshold percentage."""
+    df = df.copy()
+    vigfree_columns = [col for col in df.columns if col.startswith("Vigfree ")]
+    bookmaker_columns = find_bookmaker_columns(df, vigfree_columns)
+    
+    edge_percentages = []
+    fair_odds_averages = []
+    
+    for _, row in df.iterrows():
+        # Check if row has sufficient vig-free data
+        if not count_missing_vigfree_odds(bookmaker_columns, row, MAX_MISSING_VIGFREE_ODDS):
+            edge_percentages.append(None)
+            fair_odds_averages.append(None)
             continue
-
-        rows.append({
-            "Match": r["Match"],
-            "League": r["League"],
-            "Team": r["Team"],
-            "Start Time": r["Start Time"],
-            "Pinnacle Edge Book": r["Best Bookmaker"],
-            "Pinnacle Edge Odds": r["Best Odds"],
-            "Pin Edge Pct": r["Pin Edge Pct"],
-            "Pinnacle Fair Odds": r["Pinnacle Fair Odds"],
-            "Result": r["Result"],
-        })
-    return pd.DataFrame(rows)
-
-
-# ------------------------------------------ Main Pipeline ------------------------------------------ #
-if __name__ == "__main__":
-    # 1. Fetch, organize, and clean -----------------------------------------------------------
-    df = fetch_odds()
-    organized = organize(df)
-    cleaned = clean(organized)
-
-    # 2‑A Average-edge ------------------------------------------------------------------------
-    #Compute vig‑free first
-    vf_df = add_vig_free_implied_probs(cleaned)
-    avg_df = add_avg_edge_info(vf_df, edge_threshold=0.05)
-    avg_summary = summarize_avg(avg_df)
-
-    if not avg_summary.empty:
-            log_unique_bets(avg_summary, "data/master_avg_bets.csv")
-            log_full_rows(avg_df, pd.read_csv("data/master_avg_bets.csv"), "data/master_avg_full.csv")
-    else:
-        print("No bets found for average-edge bets")
-
-    # 2‑B Z‑scores ----------------------------------------------------------------------------
-    z_df = add_largest_zscore_info(cleaned, z_thresh=2)
-    z_summary = summarize_zscores(z_df)
-
-    if not z_summary.empty:
-            log_unique_bets(z_summary, "data/master_zscore_bets.csv")
-            log_full_rows(z_df, pd.read_csv("data/master_zscore_bets.csv"), "data/master_zscore_full.csv")
-    else:
-        print("No bets found for Z-score bets")
-
-    # 2‑C Modified Z‑scores -------------------------------------------------------------------
-    mod_z_df = add_largest_mod_zscore_info(cleaned, z_thresh=2)
-    mod_z_summary = summarize_mod_zscores(mod_z_df)
-
-    if not mod_z_summary.empty:
-            log_unique_bets(mod_z_summary, "data/master_mod_zscore_bets.csv")
-            log_full_rows(mod_z_df, pd.read_csv("data/master_mod_zscore_bets.csv"), "data/master_mod_zscore_full.csv")
-    else:
-        print("No bets found for Modified Z-score bets")
-
-    # 2‑D  Pinnacle-edge  ---------------------------------------------------------------------
-    if "Pinnacle" in cleaned.columns and cleaned["Pinnacle"].notna().any():
-        pin_df = add_pinnacle_edge_info(vf_df, edge_threshold=0.05)
-        pin_summary = summarize_pin(pin_df)
-
-        if not pin_summary.empty:
-                log_unique_bets(pin_summary, "data/master_pin_bets.csv")
-                log_full_rows(pin_df, pd.read_csv("data/master_pin_bets.csv"), "data/master_pin_full.csv")
+        
+        # Collect vig-free probabilities
+        valid_probabilities = [row[col] for col in vigfree_columns if pd.notnull(row[col])]
+        if not valid_probabilities:
+            edge_percentages.append(None)
+            fair_odds_averages.append(None)
+            continue
+        
+        # Calculate average fair odds
+        average_probability = np.mean(valid_probabilities)
+        fair_odds = 1 / average_probability
+        fair_odds_averages.append(round(fair_odds, 3))
+        
+        # Calculate edge percentage
+        best_odds = row["Best Odds"]
+        edge = (best_odds / fair_odds) - 1
+        
+        if edge > edge_threshold:
+            edge_percentages.append(round(edge * 100, 2))
         else:
-            print("No bets found for Pinnacle-edge bets")
-    else:
-        print("No Pinnacle odds found - skipping Pinnacle-edge step")
+            edge_percentages.append(None)
+    
+    df["Fair Odds Avg"] = fair_odds_averages
+    df["Avg Edge Pct"] = edge_percentages
+    return df
+
+
+def analyze_zscore_outliers(df: pd.DataFrame, z_threshold: float = Z_SCORE_THRESHOLD) -> pd.DataFrame:
+    """Find bets where best odds are statistical outliers using Z-score."""
+    df = df.copy()
+    bookmaker_columns = find_bookmaker_columns(df)
+    z_scores = []
+    
+    for _, row in df.iterrows():
+        # Collect all valid odds for this outcome
+        valid_odds = [row[col] for col in bookmaker_columns if pd.notnull(row[col])]
+        if not valid_odds:
+            z_scores.append(None)
+            continue
+        
+        best_odds = row["Best Odds"]
+        
+        # Calculate Z-score
+        mean_odds = np.mean(valid_odds)
+        std_odds = np.std(valid_odds, ddof=1)
+        
+        if std_odds == 0:  # Avoid division by zero
+            z_scores.append(None)
+            continue
+        
+        z_score = max(0, best_odds - mean_odds) / std_odds
+        
+        # Only include if within reasonable bounds
+        if z_threshold < z_score < MAX_Z_SCORE:
+            z_scores.append(round(z_score, 2))
+        else:
+            z_scores.append(None)
+    
+    df["Z Score"] = z_scores
+    return df
+
+
+def analyze_modified_zscore_outliers(df: pd.DataFrame, z_threshold: float = Z_SCORE_THRESHOLD) -> pd.DataFrame:
+    """Find bets where best odds are outliers using Modified Z-score (more robust to outliers)."""
+    df = df.copy()
+    bookmaker_columns = find_bookmaker_columns(df)
+    modified_z_scores = []
+    
+    for _, row in df.iterrows():
+        # Collect all valid odds
+        valid_odds = [row[col] for col in bookmaker_columns if pd.notnull(row[col])]
+        if not valid_odds:
+            modified_z_scores.append(None)
+            continue
+        
+        best_odds = row["Best Odds"]
+        
+        # Calculate Modified Z-score using median and MAD
+        median_odds = np.median(valid_odds)
+        mad = np.median(np.abs(valid_odds - median_odds))
+        
+        if mad == 0:  # Avoid division by zero
+            modified_z_scores.append(None)
+            continue
+        
+        modified_z = 0.6745 * max(0, best_odds - median_odds) / mad
+        
+        # Only include if within reasonable bounds
+        if z_threshold < modified_z < MAX_Z_SCORE:
+            modified_z_scores.append(round(modified_z, 2))
+        else:
+            modified_z_scores.append(None)
+    
+    df["Modified Z Score"] = modified_z_scores
+    return df
+
+
+def analyze_pinnacle_edge_bets(df: pd.DataFrame, pinnacle_column: str = "Pinnacle", 
+                              edge_threshold: float = EDGE_THRESHOLD) -> pd.DataFrame:
+    """Find bets where best odds exceed Pinnacle's fair odds by threshold percentage."""
+    df = df.copy()
+    vigfree_pinnacle = f"Vigfree {pinnacle_column}"
+    
+    if vigfree_pinnacle not in df.columns:
+        raise ValueError(f"Missing {vigfree_pinnacle} column - run vig-free calculation first")
+    
+    pinnacle_fair_odds = []
+    edge_percentages = []
+    
+    for _, row in df.iterrows():
+        pinnacle_probability = row[vigfree_pinnacle]
+        
+        if pd.isna(pinnacle_probability) or pinnacle_probability <= 0:
+            pinnacle_fair_odds.append(None)
+            edge_percentages.append(None)
+            continue
+        
+        # Calculate Pinnacle's fair odds
+        fair_odds = 1 / pinnacle_probability
+        pinnacle_fair_odds.append(round(fair_odds, 3))
+        
+        # Calculate edge vs Pinnacle
+        best_odds = row["Best Odds"]
+        edge = (best_odds / fair_odds) - 1
+        
+        if edge > edge_threshold:
+            edge_percentages.append(round(edge * 100, 2))
+        else:
+            edge_percentages.append(None)
+    
+    df["Pinnacle Fair Odds"] = pinnacle_fair_odds
+    df["Pin Edge Pct"] = edge_percentages
+    return df
+
+
+# ---------------------------------------- Summary Creation ---------------------------------------- #
+def create_average_edge_summary(df: pd.DataFrame) -> pd.DataFrame:
+    """Create summary of profitable average-edge bets."""
+    if df.empty:
+        return pd.DataFrame()
+    
+    summary_rows = []
+    for _, row in df.iterrows():
+        if pd.isna(row.get("Avg Edge Pct")) or pd.isna(row.get("Fair Odds Avg")):
+            continue
+        
+        summary_rows.append({
+            "Match": row["Match"],
+            "League": row["League"], 
+            "Team": row["Team"],
+            "Start Time": row["Start Time"],
+            "Avg Edge Book": row["Best Bookmaker"],
+            "Avg Edge Odds": row["Best Odds"],
+            "Avg Edge Pct": row["Avg Edge Pct"],
+            "Result": row.get("Result", "Not Found"),
+        })
+    
+    return pd.DataFrame(summary_rows)
+
+
+def create_zscore_summary(df: pd.DataFrame) -> pd.DataFrame:
+    """Create summary of Z-score outlier bets."""
+    if df.empty:
+        return pd.DataFrame()
+    
+    summary_rows = []
+    for _, row in df.iterrows():
+        if pd.isna(row.get("Z Score")):
+            continue
+        
+        summary_rows.append({
+            "Match": row["Match"],
+            "League": row["League"],
+            "Team": row["Team"], 
+            "Start Time": row["Start Time"],
+            "Outlier Book": row["Best Bookmaker"],
+            "Outlier Odds": row["Best Odds"],
+            "Z Score": row["Z Score"],
+            "Result": row.get("Result", "Not Found"),
+        })
+    
+    return pd.DataFrame(summary_rows)
+
+
+def create_modified_zscore_summary(df: pd.DataFrame) -> pd.DataFrame:
+    """Create summary of Modified Z-score outlier bets."""
+    if df.empty:
+        return pd.DataFrame()
+    
+    summary_rows = []
+    for _, row in df.iterrows():
+        if pd.isna(row.get("Modified Z Score")):
+            continue
+        
+        summary_rows.append({
+            "Match": row["Match"],
+            "League": row["League"],
+            "Team": row["Team"],
+            "Start Time": row["Start Time"],
+            "Outlier Book": row["Best Bookmaker"],
+            "Outlier Odds": row["Best Odds"],
+            "Modified Z Score": row["Modified Z Score"],
+            "Result": row.get("Result", "Not Found"),
+        })
+    
+    return pd.DataFrame(summary_rows)
+
+
+def create_pinnacle_edge_summary(df: pd.DataFrame) -> pd.DataFrame:
+    """Create summary of Pinnacle edge bets."""
+    if df.empty:
+        return pd.DataFrame()
+    
+    summary_rows = []
+    for _, row in df.iterrows():
+        if pd.isna(row.get("Pinnacle Fair Odds")) or pd.isna(row.get("Pin Edge Pct")):
+            continue
+        
+        summary_rows.append({
+            "Match": row["Match"],
+            "League": row["League"],
+            "Team": row["Team"],
+            "Start Time": row["Start Time"],
+            "Pinnacle Edge Book": row["Best Bookmaker"],
+            "Pinnacle Edge Odds": row["Best Odds"],
+            "Pin Edge Pct": row["Pin Edge Pct"],
+            "Pinnacle Fair Odds": row["Pinnacle Fair Odds"],
+            "Result": row.get("Result", "Not Found"),
+        })
+    
+    return pd.DataFrame(summary_rows)
+
+
+# ---------------------------------------- File Management ---------------------------------------- #
+class BetFileManager:
+    """Manages CSV file operations for betting data."""
+    
+    def __init__(self, data_directory: str = DATA_DIR):
+        self.data_dir = data_directory
+        os.makedirs(data_directory, exist_ok=True)
+    
+    def get_strategy_columns(self, filename: str) -> Optional[List[str]]:
+        """Get unique columns for different betting strategies."""
+        strategy_columns = {
+            "master_avg_full.csv": ["Avg Edge Pct", "Fair Odds Avg"],
+            "master_mod_zscore_full.csv": ["Modified Z Score"],
+            "master_pin_full.csv": ["Pinnacle Fair Odds", "Pin Edge Pct"],
+            "master_zscore_full.csv": ["Z Score"]
+        }
+        return strategy_columns.get(filename)
+    
+    def append_unique_bets(self, new_data: pd.DataFrame, filepath: str) -> None:
+        """Append new betting data, avoiding duplicates based on (Match, Date) key."""
+        if new_data.empty:
+            print(f"No data to append to {filepath}")
+            return
+        
+        new_data = new_data.copy()
+        new_data["Scrape Time"] = datetime.now(ZoneInfo("America/New_York")).strftime(TIMESTAMP_FORMAT)
+        
+        full_path = os.path.join(self.data_dir, filepath)
+        
+        # Create new file if doesn't exist
+        if not os.path.exists(full_path):
+            new_data.to_csv(full_path, index=False)
+            print(f"Created {filepath} with {len(new_data)} rows")
+            return
+        
+        # Load existing data and merge schemas
+        existing_data = pd.read_csv(full_path)
+        
+        # Align column schemas
+        all_columns = self._align_column_schemas(existing_data, new_data, filepath)
+        existing_data = existing_data.reindex(columns=all_columns, fill_value=np.nan)
+        new_data = new_data.reindex(columns=all_columns, fill_value=np.nan)
+        
+        # Fill Result column appropriately
+        existing_data["Result"] = existing_data["Result"].fillna("Not Found") 
+        new_data["Result"] = new_data["Result"].fillna("Not Found")
+        
+        # Find truly new rows (not duplicates)
+        existing_keys = {
+            (row["Match"], start_date_from_timestamp(row["Start Time"]))
+            for _, row in existing_data.iterrows()
+        }
+        
+        is_new_row = new_data.apply(
+            lambda row: (row["Match"], start_date_from_timestamp(row["Start Time"])) not in existing_keys,
+            axis=1
+        )
+        
+        new_rows = new_data[is_new_row]
+        
+        if new_rows.empty:
+            print(f"No new rows to add to {filepath} - all were duplicates")
+            return
+        
+        # Combine and save
+        combined_data = pd.concat([existing_data, new_rows], ignore_index=True)
+        combined_data.to_csv(full_path, index=False)
+        print(f"Added {len(new_rows)} new rows to {filepath}")
+    
+    def _align_column_schemas(self, existing_df: pd.DataFrame, new_df: pd.DataFrame, 
+                            filename: str) -> List[str]:
+        """Create unified column schema for existing and new data."""
+        # Start with existing columns to preserve order
+        all_columns = list(existing_df.columns)
+        
+        # Add any new columns from new data
+        for column in new_df.columns:
+            if column not in all_columns:
+                all_columns.append(column)
+        
+        # Move strategy-specific columns to end for better organization
+        strategy_columns = self.get_strategy_columns(filename) or []
+        end_columns = strategy_columns + ["Best Odds", "Best Bookmaker", "Result", "Scrape Time"]
+        
+        # Reorder: base columns first, then end columns
+        reordered_columns = [col for col in all_columns if col not in end_columns]
+        reordered_columns.extend([col for col in end_columns if col in all_columns])
+        
+        return reordered_columns
+    
+    def save_best_bets_only(self, summary_df: pd.DataFrame, filepath: str) -> None:
+        """Save only the best bet per match (highest scoring bet)."""
+        if summary_df.empty:
+            return
+        
+        # Find the score column for this strategy
+        score_columns = ["Avg Edge Pct", "Z Score", "Modified Z Score", "Pin Edge Pct"]
+        score_column = None
+        
+        for column in score_columns:
+            if column in summary_df.columns:
+                score_column = column
+                break
+        
+        if not score_column:
+            raise ValueError("No recognizable score column found")
+        
+        # Keep only the best bet per match
+        best_bets = (
+            summary_df.sort_values(score_column, ascending=False)
+                     .drop_duplicates(subset=["Match", "Start Time"], keep="first")
+        )
+        
+        self.append_unique_bets(best_bets, filepath)
+    
+    def save_full_betting_data(self, source_df: pd.DataFrame, summary_df: pd.DataFrame, 
+                              filepath: str) -> None:
+        """Save complete betting data for bets identified in summary."""
+        if summary_df.empty:
+            return
+        
+        # Match summary bets with full data
+        key_columns = ["Match", "Team", "Start Time"]
+        merged_data = pd.merge(summary_df[key_columns], source_df, on=key_columns, how="left")
+        
+        # Remove vig-free columns (not needed in final output)
+        vigfree_columns = [col for col in merged_data.columns if col.startswith("Vigfree ")]
+        output_data = merged_data.drop(columns=vigfree_columns)
+        
+        self.append_unique_bets(output_data, filepath)
+
+
+# ---------------------------------------- Strategy Execution ---------------------------------------- #
+def run_betting_strategy(strategy: BettingStrategy, cleaned_data: pd.DataFrame, 
+                        vigfree_data: pd.DataFrame, file_manager: BetFileManager) -> None:
+    """Execute a complete betting strategy analysis and save results."""
+    print(f"Running {strategy.name} analysis...")
+    
+    try:
+        # Run the analysis
+        analysis_result = strategy.analysis_func(vigfree_data if "Pinnacle" in strategy.name or "Avg" in strategy.name else cleaned_data)
+        summary = strategy.summary_func(analysis_result)
+        
+        if summary.empty:
+            print(f"No profitable bets found for {strategy.name}")
+            return
+        
+        # Save results
+        file_manager.save_best_bets_only(summary, strategy.summary_file)
+        file_manager.save_full_betting_data(analysis_result, summary, strategy.full_file)
+        print(f"Completed {strategy.name}: found {len(summary)} profitable bets")
+        
+    except Exception as e:
+        print(f"Error running {strategy.name}: {e}")
+
+
+# ---------------------------------------- Main Pipeline ---------------------------------------- #
+def main():
+    """Main betting analysis pipeline."""
+    print("Starting betting analysis pipeline...")
+    
+    # Initialize file manager
+    file_manager = BetFileManager()
+    
+    # Define betting strategies
+    strategies = [
+        BettingStrategy(
+            name="Average Edge",
+            summary_file="master_avg_bets.csv",
+            full_file="master_avg_full.csv", 
+            score_column="Avg Edge Pct",
+            summary_func=create_average_edge_summary,
+            analysis_func=analyze_average_edge_bets
+        ),
+        BettingStrategy(
+            name="Z-Score Outliers",
+            summary_file="master_zscore_bets.csv",
+            full_file="master_zscore_full.csv",
+            score_column="Z Score", 
+            summary_func=create_zscore_summary,
+            analysis_func=analyze_zscore_outliers
+        ),
+        BettingStrategy(
+            name="Modified Z-Score Outliers",
+            summary_file="master_mod_zscore_bets.csv",
+            full_file="master_mod_zscore_full.csv",
+            score_column="Modified Z Score",
+            summary_func=create_modified_zscore_summary,
+            analysis_func=analyze_modified_zscore_outliers
+        )
+    ]
+    
+    try:
+        # Step 1: Fetch and prepare data
+        print("Fetching odds data...")
+        raw_odds = fetch_odds()
+        if raw_odds.empty:
+            print("No odds data available")
+            return
+        
+        organized_odds = organize(raw_odds)
+        cleaned_data = clean_betting_data(organized_odds)
+        
+        if cleaned_data.empty:
+            print("No data passed cleaning requirements")
+            return
+        
+        print(f"Prepared {len(cleaned_data)} betting opportunities for analysis")
+        
+        # Step 2: Calculate vig-free probabilities (needed for some strategies)
+        vigfree_data = calculate_vigfree_probabilities(cleaned_data)
+        
+        # Step 3: Run each betting strategy
+        for strategy in strategies:
+            run_betting_strategy(strategy, cleaned_data, vigfree_data, file_manager)
+        
+        # Step 4: Run Pinnacle strategy if Pinnacle data exists
+        if "Pinnacle" in cleaned_data.columns and cleaned_data["Pinnacle"].notna().any():
+            pinnacle_strategy = BettingStrategy(
+                name="Pinnacle Edge",
+                summary_file="master_pin_bets.csv",
+                full_file="master_pin_full.csv",
+                score_column="Pin Edge Pct",
+                summary_func=create_pinnacle_edge_summary,
+                analysis_func=analyze_pinnacle_edge_bets
+            )
+            run_betting_strategy(pinnacle_strategy, cleaned_data, vigfree_data, file_manager)
+        else:
+            print("No Pinnacle odds available - skipping Pinnacle edge analysis")
+        
+        print("Betting analysis pipeline completed successfully")
+        
+    except Exception as e:
+        print(f"Pipeline failed with error: {e}")
+        raise
+
+
+if __name__ == "__main__":
+    main()
