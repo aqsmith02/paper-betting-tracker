@@ -52,4 +52,4 @@ This project tracks sports bets and results using Python scripts and CSV files. 
 - Updated CSVs are committed to the repository.
 
 ## Author
-- : Andrew Smith
+- Andrew Smith
