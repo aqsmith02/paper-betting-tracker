@@ -50,3 +50,6 @@ This project tracks sports bets and results using Python scripts and CSV files. 
 ## Automation
 - GitHub Actions workflows automatically runs bet finding script 9 times an hour and results updating script 1 time every 3 hours.
 - Updated CSVs are committed to the repository.
+
+## Author & Date
+- **Author**: Andrew Smith
