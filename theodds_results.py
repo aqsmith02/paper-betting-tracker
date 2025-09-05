@@ -12,6 +12,7 @@ import requests
 import pandas as pd
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
+from typing import Any, List, Dict
 
 sports= [
     "americanfootball_cfl",
@@ -150,31 +151,29 @@ API_KEY = "7ca177e18aa6a5230dddc27a238e3f73"
 
 
 # ------------------------------------------ Formatting Helpers ---------------------------------------------
-def _start_date(ts) -> str:
+def _start_date(ts: Any) -> str:
     """
-    Convert a timestamp / datetime-like / ISO string to "YYYY-MM-DD",
-    adjusted 4 hours forward (e.g., from UTC to EDT).
-
+    Convert a timestamp / datetime-like / ISO string to "YYYY-MM-DD".
+    
     Args:
-        ts (Any): Timestamp to convert to date.
-
+        ts (Any): Timestamp to convert to date (adjusted 4 hours forward from UTC to EDT).
+        
     Returns:
-        str: Date string.
+        str: Date string in YYYY-MM-DD format.
     """
     dt = pd.to_datetime(ts) + pd.Timedelta(hours=4)
     return dt.strftime("%Y-%m-%d")
 
 
-
-def _parse_match_teams(match: str) -> list[str]:
+def _parse_match_teams(match: str) -> List[str]:
     """
-    Convert a match string (Lakers @ Celtics) to a list containing the individual teams ([Lakers, Celtics]).
-
+    Convert a match string to a list containing the individual teams.
+    
     Args:
-        match (str): The name of the match.
-
+        match (str): Match string in format "Team1 @ Team2" or "Team1 vs Team2".
+        
     Returns:
-        list[str]: A list containing each individual team.
+        List[str]: List containing individual team names [away_team, home_team].
     """
     if "@" in match:
         teams = [t.strip() for t in match.split("@")]
@@ -188,13 +187,14 @@ def _parse_match_teams(match: str) -> list[str]:
 # -------------------------------------- Time Since Start Filter --------------------------------------------
 def _time_since_start(df: pd.DataFrame, thresh: float) -> pd.DataFrame:
     """
-    Filter out games that started less than "thresh" hours ago.
-
+    Filter out games that started less than threshold hours ago.
+    
     Args:
-        df (pd.DataFrame): A results DataFrame.
-
+        df (pd.DataFrame): DataFrame containing game data with "Start Time" column.
+        thresh (float): Threshold in hours - games starting less than this many hours ago are filtered out.
+        
     Returns:
-        pd.DataFrame: A DataFrame containing only games that started over "thresh" hours ago.
+        pd.DataFrame: Filtered DataFrame containing only games that started more than thresh hours ago.
     """
     # Get the current time
     current_time = datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d %H:%M:%S")
@@ -204,9 +204,9 @@ def _time_since_start(df: pd.DataFrame, thresh: float) -> pd.DataFrame:
     df['Start Time'] = pd.to_datetime(df['Start Time'], format="%Y-%m-%d %H:%M:%S")
 
     # Create conditions for removal
-    cutoff = current_time_obj - timedelta(days=thresh)
+    cutoff = current_time_obj - timedelta(hours=thresh)
 
-    # Filter out games that started less than 12 hours ago (for API bug)
+    # Filter out games that started less than threshold hours ago
     mask = (df["Start Time"] <= cutoff)
     df = df[mask]
 
@@ -214,16 +214,16 @@ def _time_since_start(df: pd.DataFrame, thresh: float) -> pd.DataFrame:
 
 
 # ------------------------------------------- Results Fetcher -----------------------------------------------
-def _get_scores_from_api(sports_key: str, days_from: int = 3) -> list[dict]:
+def _get_scores_from_api(sports_key: str, days_from: int = 3) -> List[Dict]:
     """
-    Fetches game outcomes from the last days_from days.
-
+    Fetch game outcomes from The-Odds-API for the last specified number of days.
+    
     Args:
-        sports_key (str): What sport games to fetch.
-        days_from (int): How many days back to look.
-
+        sports_key (str): Sport key to fetch games for (maximum 3 days lookback).
+        days_from (int): Number of days back to look for completed games.
+        
     Returns:
-        list[dict]: A list of completed game dicts.
+        List[Dict]: List of completed game dictionaries from the API response.
     """
     url = f"https://api.the-odds-api.com/v4/sports/{sports_key}/scores/?daysFrom={days_from}&apiKey={API_KEY}"
     resp = requests.get(url)
@@ -234,18 +234,18 @@ def _get_scores_from_api(sports_key: str, days_from: int = 3) -> list[dict]:
 
 
 # ------------------------------------------ Results Filter -------------------------------------------------
-def _filter(scores: list[dict], start_date: str, home_team: str, away_team: str) -> list[dict]:
+def _filter(scores: List[Dict], start_date: str, home_team: str, away_team: str) -> List[Dict]:
     """
-    Of the games from get_scores_from_api, filter out the game with matching start date and teams.
-
+    Filter games list to find matches with specific date and teams.
+    
     Args:
-        scores (list[dict]): The games pulled from get_scores_from_api().
-        start_date (str): The start date of the desired game.
-        home_team (str): The home team from the desired game.
-        away_team (str): The away team from the desired game.
-
+        scores (List[Dict]): List of game dictionaries from _get_scores_from_api().
+        start_date (str): Start date of the desired game in YYYY-MM-DD format.
+        home_team (str): Home team name from the desired game.
+        away_team (str): Away team name from the desired game.
+        
     Returns:
-        list[dict]: The game matching the submitted args.
+        List[Dict]: List containing the game(s) matching the submitted criteria.
     """
     return [
         game for game in scores
@@ -256,17 +256,17 @@ def _filter(scores: list[dict], start_date: str, home_team: str, away_team: str)
 
 
 # --------------------------------------- Determine Winner of Game ------------------------------------------
-def _get_winner(game: dict, home: str, away: str) -> str:
+def _get_winner(game: Dict, home: str, away: str) -> str:
     """
-    Given a game dict, determines the game result by comparing scores.
-
+    Determine the game result by comparing scores from a completed game.
+    
     Args:
-        game (dict): A game to retrieve the results of.
-        home (str): The home team.
-        away (str): The away team.
-
+        game (Dict): Game dictionary containing score and completion information.
+        home (str): Home team name.
+        away (str): Away team name.
+        
     Returns:
-        str: The name of the team who won, or Draw.
+        str: Winner team name, "Draw", "Pending", or "invalid" if scores cannot be parsed.
     """
     # Check if the game has completed
     if not game.get("completed"):
@@ -296,14 +296,14 @@ def _get_winner(game: dict, home: str, away: str) -> str:
 # --------------------------------------- Results Column Function -------------------------------------------
 def get_finished_games_from_theodds(df: pd.DataFrame, sports_key: str) -> pd.DataFrame:
     """
-    Given a DataFrame of bets placed, add a Results column that indicates the winner.
-
+    Add game results to DataFrame by fetching data from The-Odds-API.
+    
     Args:
-        df (pd.DataFrame): A DataFrame of placed bets (can be just bets or full).
-        sports_key (str): The sport to check.
-
+        df (pd.DataFrame): DataFrame containing betting data with columns "Match", "Start Time", and optionally "Result".
+        sports_key (str): Sport key for The-Odds-API to specify which sport's results to fetch.
+        
     Returns:
-        pd.DataFrame: The same DataFrame as df, but with a Results column.
+        pd.DataFrame: Updated DataFrame with "Result" column populated from API calls.
     """
     if "Result" not in df.columns:
         df["Result"] = "Not Found"
@@ -311,8 +311,8 @@ def get_finished_games_from_theodds(df: pd.DataFrame, sports_key: str) -> pd.Dat
     # Get a list of the games from the past 3 days in the specified sport
     scores = _get_scores_from_api(sports_key)
 
-    # Filter out games that started less than 12 hours ago
-    indices = _time_since_start(df,0.5).index.tolist()
+    # Filter out games that started less than 0.5 hours ago
+    indices = _time_since_start(df, 0.5).index.tolist()
 
     for i in indices:
         row = df.iloc[i]
@@ -341,15 +341,15 @@ def get_finished_games_from_theodds(df: pd.DataFrame, sports_key: str) -> pd.Dat
 
 
 # ---------------------------------------------- Key Finder -------------------------------------------------
-def map_league_to_key(df: pd.DataFrame) -> list[str]:
+def map_league_to_key(df: pd.DataFrame) -> List[str]:
     """
-    Given a DataFrame with a League column, find the corresponding keys and return them in a list.
-
+    Map league names in DataFrame to corresponding The-Odds-API sport keys.
+    
     Args:
-        df (pd.DataFrame): A DataFrame with a League column.
-
+        df (pd.DataFrame): DataFrame containing a "League" column with league names.
+        
     Returns:
-        list[str]: A list of sports keys.
+        List[str]: List of unique sport keys corresponding to leagues found in the DataFrame.
     """
     league_to_key = {
         "CFL": "americanfootball_cfl",
@@ -421,7 +421,16 @@ def map_league_to_key(df: pd.DataFrame) -> list[str]:
 
 
 # -------------------------------------------- Main Pipeline ------------------------------------------------
-if __name__ == "__main__":
+def main() -> None:
+    """
+    Main pipeline for fetching and updating game results from The-Odds-API.
+    
+    Args:
+        None
+        
+    Returns:
+        None
+    """
     input_csv = "master_avg_bets.csv"
     output_csv = "results.csv"
     df = pd.read_csv(input_csv)
@@ -433,4 +442,8 @@ if __name__ == "__main__":
     for key in keys:
         df = get_finished_games_from_theodds(df, key)
 
-    df.to_csv(output_csv,index=False)
+    df.to_csv(output_csv, index=False)
+
+
+if __name__ == "__main__":
+    main()

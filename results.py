@@ -36,7 +36,16 @@ PENDING_RESULTS = ["Not Found", "Pending", "API Error"]
 
 
 def load_dataframes(bet_file: Path, full_file: Path) -> Tuple[pd.DataFrame, pd.DataFrame]:
-    """Load bet and full DataFrames from CSV files."""
+    """
+    Load bet and full DataFrames from CSV files.
+    
+    Args:
+        bet_file (Path): Path to the betting summary CSV file.
+        full_file (Path): Path to the full betting data CSV file.
+        
+    Returns:
+        Tuple[pd.DataFrame, pd.DataFrame]: Tuple containing (bet_df, full_df) loaded from files.
+    """
     try:
         bet_df = pd.read_csv(bet_file)
         full_df = pd.read_csv(full_file)
@@ -50,12 +59,28 @@ def load_dataframes(bet_file: Path, full_file: Path) -> Tuple[pd.DataFrame, pd.D
 
 
 def filter_rows_to_search(df: pd.DataFrame) -> pd.DataFrame:
-    """Filter DataFrame to only include rows that need result checking."""
+    """
+    Filter DataFrame to only include rows that need result checking.
+    
+    Args:
+        df (pd.DataFrame): DataFrame containing betting data with "Result" column.
+        
+    Returns:
+        pd.DataFrame: Filtered DataFrame containing only rows with pending results.
+    """
     return df[df["Result"].isin(PENDING_RESULTS)]
 
 
 def fetch_results_from_theodds(df: pd.DataFrame) -> pd.DataFrame:
-    """Fetch results from The-Odds-API for all relevant leagues."""
+    """
+    Fetch results from The-Odds-API for all relevant leagues.
+    
+    Args:
+        df (pd.DataFrame): DataFrame containing betting data with "League" and "Result" columns.
+        
+    Returns:
+        pd.DataFrame: Updated DataFrame with results fetched from The-Odds-API.
+    """
     rows_to_search = filter_rows_to_search(df)
     
     if rows_to_search.empty:
@@ -72,13 +97,30 @@ def fetch_results_from_theodds(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def fetch_results_from_sportsdb(df: pd.DataFrame) -> pd.DataFrame:
-    """Fetch remaining results from TheSportsDB API."""
+    """
+    Fetch remaining results from TheSportsDB API.
+    
+    Args:
+        df (pd.DataFrame): DataFrame containing betting data with pending results.
+        
+    Returns:
+        pd.DataFrame: Updated DataFrame with additional results fetched from TheSportsDB API.
+    """
     print("Pulling remaining results from TheSportsDB")
     return get_finished_games_from_thesportsdb(df)
 
 
 def clean_old_pending_results(df: pd.DataFrame, full_df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]:
-    """Remove rows older than DAYS_CUTOFF that still have pending results."""
+    """
+    Remove rows older than DAYS_CUTOFF that still have pending results.
+    
+    Args:
+        df (pd.DataFrame): Betting summary DataFrame to clean.
+        full_df (pd.DataFrame): Full betting data DataFrame to clean.
+        
+    Returns:
+        Tuple[pd.DataFrame, pd.DataFrame]: Tuple of cleaned DataFrames (filtered_df, filtered_full_df).
+    """
     current_time = datetime.now(TIMEZONE)
     cutoff_time = current_time - timedelta(days=DAYS_CUTOFF)
     
@@ -114,7 +156,18 @@ def clean_old_pending_results(df: pd.DataFrame, full_df: pd.DataFrame) -> Tuple[
 
 
 def save_dataframes(df: pd.DataFrame, full_df: pd.DataFrame, bet_file: Path, full_file: Path) -> None:
-    """Save DataFrames to CSV files."""
+    """
+    Save DataFrames to CSV files.
+    
+    Args:
+        df (pd.DataFrame): Betting summary DataFrame to save.
+        full_df (pd.DataFrame): Full betting data DataFrame to save.
+        bet_file (Path): Path where betting summary CSV will be saved.
+        full_file (Path): Path where full betting data CSV will be saved.
+        
+    Returns:
+        None
+    """
     try:
         df.to_csv(bet_file, index=False)
         full_df.to_csv(full_file, index=False)
@@ -125,7 +178,16 @@ def save_dataframes(df: pd.DataFrame, full_df: pd.DataFrame, bet_file: Path, ful
 
 
 def process_file_pair(bet_filename: str, full_filename: str) -> None:
-    """Process a single pair of bet and full files."""
+    """
+    Process a single pair of bet and full files through the complete results pipeline.
+    
+    Args:
+        bet_filename (str): Name of the betting summary CSV file.
+        full_filename (str): Name of the full betting data CSV file.
+        
+    Returns:
+        None
+    """
     bet_file = DATA_DIR / bet_filename
     full_file = DATA_DIR / full_filename
     
@@ -154,7 +216,15 @@ def process_file_pair(bet_filename: str, full_filename: str) -> None:
 
 
 def main() -> None:
-    """Main pipeline for processing all file pairs."""
+    """
+    Main pipeline for processing all file pairs to fetch and update sports results.
+    
+    Args:
+        None
+        
+    Returns:
+        None
+    """
     print("Starting sports results pipeline")
     
     for i, (bet_filename, full_filename) in enumerate(FILE_CONFIGS):

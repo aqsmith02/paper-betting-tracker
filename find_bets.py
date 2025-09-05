@@ -47,12 +47,29 @@ class BettingStrategy:
 
 # ---------------------------------------- Utility Functions ---------------------------------------- #
 def start_date_from_timestamp(timestamp: Any) -> str:
-    """Convert a timestamp to YYYY-MM-DD format."""
+    """
+    Convert a timestamp to YYYY-MM-DD format.
+    
+    Args:
+        timestamp (Any): Timestamp value to convert (can be string, datetime, etc.).
+        
+    Returns:
+        str: Date string in YYYY-MM-DD format.
+    """
     return pd.to_datetime(timestamp).strftime(DATE_FORMAT)
 
 
 def find_bookmaker_columns(df: pd.DataFrame, exclude_columns: Optional[List[str]] = None) -> List[str]:
-    """Find columns that contain bookmaker odds (numeric columns, excluding metadata)."""
+    """
+    Find columns that contain bookmaker odds (numeric columns, excluding metadata).
+    
+    Args:
+        df (pd.DataFrame): DataFrame to search for bookmaker columns.
+        exclude_columns (Optional[List[str]]): Additional columns to exclude from search.
+        
+    Returns:
+        List[str]: List of column names that contain bookmaker odds.
+    """
     excluded = {"Best Odds", "Start Time", "Last Update"}
     if exclude_columns:
         excluded.update(exclude_columns)
@@ -62,7 +79,15 @@ def find_bookmaker_columns(df: pd.DataFrame, exclude_columns: Optional[List[str]
 
 
 def safe_float_conversion(value: Any) -> float:
-    """Convert value to float, returning -inf if conversion fails."""
+    """
+    Convert value to float, returning -inf if conversion fails.
+    
+    Args:
+        value (Any): Value to convert to float.
+        
+    Returns:
+        float: Converted float value or -inf if conversion fails.
+    """
     try:
         return float(value)
     except (ValueError, TypeError):
@@ -70,7 +95,17 @@ def safe_float_conversion(value: Any) -> float:
 
 
 def validate_dataframe(df: pd.DataFrame, required_columns: List[str], name: str = "DataFrame") -> None:
-    """Validate DataFrame meets basic requirements."""
+    """
+    Validate DataFrame meets basic requirements.
+    
+    Args:
+        df (pd.DataFrame): DataFrame to validate.
+        required_columns (List[str]): List of columns that must be present.
+        name (str): Name of DataFrame for error messages.
+        
+    Returns:
+        None: Raises ValueError if validation fails.
+    """
     if df.empty:
         raise ValueError(f"{name} cannot be empty")
     
@@ -81,7 +116,15 @@ def validate_dataframe(df: pd.DataFrame, required_columns: List[str], name: str 
 
 # ---------------------------------------- Data Cleaning ---------------------------------------- #
 def clean_odds_data(df: pd.DataFrame) -> pd.DataFrame:
-    """Replace odds equal to 1.0 with NaN (invalid odds)."""
+    """
+    Replace odds equal to 1.0 with NaN (invalid odds).
+    
+    Args:
+        df (pd.DataFrame): DataFrame containing odds data.
+        
+    Returns:
+        pd.DataFrame: DataFrame with invalid odds (1.0) replaced with NaN.
+    """
     df = df.copy()
     bookmaker_columns = find_bookmaker_columns(df)
     df[bookmaker_columns] = df[bookmaker_columns].where(df[bookmaker_columns] != 1, np.nan)
@@ -89,13 +132,30 @@ def clean_odds_data(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def prettify_column_headers(df: pd.DataFrame) -> pd.DataFrame:
-    """Convert column names to Title Case and replace underscores with spaces."""
+    """
+    Convert column names to Title Case and replace underscores with spaces.
+    
+    Args:
+        df (pd.DataFrame): DataFrame with columns to prettify.
+        
+    Returns:
+        pd.DataFrame: DataFrame with cleaned column names.
+    """
     column_mapping = {col: col.replace("_", " ").title() for col in df.columns}
     return df.rename(columns=column_mapping)
 
 
 def validate_betting_requirements(row: pd.Series, bookmaker_columns: List[str]) -> bool:
-    """Check if row meets minimum requirements for betting analysis."""
+    """
+    Check if row meets minimum requirements for betting analysis.
+    
+    Args:
+        row (pd.Series): Single row from DataFrame to validate.
+        bookmaker_columns (List[str]): List of bookmaker column names.
+        
+    Returns:
+        bool: True if row meets betting requirements, False otherwise.
+    """
     # Count valid bookmaker odds
     valid_odds_count = sum(
         1 for bm in bookmaker_columns
@@ -108,7 +168,15 @@ def validate_betting_requirements(row: pd.Series, bookmaker_columns: List[str]) 
 
 
 def filter_valid_betting_rows(df: pd.DataFrame) -> pd.DataFrame:
-    """Remove rows that don't meet betting analysis requirements."""
+    """
+    Remove rows that don't meet betting analysis requirements.
+    
+    Args:
+        df (pd.DataFrame): DataFrame to filter.
+        
+    Returns:
+        pd.DataFrame: Filtered DataFrame containing only valid betting rows.
+    """
     df = df.copy()
     bookmaker_columns = find_bookmaker_columns(df)
     
@@ -120,7 +188,15 @@ def filter_valid_betting_rows(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def clean_betting_data(df: pd.DataFrame) -> pd.DataFrame:
-    """Complete data cleaning pipeline for betting analysis."""
+    """
+    Complete data cleaning pipeline for betting analysis.
+    
+    Args:
+        df (pd.DataFrame): Raw betting data to clean.
+        
+    Returns:
+        pd.DataFrame: Cleaned DataFrame ready for betting analysis.
+    """
     validate_dataframe(df, ["best odds"], "Input DataFrame")
     
     df = clean_odds_data(df)
@@ -133,7 +209,14 @@ def clean_betting_data(df: pd.DataFrame) -> pd.DataFrame:
 def calculate_vigfree_probabilities(df: pd.DataFrame, min_outcomes: Optional[int] = None) -> pd.DataFrame:
     """
     Add vig-free implied probability columns for each bookmaker.
-    Only processes bookmakers that have odds for all outcomes in a match.
+    
+    Args:
+        df (pd.DataFrame): DataFrame containing odds data.
+        min_outcomes (Optional[int]): Minimum number of outcomes required per match. 
+                                    If None, uses all outcomes in each match.
+        
+    Returns:
+        pd.DataFrame: DataFrame with additional vig-free probability columns for each bookmaker.
     """
     df = df.copy()
     bookmaker_columns = find_bookmaker_columns(df)
@@ -165,7 +248,17 @@ def calculate_vigfree_probabilities(df: pd.DataFrame, min_outcomes: Optional[int
 
 # ---------------------------------------- Betting Strategy Analysis ---------------------------------------- #
 def count_missing_vigfree_odds(bookmaker_columns: List[str], row: pd.Series, max_missing: int) -> bool:
-    """Check if row has too many bookmakers with odds but no vig-free probability."""
+    """
+    Check if row has too many bookmakers with odds but no vig-free probability.
+    
+    Args:
+        bookmaker_columns (List[str]): List of bookmaker column names.
+        row (pd.Series): Single row to check.
+        max_missing (int): Maximum number of missing vig-free odds allowed.
+        
+    Returns:
+        bool: True if missing vig-free count is within limit, False otherwise.
+    """
     missing_vigfree_count = 0
     
     for bookmaker in bookmaker_columns:
@@ -178,7 +271,16 @@ def count_missing_vigfree_odds(bookmaker_columns: List[str], row: pd.Series, max
 
 
 def analyze_average_edge_bets(df: pd.DataFrame, edge_threshold: float = EDGE_THRESHOLD) -> pd.DataFrame:
-    """Find bets where best odds exceed average fair odds by threshold percentage."""
+    """
+    Find bets where best odds exceed average fair odds by threshold percentage.
+    
+    Args:
+        df (pd.DataFrame): DataFrame containing vig-free probability data.
+        edge_threshold (float): Minimum edge percentage required for profitable bet.
+        
+    Returns:
+        pd.DataFrame: DataFrame with additional columns for fair odds average and edge percentage.
+    """
     df = df.copy()
     vigfree_columns = [col for col in df.columns if col.startswith("Vigfree ")]
     bookmaker_columns = find_bookmaker_columns(df, vigfree_columns)
@@ -220,7 +322,16 @@ def analyze_average_edge_bets(df: pd.DataFrame, edge_threshold: float = EDGE_THR
 
 
 def analyze_zscore_outliers(df: pd.DataFrame, z_threshold: float = Z_SCORE_THRESHOLD) -> pd.DataFrame:
-    """Find bets where best odds are statistical outliers using Z-score."""
+    """
+    Find bets where best odds are statistical outliers using Z-score.
+    
+    Args:
+        df (pd.DataFrame): DataFrame containing odds data.
+        z_threshold (float): Minimum Z-score required to identify outlier.
+        
+    Returns:
+        pd.DataFrame: DataFrame with additional Z-score column for outlier bets.
+    """
     df = df.copy()
     bookmaker_columns = find_bookmaker_columns(df)
     z_scores = []
@@ -255,7 +366,16 @@ def analyze_zscore_outliers(df: pd.DataFrame, z_threshold: float = Z_SCORE_THRES
 
 
 def analyze_modified_zscore_outliers(df: pd.DataFrame, z_threshold: float = Z_SCORE_THRESHOLD) -> pd.DataFrame:
-    """Find bets where best odds are outliers using Modified Z-score (more robust to outliers)."""
+    """
+    Find bets where best odds are outliers using Modified Z-score (more robust to outliers).
+    
+    Args:
+        df (pd.DataFrame): DataFrame containing odds data.
+        z_threshold (float): Minimum Modified Z-score required to identify outlier.
+        
+    Returns:
+        pd.DataFrame: DataFrame with additional Modified Z-score column for outlier bets.
+    """
     df = df.copy()
     bookmaker_columns = find_bookmaker_columns(df)
     modified_z_scores = []
@@ -291,7 +411,17 @@ def analyze_modified_zscore_outliers(df: pd.DataFrame, z_threshold: float = Z_SC
 
 def analyze_pinnacle_edge_bets(df: pd.DataFrame, pinnacle_column: str = "Pinnacle", 
                               edge_threshold: float = EDGE_THRESHOLD) -> pd.DataFrame:
-    """Find bets where best odds exceed Pinnacle's fair odds by threshold percentage."""
+    """
+    Find bets where best odds exceed Pinnacle's fair odds by threshold percentage.
+    
+    Args:
+        df (pd.DataFrame): DataFrame containing vig-free probability data including Pinnacle.
+        pinnacle_column (str): Name of the Pinnacle bookmaker column.
+        edge_threshold (float): Minimum edge percentage required for profitable bet.
+        
+    Returns:
+        pd.DataFrame: DataFrame with additional columns for Pinnacle fair odds and edge percentage.
+    """
     df = df.copy()
     vigfree_pinnacle = f"Vigfree {pinnacle_column}"
     
@@ -329,7 +459,15 @@ def analyze_pinnacle_edge_bets(df: pd.DataFrame, pinnacle_column: str = "Pinnacl
 
 # ---------------------------------------- Summary Creation ---------------------------------------- #
 def create_average_edge_summary(df: pd.DataFrame) -> pd.DataFrame:
-    """Create summary of profitable average-edge bets."""
+    """
+    Create summary of profitable average-edge bets.
+    
+    Args:
+        df (pd.DataFrame): DataFrame containing average edge analysis results.
+        
+    Returns:
+        pd.DataFrame: Summary DataFrame with only profitable average-edge bets.
+    """
     if df.empty:
         return pd.DataFrame()
     
@@ -353,7 +491,15 @@ def create_average_edge_summary(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def create_zscore_summary(df: pd.DataFrame) -> pd.DataFrame:
-    """Create summary of Z-score outlier bets."""
+    """
+    Create summary of Z-score outlier bets.
+    
+    Args:
+        df (pd.DataFrame): DataFrame containing Z-score analysis results.
+        
+    Returns:
+        pd.DataFrame: Summary DataFrame with only Z-score outlier bets.
+    """
     if df.empty:
         return pd.DataFrame()
     
@@ -377,7 +523,15 @@ def create_zscore_summary(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def create_modified_zscore_summary(df: pd.DataFrame) -> pd.DataFrame:
-    """Create summary of Modified Z-score outlier bets."""
+    """
+    Create summary of Modified Z-score outlier bets.
+    
+    Args:
+        df (pd.DataFrame): DataFrame containing Modified Z-score analysis results.
+        
+    Returns:
+        pd.DataFrame: Summary DataFrame with only Modified Z-score outlier bets.
+    """
     if df.empty:
         return pd.DataFrame()
     
@@ -401,7 +555,15 @@ def create_modified_zscore_summary(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def create_pinnacle_edge_summary(df: pd.DataFrame) -> pd.DataFrame:
-    """Create summary of Pinnacle edge bets."""
+    """
+    Create summary of Pinnacle edge bets.
+    
+    Args:
+        df (pd.DataFrame): DataFrame containing Pinnacle edge analysis results.
+        
+    Returns:
+        pd.DataFrame: Summary DataFrame with only profitable Pinnacle edge bets.
+    """
     if df.empty:
         return pd.DataFrame()
     
@@ -427,14 +589,36 @@ def create_pinnacle_edge_summary(df: pd.DataFrame) -> pd.DataFrame:
 
 # ---------------------------------------- File Management ---------------------------------------- #
 class BetFileManager:
-    """Manages CSV file operations for betting data."""
+    """
+    Manages CSV file operations for betting data.
+    
+    Args:
+        data_directory (str): Directory path for storing betting data files.
+    """
     
     def __init__(self, data_directory: str = DATA_DIR):
+        """
+        Initialize BetFileManager with specified data directory.
+        
+        Args:
+            data_directory (str): Directory path for storing betting data files.
+            
+        Returns:
+            None
+        """
         self.data_dir = data_directory
         os.makedirs(data_directory, exist_ok=True)
     
     def get_strategy_columns(self, filename: str) -> Optional[List[str]]:
-        """Get unique columns for different betting strategies."""
+        """
+        Get unique columns for different betting strategies.
+        
+        Args:
+            filename (str): Name of the strategy file.
+            
+        Returns:
+            Optional[List[str]]: List of strategy-specific column names, None if not found.
+        """
         strategy_columns = {
             "master_avg_full.csv": ["Avg Edge Pct", "Fair Odds Avg"],
             "master_mod_zscore_full.csv": ["Modified Z Score"],
@@ -444,7 +628,16 @@ class BetFileManager:
         return strategy_columns.get(filename)
     
     def append_unique_bets(self, new_data: pd.DataFrame, filepath: str) -> None:
-        """Append new betting data, avoiding duplicates based on (Match, Date) key."""
+        """
+        Append new betting data, avoiding duplicates based on (Match, Date) key.
+        
+        Args:
+            new_data (pd.DataFrame): New betting data to append.
+            filepath (str): Path to the CSV file relative to data directory.
+            
+        Returns:
+            None
+        """
         if new_data.empty:
             print(f"No data to append to {filepath}")
             return
@@ -496,7 +689,17 @@ class BetFileManager:
     
     def _align_column_schemas(self, existing_df: pd.DataFrame, new_df: pd.DataFrame, 
                             filename: str) -> List[str]:
-        """Create unified column schema for existing and new data."""
+        """
+        Create unified column schema for existing and new data.
+        
+        Args:
+            existing_df (pd.DataFrame): Existing data from file.
+            new_df (pd.DataFrame): New data to be added.
+            filename (str): Name of file for strategy-specific column ordering.
+            
+        Returns:
+            List[str]: Unified list of column names in proper order.
+        """
         # Start with existing columns to preserve order
         all_columns = list(existing_df.columns)
         
@@ -516,7 +719,16 @@ class BetFileManager:
         return reordered_columns
     
     def save_best_bets_only(self, summary_df: pd.DataFrame, filepath: str) -> pd.DataFrame:
-        """Save only the best bet per match (highest scoring bet). Returns the filtered data."""
+        """
+        Save only the best bet per match (highest scoring bet).
+        
+        Args:
+            summary_df (pd.DataFrame): Summary DataFrame containing all potential bets.
+            filepath (str): Path to save the filtered best bets.
+            
+        Returns:
+            pd.DataFrame: Filtered DataFrame containing only the best bet per match.
+        """
         if summary_df.empty:
             return pd.DataFrame()
         
@@ -543,7 +755,17 @@ class BetFileManager:
 
     def save_full_betting_data(self, source_df: pd.DataFrame, filtered_summary_df: pd.DataFrame, 
                             filepath: str) -> None:
-        """Save complete betting data for bets identified in filtered summary."""
+        """
+        Save complete betting data for bets identified in filtered summary.
+        
+        Args:
+            source_df (pd.DataFrame): Full DataFrame containing all betting analysis data.
+            filtered_summary_df (pd.DataFrame): Filtered summary containing only best bets.
+            filepath (str): Path to save the full betting data.
+            
+        Returns:
+            None
+        """
         if filtered_summary_df.empty:
             return
         
@@ -561,7 +783,18 @@ class BetFileManager:
 # ---------------------------------------- Strategy Execution ---------------------------------------- #
 def run_betting_strategy(strategy: BettingStrategy, cleaned_data: pd.DataFrame, 
                         vigfree_data: pd.DataFrame, file_manager: BetFileManager) -> None:
-    """Execute a complete betting strategy analysis and save results."""
+    """
+    Execute a complete betting strategy analysis and save results.
+    
+    Args:
+        strategy (BettingStrategy): Betting strategy configuration object.
+        cleaned_data (pd.DataFrame): Cleaned betting data without vig-free calculations.
+        vigfree_data (pd.DataFrame): Betting data with vig-free probability calculations.
+        file_manager (BetFileManager): File manager for saving results.
+        
+    Returns:
+        None
+    """
     print(f"\nRunning {strategy.name} analysis...")
     
     try:
@@ -585,7 +818,15 @@ def run_betting_strategy(strategy: BettingStrategy, cleaned_data: pd.DataFrame,
 
 # ---------------------------------------- Main Pipeline ---------------------------------------- #
 def main():
-    """Main betting analysis pipeline."""    
+    """
+    Main betting analysis pipeline.
+    
+    Args:
+        None
+        
+    Returns:
+        None
+    """    
     # Initialize file manager
     file_manager = BetFileManager()
     

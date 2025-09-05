@@ -13,36 +13,35 @@ import pandas as pd
 import time
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
+from typing import Any
 
 THESPORTSDB_API_KEY = "123"
 
 
 # ----------------------------------------- Formatting Helpers ----------------------------------------------
-def _start_date(ts) -> str:
+def _start_date(ts: Any) -> str:
     """
-    Convert a timestamp / datetime-like / ISO string to "YYYY-MM-DD",
-    adjusted 4 hours forward (e.g., from UTC to EDT).
-
+    Convert a timestamp / datetime-like / ISO string to "YYYY-MM-DD".
+    
     Args:
-        ts (Any): Timestamp to convert to date.
-
+        ts (Any): Timestamp to convert to date (adjusted 4 hours forward from UTC to EDT).
+        
     Returns:
-        str: Date string.
+        str: Date string in YYYY-MM-DD format.
     """
     dt = pd.to_datetime(ts) + pd.Timedelta(hours=4)
     return dt.strftime("%Y-%m-%d")
 
 
-
 def _format_match_for_thesportsdb(match: str) -> str:
     """
-    Convert a match string (Lakers @ Celtics) to a correctly formatted match string (Lakers_vs_Celtics).
-
+    Convert a match string to TheSportsDB API format.
+    
     Args:
-        match (str): The name of the match.
-
+        match (str): Match string in format "Team1 @ Team2" or "Team1 vs Team2".
+        
     Returns:
-        str: A list containing each individual team.
+        str: Formatted match string with underscores replacing spaces (e.g., "Team1_vs_Team2").
     """
     if "@" in match:
         teams = [t.strip() for t in match.split("@")]
@@ -57,13 +56,14 @@ def _format_match_for_thesportsdb(match: str) -> str:
 # -------------------------------------- Time Since Start Filter --------------------------------------------
 def _time_since_start(df: pd.DataFrame, thresh: float) -> pd.DataFrame:
     """
-    Filter out games that started less than "thresh" hours ago.
-
+    Filter out games that started less than threshold hours ago.
+    
     Args:
-        df (pd.DataFrame): A results DataFrame.
-
+        df (pd.DataFrame): DataFrame containing game data with "Start Time" column.
+        thresh (float): Threshold in hours - games starting less than this many hours ago are filtered out.
+        
     Returns:
-        pd.DataFrame: A DataFrame containing only games that started over "thresh" hours ago.
+        pd.DataFrame: Filtered DataFrame containing only games that started more than thresh hours ago.
     """
     # Get the current time
     current_time = datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d %H:%M:%S")
@@ -73,9 +73,9 @@ def _time_since_start(df: pd.DataFrame, thresh: float) -> pd.DataFrame:
     df['Start Time'] = pd.to_datetime(df['Start Time'], format="%Y-%m-%d %H:%M:%S")
 
     # Create conditions for removal
-    cutoff = current_time_obj - timedelta(days=thresh)
+    cutoff = current_time_obj - timedelta(hours=thresh)
 
-    # Filter out games that started less than 12 hours ago (for API bug)
+    # Filter out games that started less than threshold hours ago
     mask = (df["Start Time"] <= cutoff)
     df = df[mask]
 
@@ -85,14 +85,14 @@ def _time_since_start(df: pd.DataFrame, thresh: float) -> pd.DataFrame:
 # ------------------------------------------- Results Fetcher -----------------------------------------------
 def _get_results(match: str, date: str) -> str:
     """
-    Find the results of a game.
-
+    Fetch the results of a game from TheSportsDB API.
+    
     Args:
-        match (str): The name of the match.
-        date (str): The date of the match.
-
+        match (str): Formatted match name for API query.
+        date (str): Date of the match in YYYY-MM-DD format.
+        
     Returns:
-        str: The outcome of the game.
+        str: Game outcome - winning team name, "Draw", "Pending", "Not Found", or "API Error".
     """
     url = f"https://www.thesportsdb.com/api/v1/json/{THESPORTSDB_API_KEY}/searchevents.php?e={match}&d={date}"
     try:
@@ -138,11 +138,20 @@ def _get_results(match: str, date: str) -> str:
 
 # --------------------------------------- Results Column Function -------------------------------------------
 def get_finished_games_from_thesportsdb(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Fetch and update game results from TheSportsDB API for games in DataFrame.
+    
+    Args:
+        df (pd.DataFrame): DataFrame containing game data with columns "Match", "Start Time", and optionally "Result".
+        
+    Returns:
+        pd.DataFrame: Updated DataFrame with "Result" column populated from API calls.
+    """
     if "Result" not in df.columns:
         df["Result"] = "Not Found"
 
-    # Only loop through games that started less than 12 hours ago
-    indices = _time_since_start(df,0.5).index.tolist()
+    # Only loop through games that started more than 0.5 hours ago
+    indices = _time_since_start(df, 0.5).index.tolist()
 
     # Track API requests to respect rate limits
     fetches = 0
@@ -170,8 +179,21 @@ def get_finished_games_from_thesportsdb(df: pd.DataFrame) -> pd.DataFrame:
 
 
 # ------------------------------------------- Main Pipeline -----------------------------------------------
-if __name__ == "__main__":
+def main() -> None:
+    """
+    Main pipeline for fetching and updating game results from TheSportsDB API.
+    
+    Args:
+        None
+        
+    Returns:
+        None
+    """
     input_csv = "results.csv"
     df = pd.read_csv(input_csv)
     df = get_finished_games_from_thesportsdb(df)
     df.to_csv("results2.csv", index=False)
+
+
+if __name__ == "__main__":
+    main()

@@ -67,7 +67,15 @@ EXCHANGE_BLOCKLIST = {
 
 # -------------------------- Helper Functions ---------------------- #
 def _convert_to_eastern_time(utc_time_str: str) -> str:
-    """Convert UTC time string to Eastern time."""
+    """
+    Convert UTC time string to Eastern time.
+    
+    Args:
+        utc_time_str (str): UTC time string in ISO format without timezone suffix.
+        
+    Returns:
+        str: Time string formatted in Eastern timezone using DATE_FORMAT.
+    """
     eastern = pytz.timezone("US/Eastern")
     utc_dt = datetime.fromisoformat(utc_time_str[:-1]).replace(tzinfo=pytz.utc)
     local_dt = utc_dt.astimezone(eastern)
@@ -75,7 +83,15 @@ def _convert_to_eastern_time(utc_time_str: str) -> str:
 
 
 def _convert_iso_to_eastern_time(iso_time_str: str) -> str:
-    """Convert ISO time string (with timezone info) to Eastern time."""
+    """
+    Convert ISO time string (with timezone info) to Eastern time.
+    
+    Args:
+        iso_time_str (str): ISO format time string with timezone information.
+        
+    Returns:
+        str: Time string formatted in Eastern timezone using DATE_FORMAT.
+    """
     eastern = pytz.timezone("US/Eastern")
     utc_dt = parser.isoparse(iso_time_str)
     local_dt = utc_dt.astimezone(eastern)
@@ -83,7 +99,15 @@ def _convert_iso_to_eastern_time(iso_time_str: str) -> str:
 
 
 def _is_exchange(bookmaker_name: str) -> bool:
-    """Check if bookmaker is a betting exchange (to be excluded)."""
+    """
+    Check if bookmaker is a betting exchange (to be excluded).
+    
+    Args:
+        bookmaker_name (str): Name of the bookmaker to check.
+        
+    Returns:
+        bool: True if bookmaker is in the exchange blocklist, False otherwise.
+    """
     return any(exchange.lower() in bookmaker_name.lower() for exchange in EXCHANGE_BLOCKLIST)
 
 
@@ -93,11 +117,11 @@ def fetch_odds(sport_key: Optional[str] = None) -> pd.DataFrame:
     Fetches head-to-head (h2h) betting odds from The Odds API.
     
     Args:
-        sport_key: Optional sport key to fetch. If None, uses CURRENT_SPORT.
+        sport_key (Optional[str]): Sport key to fetch odds for. If None, uses CURRENT_SPORT.
     
     Returns:
-        pd.DataFrame: Each row represents one team's odds from one bookmaker.
-        Columns: match, league, start time, team, bookmaker, odds, last update
+        pd.DataFrame: DataFrame with columns: match, league, start time, team, bookmaker, odds, last update.
+                     Each row represents one team's odds from one bookmaker.
     """
     sport = sport_key or CURRENT_SPORT
     
@@ -137,8 +161,16 @@ def fetch_odds(sport_key: Optional[str] = None) -> pd.DataFrame:
 
 
 def _process_game(game: Dict) -> List[Dict]:
-    """Process a single game from the API response into multiple rows: each bookmaker,
-       market (should only be H2H), and outcome will be a separate row."""
+    """
+    Process a single game from the API response into multiple rows.
+    
+    Args:
+        game (Dict): Game data dictionary from The Odds API response.
+        
+    Returns:
+        List[Dict]: List of row dictionaries, where each bookmaker, market, and outcome 
+                   combination becomes a separate row.
+    """
     home_team = game["home_team"]
     away_team = game["away_team"]
     league = game["sport_title"]
@@ -176,10 +208,12 @@ def organize(df: pd.DataFrame) -> pd.DataFrame:
     Pivot the odds data so each row is an outcome with all bookmaker odds as columns.
     
     Args:
-        df: DataFrame from fetch_odds() with one row per bookmaker per outcome
+        df (pd.DataFrame): DataFrame from fetch_odds() with one row per bookmaker per outcome.
         
     Returns:
-        pd.DataFrame: Each row is one team outcome, columns are bookmakers plus metadata
+        pd.DataFrame: Organized DataFrame where each row is one team outcome, with bookmakers 
+                     as columns plus metadata columns (match, league, start time, team, last update, 
+                     result, best odds, best bookmaker).
     """
     if df.empty:
         return pd.DataFrame()
