@@ -101,8 +101,6 @@ def validate_betting_requirements(row: pd.Series, bookmaker_columns: List[str]) 
         1 for bm in bookmaker_columns
         if pd.notna(row[bm]) and isinstance(safe_float_conversion(row[bm]), float) and row[bm] > 0
     )
-
-    print(valid_odds_count)
     
     # Check requirements
     return (valid_odds_count >= MIN_BOOKMAKERS and 
@@ -564,7 +562,7 @@ class BetFileManager:
 def run_betting_strategy(strategy: BettingStrategy, cleaned_data: pd.DataFrame, 
                         vigfree_data: pd.DataFrame, file_manager: BetFileManager) -> None:
     """Execute a complete betting strategy analysis and save results."""
-    print(f"Running {strategy.name} analysis...")
+    print(f"\nRunning {strategy.name} analysis...")
     
     try:
         # Run the analysis
@@ -581,17 +579,13 @@ def run_betting_strategy(strategy: BettingStrategy, cleaned_data: pd.DataFrame,
         # Save full data using the SAME filtered summary (not the original summary)
         file_manager.save_full_betting_data(analysis_result, filtered_summary, strategy.full_file)
         
-        print(f"Completed {strategy.name}: found {len(filtered_summary)} best bets (from {len(summary)} total profitable bets)")
-        
     except Exception as e:
         print(f"Error running {strategy.name}: {e}")
 
 
 # ---------------------------------------- Main Pipeline ---------------------------------------- #
 def main():
-    """Main betting analysis pipeline."""
-    print("Starting betting analysis pipeline...")
-    
+    """Main betting analysis pipeline."""    
     # Initialize file manager
     file_manager = BetFileManager()
     
@@ -625,7 +619,6 @@ def main():
     
     try:
         # Step 1: Fetch and prepare data
-        print("Fetching odds data...")
         raw_odds = fetch_odds()
         if raw_odds.empty:
             print("No odds data available")
@@ -637,8 +630,6 @@ def main():
         if cleaned_data.empty:
             print("No data passed cleaning requirements")
             return
-        
-        print(f"Prepared {len(cleaned_data)} betting opportunities for analysis")
         
         # Step 2: Calculate vig-free probabilities (needed for some strategies)
         vigfree_data = calculate_vigfree_probabilities(cleaned_data)
@@ -661,7 +652,7 @@ def main():
         else:
             print("No Pinnacle odds available - skipping Pinnacle edge analysis")
         
-        print("Betting analysis pipeline completed successfully")
+        print("\nBetting analysis pipeline completed successfully")
         
     except Exception as e:
         print(f"Pipeline failed with error: {e}")
