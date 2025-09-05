@@ -101,6 +101,8 @@ def validate_betting_requirements(row: pd.Series, bookmaker_columns: List[str]) 
         1 for bm in bookmaker_columns
         if pd.notna(row[bm]) and isinstance(safe_float_conversion(row[bm]), float) and row[bm] > 0
     )
+
+    print(valid_odds_count)
     
     # Check requirements
     return (valid_odds_count >= MIN_BOOKMAKERS and 
@@ -121,7 +123,7 @@ def filter_valid_betting_rows(df: pd.DataFrame) -> pd.DataFrame:
 
 def clean_betting_data(df: pd.DataFrame) -> pd.DataFrame:
     """Complete data cleaning pipeline for betting analysis."""
-    validate_dataframe(df, ["Best Odds"], "Input DataFrame")
+    validate_dataframe(df, ["best odds"], "Input DataFrame")
     
     df = clean_odds_data(df)
     df = prettify_column_headers(df) 
@@ -515,10 +517,10 @@ class BetFileManager:
         
         return reordered_columns
     
-    def save_best_bets_only(self, summary_df: pd.DataFrame, filepath: str) -> None:
-        """Save only the best bet per match (highest scoring bet)."""
+    def save_best_bets_only(self, summary_df: pd.DataFrame, filepath: str) -> pd.DataFrame:
+        """Save only the best bet per match (highest scoring bet). Returns the filtered data."""
         if summary_df.empty:
-            return
+            return pd.DataFrame()
         
         # Find the score column for this strategy
         score_columns = ["Avg Edge Pct", "Z Score", "Modified Z Score", "Pin Edge Pct"]
@@ -535,20 +537,21 @@ class BetFileManager:
         # Keep only the best bet per match
         best_bets = (
             summary_df.sort_values(score_column, ascending=False)
-                     .drop_duplicates(subset=["Match", "Start Time"], keep="first")
+                    .drop_duplicates(subset=["Match", "Start Time"], keep="first")
         )
         
         self.append_unique_bets(best_bets, filepath)
-    
-    def save_full_betting_data(self, source_df: pd.DataFrame, summary_df: pd.DataFrame, 
-                              filepath: str) -> None:
-        """Save complete betting data for bets identified in summary."""
-        if summary_df.empty:
+        return best_bets  # Return the filtered data for use in save_full_betting_data
+
+    def save_full_betting_data(self, source_df: pd.DataFrame, filtered_summary_df: pd.DataFrame, 
+                            filepath: str) -> None:
+        """Save complete betting data for bets identified in filtered summary."""
+        if filtered_summary_df.empty:
             return
         
-        # Match summary bets with full data
+        # Match FILTERED summary bets with full data
         key_columns = ["Match", "Team", "Start Time"]
-        merged_data = pd.merge(summary_df[key_columns], source_df, on=key_columns, how="left")
+        merged_data = pd.merge(filtered_summary_df[key_columns], source_df, on=key_columns, how="left")
         
         # Remove vig-free columns (not needed in final output)
         vigfree_columns = [col for col in merged_data.columns if col.startswith("Vigfree ")]
@@ -565,17 +568,20 @@ def run_betting_strategy(strategy: BettingStrategy, cleaned_data: pd.DataFrame,
     
     try:
         # Run the analysis
-        analysis_result = strategy.analysis_func(vigfree_data if "Pinnacle" in strategy.name or "Avg" in strategy.name else cleaned_data)
+        analysis_result = strategy.analysis_func(vigfree_data if "Pinnacle" in strategy.name or "Average" in strategy.name else cleaned_data)
         summary = strategy.summary_func(analysis_result)
         
         if summary.empty:
             print(f"No profitable bets found for {strategy.name}")
             return
         
-        # Save results
-        file_manager.save_best_bets_only(summary, strategy.summary_file)
-        file_manager.save_full_betting_data(analysis_result, summary, strategy.full_file)
-        print(f"Completed {strategy.name}: found {len(summary)} profitable bets")
+        # Save summary (best bets only) and get the filtered data back
+        filtered_summary = file_manager.save_best_bets_only(summary, strategy.summary_file)
+        
+        # Save full data using the SAME filtered summary (not the original summary)
+        file_manager.save_full_betting_data(analysis_result, filtered_summary, strategy.full_file)
+        
+        print(f"Completed {strategy.name}: found {len(filtered_summary)} best bets (from {len(summary)} total profitable bets)")
         
     except Exception as e:
         print(f"Error running {strategy.name}: {e}")
