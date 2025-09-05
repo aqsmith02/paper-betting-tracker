@@ -1,17 +1,12 @@
 Match,League,Team,Start Time,Outlier Book,Outlier Odds,Modified Z Score,Result,Scrape Time
-SD Eibar @ SD Huesca,La Liga 2 - Spain,Draw,2025-09-01 13:31:00,Pinnacle,1.38,5.85,Not Found,2025-09-01 15:20:49
 Cleveland Guardians @ Boston Red Sox,MLB,Boston Red Sox,2025-09-01 13:37:00,MyBookie.ag,1.75,5.06,Boston Red Sox,2025-09-01 15:20:49
 Atlanta Braves @ Chicago Cubs,MLB,Atlanta Braves,2025-09-01 16:05:00,GTbets,2.17,5.06,Chicago Cubs,2025-09-01 15:20:49
-Deportivo La Coruña @ Leganés,La Liga 2 - Spain,Deportivo La Coruña,2025-09-01 15:30:00,Pinnacle,3.35,4.05,Not Found,2025-09-01 15:20:49
 Toronto Argonauts @ Hamilton Tiger-Cats,CFL,Hamilton Tiger-Cats,2025-09-01 14:39:02,Unibet,1.57,3.71,Hamilton Tiger-Cats,2025-09-01 15:20:49
 Oakland Athletics @ St. Louis Cardinals,MLB,St. Louis Cardinals,2025-09-01 14:16:00,BetMGM,3.8,3.04,Oakland Athletics,2025-09-01 15:20:49
 Toronto Blue Jays @ Cincinnati Reds,MLB,Toronto Blue Jays,2025-09-01 13:11:00,TAB,4.5,2.98,Cincinnati Reds,2025-09-01 15:20:49
 Vila Nova @ Chapecoense,Brazil Série B,Chapecoense,2025-09-01 18:00:00,Pinnacle,1.88,2.92,Draw,2025-09-01 15:20:49
 New York Mets @ Detroit Tigers,MLB,Detroit Tigers,2025-09-01 13:11:00,BetMGM,6.5,2.7,New York Mets,2025-09-01 15:20:49
-St Kitts & Nevis Patriots @ Trinbago Knight Riders,CPLT20,Trinbago Knight Riders,2025-09-01 11:00:00,Bovada,1.14,2.56,Pending,2025-09-01 15:20:49
 Philadelphia Phillies @ Milwaukee Brewers,MLB,Philadelphia Phillies,2025-09-01 16:11:00,Pinnacle,2.35,2.29,Philadelphia Phillies,2025-09-01 15:20:49
-Jaume Munar @ Lorenzo Musetti,ATP US Open,Jaume Munar,2025-09-01 14:35:00,Unibet (IT),7.5,2.12,Not Found,2025-09-01 15:20:49
-Atlético Tucuman @ Gimnasia La Plata,Primera División - Argentina,Atlético Tucuman,2025-09-01 16:00:00,Unibet,3.1,2.12,Not Found,2025-09-01 15:20:49
 Los Angeles Angels @ Houston Astros,MLB,Houston Astros,2025-09-01 14:10:00,PointsBet (AU),1.69,4.72,Houston Astros,2025-09-01 15:41:20
 Chicago White Sox @ Minnesota Twins,MLB,Chicago White Sox,2025-09-01 14:11:00,Pinnacle,1.51,3.37,Chicago White Sox,2025-09-01 15:41:20
 Godoy Cruz @ Platense,Primera División - Argentina,Godoy Cruz,2025-09-01 18:15:00,Unibet,3.9,2.7,Godoy Cruz,2025-09-01 15:41:20
@@ -20,55 +15,53 @@ Dallas Wings @ Minnesota Lynx,WNBA,Dallas Wings,2025-09-01 20:00:00,Pinnacle,13.
 Seattle Mariners @ Tampa Bay Rays,MLB,Seattle Mariners,2025-09-01 19:36:00,Everygame,2.0,2.92,Tampa Bay Rays,2025-09-01 16:20:13
 Baltimore Orioles @ San Diego Padres,MLB,Baltimore Orioles,2025-09-01 18:41:00,Pinnacle,2.51,2.47,Baltimore Orioles,2025-09-01 16:20:13
 San Francisco Giants @ Colorado Rockies,MLB,San Francisco Giants,2025-09-01 16:11:00,William Hill,1.73,2.47,San Francisco Giants,2025-09-01 16:32:58
-Alexander Bublik @ Jannik Sinner,ATP US Open,Alexander Bublik,2025-09-01 19:00:00,PlayUp,11.0,5.58,Not Found,2025-09-01 16:42:32
 Edmonton Elks @ Calgary Stampeders,CFL,Calgary Stampeders,2025-09-01 18:00:00,Betway,1.33,3.37,Calgary Stampeders,2025-09-01 16:42:32
-Beatriz Haddad Maia @ Amanda Anisimova,WTA US Open,Beatriz Haddad Maia,2025-09-01 21:00:00,Winamax (DE),4.2,3.37,Not Found,2025-09-01 18:19:49
 Texas Rangers @ Arizona Diamondbacks,MLB,Texas Rangers,2025-09-01 20:10:00,William Hill,2.3,2.7,Texas Rangers,2025-09-01 18:19:49
 Cuiabá @ Ferroviária,Brazil Série B,Ferroviária,2025-09-01 20:30:00,Pinnacle,2.82,2.33,Draw,2025-09-01 18:19:49
 Los Angeles Sparks @ Seattle Storm,WNBA,Seattle Storm,2025-09-01 22:00:00,Ladbrokes,1.32,2.02,Seattle Storm,2025-09-01 18:59:01
 Hokkaido Nippon-Ham Fighters @ Chiba Lotte Marines,NPB,Hokkaido Nippon-Ham Fighters,2025-09-02 05:00:00,BetMGM,1.5,4.05,Hokkaido Nippon-Ham Fighters,2025-09-01 19:17:58
 Hanshin Tigers @ Chunichi Dragons,NPB,Hanshin Tigers,2025-09-02 05:00:00,BetOnline.ag,1.69,2.36,Hanshin Tigers,2025-09-01 19:39:39
 Yokohama DeNA BayStars @ Hiroshima Toyo Carp,NPB,Hiroshima Toyo Carp,2025-09-02 05:00:00,LowVig.ag,1.89,2.02,Yokohama DeNA BayStars,2025-09-01 20:46:16
-NC Dinos @ KT Wiz,KBO,KT Wiz,2025-09-02 05:30:00,Fanatics,1.59,3.37,Not Found,2025-09-01 22:19:27
+NC Dinos @ KT Wiz,KBO,KT Wiz,2025-09-02 05:30:00,Fanatics,1.59,3.37,NC Dinos,2025-09-01 22:19:27
 Tokyo Yakult Swallows @ Yomiuri Giants,NPB,Yomiuri Giants,2025-09-02 05:00:00,Caesars,1.67,3.37,Yomiuri Giants,2025-09-01 23:15:29
-Saitama Seibu Lions @ Tohoku Rakuten Golden Eagles,NPB,Saitama Seibu Lions,2025-09-02 05:00:00,Pinnacle,1.73,3.37,Pending,2025-09-01 23:15:29
+Saitama Seibu Lions @ Tohoku Rakuten Golden Eagles,NPB,Saitama Seibu Lions,2025-09-02 05:00:00,Pinnacle,1.73,3.37,Saitama Seibu Lions,2025-09-01 23:15:29
 Orix Buffaloes @ Fukuoka SoftBank Hawks,NPB,Fukuoka SoftBank Hawks,2025-09-02 05:00:00,William Hill,1.71,2.7,Fukuoka SoftBank Hawks,2025-09-02 00:21:13
 South Africa @ England,One Day Internationals,South Africa,2025-09-02 08:00:00,DraftKings,2.5,5.06,Not Found,2025-09-02 05:12:53
-Kia Tigers @ Hanwha Eagles,KBO,Kia Tigers,2025-09-02 05:30:00,BetMGM,2.4,4.72,Not Found,2025-09-02 05:12:53
+Kia Tigers @ Hanwha Eagles,KBO,Kia Tigers,2025-09-02 05:30:00,BetMGM,2.4,4.72,Hanwha Eagles,2025-09-02 05:12:53
 Barbora Krejcikova @ Jessica Pegula,WTA US Open,Barbora Krejcikova,2025-09-02 11:30:00,FanDuel,3.2,2.7,Not Found,2025-09-02 05:12:53
 Pakistan @ Afghanistan,International Twenty20,Pakistan,2025-09-02 11:00:00,BetOnline.ag,1.65,2.02,Not Found,2025-09-02 05:12:53
-Toronto Blue Jays @ Cincinnati Reds,MLB,Cincinnati Reds,2025-09-02 18:41:00,LowVig.ag,1.95,5.4,Not Found,2025-09-02 05:31:47
+Toronto Blue Jays @ Cincinnati Reds,MLB,Cincinnati Reds,2025-09-02 18:41:00,LowVig.ag,1.95,5.4,Toronto Blue Jays,2025-09-02 05:31:47
 Carlos Alcaraz @ Jiri Lehecka,ATP US Open,Carlos Alcaraz,2025-09-02 13:30:00,1xBet,1.08,4.05,Not Found,2025-09-02 05:31:47
-Lotte Giants @ LG Twins,KBO,LG Twins,2025-09-02 05:30:00,Nordic Bet,1.58,3.37,Not Found,2025-09-02 05:31:47
-New York Mets @ Detroit Tigers,MLB,Detroit Tigers,2025-09-02 18:41:00,BetUS,2.24,3.1,Not Found,2025-09-02 05:31:47
-Kiwoom Heroes @ SSG Landers,KBO,Kiwoom Heroes,2025-09-02 05:30:00,William Hill,3.25,2.33,Not Found,2025-09-02 05:31:47
-Avai @ América Mineiro,Brazil Série B,Avai,2025-09-02 18:30:00,Pinnacle,3.35,2.7,Not Found,2025-09-02 05:43:36
-Los Angeles Dodgers @ Pittsburgh Pirates,MLB,Los Angeles Dodgers,2025-09-02 18:41:00,GTbets,1.65,3.37,Not Found,2025-09-02 09:19:12
-Cleveland Guardians @ Boston Red Sox,MLB,Cleveland Guardians,2025-09-02 18:46:00,Betway,3.25,2.02,Not Found,2025-09-02 10:39:57
+Lotte Giants @ LG Twins,KBO,LG Twins,2025-09-02 05:30:00,Nordic Bet,1.58,3.37,LG Twins,2025-09-02 05:31:47
+New York Mets @ Detroit Tigers,MLB,Detroit Tigers,2025-09-02 18:41:00,BetUS,2.24,3.1,New York Mets,2025-09-02 05:31:47
+Kiwoom Heroes @ SSG Landers,KBO,Kiwoom Heroes,2025-09-02 05:30:00,William Hill,3.25,2.33,SSG Landers,2025-09-02 05:31:47
+Avai @ América Mineiro,Brazil Série B,Avai,2025-09-02 18:30:00,Pinnacle,3.35,2.7,América Mineiro,2025-09-02 05:43:36
+Los Angeles Dodgers @ Pittsburgh Pirates,MLB,Los Angeles Dodgers,2025-09-02 18:41:00,GTbets,1.65,3.37,Pittsburgh Pirates,2025-09-02 09:19:12
+Cleveland Guardians @ Boston Red Sox,MLB,Cleveland Guardians,2025-09-02 18:46:00,Betway,3.25,2.02,Boston Red Sox,2025-09-02 10:39:57
 Namibia @ Canada,One Day Internationals,Namibia,2025-09-02 10:30:00,DraftKings,1.67,2.7,Not Found,2025-09-02 11:20:45
-Miami Marlins @ Washington Nationals,MLB,Miami Marlins,2025-09-02 18:46:00,Pinnacle,2.01,2.02,Not Found,2025-09-02 11:20:45
-Syracuse Mets @ Buffalo Bisons,MiLB,Buffalo Bisons,2025-09-02 18:05:00,BetRivers,2.02,4.72,Not Found,2025-09-02 12:37:03
-St. Paul Saints @ Louisville Bats,MiLB,St. Paul Saints,2025-09-02 18:35:00,BetRivers,2.0,3.37,Not Found,2025-09-02 12:37:03
-Nashville Sounds @ Norfolk Tides,MiLB,Nashville Sounds,2025-09-02 18:35:00,Bovada,1.91,2.47,Not Found,2025-09-02 12:37:03
-Indianapolis Indians @ Columbus Clippers,MiLB,Indianapolis Indians,2025-09-02 18:15:00,Bovada,1.77,2.02,Not Found,2025-09-02 12:37:03
+Miami Marlins @ Washington Nationals,MLB,Miami Marlins,2025-09-02 18:46:00,Pinnacle,2.01,2.02,Washington Nationals,2025-09-02 11:20:45
+Syracuse Mets @ Buffalo Bisons,MiLB,Buffalo Bisons,2025-09-02 18:05:00,BetRivers,2.02,4.72,Buffalo Bisons,2025-09-02 12:37:03
+St. Paul Saints @ Louisville Bats,MiLB,St. Paul Saints,2025-09-02 18:35:00,BetRivers,2.0,3.37,Louisville Bats,2025-09-02 12:37:03
+Nashville Sounds @ Norfolk Tides,MiLB,Nashville Sounds,2025-09-02 18:35:00,Bovada,1.91,2.47,Nashville Sounds,2025-09-02 12:37:03
+Indianapolis Indians @ Columbus Clippers,MiLB,Indianapolis Indians,2025-09-02 18:15:00,Bovada,1.77,2.02,Indianapolis Indians,2025-09-02 12:37:03
 Scranton/Wilkes-Barre RailRiders @ Worcester Red Sox,MiLB,Scranton/Wilkes-Barre RailRiders,2025-09-02 18:05:00,BetOnline.ag,2.0,2.19,Not Found,2025-09-02 16:45:09
 Marketa Vondrousova @ Aryna Sabalenka,WTA US Open,Aryna Sabalenka,2025-09-02 17:11:00,Pinnacle,1.36,2.02,Not Found,2025-09-02 17:17:37
 Taylor Fritz @ Novak Djokovic,ATP US Open,Taylor Fritz,2025-09-02 17:31:00,BetOnline.ag,2.79,5.73,Not Found,2025-09-02 17:28:23
-Seattle Mariners @ Tampa Bay Rays,MLB,Tampa Bay Rays,2025-09-02 19:35:00,BetUS,2.08,2.56,Not Found,2025-09-02 18:31:38
-Toledo Mud Hens @ Lehigh Valley IronPigs,MiLB,Lehigh Valley IronPigs,2025-09-02 18:45:00,BetOnline.ag,1.89,2.02,Not Found,2025-09-02 18:31:38
-Atlanta Braves @ Chicago Cubs,MLB,Chicago Cubs,2025-09-02 19:40:00,BetUS,1.62,2.25,Not Found,2025-09-02 18:40:55
-Los Angeles Angels @ Kansas City Royals,MLB,Los Angeles Angels,2025-09-02 19:40:00,Everygame,2.45,2.12,Not Found,2025-09-02 18:48:27
-Chicago White Sox @ Minnesota Twins,MLB,Minnesota Twins,2025-09-02 19:40:00,BetUS,1.76,2.02,Not Found,2025-09-02 18:48:27
-Rochester Red Wings @ Memphis Redbirds,MiLB,Rochester Red Wings,2025-09-02 19:45:00,Caesars,2.4,2.02,Not Found,2025-09-02 18:48:27
+Seattle Mariners @ Tampa Bay Rays,MLB,Tampa Bay Rays,2025-09-02 19:35:00,BetUS,2.08,2.56,Tampa Bay Rays,2025-09-02 18:31:38
+Toledo Mud Hens @ Lehigh Valley IronPigs,MiLB,Lehigh Valley IronPigs,2025-09-02 18:45:00,BetOnline.ag,1.89,2.02,Lehigh Valley IronPigs,2025-09-02 18:31:38
+Atlanta Braves @ Chicago Cubs,MLB,Chicago Cubs,2025-09-02 19:40:00,BetUS,1.62,2.25,Chicago Cubs,2025-09-02 18:40:55
+Los Angeles Angels @ Kansas City Royals,MLB,Los Angeles Angels,2025-09-02 19:40:00,Everygame,2.45,2.12,Los Angeles Angels,2025-09-02 18:48:27
+Chicago White Sox @ Minnesota Twins,MLB,Minnesota Twins,2025-09-02 19:40:00,BetUS,1.76,2.02,Chicago White Sox,2025-09-02 18:48:27
+Rochester Red Wings @ Memphis Redbirds,MiLB,Rochester Red Wings,2025-09-02 19:45:00,Caesars,2.4,2.02,Memphis Redbirds,2025-09-02 18:48:27
 Oakland Athletics @ St. Louis Cardinals,MLB,St. Louis Cardinals,2025-09-02 19:45:00,Pinnacle,2.02,2.02,Not Found,2025-09-02 19:33:06
-New York Yankees @ Houston Astros,MLB,New York Yankees,2025-09-02 20:10:00,1xBet,1.87,3.37,Not Found,2025-09-02 19:41:01
+New York Yankees @ Houston Astros,MLB,New York Yankees,2025-09-02 20:10:00,1xBet,1.87,3.37,New York Yankees,2025-09-02 19:41:01
 Tommy McMillen @ David Mgoyan,MMA,David Mgoyan,2025-09-02 20:15:00,FanDuel,1.61,3.04,Not Found,2025-09-02 19:41:01
 Eduardo Henrique @ An Tuan Ho,MMA,An Tuan Ho,2025-09-02 20:40:00,BetOnline.ag,2.3,4.72,Not Found,2025-09-02 19:48:27
-El Paso Chihuahuas @ Salt Lake Bees,MiLB,Salt Lake Bees,2025-09-02 21:00:00,BetRivers,2.23,2.7,Not Found,2025-09-02 19:48:27
-San Francisco Giants @ Colorado Rockies,MLB,San Francisco Giants,2025-09-02 20:40:00,Pinnacle,1.46,2.02,Not Found,2025-09-02 19:48:27
+El Paso Chihuahuas @ Salt Lake Bees,MiLB,Salt Lake Bees,2025-09-02 21:00:00,BetRivers,2.23,2.7,El Paso Chihuahuas,2025-09-02 19:48:27
+San Francisco Giants @ Colorado Rockies,MLB,San Francisco Giants,2025-09-02 20:40:00,Pinnacle,1.46,2.02,San Francisco Giants,2025-09-02 19:48:27
 Samuel Silva @ Mandel Nallo,MMA,Samuel Silva,2025-09-02 21:05:00,Pinnacle,1.8,5.4,Not Found,2025-09-02 20:55:08
-Texas Rangers @ Arizona Diamondbacks,MLB,Arizona Diamondbacks,2025-09-02 21:40:00,GTbets,1.97,4.05,Not Found,2025-09-02 20:55:08
-Las Vegas Aviators @ Sacramento River Cats,MiLB,Sacramento River Cats,2025-09-02 21:45:00,Bovada,2.25,2.02,Not Found,2025-09-02 20:55:08
+Texas Rangers @ Arizona Diamondbacks,MLB,Arizona Diamondbacks,2025-09-02 21:40:00,GTbets,1.97,4.05,Arizona Diamondbacks,2025-09-02 20:55:08
+Las Vegas Aviators @ Sacramento River Cats,MiLB,Sacramento River Cats,2025-09-02 21:45:00,Bovada,2.25,2.02,Las Vegas Aviators,2025-09-02 20:55:08
 Jean-Paul Lebosnoyani @ Jack Congdon,MMA,Jean-Paul Lebosnoyani,2025-09-02 21:55:00,Pinnacle,1.21,2.02,Not Found,2025-09-02 20:55:08
 New Zealand Warriors @ Manly Warringah Sea Eagles,NRL,Draw,2025-09-05 04:00:00,Marathon Bet,30.0,5.4,Not Found,2025-09-05 00:27:10
 Doosan Bears @ NC Dinos,KBO,NC Dinos,2025-09-05 05:30:00,LowVig.ag,1.78,2.7,Not Found,2025-09-05 00:27:10
