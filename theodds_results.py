@@ -147,8 +147,6 @@ sports_with_results = [
 ]
 
 API_KEY = "7ca177e18aa6a5230dddc27a238e3f73"
-# https://api.the-odds-api.com/v4/sports/{sports_key}/scores/?daysFrom=3&apiKey=7ca177e18aa6a5230dddc27a238e3f73
-# https://api.the-odds-api.com/v4/sports/baseball_mlb/scores/?daysFrom=3&apiKey=7ca177e18aa6a5230dddc27a238e3f73
 
 
 # ------------------------------------------ Formatting Helpers ---------------------------------------------

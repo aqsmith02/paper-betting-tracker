@@ -15,8 +15,6 @@ from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
 THESPORTSDB_API_KEY = "123"
-# https://www.thesportsdb.com/api/v1/json/123/searchevents.php?e={match}&d={date}
-# https://www.thesportsdb.com/api/v1/json/123/searchevents.php?e=Atlanta_Braves_vs_Texas_Rangers
 
 
 # ----------------------------------------- Formatting Helpers ----------------------------------------------
