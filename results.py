@@ -85,5 +85,3 @@ if __name__ == "__main__":
         full_df.to_csv(full_file,index=False)
 
         time.sleep(60)
-
-# International Twenty20, boxing, mma,
