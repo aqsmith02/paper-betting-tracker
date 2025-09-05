@@ -266,7 +266,16 @@ def organize(df: pd.DataFrame) -> pd.DataFrame:
 
 
 # ------------------------------------------ Main Pipeline ------------------------------------------ #
-if __name__ == "__main__":
+def main() -> None:
+    """
+    Main pipeline for fetching, organizing, and saving sports betting odds.
+    
+    Args:
+        None
+        
+    Returns:
+        None
+    """
     # Fetch and organize odds data
     print("Starting odds fetch...")
     raw_odds = fetch_odds()
@@ -281,3 +290,7 @@ if __name__ == "__main__":
         print(f"Saved {len(organized_odds)} outcomes to {output_file}")
     else:
         print("No odds data retrieved")
+
+
+if __name__ == "__main__":
+    main()
