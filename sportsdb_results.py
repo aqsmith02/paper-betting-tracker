@@ -150,8 +150,8 @@ def get_finished_games_from_thesportsdb(df: pd.DataFrame) -> pd.DataFrame:
     if "Result" not in df.columns:
         df["Result"] = "Not Found"
 
-    # Only loop through games that started more than 0.5 hours ago
-    indices = _time_since_start(df, 0.5).index.tolist()
+    # Only loop through games that started more than 12 hours ago
+    indices = _time_since_start(df, 12).index.tolist()
 
     # Track API requests to respect rate limits
     fetches = 0

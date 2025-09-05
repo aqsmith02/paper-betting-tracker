@@ -311,8 +311,8 @@ def get_finished_games_from_theodds(df: pd.DataFrame, sports_key: str) -> pd.Dat
     # Get a list of the games from the past 3 days in the specified sport
     scores = _get_scores_from_api(sports_key)
 
-    # Filter out games that started less than 0.5 hours ago
-    indices = _time_since_start(df, 0.5).index.tolist()
+    # Filter out games that started less than 12 hours ago
+    indices = _time_since_start(df, 12).index.tolist()
 
     for i in indices:
         row = df.iloc[i]
