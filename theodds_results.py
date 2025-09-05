@@ -296,7 +296,7 @@ def _get_winner(game: dict, home: str, away: str) -> str:
 
 
 # --------------------------------------- Results Column Function -------------------------------------------
-def get_finished_games(df: pd.DataFrame, sports_key: str) -> pd.DataFrame:
+def get_finished_games_from_theodds(df: pd.DataFrame, sports_key: str) -> pd.DataFrame:
     """
     Given a DataFrame of bets placed, add a Results column that indicates the winner.
 
@@ -433,6 +433,6 @@ if __name__ == "__main__":
 
     # Loop through keys
     for key in keys:
-        df = get_finished_games(df, key)
+        df = get_finished_games_from_theodds(df, key)
 
     df.to_csv(output_csv,index=False)
