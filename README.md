@@ -13,8 +13,8 @@ This project tracks sports bets and results using Python scripts and CSV files. 
 .
 ├── fetch_odds.py           # Fetches and organizes odds data
 ├── find_bets.py            # Analyzes odds and logs profitable bets
-├── sportsdb_results.py     # (Optional) Integrates with sports databases
-├── theodds_results.py      # (Optional) Integrates with The-Odds-API results
+├── sportsdb_results.py     # Functions for pulling results from TheSportsDB
+├── theodds_results.py      # Functions for pulling results from The-Odds-API
 ├── results.py              # Updates bet results
 ├── data/                   # Contains all bet and result CSV files
 │   ├── master_avg_bets.csv
@@ -25,7 +25,7 @@ This project tracks sports bets and results using Python scripts and CSV files. 
 │   ├── master_pin_full.csv
 │   ├── master_zscore_bets.csv
 │   ├── master_zscore_full.csv
-├── .github/workflows/      # GitHub Actions workflows
+├── .github/workflows/      # GitHub Actions workflows for automated running
 │   ├── hourly-bet-finder.yml
 │   └── results.yml
 ├── requirements.txt        # Python dependencies
