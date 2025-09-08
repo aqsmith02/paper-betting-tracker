@@ -148,7 +148,7 @@ Missouri State Bears @ Marshall Thundering Herd,NCAAF,Marshall Thundering Herd,2
 Caio Borralho @ Nassourdine Imavov,MMA,Caio Borralho,2025-09-06 17:55:00,1xBet,1.83,2.42,Not Found,2025-09-06 16:48:21
 Mauricio Ruffy @ Benoit Saint-Denis,MMA,Mauricio Ruffy,2025-09-06 17:25:00,DraftKings,1.68,2.3,Not Found,2025-09-06 16:48:21
 Jackson State Tigers @ Southern Mississippi Golden Eagles,NCAAF,Southern Mississippi Golden Eagles,2025-09-06 17:05:00,FanDuel,1.2,2.05,Not Found,2025-09-06 16:48:21
-Sacramento State Hornets @ Nevada Wolf Pack,NCAAF,Sacramento State Hornets,2025-09-06 17:12:00,DraftKings,3.6,2.4,API Error,2025-09-06 17:08:41
+Sacramento State Hornets @ Nevada Wolf Pack,NCAAF,Sacramento State Hornets,2025-09-06 17:12:00,DraftKings,3.6,2.4,Not Found,2025-09-06 17:08:41
 Lindenwood Lions @ Appalachian State Mountaineers,NCAAF,Appalachian State Mountaineers,2025-09-06 15:32:49,GTbets,1.03,2.18,Appalachian State Mountaineers,2025-09-06 17:08:41
 Florida A&M Rattlers @ Florida Atlantic Owls,NCAAF,Florida A&M Rattlers,2025-09-06 18:00:00,Unibet,15.0,2.67,API Error,2025-09-06 18:08:55
 Milwaukee Brewers @ Pittsburgh Pirates,MLB,Pittsburgh Pirates,2025-09-06 18:41:00,GTbets,2.3,2.63,Milwaukee Brewers,2025-09-06 18:08:55
@@ -207,7 +207,7 @@ South Africa @ England,One Day Internationals,South Africa,2025-09-07 06:00:00,W
 Bulgaria @ Georgia,FIFA World Cup Qualifiers - Europe,Georgia,2025-09-07 09:00:00,1xBet,1.41,3.07,Georgia,2025-09-07 04:12:35
 SD Huesca @ AD Ceuta FC,La Liga 2 - Spain,Draw,2025-09-07 08:00:00,Unibet,3.1,2.26,Not Found,2025-09-07 04:12:35
 Las Palmas @ Burgos CF,La Liga 2 - Spain,Draw,2025-09-07 10:15:00,Pinnacle,3.16,2.33,Not Found,2025-09-07 04:33:09
-Afghanistan @ Pakistan,International Twenty20,Pakistan,2025-09-07 11:00:00,William Hill,1.73,3.12,API Error,2025-09-07 05:09:54
+Afghanistan @ Pakistan,International Twenty20,Pakistan,2025-09-07 11:00:00,William Hill,1.73,3.12,Not Found,2025-09-07 05:09:54
 Sri Lanka @ Zimbabwe,International Twenty20,Sri Lanka,2025-09-07 07:30:00,Paddy Power,1.44,2.14,API Error,2025-09-07 05:09:54
 Cádiz CF @ Real Sociedad B,La Liga 2 - Spain,Cádiz CF,2025-09-07 10:15:00,Pinnacle,2.3,2.07,API Error,2025-09-07 05:09:54
 Galway United @ Shelbourne Dublin,League of Ireland,Shelbourne Dublin,2025-09-07 12:00:00,Pinnacle,1.93,2.22,Shelbourne Dublin,2025-09-07 06:30:21
@@ -244,26 +244,26 @@ El Paso Chihuahuas @ Salt Lake Bees,MiLB,El Paso Chihuahuas,2025-09-07 14:05:00,
 Kazakhstan @ Belgium,FIFA World Cup Qualifiers - Europe,Belgium,2025-09-07 14:45:00,1xBet,1.07,2.25,Belgium,2025-09-07 14:12:55
 Omaha Storm Chasers @ Iowa Cubs,MiLB,Omaha Storm Chasers,2025-09-07 14:08:00,Caesars,2.3,2.18,API Error,2025-09-07 14:12:55
 Spain @ Turkey,FIFA World Cup Qualifiers - Europe,Turkey,2025-09-07 14:45:00,1xBet,6.62,2.66,Spain,2025-09-07 14:36:44
-Chapecoense @ Criciuma,Brazil Série B,Chapecoense,2025-09-07 15:00:00,Pinnacle,4.45,2.32,Not Found,2025-09-07 14:36:44
+Chapecoense @ Criciuma,Brazil Série B,Chapecoense,2025-09-07 15:00:00,Pinnacle,4.45,2.32,Chapecoense,2025-09-07 14:36:44
 San Francisco Giants @ St. Louis Cardinals,MLB,St. Louis Cardinals,2025-09-07 14:16:00,William Hill,1.73,2.32,St. Louis Cardinals,2025-09-07 14:36:44
 Slovakia @ Luxembourg,FIFA World Cup Qualifiers - Europe,Luxembourg,2025-09-07 14:45:00,Paddy Power,5.5,2.51,Slovakia,2025-09-07 14:49:16
-San Diego Padres @ Colorado Rockies,MLB,Colorado Rockies,2025-09-07 15:11:00,Pinnacle,3.16,2.41,Not Found,2025-09-07 14:49:16
-San Francisco 49ers @ Seattle Seahawks,NFL,Seattle Seahawks,2025-09-07 16:05:00,Pinnacle,2.18,2.38,Not Found,2025-09-07 14:49:16
-Indiana Fever @ Washington Mystics,WNBA,Indiana Fever,2025-09-07 15:00:00,Bovada,1.4,2.24,Not Found,2025-09-07 14:49:16
-Detroit Lions @ Green Bay Packers,NFL,Detroit Lions,2025-09-07 16:25:00,William Hill,2.1,3.58,Not Found,2025-09-07 15:07:39
-Boston Red Sox @ Arizona Diamondbacks,MLB,Boston Red Sox,2025-09-07 16:11:00,Pinnacle,1.98,2.23,Not Found,2025-09-07 15:07:39
-Las Vegas Aviators @ Sacramento River Cats,MiLB,Las Vegas Aviators,2025-09-07 16:05:00,BetOnline.ag,2.21,2.05,Not Found,2025-09-07 15:35:31
-Tennessee Titans @ Denver Broncos,NFL,Denver Broncos,2025-09-07 16:05:00,Pinnacle,1.24,2.54,Not Found,2025-09-07 15:48:00
-Round Rock Express @ Albuquerque Isotopes,MiLB,Round Rock Express,2025-09-07 15:35:00,Betway,2.3,2.05,Not Found,2025-09-07 15:48:00
-Operario PR @ América Mineiro,Brazil Série B,Draw,2025-09-07 17:30:00,Marathon Bet,3.2,2.88,Not Found,2025-09-07 16:10:36
-Oakland Athletics @ Los Angeles Angels,MLB,Oakland Athletics,2025-09-07 16:08:00,Winamax (DE),1.96,2.16,Not Found,2025-09-07 16:10:36
+San Diego Padres @ Colorado Rockies,MLB,Colorado Rockies,2025-09-07 15:11:00,Pinnacle,3.16,2.41,San Diego Padres,2025-09-07 14:49:16
+San Francisco 49ers @ Seattle Seahawks,NFL,Seattle Seahawks,2025-09-07 16:05:00,Pinnacle,2.18,2.38,API Error,2025-09-07 14:49:16
+Indiana Fever @ Washington Mystics,WNBA,Indiana Fever,2025-09-07 15:00:00,Bovada,1.4,2.24,Washington Mystics,2025-09-07 14:49:16
+Detroit Lions @ Green Bay Packers,NFL,Detroit Lions,2025-09-07 16:25:00,William Hill,2.1,3.58,API Error,2025-09-07 15:07:39
+Boston Red Sox @ Arizona Diamondbacks,MLB,Boston Red Sox,2025-09-07 16:11:00,Pinnacle,1.98,2.23,Arizona Diamondbacks,2025-09-07 15:07:39
+Las Vegas Aviators @ Sacramento River Cats,MiLB,Las Vegas Aviators,2025-09-07 16:05:00,BetOnline.ag,2.21,2.05,API Error,2025-09-07 15:35:31
+Tennessee Titans @ Denver Broncos,NFL,Denver Broncos,2025-09-07 16:05:00,Pinnacle,1.24,2.54,API Error,2025-09-07 15:48:00
+Round Rock Express @ Albuquerque Isotopes,MiLB,Round Rock Express,2025-09-07 15:35:00,Betway,2.3,2.05,API Error,2025-09-07 15:48:00
+Operario PR @ América Mineiro,Brazil Série B,Draw,2025-09-07 17:30:00,Marathon Bet,3.2,2.88,API Error,2025-09-07 16:10:36
+Oakland Athletics @ Los Angeles Angels,MLB,Oakland Athletics,2025-09-07 16:08:00,Winamax (DE),1.96,2.16,Oakland Athletics,2025-09-07 16:10:36
 Austin FC @ Sporting Kansas City,MLS,Austin FC,2025-09-07 19:00:00,Pinnacle,2.97,2.15,Not Found,2025-09-07 16:10:36
 Goiás @ Avai,Brazil Série B,Goiás,2025-09-07 19:30:00,Pinnacle,4.03,2.06,Not Found,2025-09-07 16:10:36
 St Kitts & Nevis Patriots @ Guyana Amazon Warriors,CPLT20,St Kitts & Nevis Patriots,2025-09-07 20:00:00,PointsBet (AU),2.6,3.35,Not Found,2025-09-07 16:29:13
 Baltimore Ravens @ Buffalo Bills,NFL,Baltimore Ravens,2025-09-07 20:20:00,Paddy Power,1.87,2.54,Not Found,2025-09-07 16:29:13
 Dallas Wings @ Los Angeles Sparks,WNBA,Los Angeles Sparks,2025-09-07 18:00:00,Ladbrokes,1.24,2.15,Not Found,2025-09-07 16:29:13
-Houston Texans @ Los Angeles Rams,NFL,Houston Texans,2025-09-07 16:25:37,MyBookie.ag,2.75,2.3,Not Found,2025-09-07 16:48:11
-Reno Aces @ Tacoma Rainiers,MiLB,Reno Aces,2025-09-07 16:35:00,Betway,2.65,2.12,Not Found,2025-09-07 16:48:11
+Houston Texans @ Los Angeles Rams,NFL,Houston Texans,2025-09-07 16:25:37,MyBookie.ag,2.75,2.3,API Error,2025-09-07 16:48:11
+Reno Aces @ Tacoma Rainiers,MiLB,Reno Aces,2025-09-07 16:35:00,Betway,2.65,2.12,API Error,2025-09-07 16:48:11
 Orix Buffaloes @ Chiba Lotte Marines,NPB,Orix Buffaloes,2025-09-08 05:00:00,1xBet,1.68,2.36,Not Found,2025-09-07 17:37:09
 Oklahoma City Baseball Club @ Sugar Land Space Cowboys,MiLB,Oklahoma City Baseball Club,2025-09-07 19:35:00,BetOnline.ag,2.0,2.01,Not Found,2025-09-07 18:09:10
 Andorra CF @ SD Eibar,La Liga 2 - Spain,Draw,2025-09-08 14:30:00,Marathon Bet,3.5,2.02,Not Found,2025-09-07 18:29:30
