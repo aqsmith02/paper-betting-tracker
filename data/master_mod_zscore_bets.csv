@@ -32,7 +32,6 @@ Oakland Athletics @ Los Angeles Angels,MLB,Los Angeles Angels,2025-09-05 21:39:0
 Ferroviária @ Coritiba,Brazil Série B,Draw,2025-09-05 20:30:00,Bovada,3.5,3.37,Coritiba,2025-09-05 20:48:01
 San Francisco Giants @ St. Louis Cardinals,MLB,St. Louis Cardinals,2025-09-05 20:16:00,Caesars,3.15,2.02,San Francisco Giants,2025-09-05 20:48:01
 San Diego Padres @ Colorado Rockies,MLB,San Diego Padres,2025-09-05 20:40:43,MyBookie.ag,4.05,5.59,Colorado Rockies,2025-09-05 22:13:39
-LG Twins @ Doosan Bears,KBO,Doosan Bears,2025-09-06 04:00:00,LowVig.ag,2.2,4.72,Not Found,2025-09-05 22:13:39
 Boston Red Sox @ Arizona Diamondbacks,MLB,Arizona Diamondbacks,2025-09-05 21:41:00,William Hill,2.1,4.38,Arizona Diamondbacks,2025-09-05 22:13:39
 Wests Tigers @ Gold Coast Titans,NRL,Draw,2025-09-06 03:30:00,Marathon Bet,27.0,4.05,Gold Coast Titans,2025-09-05 22:13:39
 Reno Aces @ Tacoma Rainiers,MiLB,Tacoma Rainiers,2025-09-05 22:05:00,BetOnline.ag,1.65,3.37,Tacoma Rainiers,2025-09-05 22:13:39
@@ -125,11 +124,11 @@ Bryant Bulldogs @ UMass Minutemen,NCAAF,Bryant Bulldogs,2025-09-06 15:50:00,Unib
 Lindenwood Lions @ Appalachian State Mountaineers,NCAAF,Lindenwood Lions,2025-09-06 15:35:00,Fanatics,41.0,2.79,Appalachian State Mountaineers,2025-09-06 15:35:26
 North Texas Mean Green @ Western Michigan Broncos,NCAAF,North Texas Mean Green,2025-09-06 15:33:16,Ladbrokes,1.26,2.7,North Texas Mean Green,2025-09-06 15:35:26
 Amanda Anisimova @ Aryna Sabalenka,WTA US Open,Aryna Sabalenka,2025-09-06 16:00:00,Betway,1.6,4.05,Not Found,2025-09-06 15:47:41
-Middle Tennessee Blue Raiders @ Wisconsin Badgers,NCAAF,Middle Tennessee Blue Raiders,2025-09-06 16:00:00,SportsBet,41.0,3.78,Not Found,2025-09-06 15:47:41
-West Virginia Mountaineers @ Ohio Bobcats,NCAAF,Ohio Bobcats,2025-09-06 16:00:00,Bovada,2.55,3.37,Not Found,2025-09-06 15:47:41
+Middle Tennessee Blue Raiders @ Wisconsin Badgers,NCAAF,Middle Tennessee Blue Raiders,2025-09-06 16:00:00,SportsBet,41.0,3.78,API Error,2025-09-06 15:47:41
+West Virginia Mountaineers @ Ohio Bobcats,NCAAF,Ohio Bobcats,2025-09-06 16:00:00,Bovada,2.55,3.37,API Error,2025-09-06 15:47:41
 Texas State Bobcats @ UTSA Roadrunners,NCAAF,Texas State Bobcats,2025-09-06 15:32:35,Unibet (IT),3.25,2.42,Texas State Bobcats,2025-09-06 15:47:41
-Northern Iowa Panthers @ Wyoming Cowboys,NCAAF,Wyoming Cowboys,2025-09-06 16:05:00,Paddy Power,1.18,2.02,Not Found,2025-09-06 15:47:41
-Rhys McKee @ Axel Sola,MMA,Axel Sola,2025-09-06 15:49:00,Betclic (FR),1.73,5.51,Not Found,2025-09-06 16:10:22
+Northern Iowa Panthers @ Wyoming Cowboys,NCAAF,Wyoming Cowboys,2025-09-06 16:05:00,Paddy Power,1.18,2.02,API Error,2025-09-06 15:47:41
+Rhys McKee @ Axel Sola,MMA,Axel Sola,2025-09-06 15:49:00,Betclic (FR),1.73,5.51,API Error,2025-09-06 16:10:22
 South Florida Bulls @ Florida Gators,NCAAF,South Florida Bulls,2025-09-06 16:15:00,Marathon Bet,8.0,4.86,API Error,2025-09-06 16:10:22
 Paul Craig @ Modestas Bukauskas,MMA,Paul Craig,2025-09-06 16:55:00,BetOnline.ag,4.0,4.72,Not Found,2025-09-06 16:10:22
 Philadelphia Phillies @ Miami Marlins,MLB,Miami Marlins,2025-09-06 16:11:00,LowVig.ag,2.46,3.6,Philadelphia Phillies,2025-09-06 16:10:22
@@ -170,16 +169,16 @@ Cleveland Guardians @ Tampa Bay Rays,MLB,Cleveland Guardians,2025-09-06 19:06:00
 Indianapolis Indians @ Columbus Clippers,MiLB,Indianapolis Indians,2025-09-06 19:05:00,FanDuel,1.77,2.02,Columbus Clippers,2025-09-06 19:09:00
 Rochester Red Wings @ Memphis Redbirds,MiLB,Rochester Red Wings,2025-09-06 19:05:00,Caesars,2.4,2.02,Memphis Redbirds,2025-09-06 19:09:00
 San Francisco Giants @ St. Louis Cardinals,MLB,San Francisco Giants,2025-09-06 19:16:00,LowVig.ag,1.86,2.02,San Francisco Giants,2025-09-06 19:09:00
-Georgia Southern Eagles @ USC Trojans,NCAAF,Georgia Southern Eagles,2025-09-06 19:30:00,Pinnacle,28.93,3.35,Not Found,2025-09-06 19:25:27
-Boston College Eagles @ Michigan State Spartans,NCAAF,Boston College Eagles,2025-09-06 19:30:00,Everygame,2.5,2.25,Not Found,2025-09-06 19:25:27
+Georgia Southern Eagles @ USC Trojans,NCAAF,Georgia Southern Eagles,2025-09-06 19:30:00,Pinnacle,28.93,3.35,API Error,2025-09-06 19:25:27
+Boston College Eagles @ Michigan State Spartans,NCAAF,Boston College Eagles,2025-09-06 19:30:00,Everygame,2.5,2.25,API Error,2025-09-06 19:25:27
 UCLA Bruins @ UNLV Rebels,NCAAF,UNLV Rebels,2025-09-06 20:00:00,Pinnacle,2.13,5.4,UNLV Rebels,2025-09-06 19:37:30
 Boston Red Sox @ Arizona Diamondbacks,MLB,Arizona Diamondbacks,2025-09-06 20:11:00,GTbets,2.06,4.05,Arizona Diamondbacks,2025-09-06 19:37:30
-Charleston Southern Buccaneers @ Coastal Carolina Chanticleers,NCAAF,Charleston Southern Buccaneers,2025-09-06 19:35:00,DraftKings,36.0,3.37,Not Found,2025-09-06 19:37:30
-Northern Colorado Bears @ Colorado State Rams,NCAAF,Colorado State Rams,2025-09-06 19:00:00,GTbets,1.07,2.7,Not Found,2025-09-06 19:37:30
-Vanderbilt Commodores @ Virginia Tech Hokies,NCAAF,Virginia Tech Hokies,2025-09-06 19:35:26,Pinnacle,1.85,2.36,Not Found,2025-09-06 19:37:30
-Southern Illinois Salukis @ Purdue Boilermakers,NCAAF,Purdue Boilermakers,2025-09-06 19:35:54,DraftKings,1.19,4.05,Not Found,2025-09-06 19:48:29
-UL Monroe Warhawks @ Alabama Crimson Tide,NCAAF,UL Monroe Warhawks,2025-09-06 19:45:00,DraftKings,36.0,2.38,Not Found,2025-09-06 19:48:29
-Oklahoma City Baseball Club @ Sugar Land Space Cowboys,MiLB,Oklahoma City Baseball Club,2025-09-06 20:05:00,BetRivers,1.67,2.36,Not Found,2025-09-06 19:48:29
+Charleston Southern Buccaneers @ Coastal Carolina Chanticleers,NCAAF,Charleston Southern Buccaneers,2025-09-06 19:35:00,DraftKings,36.0,3.37,API Error,2025-09-06 19:37:30
+Northern Colorado Bears @ Colorado State Rams,NCAAF,Colorado State Rams,2025-09-06 19:00:00,GTbets,1.07,2.7,API Error,2025-09-06 19:37:30
+Vanderbilt Commodores @ Virginia Tech Hokies,NCAAF,Virginia Tech Hokies,2025-09-06 19:35:26,Pinnacle,1.85,2.36,API Error,2025-09-06 19:37:30
+Southern Illinois Salukis @ Purdue Boilermakers,NCAAF,Purdue Boilermakers,2025-09-06 19:35:54,DraftKings,1.19,4.05,API Error,2025-09-06 19:48:29
+UL Monroe Warhawks @ Alabama Crimson Tide,NCAAF,UL Monroe Warhawks,2025-09-06 19:45:00,DraftKings,36.0,2.38,API Error,2025-09-06 19:48:29
+Oklahoma City Baseball Club @ Sugar Land Space Cowboys,MiLB,Oklahoma City Baseball Club,2025-09-06 20:05:00,BetRivers,1.67,2.36,API Error,2025-09-06 19:48:29
 San Diego Padres @ Colorado Rockies,MLB,Colorado Rockies,2025-09-06 20:11:00,BetMGM,2.65,2.25,San Diego Padres,2025-09-06 19:48:29
 LA Galaxy @ Houston Dynamo,MLS,LA Galaxy,2025-09-06 20:48:00,LowVig.ag,5.38,5.31,Draw,2025-09-06 20:54:27
 New England Revolution @ Chicago Fire,MLS,Draw,2025-09-06 20:40:00,Paddy Power,13.0,4.05,Chicago Fire,2025-09-06 20:54:27
