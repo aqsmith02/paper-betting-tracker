@@ -274,9 +274,7 @@ Milwaukee Brewers @ Texas Rangers,MLB,Milwaukee Brewers,2025-09-10 14:36:00,1xBe
 Arizona Diamondbacks @ San Francisco Giants,MLB,Arizona Diamondbacks,2025-09-10 15:46:00,Everygame,2.01,2.33,San Francisco Giants,2025-09-10 05:31:40
 Boston Red Sox @ Oakland Athletics,MLB,Boston Red Sox,2025-09-10 15:36:00,LowVig.ag,1.8,2.26,Boston Red Sox,2025-09-10 05:31:40
 Ilves @ JYP,Liiga,JYP,2025-09-10 11:30:00,Coolbet,3.15,2.01,JYP,2025-09-10 06:11:11
-South Africa @ England,International Twenty20,England,2025-09-10 13:30:00,Pinnacle,1.67,2.01,Not Found,2025-09-10 09:01:34
 Iowa Cubs @ Indianapolis Indians,MiLB,Iowa Cubs,2025-09-10 13:35:00,BetOnline.ag,2.15,2.15,Indianapolis Indians,2025-09-10 11:47:57
-Sacramento River Cats @ Oklahoma City Baseball Club,MiLB,Sacramento River Cats,2025-09-10 13:05:00,BetOnline.ag,2.18,2.18,Not Found,2025-09-10 12:13:19
 Tappara @ Lukko,Liiga,Tappara,2025-09-10 11:30:00,Pinnacle,2.11,3.7,Tappara,2025-09-10 12:40:27
 Pittsburgh Pirates @ Baltimore Orioles,MLB,Baltimore Orioles,2025-09-10 18:36:00,Pinnacle,2.37,2.52,Baltimore Orioles,2025-09-10 15:36:44
 Buffalo Bisons @ Rochester Red Wings,MiLB,Rochester Red Wings,2025-09-10 18:05:00,BetOnline.ag,2.0,2.05,Buffalo Bisons,2025-09-10 15:36:44
@@ -401,7 +399,7 @@ Buffalo Bisons @ Rochester Red Wings,MiLB,Rochester Red Wings,2025-09-12 18:05:0
 Lehigh Valley IronPigs @ Scranton/Wilkes-Barre RailRiders,MiLB,Lehigh Valley IronPigs,2025-09-12 18:35:00,BetOnline.ag,2.0,2.05,Not Found,2025-09-12 15:23:38
 Norfolk Tides @ Durham Bulls,MiLB,Durham Bulls,2025-09-12 18:35:00,BetOnline.ag,1.65,2.03,Durham Bulls,2025-09-12 15:36:12
 Worcester Red Sox @ Syracuse Mets,MiLB,Syracuse Mets,2025-09-12 18:35:00,BetRivers,1.83,2.22,Syracuse Mets,2025-09-12 17:25:54
-Trinbago Knight Riders @ Barbados Royals,CPLT20,Barbados Royals,2025-09-12 19:00:00,PointsBet (AU),2.85,2.4,Not Found,2025-09-12 18:09:16
+Trinbago Knight Riders @ Barbados Royals,CPLT20,Barbados Royals,2025-09-12 19:00:00,PointsBet (AU),2.85,2.4,API Error,2025-09-12 18:09:16
 Pittsburgh Pirates @ Washington Nationals,MLB,Washington Nationals,2025-09-12 18:45:00,Pinnacle,1.96,2.26,Washington Nationals,2025-09-12 18:09:16
 Kansas City Royals @ Philadelphia Phillies,MLB,Kansas City Royals,2025-09-12 18:46:00,GTbets,2.26,2.22,Philadelphia Phillies,2025-09-12 18:09:16
 Iowa Cubs @ Indianapolis Indians,MiLB,Indianapolis Indians,2025-09-12 19:05:00,BetOnline.ag,2.06,2.22,Indianapolis Indians,2025-09-12 18:48:26
@@ -410,14 +408,14 @@ Houston Astros @ Atlanta Braves,MLB,Atlanta Braves,2025-09-12 19:16:00,William H
 Texas Rangers @ New York Mets,MLB,New York Mets,2025-09-12 19:11:00,BetUS,1.94,2.64,Texas Rangers,2025-09-12 19:09:44
 New York Yankees @ Boston Red Sox,MLB,New York Yankees,2025-09-12 19:11:00,Pinnacle,1.92,2.53,New York Yankees,2025-09-12 19:09:44
 Louisville Bats @ Toledo Mud Hens,MiLB,Louisville Bats,2025-09-12 19:05:00,Betway,2.35,2.45,Toledo Mud Hens,2025-09-12 19:09:44
-Colorado Buffaloes @ Houston Cougars,NCAAF,Colorado Buffaloes,2025-09-12 19:30:00,Pinnacle,2.7,2.43,Not Found,2025-09-12 19:09:44
+Colorado Buffaloes @ Houston Cougars,NCAAF,Colorado Buffaloes,2025-09-12 19:30:00,Pinnacle,2.7,2.43,API Error,2025-09-12 19:09:44
 Chicago White Sox @ Cleveland Guardians,MLB,Chicago White Sox,2025-09-12 19:11:00,Everygame,2.27,2.4,Cleveland Guardians,2025-09-12 19:09:44
 Everton de Viña del Mar @ Union La Calera,Primera División - Chile,Union La Calera,2025-09-12 19:30:00,Pinnacle,3.86,2.35,Unión La Calera,2025-09-12 19:09:44
 Gwinnett Stripers @ Nashville Sounds,MiLB,Nashville Sounds,2025-09-12 19:35:00,BetOnline.ag,1.76,2.49,Nashville Sounds,2025-09-12 19:25:42
 Columbus Clippers @ St. Paul Saints,MiLB,St. Paul Saints,2025-09-12 19:37:00,BetRivers,2.0,2.46,St. Paul Saints,2025-09-12 19:25:42
 Charlotte Knights @ Omaha Storm Chasers,MiLB,Charlotte Knights,2025-09-12 19:35:00,Bovada,2.15,2.08,Omaha Storm Chasers,2025-09-12 19:25:42
 Baltimore Orioles @ Toronto Blue Jays,MLB,Toronto Blue Jays,2025-09-12 19:08:00,Bet Victor,1.8,2.61,Toronto Blue Jays,2025-09-12 19:37:50
-Winnipeg Blue Bombers @ Hamilton Tiger-Cats,CFL,Hamilton Tiger-Cats,2025-09-12 19:00:00,Betsson,1.3,2.56,Not Found,2025-09-12 19:37:50
+Winnipeg Blue Bombers @ Hamilton Tiger-Cats,CFL,Hamilton Tiger-Cats,2025-09-12 19:00:00,Betsson,1.3,2.56,API Error,2025-09-12 19:37:50
 Arizona Diamondbacks @ Minnesota Twins,MLB,Arizona Diamondbacks,2025-09-12 20:11:00,GTbets,2.27,2.4,Minnesota Twins,2025-09-12 19:37:50
 St. Louis Cardinals @ Milwaukee Brewers,MLB,Milwaukee Brewers,2025-09-12 20:11:00,BetUS,1.57,2.09,Milwaukee Brewers,2025-09-12 19:37:50
 Independiente Rivadavia @ Lanus,Primera División - Argentina,Independiente Rivadavia,2025-09-12 20:15:00,LowVig.ag,4.9,2.07,Lanus,2025-09-12 19:37:50
@@ -429,15 +427,15 @@ FC Juárez @ Necaxa,Liga MX,FC Juárez,2025-09-12 21:00:00,Coolbet,3.65,2.06,Dra
 Los Angeles Angels @ Seattle Mariners,MLB,Los Angeles Angels,2025-09-12 22:11:00,Bet Right,2.7,3.71,Seattle Mariners,2025-09-12 22:08:43
 Colorado Rockies @ San Diego Padres,MLB,San Diego Padres,2025-09-12 21:41:00,William Hill,1.36,3.49,Colorado Rockies,2025-09-12 22:08:43
 New Mexico Lobos @ UCLA Bruins,NCAAF,UCLA Bruins,2025-09-12 22:10:00,Everygame,1.17,2.94,New Mexico Lobos,2025-09-12 22:08:43
-Chiba Lotte Marines @ Tohoku Rakuten Golden Eagles,NPB,Tohoku Rakuten Golden Eagles,2025-09-13 01:00:00,1xBet,1.87,2.81,Not Found,2025-09-12 22:08:43
+Chiba Lotte Marines @ Tohoku Rakuten Golden Eagles,NPB,Tohoku Rakuten Golden Eagles,2025-09-13 01:00:00,1xBet,1.87,2.81,API Error,2025-09-12 22:08:43
 Los Angeles Dodgers @ San Francisco Giants,MLB,San Francisco Giants,2025-09-12 22:16:00,FanDuel,2.34,2.4,San Francisco Giants,2025-09-12 22:08:43
 Ottawa Redblacks @ BC Lions,CFL,Ottawa Redblacks,2025-09-12 22:07:00,Dabble AU,4.75,2.07,Ottawa Redblacks,2025-09-12 22:08:43
 Pumas @ Mazatlán FC,Liga MX,Mazatlán FC,2025-09-12 23:00:00,BetOnline.ag,3.55,2.05,Pumas,2025-09-12 22:08:43
 Cincinnati Reds @ Oakland Athletics,MLB,Oakland Athletics,2025-09-12 22:06:00,Betsson,1.79,3.32,Oakland Athletics,2025-09-12 22:55:46
-Hanshin Tigers @ Yomiuri Giants,NPB,Hanshin Tigers,2025-09-13 01:00:00,1xBet,1.72,2.95,Not Found,2025-09-12 22:55:46
-Chunichi Dragons @ Hiroshima Toyo Carp,NPB,Chunichi Dragons,2025-09-13 01:00:00,1xBet,1.85,2.14,Not Found,2025-09-12 22:55:46
-Saitama Seibu Lions @ Hokkaido Nippon-Ham Fighters,NPB,Hokkaido Nippon-Ham Fighters,2025-09-13 01:00:00,1xBet,1.55,2.1,Not Found,2025-09-12 22:55:46
-Penrith Panthers @ New Zealand Warriors,NRL,Penrith Panthers,2025-09-13 02:05:00,Betsson,1.38,2.67,Not Found,2025-09-12 23:22:08
+Hanshin Tigers @ Yomiuri Giants,NPB,Hanshin Tigers,2025-09-13 01:00:00,1xBet,1.72,2.95,API Error,2025-09-12 22:55:46
+Chunichi Dragons @ Hiroshima Toyo Carp,NPB,Chunichi Dragons,2025-09-13 01:00:00,1xBet,1.85,2.14,Pending,2025-09-12 22:55:46
+Saitama Seibu Lions @ Hokkaido Nippon-Ham Fighters,NPB,Hokkaido Nippon-Ham Fighters,2025-09-13 01:00:00,1xBet,1.55,2.1,Hokkaido Nippon-Ham Fighters,2025-09-12 22:55:46
+Penrith Panthers @ New Zealand Warriors,NRL,Penrith Panthers,2025-09-13 02:05:00,Betsson,1.38,2.67,Penrith Panthers,2025-09-12 23:22:08
 KT Wiz @ Samsung Lions,KBO,Samsung Lions,2025-09-13 04:00:00,LowVig.ag,1.8,2.0,Not Found,2025-09-12 23:38:35
 Kiwoom Heroes @ Hanwha Eagles,KBO,Kiwoom Heroes,2025-09-13 04:00:00,1xBet,3.56,2.15,Not Found,2025-09-13 00:48:22
 SSG Landers @ Lotte Giants,KBO,SSG Landers,2025-09-13 04:00:00,1xBet,1.85,3.3,Not Found,2025-09-13 01:09:55
