@@ -570,11 +570,11 @@ East Carolina Pirates @ Coastal Carolina Chanticleers,NCAAF,East Carolina Pirate
 Arizona Diamondbacks @ Minnesota Twins,MLB,Arizona Diamondbacks,2025-09-13 19:13:00,Bovada,3.2,50.83,2.122,Minnesota Twins,2025-09-13 19:48:54
 Utah Utes @ Wyoming Cowboys,NCAAF,Wyoming Cowboys,2025-09-13 20:00:00,Marathon Bet,17.25,27.91,13.486,Utah Utes,2025-09-13 19:48:54
 St. Louis City SC @ CF Montreal,MLS,CF Montreal,2025-09-13 19:40:00,Unibet,26.0,365.62,5.584,St. Louis City SC,2025-09-13 20:53:46
-Orlando City SC @ D.C. United,MLS,D.C. United,2025-09-13 19:40:00,Coolbet,4.33,116.21,2.003,Not Found,2025-09-13 20:53:46
+Orlando City SC @ D.C. United,MLS,D.C. United,2025-09-13 19:40:00,Coolbet,4.33,116.21,2.003,API Error,2025-09-13 20:53:46
 Texas A&M Aggies @ Notre Dame Fighting Irish,NCAAF,Texas A&M Aggies,2025-09-13 13:47:00,TAB,7.5,115.91,3.474,Texas A&M Aggies,2025-09-13 20:53:46
-Jean Silva @ Diego Lopes,MMA,Diego Lopes,2025-09-13 20:45:00,FanDuel,6.5,112.15,3.064,Not Found,2025-09-13 20:53:46
+Jean Silva @ Diego Lopes,MMA,Diego Lopes,2025-09-13 20:45:00,FanDuel,6.5,112.15,3.064,API Error,2025-09-13 20:53:46
 Colorado Rockies @ San Diego Padres,MLB,Colorado Rockies,2025-09-13 20:41:00,SportsBet,4.0,27.03,3.149,San Diego Padres,2025-09-13 20:53:46
-Arkansas Razorbacks @ Ole Miss Rebels,NCAAF,Arkansas Razorbacks,2025-09-13 19:10:23,DraftKings,2.95,22.1,2.416,Not Found,2025-09-13 20:53:46
+Arkansas Razorbacks @ Ole Miss Rebels,NCAAF,Arkansas Razorbacks,2025-09-13 19:10:23,DraftKings,2.95,22.1,2.416,API Error,2025-09-13 20:53:46
 Florida Gators @ LSU Tigers,NCAAF,Florida Gators,2025-09-13 11:43:00,BetMGM,4.6,14.55,4.016,LSU Tigers,2025-09-13 20:53:46
 Nashville SC @ FC Cincinnati,MLS,FC Cincinnati,2025-09-13 19:40:00,PointsBet (AU),3.3,8.54,3.04,FC Cincinnati,2025-09-13 20:53:46
 Philadelphia Union @ Vancouver Whitecaps FC,MLS,Draw,2025-09-13 21:45:00,Sky Bet,36.0,1148.71,2.883,Vancouver Whitecaps FC,2025-09-13 22:24:31
@@ -600,14 +600,14 @@ Chiba Lotte Marines @ Tohoku Rakuten Golden Eagles,NPB,Chiba Lotte Marines,2025-
 Fukuoka SoftBank Hawks @ Orix Buffaloes,NPB,Orix Buffaloes,2025-09-14 00:00:44,Bovada,2.4,25.38,1.914,Fukuoka SoftBank Hawks,2025-09-14 00:48:21
 Saitama Seibu Lions @ Hokkaido Nippon-Ham Fighters,NPB,Saitama Seibu Lions,2025-09-14 01:00:00,Betway,3.0,23.13,2.436,Hokkaido Nippon-Ham Fighters,2025-09-14 01:10:01
 Brisbane Broncos @ Canberra Raiders,NRL,Canberra Raiders,2025-09-14 02:07:00,Coral,2.25,24.62,1.806,Brisbane Broncos,2025-09-14 02:14:18
-Kiwoom Heroes @ Hanwha Eagles,KBO,Kiwoom Heroes,2025-09-14 04:00:00,FanDuel,3.35,11.67,3.0,Not Found,2025-09-14 03:37:48
-Doosan Bears @ NC Dinos,KBO,Doosan Bears,2025-09-14 04:00:00,Unibet,6.75,87.97,3.591,Not Found,2025-09-14 04:12:28
-Kia Tigers @ LG Twins,KBO,Kia Tigers,2025-09-14 04:00:00,Caesars,2.9,18.2,2.453,Not Found,2025-09-14 04:12:28
-KT Wiz @ Samsung Lions,KBO,KT Wiz,2025-09-14 04:00:00,Bovada,2.45,6.08,2.31,Not Found,2025-09-14 04:12:28
-Yomiuri Giants @ Yokohama DeNA BayStars,NPB,Yomiuri Giants,2025-09-14 05:00:00,Nordic Bet,2.78,16.49,2.387,Not Found,2025-09-14 05:10:01
-Chunichi Dragons @ Hanshin Tigers,NPB,Chunichi Dragons,2025-09-14 05:00:00,William Hill,2.7,10.36,2.447,Not Found,2025-09-14 05:10:01
+Kiwoom Heroes @ Hanwha Eagles,KBO,Kiwoom Heroes,2025-09-14 04:00:00,FanDuel,3.35,11.67,3.0,API Error,2025-09-14 03:37:48
+Doosan Bears @ NC Dinos,KBO,Doosan Bears,2025-09-14 04:00:00,Unibet,6.75,87.97,3.591,API Error,2025-09-14 04:12:28
+Kia Tigers @ LG Twins,KBO,Kia Tigers,2025-09-14 04:00:00,Caesars,2.9,18.2,2.453,API Error,2025-09-14 04:12:28
+KT Wiz @ Samsung Lions,KBO,KT Wiz,2025-09-14 04:00:00,Bovada,2.45,6.08,2.31,API Error,2025-09-14 04:12:28
+Yomiuri Giants @ Yokohama DeNA BayStars,NPB,Yomiuri Giants,2025-09-14 05:00:00,Nordic Bet,2.78,16.49,2.387,API Error,2025-09-14 05:10:01
+Chunichi Dragons @ Hanshin Tigers,NPB,Chunichi Dragons,2025-09-14 05:00:00,William Hill,2.7,10.36,2.447,Pending,2025-09-14 05:10:01
 Daegu FC @ Sangju Sangmu FC,K League 1,Daegu FC,2025-09-14 06:00:00,Coolbet,4.2,6.01,3.962,Not Found,2025-09-14 05:26:59
-Tokyo Yakult Swallows @ Hiroshima Toyo Carp,NPB,Tokyo Yakult Swallows,2025-09-14 05:00:00,Unibet,2.4,7.65,2.229,Not Found,2025-09-14 05:49:47
+Tokyo Yakult Swallows @ Hiroshima Toyo Carp,NPB,Tokyo Yakult Swallows,2025-09-14 05:00:00,Unibet,2.4,7.65,2.229,Tokyo Yakult Swallows,2025-09-14 05:49:47
 Torino @ AS Roma,Serie A - Italy,Draw,2025-09-14 06:30:00,Unibet (NL),4.35,6.03,4.103,Not Found,2025-09-14 05:49:47
 Nieciecza @ Motor Lublin,Ekstraklasa - Poland,Nieciecza,2025-09-14 06:15:00,Coolbet,7.0,108.45,3.358,Not Found,2025-09-14 06:28:56
 Jeju United FC @ FC Anyang,K League 1,FC Anyang,2025-09-14 06:00:00,Coolbet,5.0,101.35,2.483,Not Found,2025-09-14 06:28:56
