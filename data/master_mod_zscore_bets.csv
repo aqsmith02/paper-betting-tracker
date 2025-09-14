@@ -703,10 +703,10 @@ Dustin Stoltzfus @ Kelvin Gastelum,MMA,Kelvin Gastelum,2025-09-13 18:56:00,Draft
 Murray State Racers @ Georgia State Panthers,NCAAF,Murray State Racers,2025-09-13 19:00:00,SportsBet,34.0,4.27,Not Found,2025-09-13 19:09:01
 Houston Astros @ Atlanta Braves,MLB,Houston Astros,2025-09-13 19:15:00,Pinnacle,1.78,4.05,Houston Astros,2025-09-13 19:09:01
 Old Dominion Monarchs @ Virginia Tech Hokies,NCAAF,Virginia Tech Hokies,2025-09-13 19:03:36,Paddy Power,1.5,4.05,Not Found,2025-09-13 19:09:01
-Vanderbilt Commodores @ South Carolina Gamecocks,NCAAF,Vanderbilt Commodores,2025-09-13 19:00:00,Caesars,2.35,3.37,API Error,2025-09-13 19:09:01
-Prairie View A&M Panthers @ Rice Owls,NCAAF,Prairie View A&M Panthers,2025-09-13 19:00:00,Dabble AU,31.0,3.37,API Error,2025-09-13 19:09:01
-East Carolina Pirates @ Coastal Carolina Chanticleers,NCAAF,East Carolina Pirates,2025-09-13 19:30:00,Paddy Power,1.4,2.7,API Error,2025-09-13 19:09:01
-Ohio Bobcats @ Ohio State Buckeyes,NCAAF,Ohio Bobcats,2025-09-13 19:05:25,Paddy Power,41.0,2.7,API Error,2025-09-13 19:09:01
+Vanderbilt Commodores @ South Carolina Gamecocks,NCAAF,Vanderbilt Commodores,2025-09-13 19:00:00,Caesars,2.35,3.37,Not Found,2025-09-13 19:09:01
+Prairie View A&M Panthers @ Rice Owls,NCAAF,Prairie View A&M Panthers,2025-09-13 19:00:00,Dabble AU,31.0,3.37,Not Found,2025-09-13 19:09:01
+East Carolina Pirates @ Coastal Carolina Chanticleers,NCAAF,East Carolina Pirates,2025-09-13 19:30:00,Paddy Power,1.4,2.7,Not Found,2025-09-13 19:09:01
+Ohio Bobcats @ Ohio State Buckeyes,NCAAF,Ohio Bobcats,2025-09-13 19:05:25,Paddy Power,41.0,2.7,Not Found,2025-09-13 19:09:01
 Florida Gators @ LSU Tigers,NCAAF,Florida Gators,2025-09-13 19:30:00,Unibet (NL),3.0,2.7,LSU Tigers,2025-09-13 19:09:01
 Arizona Diamondbacks @ Minnesota Twins,MLB,Minnesota Twins,2025-09-13 19:10:00,Pinnacle,1.8,2.36,Minnesota Twins,2025-09-13 19:09:01
 Sacramento River Cats @ Oklahoma City Baseball Club,MiLB,Oklahoma City Baseball Club,2025-09-13 19:05:00,BetOnline.ag,1.8,2.02,Not Found,2025-09-13 19:09:01
@@ -737,7 +737,7 @@ Colorado Rockies @ San Diego Padres,MLB,Colorado Rockies,2025-09-13 20:41:00,Spo
 León @ Tigres,Liga MX,Draw,2025-09-13 21:00:00,LowVig.ag,4.94,2.29,Draw,2025-09-13 20:53:46
 St. Louis Cardinals @ Milwaukee Brewers,MLB,St. Louis Cardinals,2025-09-13 20:15:34,Bovada,1.12,5.4,Milwaukee Brewers,2025-09-13 22:24:30
 Puebla @ Toluca,Liga MX,Puebla,2025-09-13 23:00:00,LowVig.ag,8.91,4.09,Toluca,2025-09-13 22:24:30
-Lester Martinez @ Christian Mbilli,Boxing,Lester Martinez,2025-09-13 22:30:00,Everygame,2.5,4.05,API Error,2025-09-13 22:24:30
+Lester Martinez @ Christian Mbilli,Boxing,Lester Martinez,2025-09-13 22:30:00,Everygame,2.5,4.05,Not Found,2025-09-13 22:24:30
 Akron Zips @ UAB Blazers,NCAAF,Akron Zips,2025-09-13 20:33:25,BetMGM,11.5,4.05,UAB Blazers,2025-09-13 22:24:30
 New York Red Bulls @ Portland Timbers,MLS,New York Red Bulls,2025-09-13 22:40:00,BetOnline.ag,3.48,3.82,Portland Timbers,2025-09-13 22:24:30
 New York City FC @ Chicago Fire,MLS,Draw,2025-09-13 20:40:00,Sky Bet,6.0,3.37,New York City FC,2025-09-13 22:24:30
@@ -751,13 +751,13 @@ Air Force Falcons @ Utah State Aggies,NCAAF,Utah State Aggies,2025-09-13 22:00:1
 Boston College Eagles @ Stanford Cardinal,NCAAF,Stanford Cardinal,2025-09-13 22:35:20,BetMGM,3.9,4.72,Stanford Cardinal,2025-09-13 23:21:24
 Doosan Bears @ NC Dinos,KBO,Doosan Bears,2025-09-14 04:00:00,BetRivers,3.6,2.02,Not Found,2025-09-13 23:21:24
 Terence Crawford @ Canelo Álvarez,Boxing,Terence Crawford,2025-09-14 01:00:00,BetMGM,2.65,3.37,Not Found,2025-09-13 23:45:59
-Fernando Vargas Jr @ Callum Walsh,Boxing,Draw,2025-09-13 23:33:00,Coral,29.0,3.15,API Error,2025-09-13 23:45:59
-Chiba Lotte Marines @ Tohoku Rakuten Golden Eagles,NPB,Tohoku Rakuten Golden Eagles,2025-09-14 00:00:00,BetUS,1.89,3.1,Not Found,2025-09-13 23:45:59
-Brisbane Broncos @ Canberra Raiders,NRL,Canberra Raiders,2025-09-14 02:05:00,SportsBet,1.71,2.02,Not Found,2025-09-13 23:45:59
+Fernando Vargas Jr @ Callum Walsh,Boxing,Draw,2025-09-13 23:33:00,Coral,29.0,3.15,Not Found,2025-09-13 23:45:59
+Chiba Lotte Marines @ Tohoku Rakuten Golden Eagles,NPB,Tohoku Rakuten Golden Eagles,2025-09-14 00:00:00,BetUS,1.89,3.1,Tohoku Rakuten Golden Eagles,2025-09-13 23:45:59
+Brisbane Broncos @ Canberra Raiders,NRL,Canberra Raiders,2025-09-14 02:05:00,SportsBet,1.71,2.02,Brisbane Broncos,2025-09-13 23:45:59
 Kiwoom Heroes @ Hanwha Eagles,KBO,Kiwoom Heroes,2025-09-14 04:00:00,Coolbet,2.9,2.02,Not Found,2025-09-13 23:45:59
-Fukuoka SoftBank Hawks @ Orix Buffaloes,NPB,Fukuoka SoftBank Hawks,2025-09-14 00:00:44,Bovada,2.0,2.7,Not Found,2025-09-14 00:12:26
-Saitama Seibu Lions @ Hokkaido Nippon-Ham Fighters,NPB,Saitama Seibu Lions,2025-09-14 01:00:00,Pinnacle,2.36,2.29,Not Found,2025-09-14 00:12:26
-Portland State Vikings @ Hawaii Rainbow Warriors,NCAAF,Portland State Vikings,2025-09-13 23:59:00,DraftKings,41.0,3.17,Not Found,2025-09-14 00:33:50
+Fukuoka SoftBank Hawks @ Orix Buffaloes,NPB,Fukuoka SoftBank Hawks,2025-09-14 00:00:44,Bovada,2.0,2.7,Fukuoka SoftBank Hawks,2025-09-14 00:12:26
+Saitama Seibu Lions @ Hokkaido Nippon-Ham Fighters,NPB,Saitama Seibu Lions,2025-09-14 01:00:00,Pinnacle,2.36,2.29,Hokkaido Nippon-Ham Fighters,2025-09-14 00:12:26
+Portland State Vikings @ Hawaii Rainbow Warriors,NCAAF,Portland State Vikings,2025-09-13 23:59:00,DraftKings,41.0,3.17,Hawaii Rainbow Warriors,2025-09-14 00:33:50
 Kia Tigers @ LG Twins,KBO,LG Twins,2025-09-14 04:00:00,BetOnline.ag,1.62,2.25,Not Found,2025-09-14 01:10:00
 KT Wiz @ Samsung Lions,KBO,KT Wiz,2025-09-14 04:00:00,BetOnline.ag,2.17,3.37,Not Found,2025-09-14 01:48:28
 Christian Medina Jimenez @ Yoshiki Takei,Boxing,Christian Medina Jimenez,2025-09-14 05:30:00,1xBet,5.64,4.32,Not Found,2025-09-14 02:40:43
