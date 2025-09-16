@@ -487,9 +487,9 @@ Stamford AFC @ Shepshed Dynamo FC,FA Cup,Draw,2025-09-13 10:00:00,1xBet,3.96,3.2
 Hebburn Town FC @ Curzon Ashton FC,FA Cup,Curzon Ashton FC,2025-09-13 10:00:00,1xBet,1.91,3.27,Not Found,2025-09-13 10:08:18
 Rushall Olympic FC @ Gainsborough Trinity FC,FA Cup,Draw,2025-09-13 10:00:00,1xBet,3.61,3.2,Not Found,2025-09-13 10:08:18
 Swindon Supermarine FC @ Hungerford Town FC,FA Cup,Hungerford Town FC,2025-09-13 10:00:00,1xBet,1.64,3.19,Not Found,2025-09-13 10:08:18
-Dagenham and Redbridge FC @ Bedford Town FC,FA Cup,Draw,2025-09-13 10:00:00,1xBet,4.01,3.14,API Error,2025-09-13 10:08:18
-Worksop Town FC @ Harborough Town FC,FA Cup,Worksop Town FC,2025-09-13 10:00:00,Bet Victor,2.1,3.12,API Error,2025-09-13 10:08:18
-Stocksbridge Park Steels FC @ Dunston UTS FC,FA Cup,Stocksbridge Park Steels FC,2025-09-13 10:00:00,1xBet,2.85,3.12,API Error,2025-09-13 10:08:18
+Dagenham and Redbridge FC @ Bedford Town FC,FA Cup,Draw,2025-09-13 10:00:00,1xBet,4.01,3.14,Not Found,2025-09-13 10:08:18
+Worksop Town FC @ Harborough Town FC,FA Cup,Worksop Town FC,2025-09-13 10:00:00,Bet Victor,2.1,3.12,Not Found,2025-09-13 10:08:18
+Stocksbridge Park Steels FC @ Dunston UTS FC,FA Cup,Stocksbridge Park Steels FC,2025-09-13 10:00:00,1xBet,2.85,3.12,Not Found,2025-09-13 10:08:18
 Hornchurch FC @ Peterborough Sports FC,FA Cup,Hornchurch FC,2025-09-13 10:00:00,1xBet,1.79,3.1,Not Found,2025-09-13 10:08:18
 Rotherham United @ Wimbledon,League 1,Rotherham United,2025-09-13 10:00:00,Tipico,3.8,3.1,Rotherham United,2025-09-13 10:08:18
 Dover Athletic FC @ Farnborough FC,FA Cup,Draw,2025-09-13 10:00:00,Bet Victor,3.75,3.08,Not Found,2025-09-13 10:08:18
@@ -533,12 +533,12 @@ FC Inter Turku @ IF Gnistan,Veikkausliiga - Finland,FC Inter Turku,2025-09-13 10
 Kiekko-Vantaa @ Ketterä,Mestis,Draw,2025-09-13 10:00:00,1xBet,4.2,2.47,Not Found,2025-09-13 10:08:18
 Hearts @ Rangers,Premiership - Scotland,Draw,2025-09-13 10:00:00,BetRivers,4.1,2.46,Hearts,2025-09-13 10:08:18
 Aston Villa @ Everton,EPL,Aston Villa,2025-09-13 10:00:00,Pinnacle,2.91,2.45,Draw,2025-09-13 10:08:18
-AVS Futebol SAD @ Estoril,Primeira Liga - Portugal,AVS Futebol SAD,2025-09-13 10:30:00,Tipico,5.0,2.45,API Error,2025-09-13 10:08:18
+AVS Futebol SAD @ Estoril,Primeira Liga - Portugal,AVS Futebol SAD,2025-09-13 10:30:00,Tipico,5.0,2.45,Not Found,2025-09-13 10:08:18
 Doncaster Rovers @ Wigan Athletic,League 1,Wigan Athletic,2025-09-13 10:00:00,DraftKings,2.6,2.43,Doncaster Rovers,2025-09-13 10:08:18
-SD Eibar @ Cádiz CF,La Liga 2 - Spain,SD Eibar,2025-09-13 10:15:00,Pinnacle,3.82,2.37,API Error,2025-09-13 10:08:18
+SD Eibar @ Cádiz CF,La Liga 2 - Spain,SD Eibar,2025-09-13 10:15:00,Pinnacle,3.82,2.37,Not Found,2025-09-13 10:08:18
 Bolton Wanderers @ Leyton Orient,League 1,Leyton Orient,2025-09-13 10:00:00,DraftKings,3.6,2.35,Draw,2025-09-13 10:08:18
 Sunderland @ Crystal Palace,EPL,Crystal Palace,2025-09-13 10:00:00,Sky Bet,1.75,2.35,Draw,2025-09-13 10:08:18
-Sport @ HPK,Liiga,HPK,2025-09-13 10:00:00,Coolbet,2.05,2.35,API Error,2025-09-13 10:08:18
+Sport @ HPK,Liiga,HPK,2025-09-13 10:00:00,Coolbet,2.05,2.35,Not Found,2025-09-13 10:08:18
 Livingston @ Aberdeen,Premiership - Scotland,Draw,2025-09-13 10:00:00,1xBet,4.07,2.33,Draw,2025-09-13 10:08:18
 Milton Keynes Dons @ Chesterfield FC,League 2,Milton Keynes Dons,2025-09-13 10:00:00,Virgin Bet,3.25,2.32,Draw,2025-09-13 10:08:18
 Harrogate Town @ Swindon Town,League 2,Draw,2025-09-13 10:00:00,Pinnacle,4.22,2.32,Harrogate Town,2025-09-13 10:08:18
@@ -547,15 +547,15 @@ Barnet @ Crewe Alexandra,League 2,Crewe Alexandra,2025-09-13 10:00:00,Sky Bet,2.
 Derby County @ West Bromwich Albion,Championship,West Bromwich Albion,2025-09-13 10:00:00,Coolbet,1.85,2.28,West Bromwich Albion,2025-09-13 10:08:18
 Brighton and Hove Albion @ Bournemouth,EPL,Draw,2025-09-13 10:00:00,Coolbet,3.64,2.28,Brighton and Hove Albion,2025-09-13 10:08:18
 St Mirren @ Falkirk F.C.,Premiership - Scotland,St Mirren,2025-09-13 10:00:00,Pinnacle,3.21,2.27,St Mirren,2025-09-13 10:08:18
-Cray Valley Paper Mills FC @ Chertsey Town FC,FA Cup,Chertsey Town FC,2025-09-13 10:00:00,Bet Victor,2.9,2.26,API Error,2025-09-13 10:08:18
+Cray Valley Paper Mills FC @ Chertsey Town FC,FA Cup,Chertsey Town FC,2025-09-13 10:00:00,Bet Victor,2.9,2.26,Not Found,2025-09-13 10:08:18
 Motherwell @ Dundee FC,Premiership - Scotland,Dundee FC,2025-09-13 10:00:00,Pinnacle,3.51,2.26,Draw,2025-09-13 10:08:18
-Weston-super-Mare AFC @ Taunton Town FC,FA Cup,Weston-super-Mare AFC,2025-09-13 10:00:00,Bet Victor,2.05,2.23,API Error,2025-09-13 10:08:18
+Weston-super-Mare AFC @ Taunton Town FC,FA Cup,Weston-super-Mare AFC,2025-09-13 10:00:00,Bet Victor,2.05,2.23,Not Found,2025-09-13 10:08:18
 Wingate and Finchley FC @ Dorking Wanderers FC,FA Cup,Draw,2025-09-13 10:00:00,Bet Victor,5.75,2.22,API Error,2025-09-13 10:08:18
 Walsall @ Fleetwood Town,League 2,Draw,2025-09-13 10:00:00,Sky Bet,3.2,2.21,Draw,2025-09-13 10:08:18
 HIFK @ Pelicans,Liiga,Draw,2025-09-13 10:00:00,1xBet,4.2,2.19,Pelicans,2025-09-13 10:08:18
 Reading @ Barnsley,League 1,Barnsley,2025-09-13 10:00:00,Pinnacle,1.9,2.18,Reading,2025-09-13 10:08:18
 Guiseley AFC @ South Shields FC,FA Cup,Guiseley AFC,2025-09-13 10:00:00,Bet Victor,4.5,2.14,API Error,2025-09-13 10:08:18
-Lukko @ TPS,Liiga,Draw,2025-09-13 10:00:00,1xBet,4.1,2.13,API Error,2025-09-13 10:08:18
+Lukko @ TPS,Liiga,Draw,2025-09-13 10:00:00,1xBet,4.1,2.13,Not Found,2025-09-13 10:08:18
 Stevenage @ Mansfield Town,League 1,Stevenage,2025-09-13 10:00:00,Coolbet,2.95,2.11,Draw,2025-09-13 10:08:18
 Cambridge United @ Grimsby Town,League 2,Cambridge United,2025-09-13 10:00:00,Tipico,3.6,2.1,Draw,2025-09-13 10:08:18
 Wolverhampton Wanderers @ Newcastle United,EPL,Newcastle United,2025-09-13 10:00:00,MyBookie.ag,1.4,2.1,Wolverhampton Wanderers,2025-09-13 10:08:18
@@ -569,14 +569,14 @@ Rio Ave FC @ Moreirense FC,Primeira Liga - Portugal,Rio Ave FC,2025-09-13 10:30:
 Port Vale @ Exeter City,League 1,Draw,2025-09-13 10:00:00,Bet Victor,4.2,2.18,Exeter City,2025-09-13 10:26:20
 Kasimpasa SK @ Fatih Karagümrük,Turkey Super League,Kasimpasa SK,2025-09-13 10:01:00,Ladbrokes,2.45,2.05,Kasimpasa SK,2025-09-13 10:26:20
 Salford City @ Shrewsbury Town,League 2,Salford City,2025-09-13 09:59:00,Bovada,2.64,4.66,Shrewsbury Town,2025-09-13 10:37:17
-SSV Ulm 1846 @ Alemannia Aachen,3. Liga - Germany,Draw,2025-09-13 10:30:00,Suprabets,3.7,3.94,Not Found,2025-09-13 10:37:17
+SSV Ulm 1846 @ Alemannia Aachen,3. Liga - Germany,Draw,2025-09-13 10:30:00,Suprabets,3.7,3.94,API Error,2025-09-13 10:37:17
 Nantes @ Nice,Ligue 1 - France,Nantes,2025-09-13 11:00:00,Bet Victor,6.5,3.73,Nantes,2025-09-13 10:37:17
-Carrarese @ US Catanzaro 1929,Serie B - Italy,Carrarese,2025-09-13 11:15:00,Pinnacle,3.55,3.25,Not Found,2025-09-13 10:37:17
+Carrarese @ US Catanzaro 1929,Serie B - Italy,Carrarese,2025-09-13 11:15:00,Pinnacle,3.55,3.25,API Error,2025-09-13 10:37:17
 RB Salzburg @ Wolfsberger AC,Austrian Football Bundesliga,RB Salzburg,2025-09-13 11:00:00,Suprabets,1.94,3.07,RB Salzburg,2025-09-13 10:37:17
 Panserraikos FC @ Olympiakos Piraeus,Super League - Greece,Panserraikos FC,2025-09-13 11:00:00,Pinnacle,31.55,2.85,Panserraikos FC,2025-09-13 10:37:17
 Audax Italiano @ Unión Española,Primera División - Chile,Audax Italiano,2025-09-13 11:30:00,Coolbet,3.05,2.46,Unión Española,2025-09-13 10:37:17
 Grazer AK @ FC Blau-Weiß Linz,Austrian Football Bundesliga,Grazer AK,2025-09-13 11:00:00,Pinnacle,3.41,2.41,Grazer AK,2025-09-13 10:37:17
-Saint Lucia Kings @ Guyana Amazon Warriors,CPLT20,Saint Lucia Kings,2025-09-13 11:00:00,Ladbrokes,2.2,2.11,Pending,2025-09-13 10:48:23
+Saint Lucia Kings @ Guyana Amazon Warriors,CPLT20,Saint Lucia Kings,2025-09-13 11:00:00,Ladbrokes,2.2,2.11,API Error,2025-09-13 10:48:23
 Tappara @ KalPa,Liiga,Tappara,2025-09-13 10:00:00,William Hill,1.91,4.1,Tappara,2025-09-13 11:08:25
 Clemson Tigers @ Georgia Tech Yellow Jackets,NCAAF,Georgia Tech Yellow Jackets,2025-09-13 11:58:00,LeoVegas,2.28,3.29,Georgia Tech Yellow Jackets,2025-09-13 11:08:25
 Lukasz Barabasz @ Jim Donovan,Boxing,Lukasz Barabasz,2025-09-13 11:30:00,Paddy Power,41.0,3.05,Not Found,2025-09-13 11:08:25
@@ -646,23 +646,23 @@ Vitoria @ Fortaleza,Brazil Série A,Draw,2025-09-13 15:00:00,Everygame,3.6,2.25,
 UConn Huskies @ Delaware Blue Hens,NCAAF,UConn Huskies,2025-09-13 15:02:28,Fanatics,1.38,2.12,Delaware Blue Hens,2025-09-13 15:07:16
 Montserrat Rendon @ Alice Pereira,MMA,Montserrat Rendon,2025-09-13 15:30:00,FanDuel,2.38,2.07,Not Found,2025-09-13 15:07:16
 Edmonton Elks @ Toronto Argonauts,CFL,Toronto Argonauts,2025-09-13 15:00:00,Bovada,1.56,3.23,Edmonton Elks,2025-09-13 15:21:42
-Sporting Lisbon @ Famalicão,Primeira Liga - Portugal,Sporting Lisbon,2025-09-13 15:30:00,1xBet,1.53,2.1,Not Found,2025-09-13 15:21:42
+Sporting Lisbon @ Famalicão,Primeira Liga - Portugal,Sporting Lisbon,2025-09-13 15:30:00,1xBet,1.53,2.1,API Error,2025-09-13 15:21:42
 SMU Mustangs @ Missouri State Bears,NCAAF,Missouri State Bears,2025-09-13 15:30:00,Ladbrokes,23.0,2.09,SMU Mustangs,2025-09-13 15:21:42
 Baltimore Orioles @ Toronto Blue Jays,MLB,Baltimore Orioles,2025-09-13 15:07:00,Unibet (FR),2.43,3.86,Toronto Blue Jays,2025-09-13 15:35:20
 Alden Coria @ Alessandro Costa,MMA,Alden Coria,2025-09-13 16:00:00,Coolbet,4.3,3.41,Not Found,2025-09-13 15:35:20
-USC Trojans @ Purdue Boilermakers,NCAAF,Purdue Boilermakers,2025-09-13 16:00:00,Coolbet,14.5,3.05,Not Found,2025-09-13 15:35:20
+USC Trojans @ Purdue Boilermakers,NCAAF,Purdue Boilermakers,2025-09-13 16:00:00,Coolbet,14.5,3.05,API Error,2025-09-13 15:35:20
 Youngstown St Penguins @ Michigan State Spartans,NCAAF,Youngstown St Penguins,2025-09-13 15:35:00,Marathon Bet,16.25,2.99,Michigan State Spartans,2025-09-13 15:35:20
 Washington State Cougars @ North Texas Mean Green,NCAAF,Washington State Cougars,2025-09-13 15:32:00,DraftKings,3.4,2.43,North Texas Mean Green,2025-09-13 15:35:20
 Oregon State Beavers @ Texas Tech Red Raiders,NCAAF,Oregon State Beavers,2025-09-13 15:40:00,Dabble AU,15.0,2.41,Texas Tech Red Raiders,2025-09-13 15:35:20
 Banfield @ Independiente,Primera División - Argentina,Banfield,2025-09-13 15:45:00,Pinnacle,6.05,2.4,Banfield,2025-09-13 15:35:20
 Pittsburgh Pirates @ Washington Nationals,MLB,Washington Nationals,2025-09-13 16:05:00,BetUS,2.03,2.35,Washington Nationals,2025-09-13 15:35:20
-Iowa State Cyclones @ Arkansas State Red Wolves,NCAAF,Arkansas State Red Wolves,2025-09-13 16:00:00,FanDuel,11.6,2.27,Not Found,2025-09-13 15:35:20
+Iowa State Cyclones @ Arkansas State Red Wolves,NCAAF,Arkansas State Red Wolves,2025-09-13 16:00:00,FanDuel,11.6,2.27,API Error,2025-09-13 15:35:20
 Heerenveen @ Feyenoord,Dutch Eredivisie,Draw,2025-09-13 15:00:00,DraftKings,4.9,2.27,Heerenveen,2025-09-13 15:35:20
 Lehigh Valley IronPigs @ Scranton/Wilkes-Barre RailRiders,MiLB,Lehigh Valley IronPigs,2025-09-13 16:05:00,BetOnline.ag,2.15,2.25,API Error,2025-09-13 15:35:20
 Richmond Spiders @ North Carolina Tar Heels,NCAAF,Richmond Spiders,2025-09-13 15:35:00,Marathon Bet,18.75,2.22,North Carolina Tar Heels,2025-09-13 15:35:20
 New York Yankees @ Boston Red Sox,MLB,New York Yankees,2025-09-13 16:10:00,William Hill,1.73,3.29,New York Yankees,2025-09-13 15:48:24
 Texas Rangers @ New York Mets,MLB,Texas Rangers,2025-09-13 16:10:00,Everygame,2.45,2.81,Texas Rangers,2025-09-13 15:48:24
-Alice Pereira @ Montserrat Rendon,MMA,Alice Pereira,2025-09-13 15:28:00,DraftKings,8.5,2.54,API Error,2025-09-13 15:48:24
+Alice Pereira @ Montserrat Rendon,MMA,Alice Pereira,2025-09-13 15:28:00,DraftKings,8.5,2.54,Not Found,2025-09-13 15:48:24
 Pittsburgh Panthers @ West Virginia Mountaineers,NCAAF,West Virginia Mountaineers,2025-09-13 12:52:00,FanDuel,3.5,2.21,West Virginia Mountaineers,2025-09-13 15:48:24
 Detroit Tigers @ Miami Marlins,MLB,Detroit Tigers,2025-09-13 16:10:00,BetOnline.ag,1.81,2.12,Miami Marlins,2025-09-13 15:48:24
 Incarnate Word Cardinals @ UTSA Roadrunners,NCAAF,Incarnate Word Cardinals,2025-09-13 15:30:00,DraftKings,41.0,2.06,UTSA Roadrunners,2025-09-13 15:48:24
@@ -670,10 +670,10 @@ Liberty Flames @ Bowling Green Falcons,NCAAF,Liberty Flames,2025-09-13 17:00:00,
 Luis Gurule @ Jesus Santos Aguilar,MMA,Jesus Santos Aguilar,2025-09-13 16:55:00,Coolbet,2.78,2.91,API Error,2025-09-13 16:10:12
 Huachipato @ Cobresal,Primera División - Chile,Huachipato,2025-09-13 16:30:00,Tipico,4.7,2.44,Cobresal,2025-09-13 16:10:12
 Amanda Lemos @ Tatiana Suarez,MMA,Tatiana Suarez,2025-09-13 17:00:00,BetOnline.ag,1.25,2.21,Not Found,2025-09-13 16:10:12
-South Florida Bulls @ Miami Hurricanes,NCAAF,Miami Hurricanes,2025-09-13 16:30:00,Bovada,1.14,2.13,Not Found,2025-09-13 16:10:12
-Sedriques Dumas @ Zachary Reese,MMA,Zachary Reese,2025-09-13 16:18:00,Paddy Power,1.44,2.28,Not Found,2025-09-13 16:27:56
-Joaquim Silva @ Claudio Puelles,MMA,Claudio Puelles,2025-09-13 17:15:00,Betway,1.83,2.36,Not Found,2025-09-13 16:39:40
-Dusko Todorovic @ Jose Daniel Medina,MMA,Dusko Todorovic,2025-09-13 17:30:00,Coolbet,1.31,2.94,Not Found,2025-09-13 16:50:35
+South Florida Bulls @ Miami Hurricanes,NCAAF,Miami Hurricanes,2025-09-13 16:30:00,Bovada,1.14,2.13,API Error,2025-09-13 16:10:12
+Sedriques Dumas @ Zachary Reese,MMA,Zachary Reese,2025-09-13 16:18:00,Paddy Power,1.44,2.28,API Error,2025-09-13 16:27:56
+Joaquim Silva @ Claudio Puelles,MMA,Claudio Puelles,2025-09-13 17:15:00,Betway,1.83,2.36,API Error,2025-09-13 16:39:40
+Dusko Todorovic @ Jose Daniel Medina,MMA,Dusko Todorovic,2025-09-13 17:30:00,Coolbet,1.31,2.94,API Error,2025-09-13 16:50:35
 Middle Tennessee Blue Raiders @ Nevada Wolf Pack,NCAAF,Nevada Wolf Pack,2025-09-13 17:00:00,Marathon Bet,1.32,2.74,Not Found,2025-09-13 16:50:35
 Internacional @ Palmeiras,Brazil Série A,Palmeiras,2025-09-13 17:30:00,1xBet,1.55,2.2,Palmeiras,2025-09-13 16:50:35
 Remo @ Vila Nova,Brazil Série B,Remo,2025-09-13 17:30:00,Pinnacle,3.95,2.81,Draw,2025-09-13 17:08:26
@@ -706,18 +706,18 @@ Arizona Diamondbacks @ Minnesota Twins,MLB,Minnesota Twins,2025-09-13 19:10:00,P
 Old Dominion Monarchs @ Virginia Tech Hokies,NCAAF,Old Dominion Monarchs,2025-09-13 19:03:36,Unibet (IT),3.1,2.4,Not Found,2025-09-13 19:09:00
 Ohio Bobcats @ Ohio State Buckeyes,NCAAF,Ohio Bobcats,2025-09-13 19:05:25,Paddy Power,41.0,2.36,Not Found,2025-09-13 19:09:00
 Prairie View A&M Panthers @ Rice Owls,NCAAF,Prairie View A&M Panthers,2025-09-13 19:00:00,Dabble AU,31.0,2.26,Not Found,2025-09-13 19:09:00
-Murray State Racers @ Georgia State Panthers,NCAAF,Murray State Racers,2025-09-13 19:00:00,SportsBet,34.0,2.09,Not Found,2025-09-13 19:09:00
+Murray State Racers @ Georgia State Panthers,NCAAF,Murray State Racers,2025-09-13 19:00:00,SportsBet,34.0,2.09,API Error,2025-09-13 19:09:00
 Houston Astros @ Atlanta Braves,MLB,Houston Astros,2025-09-13 19:15:00,Pinnacle,1.78,2.07,Houston Astros,2025-09-13 19:09:00
 New Mexico State Aggies @ Louisiana Tech Bulldogs,NCAAF,Louisiana Tech Bulldogs,2025-09-13 19:30:00,Marathon Bet,1.33,3.27,API Error,2025-09-13 19:25:23
 Texas A&M Aggies @ Notre Dame Fighting Irish,NCAAF,Texas A&M Aggies,2025-09-13 19:30:00,TAB,3.2,2.68,Texas A&M Aggies,2025-09-13 19:25:23
 Gwinnett Stripers @ Nashville Sounds,MiLB,Nashville Sounds,2025-09-13 19:35:00,BetOnline.ag,1.71,2.12,Nashville Sounds,2025-09-13 19:25:23
-Jared Gordon @ Rafa Garcia,MMA,Jared Gordon,2025-09-13 19:26:00,Caesars,2.22,3.45,API Error,2025-09-13 19:37:43
-Inter Miami CF @ Charlotte FC,MLS,Charlotte FC,2025-09-13 19:40:00,1xBet,3.31,2.75,Not Found,2025-09-13 19:37:43
+Jared Gordon @ Rafa Garcia,MMA,Jared Gordon,2025-09-13 19:26:00,Caesars,2.22,3.45,Not Found,2025-09-13 19:37:43
+Inter Miami CF @ Charlotte FC,MLS,Charlotte FC,2025-09-13 19:40:00,1xBet,3.31,2.75,API Error,2025-09-13 19:37:43
 Toronto FC @ New England Revolution,MLS,New England Revolution,2025-09-13 19:40:00,Coolbet,1.91,2.57,Draw,2025-09-13 19:37:43
-Jermaine Franklin Jr @ Ivan Dychko,Boxing,Jermaine Franklin Jr,2025-09-13 19:30:00,Paddy Power,2.25,2.45,Not Found,2025-09-13 19:37:43
-Orlando City SC @ D.C. United,MLS,Orlando City SC,2025-09-13 19:40:00,DraftKings,2.0,2.29,Not Found,2025-09-13 19:37:43
-Western Michigan Broncos @ Illinois Fighting Illini,NCAAF,Western Michigan Broncos,2025-09-13 19:06:18,Caesars,19.0,2.28,Not Found,2025-09-13 19:37:43
-Columbus Crew SC @ Atlanta United FC,MLS,Columbus Crew SC,2025-09-13 19:40:00,Coolbet,2.15,2.05,Not Found,2025-09-13 19:37:43
+Jermaine Franklin Jr @ Ivan Dychko,Boxing,Jermaine Franklin Jr,2025-09-13 19:30:00,Paddy Power,2.25,2.45,API Error,2025-09-13 19:37:43
+Orlando City SC @ D.C. United,MLS,Orlando City SC,2025-09-13 19:40:00,DraftKings,2.0,2.29,API Error,2025-09-13 19:37:43
+Western Michigan Broncos @ Illinois Fighting Illini,NCAAF,Western Michigan Broncos,2025-09-13 19:06:18,Caesars,19.0,2.28,API Error,2025-09-13 19:37:43
+Columbus Crew SC @ Atlanta United FC,MLS,Columbus Crew SC,2025-09-13 19:40:00,Coolbet,2.15,2.05,API Error,2025-09-13 19:37:43
 Navy Midshipmen @ Tulsa Golden Hurricane,NCAAF,Navy Midshipmen,2025-09-13 20:00:00,BetUS,1.2,3.22,Navy Midshipmen,2025-09-13 19:48:52
 St. Louis City SC @ CF Montreal,MLS,St. Louis City SC,2025-09-13 19:40:00,PointsBet (AU),2.75,3.0,St. Louis City SC,2025-09-13 19:48:52
 Duke Blue Devils @ Tulane Green Wave,NCAAF,Tulane Green Wave,2025-09-13 20:00:00,Pinnacle,1.9,2.59,Tulane Green Wave,2025-09-13 19:48:52
@@ -856,12 +856,12 @@ Golden State Valkyries @ Minnesota Lynx,WNBA,Golden State Valkyries,2025-09-14 1
 Cleveland Browns @ Baltimore Ravens,NFL,Baltimore Ravens,2025-09-14 13:01:00,PointsBet (AU),1.14,2.79,Cleveland Browns,2025-09-14 12:48:13
 Buffalo Bills @ New York Jets,NFL,New York Jets,2025-09-14 13:04:00,Unibet (IT),4.1,2.85,New York Jets,2025-09-14 13:08:03
 Baltimore Orioles @ Toronto Blue Jays,MLB,Baltimore Orioles,2025-09-14 13:37:00,Bet Victor,2.8,2.79,Toronto Blue Jays,2025-09-14 13:08:03
-TSV Havelse @ TSV 1860 München,3. Liga - Germany,Draw,2025-09-14 13:30:00,Tipico,6.5,2.72,Not Found,2025-09-14 13:08:03
+TSV Havelse @ TSV 1860 München,3. Liga - Germany,Draw,2025-09-14 13:30:00,Tipico,6.5,2.72,API Error,2025-09-14 13:08:03
 Rosenborg @ Haugesund,Eliteserien - Norway,Haugesund,2025-09-14 13:15:00,Coolbet,7.8,2.66,Haugesund,2025-09-14 13:08:03
 Seattle Seahawks @ Pittsburgh Steelers,NFL,Pittsburgh Steelers,2025-09-14 13:02:00,Caesars,1.91,2.64,Pittsburgh Steelers,2025-09-14 13:08:03
 Kansas City Royals @ Philadelphia Phillies,MLB,Kansas City Royals,2025-09-14 13:35:00,Bet Victor,2.38,2.55,Philadelphia Phillies,2025-09-14 13:08:03
 Houston Astros @ Atlanta Braves,MLB,Houston Astros,2025-09-14 13:35:00,BetOnline.ag,1.82,2.41,Houston Astros,2025-09-14 13:08:03
-Lehigh Valley IronPigs @ Scranton/Wilkes-Barre RailRiders,MiLB,Scranton/Wilkes-Barre RailRiders,2025-09-14 13:05:00,William Hill,1.8,2.26,Not Found,2025-09-14 13:08:03
+Lehigh Valley IronPigs @ Scranton/Wilkes-Barre RailRiders,MiLB,Scranton/Wilkes-Barre RailRiders,2025-09-14 13:05:00,William Hill,1.8,2.26,API Error,2025-09-14 13:08:03
 Los Angeles Rams @ Tennessee Titans,NFL,Tennessee Titans,2025-09-14 13:01:00,FanDuel,3.6,2.23,Tennessee Titans,2025-09-14 13:08:03
 Iowa Cubs @ Indianapolis Indians,MiLB,Iowa Cubs,2025-09-14 13:35:00,BetRivers,2.3,2.06,Indianapolis Indians,2025-09-14 13:08:03
 Norfolk Tides @ Durham Bulls,MiLB,Norfolk Tides,2025-09-14 13:05:00,BetOnline.ag,2.3,2.06,Norfolk Tides,2025-09-14 13:08:03
@@ -872,7 +872,7 @@ San Francisco 49ers @ New Orleans Saints,NFL,New Orleans Saints,2025-09-14 13:03
 Texas Rangers @ New York Mets,MLB,New York Mets,2025-09-14 13:40:00,BetOnline.ag,1.62,2.09,Texas Rangers,2025-09-14 13:25:23
 Chicago White Sox @ Cleveland Guardians,MLB,Cleveland Guardians,2025-09-14 13:40:00,BetUS,1.68,2.04,Cleveland Guardians,2025-09-14 13:25:23
 Detroit Tigers @ Miami Marlins,MLB,Detroit Tigers,2025-09-14 13:41:00,Everygame,1.82,2.62,Miami Marlins,2025-09-14 13:36:55
-Memphis Redbirds @ Jacksonville Jumbo Shrimp,MiLB,Jacksonville Jumbo Shrimp,2025-09-14 14:05:00,BetOnline.ag,1.65,2.36,Not Found,2025-09-14 13:36:55
+Memphis Redbirds @ Jacksonville Jumbo Shrimp,MiLB,Jacksonville Jumbo Shrimp,2025-09-14 14:05:00,BetOnline.ag,1.65,2.36,API Error,2025-09-14 13:36:55
 Union Santa Fe @ Gimnasia La Plata,Primera División - Argentina,Gimnasia La Plata,2025-09-14 14:00:00,Pinnacle,3.65,2.27,Union Santa Fe,2025-09-14 13:36:55
 Argentinos Juniors @ Instituto de Córdoba,Primera División - Argentina,Argentinos Juniors,2025-09-14 14:00:00,Pinnacle,2.36,2.23,Instituto de Córdoba,2025-09-14 13:36:55
 Albuquerque Isotopes @ El Paso Chihuahuas,MiLB,Albuquerque Isotopes,2025-09-14 14:05:00,BetOnline.ag,3.45,2.04,El Paso Chihuahuas,2025-09-14 13:36:55
@@ -887,7 +887,7 @@ St. Louis Cardinals @ Milwaukee Brewers,MLB,Milwaukee Brewers,2025-09-14 14:10:0
 PAOK Thessaloniki @ OFI Crete,Super League - Greece,OFI Crete,2025-09-14 14:30:00,Coolbet,7.75,2.44,OFI Crete,2025-09-14 14:12:53
 Bologna @ AC Milan,Serie A - Italy,AC Milan,2025-09-14 14:45:00,1xBet,1.89,2.42,Bologna,2025-09-14 14:12:53
 Tampa Bay Rays @ Chicago Cubs,MLB,Chicago Cubs,2025-09-14 14:20:00,BetOnline.ag,1.64,2.05,Chicago Cubs,2025-09-14 14:12:53
-Leganés @ Granada CF,La Liga 2 - Spain,Leganés,2025-09-14 15:00:00,Pinnacle,3.47,3.02,Not Found,2025-09-14 14:35:27
+Leganés @ Granada CF,La Liga 2 - Spain,Leganés,2025-09-14 15:00:00,Pinnacle,3.47,3.02,API Error,2025-09-14 14:35:27
 Flamengo @ Juventude,Brazil Série A,Draw,2025-09-14 15:00:00,Pinnacle,5.03,2.45,Flamengo,2025-09-14 14:35:27
 Charlotte Knights @ Omaha Storm Chasers,MiLB,Omaha Storm Chasers,2025-09-14 15:05:00,BetOnline.ag,1.97,2.31,Charlotte Knights,2025-09-14 14:48:26
 Indiana Fever @ Atlanta Dream,WNBA,Atlanta Dream,2025-09-14 15:04:27,Caesars,1.38,2.83,Atlanta Dream,2025-09-14 15:07:19
@@ -900,19 +900,19 @@ Denver Broncos @ Indianapolis Colts,NFL,Denver Broncos,2025-09-14 16:06:00,Pinna
 Philadelphia Eagles @ Kansas City Chiefs,NFL,Kansas City Chiefs,2025-09-14 16:25:00,TAB,2.1,3.2,Philadelphia Eagles,2025-09-14 15:35:38
 Botafogo @ Sao Paulo,Brazil Série A,Sao Paulo,2025-09-14 16:30:00,Pinnacle,2.41,3.26,São Paulo,2025-09-14 16:10:26
 New York Liberty @ Phoenix Mercury,WNBA,New York Liberty,2025-09-14 17:00:00,MyBookie.ag,1.8,2.88,New York Liberty,2025-09-14 16:10:26
-Barbados Royals @ Guyana Amazon Warriors,CPLT20,Guyana Amazon Warriors,2025-09-14 19:00:00,William Hill,1.62,2.14,Not Found,2025-09-14 16:10:26
+Barbados Royals @ Guyana Amazon Warriors,CPLT20,Guyana Amazon Warriors,2025-09-14 19:00:00,William Hill,1.62,2.14,API Error,2025-09-14 16:10:26
 Botafogo @ Athletic Club (MG),Brazil Série B,Botafogo,2025-09-14 17:30:00,Pinnacle,5.56,2.08,Not Found,2025-09-14 16:10:26
-Cincinnati Reds @ Oakland Athletics,MLB,Oakland Athletics,2025-09-14 16:05:00,GTbets,2.35,2.03,Not Found,2025-09-14 16:10:26
+Cincinnati Reds @ Oakland Athletics,MLB,Oakland Athletics,2025-09-14 16:05:00,GTbets,2.35,2.03,API Error,2025-09-14 16:10:26
 Boca Juniors @ Rosario Central,Primera División - Argentina,Rosario Central,2025-09-14 16:30:00,1xBet,2.67,2.18,Draw,2025-09-14 16:28:31
-Monterrey @ Querétaro,Liga MX,Querétaro,2025-09-14 19:00:00,Pinnacle,6.05,2.08,Not Found,2025-09-14 16:28:31
+Monterrey @ Querétaro,Liga MX,Querétaro,2025-09-14 19:00:00,Pinnacle,6.05,2.08,API Error,2025-09-14 16:28:31
 Gwinnett Stripers @ Nashville Sounds,MiLB,Gwinnett Stripers,2025-09-14 19:05:00,BetOnline.ag,2.83,2.07,Nashville Sounds,2025-09-14 16:48:19
 New York Yankees @ Boston Red Sox,MLB,Boston Red Sox,2025-09-14 19:10:00,BetOnline.ag,1.69,2.07,Boston Red Sox,2025-09-14 16:48:19
 Platense @ Defensa y Justicia,Primera División - Argentina,Platense,2025-09-14 19:00:00,FanDuel,3.5,2.05,Platense,2025-09-14 17:08:34
 Ceará @ Vasco da Gama,Brazil Série A,Vasco da Gama,2025-09-14 19:30:00,DraftKings,2.0,2.02,Draw,2025-09-14 17:08:34
 Atlanta Falcons @ Minnesota Vikings,NFL,Atlanta Falcons,2025-09-14 20:20:00,Unibet (SE),2.55,2.45,Atlanta Falcons,2025-09-14 17:36:54
 Seattle Storm @ Las Vegas Aces,WNBA,Seattle Storm,2025-09-14 22:00:00,Bovada,3.15,2.42,Las Vegas Aces,2025-09-14 19:09:08
-Tijuana @ Atlético San Luis,Liga MX,Tijuana,2025-09-14 21:00:00,Pinnacle,3.37,2.36,Not Found,2025-09-14 19:09:08
-Talleres @ CA Tigre BA,Primera División - Argentina,Talleres,2025-09-14 19:00:00,FanDuel,3.0,2.2,Not Found,2025-09-14 19:09:08
+Tijuana @ Atlético San Luis,Liga MX,Tijuana,2025-09-14 21:00:00,Pinnacle,3.37,2.36,API Error,2025-09-14 19:09:08
+Talleres @ CA Tigre BA,Primera División - Argentina,Talleres,2025-09-14 19:00:00,FanDuel,3.0,2.2,API Error,2025-09-14 19:09:08
 Chiba Lotte Marines @ Tohoku Rakuten Golden Eagles,NPB,Tohoku Rakuten Golden Eagles,2025-09-15 00:00:00,BetUS,1.63,2.51,Tohoku Rakuten Golden Eagles,2025-09-14 23:28:28
 Saitama Seibu Lions @ Hokkaido Nippon-Ham Fighters,NPB,Hokkaido Nippon-Ham Fighters,2025-09-15 00:00:00,BetUS,1.78,2.3,Hokkaido Nippon-Ham Fighters,2025-09-14 23:28:28
 Namibia @ Zimbabwe,International Twenty20,Zimbabwe,2025-09-15 03:30:00,DraftKings,1.43,2.16,Not Found,2025-09-14 23:56:10
