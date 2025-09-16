@@ -473,8 +473,6 @@ FC Volendam @ Go Ahead Eagles,Dutch Eredivisie,FC Volendam,2025-09-13 13:14:00,W
 Dundee United @ Hibernian,Premiership - Scotland,Dundee United,2025-09-13 12:45:00,DraftKings,5.5,6.91,5.145,Draw,2025-09-13 13:25:26
 Volos FC @ Panetolikos Agrinio,Super League - Greece,Volos FC,2025-09-13 13:01:00,Unibet (FR),2.58,106.32,1.25,Panetolikos Agrinio,2025-09-13 13:37:02
 Union Saint-Gilloise @ Dender,Belgium First Div,Draw,2025-09-13 12:15:00,Bovada,2.62,13.62,2.306,Dender,2025-09-13 13:37:02
-Málaga @ SD Huesca,La Liga 2 - Spain,SD Huesca,2025-09-13 12:30:00,Tipico,3.3,7.92,3.058,Not Found,2025-09-13 13:48:20
-Cesena FC @ Sampdoria,Serie B - Italy,Sampdoria,2025-09-13 13:31:00,FanDuel,3.1,7.27,2.89,Not Found,2025-09-13 13:48:20
 O'Higgins @ Palestino,Primera División - Chile,Palestino,2025-09-13 14:00:00,Sky Bet,4.5,87.64,2.398,Palestino,2025-09-13 14:12:38
 Memphis Tigers @ Troy Trojans,NCAAF,Troy Trojans,2025-09-13 12:07:57,MyBookie.ag,17.25,45.81,11.83,Memphis Tigers,2025-09-13 14:12:38
 New Hampshire Wildcats @ Ball State Cardinals,NCAAF,Ball State Cardinals,2025-09-13 14:00:00,MyBookie.ag,2.2,25.55,1.752,Ball State Cardinals,2025-09-13 14:12:38
@@ -529,22 +527,22 @@ Iowa Cubs @ Indianapolis Indians,MiLB,Indianapolis Indians,2025-09-13 18:35:00,B
 Monmouth Hawks @ Charlotte 49ers,NCAAF,Monmouth Hawks,2025-09-13 18:02:33,DraftKings,2.54,11.58,2.276,Not Found,2025-09-13 18:08:40
 Kansas City Royals @ Philadelphia Phillies,MLB,Kansas City Royals,2025-09-13 18:05:00,GTbets,2.54,10.13,2.306,Philadelphia Phillies,2025-09-13 18:08:40
 Memphis Redbirds @ Jacksonville Jumbo Shrimp,MiLB,Jacksonville Jumbo Shrimp,2025-09-13 18:35:00,BetRivers,1.79,9.98,1.628,Not Found,2025-09-13 18:08:40
-Santiago Luna @ Quang Le,MMA,Santiago Luna,2025-09-13 18:15:00,Unibet,2.5,51.63,1.649,Not Found,2025-09-13 18:28:18
+Santiago Luna @ Quang Le,MMA,Santiago Luna,2025-09-13 18:15:00,Unibet,2.5,51.63,1.649,API Error,2025-09-13 18:28:18
 Chicago White Sox @ Cleveland Guardians,MLB,Chicago White Sox,2025-09-13 18:10:00,Bovada,2.44,15.68,2.109,Cleveland Guardians,2025-09-13 18:28:18
-Alex Hernandez @ Carlos Diego Ferreira,MMA,Carlos Diego Ferreira,2025-09-13 18:45:00,Caesars,2.2,9.15,2.016,Not Found,2025-09-13 18:39:47
-Western Michigan Broncos @ Illinois Fighting Illini,NCAAF,Western Michigan Broncos,2025-09-13 19:00:00,Ladbrokes,26.0,15.05,22.598,Not Found,2025-09-13 18:50:47
-Montreal Alouettes @ Saskatchewan Roughriders,CFL,Montreal Alouettes,2025-09-13 19:00:00,Betway,4.25,10.47,3.847,Not Found,2025-09-13 18:50:47
-Eastern Michigan Eagles @ Kentucky Wildcats,NCAAF,Eastern Michigan Eagles,2025-09-13 19:30:00,Ladbrokes,23.0,54.12,14.923,Not Found,2025-09-13 19:09:01
-Ohio Bobcats @ Ohio State Buckeyes,NCAAF,Ohio Bobcats,2025-09-13 19:05:25,Paddy Power,41.0,47.21,27.851,Not Found,2025-09-13 19:09:01
-Dustin Stoltzfus @ Kelvin Gastelum,MMA,Dustin Stoltzfus,2025-09-13 18:56:00,FanDuel,4.1,42.73,2.872,Not Found,2025-09-13 19:09:01
-Jacksonville State Gamecocks @ Georgia Southern Eagles,NCAAF,Jacksonville State Gamecocks,2025-09-13 19:05:20,Unibet (NL),2.9,19.33,2.43,Not Found,2025-09-13 19:09:01
-Appalachian State Mountaineers @ Southern Mississippi Golden Eagles,NCAAF,Southern Mississippi Golden Eagles,2025-09-13 19:02:32,Unibet (NL),2.8,15.21,2.43,Not Found,2025-09-13 19:09:01
-Universidad Católica (CHI) @ Deportes Limache,Primera División - Chile,Universidad Católica (CHI),2025-09-13 19:00:00,DraftKings,2.95,27.78,2.309,Not Found,2025-09-13 19:25:24
+Alex Hernandez @ Carlos Diego Ferreira,MMA,Carlos Diego Ferreira,2025-09-13 18:45:00,Caesars,2.2,9.15,2.016,API Error,2025-09-13 18:39:47
+Western Michigan Broncos @ Illinois Fighting Illini,NCAAF,Western Michigan Broncos,2025-09-13 19:00:00,Ladbrokes,26.0,15.05,22.598,API Error,2025-09-13 18:50:47
+Montreal Alouettes @ Saskatchewan Roughriders,CFL,Montreal Alouettes,2025-09-13 19:00:00,Betway,4.25,10.47,3.847,API Error,2025-09-13 18:50:47
+Eastern Michigan Eagles @ Kentucky Wildcats,NCAAF,Eastern Michigan Eagles,2025-09-13 19:30:00,Ladbrokes,23.0,54.12,14.923,API Error,2025-09-13 19:09:01
+Ohio Bobcats @ Ohio State Buckeyes,NCAAF,Ohio Bobcats,2025-09-13 19:05:25,Paddy Power,41.0,47.21,27.851,API Error,2025-09-13 19:09:01
+Dustin Stoltzfus @ Kelvin Gastelum,MMA,Dustin Stoltzfus,2025-09-13 18:56:00,FanDuel,4.1,42.73,2.872,API Error,2025-09-13 19:09:01
+Jacksonville State Gamecocks @ Georgia Southern Eagles,NCAAF,Jacksonville State Gamecocks,2025-09-13 19:05:20,Unibet (NL),2.9,19.33,2.43,API Error,2025-09-13 19:09:01
+Appalachian State Mountaineers @ Southern Mississippi Golden Eagles,NCAAF,Southern Mississippi Golden Eagles,2025-09-13 19:02:32,Unibet (NL),2.8,15.21,2.43,API Error,2025-09-13 19:09:01
+Universidad Católica (CHI) @ Deportes Limache,Primera División - Chile,Universidad Católica (CHI),2025-09-13 19:00:00,DraftKings,2.95,27.78,2.309,API Error,2025-09-13 19:25:24
 Houston Astros @ Atlanta Braves,MLB,Houston Astros,2025-09-13 19:15:00,DraftKings,1.92,5.7,1.817,Houston Astros,2025-09-13 19:25:24
 Cruz Azul @ Pachuca,Liga MX,Cruz Azul,2025-09-13 19:00:00,Coolbet,5.5,121.82,2.479,Cruz Azul,2025-09-13 19:37:44
-Jared Gordon @ Rafa Garcia,MMA,Rafa Garcia,2025-09-13 19:26:00,Unibet (NL),3.85,53.05,2.516,Not Found,2025-09-13 19:37:44
+Jared Gordon @ Rafa Garcia,MMA,Rafa Garcia,2025-09-13 19:26:00,Unibet (NL),3.85,53.05,2.516,API Error,2025-09-13 19:37:44
 Toronto FC @ New England Revolution,MLS,Toronto FC,2025-09-13 19:40:00,1xBet,4.6,10.36,4.168,Draw,2025-09-13 19:37:44
-Inter Miami CF @ Charlotte FC,MLS,Charlotte FC,2025-09-13 19:40:00,1xBet,3.31,5.63,3.134,Not Found,2025-09-13 19:37:44
+Inter Miami CF @ Charlotte FC,MLS,Charlotte FC,2025-09-13 19:40:00,1xBet,3.31,5.63,3.134,API Error,2025-09-13 19:37:44
 East Carolina Pirates @ Coastal Carolina Chanticleers,NCAAF,East Carolina Pirates,2025-09-13 19:33:15,BetMGM,1.5,5.0,1.429,Not Found,2025-09-13 19:37:44
 Arizona Diamondbacks @ Minnesota Twins,MLB,Arizona Diamondbacks,2025-09-13 19:13:00,Bovada,3.2,50.83,2.122,Minnesota Twins,2025-09-13 19:48:54
 Utah Utes @ Wyoming Cowboys,NCAAF,Wyoming Cowboys,2025-09-13 20:00:00,Marathon Bet,17.25,27.91,13.486,Utah Utes,2025-09-13 19:48:54
