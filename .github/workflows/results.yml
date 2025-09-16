@@ -46,6 +46,8 @@ jobs:
           data/master_pin_full.csv
           data/master_zscore_bets.csv
           data/master_zscore_full.csv
+          data/master_random_bets.csv
+          data/master_random_full.csv
         "
 
         git add $CSV_LIST
