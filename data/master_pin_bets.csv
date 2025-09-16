@@ -534,7 +534,7 @@ UConn Huskies @ Delaware Blue Hens,NCAAF,UConn Huskies,2025-09-13 15:02:28,GTbet
 Remo @ Vila Nova,Brazil Série B,Remo,2025-09-13 17:30:00,Bovada,4.15,8.15,3.837,Draw,2025-09-13 17:24:32
 Joaquim Silva @ Claudio Puelles,MMA,Joaquim Silva,2025-09-13 17:27:00,BetMGM,6.5,184.68,2.283,Not Found,2025-09-13 17:36:33
 Internacional @ Palmeiras,Brazil Série A,Internacional,2025-09-13 17:30:00,Unibet,23.0,156.6,8.963,Palmeiras,2025-09-13 17:36:33
-Merrimack Warriors @ Kennesaw State Owls,NCAAF,Merrimack Warriors,2025-09-13 18:00:00,Marathon Bet,8.5,25.59,6.768,Not Found,2025-09-13 17:36:33
+Merrimack Warriors @ Kennesaw State Owls,NCAAF,Merrimack Warriors,2025-09-13 18:00:00,Marathon Bet,8.5,25.59,6.768,API Error,2025-09-13 17:36:33
 Buffalo Bisons @ Rochester Red Wings,MiLB,Rochester Red Wings,2025-09-13 18:05:00,BetOnline.ag,2.1,8.95,1.927,Buffalo Bisons,2025-09-13 17:48:24
 River Plate @ Estudiantes,Primera División - Argentina,Estudiantes,2025-09-13 18:00:00,Bet Victor,7.0,122.43,3.147,API Error,2025-09-13 18:08:40
 Eastern Kentucky Colonels @ Marshall Thundering Herd,NCAAF,Eastern Kentucky Colonels,2025-09-13 18:09:00,Unibet (SE),7.5,22.27,6.134,API Error,2025-09-13 18:08:40
@@ -705,13 +705,13 @@ Tampa Bay Rays @ Chicago Cubs,MLB,Tampa Bay Rays,2025-09-14 14:20:00,William Hil
 St. Louis Cardinals @ Milwaukee Brewers,MLB,Milwaukee Brewers,2025-09-14 14:12:00,Betway,2.15,40.44,1.531,Milwaukee Brewers,2025-09-14 14:35:28
 Arizona Diamondbacks @ Minnesota Twins,MLB,Minnesota Twins,2025-09-14 14:13:00,TAB,2.15,13.63,1.892,Arizona Diamondbacks,2025-09-14 14:35:28
 Union Santa Fe @ Gimnasia La Plata,Primera División - Argentina,Gimnasia La Plata,2025-09-14 14:00:00,Bet Victor,5.0,8.36,4.614,Union Santa Fe,2025-09-14 14:48:28
-Sacramento River Cats @ Oklahoma City Baseball Club,MiLB,Sacramento River Cats,2025-09-14 15:05:00,BetOnline.ag,3.37,6.5,3.164,Not Found,2025-09-14 14:48:28
+Sacramento River Cats @ Oklahoma City Baseball Club,MiLB,Sacramento River Cats,2025-09-14 15:05:00,BetOnline.ag,3.37,6.5,3.164,API Error,2025-09-14 14:48:28
 Cuiabá @ Operario PR,Brazil Série B,Operario PR,2025-09-14 15:00:00,Paddy Power,5.5,112.77,2.585,Draw,2025-09-14 15:21:57
 Gil Vicente @ Braga,Primeira Liga - Portugal,Gil Vicente,2025-09-14 15:30:00,Bovada,6.5,13.47,5.728,Gil Vicente,2025-09-14 15:21:57
 Lyon @ Rennes,Ligue 1 - France,Rennes,2025-09-14 14:45:00,Suprabets,6.6,11.62,5.913,Lyon,2025-09-14 15:21:57
 Bologna @ AC Milan,Serie A - Italy,Draw,2025-09-14 14:49:00,Bovada,3.25,6.95,3.039,Bologna,2025-09-14 15:21:57
 Flamengo @ Juventude,Brazil Série A,Juventude,2025-09-14 15:01:00,Unibet,41.0,330.44,9.525,Flamengo,2025-09-14 15:35:40
-Leganés @ Granada CF,La Liga 2 - Spain,Granada CF,2025-09-14 15:00:00,Tipico,4.7,60.2,2.934,Not Found,2025-09-14 15:35:40
+Leganés @ Granada CF,La Liga 2 - Spain,Granada CF,2025-09-14 15:00:00,Tipico,4.7,60.2,2.934,API Error,2025-09-14 15:35:40
 Santos @ Atletico Mineiro,Brazil Série A,Atletico Mineiro,2025-09-14 15:01:00,FanDuel,2.78,21.96,2.279,Draw,2025-09-14 15:35:40
 Carolina Panthers @ Arizona Cardinals,NFL,Carolina Panthers,2025-09-14 16:04:31,Tipico,9.0,132.09,3.878,Arizona Cardinals,2025-09-14 16:10:27
 Cincinnati Reds @ Oakland Athletics,MLB,Oakland Athletics,2025-09-14 16:05:00,GTbets,2.35,15.7,2.031,Oakland Athletics,2025-09-14 16:10:27
@@ -724,8 +724,8 @@ Philadelphia Eagles @ Kansas City Chiefs,NFL,Kansas City Chiefs,2025-09-14 16:25
 Botafogo @ Sao Paulo,Brazil Série A,Botafogo,2025-09-14 16:31:00,BetMGM,13.5,26.3,10.689,São Paulo,2025-09-14 17:08:35
 New York Liberty @ Phoenix Mercury,WNBA,Phoenix Mercury,2025-09-14 17:03:05,DraftKings,2.6,18.97,2.185,New York Liberty,2025-09-14 17:08:35
 Boca Juniors @ Rosario Central,Primera División - Argentina,Boca Juniors,2025-09-14 16:30:00,FanDuel,5.1,16.1,4.393,Draw,2025-09-14 18:09:12
-Botafogo @ Athletic Club (MG),Brazil Série B,Botafogo,2025-09-14 17:30:00,Bovada,21.0,352.15,4.644,Not Found,2025-09-14 18:47:54
-Barbados Royals @ Guyana Amazon Warriors,CPLT20,Guyana Amazon Warriors,2025-09-14 19:00:00,Unibet (SE),1.81,8.69,1.665,Not Found,2025-09-14 19:09:10
+Botafogo @ Athletic Club (MG),Brazil Série B,Botafogo,2025-09-14 17:30:00,Bovada,21.0,352.15,4.644,API Error,2025-09-14 18:47:54
+Barbados Royals @ Guyana Amazon Warriors,CPLT20,Guyana Amazon Warriors,2025-09-14 19:00:00,Unibet (SE),1.81,8.69,1.665,API Error,2025-09-14 19:09:10
 Talleres @ CA Tigre BA,Primera División - Argentina,Talleres,2025-09-14 19:00:00,FanDuel,3.0,5.23,2.851,Not Found,2025-09-14 19:09:10
 New York Yankees @ Boston Red Sox,MLB,New York Yankees,2025-09-14 19:11:00,DraftKings,11.2,320.68,2.662,Boston Red Sox,2025-09-14 19:26:08
 Monterrey @ Querétaro,Liga MX,Querétaro,2025-09-14 19:00:00,FanDuel,6.0,10.47,5.431,Not Found,2025-09-14 19:26:08
