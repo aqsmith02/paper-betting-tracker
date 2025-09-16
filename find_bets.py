@@ -11,6 +11,7 @@ Date: July 2025
 """
 # ---------------------------------------- Imports ---------------------------------------- #
 import os
+import random
 from datetime import datetime
 from zoneinfo import ZoneInfo
 from dataclasses import dataclass
@@ -456,6 +457,22 @@ def analyze_pinnacle_edge_bets(df: pd.DataFrame, pinnacle_column: str = "Pinnacl
     df["Pin Edge Pct"] = edge_percentages
     return df
 
+def find_random_bets(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Place random bets.
+    
+    Args:
+        df (pd.DataFrame): DataFrame containing odds data.
+        
+    Returns:
+        pd.DataFrame: DataFrame with additional column for placed random bets.
+    """
+    df = df.copy()
+    rand_amount = random.randint(0, min(5, len(df)))
+    df_sample = df.sample(n=rand_amount)
+    df["Random Placed Bet"] = df.index.isin(df_sample.index).astype(int)
+
+    return df
 
 # ---------------------------------------- Summary Creation ---------------------------------------- #
 def create_average_edge_summary(df: pd.DataFrame) -> pd.DataFrame:
@@ -586,6 +603,35 @@ def create_pinnacle_edge_summary(df: pd.DataFrame) -> pd.DataFrame:
     
     return pd.DataFrame(summary_rows)
 
+def create_random_summary(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Create summary of randomly selected bets.
+    
+    Args:
+        df (pd.DataFrame): DataFrame containing random bet column.
+        
+    Returns:
+        pd.DataFrame: Summary DataFrame with only random bets.
+    """
+    if df.empty:
+        return pd.DataFrame()
+    
+    summary_rows = []
+    for _, row in df.iterrows():
+        if row["Random Placed Bet"] == 0:
+            continue
+            
+        summary_rows.append({
+            "Match": row["Match"],
+            "League": row["League"], 
+            "Team": row["Team"],
+            "Start Time": row["Start Time"],
+            "Random Bet Book": row["Best Bookmaker"],
+            "Random Bet Odds": row["Best Odds"],
+            "Result": row.get("Result", "Not Found"),
+        })
+    
+    return pd.DataFrame(summary_rows)
 
 # ---------------------------------------- File Management ---------------------------------------- #
 class BetFileManager:
@@ -623,7 +669,8 @@ class BetFileManager:
             "master_avg_full.csv": ["Avg Edge Pct", "Fair Odds Avg"],
             "master_mod_zscore_full.csv": ["Modified Z Score"],
             "master_pin_full.csv": ["Pinnacle Fair Odds", "Pin Edge Pct"],
-            "master_zscore_full.csv": ["Z Score"]
+            "master_zscore_full.csv": ["Z Score"],
+            "master_random_full.csv": ["Random Bet Odds"]
         }
         return strategy_columns.get(filename)
     
@@ -733,7 +780,7 @@ class BetFileManager:
             return pd.DataFrame()
         
         # Find the score column for this strategy
-        score_columns = ["Avg Edge Pct", "Z Score", "Modified Z Score", "Pin Edge Pct"]
+        score_columns = ["Avg Edge Pct", "Z Score", "Modified Z Score", "Pin Edge Pct", "Random Bet Odds"]
         score_column = None
         
         for column in score_columns:
@@ -855,6 +902,14 @@ def main():
             score_column="Modified Z Score",
             summary_func=create_modified_zscore_summary,
             analysis_func=analyze_modified_zscore_outliers
+        ),
+        BettingStrategy(
+            name="Random Bets",
+            summary_file="master_random_bets.csv",
+            full_file="master_random_full.csv",
+            score_column="Random Bet Odds",
+            summary_func=create_random_summary,
+            analysis_func=find_random_bets
         )
     ]
     

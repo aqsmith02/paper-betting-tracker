@@ -19,7 +19,7 @@ from typing import List, Dict, Optional
 # ---------------------------------------- Configuration ------------------------------------------ #
 
 # API Configuration
-API_KEY = "7ca177e18aa6a5230dddc27a238e3f73"
+API_KEY = "9e971bc2de30ec1e46baa52d8cf4dc92"
 REGIONS = "us,uk,eu,au"
 MARKETS = "h2h"
 ODDS_FORMAT = "decimal"

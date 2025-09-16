@@ -30,6 +30,7 @@ FILE_CONFIGS = [
     ("master_mod_zscore_bets.csv", "master_mod_zscore_full.csv"),
     ("master_pin_bets.csv", "master_pin_full.csv"),
     ("master_zscore_bets.csv", "master_zscore_full.csv"),
+    ("master_random_bets.csv", "master_random_full.csv"),
 ]
 
 PENDING_RESULTS = ["Not Found", "Pending", "API Error"]
