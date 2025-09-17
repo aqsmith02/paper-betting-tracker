@@ -709,16 +709,16 @@ Arsenal @ Athletic Bilbao,UEFA Champions League,Draw,2025-09-16 12:45:00,Suprabe
 Landskrona BoIS @ Helsingborgs IF,Superettan - Sweden,Helsingborgs IF,2025-09-16 13:00:00,Bovada,2.15,6.0,2.028,Not Found,2025-09-16 12:52:48
 SC Bastia @ Boulogne,Ligue 2 - France,SC Bastia,2025-09-16 13:00:00,FanDuel,2.45,5.25,2.328,Not Found,2025-09-16 13:12:13
 TSG Hoffenheim II @ FC Viktoria Köln 1904,3. Liga - Germany,TSG Hoffenheim II,2025-09-16 13:00:03,Tipico,7.0,121.08,3.166,Not Found,2025-09-16 13:30:52
-MSV Duisburg @ Schweinfurt,3. Liga - Germany,Schweinfurt,2025-09-16 13:00:38,Paddy Power,7.5,116.3,3.467,API Error,2025-09-16 13:30:52
-Jahn Regensburg @ Wehen Wiesbaden,3. Liga - Germany,Wehen Wiesbaden,2025-09-16 13:00:00,Unibet (SE),2.33,9.49,2.128,API Error,2025-09-16 13:30:52
-Atlanta Braves @ Washington Nationals,MLB,Atlanta Braves,2025-09-16 13:06:00,FanDuel,1.7,6.98,1.589,API Error,2025-09-16 13:30:52
-Grimsby Town @ Sheffield Wednesday,EFL Cup,Sheffield Wednesday,2025-09-16 14:45:00,FanDuel,3.2,12.58,2.843,API Error,2025-09-16 13:48:12
+MSV Duisburg @ Schweinfurt,3. Liga - Germany,Schweinfurt,2025-09-16 13:00:38,Paddy Power,7.5,116.3,3.467,Not Found,2025-09-16 13:30:52
+Jahn Regensburg @ Wehen Wiesbaden,3. Liga - Germany,Wehen Wiesbaden,2025-09-16 13:00:00,Unibet (SE),2.33,9.49,2.128,Wehen Wiesbaden,2025-09-16 13:30:52
+Atlanta Braves @ Washington Nationals,MLB,Atlanta Braves,2025-09-16 13:06:00,FanDuel,1.7,6.98,1.589,Atlanta Braves,2025-09-16 13:30:52
+Grimsby Town @ Sheffield Wednesday,EFL Cup,Sheffield Wednesday,2025-09-16 14:45:00,FanDuel,3.2,12.58,2.843,Grimsby Town,2025-09-16 13:48:12
 Qarabağ FK @ Benfica,UEFA Champions League,Qarabağ FK,2025-09-16 15:00:00,Betsson,22.0,24.61,17.655,Not Found,2025-09-16 14:46:06
-Aston Villa @ Brentford,EFL Cup,Brentford,2025-09-16 15:00:00,LeoVegas,3.8,11.03,3.422,Not Found,2025-09-16 14:46:06
-Millwall @ Crystal Palace,EFL Cup,Millwall,2025-09-16 15:00:00,Coolbet,12.0,9.98,10.911,Not Found,2025-09-16 14:46:06
-Villarreal @ Tottenham Hotspur,UEFA Champions League,Draw,2025-09-16 15:00:00,1xBet,3.96,6.17,3.73,Not Found,2025-09-16 14:46:06
-Borussia Dortmund @ Juventus,UEFA Champions League,Draw,2025-09-16 15:00:00,Unibet (FR),3.6,10.25,3.265,Not Found,2025-09-16 15:23:54
-Marseille @ Real Madrid,UEFA Champions League,Marseille,2025-09-16 15:02:00,Paddy Power,9.0,9.1,8.25,Not Found,2025-09-16 15:23:54
+Aston Villa @ Brentford,EFL Cup,Brentford,2025-09-16 15:00:00,LeoVegas,3.8,11.03,3.422,Draw,2025-09-16 14:46:06
+Millwall @ Crystal Palace,EFL Cup,Millwall,2025-09-16 15:00:00,Coolbet,12.0,9.98,10.911,API Error,2025-09-16 14:46:06
+Villarreal @ Tottenham Hotspur,UEFA Champions League,Draw,2025-09-16 15:00:00,1xBet,3.96,6.17,3.73,API Error,2025-09-16 14:46:06
+Borussia Dortmund @ Juventus,UEFA Champions League,Draw,2025-09-16 15:00:00,Unibet (FR),3.6,10.25,3.265,Draw,2025-09-16 15:23:54
+Marseille @ Real Madrid,UEFA Champions League,Marseille,2025-09-16 15:02:00,Paddy Power,9.0,9.1,8.25,Real Madrid,2025-09-16 15:23:54
 Avai @ Atletico Goianiense,Brazil Série B,Avai,2025-09-16 18:30:00,Nordic Bet,3.95,9.26,3.615,Not Found,2025-09-16 15:36:31
 Racing Club @ Velez Sarsfield,Copa Libertadores,Draw,2025-09-16 18:00:00,1xBet,3.06,6.34,2.877,Not Found,2025-09-16 17:09:18
 Chicago Cubs @ Pittsburgh Pirates,MLB,Pittsburgh Pirates,2025-09-16 18:42:00,Fanatics,2.35,26.45,1.858,Not Found,2025-09-16 18:50:21

@@ -661,12 +661,10 @@ Saitama Seibu Lions @ Hokkaido Nippon-Ham Fighters,NPB,Saitama Seibu Lions,2025-
 Portland State Vikings @ Hawaii Rainbow Warriors,NCAAF,Portland State Vikings,2025-09-13 23:59:00,DraftKings,41.0,3.17,Hawaii Rainbow Warriors,2025-09-14 00:33:50
 Kia Tigers @ LG Twins,KBO,LG Twins,2025-09-14 04:00:00,BetOnline.ag,1.62,2.25,LG Twins,2025-09-14 01:10:00
 KT Wiz @ Samsung Lions,KBO,KT Wiz,2025-09-14 04:00:00,BetOnline.ag,2.17,3.37,Samsung Lions,2025-09-14 01:48:28
-Christian Medina Jimenez @ Yoshiki Takei,Boxing,Christian Medina Jimenez,2025-09-14 05:30:00,1xBet,5.64,4.32,Not Found,2025-09-14 02:40:43
 Yomiuri Giants @ Yokohama DeNA BayStars,NPB,Yokohama DeNA BayStars,2025-09-14 05:00:00,Pinnacle,1.93,2.7,Yokohama DeNA BayStars,2025-09-14 03:25:59
 Daegu FC @ Sangju Sangmu FC,K League 1,Draw,2025-09-14 06:00:00,Pinnacle,4.21,3.51,Daegu FC,2025-09-14 04:12:27
 Jeju United FC @ FC Anyang,K League 1,FC Anyang,2025-09-14 06:00:00,Coolbet,2.35,3.37,FC Anyang,2025-09-14 04:12:27
 Chunichi Dragons @ Hanshin Tigers,NPB,Chunichi Dragons,2025-09-14 05:00:00,Pinnacle,2.73,2.43,Chunichi Dragons,2025-09-14 04:33:54
-Ryusei Matsumoto @ Yuni Takada,Boxing,Draw,2025-09-14 04:37:00,Paddy Power,21.0,4.05,Not Found,2025-09-14 04:48:38
 Tokyo Yakult Swallows @ Hiroshima Toyo Carp,NPB,Tokyo Yakult Swallows,2025-09-14 05:00:00,William Hill,2.28,2.43,Tokyo Yakult Swallows,2025-09-14 04:48:38
 Torino @ AS Roma,Serie A - Italy,AS Roma,2025-09-14 06:30:00,1xBet,1.56,2.92,AS Roma,2025-09-14 05:10:00
 Sparta Rotterdam @ Excelsior,Dutch Eredivisie,Sparta Rotterdam,2025-09-14 06:15:00,Tipico,2.95,2.7,Excelsior,2025-09-14 05:10:00
@@ -839,7 +837,7 @@ IPK @ Hermes,Mestis,IPK,2025-09-16 11:30:00,1xBet,1.78,4.05,IPK,2025-09-16 05:12
 Kiekko-Espoo @ KalPa,Liiga,Draw,2025-09-16 11:30:00,1xBet,4.3,2.7,KalPa,2025-09-16 05:33:23
 Union Saint-Gilloise @ PSV Eindhoven,UEFA Champions League,Union Saint-Gilloise,2025-09-16 12:45:00,Suprabets,4.2,2.47,API Error,2025-09-16 05:33:23
 Arsenal @ Athletic Bilbao,UEFA Champions League,Arsenal,2025-09-16 12:45:00,1xBet,1.82,2.36,Arsenal,2025-09-16 05:33:23
-SSV Ulm 1846 @ 1. FC Saarbrücken,3. Liga - Germany,Draw,2025-09-16 13:00:00,Pinnacle,3.86,2.07,Not Found,2025-09-16 05:33:23
+SSV Ulm 1846 @ 1. FC Saarbrücken,3. Liga - Germany,Draw,2025-09-16 13:00:00,Pinnacle,3.86,2.07,API Error,2025-09-16 05:33:23
 Kiwoom Heroes @ Doosan Bears,KBO,Kiwoom Heroes,2025-09-16 05:31:00,Caesars,2.75,3.37,Kiwoom Heroes,2025-09-16 05:48:37
 Alemannia Aachen @ SC Verl,3. Liga - Germany,SC Verl,2025-09-16 13:00:00,Suprabets,1.94,2.02,Not Found,2025-09-16 07:38:05
 SC Bastia @ Boulogne,Ligue 2 - France,SC Bastia,2025-09-16 13:00:00,Suprabets,2.33,4.38,Not Found,2025-09-16 10:35:39
@@ -854,27 +852,27 @@ Atlanta Braves @ Washington Nationals,MLB,Atlanta Braves,2025-09-16 13:06:00,Win
 Grimsby Town @ Sheffield Wednesday,EFL Cup,Sheffield Wednesday,2025-09-16 14:45:00,Pinnacle,2.86,2.16,Grimsby Town,2025-09-16 13:12:12
 Rögle BK @ Skellefteå AIK,SHL,Draw,2025-09-16 13:00:00,Marathon Bet,4.1,2.02,Skellefteå AIK,2025-09-16 13:12:12
 Luleå HF @ Brynäs IF,SHL,Luleå HF,2025-09-16 13:01:00,Betway,6.0,4.72,Luleå HF,2025-09-16 13:30:52
-Timrå IK @ Linköping HC,SHL,Draw,2025-09-16 13:00:00,Betway,3.6,3.37,API Error,2025-09-16 13:48:11
-Millwall @ Crystal Palace,EFL Cup,Draw,2025-09-16 15:00:00,FanDuel,5.6,4.72,Not Found,2025-09-16 14:46:05
-Villarreal @ Tottenham Hotspur,UEFA Champions League,Draw,2025-09-16 15:00:00,1xBet,3.96,4.18,Not Found,2025-09-16 14:46:05
+Timrå IK @ Linköping HC,SHL,Draw,2025-09-16 13:00:00,Betway,3.6,3.37,Not Found,2025-09-16 13:48:11
+Millwall @ Crystal Palace,EFL Cup,Draw,2025-09-16 15:00:00,FanDuel,5.6,4.72,Draw,2025-09-16 14:46:05
+Villarreal @ Tottenham Hotspur,UEFA Champions League,Draw,2025-09-16 15:00:00,1xBet,3.96,4.18,Tottenham Hotspur,2025-09-16 14:46:05
 Qarabağ FK @ Benfica,UEFA Champions League,Qarabağ FK,2025-09-16 15:00:00,Betsson,22.0,4.05,Not Found,2025-09-16 14:46:05
-Marseille @ Real Madrid,UEFA Champions League,Real Madrid,2025-09-16 15:00:00,1xBet,1.4,3.37,Not Found,2025-09-16 14:46:05
-Borussia Dortmund @ Juventus,UEFA Champions League,Draw,2025-09-16 15:00:00,1xBet,3.69,3.24,Not Found,2025-09-16 14:46:05
-Aston Villa @ Brentford,EFL Cup,Draw,2025-09-16 15:00:00,1xBet,3.96,2.83,Not Found,2025-09-16 14:46:05
+Marseille @ Real Madrid,UEFA Champions League,Real Madrid,2025-09-16 15:00:00,1xBet,1.4,3.37,Real Madrid,2025-09-16 14:46:05
+Borussia Dortmund @ Juventus,UEFA Champions League,Draw,2025-09-16 15:00:00,1xBet,3.69,3.24,Draw,2025-09-16 14:46:05
+Aston Villa @ Brentford,EFL Cup,Draw,2025-09-16 15:00:00,1xBet,3.96,2.83,Draw,2025-09-16 14:46:05
 Racing Club @ Velez Sarsfield,Copa Libertadores,Draw,2025-09-16 18:00:00,1xBet,3.02,2.28,Not Found,2025-09-16 14:46:05
 Oklahoma City Baseball Club @ Tacoma Rainiers,MiLB,Tacoma Rainiers,2025-09-16 15:05:00,BetOnline.ag,1.83,2.02,Not Found,2025-09-16 14:46:05
-Taunton Town FC @ Weston-super-Mare AFC,FA Cup,Taunton Town FC,2025-09-16 14:46:00,Bet Victor,7.5,4.5,API Error,2025-09-16 15:08:34
-Grimsby Borough FC @ Halesowen Town FC,FA Cup,Grimsby Borough FC,2025-09-16 14:47:00,Bet Victor,13.0,4.05,API Error,2025-09-16 15:08:34
+Taunton Town FC @ Weston-super-Mare AFC,FA Cup,Taunton Town FC,2025-09-16 14:46:00,Bet Victor,7.5,4.5,Not Found,2025-09-16 15:08:34
+Grimsby Borough FC @ Halesowen Town FC,FA Cup,Grimsby Borough FC,2025-09-16 14:47:00,Bet Victor,13.0,4.05,Not Found,2025-09-16 15:08:34
 Scranton/Wilkes-Barre RailRiders @ Buffalo Bisons,MiLB,Scranton/Wilkes-Barre RailRiders,2025-09-16 18:05:00,BetOnline.ag,1.67,4.05,Not Found,2025-09-16 15:08:34
 Nashville Sounds @ Louisville Bats,MiLB,Nashville Sounds,2025-09-16 18:35:00,BetOnline.ag,1.74,4.05,Not Found,2025-09-16 15:08:34
-Whitstable Town FC @ Chichester City FC,FA Cup,Whitstable Town FC,2025-09-16 14:45:00,Bet Victor,5.25,3.54,API Error,2025-09-16 15:08:34
+Whitstable Town FC @ Chichester City FC,FA Cup,Whitstable Town FC,2025-09-16 14:45:00,Bet Victor,5.25,3.54,Not Found,2025-09-16 15:08:34
 Omaha Storm Chasers @ Columbus Clippers,MiLB,Omaha Storm Chasers,2025-09-16 18:15:00,BetOnline.ag,2.05,3.37,Not Found,2025-09-16 15:08:34
-Welling United FC @ Slough Town FC,FA Cup,Welling United FC,2025-09-16 14:46:00,Bet Victor,15.0,3.04,API Error,2025-09-16 15:08:34
+Welling United FC @ Slough Town FC,FA Cup,Welling United FC,2025-09-16 14:46:00,Bet Victor,15.0,3.04,Not Found,2025-09-16 15:08:34
 Racing Club Warwick FC @ Evesham United FC,FA Cup,Racing Club Warwick FC,2025-09-16 14:48:00,Bet Victor,6.5,3.04,Not Found,2025-09-16 15:08:34
 Rochester Red Wings @ Worcester Red Sox,MiLB,Worcester Red Sox,2025-09-16 18:05:00,BetOnline.ag,1.71,2.47,Not Found,2025-09-16 15:08:34
 Avai @ Atletico Goianiense,Brazil Série B,Atletico Goianiense,2025-09-16 18:30:00,Pinnacle,2.18,2.14,Not Found,2025-09-16 15:08:34
-Chasetown FC @ Banbury United FC,FA Cup,Chasetown FC,2025-09-16 14:46:00,Nordic Bet,6.3,2.02,API Error,2025-09-16 15:23:53
-Bedford Town FC @ Dagenham and Redbridge FC,FA Cup,Draw,2025-09-16 14:45:00,Bet Victor,4.8,3.15,API Error,2025-09-16 15:36:31
+Chasetown FC @ Banbury United FC,FA Cup,Chasetown FC,2025-09-16 14:46:00,Nordic Bet,6.3,2.02,Not Found,2025-09-16 15:23:53
+Bedford Town FC @ Dagenham and Redbridge FC,FA Cup,Draw,2025-09-16 14:45:00,Bet Victor,4.8,3.15,Not Found,2025-09-16 15:36:31
 Chicago Cubs @ Pittsburgh Pirates,MLB,Pittsburgh Pirates,2025-09-16 18:41:00,Pinnacle,1.81,2.47,Not Found,2025-09-16 18:10:05
 Cleveland Guardians @ Detroit Tigers,MLB,Detroit Tigers,2025-09-16 18:41:00,BetOnline.ag,1.76,2.02,Not Found,2025-09-16 18:10:05
 Oakland Athletics @ Boston Red Sox,MLB,Boston Red Sox,2025-09-16 18:46:00,BetUS,1.69,4.05,Not Found,2025-09-16 18:28:20
