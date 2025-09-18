@@ -14,8 +14,7 @@ import time
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 from typing import Any
-
-THESPORTSDB_API_KEY = "123"
+from constants import THESPORTSDB_API_KEY
 
 
 # ----------------------------------------- Formatting Helpers ----------------------------------------------
@@ -176,24 +175,3 @@ def get_finished_games_from_thesportsdb(df: pd.DataFrame) -> pd.DataFrame:
             time.sleep(60)
 
     return df
-
-
-# ------------------------------------------- Main Pipeline -----------------------------------------------
-def main() -> None:
-    """
-    Main pipeline for fetching and updating game results from TheSportsDB API.
-    
-    Args:
-        None
-        
-    Returns:
-        None
-    """
-    input_csv = "results.csv"
-    df = pd.read_csv(input_csv)
-    df = get_finished_games_from_thesportsdb(df)
-    df.to_csv("results2.csv", index=False)
-
-
-if __name__ == "__main__":
-    main()

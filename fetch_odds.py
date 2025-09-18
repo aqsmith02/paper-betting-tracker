@@ -15,21 +15,12 @@ from datetime import datetime
 from dateutil import parser
 import pytz
 from typing import List, Dict, Optional
+from constants import THEODDS_API_KEY
 
 # ---------------------------------------- Configuration ------------------------------------------ #
 
-# API Configuration
-API_KEY = "9e971bc2de30ec1e46baa52d8cf4dc92"
-REGIONS = "us,uk,eu,au"
-MARKETS = "h2h"
-ODDS_FORMAT = "decimal"
-DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
-
-# Current sport to fetch (change this to switch sports)
-CURRENT_SPORT = "upcoming"
-
 # Available Sports Keys
-SPORTS = {
+THEODDS_SPORTS_DICT = {
     "upcoming": "upcoming",
     "kbo": "baseball_kbo", 
     "mlb": "baseball_mlb",
@@ -55,6 +46,14 @@ SPORTS = {
     "mexico": "soccer_mexico_ligamx",
     "ireland": "soccer_league_of_ireland"
 }
+
+# API Configuration
+SPORT = "upcoming"
+SPORT_KEY = THEODDS_SPORTS_DICT[SPORT]
+REGIONS = "us,uk,eu,au"
+MARKETS = "h2h"
+ODDS_FORMAT = "decimal"
+DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 # Betting exchanges to exclude (they work differently than traditional bookmakers)
 EXCHANGE_BLOCKLIST = {
@@ -112,7 +111,7 @@ def _is_exchange(bookmaker_name: str) -> bool:
 
 
 # -------------------------- Main Functions ---------------------- #
-def fetch_odds(sport_key: Optional[str] = None) -> pd.DataFrame:
+def fetch_odds() -> pd.DataFrame:
     """
     Fetches head-to-head (h2h) betting odds from The Odds API.
     
@@ -123,18 +122,16 @@ def fetch_odds(sport_key: Optional[str] = None) -> pd.DataFrame:
         pd.DataFrame: DataFrame with columns: match, league, start time, team, bookmaker, odds, last update.
                      Each row represents one team's odds from one bookmaker.
     """
-    sport = sport_key or CURRENT_SPORT
-    
     # Build API request
-    url = f"https://api.the-odds-api.com/v4/sports/{sport}/odds"
+    url = f"https://api.the-odds-api.com/v4/sports/{SPORT_KEY}/odds"
     params = {
-        "apiKey": API_KEY,
+        "apiKey": THEODDS_API_KEY,
         "regions": REGIONS, 
         "markets": MARKETS,
         "oddsFormat": ODDS_FORMAT
     }
     
-    print(f"Fetching odds for sport: {sport}")
+    print(f"Fetching odds for sport: {SPORT}")
     response = requests.get(url, params=params)
     
     # Log API usage

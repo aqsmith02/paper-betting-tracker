@@ -13,141 +13,7 @@ import pandas as pd
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 from typing import Any, List, Dict
-
-sports= [
-    "americanfootball_cfl",
-    "americanfootball_ncaaf",
-    "americanfootball_ncaaf_championship_winner",
-    "americanfootball_nfl",
-    "americanfootball_nfl_preseason",
-    "americanfootball_nfl_super_bowl_winner",
-    "aussierules_afl",
-    "baseball_kbo",
-    "baseball_mlb",
-    "baseball_mlb_world_series_winner",
-    "basketball_nba_championship_winner",
-    "basketball_ncaab_championship_winner",
-    "basketball_wnba",
-    "boxing_boxing",
-    "cricket_international_t20",
-    "cricket_test_match",
-    "golf_masters_tournament_winner",
-    "icehockey_nhl",
-    "icehockey_nhl_championship_winner",
-    "lacrosse_pll",
-    "mma_mixed_martial_arts",
-    "rugbyleague_nrl",
-    "soccer_argentina_primera_division",
-    "soccer_austria_bundesliga",
-    "soccer_belgium_first_div",
-    "soccer_brazil_campeonato",
-    "soccer_brazil_serie_b",
-    "soccer_chile_campeonato",
-    "soccer_china_superleague",
-    "soccer_conmebol_copa_libertadores",
-    "soccer_conmebol_copa_sudamericana",
-    "soccer_denmark_superliga",
-    "soccer_efl_champ",
-    "soccer_england_efl_cup",
-    "soccer_england_league1",
-    "soccer_england_league2",
-    "soccer_epl",
-    "soccer_fifa_world_cup_qualifiers_europe",
-    "soccer_fifa_world_cup_winner",
-    "soccer_finland_veikkausliiga",
-    "soccer_france_ligue_one",
-    "soccer_france_ligue_two",
-    "soccer_germany_bundesliga",
-    "soccer_germany_bundesliga2",
-    "soccer_greece_super_league",
-    "soccer_italy_serie_a",
-    "soccer_japan_j_league",
-    "soccer_korea_kleague1",
-    "soccer_league_of_ireland",
-    "soccer_mexico_ligamx",
-    "soccer_netherlands_eredivisie",
-    "soccer_norway_eliteserien",
-    "soccer_poland_ekstraklasa",
-    "soccer_spain_la_liga",
-    "soccer_spl",
-    "soccer_sweden_allsvenskan",
-    "soccer_sweden_superettan",
-    "soccer_switzerland_superleague",
-    "soccer_turkey_super_league",
-    "soccer_uefa_champs_league_qualification",
-    "soccer_usa_mls"
-]
-
-sports_with_results = [
-    "americanfootball_cfl",
-    "americanfootball_ncaaf",
-    "americanfootball_nfl",
-    "americanfootball_nfl_preseason",
-    "americanfootball_ufl",
-    "aussierules_afl",
-    "baseball_mlb",
-    "basketball_euroleague",
-    "basketball_nba",
-    "basketball_nba_preseason",
-    "basketball_wnba",
-    "basketball_ncaab",
-    "icehockey_nhl",
-    "rugbyleague_nrl",
-    "soccer_argentina_primera_division",
-    "soccer_australia_aleague",
-    "soccer_austria_bundesliga",
-    "soccer_belgium_first_div",
-    "soccer_brazil_campeonato",
-    "soccer_brazil_serie_b",
-    "soccer_chile_campeonato",
-    "soccer_china_superleague",
-    "soccer_denmark_superliga",
-    "soccer_efl_champ",
-    "soccer_england_efl_cup",
-    "soccer_england_league1",
-    "soccer_england_league2",
-    "soccer_epl",
-    "soccer_fa_cup",
-    "soccer_fifa_world_cup",
-    "soccer_fifa_world_cup_womens",
-    "soccer_fifa_club_world_cup",
-    "soccer_finland_veikkausliiga",
-    "soccer_france_ligue_one",
-    "soccer_france_ligue_two",
-    "soccer_germany_bundesliga",
-    "soccer_germany_bundesliga2",
-    "soccer_germany_liga3",
-    "soccer_greece_super_league",
-    "soccer_italy_serie_a",
-    "soccer_italy_serie_b",
-    "soccer_japan_j_league",
-    "soccer_korea_kleague1",
-    "soccer_league_of_ireland",
-    "soccer_mexico_ligamx",
-    "soccer_netherlands_eredivisie",
-    "soccer_norway_eliteserien",
-    "soccer_poland_ekstraklasa",
-    "soccer_portugal_primeira_liga",
-    "soccer_spain_la_liga",
-    "soccer_spain_segunda_division",
-    "soccer_spl",
-    "soccer_sweden_allsvenskan",
-    "soccer_sweden_superettan",
-    "soccer_switzerland_superleague",
-    "soccer_turkey_super_league",
-    "soccer_uefa_europa_conference_league",
-    "soccer_uefa_champs_league",
-    "soccer_uefa_champs_league_qualification",
-    "soccer_uefa_europa_league",
-    "soccer_uefa_european_championship",
-    "soccer_uefa_euro_qualification",
-    "soccer_uefa_nations_league",
-    "soccer_conmebol_copa_america",
-    "soccer_conmebol_copa_libertadores",
-    "soccer_usa_mls"
-]
-
-API_KEY = "7ca177e18aa6a5230dddc27a238e3f73"
+from constants import THEODDS_API_KEY
 
 
 # ------------------------------------------ Formatting Helpers ---------------------------------------------
@@ -170,18 +36,12 @@ def _parse_match_teams(match: str) -> List[str]:
     Convert a match string to a list containing the individual teams.
     
     Args:
-        match (str): Match string in format "Team1 @ Team2" or "Team1 vs Team2".
+        match (str): Match string in format "Team1 @ Team2".
         
     Returns:
         List[str]: List containing individual team names [away_team, home_team].
     """
-    if "@" in match:
-        teams = [t.strip() for t in match.split("@")]
-    elif "vs" in match.lower():
-        teams = [t.strip() for t in match.lower().split("vs")]
-    else:
-        teams = [match.strip()]
-    return teams
+    return [t.strip() for t in match.split("@")]
 
 
 # -------------------------------------- Time Since Start Filter --------------------------------------------
@@ -225,7 +85,7 @@ def _get_scores_from_api(sports_key: str, days_from: int = 3) -> List[Dict]:
     Returns:
         List[Dict]: List of completed game dictionaries from the API response.
     """
-    url = f"https://api.the-odds-api.com/v4/sports/{sports_key}/scores/?daysFrom={days_from}&apiKey={API_KEY}"
+    url = f"https://api.the-odds-api.com/v4/sports/{sports_key}/scores/?daysFrom={days_from}&apiKey={THEODDS_API_KEY}"
     resp = requests.get(url)
     if resp.status_code != 200:
         print(f"Error fetching scores from Odds API: {resp.status_code}")
@@ -256,39 +116,39 @@ def _filter(scores: List[Dict], start_date: str, home_team: str, away_team: str)
 
 
 # --------------------------------------- Determine Winner of Game ------------------------------------------
-def _get_winner(game: Dict, home: str, away: str) -> str:
+def _get_winner(game: Dict) -> str:
     """
     Determine the game result by comparing scores from a completed game.
     
     Args:
         game (Dict): Game dictionary containing score and completion information.
-        home (str): Home team name.
-        away (str): Away team name.
         
     Returns:
-        str: Winner team name, "Draw", "Pending", or "invalid" if scores cannot be parsed.
+        str: Winning team name or "Pending" if game has not completed.
     """
-    # Check if the game has completed
     if not game.get("completed"):
         return "Pending"
     
-    # Pull the scores
-    home_score = game.get("scores", [{}])[0].get("score", 0)
-    away_score = game.get("scores", [{}])[1].get("score", 0)
-    print(f"{home} (H) vs {away} (A): {home_score}-{away_score}")
+    home_team = game["home_team"]
+    away_team = game["away_team"]
 
-    # Force scores to int type
-    try:
-        home_score = int(home_score)
-        away_score = int(away_score)
-    except (ValueError, TypeError):
-        return "invalid"
+    home_score = None
+    away_score = None
+
+    for item in game["scores"]:
+        if item["name"] == home_team:
+            home_score = int(item["score"])  
+        elif item["name"] == away_team:
+            away_score = int(item["score"])
+
+    print(f"{home_score} (H) vs {away_score} (A): {home_score}-{away_score}")
+
     
     # Compare
     if home_score > away_score:
-        return home
+        return home_team
     elif away_score > home_score:
-        return away
+        return away_team
     else:
         return "Draw"
 
@@ -318,7 +178,7 @@ def get_finished_games_from_theodds(df: pd.DataFrame, sports_key: str) -> pd.Dat
         row = df.iloc[i]
         existing_result = row.get("Result")
 
-        # Skip rows that already have a result other than "Not Found"
+        # Skip rows that already have a valid result
         if existing_result not in ["Not Found", "Pending", "API Error"]:
             continue
 
@@ -331,7 +191,7 @@ def get_finished_games_from_theodds(df: pd.DataFrame, sports_key: str) -> pd.Dat
 
         # With the scores list filtered to match the game at this row, find the result
         if matches:
-            result = _get_winner(matches[0], home_team, away_team)
+            result = _get_winner(matches[0])
         else:
             result = "Not Found"
 
@@ -418,32 +278,3 @@ def map_league_to_key(df: pd.DataFrame) -> List[str]:
     key_list = df["League"].map(league_to_key)
     unique_keys = key_list.dropna().unique().tolist()
     return unique_keys
-
-
-# -------------------------------------------- Main Pipeline ------------------------------------------------
-def main() -> None:
-    """
-    Main pipeline for fetching and updating game results from The-Odds-API.
-    
-    Args:
-        None
-        
-    Returns:
-        None
-    """
-    input_csv = "master_avg_bets.csv"
-    output_csv = "results.csv"
-    df = pd.read_csv(input_csv)
-
-    # Find keys
-    keys = map_league_to_key(df)
-
-    # Loop through keys
-    for key in keys:
-        df = get_finished_games_from_theodds(df, key)
-
-    df.to_csv(output_csv, index=False)
-
-
-if __name__ == "__main__":
-    main()
