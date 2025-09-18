@@ -726,7 +726,6 @@ Platense @ Defensa y Justicia,Primera División - Argentina,Defensa y Justicia,2
 Ceará @ Vasco da Gama,Brazil Série A,Ceará,2025-09-14 19:30:00,Bovada,5.0,16.2,Draw,2025-09-14 19:49:15
 Atlanta Falcons @ Minnesota Vikings,NFL,Atlanta Falcons,2025-09-14 20:23:19,MyBookie.ag,1.9,10.73,Atlanta Falcons,2025-09-14 20:53:52
 Seattle Storm @ Las Vegas Aces,WNBA,Seattle Storm,2025-09-14 22:04:13,Caesars,7.4,33.2,Las Vegas Aces,2025-09-14 22:27:34
-Namibia @ Zimbabwe,International Twenty20,Namibia,2025-09-15 03:30:00,PlayUp,3.7,7.62,Not Found,2025-09-14 23:56:09
 Chiba Lotte Marines @ Tohoku Rakuten Golden Eagles,NPB,Chiba Lotte Marines,2025-09-15 00:00:34,William Hill,2.48,26.57,Tohoku Rakuten Golden Eagles,2025-09-15 00:26:08
 Saitama Seibu Lions @ Hokkaido Nippon-Ham Fighters,NPB,Saitama Seibu Lions,2025-09-15 00:00:45,Pinnacle,2.2,46.26,Hokkaido Nippon-Ham Fighters,2025-09-15 00:44:05
 Hong Kong @ Sri Lanka,Asia Cup,Hong Kong,2025-09-15 10:30:00,Betsson,28.0,65.12,Not Found,2025-09-15 01:11:54
@@ -825,25 +824,25 @@ Erzgebirge Aue @ FC Energie Cottbus,3. Liga - Germany,Erzgebirge Aue,2025-09-17 
 Servette @ FC Sion,Swiss Superleague,FC Sion,2025-09-17 13:00:00,Bovada,3.1,13.36,Not Found,2025-09-17 13:11:41
 Basaksehir @ Fatih Karagümrük,Turkey Super League,Fatih Karagümrük,2025-09-17 13:00:00,Tipico,4.7,13.16,Not Found,2025-09-17 13:11:41
 Atalanta BC @ Paris Saint Germain,UEFA Champions League,Atalanta BC,2025-09-17 15:00:00,Parions Sport (FR),7.7,7.05,Not Found,2025-09-17 13:11:41
-Atlético Madrid @ Liverpool,UEFA Champions League,Atlético Madrid,2025-09-17 15:00:00,Bet Victor,7.0,5.95,Not Found,2025-09-17 13:11:41
+Atlético Madrid @ Liverpool,UEFA Champions League,Atlético Madrid,2025-09-17 15:00:00,Bet Victor,7.0,5.95,Liverpool,2025-09-17 13:11:41
 TSV 1860 München @ Hansa Rostock,3. Liga - Germany,TSV 1860 München,2025-09-17 13:00:05,Bet Victor,3.1,5.77,Not Found,2025-09-17 13:11:41
 Fortuna Sittard @ Feyenoord,Dutch Eredivisie,Fortuna Sittard,2025-09-17 14:00:00,Pinnacle,11.96,5.74,Feyenoord,2025-09-17 13:11:41
-FC Ingolstadt 04 @ TSV Havelse,3. Liga - Germany,TSV Havelse,2025-09-17 13:00:41,Pinnacle,3.37,131.3,Not Found,2025-09-17 13:30:34
-FC Lausanne-Sport @ FC Lugano,Swiss Superleague,FC Lausanne-Sport,2025-09-17 13:01:00,Bovada,10.0,12.13,Not Found,2025-09-17 13:30:34
+FC Ingolstadt 04 @ TSV Havelse,3. Liga - Germany,TSV Havelse,2025-09-17 13:00:41,Pinnacle,3.37,131.3,API Error,2025-09-17 13:30:34
+FC Lausanne-Sport @ FC Lugano,Swiss Superleague,FC Lausanne-Sport,2025-09-17 13:01:00,Bovada,10.0,12.13,API Error,2025-09-17 13:30:34
 Ilves @ Jukurit,Liiga,Draw,2025-09-17 11:30:00,Winamax (DE),22.0,211.92,Jukurit,2025-09-17 13:48:36
 Cincinnati Reds @ St. Louis Cardinals,MLB,St. Louis Cardinals,2025-09-17 13:16:00,Pinnacle,2.07,22.13,Cincinnati Reds,2025-09-17 13:48:36
-Pelicans @ TPS,Liiga,Draw,2025-09-17 11:30:00,Coolbet,7.1,21.42,Not Found,2025-09-17 13:48:36
-VfL Osnabrück @ Rot-Weiss Essen,3. Liga - Germany,VfL Osnabrück,2025-09-17 13:00:17,Tipico,4.3,5.44,Not Found,2025-09-17 13:48:36
+Pelicans @ TPS,Liiga,Draw,2025-09-17 11:30:00,Coolbet,7.1,21.42,API Error,2025-09-17 13:48:36
+VfL Osnabrück @ Rot-Weiss Essen,3. Liga - Germany,VfL Osnabrück,2025-09-17 13:00:17,Tipico,4.3,5.44,API Error,2025-09-17 13:48:36
 Charleroi @ Genk,Belgium First Div,Charleroi,2025-09-17 14:30:00,Pinnacle,5.43,6.8,API Error,2025-09-17 14:15:18
 VfB Stuttgart II @ Waldhof Mannheim,3. Liga - Germany,Draw,2025-09-17 12:59:59,Pinnacle,1.72,27.13,API Error,2025-09-17 14:46:05
 Baltimore Orioles @ Chicago White Sox,MLB,Baltimore Orioles,2025-09-17 14:10:00,William Hill,1.73,10.49,API Error,2025-09-17 14:46:05
-Inter Milan @ Ajax,UEFA Champions League,Ajax,2025-09-17 15:00:00,LowVig.ag,5.7,7.53,Not Found,2025-09-17 15:08:09
-Chelsea @ Bayern Munich,UEFA Champions League,Chelsea,2025-09-17 15:01:00,Unibet,9.0,44.51,Not Found,2025-09-17 15:23:47
-Nottingham Forest @ Swansea City,EFL Cup,Nottingham Forest,2025-09-17 15:00:00,Pinnacle,1.92,38.19,Not Found,2025-09-17 15:23:47
+Inter Milan @ Ajax,UEFA Champions League,Ajax,2025-09-17 15:00:00,LowVig.ag,5.7,7.53,API Error,2025-09-17 15:08:09
+Chelsea @ Bayern Munich,UEFA Champions League,Chelsea,2025-09-17 15:01:00,Unibet,9.0,44.51,API Error,2025-09-17 15:23:47
+Nottingham Forest @ Swansea City,EFL Cup,Nottingham Forest,2025-09-17 15:00:00,Pinnacle,1.92,38.19,API Error,2025-09-17 15:23:47
 Clube Atlético Mineiro @ Club Bolívar,Copa Sudamericana,Clube Atlético Mineiro,2025-09-17 18:00:00,Bovada,6.0,5.7,Not Found,2025-09-17 15:23:47
-San Francisco Giants @ Arizona Diamondbacks,MLB,San Francisco Giants,2025-09-17 15:40:00,Pinnacle,2.26,7.95,Not Found,2025-09-17 16:11:22
-Atlanta Braves @ Washington Nationals,MLB,Washington Nationals,2025-09-17 16:05:00,William Hill,2.3,7.18,Not Found,2025-09-17 16:31:23
-Shaftesbury FC @ Frome Town FC,FA Cup,Draw,2025-09-17 14:45:00,Unibet,1.85,61.66,Not Found,2025-09-17 16:48:47
+San Francisco Giants @ Arizona Diamondbacks,MLB,San Francisco Giants,2025-09-17 15:40:00,Pinnacle,2.26,7.95,API Error,2025-09-17 16:11:22
+Atlanta Braves @ Washington Nationals,MLB,Washington Nationals,2025-09-17 16:05:00,William Hill,2.3,7.18,API Error,2025-09-17 16:31:23
+Shaftesbury FC @ Frome Town FC,FA Cup,Draw,2025-09-17 14:45:00,Unibet,1.85,61.66,API Error,2025-09-17 16:48:47
 Scranton/Wilkes-Barre RailRiders @ Buffalo Bisons,MiLB,Buffalo Bisons,2025-09-17 18:05:00,Betway,2.75,8.67,Not Found,2025-09-17 18:10:05
 Mirassol @ Botafogo,Brazil Série A,Botafogo,2025-09-17 18:30:00,Bovada,1.72,24.66,Not Found,2025-09-17 18:50:25
 Cleveland Guardians @ Detroit Tigers,MLB,Cleveland Guardians,2025-09-17 18:41:00,GTbets,3.11,23.49,Not Found,2025-09-17 18:50:25
