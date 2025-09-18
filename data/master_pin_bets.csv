@@ -743,13 +743,13 @@ Alanyaspor @ Fenerbahce,Turkey Super League,Alanyaspor,2025-09-17 13:00:00,Coolb
 Indianapolis Indians @ Gwinnett Stripers,MiLB,Gwinnett Stripers,2025-09-17 12:05:00,William Hill,2.3,7.29,2.144,Gwinnett Stripers,2025-09-17 12:13:40
 FC Ingolstadt 04 @ TSV Havelse,3. Liga - Germany,TSV Havelse,2025-09-17 13:00:00,LeoVegas (SE),3.65,5.18,3.47,Not Found,2025-09-17 12:52:30
 Erzgebirge Aue @ FC Energie Cottbus,3. Liga - Germany,Erzgebirge Aue,2025-09-17 13:00:50,Tipico,8.5,123.08,3.81,Not Found,2025-09-17 13:11:43
-Basaksehir @ Fatih Karagümrük,Turkey Super League,Fatih Karagümrük,2025-09-17 13:00:00,Tipico,4.7,18.53,3.965,Not Found,2025-09-17 13:11:43
+Basaksehir @ Fatih Karagümrük,Turkey Super League,Fatih Karagümrük,2025-09-17 13:00:00,Tipico,4.7,18.53,3.965,API Error,2025-09-17 13:11:43
 Fortuna Sittard @ Feyenoord,Dutch Eredivisie,Draw,2025-09-17 14:00:00,Sky Bet,6.5,11.08,5.852,Feyenoord,2025-09-17 13:11:43
-Servette @ FC Sion,Swiss Superleague,Servette,2025-09-17 13:00:00,GTbets,2.91,9.84,2.649,Not Found,2025-09-17 13:11:43
-FC Lausanne-Sport @ FC Lugano,Swiss Superleague,Draw,2025-09-17 13:01:00,TABtouch,3.9,8.86,3.582,Not Found,2025-09-17 13:11:43
-TSV 1860 München @ Hansa Rostock,3. Liga - Germany,TSV 1860 München,2025-09-17 13:00:05,Bet Victor,3.1,8.83,2.849,Not Found,2025-09-17 13:11:43
-Kasimpasa SK @ Samsunspor,Turkey Super League,Samsunspor,2025-09-17 13:00:00,Coolbet,2.1,6.16,1.978,Not Found,2025-09-17 13:11:43
-Pafos FC @ Olympiakos Piraeus,UEFA Champions League,Pafos FC,2025-09-17 12:46:00,Coral,26.0,53.59,16.929,Not Found,2025-09-17 13:30:36
+Servette @ FC Sion,Swiss Superleague,Servette,2025-09-17 13:00:00,GTbets,2.91,9.84,2.649,API Error,2025-09-17 13:11:43
+FC Lausanne-Sport @ FC Lugano,Swiss Superleague,Draw,2025-09-17 13:01:00,TABtouch,3.9,8.86,3.582,API Error,2025-09-17 13:11:43
+TSV 1860 München @ Hansa Rostock,3. Liga - Germany,TSV 1860 München,2025-09-17 13:00:05,Bet Victor,3.1,8.83,2.849,API Error,2025-09-17 13:11:43
+Kasimpasa SK @ Samsunspor,Turkey Super League,Samsunspor,2025-09-17 13:00:00,Coolbet,2.1,6.16,1.978,API Error,2025-09-17 13:11:43
+Pafos FC @ Olympiakos Piraeus,UEFA Champions League,Pafos FC,2025-09-17 12:46:00,Coral,26.0,53.59,16.929,API Error,2025-09-17 13:30:36
 VfB Stuttgart II @ Waldhof Mannheim,3. Liga - Germany,Waldhof Mannheim,2025-09-17 12:59:59,Suprabets,2.37,7.42,2.206,API Error,2025-09-17 13:30:36
 Cincinnati Reds @ St. Louis Cardinals,MLB,Cincinnati Reds,2025-09-17 13:16:00,MyBookie.ag,2.6,39.79,1.86,Cincinnati Reds,2025-09-17 13:48:38
 VfL Osnabrück @ Rot-Weiss Essen,3. Liga - Germany,Rot-Weiss Essen,2025-09-17 13:00:17,Coolbet,2.6,13.82,2.284,API Error,2025-09-17 13:48:38
@@ -764,17 +764,17 @@ Chelsea @ Bayern Munich,UEFA Champions League,Chelsea,2025-09-17 15:01:00,Unibet
 San Francisco Giants @ Arizona Diamondbacks,MLB,San Francisco Giants,2025-09-17 15:40:00,FanDuel,2.2,6.07,2.074,San Francisco Giants,2025-09-17 15:48:08
 Atlanta Braves @ Washington Nationals,MLB,Washington Nationals,2025-09-17 16:05:00,William Hill,2.3,10.18,2.087,Atlanta Braves,2025-09-17 16:31:25
 Scranton/Wilkes-Barre RailRiders @ Buffalo Bisons,MiLB,Buffalo Bisons,2025-09-17 18:05:00,Betway,2.75,13.02,2.433,Not Found,2025-09-17 18:10:07
-Cleveland Guardians @ Detroit Tigers,MLB,Cleveland Guardians,2025-09-17 18:41:00,GTbets,3.11,37.87,2.256,Not Found,2025-09-17 18:50:27
+Cleveland Guardians @ Detroit Tigers,MLB,Cleveland Guardians,2025-09-17 18:41:00,GTbets,3.11,37.87,2.256,Cleveland Guardians,2025-09-17 18:50:27
 Oakland Athletics @ Boston Red Sox,MLB,Oakland Athletics,2025-09-17 18:45:00,GTbets,2.66,7.84,2.467,Not Found,2025-09-17 18:50:27
-Mirassol @ Botafogo,Brazil Série A,Draw,2025-09-17 18:30:00,Tipico,14.0,184.03,4.929,Not Found,2025-09-17 19:09:58
-San Diego Padres @ New York Mets,MLB,New York Mets,2025-09-17 19:10:00,FanDuel,2.18,19.73,1.821,Not Found,2025-09-17 19:25:57
+Mirassol @ Botafogo,Brazil Série A,Draw,2025-09-17 18:30:00,Tipico,14.0,184.03,4.929,Draw,2025-09-17 19:09:58
+San Diego Padres @ New York Mets,MLB,New York Mets,2025-09-17 19:10:00,FanDuel,2.18,19.73,1.821,San Diego Padres,2025-09-17 19:25:57
 Guyana Amazon Warriors @ Saint Lucia Kings,CPLT20,Guyana Amazon Warriors,2025-09-17 20:00:00,Betway,1.85,7.23,1.725,Not Found,2025-09-17 19:37:51
-Los Angeles Angels @ Milwaukee Brewers,MLB,Los Angeles Angels,2025-09-17 19:40:00,888sport,4.0,26.83,3.154,Not Found,2025-09-17 19:48:57
-Phoenix Mercury @ New York Liberty,WNBA,New York Liberty,2025-09-17 20:03:59,GTbets,6.2,186.15,2.167,Not Found,2025-09-17 20:48:21
-Texas Rangers @ Houston Astros,MLB,Houston Astros,2025-09-17 20:10:40,William Hill,2.2,46.5,1.502,Not Found,2025-09-17 20:48:21
-New York Yankees @ Minnesota Twins,MLB,Minnesota Twins,2025-09-17 19:42:13,Unibet (SE),3.65,45.27,2.512,Not Found,2025-09-17 20:48:21
-Seattle Mariners @ Kansas City Royals,MLB,Kansas City Royals,2025-09-17 19:40:13,William Hill,1.8,14.47,1.573,Not Found,2025-09-17 20:48:21
-Once Caldas @ Independiente del Valle,Copa Sudamericana,Once Caldas,2025-09-17 20:30:00,Coolbet,6.5,12.36,5.785,Not Found,2025-09-17 20:48:21
+Los Angeles Angels @ Milwaukee Brewers,MLB,Los Angeles Angels,2025-09-17 19:40:00,888sport,4.0,26.83,3.154,Milwaukee Brewers,2025-09-17 19:48:57
+Phoenix Mercury @ New York Liberty,WNBA,New York Liberty,2025-09-17 20:03:59,GTbets,6.2,186.15,2.167,Phoenix Mercury,2025-09-17 20:48:21
+Texas Rangers @ Houston Astros,MLB,Houston Astros,2025-09-17 20:10:40,William Hill,2.2,46.5,1.502,Houston Astros,2025-09-17 20:48:21
+New York Yankees @ Minnesota Twins,MLB,Minnesota Twins,2025-09-17 19:42:13,Unibet (SE),3.65,45.27,2.512,New York Yankees,2025-09-17 20:48:21
+Seattle Mariners @ Kansas City Royals,MLB,Kansas City Royals,2025-09-17 19:40:13,William Hill,1.8,14.47,1.573,Kansas City Royals,2025-09-17 20:48:21
+Once Caldas @ Independiente del Valle,Copa Sudamericana,Once Caldas,2025-09-17 20:30:00,Coolbet,6.5,12.36,5.785,Once Caldas,2025-09-17 20:48:21
 Columbus Crew SC @ New York City FC,MLS,Draw,2025-09-17 19:40:00,Unibet,3.15,9.19,2.885,Not Found,2025-09-17 20:48:21
 Miami Marlins @ Colorado Rockies,MLB,Colorado Rockies,2025-09-17 21:20:32,Bovada,2.35,45.37,1.617,Not Found,2025-09-17 22:15:46
 Los Angeles FC @ Real Salt Lake,MLS,Real Salt Lake,2025-09-17 21:30:00,Bovada,17.0,15.39,14.732,Not Found,2025-09-17 22:15:46
