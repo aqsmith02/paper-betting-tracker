@@ -336,7 +336,10 @@ def analyze_zscore_outliers(df: pd.DataFrame, z_threshold: float = Z_SCORE_THRES
         pd.DataFrame: DataFrame with additional Z-score column for outlier bets.
     """
     df = df.copy()
-    bookmaker_columns = find_bookmaker_columns(df)
+    df = analyze_average_edge_bets(df)
+    
+    vigfree_columns = [col for col in df.columns if col.startswith("Vigfree ")]
+    bookmaker_columns = find_bookmaker_columns(df, vigfree_columns)
     z_scores = []
     
     for _, row in df.iterrows():
@@ -380,7 +383,10 @@ def analyze_modified_zscore_outliers(df: pd.DataFrame, z_threshold: float = Z_SC
         pd.DataFrame: DataFrame with additional Modified Z-score column for outlier bets.
     """
     df = df.copy()
-    bookmaker_columns = find_bookmaker_columns(df)
+    df = analyze_average_edge_bets(df)
+
+    vigfree_columns = [col for col in df.columns if col.startswith("Vigfree ")]
+    bookmaker_columns = find_bookmaker_columns(df, vigfree_columns)
     modified_z_scores = []
     
     for _, row in df.iterrows():
@@ -524,7 +530,7 @@ def create_zscore_summary(df: pd.DataFrame) -> pd.DataFrame:
     
     summary_rows = []
     for _, row in df.iterrows():
-        if pd.isna(row.get("Z Score")):
+        if pd.isna(row.get("Z Score")) or pd.isna(row.get("Avg Edge Pct")):
             continue
         
         summary_rows.append({
@@ -535,6 +541,7 @@ def create_zscore_summary(df: pd.DataFrame) -> pd.DataFrame:
             "Outlier Book": row["Best Bookmaker"],
             "Outlier Odds": row["Best Odds"],
             "Z Score": row["Z Score"],
+            "Avg Edge Pct": row["Avg Edge Pct"],
             "Result": row.get("Result", "Not Found"),
         })
     
@@ -556,7 +563,7 @@ def create_modified_zscore_summary(df: pd.DataFrame) -> pd.DataFrame:
     
     summary_rows = []
     for _, row in df.iterrows():
-        if pd.isna(row.get("Modified Z Score")):
+        if pd.isna(row.get("Modified Z Score")) or pd.isna(row.get("Avg Edge Pct")):
             continue
         
         summary_rows.append({
@@ -567,6 +574,7 @@ def create_modified_zscore_summary(df: pd.DataFrame) -> pd.DataFrame:
             "Outlier Book": row["Best Bookmaker"],
             "Outlier Odds": row["Best Odds"],
             "Modified Z Score": row["Modified Z Score"],
+            "Avg Edge Pct": row["Avg Edge Pct"],            
             "Result": row.get("Result", "Not Found"),
         })
     
@@ -669,9 +677,9 @@ class BetFileManager:
         """
         strategy_columns = {
             "master_avg_full.csv": ["Avg Edge Pct", "Fair Odds Avg"],
-            "master_mod_zscore_full.csv": ["Modified Z Score"],
+            "master_mod_zscore_full.csv": ["Modified Z Score", "Avg Edge Pct", "Fair Odds Avg"],
             "master_pin_full.csv": ["Pinnacle Fair Odds", "Pin Edge Pct"],
-            "master_zscore_full.csv": ["Z Score"],
+            "master_zscore_full.csv": ["Z Score", "Avg Edge Pct", "Fair Odds Avg"],
             "master_random_full.csv": ["Random Bet Odds"]
         }
         return strategy_columns.get(filename)
@@ -830,14 +838,13 @@ class BetFileManager:
 
 
 # ---------------------------------------- Strategy Execution ---------------------------------------- #
-def run_betting_strategy(strategy: BettingStrategy, cleaned_data: pd.DataFrame, 
-                        vigfree_data: pd.DataFrame, file_manager: BetFileManager) -> None:
+def run_betting_strategy(strategy: BettingStrategy, vigfree_data: pd.DataFrame, 
+                         file_manager: BetFileManager) -> None:
     """
     Execute a complete betting strategy analysis and save results.
     
     Args:
         strategy (BettingStrategy): Betting strategy configuration object.
-        cleaned_data (pd.DataFrame): Cleaned betting data without vig-free calculations.
         vigfree_data (pd.DataFrame): Betting data with vig-free probability calculations.
         file_manager (BetFileManager): File manager for saving results.
         
@@ -848,7 +855,8 @@ def run_betting_strategy(strategy: BettingStrategy, cleaned_data: pd.DataFrame,
     
     try:
         # Run the analysis
-        analysis_result = strategy.analysis_func(vigfree_data if "Pinnacle" in strategy.name or "Average" in strategy.name else cleaned_data)
+        # ALL USE VF DATA NOW BC OF AVG CALL
+        analysis_result = strategy.analysis_func(vigfree_data)
         summary = strategy.summary_func(analysis_result)
         
         if summary.empty:
@@ -929,12 +937,12 @@ def main():
             print("No data passed cleaning requirements")
             return
         
-        # Step 2: Calculate vig-free probabilities (needed for some strategies)
+        # Step 2: Calculate vig-free probabilities
         vigfree_data = calculate_vigfree_probabilities(cleaned_data)
         
         # Step 3: Run each betting strategy
         for strategy in strategies:
-            run_betting_strategy(strategy, cleaned_data, vigfree_data, file_manager)
+            run_betting_strategy(strategy, vigfree_data, file_manager)
         
         # Step 4: Run Pinnacle strategy if Pinnacle data exists
         if "Pinnacle" in cleaned_data.columns and cleaned_data["Pinnacle"].notna().any():
@@ -946,7 +954,7 @@ def main():
                 summary_func=create_pinnacle_edge_summary,
                 analysis_func=analyze_pinnacle_edge_bets
             )
-            run_betting_strategy(pinnacle_strategy, cleaned_data, vigfree_data, file_manager)
+            run_betting_strategy(pinnacle_strategy, vigfree_data, file_manager)
         else:
             print("No Pinnacle odds available - skipping Pinnacle edge analysis")
         
