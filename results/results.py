@@ -14,8 +14,8 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Tuple
 from zoneinfo import ZoneInfo
-from theodds_results import get_finished_games_from_theodds, map_league_to_key
-from sportsdb_results import get_finished_games_from_thesportsdb
+from results.theodds_results import get_finished_games_from_theodds, map_league_to_key
+from results.sportsdb_results import get_finished_games_from_thesportsdb
 
 
 # Configuration
