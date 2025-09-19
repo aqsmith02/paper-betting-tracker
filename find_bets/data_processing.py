@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 from typing import List, Optional
-from betting_config import DATE_FORMAT, MIN_BOOKMAKERS, MAX_ODDS, EXCHANGE_BLOCKLIST
+from betting_configs import DATE_FORMAT, MIN_BOOKMAKERS, MAX_ODDS, EXCHANGE_BLOCKLIST
 
 
 def _remove_exchanges(df: pd.DataFrame) -> pd.DataFrame:
