@@ -1,4 +1,4 @@
-from betting_configs import DATE_FORMAT, DATA_DIR, TIMESTAMP_FORMAT
+from .betting_configs import DATE_FORMAT, DATA_DIR, TIMESTAMP_FORMAT
 import os
 from typing import Any, Optional, List
 import pandas as pd

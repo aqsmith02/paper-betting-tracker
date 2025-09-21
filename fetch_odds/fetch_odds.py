@@ -14,7 +14,7 @@ import pandas as pd
 from datetime import datetime
 import pytz
 from typing import List, Dict
-from fetch_configs import THEODDS_API_KEY,DATE_FORMAT,SPORT,SPORT_KEY,REGIONS,MARKETS,ODDS_FORMAT
+from .fetch_configs import THEODDS_API_KEY,DATE_FORMAT,SPORT,SPORT_KEY,REGIONS,MARKETS,ODDS_FORMAT
 
 # -------------------------- Helper Functions ---------------------- #
 def _convert_to_eastern_time(utc_time_str: str) -> str:

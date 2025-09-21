@@ -9,10 +9,10 @@ Pinnacle sportsbook (a known "sharp" sportsbook). Profitable bets are then saved
 Author: Andrew Smith
 Date: July 2025
 """
-from file_management import BetFileManager
-from betting_strategies import analyze_average_edge_bets, analyze_modified_zscore_outliers, analyze_pinnacle_edge_bets, analyze_zscore_outliers, find_random_bets
-from summary_creation import create_random_summary, create_zscore_summary, create_average_edge_summary, create_pinnacle_edge_summary, create_modified_zscore_summary
-from data_processing import process_odds_data, calculate_vigfree_probabilities
+from .file_management import BetFileManager
+from .betting_strategies import analyze_average_edge_bets, analyze_modified_zscore_outliers, analyze_pinnacle_edge_bets, analyze_zscore_outliers, find_random_bets
+from .summary_creation import create_random_summary, create_zscore_summary, create_average_edge_summary, create_pinnacle_edge_summary, create_modified_zscore_summary
+from .data_processing import process_odds_data, calculate_vigfree_probabilities
 import pandas as pd
 from fetch_odds.fetch_odds import fetch_odds
 from dataclasses import dataclass

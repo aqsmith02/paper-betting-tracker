@@ -1,7 +1,7 @@
 from typing import List
 import pandas as pd
-from betting_configs import EDGE_THRESHOLD, MAX_MISSING_VIGFREE_ODDS,Z_SCORE_THRESHOLD, MAX_Z_SCORE
-from data_processing import _find_bookmaker_columns
+from .betting_configs import EDGE_THRESHOLD, MAX_MISSING_VIGFREE_ODDS,Z_SCORE_THRESHOLD, MAX_Z_SCORE
+from .data_processing import _find_bookmaker_columns
 import random
 
 
