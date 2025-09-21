@@ -132,10 +132,9 @@ def main():
             print("No data passed cleaning requirements")
             return
         
-        # Step 2: Calculate vig-free probabilities (needed for some strategies)
         vigfree_data = calculate_vigfree_probabilities(processed_odds)
         
-        # Step 3: Run each betting strategy
+        # Step 2: Run each betting strategy
         for strategy in strategies:
             run_betting_strategy(strategy, vigfree_data, file_manager)
         
