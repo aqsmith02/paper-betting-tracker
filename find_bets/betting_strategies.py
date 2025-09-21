@@ -168,9 +168,8 @@ def analyze_pinnacle_edge_bets(df: pd.DataFrame) -> pd.DataFrame:
     """
     df = df.copy()
     vigfree_pinnacle = f"Vigfree Pinnacle"
-    
     if vigfree_pinnacle not in df.columns:
-        raise ValueError(f"Missing {vigfree_pinnacle} column")
+        return df
     
     pinnacle_fair_odds = []
     edge_percentages = []

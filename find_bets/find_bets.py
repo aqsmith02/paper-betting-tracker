@@ -14,7 +14,7 @@ from betting_strategies import analyze_average_edge_bets, analyze_modified_zscor
 from summary_creation import create_random_summary, create_zscore_summary, create_average_edge_summary, create_pinnacle_edge_summary, create_modified_zscore_summary
 from data_processing import process_odds_data, calculate_vigfree_probabilities
 import pandas as pd
-from fetch_odds.fetch_odds import fetch_odds, organize
+from fetch_odds.fetch_odds import fetch_odds
 from dataclasses import dataclass
 
 
@@ -102,6 +102,14 @@ def main():
             analysis_func=analyze_modified_zscore_outliers
         ),
         BettingStrategy(
+                name="Pinnacle Edge",
+                summary_file="master_pin_bets.csv",
+                full_file="master_pin_full.csv",
+                score_column="Pin Edge Pct",
+                summary_func=create_pinnacle_edge_summary,
+                analysis_func=analyze_pinnacle_edge_bets
+            ),
+        BettingStrategy(
             name="Random Bets",
             summary_file="master_random_bets.csv",
             full_file="master_random_full.csv",
@@ -130,20 +138,6 @@ def main():
         # Step 3: Run each betting strategy
         for strategy in strategies:
             run_betting_strategy(strategy, vigfree_data, file_manager)
-        
-        # Step 4: Run Pinnacle strategy if Pinnacle data exists
-        if "Pinnacle" in vigfree_data.columns and vigfree_data["Pinnacle"].notna().any():
-            pinnacle_strategy = BettingStrategy(
-                name="Pinnacle Edge",
-                summary_file="master_pin_bets.csv",
-                full_file="master_pin_full.csv",
-                score_column="Pin Edge Pct",
-                summary_func=create_pinnacle_edge_summary,
-                analysis_func=analyze_pinnacle_edge_bets
-            )
-            run_betting_strategy(pinnacle_strategy, vigfree_data, file_manager)
-        else:
-            print("No Pinnacle odds available - skipping Pinnacle edge analysis")
         
         print("\nBetting analysis pipeline completed successfully")
         

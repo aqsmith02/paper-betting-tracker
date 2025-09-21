@@ -101,6 +101,10 @@ def create_pinnacle_edge_summary(df: pd.DataFrame) -> pd.DataFrame:
         pd.DataFrame: Summary DataFrame with only profitable Pinnacle edge bets.
     """
     summary_rows = []
+    vigfree_pinnacle = f"Vigfree Pinnacle"
+    if vigfree_pinnacle not in df.columns:
+        return pd.DataFrame(summary_rows)
+
     for _, row in df.iterrows():
         if pd.isna(row.get("Pinnacle Fair Odds")) or pd.isna(row.get("Pin Edge Pct")):
             continue
