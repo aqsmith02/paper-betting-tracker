@@ -85,7 +85,7 @@ Saitama Seibu Lions @ Tohoku Rakuten Golden Eagles,NPB,Tohoku Rakuten Golden Eag
 León @ Tijuana,Liga MX,Draw,2025-09-19 23:00:00,Pinnacle,4.05,Tijuana,2025-09-19 23:04:40
 Yokohama DeNA BayStars @ Hanshin Tigers,NPB,Yokohama DeNA BayStars,2025-09-20 01:00:00,LowVig.ag,2.74,Yokohama DeNA BayStars,2025-09-19 23:04:40
 Philadelphia Phillies @ Arizona Diamondbacks,MLB,Arizona Diamondbacks,2025-09-19 21:41:00,Betsson,1.95,Philadelphia Phillies,2025-09-19 23:04:40
-Cairns Taipans @ S.E. Melbourne Phoenix,NBL,Cairns Taipans,2025-09-20 03:30:00,Marathon Bet,3.05,Not Found,2025-09-19 23:37:55
+Cairns Taipans @ S.E. Melbourne Phoenix,NBL,Cairns Taipans,2025-09-20 03:30:00,Marathon Bet,3.05,API Error,2025-09-19 23:37:55
 Atlas @ Mazatlán FC,Liga MX,Draw,2025-09-19 23:14:00,FanDuel,3.0,Draw,2025-09-19 23:50:16
 Orix Buffaloes @ Fukuoka SoftBank Hawks,NPB,Orix Buffaloes,2025-09-20 01:00:00,Pinnacle,2.31,Orix Buffaloes,2025-09-19 23:50:16
 Tokyo Yakult Swallows @ Chunichi Dragons,NPB,Chunichi Dragons,2025-09-20 01:00:00,1xBet,1.89,Chunichi Dragons,2025-09-20 00:48:17
@@ -123,11 +123,11 @@ IF Elfsborg @ GAIS,Allsvenskan - Sweden,GAIS,2025-09-20 09:00:00,888sport,2.05,G
 Chesterfield FC @ Bromley FC,League 2,Chesterfield FC,2025-09-20 10:00:00,LowVig.ag,2.55,Draw,2025-09-20 09:47:55
 Kiekko-Espoo @ HPK,Liiga,HPK,2025-09-20 09:00:00,Coolbet,2.3,HPK,2025-09-20 09:47:55
 Sandvikens IF @ Kalmar FF,Superettan - Sweden,Kalmar FF,2025-09-20 09:00:00,Pinnacle,1.46,Kalmar FF,2025-09-20 09:47:55
-Skellefteå AIK @ Linköping HC,SHL,Skellefteå AIK,2025-09-20 09:18:00,Coolbet,1.08,Not Found,2025-09-20 09:47:55
+Skellefteå AIK @ Linköping HC,SHL,Skellefteå AIK,2025-09-20 09:18:00,Coolbet,1.08,API Error,2025-09-20 09:47:55
 Accrington Stanley @ Milton Keynes Dons,League 2,Draw,2025-09-20 10:00:00,Pinnacle,4.65,Accrington Stanley,2025-09-20 10:09:03
-US Catanzaro 1929 @ Reggiana,Serie B - Italy,Draw,2025-09-20 09:05:00,FanDuel,2.45,Not Found,2025-09-20 10:09:03
+US Catanzaro 1929 @ Reggiana,Serie B - Italy,Draw,2025-09-20 09:05:00,FanDuel,2.45,API Error,2025-09-20 10:09:03
 Atromitos Athens @ Panserraikos FC,Super League - Greece,Panserraikos FC,2025-09-20 11:00:00,FanDuel,3.6,Draw,2025-09-20 10:28:49
-Cesena FC @ Venezia,Serie B - Italy,Draw,2025-09-20 09:12:00,Coolbet,3.5,Not Found,2025-09-20 10:28:49
+Cesena FC @ Venezia,Serie B - Italy,Draw,2025-09-20 09:12:00,Coolbet,3.5,API Error,2025-09-20 10:28:49
 Eyüpspor @ Genclerbirligi SK,Turkey Super League,Draw,2025-09-20 10:00:00,Bovada,3.0,Genclerbirligi SK,2025-09-20 10:28:49
 KooKoo @ Jukurit,Liiga,Jukurit,2025-09-20 10:00:00,Betway,10.0,KooKoo,2025-09-20 10:48:23
 Alverca @ Santa Clara,Primeira Liga - Portugal,Santa Clara,2025-09-20 10:31:00,Bovada,1.61,Santa Clara,2025-09-20 10:48:23
@@ -141,43 +141,43 @@ SaiPa @ HIFK,Liiga,Draw,2025-09-20 10:00:00,Coolbet,3.14,SaiPa,2025-09-20 11:27:
 Exeter City @ Stevenage,League 1,Draw,2025-09-20 10:00:00,Pinnacle,1.83,Stevenage,2025-09-20 11:39:03
 Rennes @ Nantes,Ligue 1 - France,Draw,2025-09-20 11:00:00,Sky Bet,20.0,Draw,2025-09-20 11:50:06
 Leyton Orient @ Reading,League 1,Draw,2025-09-20 10:00:00,Sky Bet,6.5,Reading,2025-09-20 11:50:06
-Arouca @ Nacional,Primeira Liga - Portugal,Arouca,2025-09-20 10:30:00,Tipico,6.0,Not Found,2025-09-20 11:50:06
+Arouca @ Nacional,Primeira Liga - Portugal,Arouca,2025-09-20 10:30:00,Tipico,6.0,API Error,2025-09-20 11:50:06
 Crystal Palace @ West Ham United,EPL,Crystal Palace,2025-09-20 10:00:00,Unibet,1.17,Crystal Palace,2025-09-20 11:50:06
 Juventus @ Hellas Verona,Serie A - Italy,Hellas Verona,2025-09-20 12:00:00,Bovada,19.0,Draw,2025-09-20 12:32:53
 Östers IF @ Mjällby AIF,Allsvenskan - Sweden,Draw,2025-09-20 11:30:00,Unibet,7.0,Draw,2025-09-20 12:32:53
-CD Mirandés @ Andorra CF,La Liga 2 - Spain,Draw,2025-09-20 12:30:00,Pinnacle,3.72,Not Found,2025-09-20 12:32:53
+CD Mirandés @ Andorra CF,La Liga 2 - Spain,Draw,2025-09-20 12:30:00,Pinnacle,3.72,API Error,2025-09-20 12:32:53
 Kayserispor @ Antalyaspor,Turkey Super League,Antalyaspor,2025-09-20 13:00:00,LowVig.ag,2.42,Draw,2025-09-20 12:32:53
 1. FC Köln @ RB Leipzig,Bundesliga - Germany,Draw,2025-09-20 12:30:00,Sky Bet,13.0,RB Leipzig,2025-09-20 13:25:37
 Gazişehir Gaziantep @ Trabzonspor,Turkey Super League,Draw,2025-09-20 13:00:00,Unibet,3.4,Draw,2025-09-20 13:25:37
 Sarmiento de Junin @ Barracas Central,Primera División - Argentina,Draw,2025-09-20 13:30:00,Unibet,3.0,Sarmiento de Junin,2025-09-20 13:25:37
-Benfica @ AVS Futebol SAD,Primeira Liga - Portugal,Draw,2025-09-20 13:00:00,Pinnacle,6.18,Not Found,2025-09-20 13:36:55
+Benfica @ AVS Futebol SAD,Primeira Liga - Portugal,Draw,2025-09-20 13:00:00,Pinnacle,6.18,API Error,2025-09-20 13:36:55
 Modena @ Mantova,Serie B - Italy,Draw,2025-09-20 13:30:00,FanDuel,4.8,Modena,2025-09-20 13:36:55
 Atlanta Braves @ Detroit Tigers,MLB,Atlanta Braves,2025-09-20 13:11:00,Unibet,3.15,Atlanta Braves,2025-09-20 13:36:55
 Legia Warszawa @ Raków Częstochowa,Ekstraklasa - Poland,Raków Częstochowa,2025-09-20 14:15:00,Coolbet,2.4,Draw,2025-09-20 13:36:55
 Luleå HF @ Frölunda HC,SHL,Frölunda HC,2025-09-20 12:00:00,Unibet,1.05,Frölunda HC,2025-09-20 13:48:25
 SC Telstar @ Groningen,Dutch Eredivisie,Draw,2025-09-20 12:45:00,Casumo,7.5,Groningen,2025-09-20 14:12:58
-Muslim Tulshaev @ Andrzej Grzebyk,MMA,Andrzej Grzebyk,2025-09-20 14:00:00,LeoVegas (SE),1.66,Not Found,2025-09-20 14:12:58
+Muslim Tulshaev @ Andrzej Grzebyk,MMA,Andrzej Grzebyk,2025-09-20 14:00:00,LeoVegas (SE),1.66,API Error,2025-09-20 14:12:58
 AC Milan @ Udinese,Serie A - Italy,Udinese,2025-09-20 14:45:00,LowVig.ag,5.43,AC Milan,2025-09-20 14:36:16
-Fluminense @ Vitoria,Brazil Série A,Draw,2025-09-20 15:00:00,Ladbrokes,3.1,Not Found,2025-09-20 14:36:16
-Ball State Cardinals @ UConn Huskies,NCAAF,Ball State Cardinals,2025-09-20 15:30:00,DraftKings,11.0,Not Found,2025-09-20 15:07:04
-Brentford @ Fulham,EPL,Brentford,2025-09-20 15:00:00,1xBet,3.94,Not Found,2025-09-20 15:07:04
-Lille @ RC Lens,Ligue 1 - France,RC Lens,2025-09-20 15:05:00,1xBet,2.4,Not Found,2025-09-20 15:07:04
-Paysandu @ Goiás,Brazil Série B,Paysandu,2025-09-20 15:03:00,Unibet,5.0,Not Found,2025-09-20 15:35:14
-Independiente Rivadavia @ Union Santa Fe,Primera División - Argentina,Independiente Rivadavia,2025-09-20 15:45:00,Pinnacle,4.9,Not Found,2025-09-20 15:35:14
-Toledo Rockets @ Western Michigan Broncos,NCAAF,Toledo Rockets,2025-09-20 15:32:50,BetOnline.ag,1.2,Not Found,2025-09-20 15:47:49
-Gardner-Webb Runnin Bulldogs @ Ohio Bobcats,NCAAF,Gardner-Webb Runnin Bulldogs,2025-09-20 15:30:00,DraftKings,15.0,Not Found,2025-09-20 16:28:10
-Winnipeg Blue Bombers @ Ottawa Redblacks,CFL,Winnipeg Blue Bombers,2025-09-20 15:00:00,Bovada,2.3,Not Found,2025-09-20 16:28:10
-Idaho Vandals @ San Jose State Spartans,NCAAF,San Jose State Spartans,2025-09-20 17:00:00,Marathon Bet,1.18,Not Found,2025-09-20 16:39:43
-Troy Trojans @ Buffalo Bulls,NCAAF,Troy Trojans,2025-09-20 15:32:17,Unibet,5.75,Not Found,2025-09-20 16:50:46
-Volta Redonda @ Amazonas FC,Brazil Série B,Volta Redonda,2025-09-20 17:30:00,Pinnacle,3.95,Not Found,2025-09-20 16:50:46
-Bahia @ Ceará,Brazil Série A,Draw,2025-09-20 17:30:00,Unibet (IT),3.1,Not Found,2025-09-20 16:50:46
+Fluminense @ Vitoria,Brazil Série A,Draw,2025-09-20 15:00:00,Ladbrokes,3.1,Fluminense,2025-09-20 14:36:16
+Ball State Cardinals @ UConn Huskies,NCAAF,Ball State Cardinals,2025-09-20 15:30:00,DraftKings,11.0,UConn Huskies,2025-09-20 15:07:04
+Brentford @ Fulham,EPL,Brentford,2025-09-20 15:00:00,1xBet,3.94,Fulham,2025-09-20 15:07:04
+Lille @ RC Lens,Ligue 1 - France,RC Lens,2025-09-20 15:05:00,1xBet,2.4,RC Lens,2025-09-20 15:07:04
+Paysandu @ Goiás,Brazil Série B,Paysandu,2025-09-20 15:03:00,Unibet,5.0,Goiás,2025-09-20 15:35:14
+Independiente Rivadavia @ Union Santa Fe,Primera División - Argentina,Independiente Rivadavia,2025-09-20 15:45:00,Pinnacle,4.9,Draw,2025-09-20 15:35:14
+Toledo Rockets @ Western Michigan Broncos,NCAAF,Toledo Rockets,2025-09-20 15:32:50,BetOnline.ag,1.2,Western Michigan Broncos,2025-09-20 15:47:49
+Gardner-Webb Runnin Bulldogs @ Ohio Bobcats,NCAAF,Gardner-Webb Runnin Bulldogs,2025-09-20 15:30:00,DraftKings,15.0,Ohio Bobcats,2025-09-20 16:28:10
+Winnipeg Blue Bombers @ Ottawa Redblacks,CFL,Winnipeg Blue Bombers,2025-09-20 15:00:00,Bovada,2.3,Winnipeg Blue Bombers,2025-09-20 16:28:10
+Idaho Vandals @ San Jose State Spartans,NCAAF,San Jose State Spartans,2025-09-20 17:00:00,Marathon Bet,1.18,API Error,2025-09-20 16:39:43
+Troy Trojans @ Buffalo Bulls,NCAAF,Troy Trojans,2025-09-20 15:32:17,Unibet,5.75,Troy Trojans,2025-09-20 16:50:46
+Volta Redonda @ Amazonas FC,Brazil Série B,Volta Redonda,2025-09-20 17:30:00,Pinnacle,3.95,API Error,2025-09-20 16:50:46
+Bahia @ Ceará,Brazil Série A,Draw,2025-09-20 17:30:00,Unibet (IT),3.1,Draw,2025-09-20 16:50:46
 Brian Agustin Arregui @ Javid Ramirez Beltran,Boxing,Draw,2025-09-20 18:00:00,Paddy Power,34.0,Not Found,2025-09-20 17:24:39
 Northern Illinois Huskies @ Mississippi State Bulldogs,NCAAF,Northern Illinois Huskies,2025-09-20 16:20:23,Unibet (SE),14.0,Not Found,2025-09-20 17:36:30
 San Diego FC @ Atlanta United FC,MLS,San Diego FC,2025-09-20 16:40:00,Pinnacle,2.66,Not Found,2025-09-20 17:36:30
-James Madison Dukes @ Liberty Flames,NCAAF,Liberty Flames,2025-09-20 15:30:00,Pinnacle,2.98,Not Found,2025-09-20 17:48:21
+James Madison Dukes @ Liberty Flames,NCAAF,Liberty Flames,2025-09-20 15:30:00,Pinnacle,2.98,James Madison Dukes,2025-09-20 17:48:21
 Syracuse Mets @ Lehigh Valley IronPigs,MiLB,Lehigh Valley IronPigs,2025-09-20 18:35:00,BetOnline.ag,1.74,Not Found,2025-09-20 18:08:55
 West Virginia Mountaineers @ Kansas Jayhawks,NCAAF,Kansas Jayhawks,2025-09-20 18:11:00,Marathon Bet,1.28,Not Found,2025-09-20 18:08:55
-Ferroviária @ Avai,Brazil Série B,Ferroviária,2025-09-20 17:30:00,Unibet,5.75,Not Found,2025-09-20 18:28:37
+Ferroviária @ Avai,Brazil Série B,Ferroviária,2025-09-20 17:30:00,Unibet,5.75,Draw,2025-09-20 18:28:37
 Aldosivi Mar del Plata @ CA Tigre BA,Primera División - Argentina,Draw,2025-09-20 17:59:00,Bet Victor,5.25,Not Found,2025-09-20 18:28:37
 Delaware Blue Hens @ Florida International Panthers,NCAAF,Delaware Blue Hens,2025-09-20 18:02:49,MyBookie.ag,2.2,Not Found,2025-09-20 18:28:37
 Dorian Mendez @ Fabian Diaz,Boxing,Fabian Diaz,2025-09-20 18:30:00,DraftKings,1.61,Not Found,2025-09-20 18:28:37
