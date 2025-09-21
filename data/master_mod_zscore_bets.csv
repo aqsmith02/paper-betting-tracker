@@ -1,6 +1,5 @@
 Match,League,Team,Start Time,Outlier Book,Outlier Odds,Modified Z Score,Avg Edge Pct,Result,Scrape Time
 Indianapolis Indians @ Gwinnett Stripers,MiLB,Indianapolis Indians,2025-09-18 19:05:00,BetOnline.ag,1.83,4.72,,Indianapolis Indians,2025-09-18 15:19:40
-FC Kairat @ Sporting Lisbon,UEFA Champions League,Draw,2025-09-18 15:01:00,William Hill,12.0,4.72,,Not Found,2025-09-18 15:19:40
 Napoli @ Manchester City,UEFA Champions League,Manchester City,2025-09-18 15:00:00,PointsBet (AU),1.67,4.72,,Manchester City,2025-09-18 15:19:40
 Barcelona @ Newcastle United,UEFA Champions League,Draw,2025-09-18 15:00:00,Suprabets,3.85,4.05,,Barcelona,2025-09-18 15:19:40
 Operario PR @ Botafogo,Brazil Série B,Operario PR,2025-09-18 18:00:00,Pinnacle,3.12,3.64,,Not Found,2025-09-18 15:19:40
@@ -235,7 +234,7 @@ Panetolikos Agrinio @ PAOK Thessaloniki,Super League - Greece,Panetolikos Agrini
 Örebro HK @ Brynäs IF,SHL,Draw,2025-09-20 12:00:00,Coolbet,11.0,2.7,11.63,Brynäs IF,2025-09-20 13:07:49
 Bangladesh @ Sri Lanka,Asia Cup,Bangladesh,2025-09-20 10:30:00,Bovada,2.2,5.85,6.57,Not Found,2025-09-20 13:07:49
 Sarmiento de Junin @ Barracas Central,Primera División - Argentina,Sarmiento de Junin,2025-09-20 13:30:00,Pinnacle,4.4,2.25,5.76,Sarmiento de Junin,2025-09-20 13:07:49
-Scranton/Wilkes-Barre RailRiders @ Buffalo Bisons,MiLB,Buffalo Bisons,2025-09-20 13:05:00,William Hill,2.3,2.7,5.21,API Error,2025-09-20 13:07:49
+Scranton/Wilkes-Barre RailRiders @ Buffalo Bisons,MiLB,Buffalo Bisons,2025-09-20 13:05:00,William Hill,2.3,2.7,5.21,Not Found,2025-09-20 13:07:49
 SC Telstar @ Groningen,Dutch Eredivisie,SC Telstar,2025-09-20 12:45:00,Tipico,18.0,2.02,21.62,Groningen,2025-09-20 13:25:37
 Luleå HF @ Frölunda HC,SHL,Draw,2025-09-20 12:00:00,Winamax (DE),11.5,4.05,19.51,Frölunda HC,2025-09-20 13:25:37
 Nice @ Brest,Ligue 1 - France,Draw,2025-09-20 13:00:00,Sky Bet,7.0,3.37,16.96,Brest,2025-09-20 13:25:37
@@ -244,7 +243,7 @@ Modena @ Mantova,Serie B - Italy,Modena,2025-09-20 13:30:00,Bovada,2.44,5.26,8.5
 CA Osasuna @ Villarreal,La Liga - Spain,Draw,2025-09-20 12:31:00,Bovada,3.6,2.25,8.34,Villarreal,2025-09-20 13:25:37
 Asteras Tripolis @ Volos FC,Super League - Greece,Asteras Tripolis,2025-09-20 13:00:00,Tipico,4.3,2.92,7.18,Volos FC,2025-09-20 13:25:37
 New England Revolution @ Philadelphia Union,MLS,New England Revolution,2025-09-20 14:30:00,Bovada,6.25,2.7,12.16,Philadelphia Union,2025-09-20 13:36:55
-CD Mirandés @ Andorra CF,La Liga 2 - Spain,CD Mirandés,2025-09-20 12:30:00,Tipico,6.0,4.5,6.66,API Error,2025-09-20 13:48:25
+CD Mirandés @ Andorra CF,La Liga 2 - Spain,CD Mirandés,2025-09-20 12:30:00,Tipico,6.0,4.5,6.66,Not Found,2025-09-20 13:48:25
 FC Utrecht @ Fortuna Sittard,Dutch Eredivisie,Fortuna Sittard,2025-09-20 14:00:00,Bovada,3.5,2.02,6.43,Fortuna Sittard,2025-09-20 14:12:58
 Sporting Gijón @ Almería,La Liga 2 - Spain,Sporting Gijón,2025-09-20 15:00:00,Bovada,4.4,2.02,6.55,Not Found,2025-09-20 14:36:16
 Cleveland Guardians @ Minnesota Twins,MLB,Minnesota Twins,2025-09-20 14:11:00,MyBookie.ag,4.65,2.7,11.94,Cleveland Guardians,2025-09-20 14:48:25
@@ -321,7 +320,7 @@ UL Monroe Warhawks @ UTEP Miners,NCAAF,UTEP Miners,2025-09-20 21:02:18,MyBookie.
 FC Cincinnati @ LA Galaxy,MLS,LA Galaxy,2025-09-20 22:40:00,DraftKings,41.0,2.7,53.1,FC Cincinnati,2025-09-21 00:20:42
 UTSA Roadrunners @ Colorado State Rams,NCAAF,Colorado State Rams,2025-09-20 21:40:57,MyBookie.ag,7.0,4.86,33.28,UTSA Roadrunners,2025-09-21 00:20:42
 NC Dinos @ Kia Tigers,KBO,NC Dinos,2025-09-21 01:00:00,BetMGM,2.35,2.02,5.92,NC Dinos,2025-09-21 00:20:42
-Saitama Seibu Lions @ Tohoku Rakuten Golden Eagles,NPB,Saitama Seibu Lions,2025-09-21 00:06:14,MyBookie.ag,2.0,2.02,5.39,API Error,2025-09-21 00:20:42
+Saitama Seibu Lions @ Tohoku Rakuten Golden Eagles,NPB,Saitama Seibu Lions,2025-09-21 00:06:14,MyBookie.ag,2.0,2.02,5.39,Saitama Seibu Lions,2025-09-21 00:20:42
 Penrith Panthers @ Canterbury Bulldogs,NRL,Draw,2025-09-21 02:05:00,Marathon Bet,30.0,3.82,27.03,Penrith Panthers,2025-09-21 00:40:28
 California Golden Bears @ San Diego State Aztecs,NCAAF,California Golden Bears,2025-09-20 22:37:42,Caesars,8.5,2.7,20.66,San Diego State Aztecs,2025-09-21 00:50:55
 New Zealand Breakers @ Melbourne United,NBL,Melbourne United,2025-09-21 00:36:00,Bet Right,1.34,3.88,9.29,Melbourne United,2025-09-21 00:50:55
@@ -333,12 +332,12 @@ Doosan Bears @ SSG Landers,KBO,SSG Landers,2025-09-21 01:00:17,Bovada,1.65,4.61,
 Chiba Lotte Marines @ Hokkaido Nippon-Ham Fighters,NPB,Chiba Lotte Marines,2025-09-21 01:00:52,Unibet,9.0,2.7,22.32,Hokkaido Nippon-Ham Fighters,2025-09-21 01:48:05
 Yomiuri Giants @ Chunichi Dragons,NPB,Yomiuri Giants,2025-09-21 00:30:26,Pinnacle,23.31,2.65,136.23,Chunichi Dragons,2025-09-21 02:44:51
 Samsung Lions @ KT Wiz,KBO,Samsung Lions,2025-09-21 01:00:00,Unibet,15.0,2.7,28.11,KT Wiz,2025-09-21 02:44:51
-FC Anyang @ Ulsan Hyundai FC,K League 1,Draw,2025-09-21 03:30:00,Pinnacle,2.66,2.43,5.62,Not Found,2025-09-21 04:48:22
-Gangwon FC @ Suwon FC,K League 1,Suwon FC,2025-09-21 03:30:00,Pinnacle,1.22,2.87,5.78,Not Found,2025-09-21 05:26:41
+FC Anyang @ Ulsan Hyundai FC,K League 1,Draw,2025-09-21 03:30:00,Pinnacle,2.66,2.43,5.62,Draw,2025-09-21 04:48:22
+Gangwon FC @ Suwon FC,K League 1,Suwon FC,2025-09-21 03:30:00,Pinnacle,1.22,2.87,5.78,Suwon FC,2025-09-21 05:26:41
 Gwangju FC @ FC Seoul,K League 1,Gwangju FC,2025-09-21 06:00:00,Bovada,4.05,4.05,5.57,Not Found,2025-09-21 06:10:13
 AS Roma @ Lazio,Serie A - Italy,Draw,2025-09-21 06:30:00,1xBet,3.33,4.45,5.04,Not Found,2025-09-21 06:10:13
 Go Ahead Eagles @ FC Zwolle,Dutch Eredivisie,FC Zwolle,2025-09-21 06:17:00,Tipico,8.0,2.02,34.9,Not Found,2025-09-21 06:30:53
-Hanshin Tigers @ Tokyo Yakult Swallows,NPB,Hanshin Tigers,2025-09-21 05:00:00,MyBookie.ag,3.8,2.56,6.34,Not Found,2025-09-21 06:30:53
+Hanshin Tigers @ Tokyo Yakult Swallows,NPB,Hanshin Tigers,2025-09-21 05:00:00,MyBookie.ag,3.8,2.56,6.34,Tokyo Yakult Swallows,2025-09-21 06:30:53
 Motor Lublin @ Zagłębie Lubin,Ekstraklasa - Poland,Motor Lublin,2025-09-21 06:15:00,DraftKings,9.0,2.36,5.87,Not Found,2025-09-21 07:07:43
 Shenzhen Peng City FC @ Tianjin Jinmen Tiger FC,Super League - China,Shenzhen Peng City FC,2025-09-21 07:35:00,Bovada,4.2,2.42,5.39,Not Found,2025-09-21 07:07:43
 Zaragoza @ AD Ceuta FC,La Liga 2 - Spain,Zaragoza,2025-09-21 08:00:00,Pinnacle,4.0,4.05,6.32,Not Found,2025-09-21 07:23:15
