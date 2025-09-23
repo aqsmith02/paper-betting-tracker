@@ -5,9 +5,6 @@ Centralized variables for fetch_odds folder.
 
 Author: Andrew Smith
 """
-# API key
-THEODDS_API_KEY = "9e971bc2de30ec1e46baa52d8cf4dc92"
-
 # Available Sports Keys
 THEODDS_SPORTS_DICT = {
     "upcoming": "upcoming",
