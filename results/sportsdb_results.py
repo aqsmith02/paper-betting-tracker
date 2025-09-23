@@ -14,7 +14,7 @@ from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 from typing import Any
 from constants import THESPORTSDB_API_KEY
-from results_configs import PENDING_RESULTS
+from .results_configs import PENDING_RESULTS
 
 
 def _start_date(ts: Any) -> str:

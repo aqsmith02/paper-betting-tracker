@@ -12,9 +12,9 @@ import pandas as pd
 import time
 from datetime import datetime, timedelta
 from typing import Tuple
-from results.theodds_results import get_finished_games_from_theodds, map_league_to_key
-from results.sportsdb_results import get_finished_games_from_thesportsdb
-from results.results_configs import PENDING_RESULTS, TIMEZONE, DAYS_CUTOFF, FILE_CONFIGS, SLEEP_DURATION
+from .theodds_results import get_finished_games_from_theodds, map_league_to_key
+from .sportsdb_results import get_finished_games_from_thesportsdb
+from .results_configs import PENDING_RESULTS, TIMEZONE, DAYS_CUTOFF, FILE_CONFIGS, SLEEP_DURATION
 from constants import DATA_DIR
 
 
@@ -66,8 +66,9 @@ def fetch_results_from_sportsdb(df: pd.DataFrame) -> pd.DataFrame:
     Returns:
         pd.DataFrame: Updated DataFrame with additional results fetched from TheSportsDB API.
     """
-    print("Pulling remaining results from TheSportsDB")
-    return get_finished_games_from_thesportsdb(df)
+    df = get_finished_games_from_thesportsdb(df)
+    print("Completed TheSportsDB pull")
+    return df
 
 
 def clean_old_pending_results(df: pd.DataFrame, full_df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]:
@@ -130,8 +131,8 @@ def process_file_pair(bet_filename: str, full_filename: str) -> None:
     full_df = pd.read_csv(full_file)
     
     # Fetch results from APIs
-    bet_df = get_finished_games_from_theodds(bet_df)
-    bet_df = get_finished_games_from_thesportsdb(bet_df)
+    bet_df = fetch_results_from_theodds(bet_df)
+    bet_df = fetch_results_from_sportsdb(bet_df)
     
     # Update full DataFrame with results
     full_df["Result"] = bet_df["Result"]
