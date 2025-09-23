@@ -11,12 +11,25 @@ This project tracks sports bets and results using Python scripts and CSV files. 
 ## Project Structure
 ```
 .
-├── fetch_odds.py           # Fetches and organizes odds data
-├── find_bets.py            # Analyzes odds and logs profitable bets
-├── sportsdb_results.py     # Functions for pulling results from TheSportsDB
-├── theodds_results.py      # Functions for pulling results from The-Odds-API
-├── results.py              # Updates bet results
-├── data/                   # Contains all bet and result CSV files
+├── fetch_odds/               # Package for fetching and organizing odds data
+│   ├── __init__.py
+│   ├── fetch_configs.py      # Configuration for odds fetching
+│   └── fetch_odds.py         # Main odds fetching logic
+├── find_bets/                # Package for analyzing odds and finding profitable bets
+│   ├── __init__.py
+│   ├── betting_configs.py    # Betting analysis configuration
+│   ├── betting_strategies.py # Core strategy analysis functions
+│   ├── data_processing.py    # Data cleaning and validation
+│   ├── file_management.py    # File operations and CSV handling
+│   ├── find_bets.py          # Main orchestration and pipeline
+│   └── summary_creation.py   # Summary generation functions
+├── results/                  # Package for updating bet results
+│   ├── __init__.py
+│   ├── results.py            # Main results updating logic
+│   ├── results_configs.py    # Configuration for results fetching
+│   ├── sportsdb_results.py   # Functions for pulling results from TheSportsDB
+│   └── theodds_results.py    # Functions for pulling results from The-Odds-API
+├── data/                     # Contains all bet and result CSV files
 │   ├── master_avg_bets.csv
 │   ├── master_avg_full.csv
 │   ├── master_mod_zscore_bets.csv
@@ -26,12 +39,13 @@ This project tracks sports bets and results using Python scripts and CSV files. 
 │   ├── master_random_bets.csv
 │   ├── master_random_full.csv
 │   ├── master_zscore_bets.csv
-│   ├── master_zscore_full.csv
-├── .github/workflows/      # GitHub Actions workflows for automated running
+│   └── master_zscore_full.csv
+├── .github/workflows/        # GitHub Actions workflows for automated running
 │   ├── hourly-bet-finder.yml
 │   └── results.yml
-├── requirements.txt        # Python dependencies
-├── .gitignore              # Git ignore rules
+├── constants.py              # Shared constants across packages
+├── requirements.txt          # Python dependencies
+└── .gitignore                # Git ignore rules
 ```
 
 ## Usage
