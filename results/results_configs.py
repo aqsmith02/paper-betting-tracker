@@ -1,3 +1,10 @@
+"""
+results_configs.py
+
+Centralized variables for results folder.
+
+Author: Andrew Smith
+"""
 from zoneinfo import ZoneInfo
 
 # Configuration

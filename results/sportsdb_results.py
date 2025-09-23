@@ -16,7 +16,6 @@ from typing import Any
 from constants import THESPORTSDB_API_KEY
 from .results_configs import PENDING_RESULTS
 
-
 def _start_date(ts: Any) -> str:
     """
     Convert a timestamp / datetime-like / ISO string to "YYYY-MM-DD".
