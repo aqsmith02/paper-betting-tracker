@@ -1,5 +1,5 @@
-__pycache__/
-csv_editer.py
-reader.ipynb
-roi.py
+codebase/__pycache__/
+codebase/csv_editer.py
+codebase/reader.ipynb
+codebase/roi.py
 .vscode/
