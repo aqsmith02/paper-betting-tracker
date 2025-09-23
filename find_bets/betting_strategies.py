@@ -1,9 +1,15 @@
+"""
+betting_strategies.py
+
+Logic for 5 different betting strategy methods. Functions append results columns to input pd.DataFrame.
+
+Author: Andrew Smith
+"""
 from typing import List
 import pandas as pd
 from .betting_configs import EDGE_THRESHOLD, MAX_MISSING_VIGFREE_ODDS,Z_SCORE_THRESHOLD, MAX_Z_SCORE
 from .data_processing import _find_bookmaker_columns
 import random
-
 
 def _count_missing_vigfree_odds(row: pd.Series, bookmaker_columns: List[str], max_missing: int) -> bool:
     """

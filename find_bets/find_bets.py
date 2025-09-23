@@ -7,7 +7,6 @@ computing the Z-score and modified Z-score of the odds of an outcome, and compar
 Pinnacle sportsbook (a known "sharp" sportsbook). Profitable bets are then saved into a master .csv file.
 
 Author: Andrew Smith
-Date: July 2025
 """
 from .file_management import BetFileManager
 from .betting_strategies import analyze_average_edge_bets, analyze_modified_zscore_outliers, analyze_pinnacle_edge_bets, analyze_zscore_outliers, find_random_bets

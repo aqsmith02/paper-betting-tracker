@@ -1,3 +1,10 @@
+"""
+betting_configs.py
+
+Centralized variables for find_bets folder.
+
+Author: Andrew Smith
+"""
 # Betting thresholds
 EDGE_THRESHOLD = 0.05
 Z_SCORE_THRESHOLD = 2.0

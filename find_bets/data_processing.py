@@ -1,3 +1,10 @@
+"""
+data_processing.py
+
+Cleans and validates data from fetch_odds.py.
+
+Author: Andrew Smith
+"""
 import numpy as np
 import pandas as pd
 from typing import List, Optional
@@ -24,6 +31,15 @@ def _find_bookmaker_columns(df: pd.DataFrame, exclude_columns: Optional[List[str
 
 
 def _remove_exchanges(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Remove betting exchange columns from df, which behave differently than normal bookmakers.
+    
+    Args:
+        df (pd.DataFrame): DataFrame containing odds data.
+        
+    Returns:
+        df (pd.DataFrame): DataFrame containing odds data without exchange columns.
+    """
     df = df.copy()
     cols_to_drop = [col for col in EXCHANGE_BLOCKLIST if col in df.columns]
     df = df.drop(columns=cols_to_drop)
@@ -31,6 +47,16 @@ def _remove_exchanges(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def _add_metadata(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Add Best Odds, Best Bookmaker, and Result column.
+    
+    Args:
+        df (pd.DataFrame): DataFrame containing odds data without exchange columns.
+        
+    Returns:
+        df (pd.DataFrame): DataFrame containing odds data without exchange columns, as well as 
+                        Best Odds, Best Bookmaker, and Result columns.
+    """
     df = df.copy()
     bms = _find_bookmaker_columns(df)
 
@@ -57,6 +83,15 @@ def _clean_odds_data(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def _min_bookmaker_filter(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Remove rows with less than MIN_BOOKMAKERS bookmaker columns.
+    
+    Args:
+        df (pd.DataFrame): DataFrame containing odds data without exchange columns.
+        
+    Returns:
+        pd.DataFrame: DataFrame with only rows that contain sufficient bookmaker counts.
+    """
     df = df.copy()
     bookmaker_columns = _find_bookmaker_columns(df)
     num_bookmakers = df[bookmaker_columns].notna().sum(axis=1)
@@ -65,6 +100,15 @@ def _min_bookmaker_filter(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def _max_odds_filter(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Remove rows with best odds greater than MAX_ODDS.
+    
+    Args:
+        df (pd.DataFrame): DataFrame containing odds data without exchange columns, and with metadata.
+        
+    Returns:
+        pd.DataFrame: DataFrame with only rows that contain odds that are not extreme.
+    """
     df = df.copy()
     mask = df["Best Odds"] <= MAX_ODDS
     df = df[mask]
@@ -86,6 +130,15 @@ def _prettify_column_headers(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def process_odds_data(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Transform fetch_odds df into cleaned df.
+    
+    Args:
+        df (pd.DataFrame): DataFrame containing odds data.
+        
+    Returns:
+        pd.DataFrame: Cleaned and validated DataFrame.
+    """
     df = _remove_exchanges(df)
     df = _add_metadata(df)
     df = _clean_odds_data(df)
