@@ -2,7 +2,7 @@ name: Bet Finder
 
 on:
   schedule:
-    - cron: "14,28,42,56 * * * *"
+    - cron: "14,56 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -30,7 +30,7 @@ jobs:
 
     - name: Run the bet finder script
       run: |
-        python find_bets.py
+        python3 -m find_bets.find_bets
 
     - name: Commit and push updated CSVs to master branch
       shell: bash
