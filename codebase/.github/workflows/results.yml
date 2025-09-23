@@ -30,6 +30,7 @@ jobs:
 
     - name: Run results.py
       run: |
+        cd codebase
         python3 -m results.results
 
     - name: Commit and push updated CSVs to master branch
@@ -38,16 +39,16 @@ jobs:
         git config user.email "github-actions@github.com"
 
         CSV_LIST="
-          data/master_avg_bets.csv
-          data/master_avg_full.csv
-          data/master_mod_zscore_bets.csv
-          data/master_mod_zscore_full.csv
-          data/master_pin_bets.csv
-          data/master_pin_full.csv
-          data/master_zscore_bets.csv
-          data/master_zscore_full.csv
-          data/master_random_bets.csv
-          data/master_random_full.csv
+          codebase/data/master_avg_bets.csv
+          codebase/data/master_avg_full.csv
+          codebase/data/master_mod_zscore_bets.csv
+          codebase/data/master_mod_zscore_full.csv
+          codebase/data/master_pin_bets.csv
+          codebase/data/master_pin_full.csv
+          codebase/data/master_zscore_bets.csv
+          codebase/data/master_zscore_full.csv
+          codebase/data/master_random_bets.csv
+          codebase/data/master_random_full.csv
         "
 
         git add $CSV_LIST
