@@ -2,3 +2,4 @@ __pycache__/
 csv_editer.py
 reader.ipynb
 roi.py
+.vscode
