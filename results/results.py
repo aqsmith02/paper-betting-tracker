@@ -11,52 +11,11 @@ Date: July 2025
 import pandas as pd
 import time
 from datetime import datetime, timedelta
-from pathlib import Path
 from typing import Tuple
-from zoneinfo import ZoneInfo
 from results.theodds_results import get_finished_games_from_theodds, map_league_to_key
 from results.sportsdb_results import get_finished_games_from_thesportsdb
-
-
-# Configuration
-TIMEZONE = ZoneInfo("America/New_York")
-DAYS_CUTOFF = 3
-SLEEP_DURATION = 60
-DATA_DIR = Path("data")
-
-# File configurations
-FILE_CONFIGS = [
-    ("master_avg_bets.csv", "master_avg_full.csv"),
-    ("master_mod_zscore_bets.csv", "master_mod_zscore_full.csv"),
-    ("master_pin_bets.csv", "master_pin_full.csv"),
-    ("master_zscore_bets.csv", "master_zscore_full.csv"),
-    ("master_random_bets.csv", "master_random_full.csv"),
-]
-
-PENDING_RESULTS = ["Not Found", "Pending", "API Error"]
-
-
-def load_dataframes(bet_file: Path, full_file: Path) -> Tuple[pd.DataFrame, pd.DataFrame]:
-    """
-    Load bet and full DataFrames from CSV files.
-    
-    Args:
-        bet_file (Path): Path to the betting summary CSV file.
-        full_file (Path): Path to the full betting data CSV file.
-        
-    Returns:
-        Tuple[pd.DataFrame, pd.DataFrame]: Tuple containing (bet_df, full_df) loaded from files.
-    """
-    try:
-        bet_df = pd.read_csv(bet_file)
-        full_df = pd.read_csv(full_file)
-        return bet_df, full_df
-    except FileNotFoundError as e:
-        print(f"Error loading files: {e}")
-        raise
-    except pd.errors.EmptyDataError as e:
-        print(f"Empty data file encountered: {e}")
-        raise
+from results.results_configs import PENDING_RESULTS, TIMEZONE, DAYS_CUTOFF, FILE_CONFIGS, SLEEP_DURATION
+from constants import DATA_DIR
 
 
 def filter_rows_to_search(df: pd.DataFrame) -> pd.DataFrame:
@@ -128,54 +87,26 @@ def clean_old_pending_results(df: pd.DataFrame, full_df: pd.DataFrame) -> Tuple[
     # Store original start time column
     original_start_time = df["Start Time"].copy()
     
-    try:
-        # Convert to datetime with timezone
-        df_temp = df.copy()
-        df_temp["Start Time"] = pd.to_datetime(df_temp["Start Time"], format="%Y-%m-%d %H:%M:%S")
-        df_temp["Start Time"] = df_temp["Start Time"].dt.tz_localize(TIMEZONE)
-        
-        # Create filter mask - keep rows that are either recent OR have valid results
-        mask = ~((df_temp["Start Time"] < cutoff_time) & (df_temp["Result"].isin(PENDING_RESULTS)))
-        
-        # Apply filter to both DataFrames
-        filtered_df = df[mask].copy()
-        filtered_full_df = full_df[mask].copy()
-        
-        # Restore original start time format
-        filtered_df["Start Time"] = original_start_time[mask].values
-        
-        removed_count = len(df) - len(filtered_df)
-        if removed_count > 0:
-            print(f"Removed {removed_count} old rows with pending results")
-        
-        return filtered_df, filtered_full_df
-        
-    except Exception as e:
-        print(f"Error cleaning old results: {e}")
-        # Return original DataFrames if cleaning fails
-        return df, full_df
-
-
-def save_dataframes(df: pd.DataFrame, full_df: pd.DataFrame, bet_file: Path, full_file: Path) -> None:
-    """
-    Save DataFrames to CSV files.
+    # Convert to datetime with timezone
+    df_temp = df.copy()
+    df_temp["Start Time"] = pd.to_datetime(df_temp["Start Time"], format="%Y-%m-%d %H:%M:%S")
+    df_temp["Start Time"] = df_temp["Start Time"].dt.tz_localize(TIMEZONE)
     
-    Args:
-        df (pd.DataFrame): Betting summary DataFrame to save.
-        full_df (pd.DataFrame): Full betting data DataFrame to save.
-        bet_file (Path): Path where betting summary CSV will be saved.
-        full_file (Path): Path where full betting data CSV will be saved.
-        
-    Returns:
-        None
-    """
-    try:
-        df.to_csv(bet_file, index=False)
-        full_df.to_csv(full_file, index=False)
-        print(f"Saved results to {bet_file.name} and {full_file.name}")
-    except Exception as e:
-        print(f"Error saving files: {e}")
-        raise
+    # Create filter mask - keep rows that are either recent OR have valid results
+    mask = ~((df_temp["Start Time"] < cutoff_time) & (df_temp["Result"].isin(PENDING_RESULTS)))
+    
+    # Apply filter to both DataFrames
+    filtered_df = df[mask].copy()
+    filtered_full_df = full_df[mask].copy()
+    
+    # Restore original start time format
+    filtered_df["Start Time"] = original_start_time[mask].values
+    
+    removed_count = len(df) - len(filtered_df)
+    if removed_count > 0:
+        print(f"Removed {removed_count} old rows with pending results")
+    
+    return filtered_df, filtered_full_df
 
 
 def process_file_pair(bet_filename: str, full_filename: str) -> None:
@@ -194,26 +125,23 @@ def process_file_pair(bet_filename: str, full_filename: str) -> None:
     
     print(f"\nProcessing {bet_filename} and {full_filename}")
     
-    try:
-        # Load data
-        bet_df, full_df = load_dataframes(bet_file, full_file)
-        
-        # Fetch results from APIs
-        bet_df = fetch_results_from_theodds(bet_df)
-        bet_df = fetch_results_from_sportsdb(bet_df)
-        
-        # Update full DataFrame with results
-        full_df["Result"] = bet_df["Result"]
-        
-        # Clean old pending results
-        bet_df, full_df = clean_old_pending_results(bet_df, full_df)
-        
-        # Save results
-        save_dataframes(bet_df, full_df, bet_file, full_file)
-        
-    except Exception as e:
-        print(f"Error processing {bet_filename}: {e}")
-        raise
+    # Load data
+    bet_df = pd.read_csv(bet_file)
+    full_df = pd.read_csv(full_file)
+    
+    # Fetch results from APIs
+    bet_df = get_finished_games_from_theodds(bet_df)
+    bet_df = get_finished_games_from_thesportsdb(bet_df)
+    
+    # Update full DataFrame with results
+    full_df["Result"] = bet_df["Result"]
+    
+    # Clean old pending results
+    bet_df, full_df = clean_old_pending_results(bet_df, full_df)
+    
+    # Save results
+    bet_df.to_csv(bet_file, index=False)
+    full_df.to_csv(full_file, index=False)
 
 
 def main() -> None:

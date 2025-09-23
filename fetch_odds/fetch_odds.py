@@ -74,7 +74,6 @@ def fetch_odds() -> pd.DataFrame:
         except Exception as e:
             print(f"Error processing game: {e}")
             continue
-    
     return pd.DataFrame(rows)
 
 

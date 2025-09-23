@@ -7,16 +7,15 @@ bets in a column called "Result".
 Author: Andrew Smith
 Date: July 2025
 """
-# ---------------------------------------- Imports and Variables --------------------------------------------
 import requests
 import pandas as pd
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 from typing import Any, List, Dict
 from constants import THEODDS_API_KEY
+from results_configs import PENDING_RESULTS
 
 
-# ------------------------------------------ Formatting Helpers ---------------------------------------------
 def _start_date(ts: Any) -> str:
     """
     Convert a timestamp / datetime-like / ISO string to "YYYY-MM-DD".
@@ -44,7 +43,6 @@ def _parse_match_teams(match: str) -> List[str]:
     return [t.strip() for t in match.split("@")]
 
 
-# -------------------------------------- Time Since Start Filter --------------------------------------------
 def _time_since_start(df: pd.DataFrame, thresh: float) -> pd.DataFrame:
     """
     Filter out games that started less than threshold hours ago.
@@ -73,7 +71,6 @@ def _time_since_start(df: pd.DataFrame, thresh: float) -> pd.DataFrame:
     return df
 
 
-# ------------------------------------------- Results Fetcher -----------------------------------------------
 def _get_scores_from_api(sports_key: str, days_from: int = 3) -> List[Dict]:
     """
     Fetch game outcomes from The-Odds-API for the last specified number of days.
@@ -93,7 +90,6 @@ def _get_scores_from_api(sports_key: str, days_from: int = 3) -> List[Dict]:
     return resp.json()
 
 
-# ------------------------------------------ Results Filter -------------------------------------------------
 def _filter(scores: List[Dict], start_date: str, home_team: str, away_team: str) -> List[Dict]:
     """
     Filter games list to find matches with specific date and teams.
@@ -115,7 +111,6 @@ def _filter(scores: List[Dict], start_date: str, home_team: str, away_team: str)
     ]
 
 
-# --------------------------------------- Determine Winner of Game ------------------------------------------
 def _get_winner(game: Dict) -> str:
     """
     Determine the game result by comparing scores from a completed game.
@@ -143,8 +138,6 @@ def _get_winner(game: Dict) -> str:
 
     print(f"{home_score} (H) vs {away_score} (A): {home_score}-{away_score}")
 
-    
-    # Compare
     if home_score > away_score:
         return home_team
     elif away_score > home_score:
@@ -153,7 +146,6 @@ def _get_winner(game: Dict) -> str:
         return "Draw"
 
 
-# --------------------------------------- Results Column Function -------------------------------------------
 def get_finished_games_from_theodds(df: pd.DataFrame, sports_key: str) -> pd.DataFrame:
     """
     Add game results to DataFrame by fetching data from The-Odds-API.
@@ -165,9 +157,6 @@ def get_finished_games_from_theodds(df: pd.DataFrame, sports_key: str) -> pd.Dat
     Returns:
         pd.DataFrame: Updated DataFrame with "Result" column populated from API calls.
     """
-    if "Result" not in df.columns:
-        df["Result"] = "Not Found"
-
     # Get a list of the games from the past 3 days in the specified sport
     scores = _get_scores_from_api(sports_key)
 
@@ -179,7 +168,7 @@ def get_finished_games_from_theodds(df: pd.DataFrame, sports_key: str) -> pd.Dat
         existing_result = row.get("Result")
 
         # Skip rows that already have a valid result
-        if existing_result not in ["Not Found", "Pending", "API Error"]:
+        if existing_result not in PENDING_RESULTS:
             continue
 
         # Note the necessary args for the filter() function
@@ -200,7 +189,6 @@ def get_finished_games_from_theodds(df: pd.DataFrame, sports_key: str) -> pd.Dat
     return df
 
 
-# ---------------------------------------------- Key Finder -------------------------------------------------
 def map_league_to_key(df: pd.DataFrame) -> List[str]:
     """
     Map league names in DataFrame to corresponding The-Odds-API sport keys.

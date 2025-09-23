@@ -6,9 +6,6 @@ MIN_BOOKMAKERS = 5
 MAX_ODDS = 50
 MAX_MISSING_VIGFREE_ODDS = 2
 
-# File path directory
-DATA_DIR = "data"
-
 # Formatting
 DATE_FORMAT = "%Y-%m-%d"
 TIMESTAMP_FORMAT = "%Y-%m-%d %H:%M:%S"

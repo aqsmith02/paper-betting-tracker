@@ -1,14 +1,7 @@
 import numpy as np
 import pandas as pd
 from typing import List, Optional
-from .betting_configs import DATE_FORMAT, MIN_BOOKMAKERS, MAX_ODDS, EXCHANGE_BLOCKLIST
-
-
-def _remove_exchanges(df: pd.DataFrame) -> pd.DataFrame:
-    df = df.copy()
-    cols_to_drop = [col for col in EXCHANGE_BLOCKLIST if col in df.columns]
-    df = df.drop(columns=cols_to_drop)
-    return df
+from .betting_configs import MIN_BOOKMAKERS, MAX_ODDS, EXCHANGE_BLOCKLIST
 
 
 def _find_bookmaker_columns(df: pd.DataFrame, exclude_columns: Optional[List[str]] = None) -> List[str]:
@@ -28,6 +21,23 @@ def _find_bookmaker_columns(df: pd.DataFrame, exclude_columns: Optional[List[str
     
     return [col for col in df.select_dtypes(include=["float", "int"]).columns 
             if col not in excluded]
+
+
+def _remove_exchanges(df: pd.DataFrame) -> pd.DataFrame:
+    df = df.copy()
+    cols_to_drop = [col for col in EXCHANGE_BLOCKLIST if col in df.columns]
+    df = df.drop(columns=cols_to_drop)
+    return df
+
+
+def _add_metadata(df: pd.DataFrame) -> pd.DataFrame:
+    df = df.copy()
+    bms = _find_bookmaker_columns(df)
+
+    df["Best Odds"] = df[bms].max(axis=1)
+    df["Best Bookmaker"] = df[bms].idxmax(axis=1)
+    df["Result"] = "Not Found"
+    return df
 
 
 def _clean_odds_data(df: pd.DataFrame) -> pd.DataFrame:
@@ -51,27 +61,13 @@ def _min_bookmaker_filter(df: pd.DataFrame) -> pd.DataFrame:
     bookmaker_columns = _find_bookmaker_columns(df)
     num_bookmakers = df[bookmaker_columns].notna().sum(axis=1)
     df = df[num_bookmakers > MIN_BOOKMAKERS]
-    
     return df
 
 
 def _max_odds_filter(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
-    bookmaker_columns = _find_bookmaker_columns(df)
-    mask = (df[bookmaker_columns] <= MAX_ODDS).all(axis=1)
+    mask = df["Best Odds"] <= MAX_ODDS
     df = df[mask]
-
-    return df
-
-
-def _add_metadata(df: pd.DataFrame) -> pd.DataFrame:
-    df = df.copy()
-    bms = _find_bookmaker_columns(df)
-
-    df["Best Odds"] = df[bms].max(axis=1)
-    df["Best Bookmaker"] = df[bms].idxmax(axis=1)
-    df["Result"] = "Not Found"
-
     return df
 
 
@@ -91,10 +87,10 @@ def _prettify_column_headers(df: pd.DataFrame) -> pd.DataFrame:
 
 def process_odds_data(df: pd.DataFrame) -> pd.DataFrame:
     df = _remove_exchanges(df)
+    df = _add_metadata(df)
     df = _clean_odds_data(df)
     df = _min_bookmaker_filter(df)
     df = _max_odds_filter(df)
-    df = _add_metadata(df)
     df = _prettify_column_headers(df)
     return df
 
@@ -132,6 +128,5 @@ def calculate_vigfree_probabilities(df: pd.DataFrame) -> pd.DataFrame:
             
             # Update DataFrame with vig-free probabilities
             df.loc[valid_odds.index, vigfree_column] = normalized_probs.values
-    
     return df
 

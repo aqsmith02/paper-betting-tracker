@@ -7,7 +7,6 @@ bets in a column called "Result".
 Author: Andrew Smith
 Date: July 2025
 """
-# ---------------------------------------- Imports and Variables --------------------------------------------
 import requests
 import pandas as pd
 import time
@@ -15,9 +14,9 @@ from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 from typing import Any
 from constants import THESPORTSDB_API_KEY
+from results_configs import PENDING_RESULTS
 
 
-# ----------------------------------------- Formatting Helpers ----------------------------------------------
 def _start_date(ts: Any) -> str:
     """
     Convert a timestamp / datetime-like / ISO string to "YYYY-MM-DD".
@@ -52,7 +51,6 @@ def _format_match_for_thesportsdb(match: str) -> str:
     return formatted.replace(" ", "_")
 
 
-# -------------------------------------- Time Since Start Filter --------------------------------------------
 def _time_since_start(df: pd.DataFrame, thresh: float) -> pd.DataFrame:
     """
     Filter out games that started less than threshold hours ago.
@@ -81,7 +79,6 @@ def _time_since_start(df: pd.DataFrame, thresh: float) -> pd.DataFrame:
     return df
 
 
-# ------------------------------------------- Results Fetcher -----------------------------------------------
 def _get_results(match: str, date: str) -> str:
     """
     Fetch the results of a game from TheSportsDB API.
@@ -135,7 +132,6 @@ def _get_results(match: str, date: str) -> str:
         return "Error"
 
 
-# --------------------------------------- Results Column Function -------------------------------------------
 def get_finished_games_from_thesportsdb(df: pd.DataFrame) -> pd.DataFrame:
     """
     Fetch and update game results from TheSportsDB API for games in DataFrame.
@@ -146,9 +142,6 @@ def get_finished_games_from_thesportsdb(df: pd.DataFrame) -> pd.DataFrame:
     Returns:
         pd.DataFrame: Updated DataFrame with "Result" column populated from API calls.
     """
-    if "Result" not in df.columns:
-        df["Result"] = "Not Found"
-
     # Only loop through games that started more than 12 hours ago
     indices = _time_since_start(df, 12).index.tolist()
 
@@ -160,7 +153,7 @@ def get_finished_games_from_thesportsdb(df: pd.DataFrame) -> pd.DataFrame:
         existing_result = row.get("Result")
 
         # Skip rows that already have a result other than "Not Found"
-        if existing_result not in ["Not Found", "Pending", "API Error"]:
+        if existing_result not in PENDING_RESULTS:
             continue
 
         match = _format_match_for_thesportsdb(row["Match"])
