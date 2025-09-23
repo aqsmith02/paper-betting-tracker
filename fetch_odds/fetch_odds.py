@@ -8,7 +8,6 @@ bookmakers and essential information.
 Author: Andrew Smith
 Date: July 2025
 """
-# ---------------------------------------- Imports ------------------------------------------ #
 import requests
 import pandas as pd
 from datetime import datetime
@@ -17,7 +16,6 @@ from typing import List, Dict
 from .fetch_configs import DATE_FORMAT,SPORT,SPORT_KEY,REGIONS,MARKETS,ODDS_FORMAT
 from constants import THEODDS_API_KEY
 
-# -------------------------- Helper Functions ---------------------- #
 def _convert_to_eastern_time(utc_time_str: str) -> str:
     """
     Convert UTC time string to Eastern time.
@@ -34,7 +32,6 @@ def _convert_to_eastern_time(utc_time_str: str) -> str:
     return local_dt.strftime(DATE_FORMAT)
 
 
-# -------------------------- Driver Functions ---------------------- #
 def fetch_odds() -> pd.DataFrame:
     """
     Fetches head-to-head (h2h) betting odds from The Odds API.
@@ -149,6 +146,7 @@ def _create_bm_dict_list(game: Dict) -> List[Dict]:
             bm_dicts_list.append(bm_dict)
             
     return bm_dicts_list
+
 
 # ------------------------------------------ Main Pipeline ------------------------------------------ #
 def main() -> None:
