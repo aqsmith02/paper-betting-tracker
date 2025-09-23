@@ -1,5 +1,11 @@
-import pandas as pd
+"""
+summary_creation.py
 
+Logic for creating bet summary DataFrames given betting analysis data. 
+
+Author: Andrew Smith
+"""
+import pandas as pd
 
 def create_average_edge_summary(df: pd.DataFrame) -> pd.DataFrame:
     """
