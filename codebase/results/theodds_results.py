@@ -142,7 +142,7 @@ def _get_winner(game: Dict) -> str:
         elif item["name"] == away_team:
             away_score = int(item["score"])
 
-    print(f"{home_score} (H) vs {away_score} (A): {home_score}-{away_score}")
+    print(f"{home_team} (H) vs {away_team} (A): {home_score}-{away_score}")
 
     if home_score > away_score:
         return home_team
