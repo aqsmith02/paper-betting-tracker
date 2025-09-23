@@ -2,7 +2,7 @@ name: Fill Results
 
 on:
   schedule:
-    - cron: "22 */3 * * *" # Run every 3 hours at the 22 minute mark
+    - cron: "27 */6 * * *" # Run every 6 hours at the 27 minute mark
   workflow_dispatch:
 
 permissions:
@@ -30,7 +30,7 @@ jobs:
 
     - name: Run results.py
       run: |
-        python results.py
+        python3 -m results.results
 
     - name: Commit and push updated CSVs to master branch
       run: |
