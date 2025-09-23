@@ -5,6 +5,7 @@ Centralized variables for results folder.
 
 Author: Andrew Smith
 """
+
 from zoneinfo import ZoneInfo
 
 # Local timezone for measuring how long it has been since each bet

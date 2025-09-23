@@ -5,10 +5,11 @@ Centralized variables for fetch_odds folder.
 
 Author: Andrew Smith
 """
+
 # Available Sports Keys
 THEODDS_SPORTS_DICT = {
     "upcoming": "upcoming",
-    "kbo": "baseball_kbo", 
+    "kbo": "baseball_kbo",
     "mlb": "baseball_mlb",
     "ncaa_baseball": "baseball_ncaa",
     "wnba": "basketball_wnba",
@@ -30,7 +31,7 @@ THEODDS_SPORTS_DICT = {
     "nhl": "icehockey_nhl",
     "sweden_hockey": "icehockey_sweden_hockey_league",
     "mexico": "soccer_mexico_ligamx",
-    "ireland": "soccer_league_of_ireland"
+    "ireland": "soccer_league_of_ireland",
 }
 
 # API Configuration

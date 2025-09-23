@@ -8,21 +8,23 @@ bookmakers and essential information.
 Author: Andrew Smith
 Date: July 2025
 """
+
 import requests
 import pandas as pd
 from datetime import datetime
 import pytz
 from typing import List, Dict
-from .fetch_configs import DATE_FORMAT,SPORT,SPORT_KEY,REGIONS,MARKETS,ODDS_FORMAT
+from .fetch_configs import DATE_FORMAT, SPORT, SPORT_KEY, REGIONS, MARKETS, ODDS_FORMAT
 from constants import THEODDS_API_KEY
+
 
 def _convert_to_eastern_time(utc_time_str: str) -> str:
     """
     Convert UTC time string to Eastern time.
-    
+
     Args:
         utc_time_str (str): UTC time string in ISO format without timezone suffix.
-        
+
     Returns:
         str: Time string formatted in Eastern timezone using DATE_FORMAT.
     """
@@ -35,7 +37,7 @@ def _convert_to_eastern_time(utc_time_str: str) -> str:
 def fetch_odds() -> pd.DataFrame:
     """
     Fetches head-to-head (h2h) betting odds from The Odds API.
-    
+
     Returns:
         pd.DataFrame: DataFrame with columns: match, league, start time, team, bookmaker, odds, last update.
                     Each row represents one team's odds from one bookmaker.
@@ -44,25 +46,25 @@ def fetch_odds() -> pd.DataFrame:
     url = f"https://api.the-odds-api.com/v4/sports/{SPORT_KEY}/odds"
     params = {
         "apiKey": THEODDS_API_KEY,
-        "regions": REGIONS, 
+        "regions": REGIONS,
         "markets": MARKETS,
-        "oddsFormat": ODDS_FORMAT
+        "oddsFormat": ODDS_FORMAT,
     }
-    
+
     print(f"Fetching odds for sport: {SPORT}")
     response = requests.get(url, params=params)
-    
+
     # Log API usage
     print("Requests Remaining:", response.headers.get("x-requests-remaining"))
     print("Requests Used:", response.headers.get("x-requests-used"))
-    
+
     if response.status_code != 200:
         print(f"API request failed: {response.status_code} - {response.text}")
         return pd.DataFrame()
-    
+
     games_data = response.json()
     print(f"Retrieved {len(games_data)} games")
-    
+
     # Process each game into rows
     rows = []
     for game in games_data:
@@ -77,12 +79,12 @@ def fetch_odds() -> pd.DataFrame:
 
 def _process_game(game: Dict) -> List[Dict]:
     """
-    Process a single game from the API response into one row per outcome (row includes match data 
+    Process a single game from the API response into one row per outcome (row includes match data
     and bookmakers).
-    
+
     Args:
         game (Dict): Game data dictionary from The Odds API response.
-        
+
     Returns:
         List[Dict]: List of dictionaries, where each dictionary is an outcome.
     """
@@ -91,7 +93,7 @@ def _process_game(game: Dict) -> List[Dict]:
     league = game["sport_title"]
     start_time = _convert_to_eastern_time(game["commence_time"])
     bm_dicts = _create_bm_dict_list(game)
-    rows = []         
+    rows = []
 
     # (Assuming all bookmakers offer odds for the same outcomes)
     # Get the list of outcomes from the first bookmaker
@@ -107,7 +109,7 @@ def _process_game(game: Dict) -> List[Dict]:
             "match": f"{away_team} @ {home_team}",
             "league": league,
             "start_time": start_time,
-            "team": outcome_team
+            "team": outcome_team,
         }
 
         # Add each bookmaker's odds for this outcome
@@ -122,12 +124,12 @@ def _process_game(game: Dict) -> List[Dict]:
 
 def _create_bm_dict_list(game: Dict) -> List[Dict]:
     """
-    Processes a single game dictionary and builds a list of bookmaker dictionaries, each mapping the 
+    Processes a single game dictionary and builds a list of bookmaker dictionaries, each mapping the
     bookmaker name to its odds for all outcomes in the game.
-    
+
     Args:
         game (Dict): Game data dictionary from The Odds API response.
-        
+
     Returns:
         List[Dict]: List of dictionaries, where each dictionary is a bookmaker and it's odds for different
                     outcomes.
@@ -135,34 +137,33 @@ def _create_bm_dict_list(game: Dict) -> List[Dict]:
     bm_dicts_list = []
     bookmakers = game.get("bookmakers", [])
     for bm in bookmakers:
-            bookmaker_name = bm["title"]
+        bookmaker_name = bm["title"]
 
-            markets = bm.get("markets", [])
-            h2h_market = markets[0]  # Should be h2h market since that's all we requested
+        markets = bm.get("markets", [])
+        h2h_market = markets[0]  # Should be h2h market since that's all we requested
 
-            # Create a dict for each outcome
-            outcomes = {o["name"]: o["price"] for o in h2h_market.get("outcomes", [])}
-            bm_dict = {bookmaker_name:outcomes}
-            bm_dicts_list.append(bm_dict)
-            
+        # Create a dict for each outcome
+        outcomes = {o["name"]: o["price"] for o in h2h_market.get("outcomes", [])}
+        bm_dict = {bookmaker_name: outcomes}
+        bm_dicts_list.append(bm_dict)
+
     return bm_dicts_list
 
 
-# ------------------------------------------ Main Pipeline ------------------------------------------ #
 def main() -> None:
     """
     Main pipeline for fetching, organizing, and saving sports betting odds.
-    
+
     Args:
         None
-        
+
     Returns:
         None
     """
     # Fetch and organize odds data
     print("Starting odds fetch...")
     raw_odds = fetch_odds()
-    
+
     if not raw_odds.empty:
         output_file = "odds.csv"
         raw_odds.to_csv(output_file, index=False)

@@ -7,6 +7,7 @@ bets in a column called "Result".
 Author: Andrew Smith
 Date: July 2025
 """
+
 import requests
 import pandas as pd
 from datetime import datetime, timedelta
@@ -15,13 +16,14 @@ from typing import Any, List, Dict
 from constants import THEODDS_API_KEY
 from .results_configs import PENDING_RESULTS
 
+
 def _start_date(ts: Any) -> str:
     """
     Convert a timestamp / datetime-like / ISO string to "YYYY-MM-DD".
-    
+
     Args:
         ts (Any): Timestamp to convert to date (adjusted 4 hours forward from UTC to EDT).
-        
+
     Returns:
         str: Date string in YYYY-MM-DD format.
     """
@@ -32,10 +34,10 @@ def _start_date(ts: Any) -> str:
 def _parse_match_teams(match: str) -> List[str]:
     """
     Convert a match string to a list containing the individual teams.
-    
+
     Args:
         match (str): Match string in format "Team1 @ Team2".
-        
+
     Returns:
         List[str]: List containing individual team names [away_team, home_team].
     """
@@ -45,26 +47,28 @@ def _parse_match_teams(match: str) -> List[str]:
 def _time_since_start(df: pd.DataFrame, thresh: float) -> pd.DataFrame:
     """
     Filter out games that started less than threshold hours ago.
-    
+
     Args:
         df (pd.DataFrame): DataFrame containing game data with "Start Time" column.
         thresh (float): Threshold in hours - games starting less than this many hours ago are filtered out.
-        
+
     Returns:
         pd.DataFrame: Filtered DataFrame containing only games that started more than thresh hours ago.
     """
     # Get the current time
-    current_time = datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d %H:%M:%S")
+    current_time = datetime.now(ZoneInfo("America/New_York")).strftime(
+        "%Y-%m-%d %H:%M:%S"
+    )
     current_time_obj = datetime.strptime(current_time, "%Y-%m-%d %H:%M:%S")
 
     # Convert "Start Time" column to datetime objects
-    df['Start Time'] = pd.to_datetime(df['Start Time'], format="%Y-%m-%d %H:%M:%S")
+    df["Start Time"] = pd.to_datetime(df["Start Time"], format="%Y-%m-%d %H:%M:%S")
 
     # Create conditions for removal
     cutoff = current_time_obj - timedelta(hours=thresh)
 
     # Filter out games that started less than threshold hours ago
-    mask = (df["Start Time"] <= cutoff)
+    mask = df["Start Time"] <= cutoff
     df = df[mask]
 
     return df
@@ -73,11 +77,11 @@ def _time_since_start(df: pd.DataFrame, thresh: float) -> pd.DataFrame:
 def _get_scores_from_api(sports_key: str, days_from: int = 3) -> List[Dict]:
     """
     Fetch game outcomes from The-Odds-API for the last specified number of days.
-    
+
     Args:
         sports_key (str): Sport key to fetch games for (maximum 3 days lookback).
         days_from (int): Number of days back to look for completed games.
-        
+
     Returns:
         List[Dict]: List of completed game dictionaries from the API response.
     """
@@ -89,40 +93,43 @@ def _get_scores_from_api(sports_key: str, days_from: int = 3) -> List[Dict]:
     return resp.json()
 
 
-def _filter(scores: List[Dict], start_date: str, home_team: str, away_team: str) -> List[Dict]:
+def _filter(
+    scores: List[Dict], start_date: str, home_team: str, away_team: str
+) -> List[Dict]:
     """
     Filter games list to find matches with specific date and teams.
-    
+
     Args:
         scores (List[Dict]): List of game dictionaries from _get_scores_from_api().
         start_date (str): Start date of the desired game in YYYY-MM-DD format.
         home_team (str): Home team name from the desired game.
         away_team (str): Away team name from the desired game.
-        
+
     Returns:
         List[Dict]: List containing the game(s) matching the submitted criteria.
     """
     return [
-        game for game in scores
-        if _start_date(game.get("commence_time")) == start_date and
-           game.get("home_team") == home_team and
-           game.get("away_team") == away_team
+        game
+        for game in scores
+        if _start_date(game.get("commence_time")) == start_date
+        and game.get("home_team") == home_team
+        and game.get("away_team") == away_team
     ]
 
 
 def _get_winner(game: Dict) -> str:
     """
     Determine the game result by comparing scores from a completed game.
-    
+
     Args:
         game (Dict): Game dictionary containing score and completion information.
-        
+
     Returns:
         str: Winning team name or "Pending" if game has not completed.
     """
     if not game.get("completed"):
         return "Pending"
-    
+
     home_team = game["home_team"]
     away_team = game["away_team"]
 
@@ -131,7 +138,7 @@ def _get_winner(game: Dict) -> str:
 
     for item in game["scores"]:
         if item["name"] == home_team:
-            home_score = int(item["score"])  
+            home_score = int(item["score"])
         elif item["name"] == away_team:
             away_score = int(item["score"])
 
@@ -148,11 +155,11 @@ def _get_winner(game: Dict) -> str:
 def get_finished_games_from_theodds(df: pd.DataFrame, sports_key: str) -> pd.DataFrame:
     """
     Add game results to DataFrame by fetching data from The-Odds-API.
-    
+
     Args:
         df (pd.DataFrame): DataFrame containing betting data with columns "Match", "Start Time", and optionally "Result".
         sports_key (str): Sport key for The-Odds-API to specify which sport's results to fetch.
-        
+
     Returns:
         pd.DataFrame: Updated DataFrame with "Result" column populated from API calls.
     """
@@ -191,10 +198,10 @@ def get_finished_games_from_theodds(df: pd.DataFrame, sports_key: str) -> pd.Dat
 def map_league_to_key(df: pd.DataFrame) -> List[str]:
     """
     Map league names in DataFrame to corresponding The-Odds-API sport keys.
-    
+
     Args:
         df (pd.DataFrame): DataFrame containing a "League" column with league names.
-        
+
     Returns:
         List[str]: List of unique sport keys corresponding to leagues found in the DataFrame.
     """
@@ -259,7 +266,7 @@ def map_league_to_key(df: pd.DataFrame) -> List[str]:
         "Swiss Superleague": "soccer_switzerland_superleague",
         "Turkey Super League": "soccer_turkey_super_league",
         "UEFA Champions League Qualification": "soccer_uefa_champs_league_qualification",
-        "MLS": "soccer_usa_mls"
+        "MLS": "soccer_usa_mls",
     }
 
     key_list = df["League"].map(league_to_key)

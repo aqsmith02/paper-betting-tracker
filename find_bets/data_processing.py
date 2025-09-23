@@ -5,38 +5,44 @@ Cleans and validates data from fetch_odds.py.
 
 Author: Andrew Smith
 """
+
 import numpy as np
 import pandas as pd
 from typing import List, Optional
 from .betting_configs import MIN_BOOKMAKERS, MAX_ODDS, EXCHANGE_BLOCKLIST
 
 
-def _find_bookmaker_columns(df: pd.DataFrame, exclude_columns: Optional[List[str]] = None) -> List[str]:
+def _find_bookmaker_columns(
+    df: pd.DataFrame, exclude_columns: Optional[List[str]] = None
+) -> List[str]:
     """
     Find columns that contain bookmaker odds (numeric columns, excluding metadata).
-    
+
     Args:
         df (pd.DataFrame): DataFrame to search for bookmaker columns.
         exclude_columns (Optional[List[str]]): Additional columns to exclude from search.
-        
+
     Returns:
         List[str]: List of column names that contain bookmaker odds.
     """
     excluded = {"Best Odds", "Start Time"}
     if exclude_columns:
         excluded.update(exclude_columns)
-    
-    return [col for col in df.select_dtypes(include=["float", "int"]).columns 
-            if col not in excluded]
+
+    return [
+        col
+        for col in df.select_dtypes(include=["float", "int"]).columns
+        if col not in excluded
+    ]
 
 
 def _remove_exchanges(df: pd.DataFrame) -> pd.DataFrame:
     """
     Remove betting exchange columns from df, which behave differently than normal bookmakers.
-    
+
     Args:
         df (pd.DataFrame): DataFrame containing odds data.
-        
+
     Returns:
         df (pd.DataFrame): DataFrame containing odds data without exchange columns.
     """
@@ -49,12 +55,12 @@ def _remove_exchanges(df: pd.DataFrame) -> pd.DataFrame:
 def _add_metadata(df: pd.DataFrame) -> pd.DataFrame:
     """
     Add Best Odds, Best Bookmaker, and Result column.
-    
+
     Args:
         df (pd.DataFrame): DataFrame containing odds data without exchange columns.
-        
+
     Returns:
-        df (pd.DataFrame): DataFrame containing odds data without exchange columns, as well as 
+        df (pd.DataFrame): DataFrame containing odds data without exchange columns, as well as
                         Best Odds, Best Bookmaker, and Result columns.
     """
     df = df.copy()
@@ -69,26 +75,28 @@ def _add_metadata(df: pd.DataFrame) -> pd.DataFrame:
 def _clean_odds_data(df: pd.DataFrame) -> pd.DataFrame:
     """
     Replace odds equal to 1.0 with NaN (invalid odds).
-    
+
     Args:
         df (pd.DataFrame): DataFrame containing odds data.
-        
+
     Returns:
         pd.DataFrame: DataFrame with invalid odds (1.0) replaced with NaN.
     """
     df = df.copy()
     bookmaker_columns = _find_bookmaker_columns(df)
-    df[bookmaker_columns] = df[bookmaker_columns].where(df[bookmaker_columns] != 1, np.nan)
+    df[bookmaker_columns] = df[bookmaker_columns].where(
+        df[bookmaker_columns] != 1, np.nan
+    )
     return df
 
 
 def _min_bookmaker_filter(df: pd.DataFrame) -> pd.DataFrame:
     """
     Remove rows with less than MIN_BOOKMAKERS bookmaker columns.
-    
+
     Args:
         df (pd.DataFrame): DataFrame containing odds data without exchange columns.
-        
+
     Returns:
         pd.DataFrame: DataFrame with only rows that contain sufficient bookmaker counts.
     """
@@ -102,10 +110,10 @@ def _min_bookmaker_filter(df: pd.DataFrame) -> pd.DataFrame:
 def _max_odds_filter(df: pd.DataFrame) -> pd.DataFrame:
     """
     Remove rows with best odds greater than MAX_ODDS.
-    
+
     Args:
         df (pd.DataFrame): DataFrame containing odds data without exchange columns, and with metadata.
-        
+
     Returns:
         pd.DataFrame: DataFrame with only rows that contain odds that are not extreme.
     """
@@ -118,10 +126,10 @@ def _max_odds_filter(df: pd.DataFrame) -> pd.DataFrame:
 def _prettify_column_headers(df: pd.DataFrame) -> pd.DataFrame:
     """
     Convert column names to Title Case and replace underscores with spaces.
-    
+
     Args:
         df (pd.DataFrame): DataFrame with columns to prettify.
-        
+
     Returns:
         pd.DataFrame: DataFrame with cleaned column names.
     """
@@ -132,10 +140,10 @@ def _prettify_column_headers(df: pd.DataFrame) -> pd.DataFrame:
 def process_odds_data(df: pd.DataFrame) -> pd.DataFrame:
     """
     Transform fetch_odds df into cleaned df.
-    
+
     Args:
         df (pd.DataFrame): DataFrame containing odds data.
-        
+
     Returns:
         pd.DataFrame: Cleaned and validated DataFrame.
     """
@@ -151,35 +159,34 @@ def process_odds_data(df: pd.DataFrame) -> pd.DataFrame:
 def calculate_vigfree_probabilities(df: pd.DataFrame) -> pd.DataFrame:
     """
     Add vig-free implied probability columns for each bookmaker.
-    
+
     Args:
         df (pd.DataFrame): Processed DataFrame containing odds data.
-        
+
     Returns:
         pd.DataFrame: DataFrame with additional vig-free probability columns for each bookmaker.
     """
     df = df.copy()
     bookmaker_columns = _find_bookmaker_columns(df)
-    
+
     # Add vig-free columns for each bookmaker
     for bookmaker in bookmaker_columns:
         vigfree_column = f"Vigfree {bookmaker}"
         df[vigfree_column] = np.nan
-        
+
         # Process each match separately
         for match_name, match_group in df.groupby("Match", sort=False):
             required_outcomes = len(match_group)
-            
+
             # Get valid odds for this bookmaker in this match
             valid_odds = match_group[bookmaker].dropna()
             if len(valid_odds) < required_outcomes:
                 continue
-            
+
             # Calculate vig-free probabilities
             implied_probs = 1 / valid_odds
             normalized_probs = implied_probs / implied_probs.sum()
-            
+
             # Update DataFrame with vig-free probabilities
             df.loc[valid_odds.index, vigfree_column] = normalized_probs.values
     return df
-

@@ -5,6 +5,7 @@ Logic for appending bet summaries to existing bet .csv files.
 
 Author: Andrew Smith
 """
+
 from .betting_configs import DATE_FORMAT, TIMESTAMP_FORMAT
 from constants import DATA_DIR
 from typing import Any, Optional, List, Dict
@@ -18,10 +19,10 @@ from pathlib import Path
 def _start_date_from_timestamp(timestamp: Any) -> str:
     """
     Convert a timestamp to YYYY-MM-DD format.
-    
+
     Args:
         timestamp (Any): Timestamp value to convert (can be string, datetime, etc.).
-        
+
     Returns:
         str: Date string in YYYY-MM-DD format.
     """
@@ -60,10 +61,10 @@ class BetFileManager:
     def __init__(self, data_directory: Path = DATA_DIR):
         """
         Initialize BetFileManager with specified data directory.
-        
+
         Args:
             data_directory (Path): Directory path for storing betting data files.
-            
+
         Returns:
             None
         """
@@ -75,11 +76,11 @@ class BetFileManager:
     ) -> Optional[List[str]]:
         """
         Generalized column lookup for strategy or scoring columns.
-        
+
         Args:
             filename (str): Name of the strategy file.
             col_type (str): Either 'strategy' or 'scoring'.
-            
+
         Returns:
             Optional[List[str]]: Matching column names, or None if not found.
         """
@@ -95,11 +96,11 @@ class BetFileManager:
     def _append_unique_bets(self, new_data: pd.DataFrame, filename: str) -> None:
         """
         Append new betting data, avoiding duplicates based on (Match, Date) key.
-        
+
         Args:
             new_data (pd.DataFrame): New betting data to append.
             filename (str): Name of the CSV file to update.
-            
+
         Returns:
             None
         """
@@ -108,9 +109,9 @@ class BetFileManager:
             return
 
         new_data = new_data.copy()
-        new_data["Scrape Time"] = datetime.now(
-            ZoneInfo("America/New_York")
-        ).strftime(TIMESTAMP_FORMAT)
+        new_data["Scrape Time"] = datetime.now(ZoneInfo("America/New_York")).strftime(
+            TIMESTAMP_FORMAT
+        )
 
         full_path = self.data_dir / filename
 
@@ -153,12 +154,12 @@ class BetFileManager:
     ) -> List[str]:
         """
         Create unified column schema for existing and new data.
-        
+
         Args:
             existing_df (pd.DataFrame): Existing data from file.
             new_df (pd.DataFrame): New data to be added.
             filename (str): Name of file for strategy-specific column ordering.
-            
+
         Returns:
             List[str]: Unified list of column names in proper order.
         """
@@ -181,14 +182,16 @@ class BetFileManager:
 
         return reordered_columns
 
-    def save_best_bets_only(self, summary_df: pd.DataFrame, filename: str) -> pd.DataFrame:
+    def save_best_bets_only(
+        self, summary_df: pd.DataFrame, filename: str
+    ) -> pd.DataFrame:
         """
         Save only the best bet per match (highest scoring bet).
-        
+
         Args:
             summary_df (pd.DataFrame): Summary DataFrame containing all potential bets.
             filename (str): Path to save the filtered best bets.
-            
+
         Returns:
             pd.DataFrame: Filtered DataFrame containing only the best bet per match.
         """
@@ -196,10 +199,9 @@ class BetFileManager:
             return pd.DataFrame()
 
         score_column = self._get_columns(filename, "scoring")
-        best_bets = (
-            summary_df.sort_values(score_column, ascending=False)
-            .drop_duplicates(subset=["Match", "Start Time"], keep="first")
-        )
+        best_bets = summary_df.sort_values(
+            score_column, ascending=False
+        ).drop_duplicates(subset=["Match", "Start Time"], keep="first")
 
         self._append_unique_bets(best_bets, filename)
         return best_bets
@@ -209,12 +211,12 @@ class BetFileManager:
     ) -> None:
         """
         Save complete betting data for bets identified in filtered summary.
-        
+
         Args:
             source_df (pd.DataFrame): Full DataFrame containing all betting analysis data.
             filtered_summary_df (pd.DataFrame): Filtered summary containing only best bets.
             filename (str): Path to save the full betting data.
-            
+
         Returns:
             None
         """
@@ -226,7 +228,9 @@ class BetFileManager:
             filtered_summary_df[key_columns], source_df, on=key_columns, how="left"
         )
 
-        vigfree_columns = [col for col in merged_data.columns if col.startswith("Vigfree ")]
+        vigfree_columns = [
+            col for col in merged_data.columns if col.startswith("Vigfree ")
+        ]
         output_data = merged_data.drop(columns=vigfree_columns)
 
         self._append_unique_bets(output_data, filename)
