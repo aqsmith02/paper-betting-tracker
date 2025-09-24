@@ -1,18 +1,18 @@
 Match,League,Team,Start Time,Outlier Book,Outlier Odds,Avg Edge Pct,Z Score,Result,Scrape Time
-IF Gnistan @ Ilves Tampere,Veikkausliiga - Finland,IF Gnistan,2025-09-23 11:00:00,LowVig.ag,7.0,5.4,2.0,Not Found,2025-09-23 05:57:32
-Girona @ Athletic Bilbao,La Liga - Spain,Girona,2025-09-23 13:00:00,BetOnline.ag,8.35,6.65,2.02,Not Found,2025-09-23 07:57:34
-Saint Etienne @ Amiens,Ligue 2 - France,Amiens,2025-09-23 14:30:00,Coolbet,5.5,5.0,2.44,Not Found,2025-09-23 11:58:11
-Clermont @ Stade de Reims,Ligue 2 - France,Clermont,2025-09-23 14:30:00,Coolbet,7.0,7.97,2.1,Not Found,2025-09-23 12:57:37
-Boulogne @ Montpellier,Ligue 2 - France,Boulogne,2025-09-23 14:30:00,Pinnacle,6.33,5.28,2.65,Not Found,2025-09-23 13:57:51
-Gent @ Anderlecht,Belgium First Div,Gent,2025-09-23 14:30:00,Bovada,4.9,5.16,2.42,Not Found,2025-09-23 13:57:51
-Brighton and Hove Albion @ Barnsley,EFL Cup,Barnsley,2025-09-23 14:45:00,Bet Victor,11.0,9.56,2.25,Not Found,2025-09-23 14:39:03
-Chelsea @ Lincoln City,EFL Cup,Draw,2025-09-23 14:45:00,Betsson,7.9,7.16,2.22,Not Found,2025-09-23 14:39:03
-Cambridge United @ Fulham,EFL Cup,Cambridge United,2025-09-23 14:45:00,Bet Victor,29.0,27.18,2.14,Not Found,2025-09-23 14:39:03
+IF Gnistan @ Ilves Tampere,Veikkausliiga - Finland,IF Gnistan,2025-09-23 11:00:00,LowVig.ag,7.0,5.4,2.0,Ilves Tampere,2025-09-23 05:57:32
+Girona @ Athletic Bilbao,La Liga - Spain,Girona,2025-09-23 13:00:00,BetOnline.ag,8.35,6.65,2.02,Draw,2025-09-23 07:57:34
+Saint Etienne @ Amiens,Ligue 2 - France,Amiens,2025-09-23 14:30:00,Coolbet,5.5,5.0,2.44,Saint Etienne,2025-09-23 11:58:11
+Clermont @ Stade de Reims,Ligue 2 - France,Clermont,2025-09-23 14:30:00,Coolbet,7.0,7.97,2.1,Stade de Reims,2025-09-23 12:57:37
+Boulogne @ Montpellier,Ligue 2 - France,Boulogne,2025-09-23 14:30:00,Pinnacle,6.33,5.28,2.65,Boulogne,2025-09-23 13:57:51
+Gent @ Anderlecht,Belgium First Div,Gent,2025-09-23 14:30:00,Bovada,4.9,5.16,2.42,Anderlecht,2025-09-23 13:57:51
+Brighton and Hove Albion @ Barnsley,EFL Cup,Barnsley,2025-09-23 14:45:00,Bet Victor,11.0,9.56,2.25,Brighton and Hove Albion,2025-09-23 14:39:03
+Chelsea @ Lincoln City,EFL Cup,Draw,2025-09-23 14:45:00,Betsson,7.9,7.16,2.22,Chelsea,2025-09-23 14:39:03
+Cambridge United @ Fulham,EFL Cup,Cambridge United,2025-09-23 14:45:00,Bet Victor,29.0,27.18,2.14,Fulham,2025-09-23 14:39:03
 Rio Ave FC @ Benfica,Primeira Liga - Portugal,Rio Ave FC,2025-09-23 15:15:00,Pinnacle,20.14,19.82,2.71,Not Found,2025-09-23 14:57:45
 Real Madrid @ Levante,La Liga - Spain,Levante,2025-09-23 15:30:00,BetOnline.ag,9.35,10.34,2.04,Not Found,2025-09-23 14:57:45
-Reading @ Wrexham AFC,EFL Cup,Reading,2025-09-23 14:45:00,Coolbet,5.5,5.69,2.03,Not Found,2025-09-23 14:57:45
-Cardiff City @ Burnley,EFL Cup,Draw,2025-09-23 14:45:00,Tipico,8.5,7.68,2.91,Not Found,2025-09-23 15:58:11
-Wycombe Wanderers @ Wigan Athletic,EFL Cup,Wigan Athletic,2025-09-23 14:45:00,Coolbet,9.0,7.93,2.39,Not Found,2025-09-23 15:58:11
-Everton @ Wolverhampton Wanderers,EFL Cup,Everton,2025-09-23 14:45:00,Coolbet,9.0,7.44,2.3,Not Found,2025-09-23 15:58:11
-Hibernian @ Falkirk F.C.,Premiership - Scotland,Falkirk F.C.,2025-09-23 14:44:00,Tipico,13.0,12.17,2.04,Not Found,2025-09-23 15:58:11
+Reading @ Wrexham AFC,EFL Cup,Reading,2025-09-23 14:45:00,Coolbet,5.5,5.69,2.03,Wrexham AFC,2025-09-23 14:57:45
+Cardiff City @ Burnley,EFL Cup,Draw,2025-09-23 14:45:00,Tipico,8.5,7.68,2.91,Cardiff City,2025-09-23 15:58:11
+Wycombe Wanderers @ Wigan Athletic,EFL Cup,Wigan Athletic,2025-09-23 14:45:00,Coolbet,9.0,7.93,2.39,Wycombe Wanderers,2025-09-23 15:58:11
+Everton @ Wolverhampton Wanderers,EFL Cup,Everton,2025-09-23 14:45:00,Coolbet,9.0,7.44,2.3,Wolverhampton Wanderers,2025-09-23 15:58:11
+Hibernian @ Falkirk F.C.,Premiership - Scotland,Falkirk F.C.,2025-09-23 14:44:00,Tipico,13.0,12.17,2.04,Draw,2025-09-23 15:58:11
 Shi Han @ McCartney Kessler,WTA China Open,Shi Han,2025-09-23 23:00:00,FanDuel,9.2,8.13,2.53,Not Found,2025-09-23 22:00:00
