@@ -115,7 +115,7 @@ Washington Nationals @ Atlanta Braves,MLB,Atlanta Braves,2025-09-24 12:16:00,Bet
 Lech Poznań @ Raków Częstochowa,Ekstraklasa - Poland,Raków Częstochowa,2025-09-24 12:45:00,Unibet (SE),6.4,2.48,158.0,Draw,2025-09-24 13:28:58
 Varbergs BoIS @ Örebro SK,Superettan - Sweden,Varbergs BoIS,2025-09-24 13:00:00,Coolbet,6.5,2.84,128.94,Draw,2025-09-24 13:28:58
 Falkenbergs FF @ IK Oddevold,Superettan - Sweden,Falkenbergs FF,2025-09-24 13:00:00,Betway,3.0,1.91,57.16,Draw,2025-09-24 13:28:58
-Arsenal @ Port Vale,EFL Cup,Port Vale,2025-09-24 15:00:00,Nordic Bet,28.0,22.56,24.13,Not Found,2025-09-24 13:28:58
+Arsenal @ Port Vale,EFL Cup,Port Vale,2025-09-24 15:00:00,Nordic Bet,28.0,22.56,24.13,Arsenal,2025-09-24 13:28:58
 Westerlo @ Club Brugge,Belgium First Div,Westerlo,2025-09-24 14:30:00,Bovada,10.0,8.51,17.49,Draw,2025-09-24 13:28:58
 Kalmar FF @ Landskrona BoIS,Superettan - Sweden,Kalmar FF,2025-09-24 13:05:00,DraftKings,2.15,1.89,14.03,Draw,2025-09-24 13:28:58
 Manchester City @ Huddersfield Town,EFL Cup,Huddersfield Town,2025-09-24 14:45:00,LeoVegas,15.0,13.8,8.66,Manchester City,2025-09-24 13:28:58
@@ -126,34 +126,34 @@ Doncaster Rovers @ Tottenham Hotspur,EFL Cup,Doncaster Rovers,2025-09-24 14:45:0
 Celtic @ Red Star Belgrade,UEFA Europa League,Red Star Belgrade,2025-09-24 15:00:00,Bovada,2.8,2.48,12.97,Not Found,2025-09-24 14:36:25
 FC Basel @ SC Freiburg,UEFA Europa League,SC Freiburg,2025-09-24 15:00:00,Bovada,1.7,1.54,10.49,Not Found,2025-09-24 14:36:25
 Feyenoord @ SC Braga,UEFA Europa League,SC Braga,2025-09-24 15:00:00,Bovada,2.32,2.19,5.89,Not Found,2025-09-24 14:59:20
-Fenerbahce @ Dinamo Zagreb,UEFA Europa League,Fenerbahce,2025-09-24 15:00:00,Winamax (DE),4.9,2.38,105.5,Not Found,2025-09-24 15:24:02
+Fenerbahce @ Dinamo Zagreb,UEFA Europa League,Fenerbahce,2025-09-24 15:00:00,Winamax (DE),4.9,2.38,105.5,Dinamo Zagreb,2025-09-24 15:24:02
 Atletico Paranaense @ Athletic Club (MG),Brazil Série B,Atletico Paranaense,2025-09-24 18:00:00,Bovada,2.3,2.13,7.8,Not Found,2025-09-24 15:24:02
-Nottingham Forest @ Real Betis,UEFA Europa League,Real Betis,2025-09-24 15:02:00,Ladbrokes,2.7,2.54,6.45,Not Found,2025-09-24 15:24:02
-AS Roma @ Nice,UEFA Europa League,Draw,2025-09-24 15:01:00,Suprabets,3.35,3.18,5.46,Not Found,2025-09-24 15:24:02
-Rayo Vallecano @ Atlético Madrid,La Liga - Spain,Rayo Vallecano,2025-09-24 15:32:00,Unibet (SE),23.0,7.0,228.53,Not Found,2025-09-24 15:59:03
+Nottingham Forest @ Real Betis,UEFA Europa League,Real Betis,2025-09-24 15:02:00,Ladbrokes,2.7,2.54,6.45,API Error,2025-09-24 15:24:02
+AS Roma @ Nice,UEFA Europa League,Draw,2025-09-24 15:01:00,Suprabets,3.35,3.18,5.46,API Error,2025-09-24 15:24:02
+Rayo Vallecano @ Atlético Madrid,La Liga - Spain,Rayo Vallecano,2025-09-24 15:32:00,Unibet (SE),23.0,7.0,228.53,Atlético Madrid,2025-09-24 15:59:03
 PFC Ludogorets Razgrad @ Malmo FF,UEFA Europa League,Malmo FF,2025-09-24 15:01:00,Bet Victor,10.5,7.33,43.23,Not Found,2025-09-24 15:59:03
-Jagiellonia Białystok @ Legia Warszawa,Ekstraklasa - Poland,Draw,2025-09-24 15:00:00,Bovada,3.85,2.79,37.89,Not Found,2025-09-24 15:59:03
-Mallorca @ Real Sociedad,La Liga - Spain,Mallorca,2025-09-24 15:31:00,Bovada,6.5,5.73,13.37,Not Found,2025-09-24 15:59:03
-Milwaukee Brewers @ San Diego Padres,MLB,San Diego Padres,2025-09-24 16:10:48,Bovada,1.85,1.7,8.77,Not Found,2025-09-24 16:30:35
+Jagiellonia Białystok @ Legia Warszawa,Ekstraklasa - Poland,Draw,2025-09-24 15:00:00,Bovada,3.85,2.79,37.89,Draw,2025-09-24 15:59:03
+Mallorca @ Real Sociedad,La Liga - Spain,Mallorca,2025-09-24 15:31:00,Bovada,6.5,5.73,13.37,Real Sociedad,2025-09-24 15:59:03
+Milwaukee Brewers @ San Diego Padres,MLB,San Diego Padres,2025-09-24 16:10:48,Bovada,1.85,1.7,8.77,San Diego Padres,2025-09-24 16:30:35
 Botafogo @ Clube de Regatas Brasil,Brazil Série B,Botafogo,2025-09-24 18:03:00,Paddy Power,13.0,5.77,125.18,Not Found,2025-09-24 18:29:14
-Cuiabá @ Vila Nova,Brazil Série B,Vila Nova,2025-09-24 18:00:00,Unibet (SE),3.4,2.75,23.46,Not Found,2025-09-24 18:29:14
-Miami Marlins @ Philadelphia Phillies,MLB,Miami Marlins,2025-09-24 18:46:00,Bovada,2.61,2.44,6.98,Not Found,2025-09-24 18:29:14
+Cuiabá @ Vila Nova,Brazil Série B,Vila Nova,2025-09-24 18:00:00,Unibet (SE),3.4,2.75,23.46,Draw,2025-09-24 18:29:14
+Miami Marlins @ Philadelphia Phillies,MLB,Miami Marlins,2025-09-24 18:46:00,Bovada,2.61,2.44,6.98,Miami Marlins,2025-09-24 18:29:14
 Club Bolívar @ Clube Atlético Mineiro,Copa Sudamericana,Club Bolívar,2025-09-24 17:59:00,DraftKings,8.0,7.06,13.3,Not Found,2025-09-24 18:59:00
-Botafogo @ Grêmio,Brazil Série A,Draw,2025-09-24 18:30:00,Bovada,3.05,2.82,8.29,Not Found,2025-09-24 18:59:00
-Bahia @ Vasco da Gama,Brazil Série A,Draw,2025-09-24 18:30:00,Bovada,3.12,2.97,5.17,Not Found,2025-09-24 18:59:00
+Botafogo @ Grêmio,Brazil Série A,Draw,2025-09-24 18:30:00,Bovada,3.05,2.82,8.29,Draw,2025-09-24 18:59:00
+Bahia @ Vasco da Gama,Brazil Série A,Draw,2025-09-24 18:30:00,Bovada,3.12,2.97,5.17,Vasco da Gama,2025-09-24 18:59:00
 Amazonas FC @ Operario PR,Brazil Série B,Operario PR,2025-09-24 19:01:00,Coolbet,2.75,1.68,63.21,Not Found,2025-09-24 19:25:31
-Tampa Bay Rays @ Baltimore Orioles,MLB,Baltimore Orioles,2025-09-24 18:36:00,Caesars,4.8,2.97,61.86,Not Found,2025-09-24 19:25:31
-Detroit Tigers @ Cleveland Guardians,MLB,Detroit Tigers,2025-09-24 19:17:00,BetMGM,2.65,2.22,19.12,Not Found,2025-09-24 19:25:31
-Chicago White Sox @ New York Yankees,MLB,Chicago White Sox,2025-09-24 19:06:00,Unibet (IT),8.5,3.15,169.84,Not Found,2025-09-24 19:59:38
-Boston Red Sox @ Toronto Blue Jays,MLB,Toronto Blue Jays,2025-09-24 19:08:00,Caesars,7.0,5.02,39.53,Not Found,2025-09-24 19:59:38
-Pittsburgh Pirates @ Cincinnati Reds,MLB,Cincinnati Reds,2025-09-24 18:42:00,Coolbet,2.5,2.24,11.83,Not Found,2025-09-24 19:59:38
-Querétaro @ Cruz Azul,Liga MX,Querétaro,2025-09-24 20:00:00,Unibet,11.0,10.18,8.04,Not Found,2025-09-24 19:59:38
+Tampa Bay Rays @ Baltimore Orioles,MLB,Baltimore Orioles,2025-09-24 18:36:00,Caesars,4.8,2.97,61.86,Baltimore Orioles,2025-09-24 19:25:31
+Detroit Tigers @ Cleveland Guardians,MLB,Detroit Tigers,2025-09-24 19:17:00,BetMGM,2.65,2.22,19.12,Cleveland Guardians,2025-09-24 19:25:31
+Chicago White Sox @ New York Yankees,MLB,Chicago White Sox,2025-09-24 19:06:00,Unibet (IT),8.5,3.15,169.84,New York Yankees,2025-09-24 19:59:38
+Boston Red Sox @ Toronto Blue Jays,MLB,Toronto Blue Jays,2025-09-24 19:08:00,Caesars,7.0,5.02,39.53,Boston Red Sox,2025-09-24 19:59:38
+Pittsburgh Pirates @ Cincinnati Reds,MLB,Cincinnati Reds,2025-09-24 18:42:00,Coolbet,2.5,2.24,11.83,Pittsburgh Pirates,2025-09-24 19:59:38
+Querétaro @ Cruz Azul,Liga MX,Querétaro,2025-09-24 20:00:00,Unibet,11.0,10.18,8.04,Draw,2025-09-24 19:59:38
 Inter Miami CF @ New York City FC,MLS,New York City FC,2025-09-24 19:43:00,PointsBet (AU),2.75,2.61,5.42,Not Found,2025-09-24 19:59:38
-River Plate @ Palmeiras-SP,Copa Libertadores,River Plate,2025-09-24 20:30:00,Virgin Bet,9.5,1.64,477.72,Not Found,2025-09-24 22:01:08
+River Plate @ Palmeiras-SP,Copa Libertadores,River Plate,2025-09-24 20:30:00,Virgin Bet,9.5,1.64,477.72,Palmeiras-SP,2025-09-24 22:01:08
 Colorado Rockies @ Seattle Mariners,MLB,Colorado Rockies,2025-09-24 21:41:00,Unibet (SE),14.0,5.52,153.56,Not Found,2025-09-24 22:01:08
-Minnesota Twins @ Texas Rangers,MLB,Minnesota Twins,2025-09-24 20:06:00,Nordic Bet,22.0,11.45,92.09,Not Found,2025-09-24 22:01:08
-Remo @ Volta Redonda,Brazil Série B,Volta Redonda,2025-09-24 20:31:00,Bovada,2.13,1.34,58.49,Not Found,2025-09-24 22:01:08
-Atlas @ Tigres,Liga MX,Atlas,2025-09-24 21:02:00,Tipico,35.0,24.65,41.99,Not Found,2025-09-24 22:01:08
+Minnesota Twins @ Texas Rangers,MLB,Minnesota Twins,2025-09-24 20:06:00,Nordic Bet,22.0,11.45,92.09,Texas Rangers,2025-09-24 22:01:08
+Remo @ Volta Redonda,Brazil Série B,Volta Redonda,2025-09-24 20:31:00,Bovada,2.13,1.34,58.49,Volta Redonda,2025-09-24 22:01:08
+Atlas @ Tigres,Liga MX,Atlas,2025-09-24 21:02:00,Tipico,35.0,24.65,41.99,Tigres,2025-09-24 22:01:08
 St. Louis Cardinals @ San Francisco Giants,MLB,San Francisco Giants,2025-09-24 21:45:22,BetAnySports,2.07,1.92,7.79,Not Found,2025-09-24 22:01:08
 Los Angeles Dodgers @ Arizona Diamondbacks,MLB,Arizona Diamondbacks,2025-09-24 21:41:00,Bovada,2.45,2.28,7.62,Not Found,2025-09-24 22:01:08
 Monterrey @ Toluca,Liga MX,Draw,2025-09-24 22:20:00,FanDuel,14.0,3.34,319.51,Not Found,2025-09-24 23:08:21
