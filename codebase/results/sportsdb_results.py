@@ -14,7 +14,7 @@ import time
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 from typing import Any
-from constants import THESPORTSDB_API_KEY
+from codebase.constants import THESPORTSDB_API_KEY
 from .results_configs import PENDING_RESULTS
 
 

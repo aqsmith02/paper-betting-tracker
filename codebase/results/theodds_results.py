@@ -13,7 +13,7 @@ import pandas as pd
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 from typing import Any, List, Dict
-from constants import THEODDS_API_KEY
+from codebase.constants import THEODDS_API_KEY
 from .results_configs import PENDING_RESULTS
 
 

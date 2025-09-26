@@ -21,7 +21,7 @@ from .results_configs import (
     FILE_CONFIGS,
     SLEEP_DURATION,
 )
-from constants import DATA_DIR
+from codebase.constants import DATA_DIR
 
 
 def filter_rows_to_search(df: pd.DataFrame) -> pd.DataFrame:
