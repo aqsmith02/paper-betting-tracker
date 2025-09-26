@@ -23,7 +23,6 @@ FC Machida Zelvia @ Kyoto Purple Sanga,J League,Kyoto Purple Sanga,2025-09-23 06
 TPS @ Tappara,Liiga,TPS,2025-09-23 11:30:00,Coolbet,4.2,2.88,45.69,TPS Turku,2025-09-23 06:32:37
 Kiwoom Heroes @ KT Wiz,KBO,KT Wiz,2025-09-23 05:30:23,Bovada,1.74,1.27,37.22,KT Wiz,2025-09-23 06:32:37
 Tokyo Verdy @ Vissel Kobe,J League,Vissel Kobe,2025-09-23 06:03:00,Bovada,1.7,1.29,31.89,Vissel Kobe,2025-09-23 06:32:37
-Ketterä @ Pyry,Mestis,Pyry,2025-09-23 11:30:00,Unibet,4.1,3.19,28.72,Not Found,2025-09-23 06:32:37
 SJK Seinäjoki @ KuPS Kuopio,Veikkausliiga - Finland,SJK Seinäjoki,2025-09-23 11:00:00,Bovada,3.4,3.12,8.8,KuPS Kuopio,2025-09-23 06:32:37
 Hiroshima Sanfrecce FC @ Kashiwa Reysol,J League,Kashiwa Reysol,2025-09-23 06:03:00,FanDuel,5.3,4.64,14.13,Draw,2025-09-23 07:23:44
 IF Gnistan @ Ilves Tampere,Veikkausliiga - Finland,Ilves Tampere,2025-09-23 11:00:00,Bovada,1.41,1.23,14.79,Ilves Tampere,2025-09-23 11:58:11
@@ -164,58 +163,58 @@ Xiyu Wang @ Guo Hanyu,WTA China Open,Xiyu Wang,2025-09-24 23:10:00,DraftKings,1.
 Portland Timbers @ Vancouver Whitecaps FC,MLS,Vancouver Whitecaps FC,2025-09-24 22:40:00,Coolbet,5.0,3.95,26.45,Draw,2025-09-24 23:41:01
 América @ Atlético San Luis,Liga MX,Atlético San Luis,2025-09-24 23:05:00,Coolbet,5.5,4.6,19.65,América,2025-09-24 23:41:01
 Tijuana @ Santos Laguna,Liga MX,Santos Laguna,2025-09-24 23:03:00,DraftKings,3.95,3.36,17.57,Santos Laguna,2025-09-24 23:41:01
-Yuliia Starodubtseva @ Ajla Tomljanovic,WTA China Open,Ajla Tomljanovic,2025-09-24 23:08:00,Ladbrokes,3.6,3.16,13.81,Not Found,2025-09-24 23:41:01
-Ella Seidel @ Magdalena Frech,WTA China Open,Ella Seidel,2025-09-25 00:30:00,Bovada,1.91,1.8,6.16,Not Found,2025-09-24 23:41:01
-Elena Gabriela Ruse @ Rebecca Sramkova,WTA China Open,Elena Gabriela Ruse,2025-09-25 00:29:41,Betway,2.75,2.16,27.3,Not Found,2025-09-25 00:33:00
-Zhizhen Zhang @ Terence Atmane,ATP China Open,Zhizhen Zhang,2025-09-25 02:15:00,LowVig.ag,2.53,2.34,8.34,Not Found,2025-09-25 00:33:00
-Fabian Marozsan @ Benjamin Bonzi,ATP China Open,Benjamin Bonzi,2025-09-25 01:10:00,Unibet (SE),2.65,2.39,10.98,Not Found,2025-09-25 01:30:35
-Janice Tjen @ Aliaksandra Sasnovich,WTA China Open,Aliaksandra Sasnovich,2025-09-25 01:28:00,Bovada,3.75,2.21,69.57,Not Found,2025-09-25 01:59:30
-Anastasia Potapova @ Katerina Siniakova,WTA China Open,Katerina Siniakova,2025-09-25 02:00:00,Betsson,1.7,1.51,12.68,Not Found,2025-09-25 01:59:30
-Lin Zhu @ Moyuka Uchijima,WTA China Open,Moyuka Uchijima,2025-09-25 02:26:00,Coolbet,4.2,2.99,40.65,Not Found,2025-09-25 02:59:01
-Alycia Parks @ Sonay Kartal,WTA China Open,Alycia Parks,2025-09-25 03:35:00,Coral,5.25,3.99,31.5,Not Found,2025-09-25 03:59:03
-Cristina Bucsa @ Donna Vekic,WTA China Open,Donna Vekic,2025-09-25 04:09:00,Betway,5.5,2.04,169.97,Not Found,2025-09-25 04:36:22
-Maya Joint @ Victoria Jimenez Kasintseva,WTA China Open,Victoria Jimenez Kasintseva,2025-09-25 04:16:00,888sport,3.0,2.43,23.48,Not Found,2025-09-25 04:36:22
-Dalma Galfi @ Lois Boisson,WTA China Open,Dalma Galfi,2025-09-25 04:43:21,Coolbet,2.05,1.95,5.4,Not Found,2025-09-25 04:36:22
-Camilo Ugo Carabelli @ Alejandro Davidovich Fokina,ATP China Open,Camilo Ugo Carabelli,2025-09-25 04:25:00,Unibet (SE),18.0,13.93,29.26,Not Found,2025-09-25 04:59:07
+Yuliia Starodubtseva @ Ajla Tomljanovic,WTA China Open,Ajla Tomljanovic,2025-09-24 23:08:00,Ladbrokes,3.6,3.16,13.81,API Error,2025-09-24 23:41:01
+Ella Seidel @ Magdalena Frech,WTA China Open,Ella Seidel,2025-09-25 00:30:00,Bovada,1.91,1.8,6.16,API Error,2025-09-24 23:41:01
+Elena Gabriela Ruse @ Rebecca Sramkova,WTA China Open,Elena Gabriela Ruse,2025-09-25 00:29:41,Betway,2.75,2.16,27.3,API Error,2025-09-25 00:33:00
+Zhizhen Zhang @ Terence Atmane,ATP China Open,Zhizhen Zhang,2025-09-25 02:15:00,LowVig.ag,2.53,2.34,8.34,API Error,2025-09-25 00:33:00
+Fabian Marozsan @ Benjamin Bonzi,ATP China Open,Benjamin Bonzi,2025-09-25 01:10:00,Unibet (SE),2.65,2.39,10.98,API Error,2025-09-25 01:30:35
+Janice Tjen @ Aliaksandra Sasnovich,WTA China Open,Aliaksandra Sasnovich,2025-09-25 01:28:00,Bovada,3.75,2.21,69.57,API Error,2025-09-25 01:59:30
+Anastasia Potapova @ Katerina Siniakova,WTA China Open,Katerina Siniakova,2025-09-25 02:00:00,Betsson,1.7,1.51,12.68,API Error,2025-09-25 01:59:30
+Lin Zhu @ Moyuka Uchijima,WTA China Open,Moyuka Uchijima,2025-09-25 02:26:00,Coolbet,4.2,2.99,40.65,API Error,2025-09-25 02:59:01
+Alycia Parks @ Sonay Kartal,WTA China Open,Alycia Parks,2025-09-25 03:35:00,Coral,5.25,3.99,31.5,API Error,2025-09-25 03:59:03
+Cristina Bucsa @ Donna Vekic,WTA China Open,Donna Vekic,2025-09-25 04:09:00,Betway,5.5,2.04,169.97,API Error,2025-09-25 04:36:22
+Maya Joint @ Victoria Jimenez Kasintseva,WTA China Open,Victoria Jimenez Kasintseva,2025-09-25 04:16:00,888sport,3.0,2.43,23.48,API Error,2025-09-25 04:36:22
+Dalma Galfi @ Lois Boisson,WTA China Open,Dalma Galfi,2025-09-25 04:43:21,Coolbet,2.05,1.95,5.4,API Error,2025-09-25 04:36:22
+Camilo Ugo Carabelli @ Alejandro Davidovich Fokina,ATP China Open,Camilo Ugo Carabelli,2025-09-25 04:25:00,Unibet (SE),18.0,13.93,29.26,API Error,2025-09-25 04:59:07
 Hokkaido Nippon-Ham Fighters @ Saitama Seibu Lions,NPB,Saitama Seibu Lions,2025-09-25 05:01:00,FanDuel,4.9,2.18,124.96,Saitama Seibu Lions,2025-09-25 05:30:29
-Jaqueline Cristian @ Jessica Bouzas Maneiro,WTA China Open,Jaqueline Cristian,2025-09-25 05:05:00,888sport,3.25,1.9,71.36,Not Found,2025-09-25 05:30:29
-KeuPa HT @ Jokerit,Mestis,KeuPa HT,2025-09-25 11:30:00,Unibet (SE),10.5,6.54,60.62,Not Found,2025-09-25 05:30:29
+Jaqueline Cristian @ Jessica Bouzas Maneiro,WTA China Open,Jaqueline Cristian,2025-09-25 05:05:00,888sport,3.25,1.9,71.36,API Error,2025-09-25 05:30:29
+KeuPa HT @ Jokerit,Mestis,KeuPa HT,2025-09-25 11:30:00,Unibet (SE),10.5,6.54,60.62,API Error,2025-09-25 05:30:29
 Fukuoka SoftBank Hawks @ Tohoku Rakuten Golden Eagles,NPB,Tohoku Rakuten Golden Eagles,2025-09-25 05:01:14,William Hill,2.7,2.36,14.61,Fukuoka SoftBank Hawks,2025-09-25 05:30:29
 LG Twins @ Lotte Giants,KBO,Lotte Giants,2025-09-25 05:30:00,Tipico,2.2,2.02,9.12,LG Twins,2025-09-25 05:30:29
-Marin Cilic @ Jannik Sinner,ATP China Open,Marin Cilic,2025-09-25 07:00:00,Winamax (DE),25.0,23.05,8.46,Not Found,2025-09-25 05:30:29
+Marin Cilic @ Jannik Sinner,ATP China Open,Marin Cilic,2025-09-25 07:00:00,Winamax (DE),25.0,23.05,8.46,API Error,2025-09-25 05:30:29
 Chiba Lotte Marines @ Orix Buffaloes,NPB,Chiba Lotte Marines,2025-09-25 05:01:05,Bovada,2.35,1.19,97.82,Chiba Lotte Marines,2025-09-25 05:59:32
 Hanwha Eagles @ Doosan Bears,KBO,Hanwha Eagles,2025-09-25 05:31:00,BetMGM,5.5,2.79,97.3,Doosan Bears,2025-09-25 05:59:32
-Emiliana Arango @ Suzan Lamens,WTA China Open,Emiliana Arango,2025-09-25 05:55:00,Bet Victor,2.05,1.84,11.24,Not Found,2025-09-25 06:33:38
+Emiliana Arango @ Suzan Lamens,WTA China Open,Emiliana Arango,2025-09-25 05:55:00,Bet Victor,2.05,1.84,11.24,API Error,2025-09-25 06:33:38
 KT Wiz @ SSG Landers,KBO,SSG Landers,2025-09-25 05:30:00,BetMGM,26.0,12.07,115.46,KT Wiz,2025-09-25 06:59:39
-FCSB @ Go Ahead Eagles,UEFA Europa League,Go Ahead Eagles,2025-09-25 12:45:00,Bovada,1.96,1.82,7.41,Not Found,2025-09-25 06:59:39
-Yulia Putintseva @ Yue Yuan,WTA China Open,Yulia Putintseva,2025-09-25 08:56:00,Betway,4.0,3.31,20.79,Not Found,2025-09-25 09:38:24
-SK Brann @ Lille,UEFA Europa League,SK Brann,2025-09-25 12:45:00,Coolbet,6.95,6.38,8.95,Not Found,2025-09-25 09:58:50
-Helsingborgs IF @ Sandvikens IF,Superettan - Sweden,Helsingborgs IF,2025-09-25 13:00:00,Bovada,2.95,2.53,16.77,Not Found,2025-09-25 12:36:10
-Utsiktens BK @ Östersunds FK,Superettan - Sweden,Östersunds FK,2025-09-25 13:00:00,DraftKings,3.4,2.02,68.48,Not Found,2025-09-25 13:28:21
-Västerås SK @ Umeå FC,Superettan - Sweden,Umeå FC,2025-09-25 13:00:00,Paddy Power,26.0,19.25,35.04,Not Found,2025-09-25 13:28:21
-Elche CF @ CA Osasuna,La Liga - Spain,Elche CF,2025-09-25 13:30:00,Bet Victor,5.25,4.96,5.89,Not Found,2025-09-25 13:28:21
-Tampa Bay Rays @ Baltimore Orioles,MLB,Baltimore Orioles,2025-09-25 13:06:00,BetMGM,5.0,1.52,229.41,Not Found,2025-09-25 13:59:00
-Lyon @ FC Utrecht,UEFA Europa League,FC Utrecht,2025-09-25 15:00:00,Bovada,3.3,2.82,16.98,Not Found,2025-09-25 13:59:00
-Örgryte IS @ Trelleborgs FF,Superettan - Sweden,Draw,2025-09-25 13:00:00,Unibet,9.0,1.59,465.07,Not Found,2025-09-25 14:40:13
-Pittsburgh Pirates @ Cincinnati Reds,MLB,Pittsburgh Pirates,2025-09-25 14:01:00,FanDuel,4.6,2.48,85.15,Not Found,2025-09-25 14:40:13
-Barcelona @ Oviedo,La Liga - Spain,Oviedo,2025-09-25 15:30:00,Bet Victor,15.0,13.44,11.58,Not Found,2025-09-25 14:40:13
-Porto @ Salzburg,UEFA Europa League,Porto,2025-09-25 15:00:00,Bovada,2.0,1.83,9.05,Not Found,2025-09-25 14:40:13
-Celta Vigo @ VfB Stuttgart,UEFA Europa League,Celta Vigo,2025-09-25 15:00:00,Bovada,3.65,3.42,6.73,Not Found,2025-09-25 14:40:13
-Viktoria Plzeň @ Ferencváros TC,UEFA Europa League,Ferencváros TC,2025-09-25 15:00:00,Bovada,2.57,2.41,6.73,Not Found,2025-09-25 14:40:13
-Minnesota Twins @ Texas Rangers,MLB,Minnesota Twins,2025-09-25 14:36:00,Unibet (FR),2.23,1.98,12.67,Not Found,2025-09-25 14:58:58
-Panathinaikos FC @ Young Boys,UEFA Europa League,Young Boys,2025-09-25 15:00:00,Coolbet,32.0,2.68,1094.15,Not Found,2025-09-25 15:23:38
-Bologna @ Aston Villa,UEFA Europa League,Bologna,2025-09-25 15:00:00,Suprabets,13.0,4.8,171.11,Not Found,2025-09-25 15:23:38
+FCSB @ Go Ahead Eagles,UEFA Europa League,Go Ahead Eagles,2025-09-25 12:45:00,Bovada,1.96,1.82,7.41,API Error,2025-09-25 06:59:39
+Yulia Putintseva @ Yue Yuan,WTA China Open,Yulia Putintseva,2025-09-25 08:56:00,Betway,4.0,3.31,20.79,API Error,2025-09-25 09:38:24
+SK Brann @ Lille,UEFA Europa League,SK Brann,2025-09-25 12:45:00,Coolbet,6.95,6.38,8.95,API Error,2025-09-25 09:58:50
+Helsingborgs IF @ Sandvikens IF,Superettan - Sweden,Helsingborgs IF,2025-09-25 13:00:00,Bovada,2.95,2.53,16.77,Helsingborgs IF,2025-09-25 12:36:10
+Utsiktens BK @ Östersunds FK,Superettan - Sweden,Östersunds FK,2025-09-25 13:00:00,DraftKings,3.4,2.02,68.48,Östersunds FK,2025-09-25 13:28:21
+Västerås SK @ Umeå FC,Superettan - Sweden,Umeå FC,2025-09-25 13:00:00,Paddy Power,26.0,19.25,35.04,Västerås SK,2025-09-25 13:28:21
+Elche CF @ CA Osasuna,La Liga - Spain,Elche CF,2025-09-25 13:30:00,Bet Victor,5.25,4.96,5.89,Draw,2025-09-25 13:28:21
+Tampa Bay Rays @ Baltimore Orioles,MLB,Baltimore Orioles,2025-09-25 13:06:00,BetMGM,5.0,1.52,229.41,Tampa Bay Rays,2025-09-25 13:59:00
+Lyon @ FC Utrecht,UEFA Europa League,FC Utrecht,2025-09-25 15:00:00,Bovada,3.3,2.82,16.98,API Error,2025-09-25 13:59:00
+Örgryte IS @ Trelleborgs FF,Superettan - Sweden,Draw,2025-09-25 13:00:00,Unibet,9.0,1.59,465.07,Örgryte IS,2025-09-25 14:40:13
+Pittsburgh Pirates @ Cincinnati Reds,MLB,Pittsburgh Pirates,2025-09-25 14:01:00,FanDuel,4.6,2.48,85.15,Pittsburgh Pirates,2025-09-25 14:40:13
+Barcelona @ Oviedo,La Liga - Spain,Oviedo,2025-09-25 15:30:00,Bet Victor,15.0,13.44,11.58,Barcelona,2025-09-25 14:40:13
+Porto @ Salzburg,UEFA Europa League,Porto,2025-09-25 15:00:00,Bovada,2.0,1.83,9.05,API Error,2025-09-25 14:40:13
+Celta Vigo @ VfB Stuttgart,UEFA Europa League,Celta Vigo,2025-09-25 15:00:00,Bovada,3.65,3.42,6.73,API Error,2025-09-25 14:40:13
+Viktoria Plzeň @ Ferencváros TC,UEFA Europa League,Ferencváros TC,2025-09-25 15:00:00,Bovada,2.57,2.41,6.73,API Error,2025-09-25 14:40:13
+Minnesota Twins @ Texas Rangers,MLB,Minnesota Twins,2025-09-25 14:36:00,Unibet (FR),2.23,1.98,12.67,Texas Rangers,2025-09-25 14:58:58
+Panathinaikos FC @ Young Boys,UEFA Europa League,Young Boys,2025-09-25 15:00:00,Coolbet,32.0,2.68,1094.15,API Error,2025-09-25 15:23:38
+Bologna @ Aston Villa,UEFA Europa League,Bologna,2025-09-25 15:00:00,Suprabets,13.0,4.8,171.11,Aston Villa,2025-09-25 15:23:38
 KRC Genk @ Rangers FC,UEFA Europa League,KRC Genk,2025-09-25 15:00:00,Coolbet,3.45,2.96,16.67,Not Found,2025-09-25 15:23:38
-Los Angeles Dodgers @ Arizona Diamondbacks,MLB,Arizona Diamondbacks,2025-09-25 15:41:00,Unibet (SE),4.4,2.22,97.94,Not Found,2025-09-25 15:59:00
-Houston Astros @ Oakland Athletics,MLB,Oakland Athletics,2025-09-25 15:36:00,Unibet (SE),13.0,8.8,47.79,Not Found,2025-09-25 16:30:54
-LDU Quito @ Sao Paulo,Copa Libertadores,LDU Quito,2025-09-25 18:00:00,Suprabets,12.0,11.43,5.01,Not Found,2025-09-25 16:30:54
-Miami Marlins @ Philadelphia Phillies,MLB,Miami Marlins,2025-09-25 18:06:00,Tipico,3.0,2.55,17.62,Not Found,2025-09-25 18:28:02
-Detroit Tigers @ Cleveland Guardians,MLB,Detroit Tigers,2025-09-25 18:41:00,Unibet (FR),2.31,1.65,40.11,Not Found,2025-09-25 18:59:31
-Criciuma @ Coritiba,Brazil Série B,Coritiba,2025-09-25 18:00:00,DraftKings,21.0,15.11,38.97,Not Found,2025-09-25 18:59:31
-Chicago White Sox @ New York Yankees,MLB,Chicago White Sox,2025-09-25 19:06:00,Unibet,7.0,4.05,72.96,Not Found,2025-09-25 19:25:21
-Colorado Rockies @ Seattle Mariners,MLB,Seattle Mariners,2025-09-25 21:41:00,Bovada,1.48,1.36,8.63,Not Found,2025-09-25 19:58:54
-Kansas City Royals @ Los Angeles Angels,MLB,Los Angeles Angels,2025-09-25 21:39:00,Bovada,7.0,5.59,25.12,Not Found,2025-09-25 23:06:55
-Seattle Seahawks @ Arizona Cardinals,NFL,Seattle Seahawks,2025-09-25 20:16:00,Caesars,1.22,1.09,12.34,Not Found,2025-09-25 23:06:55
+Los Angeles Dodgers @ Arizona Diamondbacks,MLB,Arizona Diamondbacks,2025-09-25 15:41:00,Unibet (SE),4.4,2.22,97.94,Los Angeles Dodgers,2025-09-25 15:59:00
+Houston Astros @ Oakland Athletics,MLB,Oakland Athletics,2025-09-25 15:36:00,Unibet (SE),13.0,8.8,47.79,Oakland Athletics,2025-09-25 16:30:54
+LDU Quito @ Sao Paulo,Copa Libertadores,LDU Quito,2025-09-25 18:00:00,Suprabets,12.0,11.43,5.01,LDU Quito,2025-09-25 16:30:54
+Miami Marlins @ Philadelphia Phillies,MLB,Miami Marlins,2025-09-25 18:06:00,Tipico,3.0,2.55,17.62,Philadelphia Phillies,2025-09-25 18:28:02
+Detroit Tigers @ Cleveland Guardians,MLB,Detroit Tigers,2025-09-25 18:41:00,Unibet (FR),2.31,1.65,40.11,Cleveland Guardians,2025-09-25 18:59:31
+Criciuma @ Coritiba,Brazil Série B,Coritiba,2025-09-25 18:00:00,DraftKings,21.0,15.11,38.97,Criciúma,2025-09-25 18:59:31
+Chicago White Sox @ New York Yankees,MLB,Chicago White Sox,2025-09-25 19:06:00,Unibet,7.0,4.05,72.96,New York Yankees,2025-09-25 19:25:21
+Colorado Rockies @ Seattle Mariners,MLB,Seattle Mariners,2025-09-25 21:41:00,Bovada,1.48,1.36,8.63,Seattle Mariners,2025-09-25 19:58:54
+Kansas City Royals @ Los Angeles Angels,MLB,Los Angeles Angels,2025-09-25 21:39:00,Bovada,7.0,5.59,25.12,Kansas City Royals,2025-09-25 23:06:55
+Seattle Seahawks @ Arizona Cardinals,NFL,Seattle Seahawks,2025-09-25 20:16:00,Caesars,1.22,1.09,12.34,Seattle Seahawks,2025-09-25 23:06:55
 Jakub Mensik @ Miomir Kecmanovic,ATP China Open,Miomir Kecmanovic,2025-09-25 23:11:00,Caesars,4.8,2.05,133.75,Not Found,2025-09-25 23:38:37
 Sofia Kenin @ Polina Kudermetova,WTA China Open,Polina Kudermetova,2025-09-25 23:06:00,Bet Victor,5.0,2.81,77.73,Not Found,2025-09-25 23:38:37
 Arthur Rinderknech @ David Goffin,ATP China Open,Arthur Rinderknech,2025-09-25 23:00:00,Bovada,1.71,1.32,29.47,Not Found,2025-09-25 23:38:37
