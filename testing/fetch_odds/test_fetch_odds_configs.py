@@ -1,4 +1,3 @@
-# Data for testing create bm dict
 TEST_GAME_DATA = {
     "id": "c38b5a8fed92009138c3abbfecdb2bb8",
     "sport_key": "baseball_mlb",
