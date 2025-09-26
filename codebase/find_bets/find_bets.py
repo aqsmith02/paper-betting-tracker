@@ -26,7 +26,7 @@ from .summary_creation import (
 )
 from .data_processing import process_odds_data, calculate_vigfree_probabilities
 import pandas as pd
-from fetch_odds.fetch_odds import fetch_odds
+from codebase.fetch_odds.fetch_odds import fetch_odds
 from dataclasses import dataclass
 
 

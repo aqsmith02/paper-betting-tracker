@@ -30,8 +30,7 @@ jobs:
 
     - name: Run the bet finder script
       run: |
-        cd codebase
-        python3 -m find_bets.find_bets
+        python3 -m codebase.find_bets.find_bets
 
     - name: Commit and push updated CSVs to master branch
       shell: bash

@@ -7,7 +7,7 @@ Author: Andrew Smith
 """
 
 from .betting_configs import DATE_FORMAT, TIMESTAMP_FORMAT
-from constants import DATA_DIR
+from codebase.constants import DATA_DIR
 from typing import Any, Optional, List, Dict
 import pandas as pd
 from datetime import datetime
