@@ -15,7 +15,7 @@ from datetime import datetime
 import pytz
 from typing import List, Dict
 from .fetch_configs import DATE_FORMAT, SPORT, SPORT_KEY, REGIONS, MARKETS, ODDS_FORMAT
-from constants import THEODDS_API_KEY
+from codebase.constants import THEODDS_API_KEY
 
 
 def _convert_to_eastern_time(utc_time_str: str) -> str:
@@ -136,12 +136,22 @@ def _create_bm_dict_list(game: Dict) -> List[Dict]:
     """
     bm_dicts_list = []
     bookmakers = game.get("bookmakers", [])
+    
     for bm in bookmakers:
         bookmaker_name = bm["title"]
-
         markets = bm.get("markets", [])
-        h2h_market = markets[0]  # Should be h2h market since that's all we requested
-
+        
+        # Find the h2h market specifically
+        h2h_market = None
+        for market in markets:
+            if market.get("key") == "h2h":
+                h2h_market = market
+                break
+        
+        # Skip this bookmaker if no h2h market found
+        if h2h_market is None:
+            continue
+            
         # Create a dict for each outcome
         outcomes = {o["name"]: o["price"] for o in h2h_market.get("outcomes", [])}
         bm_dict = {bookmaker_name: outcomes}
