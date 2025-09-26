@@ -7,6 +7,7 @@ This project tracks sports bets and results using Python scripts and CSV files. 
 - Identifies profitable bets using the fair average odds, Z-score, modified Z-score, and Pinnacle edge strategies. Tracks a random betting strategy also for comparison.
 - Organizes and saves bet and result data in CSV files under the `data/` folder.
 - Automated workflows for updating bets and results.
+- Testing suites for all code (UNDER CONSTRUCTION).
 
 ## Betting Strategies
 - Fair average odds: Calculates the vig-free (true) probability for an outcome from every bookmaker, then averages these probabilities to determine a consensus fair payout. Identifies betting opportunities where the best available odds offer higher payouts than this fair average suggests the outcome is worth.
@@ -22,41 +23,53 @@ This project tracks sports bets and results using Python scripts and CSV files. 
 ## Project Structure
 ```
 .
-├── fetch_odds/               # Package for fetching and organizing odds data
-│   ├── __init__.py
-│   ├── fetch_configs.py      # Configuration for odds fetching
-│   └── fetch_odds.py         # Main odds fetching logic
-├── find_bets/                # Package for analyzing odds and finding profitable bets
-│   ├── __init__.py
-│   ├── betting_configs.py    # Betting analysis configuration
-│   ├── betting_strategies.py # Core strategy analysis functions
-│   ├── data_processing.py    # Data cleaning and validation
-│   ├── file_management.py    # File operations and CSV handling
-│   ├── find_bets.py          # Main orchestration and pipeline
-│   └── summary_creation.py   # Summary generation functions
-├── results/                  # Package for updating bet results
-│   ├── __init__.py
-│   ├── results.py            # Main results updating logic
-│   ├── results_configs.py    # Configuration for results fetching
-│   ├── sportsdb_results.py   # Functions for pulling results from TheSportsDB
-│   └── theodds_results.py    # Functions for pulling results from The-Odds-API
-├── data/                     # Contains all bet and result CSV files
-│   ├── master_avg_bets.csv
-│   ├── master_avg_full.csv
-│   ├── master_mod_zscore_bets.csv
-│   ├── master_mod_zscore_full.csv
-│   ├── master_pin_bets.csv
-│   ├── master_pin_full.csv
-│   ├── master_random_bets.csv
-│   ├── master_random_full.csv
-│   ├── master_zscore_bets.csv
-│   └── master_zscore_full.csv
-├── .github/workflows/        # GitHub Actions workflows for automated running
-│   ├── hourly-bet-finder.yml
-│   └── results.yml
-├── constants.py              # Shared constants across packages
-├── requirements.txt          # Python dependencies
-└── .gitignore                # Git ignore rules
+├── codebase/                 # Main codebase containing all application logic
+│   ├── fetch_odds/           # Package for fetching and organizing odds data
+│   │   ├── __init__.py
+│   │   ├── fetch_configs.py  # Configuration for odds fetching
+│   │   └── fetch_odds.py     # Main odds fetching logic
+│   ├── find_bets/            # Package for analyzing odds and finding profitable bets
+│   │   ├── __init__.py
+│   │   ├── betting_configs.py    # Betting analysis configuration
+│   │   ├── betting_strategies.py # Core strategy analysis functions
+│   │   ├── data_processing.py    # Data cleaning and validation
+│   │   ├── file_management.py    # File operations and CSV handling
+│   │   ├── find_bets.py          # Main orchestration and pipeline
+│   │   └── summary_creation.py   # Summary generation functions
+│   ├── results/              # Package for updating bet results
+│   │   ├── __init__.py
+│   │   ├── results.py            # Main results updating logic
+│   │   ├── results_configs.py    # Configuration for results fetching
+│   │   ├── sportsdb_results.py   # Functions for pulling results from TheSportsDB
+│   │   └── theodds_results.py    # Functions for pulling results from The-Odds-API
+│   ├── data/                 # Contains all bet and result CSV files
+│   │   ├── master_avg_bets.csv
+│   │   ├── master_avg_full.csv
+│   │   ├── master_mod_zscore_bets.csv
+│   │   ├── master_mod_zscore_full.csv
+│   │   ├── master_pin_bets.csv
+│   │   ├── master_pin_full.csv
+│   │   ├── master_random_bets.csv
+│   │   ├── master_random_full.csv
+│   │   ├── master_zscore_bets.csv
+│   │   └── master_zscore_full.csv
+│   └── constants.py          # Shared constants across packages
+│   └── __init__.py           # 
+├── testing/                  # Test suite for all packages (UNDER CONSTRUCTION)
+│   ├── fetch_odds/           # Tests for fetch_odds package
+│   │   ├── test_fetch_odds_configs.py
+│   │   └── test_fetch_odds.py
+│   └── find_bets/            # Tests for find_bets package
+│       ├── test_data_processing.py
+│       ├── unprocessed.csv   # Test data file
+│       └── processed.csv     # Test data file
+├── .github/                  # GitHub Actions workflows for automated running
+│   └── workflows/
+│       ├── hourly-bet-finder.yml
+│       └── results.yml
+├── .gitignore                # Git ignore rules
+├── README.md                 # Project documentation
+└── requirements.txt          # Python dependencies
 ```
 
 ## Usage
@@ -66,11 +79,11 @@ This project tracks sports bets and results using Python scripts and CSV files. 
    ```
 2. Fetch odds and analyze bets:
    ```bash
-   python3 -m find_bets.find_bets
+   python3 -m codebase.find_bets.find_bets
    ```
 3. Update results:
    ```bash
-   python3 -m results.results
+   python3 -m codebase.results.results
    ```
 
 ## Automation
