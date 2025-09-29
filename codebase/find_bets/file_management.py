@@ -174,6 +174,7 @@ class BetFileManager:
             "Best Odds",
             "Best Bookmaker",
             "Result",
+            "Outcomes",
             "Scrape Time",
         ]
 

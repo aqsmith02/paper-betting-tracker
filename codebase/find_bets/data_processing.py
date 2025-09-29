@@ -54,14 +54,14 @@ def _remove_exchanges(df: pd.DataFrame) -> pd.DataFrame:
 
 def _add_metadata(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Add Best Odds, Best Bookmaker, and Result column.
+    Add Best Odds, Best Bookmaker, Result, and Outcomes column.
 
     Args:
         df (pd.DataFrame): DataFrame containing odds data without exchange columns.
 
     Returns:
         df (pd.DataFrame): DataFrame containing odds data without exchange columns, as well as
-                        Best Odds, Best Bookmaker, and Result columns.
+                        Best Odds, Best Bookmaker, Result, and Outcomes columns.
     """
     df = df.copy()
     bms = _find_bookmaker_columns(df)
@@ -69,6 +69,7 @@ def _add_metadata(df: pd.DataFrame) -> pd.DataFrame:
     df["Best Odds"] = df[bms].max(axis=1)
     df["Best Bookmaker"] = df[bms].idxmax(axis=1)
     df["Result"] = "Not Found"
+    df["Outcomes"] = df.groupby("match")["team"].transform("count")
     return df
 
 
@@ -123,6 +124,23 @@ def _max_odds_filter(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
+def _all_outcomes_present_filter(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Remove rows where not all outcomes are present.
+
+    Args:
+        df (pd.DataFrame): DataFrame containing odds data without exchange columns, with metadata, and
+                            and with other data processing filters applied.
+
+    Returns:
+        pd.DataFrame: DataFrame with only rows that contain all outcomes.
+    """
+    df = df.copy()
+    mask = df["Outcomes"] == df.groupby("match")["team"].transform("count")
+    df = df[mask]
+    return df
+
+
 def _prettify_column_headers(df: pd.DataFrame) -> pd.DataFrame:
     """
     Convert column names to Title Case and replace underscores with spaces.
@@ -152,6 +170,7 @@ def process_odds_data(df: pd.DataFrame) -> pd.DataFrame:
     df = _clean_odds_data(df)
     df = _min_bookmaker_filter(df)
     df = _max_odds_filter(df)
+    df = _all_outcomes_present_filter(df)
     df = _prettify_column_headers(df)
     return df
 
@@ -176,7 +195,7 @@ def calculate_vigfree_probabilities(df: pd.DataFrame) -> pd.DataFrame:
 
         # Process each match separately
         for match_name, match_group in df.groupby("Match", sort=False):
-            required_outcomes = len(match_group)
+            required_outcomes = match_group["Outcomes"].iloc[0]
 
             # Get valid odds for this bookmaker in this match
             valid_odds = match_group[bookmaker].dropna()
