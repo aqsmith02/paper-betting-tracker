@@ -22,6 +22,7 @@ from codebase.find_bets.data_processing import (
     _clean_odds_data,
     _min_bookmaker_filter,
     _max_odds_filter,
+    _all_outcomes_present_filter,
     _prettify_column_headers,
     process_odds_data,
     calculate_vigfree_probabilities,
@@ -33,7 +34,18 @@ class TestDataProcessing(unittest.TestCase):
     def setUp(self):
         """Set up test fixtures before each test method."""
         # Data from an API pull on 2025-09-25
-        self.unprocessed = pd.read_csv("testing/find_bets/unprocessed.csv")
+        self.unprocessed = pd.read_csv("testing/find_bets/data_processing/unprocessed.csv")
+        self.pre_metadata_check = pd.read_csv("testing/find_bets/data_processing/pre_metadata.csv")
+        self.pre_clean = pd.read_csv("testing/find_bets/data_processing/pre_clean.csv")
+        self.pre_min_bookmaker_check = pd.read_csv(
+            "testing/find_bets/data_processing/pre_min_bookmaker_check.csv"
+        )
+        self.pre_max_odds_check = pd.read_csv(
+            "testing/find_bets/data_processing/pre_max_odds_check.csv"
+        )
+        self.pre_outcome_check = pd.read_csv("testing/find_bets/data_processing/pre_outcome_check.csv")
+        self.pre_prettify = pd.read_csv("testing/find_bets/data_processing/pre_prettify.csv")
+        self.processed = pd.read_csv("testing/find_bets/data_processing/processed.csv")
 
     def test_find_bookmaker_columns(self):
         """Test _find_bookmaker_columns function."""
@@ -232,13 +244,14 @@ class TestDataProcessing(unittest.TestCase):
 
     def test_add_metadata(self):
         """Test _add_metadata function."""
-        df = self.unprocessed
+        df = self.pre_metadata_check
         result_df = _add_metadata(df)
 
         # Check that metadata columns are added
         self.assertIn("Best Odds", result_df.columns)
         self.assertIn("Best Bookmaker", result_df.columns)
         self.assertIn("Result", result_df.columns)
+        self.assertIn("Outcomes", result_df.columns)
 
         # Check Best Odds calculation
         self.assertEqual(result_df["Best Odds"].iloc[0], 101.0)
@@ -255,9 +268,16 @@ class TestDataProcessing(unittest.TestCase):
         # Check Result initialization
         self.assertTrue(all(result_df["Result"] == "Not Found"))
 
+        # Check Outcomes calculation
+        self.assertEqual(result_df["Outcomes"].iloc[0], 2)
+        self.assertEqual(result_df["Outcomes"].iloc[1], 2)
+        self.assertEqual(result_df["Outcomes"].iloc[4], 3)
+        self.assertEqual(result_df["Outcomes"].iloc[5], 3)
+        self.assertEqual(result_df["Outcomes"].iloc[6], 3)
+
     def test_clean_odds_data(self):
         """Test _clean_odds_data function."""
-        df = self.unprocessed
+        df = self.pre_clean
         result_df = _clean_odds_data(df)
 
         # Check that odds equal to 1.0 are replaced with NaN
@@ -276,12 +296,9 @@ class TestDataProcessing(unittest.TestCase):
         self.assertEqual(result_df["Bovada"].iloc[10], 1.44)
         self.assertEqual(result_df["BetMGM"].iloc[10], 1.01)
         self.assertEqual(result_df["Caesars"].iloc[10], 1.01)
-        self.assertEqual(result_df["Smarkets"].iloc[10], 1.03)
         self.assertEqual(result_df["Pinnacle"].iloc[10], 1.07)
-        self.assertEqual(result_df["Matchbook"].iloc[10], 1.01)
         self.assertEqual(result_df["Betway"].iloc[10], 1.03)
         self.assertEqual(result_df["Bet Victor"].iloc[10], 1.01)
-        self.assertEqual(result_df["Betfair"].iloc[10], 1.03)
         self.assertEqual(result_df["Coolbet"].iloc[10], 1.01)
         self.assertEqual(result_df["MyBookie.ag"].iloc[10], 1.03)
         self.assertEqual(result_df["Winamax (FR)"].iloc[10], 1.01)
@@ -289,31 +306,53 @@ class TestDataProcessing(unittest.TestCase):
 
     def test_min_bookmaker_filter(self):
         """Test _min_bookmaker_filter function."""
-        df = self.unprocessed
+        df = self.pre_min_bookmaker_check
         result_df = _min_bookmaker_filter(df)
 
         filtered_out_matches = [
             "Army Black Knights @ East Carolina Pirates",
             "Avai @ Chapecoense",
         ]
-        # Confirm only 2 matches were filtered out
-        self.assertEqual(len(result_df), 22)
-        # Confirm the filtered out matches are not in the result
+
+        # Confirm the filtered out matches are actually filtered
         self.assertTrue(
             all(match not in filtered_out_matches for match in result_df["match"])
         )
 
+        # Confirm only no other rows are removed
+        self.assertEqual(len(result_df), 22)
+
+
     def test_max_odds_filter(self):
         """Test _max_odds_filter function."""
-        df = self.unprocessed
+        df = self.pre_max_odds_check
         df = _add_metadata(df)
         result_df = _max_odds_filter(df)
-        # Confirm row 0, row 9 are removed, rest remain
-        self.assertEqual(len(result_df), 25)
+
+        # Confirm that the 5th row is gone
+        self.assertNotIn(
+            "Colorado Rockies", result_df["team"].values
+        )
+
+        # Confirm rest of rows remain
+        self.assertEqual(len(result_df), 21)
+
+    def test_all_outcomes_present_filter(self):
+        """Test _all_outcomes_present_filter function."""
+        df = self.pre_outcome_check
+        result_df = _all_outcomes_present_filter(df)
+
+        # Confirm that the incomplete match is gone
+        self.assertNotIn(
+            "Colorado Rockies @ Seattle Mariners", result_df["match"].values
+        )
+
+        # Confirm no other rows are removed
+        self.assertEqual(len(result_df), 20)
 
     def test_prettify_column_headers(self):
         """Test _prettify_column_headers function."""
-        df = self.unprocessed
+        df = self.pre_prettify
         result_df = _prettify_column_headers(df)
 
         expected_cols = [
@@ -331,7 +370,6 @@ class TestDataProcessing(unittest.TestCase):
             "Caesars",
             "Fanduel",
             "Paddy Power",
-            "Smarkets",
             "Leovegas",
             "Unibet",
             "Betrivers",
@@ -339,14 +377,11 @@ class TestDataProcessing(unittest.TestCase):
             "Unibet (Nl)",
             "Unibet (It)",
             "Pinnacle",
-            "Matchbook",
             "Betway",
-            "Betfair Sportsbook",
             "Betclic (Fr)",
             "Tab",
             "Tipico",
             "Bet Victor",
-            "Betfair",
             "Coolbet",
             "Fanatics",
             "888Sport",
@@ -373,6 +408,10 @@ class TestDataProcessing(unittest.TestCase):
             "Betus",
             "Boylesports",
             "Everygame",
+            "Best Odds",
+            "Best Bookmaker",
+            "Result",
+            "Outcomes",
         ]
         self.assertEqual(list(result_df.columns), expected_cols)
 
@@ -392,9 +431,10 @@ class TestDataProcessing(unittest.TestCase):
         self.assertIn("Best Odds", result_df.columns)
         self.assertIn("Best Bookmaker", result_df.columns)
         self.assertIn("Result", result_df.columns)
+        self.assertIn("Outcomes", result_df.columns)
 
         # 3. Check data integrity
-        self.assertEqual(len(result_df), 21)
+        self.assertEqual(len(result_df), 20)
 
         # 4. Column headers should be prettified
         self.assertIn("Match", result_df.columns)
@@ -404,9 +444,8 @@ class TestDataProcessing(unittest.TestCase):
 
     def test_calculate_vigfree_probabilities(self):
         """Test calculate_vigfree_probabilities function."""
-        df = self.unprocessed
-        processed_df = process_odds_data(df)
-        result_df = calculate_vigfree_probabilities(processed_df)
+        df = self.processed
+        result_df = calculate_vigfree_probabilities(df)
 
         expected_cols = [
             "Vigfree Gtbets",
@@ -484,6 +523,7 @@ class TestDataProcessing(unittest.TestCase):
                 "Best Odds": [3.0, 2.8, 2.9],
                 "Best Bookmaker": ["Bookmaker1", "Bookmaker1", "Bookmaker1"],
                 "Result": ["Not Found", "Not Found", "Not Found"],
+                "Outcomes": [3, 3, 3],
             }
         )
         three_outcome_df = calculate_vigfree_probabilities(three_outcome_df)
@@ -502,16 +542,17 @@ class TestDataProcessing(unittest.TestCase):
                 "Team": ["Team1", "Team2"],
                 "Bookmaker1": [2.0, np.nan],
                 "Best Odds": [2.0, 2.0],
-                "Best Bookmaker": ["Bookmaker1", "Bookmaker1"],
+                "Best Bookmaker": ["Bookmaker1", "Bookmaker2"],
                 "Result": ["Not Found", "Not Found"],
+                "Outcomes": [2, 2],
             }
         )
 
         result_df = calculate_vigfree_probabilities(test_data)
 
         # Should have NaN for both outcomes when one is missing
-        vigfree1 = result_df["Vigfree Bookmaker1"].values
-        self.assertTrue(all(pd.isna(vigfree1)))
+        vigfree_bm1 = result_df["Vigfree Bookmaker1"].values
+        self.assertTrue(all(pd.isna(vigfree_bm1)))
 
     def test_all_nan_odds(self):
         """Test behavior when all odds are NaN."""
@@ -524,7 +565,9 @@ class TestDataProcessing(unittest.TestCase):
             }
         )
 
-        result_df = _add_metadata(test_data)
+        result_df = _remove_exchanges(test_data)
+        result_df = _add_metadata(result_df)
+        result_df = _clean_odds_data(result_df)
         self.assertTrue(pd.isna(result_df["Best Odds"].iloc[0]))
         self.assertTrue(pd.isna(result_df["Best Bookmaker"].iloc[0]))
 
