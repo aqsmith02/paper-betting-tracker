@@ -252,7 +252,6 @@ West Ham United @ Everton,EPL,West Ham United,2025-09-29 15:00:00,FanDuel,5.5,Dr
 Belgrano de Cordoba @ Barracas Central,Primera División - Argentina,Belgrano de Cordoba,2025-09-29 14:30:00,Pinnacle,3.02,Draw,2025-09-29 13:28:35
 IFK Goteborg @ Östers IF,Allsvenskan - Sweden,IFK Goteborg,2025-09-29 13:10:00,Betway,2.25,IFK Goteborg,2025-09-29 13:28:35
 FC Porto @ Arouca,Primeira Liga - Portugal,Arouca,2025-09-29 15:00:00,Paddy Power,13.0,FC Porto,2025-09-29 13:59:09
-Atlético Tucuman @ Velez Sarsfield BA,Primera División - Argentina,Atlético Tucuman,2025-09-29 19:00:00,LowVig.ag,5.0,Not Found,2025-09-29 14:59:01
 New York Jets @ Miami Dolphins,NFL,New York Jets,2025-09-29 19:16:00,Pinnacle,2.33,Miami Dolphins,2025-09-29 14:59:01
 Radomiak Radom @ Motor Lublin,Ekstraklasa - Poland,Draw,2025-09-29 14:30:00,Bovada,3.4,Draw,2025-09-29 15:59:08
 Coritiba @ Avai,Brazil Série B,Coritiba,2025-09-29 18:30:00,Unibet,3.1,Coritiba,2025-09-29 18:26:03
@@ -309,9 +308,9 @@ Matteo Berrettini @ Adrian Mannarino,ATP Shanghai Masters,Adrian Mannarino,2025-
 Alexandre Muller @ David Goffin,ATP Shanghai Masters,David Goffin,2025-10-01 00:30:00,Bovada,2.0,Not Found,2025-09-30 23:59:46
 Daniel Altmaier @ Tristan Schoolkate,ATP Shanghai Masters,Tristan Schoolkate,2025-10-01 02:00:00,Pinnacle,1.91,Not Found,2025-09-30 23:59:46
 Mattia Bellucci @ Adam Walton,ATP Shanghai Masters,Adam Walton,2025-10-01 00:35:00,1xBet,2.17,Not Found,2025-10-01 00:33:30
-Luca Nardi @ Sebastian Ofner,ATP Shanghai Masters,Sebastian Ofner,2025-10-01 00:37:00,Virgin Bet,1.88,Not Found,2025-10-01 00:59:10
-Marton Fucsovics @ Jaume Munar,ATP Shanghai Masters,Marton Fucsovics,2025-10-01 00:43:00,Pinnacle,1.45,Not Found,2025-10-01 02:42:09
-Valentin Vacherot @ Laslo Djere,ATP Shanghai Masters,Laslo Djere,2025-10-01 03:20:00,Pinnacle,2.68,Not Found,2025-10-01 02:58:53
+Luca Nardi @ Sebastian Ofner,ATP Shanghai Masters,Sebastian Ofner,2025-10-01 00:37:00,Virgin Bet,1.88,API Error,2025-10-01 00:59:10
+Marton Fucsovics @ Jaume Munar,ATP Shanghai Masters,Marton Fucsovics,2025-10-01 00:43:00,Pinnacle,1.45,API Error,2025-10-01 02:42:09
+Valentin Vacherot @ Laslo Djere,ATP Shanghai Masters,Laslo Djere,2025-10-01 03:20:00,Pinnacle,2.68,API Error,2025-10-01 02:58:53
 New Zealand @ Australia,ICC Women's World Cup,New Zealand,2025-10-01 05:30:00,Coral,7.0,Not Found,2025-10-01 03:28:28
 Sonay Kartal @ Mirra Andreeva,WTA China Open,Sonay Kartal,2025-10-01 04:00:00,Pinnacle,4.52,Not Found,2025-10-01 03:28:28
 Alexander Shevchenko @ Yoshihito Nishioka,ATP Shanghai Masters,Yoshihito Nishioka,2025-10-01 03:45:00,Pinnacle,1.76,Not Found,2025-10-01 03:28:28
@@ -336,44 +335,44 @@ TSG Hoffenheim II @ Rot-Weiss Essen,3. Liga - Germany,TSG Hoffenheim II,2025-10-
 Coventry City @ Millwall,Championship,Coventry City,2025-10-01 14:45:00,Coolbet,2.3,Coventry City,2025-10-01 13:28:36
 Modena @ Carrarese,Serie B - Italy,Carrarese,2025-10-01 14:30:00,Bovada,3.5,Draw,2025-10-01 13:59:28
 Watford @ Portsmouth,Championship,Watford,2025-10-01 14:45:00,Pinnacle,3.3,Draw,2025-10-01 13:59:28
-FC Viktoria Köln 1904 @ TSV 1860 München,3. Liga - Germany,Draw,2025-10-01 13:00:00,Bovada,3.1,Not Found,2025-10-01 13:59:28
-Olympiakos Piraeus @ Arsenal,UEFA Champions League,Arsenal,2025-10-01 15:00:00,1xBet,1.21,Not Found,2025-10-01 14:39:42
+FC Viktoria Köln 1904 @ TSV 1860 München,3. Liga - Germany,Draw,2025-10-01 13:00:00,Bovada,3.1,API Error,2025-10-01 13:59:28
+Olympiakos Piraeus @ Arsenal,UEFA Champions League,Arsenal,2025-10-01 15:00:00,1xBet,1.21,API Error,2025-10-01 14:39:42
 Athletic Bilbao @ Borussia Dortmund,UEFA Champions League,Athletic Bilbao,2025-10-01 15:00:00,William Hill,10.0,Borussia Dortmund,2025-10-01 14:59:43
-Žalgiris @ AS Monaco,Basketball Euroleague,Žalgiris,2025-10-01 13:33:00,Bovada,3.6,Not Found,2025-10-01 14:59:43
+Žalgiris @ AS Monaco,Basketball Euroleague,Žalgiris,2025-10-01 13:33:00,Bovada,3.6,API Error,2025-10-01 14:59:43
 Südtirol @ Pescara,Serie B - Italy,Südtirol,2025-10-01 14:31:00,FanDuel,2.65,Draw,2025-10-01 14:59:43
-Paris Basketball @ Fenerbahce SK,Basketball Euroleague,Fenerbahce SK,2025-10-01 13:46:00,Bovada,1.33,Not Found,2025-10-01 14:59:43
+Paris Basketball @ Fenerbahce SK,Basketball Euroleague,Fenerbahce SK,2025-10-01 13:46:00,Bovada,1.33,API Error,2025-10-01 14:59:43
 Corinthians @ Internacional,Brazil Série A,Corinthians,2025-10-01 18:30:00,FanDuel,4.3,Draw,2025-10-01 15:23:22
 PSV Eindhoven @ Bayer Leverkusen,UEFA Champions League,Draw,2025-10-01 15:00:00,Unibet (FR),3.88,Draw,2025-10-01 15:23:22
-Paris Saint Germain @ Barcelona,UEFA Champions League,Barcelona,2025-10-01 15:00:00,Suprabets,1.77,Not Found,2025-10-01 15:23:22
-Fluminense @ Sport Recife,Brazil Série A,Fluminense,2025-10-01 18:00:00,Pinnacle,2.37,Not Found,2025-10-01 15:59:18
+Paris Saint Germain @ Barcelona,UEFA Champions League,Barcelona,2025-10-01 15:00:00,Suprabets,1.77,API Error,2025-10-01 15:23:22
+Fluminense @ Sport Recife,Brazil Série A,Fluminense,2025-10-01 18:00:00,Pinnacle,2.37,API Error,2025-10-01 15:59:18
 Vasco da Gama @ Palmeiras,Brazil Série A,Draw,2025-10-01 18:00:00,Pinnacle,5.16,Palmeiras,2025-10-01 17:26:00
 Bahia @ Botafogo,Brazil Série A,Draw,2025-10-01 20:30:00,1xBet,3.59,Botafogo,2025-10-01 17:26:00
 Boston Red Sox @ New York Yankees,MLB,Boston Red Sox,2025-10-01 18:08:00,Caesars,2.78,Boston Red Sox,2025-10-01 17:59:09
-Bragantino-SP @ Mirassol,Brazil Série A,Mirassol,2025-10-01 17:59:00,FanDuel,3.7,Not Found,2025-10-01 18:29:55
+Bragantino-SP @ Mirassol,Brazil Série A,Mirassol,2025-10-01 17:59:00,FanDuel,3.7,API Error,2025-10-01 18:29:55
 Anaheim Ducks @ San Jose Sharks,NHL Preseason,Anaheim Ducks,2025-10-01 22:08:00,DraftKings,2.14,Anaheim Ducks,2025-10-01 18:29:55
 Grêmio @ Santos,Brazil Série A,Grêmio,2025-10-01 20:30:00,Pinnacle,4.59,Draw,2025-10-01 18:59:33
 Cincinnati Reds @ Los Angeles Dodgers,MLB,Cincinnati Reds,2025-10-01 21:08:00,Pinnacle,3.42,Los Angeles Dodgers,2025-10-01 18:59:33
 Edmonton Oilers @ Seattle Kraken,NHL Preseason,Seattle Kraken,2025-10-01 22:08:00,Caesars,1.59,Seattle Kraken,2025-10-01 19:59:05
-Benjamin Bonzi @ Reilly Opelka,ATP Shanghai Masters,Reilly Opelka,2025-10-02 01:40:00,Pinnacle,1.84,Not Found,2025-10-01 23:03:57
-Pedro Martinez @ Arthur Cazaux,ATP Shanghai Masters,Arthur Cazaux,2025-10-02 01:40:00,GTbets,1.25,Not Found,2025-10-01 23:37:29
-James Trotter @ Jenson Brooksby,ATP Shanghai Masters,James Trotter,2025-10-02 00:30:00,DraftKings,3.85,Not Found,2025-10-01 23:59:07
-Nuno Borges @ Botic van de Zandschulp,ATP Shanghai Masters,Botic van de Zandschulp,2025-10-02 00:30:00,LowVig.ag,2.03,Not Found,2025-10-01 23:59:07
-Dalibor Svrcina @ Wu Yibing,ATP Shanghai Masters,Wu Yibing,2025-10-02 00:30:00,Bovada,1.67,Not Found,2025-10-01 23:59:07
-Terence Atmane @ Camilo Ugo Carabelli,ATP Shanghai Masters,Camilo Ugo Carabelli,2025-10-02 00:40:00,Bovada,4.75,Not Found,2025-10-02 01:29:20
-Alejandro Tabilo @ Marcos Giron,ATP Shanghai Masters,Marcos Giron,2025-10-02 02:50:00,LowVig.ag,2.08,Not Found,2025-10-02 01:29:20
-Mariano Navone @ Valentin Royer,ATP Shanghai Masters,Mariano Navone,2025-10-02 03:00:00,1xBet,3.18,Not Found,2025-10-02 01:59:09
-Jesper De Jong @ Yi Zhou,ATP Shanghai Masters,Yi Zhou,2025-10-02 02:10:00,LowVig.ag,2.74,Not Found,2025-10-02 01:59:09
-Coco Gauff @ Eva Lys,WTA China Open,Coco Gauff,2025-10-02 03:00:00,1xBet,1.24,Not Found,2025-10-02 01:59:09
-Saitama Seibu Lions @ Orix Buffaloes,NPB,Orix Buffaloes,2025-10-02 05:00:00,Pinnacle,1.97,Not Found,2025-10-02 02:58:56
+Benjamin Bonzi @ Reilly Opelka,ATP Shanghai Masters,Reilly Opelka,2025-10-02 01:40:00,Pinnacle,1.84,API Error,2025-10-01 23:03:57
+Pedro Martinez @ Arthur Cazaux,ATP Shanghai Masters,Arthur Cazaux,2025-10-02 01:40:00,GTbets,1.25,API Error,2025-10-01 23:37:29
+James Trotter @ Jenson Brooksby,ATP Shanghai Masters,James Trotter,2025-10-02 00:30:00,DraftKings,3.85,API Error,2025-10-01 23:59:07
+Nuno Borges @ Botic van de Zandschulp,ATP Shanghai Masters,Botic van de Zandschulp,2025-10-02 00:30:00,LowVig.ag,2.03,API Error,2025-10-01 23:59:07
+Dalibor Svrcina @ Wu Yibing,ATP Shanghai Masters,Wu Yibing,2025-10-02 00:30:00,Bovada,1.67,API Error,2025-10-01 23:59:07
+Terence Atmane @ Camilo Ugo Carabelli,ATP Shanghai Masters,Camilo Ugo Carabelli,2025-10-02 00:40:00,Bovada,4.75,API Error,2025-10-02 01:29:20
+Alejandro Tabilo @ Marcos Giron,ATP Shanghai Masters,Marcos Giron,2025-10-02 02:50:00,LowVig.ag,2.08,API Error,2025-10-02 01:29:20
+Mariano Navone @ Valentin Royer,ATP Shanghai Masters,Mariano Navone,2025-10-02 03:00:00,1xBet,3.18,API Error,2025-10-02 01:59:09
+Jesper De Jong @ Yi Zhou,ATP Shanghai Masters,Yi Zhou,2025-10-02 02:10:00,LowVig.ag,2.74,API Error,2025-10-02 01:59:09
+Coco Gauff @ Eva Lys,WTA China Open,Coco Gauff,2025-10-02 03:00:00,1xBet,1.24,API Error,2025-10-02 01:59:09
+Saitama Seibu Lions @ Orix Buffaloes,NPB,Orix Buffaloes,2025-10-02 05:00:00,Pinnacle,1.97,API Error,2025-10-02 02:58:56
 Quentin Halys @ Mackenzie McDonald,ATP Shanghai Masters,Mackenzie McDonald,2025-10-02 04:10:00,DraftKings,1.61,Not Found,2025-10-02 03:27:14
 Pakistan @ Bangladesh,ICC Women's World Cup,Bangladesh,2025-10-02 05:30:00,Ladbrokes,3.25,Not Found,2025-10-02 03:59:17
 Hamad Medjedovic @ Arthur Rinderknech,ATP Shanghai Masters,Arthur Rinderknech,2025-10-02 05:10:00,SportsBet,2.31,Not Found,2025-10-02 03:59:17
 Rei Sakamoto @ Matteo Arnaldi,ATP Shanghai Masters,Matteo Arnaldi,2025-10-02 05:20:00,Bovada,1.65,Not Found,2025-10-02 03:59:17
-Adelaide 36ers @ Cairns Taipans,NBL,Cairns Taipans,2025-10-02 05:30:00,PointsBet (AU),2.55,Not Found,2025-10-02 04:59:21
-SSG Landers @ Kia Tigers,KBO,SSG Landers,2025-10-02 05:30:00,BetMGM,2.3,Not Found,2025-10-02 04:59:21
-Tokyo Yakult Swallows @ Hanshin Tigers,NPB,Hanshin Tigers,2025-10-02 05:00:00,DraftKings,1.49,Not Found,2025-10-02 04:59:21
+Adelaide 36ers @ Cairns Taipans,NBL,Cairns Taipans,2025-10-02 05:30:00,PointsBet (AU),2.55,Adelaide 36ers,2025-10-02 04:59:21
+SSG Landers @ Kia Tigers,KBO,SSG Landers,2025-10-02 05:30:00,BetMGM,2.3,Kia Tigers,2025-10-02 04:59:21
+Tokyo Yakult Swallows @ Hanshin Tigers,NPB,Hanshin Tigers,2025-10-02 05:00:00,DraftKings,1.49,Hanshin Tigers,2025-10-02 04:59:21
 Amanda Anisimova @ Jasmine Paolini,WTA China Open,Amanda Anisimova,2025-10-02 06:00:00,LowVig.ag,1.68,Not Found,2025-10-02 05:59:16
-Illawarra Hawks @ Perth Wildcats,NBL,Illawarra Hawks,2025-10-02 07:30:00,Virgin Bet,2.75,Not Found,2025-10-02 06:59:20
+Illawarra Hawks @ Perth Wildcats,NBL,Illawarra Hawks,2025-10-02 07:30:00,Virgin Bet,2.75,Perth Wildcats,2025-10-02 06:59:20
 Bangladesh @ Afghanistan,International Twenty20,Bangladesh,2025-10-02 11:00:00,BetOnline.ag,2.45,Not Found,2025-10-02 06:59:20
 Juan Manuel Cerundolo @ Bu Yunchaokete,ATP Shanghai Masters,Bu Yunchaokete,2025-10-02 07:40:00,BetUS,1.57,Not Found,2025-10-02 06:59:20
 Crystal Palace @ Dynamo Kyiv,UEFA Europa Conference League,Dynamo Kyiv,2025-10-02 12:45:00,LowVig.ag,6.53,Not Found,2025-10-02 08:54:28

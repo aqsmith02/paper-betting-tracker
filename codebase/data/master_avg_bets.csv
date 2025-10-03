@@ -577,7 +577,6 @@ Red Star @ Boulogne,Ligue 2 - France,Boulogne,2025-09-29 14:45:00,Bovada,3.75,14
 Radomiak Radom @ Motor Lublin,Ekstraklasa - Poland,Radomiak Radom,2025-09-29 14:30:00,Pinnacle,3.35,86.84,Draw,2025-09-29 15:24:02
 Chapecoense @ Amazonas FC,Brazil Série B,Chapecoense,2025-09-29 15:00:00,Pinnacle,3.24,67.37,Chapecoense,2025-09-29 15:24:02
 Ceará @ Sao Paulo,Brazil Série A,Ceará,2025-09-29 19:00:00,1xBet,6.71,7.12,Ceará,2025-09-29 18:59:30
-Atlético Tucuman @ Velez Sarsfield BA,Primera División - Argentina,Atlético Tucuman,2025-09-29 19:00:00,Bovada,4.6,96.3,Not Found,2025-09-29 19:25:36
 Coritiba @ Avai,Brazil Série B,Coritiba,2025-09-29 18:30:00,Bovada,3.0,86.39,Coritiba,2025-09-29 19:25:36
 Carolina Hurricanes @ Florida Panthers,NHL Preseason,Carolina Hurricanes,2025-09-29 18:08:36,Fanatics,7.7,51.36,Florida Panthers,2025-09-29 19:25:36
 New York Jets @ Miami Dolphins,NFL,New York Jets,2025-09-29 19:16:00,888sport,2.7,9.76,Miami Dolphins,2025-09-29 19:25:36
@@ -736,17 +735,17 @@ Christopher O'Connell @ Damir Dzumhur,ATP Shanghai Masters,Christopher O'Connell
 Ethan Quinn @ Kamil Majchrzak,ATP Shanghai Masters,Kamil Majchrzak,2025-10-02 02:26:00,Bovada,2.25,6.43,Not Found,2025-10-02 02:39:53
 Jesper De Jong @ Yi Zhou,ATP Shanghai Masters,Yi Zhou,2025-10-02 02:30:00,Bovada,5.0,38.8,Not Found,2025-10-02 03:27:13
 Mariano Navone @ Valentin Royer,ATP Shanghai Masters,Mariano Navone,2025-10-02 03:50:00,Pinnacle,2.37,6.98,Not Found,2025-10-02 04:59:20
-Saitama Seibu Lions @ Orix Buffaloes,NPB,Orix Buffaloes,2025-10-02 05:00:00,Unibet,12.0,78.73,Not Found,2025-10-02 05:28:52
-Tokyo Yakult Swallows @ Hanshin Tigers,NPB,Tokyo Yakult Swallows,2025-10-02 05:01:00,Unibet,5.5,19.14,Not Found,2025-10-02 05:28:52
-SSG Landers @ Kia Tigers,KBO,SSG Landers,2025-10-02 05:30:00,FanDuel,4.5,26.79,Not Found,2025-10-02 05:59:14
-Amanda Anisimova @ Jasmine Paolini,WTA China Open,Jasmine Paolini,2025-10-02 06:00:00,Bovada,2.7,10.21,Not Found,2025-10-02 05:59:14
-Alejandro Tabilo @ Marcos Giron,ATP Shanghai Masters,Alejandro Tabilo,2025-10-02 05:40:00,Bovada,1.69,26.44,Not Found,2025-10-02 06:31:20
-Quentin Halys @ Mackenzie McDonald,ATP Shanghai Masters,Quentin Halys,2025-10-02 06:30:00,Coolbet,2.7,6.04,Not Found,2025-10-02 06:31:20
-Juncheng Shang @ Aleksandar Kovacevic,ATP Shanghai Masters,Aleksandar Kovacevic,2025-10-02 06:38:00,DraftKings,5.0,17.29,Not Found,2025-10-02 06:59:18
+Saitama Seibu Lions @ Orix Buffaloes,NPB,Orix Buffaloes,2025-10-02 05:00:00,Unibet,12.0,78.73,Saitama Seibu Lions,2025-10-02 05:28:52
+Tokyo Yakult Swallows @ Hanshin Tigers,NPB,Tokyo Yakult Swallows,2025-10-02 05:01:00,Unibet,5.5,19.14,Hanshin Tigers,2025-10-02 05:28:52
+SSG Landers @ Kia Tigers,KBO,SSG Landers,2025-10-02 05:30:00,FanDuel,4.5,26.79,API Error,2025-10-02 05:59:14
+Amanda Anisimova @ Jasmine Paolini,WTA China Open,Jasmine Paolini,2025-10-02 06:00:00,Bovada,2.7,10.21,API Error,2025-10-02 05:59:14
+Alejandro Tabilo @ Marcos Giron,ATP Shanghai Masters,Alejandro Tabilo,2025-10-02 05:40:00,Bovada,1.69,26.44,API Error,2025-10-02 06:31:20
+Quentin Halys @ Mackenzie McDonald,ATP Shanghai Masters,Quentin Halys,2025-10-02 06:30:00,Coolbet,2.7,6.04,API Error,2025-10-02 06:31:20
+Juncheng Shang @ Aleksandar Kovacevic,ATP Shanghai Masters,Aleksandar Kovacevic,2025-10-02 06:38:00,DraftKings,5.0,17.29,API Error,2025-10-02 06:59:18
 Hamad Medjedovic @ Arthur Rinderknech,ATP Shanghai Masters,Arthur Rinderknech,2025-10-02 07:10:00,Pinnacle,2.15,51.9,Not Found,2025-10-02 07:59:08
 Rei Sakamoto @ Matteo Arnaldi,ATP Shanghai Masters,Rei Sakamoto,2025-10-02 07:53:00,Unibet,3.8,25.26,Not Found,2025-10-02 07:59:08
 Breiðablik @ FC Lausanne-Sport,UEFA Europa Conference League,Breiðablik,2025-10-02 12:45:00,Coolbet,7.75,6.5,Not Found,2025-10-02 07:59:08
-Illawarra Hawks @ Perth Wildcats,NBL,Perth Wildcats,2025-10-02 07:36:00,Coolbet,2.63,6.35,Not Found,2025-10-02 07:59:08
+Illawarra Hawks @ Perth Wildcats,NBL,Perth Wildcats,2025-10-02 07:36:00,Coolbet,2.63,6.35,Perth Wildcats,2025-10-02 07:59:08
 Pakistan @ Bangladesh,ICC Women's World Cup,Pakistan,2025-10-02 05:30:00,Betway,9.5,15.94,Not Found,2025-10-02 08:54:27
 Juan Manuel Cerundolo @ Bu Yunchaokete,ATP Shanghai Masters,Bu Yunchaokete,2025-10-02 08:53:00,Bovada,1.51,23.76,Not Found,2025-10-02 09:21:05
 Bangladesh @ Afghanistan,International Twenty20,Bangladesh,2025-10-02 10:30:00,Pinnacle,2.53,48.02,Not Found,2025-10-02 10:59:09
