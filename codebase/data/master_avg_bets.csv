@@ -580,8 +580,6 @@ Ceará @ Sao Paulo,Brazil Série A,Ceará,2025-09-29 19:00:00,1xBet,6.71,7.12,Ce
 Coritiba @ Avai,Brazil Série B,Coritiba,2025-09-29 18:30:00,Bovada,3.0,86.39,Coritiba,2025-09-29 19:25:36
 Carolina Hurricanes @ Florida Panthers,NHL Preseason,Carolina Hurricanes,2025-09-29 18:08:36,Fanatics,7.7,51.36,Florida Panthers,2025-09-29 19:25:36
 New York Jets @ Miami Dolphins,NFL,New York Jets,2025-09-29 19:16:00,888sport,2.7,9.76,Miami Dolphins,2025-09-29 19:25:36
-Daniil Medvedev @ Learner Tien,ATP China Open,Learner Tien,2025-09-30 05:00:00,Bovada,4.0,10.34,Not Found,2025-09-29 23:59:11
-Sri Lanka @ India,ICC Women's World Cup,Sri Lanka,2025-09-30 05:30:00,Paddy Power,8.0,10.28,Not Found,2025-09-30 02:43:14
 Tokyo Yakult Swallows @ Yokohama DeNA BayStars,NPB,Tokyo Yakult Swallows,2025-09-30 05:00:00,William Hill,2.9,5.31,Tokyo Yakult Swallows,2025-09-30 05:00:00
 Chunichi Dragons @ Yomiuri Giants,NPB,Yomiuri Giants,2025-09-30 05:00:53,Bovada,1.91,49.37,Yomiuri Giants,2025-09-30 05:30:27
 Lukko @ Tappara,Liiga,Lukko,2025-09-30 11:30:00,Coolbet,3.5,47.96,Tappara,2025-09-30 05:30:27
@@ -594,7 +592,6 @@ Kia Tigers @ Samsung Lions,KBO,Kia Tigers,2025-09-30 05:30:00,Nordic Bet,11.0,33
 SSG Landers @ Kiwoom Heroes,KBO,SSG Landers,2025-09-30 05:30:00,Bovada,2.15,16.11,SSG Landers,2025-09-30 05:58:54
 Doosan Bears @ LG Twins,KBO,Doosan Bears,2025-09-30 05:31:00,Unibet,2.88,8.39,Doosan Bears,2025-09-30 05:58:54
 Lotte Giants @ Hanwha Eagles,KBO,Lotte Giants,2025-09-30 05:30:00,BetMGM,3.1,7.5,Hanwha Eagles,2025-09-30 07:25:30
-Amanda Anisimova @ Karolina Muchova,WTA China Open,Karolina Muchova,2025-09-30 08:17:00,Bovada,1.54,21.25,Not Found,2025-09-30 08:58:47
 Real Madrid @ FC Kairat,UEFA Champions League,Draw,2025-09-30 12:45:00,Sky Bet,14.0,19.6,Not Found,2025-09-30 08:58:47
 West Indies @ Nepal,International Twenty20,Nepal,2025-09-30 10:30:00,PlayUp,3.55,5.33,Not Found,2025-09-30 10:30:44
 Marie Bouzkova @ Jasmine Paolini,WTA China Open,Marie Bouzkova,2025-09-30 10:40:00,Unibet (IT),3.25,7.15,Not Found,2025-09-30 10:59:38
@@ -691,9 +688,9 @@ Detroit Tigers @ Cleveland Guardians,MLB,Cleveland Guardians,2025-10-01 13:08:42
 Schweinfurt @ SSV Ulm 1846,3. Liga - Germany,Schweinfurt,2025-10-01 13:00:00,Unibet,11.5,7.48,API Error,2025-10-01 13:28:34
 US Catanzaro 1929 @ Sampdoria,Serie B - Italy,US Catanzaro 1929,2025-10-01 14:30:00,Pinnacle,3.77,5.92,API Error,2025-10-01 13:28:34
 FC Ingolstadt 04 @ SC Verl,3. Liga - Germany,FC Ingolstadt 04,2025-10-01 13:01:00,Unibet (NL),8.0,5.55,API Error,2025-10-01 13:28:34
-Žalgiris @ AS Monaco,Basketball Euroleague,Žalgiris,2025-10-01 13:33:00,Bovada,3.6,28.68,Not Found,2025-10-01 13:59:26
-TSG Hoffenheim II @ Rot-Weiss Essen,3. Liga - Germany,TSG Hoffenheim II,2025-10-01 13:00:00,Winamax (DE),24.0,27.86,Not Found,2025-10-01 13:59:26
-Paris Basketball @ Fenerbahce SK,Basketball Euroleague,Paris Basketball,2025-10-01 13:46:00,Bovada,3.8,8.92,Not Found,2025-10-01 13:59:26
+Žalgiris @ AS Monaco,Basketball Euroleague,Žalgiris,2025-10-01 13:33:00,Bovada,3.6,28.68,API Error,2025-10-01 13:59:26
+TSG Hoffenheim II @ Rot-Weiss Essen,3. Liga - Germany,TSG Hoffenheim II,2025-10-01 13:00:00,Winamax (DE),24.0,27.86,API Error,2025-10-01 13:59:26
+Paris Basketball @ Fenerbahce SK,Basketball Euroleague,Paris Basketball,2025-10-01 13:46:00,Bovada,3.8,8.92,API Error,2025-10-01 13:59:26
 Coventry City @ Millwall,Championship,Coventry City,2025-10-01 14:45:00,Bovada,2.42,7.63,Coventry City,2025-10-01 13:59:26
 Valencia Basket @ ASVEL Lyon Villeurbanne,Basketball Euroleague,ASVEL Lyon Villeurbanne,2025-10-01 14:00:00,Bovada,3.6,20.72,Not Found,2025-10-01 14:39:40
 Olympiakos Piraeus @ Arsenal,UEFA Champions League,Draw,2025-10-01 15:00:00,Suprabets,8.2,6.84,Not Found,2025-10-01 14:39:40
@@ -740,13 +737,13 @@ Alejandro Tabilo @ Marcos Giron,ATP Shanghai Masters,Alejandro Tabilo,2025-10-02
 Quentin Halys @ Mackenzie McDonald,ATP Shanghai Masters,Quentin Halys,2025-10-02 06:30:00,Coolbet,2.7,6.04,Not Found,2025-10-02 06:31:20
 Juncheng Shang @ Aleksandar Kovacevic,ATP Shanghai Masters,Aleksandar Kovacevic,2025-10-02 06:38:00,DraftKings,5.0,17.29,Not Found,2025-10-02 06:59:18
 Hamad Medjedovic @ Arthur Rinderknech,ATP Shanghai Masters,Arthur Rinderknech,2025-10-02 07:10:00,Pinnacle,2.15,51.9,Not Found,2025-10-02 07:59:08
-Rei Sakamoto @ Matteo Arnaldi,ATP Shanghai Masters,Rei Sakamoto,2025-10-02 07:53:00,Unibet,3.8,25.26,API Error,2025-10-02 07:59:08
-Breiðablik @ FC Lausanne-Sport,UEFA Europa Conference League,Breiðablik,2025-10-02 12:45:00,Coolbet,7.75,6.5,API Error,2025-10-02 07:59:08
+Rei Sakamoto @ Matteo Arnaldi,ATP Shanghai Masters,Rei Sakamoto,2025-10-02 07:53:00,Unibet,3.8,25.26,Not Found,2025-10-02 07:59:08
+Breiðablik @ FC Lausanne-Sport,UEFA Europa Conference League,Breiðablik,2025-10-02 12:45:00,Coolbet,7.75,6.5,Not Found,2025-10-02 07:59:08
 Illawarra Hawks @ Perth Wildcats,NBL,Perth Wildcats,2025-10-02 07:36:00,Coolbet,2.63,6.35,Perth Wildcats,2025-10-02 07:59:08
-Pakistan @ Bangladesh,ICC Women's World Cup,Pakistan,2025-10-02 05:30:00,Betway,9.5,15.94,Not Found,2025-10-02 08:54:27
-Juan Manuel Cerundolo @ Bu Yunchaokete,ATP Shanghai Masters,Bu Yunchaokete,2025-10-02 08:53:00,Bovada,1.51,23.76,Not Found,2025-10-02 09:21:05
-Bangladesh @ Afghanistan,International Twenty20,Bangladesh,2025-10-02 10:30:00,Pinnacle,2.53,48.02,Not Found,2025-10-02 10:59:09
-FC Drita @ KuPS Kuopio,UEFA Europa Conference League,FC Drita,2025-10-02 12:45:00,Bovada,5.5,8.99,Not Found,2025-10-02 11:59:24
+Pakistan @ Bangladesh,ICC Women's World Cup,Pakistan,2025-10-02 05:30:00,Betway,9.5,15.94,API Error,2025-10-02 08:54:27
+Juan Manuel Cerundolo @ Bu Yunchaokete,ATP Shanghai Masters,Bu Yunchaokete,2025-10-02 08:53:00,Bovada,1.51,23.76,API Error,2025-10-02 09:21:05
+Bangladesh @ Afghanistan,International Twenty20,Bangladesh,2025-10-02 10:30:00,Pinnacle,2.53,48.02,API Error,2025-10-02 10:59:09
+FC Drita @ KuPS Kuopio,UEFA Europa Conference League,FC Drita,2025-10-02 12:45:00,Bovada,5.5,8.99,API Error,2025-10-02 11:59:24
 Crystal Palace @ Dynamo Kyiv,UEFA Europa Conference League,Dynamo Kyiv,2025-10-02 12:45:00,Pinnacle,6.93,5.42,Crystal Palace,2025-10-02 11:59:24
 Lille @ AS Roma,UEFA Europa League,Lille,2025-10-02 12:45:00,Bovada,4.95,5.24,Not Found,2025-10-02 11:59:24
 Philadelphia 76ers @ New York Knicks,NBA Preseason,Philadelphia 76ers,2025-10-02 12:09:09,Betsson,4.8,19.3,Philadelphia 76ers,2025-10-02 12:35:03
@@ -765,38 +762,38 @@ Rapid Wien @ Lech Poznań,UEFA Europa Conference League,Lech Poznań,2025-10-02 
 FC Utrecht @ SK Brann,UEFA Europa League,Draw,2025-10-02 12:45:00,Pinnacle,2.93,5.63,Not Found,2025-10-02 13:26:28
 FSV Mainz 05 @ Omonoia FC,UEFA Europa Conference League,Draw,2025-10-02 12:45:00,Pinnacle,3.46,5.57,Not Found,2025-10-02 13:26:28
 KK Crvena zvezda @ FC Bayern München,Basketball Euroleague,KK Crvena zvezda,2025-10-02 14:30:00,Everygame,2.9,11.81,Not Found,2025-10-02 14:38:00
-Aston Villa @ Feyenoord,UEFA Europa League,Aston Villa,2025-10-02 15:00:00,Bovada,2.41,8.88,Not Found,2025-10-02 14:38:00
+Aston Villa @ Feyenoord,UEFA Europa League,Aston Villa,2025-10-02 15:00:00,Bovada,2.41,8.88,Aston Villa,2025-10-02 14:38:00
 Pallacanestro Olimpia Milano @ KK Partizan NIS,Basketball Euroleague,Pallacanestro Olimpia Milano,2025-10-02 14:30:00,BetOnline.ag,2.74,5.49,Not Found,2025-10-02 14:38:00
 Olympiacos @ Real Madrid,Basketball Euroleague,Real Madrid,2025-10-02 14:45:00,Nordic Bet,4.05,73.16,Not Found,2025-10-02 14:59:43
-Shakhtar Donetsk @ Aberdeen,UEFA Europa Conference League,Draw,2025-10-02 15:00:00,Bovada,4.5,5.42,Not Found,2025-10-02 14:59:43
-Dinamo Zagreb @ Maccabi Tel Aviv,UEFA Europa League,Dinamo Zagreb,2025-10-02 15:00:00,Suprabets,5.0,189.37,Not Found,2025-10-02 15:21:11
-FC Midtjylland @ Nottingham Forest,UEFA Europa League,FC Midtjylland,2025-10-02 15:00:00,Bovada,8.25,121.72,Not Found,2025-10-02 15:21:11
-AZ Alkmaar @ AEK Larnaca,UEFA Europa Conference League,AEK Larnaca,2025-10-02 15:00:00,Pinnacle,3.21,88.15,Not Found,2025-10-02 15:21:11
+Shakhtar Donetsk @ Aberdeen,UEFA Europa Conference League,Draw,2025-10-02 15:00:00,Bovada,4.5,5.42,Shakhtar Donetsk,2025-10-02 14:59:43
+Dinamo Zagreb @ Maccabi Tel Aviv,UEFA Europa League,Dinamo Zagreb,2025-10-02 15:00:00,Suprabets,5.0,189.37,Dinamo Zagreb,2025-10-02 15:21:11
+FC Midtjylland @ Nottingham Forest,UEFA Europa League,FC Midtjylland,2025-10-02 15:00:00,Bovada,8.25,121.72,FC Midtjylland,2025-10-02 15:21:11
+AZ Alkmaar @ AEK Larnaca,UEFA Europa Conference League,AEK Larnaca,2025-10-02 15:00:00,Pinnacle,3.21,88.15,AEK Larnaca,2025-10-02 15:21:11
 Samsunspor @ Legia Warszawa,UEFA Europa Conference League,Samsunspor,2025-10-02 15:00:00,Pinnacle,3.67,63.73,Not Found,2025-10-02 15:21:11
-Bradford City @ Rotherham United,League 1,Bradford City,2025-10-02 15:01:00,Unibet (NL),5.0,50.37,Not Found,2025-10-02 15:21:11
+Bradford City @ Rotherham United,League 1,Bradford City,2025-10-02 15:01:00,Unibet (NL),5.0,50.37,Draw,2025-10-02 15:21:11
 VfB Stuttgart @ FC Basel,UEFA Europa League,FC Basel,2025-10-02 15:00:00,Bovada,3.4,42.58,Not Found,2025-10-02 15:21:11
 Rangers FC @ SK Sturm Graz,UEFA Europa League,SK Sturm Graz,2025-10-02 15:00:00,Bovada,2.08,31.44,Not Found,2025-10-02 15:21:11
 Salzburg @ Lyon,UEFA Europa League,Lyon,2025-10-02 15:00:00,Bovada,1.69,27.82,Not Found,2025-10-02 15:21:11
 AEK Athens @ NK Celje,UEFA Europa Conference League,AEK Athens,2025-10-02 15:01:00,Pinnacle,2.01,24.45,Not Found,2025-10-02 15:21:11
 Red Star Belgrade @ Porto,UEFA Europa League,Porto,2025-10-02 15:00:00,Bovada,1.58,19.67,Not Found,2025-10-02 15:21:11
-Sigma Olomouc @ Fiorentina,UEFA Europa Conference League,Sigma Olomouc,2025-10-02 15:00:00,Bovada,12.0,9.3,Not Found,2025-10-02 15:21:11
-Strasbourg @ ŠK Slovan Bratislava,UEFA Europa Conference League,ŠK Slovan Bratislava,2025-10-02 15:00:00,Pinnacle,2.93,6.16,Not Found,2025-10-02 15:21:11
-Detroit Tigers @ Cleveland Guardians,MLB,Detroit Tigers,2025-10-02 15:08:27,Bovada,2.17,18.5,Not Found,2025-10-02 15:59:00
-Universitatea Craiova @ Raków Częstochowa,UEFA Europa Conference League,Universitatea Craiova,2025-10-02 15:01:00,DraftKings,7.0,7.89,Not Found,2025-10-02 15:59:00
-BK Häcken @ Shelbourne Dublin,UEFA Europa Conference League,Draw,2025-10-02 15:00:00,Pinnacle,2.9,5.63,Not Found,2025-10-02 15:59:00
-PAOK @ Celta Vigo,UEFA Europa League,PAOK,2025-10-02 15:02:00,Coolbet,47.0,74.55,Not Found,2025-10-02 16:30:25
+Sigma Olomouc @ Fiorentina,UEFA Europa Conference League,Sigma Olomouc,2025-10-02 15:00:00,Bovada,12.0,9.3,API Error,2025-10-02 15:21:11
+Strasbourg @ ŠK Slovan Bratislava,UEFA Europa Conference League,ŠK Slovan Bratislava,2025-10-02 15:00:00,Pinnacle,2.93,6.16,API Error,2025-10-02 15:21:11
+Detroit Tigers @ Cleveland Guardians,MLB,Detroit Tigers,2025-10-02 15:08:27,Bovada,2.17,18.5,Detroit Tigers,2025-10-02 15:59:00
+Universitatea Craiova @ Raków Częstochowa,UEFA Europa Conference League,Universitatea Craiova,2025-10-02 15:01:00,DraftKings,7.0,7.89,API Error,2025-10-02 15:59:00
+BK Häcken @ Shelbourne Dublin,UEFA Europa Conference League,Draw,2025-10-02 15:00:00,Pinnacle,2.9,5.63,API Error,2025-10-02 15:59:00
+PAOK @ Celta Vigo,UEFA Europa League,PAOK,2025-10-02 15:02:00,Coolbet,47.0,74.55,Celta Vigo,2025-10-02 16:30:25
 Ferencváros TC @ KRC Genk,UEFA Europa League,Ferencváros TC,2025-10-02 15:00:00,TAB,2.0,19.57,Not Found,2025-10-02 16:30:25
-San Diego Padres @ Chicago Cubs,MLB,San Diego Padres,2025-10-02 17:08:06,MyBookie.ag,2.3,10.12,Not Found,2025-10-02 17:24:26
-Ceará @ Vitoria,Brazil Série A,Vitoria,2025-10-02 18:00:00,FanDuel,2.52,58.87,Not Found,2025-10-02 18:28:31
-Sao Paulo @ Fortaleza,Brazil Série A,Fortaleza,2025-10-02 18:30:00,Pinnacle,5.76,94.96,Not Found,2025-10-02 18:59:11
-Cuiabá @ Paysandu,Brazil Série B,Paysandu,2025-10-02 18:00:00,DraftKings,11.0,10.43,Not Found,2025-10-02 18:59:11
-Cruzeiro @ Flamengo,Brazil Série A,Cruzeiro,2025-10-02 19:30:00,1xBet,6.89,6.26,Not Found,2025-10-02 19:24:50
-Florida Panthers @ Tampa Bay Lightning,NHL Preseason,Tampa Bay Lightning,2025-10-02 19:09:24,Pinnacle,2.72,30.63,Not Found,2025-10-02 19:59:12
+San Diego Padres @ Chicago Cubs,MLB,San Diego Padres,2025-10-02 17:08:06,MyBookie.ag,2.3,10.12,Chicago Cubs,2025-10-02 17:24:26
+Ceará @ Vitoria,Brazil Série A,Vitoria,2025-10-02 18:00:00,FanDuel,2.52,58.87,Vitória,2025-10-02 18:28:31
+Sao Paulo @ Fortaleza,Brazil Série A,Fortaleza,2025-10-02 18:30:00,Pinnacle,5.76,94.96,São Paulo,2025-10-02 18:59:11
+Cuiabá @ Paysandu,Brazil Série B,Paysandu,2025-10-02 18:00:00,DraftKings,11.0,10.43,Draw,2025-10-02 18:59:11
+Cruzeiro @ Flamengo,Brazil Série A,Cruzeiro,2025-10-02 19:30:00,1xBet,6.89,6.26,Draw,2025-10-02 19:24:50
+Florida Panthers @ Tampa Bay Lightning,NHL Preseason,Tampa Bay Lightning,2025-10-02 19:09:24,Pinnacle,2.72,30.63,Tampa Bay Lightning,2025-10-02 19:59:12
 David Goffin @ Ben Shelton,ATP Shanghai Masters,David Goffin,2025-10-03 00:30:00,BoyleSports,3.5,6.13,Not Found,2025-10-02 19:59:12
-Criciuma @ Vila Nova,Brazil Série B,Criciuma,2025-10-02 20:29:00,Pinnacle,10.37,116.85,Not Found,2025-10-02 21:57:54
-Boston Red Sox @ New York Yankees,MLB,Boston Red Sox,2025-10-02 20:10:52,Nordic Bet,25.0,68.49,Not Found,2025-10-02 21:57:54
+Criciuma @ Vila Nova,Brazil Série B,Criciuma,2025-10-02 20:29:00,Pinnacle,10.37,116.85,Draw,2025-10-02 21:57:54
+Boston Red Sox @ New York Yankees,MLB,Boston Red Sox,2025-10-02 20:10:52,Nordic Bet,25.0,68.49,New York Yankees,2025-10-02 21:57:54
 Sam Houston State Bearkats @ New Mexico State Aggies,NCAAF,New Mexico State Aggies,2025-10-02 21:04:00,Pinnacle,2.02,40.34,Not Found,2025-10-02 21:57:54
-San Francisco 49ers @ Los Angeles Rams,NFL,Los Angeles Rams,2025-10-02 20:16:00,GTbets,4.24,11.27,Not Found,2025-10-02 21:57:54
+San Francisco 49ers @ Los Angeles Rams,NFL,Los Angeles Rams,2025-10-02 20:16:00,GTbets,4.24,11.27,San Francisco 49ers,2025-10-02 21:57:54
 Los Angeles Kings @ Utah Mammoth,NHL Preseason,Los Angeles Kings,2025-10-02 21:09:17,Fanatics,4.05,5.89,Not Found,2025-10-02 23:03:17
 Yannick Hanfmann @ Frances Tiafoe,ATP Shanghai Masters,Yannick Hanfmann,2025-10-03 00:30:00,Bovada,2.75,9.34,Not Found,2025-10-02 23:59:11
 Gabriel Diallo @ Benjamin Bonzi,ATP Shanghai Masters,Benjamin Bonzi,2025-10-03 00:37:00,Pinnacle,4.51,13.37,Not Found,2025-10-03 00:59:09
