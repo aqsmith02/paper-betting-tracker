@@ -1039,7 +1039,6 @@ Monterrey @ Tijuana,Liga MX,Monterrey,2025-10-05 23:09:00,Bet Victor,6.5,101.56,
 NC Dinos @ Samsung Lions,KBO,NC Dinos,2025-10-06 01:40:27,Pinnacle,2.15,15.83,NC Dinos,2025-10-06 01:59:13
 Albacete @ Cultural Leonesa,La Liga 2 - Spain,Albacete,2025-10-06 14:30:00,Pinnacle,2.81,7.63,Draw,2025-10-06 06:59:25
 Örgryte IS @ Sandvikens IF,Superettan - Sweden,Sandvikens IF,2025-10-06 13:00:00,Pinnacle,4.63,5.53,Draw,2025-10-06 08:57:53
-Victoria Mboko @ Ekaterina Alexandrova,WTA Wuhan Open,Victoria Mboko,2025-10-06 09:59:00,Unibet (IT),9.0,32.85,Not Found,2025-10-06 10:32:30
 Varbergs BoIS @ Landskrona BoIS,Superettan - Sweden,Varbergs BoIS,2025-10-06 13:00:00,Coolbet,2.8,61.81,Landskrona BoIS,2025-10-06 13:28:52
 Crewe Alexandra @ Harrogate Town,League 2,Harrogate Town,2025-10-06 15:00:00,DraftKings,4.9,7.61,Crewe Alexandra,2025-10-06 15:58:57
 Los Angeles Dodgers @ Philadelphia Phillies,MLB,Los Angeles Dodgers,2025-10-06 18:09:00,Pinnacle,2.1,7.01,Los Angeles Dodgers,2025-10-06 18:59:34
@@ -1111,9 +1110,9 @@ Lorenzo Musetti @ Felix Auger-Aliassime,ATP Shanghai Masters,Lorenzo Musetti,202
 AS Roma @ Real Madrid,UEFA Champions League Women,AS Roma,2025-10-08 12:45:00,Coolbet,8.25,9.59,Not Found,2025-10-08 07:24:37
 Bangladesh @ Afghanistan,One Day Internationals,Bangladesh,2025-10-08 08:00:00,PointsBet (AU),3.65,25.19,Not Found,2025-10-08 08:57:49
 Daniil Medvedev @ Learner Tien,ATP Shanghai Masters,Learner Tien,2025-10-08 08:15:00,Pinnacle,2.85,5.62,Not Found,2025-10-08 08:57:49
-Chelsea @ FC Twente Enschede,UEFA Champions League Women,FC Twente Enschede,2025-10-08 12:45:00,Nordic Bet,11.0,5.22,API Error,2025-10-08 08:57:49
-Vålerenga @ Manchester United,UEFA Champions League Women,Vålerenga,2025-10-08 15:00:00,Pinnacle,26.03,56.16,API Error,2025-10-08 13:29:11
-Atlético Madrid @ SKN St. Pölten,UEFA Champions League Women,SKN St. Pölten,2025-10-08 15:00:00,DraftKings,17.0,31.01,API Error,2025-10-08 13:29:11
+Chelsea @ FC Twente Enschede,UEFA Champions League Women,FC Twente Enschede,2025-10-08 12:45:00,Nordic Bet,11.0,5.22,Not Found,2025-10-08 08:57:49
+Vålerenga @ Manchester United,UEFA Champions League Women,Vålerenga,2025-10-08 15:00:00,Pinnacle,26.03,56.16,Not Found,2025-10-08 13:29:11
+Atlético Madrid @ SKN St. Pölten,UEFA Champions League Women,SKN St. Pölten,2025-10-08 15:00:00,DraftKings,17.0,31.01,Not Found,2025-10-08 13:29:11
 Sport Recife @ Atletico Mineiro,Brazil Série A,Sport Recife,2025-10-08 18:00:00,Coolbet,6.13,6.2,Not Found,2025-10-08 13:29:11
 Maccabi Tel Aviv @ Hapoel Tel Aviv,Basketball Euroleague,Maccabi Tel Aviv,2025-10-08 14:05:00,SportsBet,4.15,5.21,Not Found,2025-10-08 13:59:23
 Grêmio Novorizontino @ Cuiabá,Brazil Série B,Grêmio Novorizontino,2025-10-08 18:00:00,Bovada,4.0,7.0,Not Found,2025-10-08 14:42:11
@@ -1128,19 +1127,19 @@ Toronto Blue Jays @ New York Yankees,MLB,Toronto Blue Jays,2025-10-08 19:08:56,W
 Fluminense @ Mirassol,Brazil Série A,Fluminense,2025-10-08 20:00:00,Pinnacle,3.49,14.03,Mirassol,2025-10-08 19:25:53
 Las Vegas Aces @ Phoenix Mercury,WNBA,Phoenix Mercury,2025-10-08 20:08:16,Caesars,13.0,138.86,Las Vegas Aces,2025-10-08 21:59:57
 Utah Jazz @ Houston Rockets,NBA Preseason,Utah Jazz,2025-10-08 20:11:00,Unibet (SE),11.5,45.96,Houston Rockets,2025-10-08 21:59:57
-Calgary Flames @ Edmonton Oilers,NHL,Calgary Flames,2025-10-08 22:10:00,Unibet (SE),4.35,38.61,Not Found,2025-10-08 21:59:57
-Los Angeles Kings @ Vegas Golden Knights,NHL,Los Angeles Kings,2025-10-08 22:10:00,Unibet (SE),3.9,32.09,Not Found,2025-10-08 21:59:57
-Philadelphia Phillies @ Los Angeles Dodgers,MLB,Philadelphia Phillies,2025-10-08 21:08:00,Pinnacle,3.76,31.9,Not Found,2025-10-08 21:59:57
+Calgary Flames @ Edmonton Oilers,NHL,Calgary Flames,2025-10-08 22:10:00,Unibet (SE),4.35,38.61,Calgary Flames,2025-10-08 21:59:57
+Los Angeles Kings @ Vegas Golden Knights,NHL,Los Angeles Kings,2025-10-08 22:10:00,Unibet (SE),3.9,32.09,Los Angeles Kings,2025-10-08 21:59:57
+Philadelphia Phillies @ Los Angeles Dodgers,MLB,Philadelphia Phillies,2025-10-08 21:08:00,Pinnacle,3.76,31.9,Philadelphia Phillies,2025-10-08 21:59:57
 Liberty Flames @ UTEP Miners,NCAAF,UTEP Miners,2025-10-08 20:05:00,Caesars,15.0,25.5,Liberty Flames,2025-10-08 21:59:57
 Missouri State Bears @ Middle Tennessee Blue Raiders,NCAAF,Middle Tennessee Blue Raiders,2025-10-08 19:36:00,Caesars,4.2,20.53,Not Found,2025-10-08 21:59:57
 Vila Nova @ América Mineiro,Brazil Série B,Vila Nova,2025-10-08 20:30:00,Paddy Power,12.0,9.37,Draw,2025-10-08 21:59:57
-Portland Trail Blazers @ Golden State Warriors,NBA Preseason,Portland Trail Blazers,2025-10-08 22:11:00,Bovada,3.3,103.61,Not Found,2025-10-08 23:06:44
-Toronto Raptors @ Sacramento Kings,NBA Preseason,Sacramento Kings,2025-10-08 22:11:00,MyBookie.ag,4.2,55.2,Not Found,2025-10-08 23:06:44
-Toronto FC @ Los Angeles FC,MLS,Draw,2025-10-08 22:41:00,Sky Bet,6.5,14.35,Not Found,2025-10-08 23:06:44
+Portland Trail Blazers @ Golden State Warriors,NBA Preseason,Portland Trail Blazers,2025-10-08 22:11:00,Bovada,3.3,103.61,Golden State Warriors,2025-10-08 23:06:44
+Toronto Raptors @ Sacramento Kings,NBA Preseason,Sacramento Kings,2025-10-08 22:11:00,MyBookie.ag,4.2,55.2,Toronto Raptors,2025-10-08 23:06:44
+Toronto FC @ Los Angeles FC,MLS,Draw,2025-10-08 22:41:00,Sky Bet,6.5,14.35,Los Angeles FC,2025-10-08 23:06:44
 Jessica Pegula @ Ekaterina Alexandrova,WTA Wuhan Open,Jessica Pegula,2025-10-08 23:08:00,Bovada,4.0,47.64,Not Found,2025-10-08 23:40:07
 Clara Tauson @ Jasmine Paolini,WTA Wuhan Open,Clara Tauson,2025-10-09 02:30:00,Bovada,2.3,26.12,Not Found,2025-10-08 23:40:07
 Liudmila Samsonova @ Aryna Sabalenka,WTA Wuhan Open,Liudmila Samsonova,2025-10-09 00:10:00,Unibet (IT),5.6,7.48,Not Found,2025-10-08 23:40:07
-Samsung Lions @ SSG Landers,KBO,Samsung Lions,2025-10-09 01:00:00,William Hill,2.25,21.76,Not Found,2025-10-09 01:31:03
+Samsung Lions @ SSG Landers,KBO,Samsung Lions,2025-10-09 01:00:00,William Hill,2.25,21.76,Samsung Lions,2025-10-09 01:31:03
 Iga Swiatek @ Belinda Bencic,WTA Wuhan Open,Belinda Bencic,2025-10-09 07:00:00,LowVig.ag,5.96,7.96,Not Found,2025-10-09 01:31:03
 Katerina Siniakova @ Iva Jović,WTA Wuhan Open,Iva Jović,2025-10-09 02:35:00,Marathon Bet,2.61,8.46,Not Found,2025-10-09 02:43:27
 Magdalena Frech @ Laura Siegemund,WTA Wuhan Open,Magdalena Frech,2025-10-09 02:35:00,LowVig.ag,2.13,8.18,Not Found,2025-10-09 02:59:11
