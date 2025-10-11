@@ -2,4 +2,6 @@ codebase/__pycache__/
 codebase/csv_editer.py
 codebase/reader.ipynb
 codebase/roi.py
+codebase/nc_bets.py
 .vscode/
+testing/temp.py

@@ -10,12 +10,10 @@ import unittest
 import numpy as np
 import pandas as pd
 from unittest.mock import patch
-import sys
-import os
 
 
 from codebase.find_bets.betting_strategies import (
-    _count_missing_vigfree_odds,
+    _missing_vigfree_odds_pct,
     analyze_average_edge_bets,
     analyze_zscore_outliers,
     analyze_modified_zscore_outliers,
@@ -23,6 +21,7 @@ from codebase.find_bets.betting_strategies import (
     find_random_bets
 )
 
+from codebase.find_bets.betting_configs import MIN_BOOKMAKERS,EXCHANGE_BLOCKLIST,MAX_MISSING_VF_PCT,MAX_ODDS,MAX_Z_SCORE
 
 class TestBettingStrategies(unittest.TestCase):
     
@@ -32,8 +31,8 @@ class TestBettingStrategies(unittest.TestCase):
         self.data = pd.read_csv('vf.csv')
 
 
-    def test_count_missing_vigfree_odds_within_limit(self):
-        """Test _count_missing_vigfree_odds when missing count is within limit."""
+    def test_missing_vigfree_odds_pct_within_limit(self):
+        """Test _missing_vigfree_odds_pct when missing count is within limit."""
         test_row = pd.Series({
             'Bookmaker1': 2.5,
             'Bookmaker2': 2.4,
@@ -44,13 +43,11 @@ class TestBettingStrategies(unittest.TestCase):
             'Vigfree Bookmaker2': 0.40,
             'Vigfree Bookmaker3': 0.37,   
             'Vigfree Bookmaker4': 0.37,   
-            'Vigfree Bookmaker5': np.nan   # Missing
+            'Vigfree Bookmaker5': 0.37
         })
         
         bookmaker_columns = ['Bookmaker1', 'Bookmaker2', 'Bookmaker3', 'Bookmaker4', 'Bookmaker5']
-        result = _count_missing_vigfree_odds(test_row, bookmaker_columns, max_missing=2)
-        
-        # 2 missing vig-free odds, max_missing=2, should return True
+        result = _missing_vigfree_odds_pct(test_row, bookmaker_columns, max_missing=MAX_MISSING_VF_PCT)
         self.assertTrue(result)
 
     def test_count_missing_vigfree_odds_exceeds_limit(self):

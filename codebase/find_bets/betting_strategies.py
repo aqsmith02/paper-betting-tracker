@@ -10,7 +10,7 @@ from typing import List
 import pandas as pd
 from .betting_configs import (
     EDGE_THRESHOLD,
-    MAX_MISSING_VIGFREE_ODDS,
+    MAX_MISSING_VF_PCT,
     Z_SCORE_THRESHOLD,
     MAX_Z_SCORE,
 )
@@ -18,7 +18,7 @@ from .data_processing import _find_bookmaker_columns
 import random
 
 
-def _count_missing_vigfree_odds(
+def _missing_vigfree_odds_pct(
     row: pd.Series, bookmaker_columns: List[str], max_missing: int
 ) -> bool:
     """
@@ -34,16 +34,21 @@ def _count_missing_vigfree_odds(
         bool: True if missing vig-free count is within limit, False otherwise.
     """
     missing_vigfree_count = 0
+    total_odds_count = 0
 
     for bookmaker in bookmaker_columns:
         if pd.notna(row[bookmaker]):  # Has odds
+            total_odds_count += 1
             vigfree_col = f"Vigfree {bookmaker}"
             if vigfree_col in row and pd.isna(
                 row[vigfree_col]
             ):  # Missing vig-free odds
                 missing_vigfree_count += 1
 
-    return missing_vigfree_count <= max_missing
+    if missing_vigfree_count/total_odds_count > max_missing:
+        return False
+    else:
+        return True
 
 
 def analyze_average_edge_bets(df: pd.DataFrame) -> pd.DataFrame:
@@ -65,8 +70,8 @@ def analyze_average_edge_bets(df: pd.DataFrame) -> pd.DataFrame:
 
     for _, row in df.iterrows():
         # Check if row has sufficient vig-free data
-        if not _count_missing_vigfree_odds(
-            row, bookmaker_columns, MAX_MISSING_VIGFREE_ODDS
+        if not _missing_vigfree_odds_pct(
+            row, bookmaker_columns, MAX_MISSING_VF_PCT
         ):
             edge_percentages.append(None)
             fair_odds_averages.append(None)
