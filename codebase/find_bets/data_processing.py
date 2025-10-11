@@ -79,27 +79,36 @@ def _add_metadata(
     df: pd.DataFrame, best_odds_bms: Optional[List[str]] = None
 ) -> pd.DataFrame:
     """
-    Add Best Odds, Best Bookmaker, Result, and Outcomes column.
-
-    Args:
-        df (pd.DataFrame): DataFrame containing odds data without exchange columns.
-
-    Returns:
-        df (pd.DataFrame): DataFrame containing odds data without exchange columns, as well as
-                        Best Odds, Best Bookmaker, Result, and Outcomes columns.
+    Add Best Odds, Best Bookmaker, Result, and Outcomes columns.
+    Handles missing bookmaker columns gracefully.
     """
     df = df.copy()
     bms = _find_bookmaker_columns(df)
 
     if best_odds_bms:
-        df["Best Odds"] = df[best_odds_bms].max(axis=1)
-        df["Best Bookmaker"] = df[best_odds_bms].idxmax(axis=1)
+        # Only include bookmaker columns that exist
+        existing_bms = [bm for bm in best_odds_bms if bm in df.columns]
+
+        if existing_bms:
+            df["Best Odds"] = df[existing_bms].max(axis=1)
+            df["Best Bookmaker"] = df[existing_bms].idxmax(axis=1)
+        else:
+            # Fallback if none exist
+            df["Best Odds"] = None
+            df["Best Bookmaker"] = None
     else:
-        df["Best Odds"] = df[bms].max(axis=1)
-        df["Best Bookmaker"] = df[bms].idxmax(axis=1)
+        if bms:
+            df["Best Odds"] = df[bms].max(axis=1)
+            df["Best Bookmaker"] = df[bms].idxmax(axis=1)
+        else:
+            df["Best Odds"] = None
+            df["Best Bookmaker"] = None
+
     df["Result"] = "Not Found"
     df["Outcomes"] = df.groupby("match")["team"].transform("count")
+
     return df
+
 
 
 def _clean_odds_data(df: pd.DataFrame) -> pd.DataFrame:
