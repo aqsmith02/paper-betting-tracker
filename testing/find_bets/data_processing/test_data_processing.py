@@ -18,6 +18,7 @@ from unittest.mock import patch
 from codebase.find_bets.data_processing import (
     _find_bookmaker_columns,
     _remove_exchanges,
+    _remove_non_target_bookmakers,
     _add_metadata,
     _clean_odds_data,
     _min_bookmaker_filter,
@@ -25,6 +26,7 @@ from codebase.find_bets.data_processing import (
     _all_outcomes_present_filter,
     _prettify_column_headers,
     process_odds_data,
+    process_target_odds_data,
     calculate_vigfree_probabilities,
 )
 
@@ -242,6 +244,24 @@ class TestDataProcessing(unittest.TestCase):
             set(bookmaker_cols_exclude_exchanges), set(expected_exclude_exchanges)
         )
 
+    def test_remove_non_target_bookmakers(self):
+        """Test _remove_non_target_bookmakers function."""
+        df = self.unprocessed
+        result_df = _remove_non_target_bookmakers(df)
+
+        # Check that only target bookmaker columns remain
+        remaining_bms = _find_bookmaker_columns(result_df)
+        expected_bms = [
+            "DraftKings",
+            "BetMGM",
+            "Caesars",
+            "FanDuel",
+            "Pinnacle",
+            "Fanatics",
+            "BetOnline.ag",
+        ]
+        self.assertEqual(set(remaining_bms), set(expected_bms))
+
     def test_add_metadata(self):
         """Test _add_metadata function."""
         df = self.pre_metadata_check
@@ -274,6 +294,30 @@ class TestDataProcessing(unittest.TestCase):
         self.assertEqual(result_df["Outcomes"].iloc[4], 3)
         self.assertEqual(result_df["Outcomes"].iloc[5], 3)
         self.assertEqual(result_df["Outcomes"].iloc[6], 3)
+
+    def test_add_metadata_with_best_odds_bms(self):
+        """Test _add_metadata function with best_odds_bms parameter."""
+        df = self.pre_metadata_check
+        best_odds_bms = ["DraftKings", "BetMGM", "Caesars", "FanDuel","Fanatics"]
+        result_df = _add_metadata(df, best_odds_bms=best_odds_bms)
+
+        # Check that metadata columns are added
+        self.assertIn("Best Odds", result_df.columns)
+        self.assertIn("Best Bookmaker", result_df.columns)
+        self.assertIn("Result", result_df.columns)
+        self.assertIn("Outcomes", result_df.columns)
+
+        # Check Best Odds calculation
+        self.assertTrue(np.isnan(result_df["Best Odds"].iloc[0]))  # No valid bookmaker in list
+        self.assertEqual(result_df["Best Odds"].iloc[2], 8.5)  # From Fanduel
+        self.assertEqual(result_df["Best Odds"].iloc[9], 36)  # From Fanduel
+        self.assertEqual(result_df["Best Odds"].iloc[14], 2.15)  # From Caesars
+
+        # Check Best Bookmaker identification
+        self.assertTrue(np.isnan(result_df["Best Bookmaker"].iloc[0]))  
+        self.assertEqual(result_df["Best Bookmaker"].iloc[2], "FanDuel")
+        self.assertEqual(result_df["Best Bookmaker"].iloc[9], "FanDuel")
+        self.assertEqual(result_df["Best Bookmaker"].iloc[14], "Caesars")
 
     def test_clean_odds_data(self):
         """Test _clean_odds_data function."""
@@ -426,6 +470,40 @@ class TestDataProcessing(unittest.TestCase):
         self.assertNotIn("Betfair", result_df.columns)
         self.assertNotIn("Matchbook", result_df.columns)
         self.assertNotIn("Betfair Sportsbook", result_df.columns)
+
+        # 2. Metadata should be added
+        self.assertIn("Best Odds", result_df.columns)
+        self.assertIn("Best Bookmaker", result_df.columns)
+        self.assertIn("Result", result_df.columns)
+        self.assertIn("Outcomes", result_df.columns)
+
+        # 3. Check data integrity
+        self.assertEqual(len(result_df), 20)
+
+        # 4. Column headers should be prettified
+        self.assertIn("Match", result_df.columns)
+        self.assertIn("League", result_df.columns)
+        self.assertIn("Start Time", result_df.columns)
+        self.assertIn("Team", result_df.columns)
+
+    def test_process_target_odds_data_integration(self):
+        """Test the complete process_odds_data pipeline with target bookmakers only."""
+        df = self.unprocessed
+        result_df = process_target_odds_data(df)
+
+        # Check that all processing steps were applied
+        # 1. Non-target bookmakers should be removed
+        remaining_bms = _find_bookmaker_columns(result_df)
+        expected_bms = [
+            "Draftkings",
+            "Betmgm",
+            "Caesars",
+            "Fanduel",
+            "Pinnacle",
+            "Fanatics",
+            "Betonline.Ag",
+        ]
+        self.assertEqual(set(remaining_bms), set(expected_bms))
 
         # 2. Metadata should be added
         self.assertIn("Best Odds", result_df.columns)
