@@ -115,7 +115,8 @@ def _process_game(game: Dict) -> List[Dict]:
         # Add each bookmaker's odds for this outcome
         for bm in bm_dicts:
             for bm_name, odds_dict in bm.items():
-                row[bm_name] = odds_dict[outcome_team]  # Odds for this outcome
+                row[bm_name] = odds_dict.get(outcome_team, None)  # None if outcome not found
+
 
         rows.append(row)
 
