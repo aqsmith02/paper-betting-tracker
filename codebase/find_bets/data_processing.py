@@ -9,7 +9,13 @@ Author: Andrew Smith
 import numpy as np
 import pandas as pd
 from typing import List, Optional
-from .betting_configs import MIN_BOOKMAKERS, MAX_ODDS, EXCHANGE_BLOCKLIST
+from .betting_configs import (
+    MIN_BOOKMAKERS,
+    MAX_ODDS,
+    EXCHANGE_BLOCKLIST,
+    TARGET_BMS,
+    NC_BMS,
+)
 
 
 def _find_bookmaker_columns(
@@ -52,7 +58,26 @@ def _remove_exchanges(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def _add_metadata(df: pd.DataFrame) -> pd.DataFrame:
+def _remove_non_target_bookmakers(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Remove bookmakers that are not in the target list.
+
+    Args:
+        df (pd.DataFrame): DataFrame containing odds data.
+
+    Returns:
+        df (pd.DataFrame): DataFrame containing odds data without non-no-commission bookmaker columns.
+    """
+    df = df.copy()
+    bookmakers = _find_bookmaker_columns(df)
+    cols_to_drop = [bm for bm in bookmakers if bm not in TARGET_BMS]
+    df = df.drop(columns=cols_to_drop)
+    return df
+
+
+def _add_metadata(
+    df: pd.DataFrame, best_odds_bms: Optional[List[str]] = None
+) -> pd.DataFrame:
     """
     Add Best Odds, Best Bookmaker, Result, and Outcomes column.
 
@@ -66,8 +91,12 @@ def _add_metadata(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
     bms = _find_bookmaker_columns(df)
 
-    df["Best Odds"] = df[bms].max(axis=1)
-    df["Best Bookmaker"] = df[bms].idxmax(axis=1)
+    if best_odds_bms:
+        df["Best Odds"] = df[best_odds_bms].max(axis=1)
+        df["Best Bookmaker"] = df[best_odds_bms].idxmax(axis=1)
+    else:
+        df["Best Odds"] = df[bms].max(axis=1)
+        df["Best Bookmaker"] = df[bms].idxmax(axis=1)
     df["Result"] = "Not Found"
     df["Outcomes"] = df.groupby("match")["team"].transform("count")
     return df
@@ -170,6 +199,25 @@ def process_odds_data(df: pd.DataFrame) -> pd.DataFrame:
     df = _clean_odds_data(df)
     df = _min_bookmaker_filter(df)
     df = _max_odds_filter(df)
+    df = _all_outcomes_present_filter(df)
+    df = _prettify_column_headers(df)
+    return df
+
+
+def process_target_odds_data(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Transform fetch_odds df into cleaned df for target bookmakers.
+
+    Args:
+        df (pd.DataFrame): DataFrame containing odds data.
+
+    Returns:
+        pd.DataFrame: Cleaned and validated DataFrame.
+    """
+    df = _remove_non_target_bookmakers(df)
+    df = _add_metadata(df, best_odds_bms=NC_BMS)
+    df = _clean_odds_data(df)
+    df = _min_bookmaker_filter(df)
     df = _all_outcomes_present_filter(df)
     df = _prettify_column_headers(df)
     return df

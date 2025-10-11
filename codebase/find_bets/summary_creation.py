@@ -36,7 +36,6 @@ def create_average_edge_summary(df: pd.DataFrame) -> pd.DataFrame:
                 "Result": row["Result"],
             }
         )
-
     return pd.DataFrame(summary_rows)
 
 

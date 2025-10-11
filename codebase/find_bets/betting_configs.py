@@ -7,12 +7,14 @@ Author: Andrew Smith
 """
 
 # Betting thresholds
-EDGE_THRESHOLD = 0.05
+EDGE_THRESHOLD = 0.02
 Z_SCORE_THRESHOLD = 2.0
 MAX_Z_SCORE = 6.0
 MIN_BOOKMAKERS = 5
 MAX_ODDS = 50
 MAX_MISSING_VF_PCT = 0.2
+TARGET_BMS = ["FanDuel", "DraftKings", "BetMGM", "Caesars", "Fanatics", "Pinnacle", "BetOnline.ag"]
+NC_BMS = ["FanDuel", "DraftKings", "BetMGM", "Caesars", "Fanatics"]
 
 # Formatting
 DATE_FORMAT = "%Y-%m-%d"

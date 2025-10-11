@@ -38,23 +38,18 @@ class BetFileManager:
     STRATEGY_INFO: Dict[str, Dict[str, List[str]]] = {
         "master_avg": {
             "strategy": ["Avg Edge Pct", "Fair Odds Avg"],
-            "scoring": ["Avg Edge Pct"],
         },
         "master_mod_zscore": {
-            "strategy": ["Modified Z Score"],
-            "scoring": ["Modified Z Score"],
+            "strategy": ["Modified Z Score", "Avg Edge Pct"],
         },
         "master_pin": {
             "strategy": ["Pinnacle Fair Odds", "Pin Edge Pct"],
-            "scoring": ["Pin Edge Pct"],
         },
         "master_zscore": {
-            "strategy": ["Z Score"],
-            "scoring": ["Z Score"],
+            "strategy": ["Z Score", "Avg Edge Pct"],
         },
         "master_random": {
             "strategy": ["Random Bet Odds"],
-            "scoring": ["Random Bet Odds"],
         },
     }
 
@@ -72,7 +67,7 @@ class BetFileManager:
         self.data_dir.mkdir(parents=True, exist_ok=True)
 
     def _get_columns(
-        self, filename: str, col_type: str = "scoring"
+        self, filename: str, col_type: str = "strategy"
     ) -> Optional[List[str]]:
         """
         Generalized column lookup for strategy or scoring columns.
@@ -184,7 +179,7 @@ class BetFileManager:
         return reordered_columns
 
     def save_best_bets_only(
-        self, summary_df: pd.DataFrame, filename: str
+        self, summary_df: pd.DataFrame, filename: str, score_column: str
     ) -> pd.DataFrame:
         """
         Save only the best bet per match (highest scoring bet).
@@ -199,12 +194,12 @@ class BetFileManager:
         if summary_df.empty:
             return pd.DataFrame()
 
-        score_column = self._get_columns(filename, "scoring")
         best_bets = summary_df.sort_values(
             score_column, ascending=False
         ).drop_duplicates(subset=["Match", "Start Time"], keep="first")
 
         self._append_unique_bets(best_bets, filename)
+
         return best_bets
 
     def save_full_betting_data(
