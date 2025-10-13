@@ -38,16 +38,7 @@ jobs:
         git config user.email "github-actions@github.com"
 
         CSV_LIST="
-          codebase/data/master_avg_bets.csv
-          codebase/data/master_avg_full.csv
-          codebase/data/master_mod_zscore_bets.csv
-          codebase/data/master_mod_zscore_full.csv
-          codebase/data/master_pin_bets.csv
-          codebase/data/master_pin_full.csv
-          codebase/data/master_zscore_bets.csv
-          codebase/data/master_zscore_full.csv
-          codebase/data/master_random_bets.csv
-          codebase/data/master_random_full.csv
+          codebase/data/*.csv
         "
 
         git add $CSV_LIST
