@@ -42,11 +42,21 @@ This project tracks sports bets and results using Python scripts and CSV files. 
 │   │   ├── results_configs.py    # Configuration for results fetching
 │   │   ├── sportsdb_results.py   # Functions for pulling results from TheSportsDB
 │   │   └── theodds_results.py    # Functions for pulling results from The-Odds-API
-│   ├── data/                 # Contains all bet and result CSV files
+│   ├── data/                 # Contains all bet and result CSV files. Files with "nc" indicate only bookmakers in NC are used for bet-finding.
 │   │   ├── master_avg_bets.csv
 │   │   ├── master_avg_full.csv
 │   │   ├── master_mod_zscore_bets.csv
 │   │   ├── master_mod_zscore_full.csv
+│   │   ├── master_nc_avg_bets.csv
+│   │   ├── master_nc_avg_full.csv
+│   │   ├── master_nc_mod_zscore_bets.csv
+│   │   ├── master_nc_mod_zscore_full.csv
+│   │   ├── master_nc_pin_bets.csv
+│   │   ├── master_nc_pin_full.csv
+│   │   ├── master_nc_random_bets.csv
+│   │   ├── master_nc_random_full.csv
+│   │   ├── master_nc_zscore_bets.csv
+│   │   ├── master_nc_zscore_full.csv
 │   │   ├── master_pin_bets.csv
 │   │   ├── master_pin_full.csv
 │   │   ├── master_random_bets.csv
