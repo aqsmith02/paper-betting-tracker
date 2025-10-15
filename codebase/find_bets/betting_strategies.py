@@ -19,7 +19,7 @@ import random
 
 
 def _missing_vigfree_odds_pct(
-    row: pd.Series, bookmaker_columns: List[str], max_missing: int
+    row: pd.Series, bookmaker_columns: List[str], max_missing: float
 ) -> bool:
     """
     Check if row has too many bookmakers with odds but no vig-free probability (then average of vf

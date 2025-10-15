@@ -90,7 +90,6 @@ def run_betting_strategy(
         # Run the NC analysis
         nc_analysis_result = strategy.analysis_func(nc_df)
         nc_summary = strategy.summary_func(nc_analysis_result)
-        nc_summary.to_csv(f"nc_{strategy.name}.csv", index=False)  # Debugging line
 
         if nc_summary.empty:
             print(f"No NC profitable bets found for {strategy.name}")

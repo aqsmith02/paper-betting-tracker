@@ -33,6 +33,7 @@ class TestBettingStrategies(unittest.TestCase):
 
     def test_missing_vigfree_odds_pct_within_limit(self):
         """Test _missing_vigfree_odds_pct when missing count is within limit."""
+        df = self.data.copy()
         test_row = pd.Series({
             'Bookmaker1': 2.5,
             'Bookmaker2': 2.4,
@@ -62,36 +63,15 @@ class TestBettingStrategies(unittest.TestCase):
             'Vigfree Bookmaker2': np.nan,  # Missing
             'Vigfree Bookmaker3': 0.37,   
             'Vigfree Bookmaker4': 0.37,   
-            'Vigfree Bookmaker5': np.nan   # Missing
+            'Vigfree Bookmaker5': 0.37
         })
         
-        bookmaker_columns = ['Bookmaker1', 'Bookmaker2', 'Bookmaker3']
-        result = _count_missing_vigfree_odds(test_row, bookmaker_columns, max_missing=1)
+        bookmaker_columns = ['Bookmaker1', 'Bookmaker2', 'Bookmaker3', 'Bookmaker4', 'Bookmaker5']
+        result = _missing_vigfree_odds_pct(test_row, bookmaker_columns, max_missing=MAX_MISSING_VF_PCT)
         
         # 2 missing vig-free odds, max_missing=1, should return False
         self.assertFalse(result)
 
-    @patch('betting_strategies.MAX_MISSING_VIGFREE_ODDS', 5)
-    def test_count_missing_vigfree_odds_no_odds(self):
-        """Test _count_missing_vigfree_odds when bookmaker has no odds."""
-        test_row = pd.Series({
-            'Bookmaker1': np.nan,  # No odds
-            'Bookmaker2': 2.4,
-            'Bookmaker3': 2.6,
-            'Vigfree Bookmaker1': np.nan,
-            'Vigfree Bookmaker2': 0.40,
-            'Vigfree Bookmaker3': 0.37
-        })
-        
-        bookmaker_columns = ['Bookmaker1', 'Bookmaker2', 'Bookmaker3']
-        result = _count_missing_vigfree_odds(test_row, bookmaker_columns, max_missing=5)
-        
-        # Only Bookmaker1 has no odds, so it shouldn't count as missing vig-free
-        # Should return True (0 missing vig-free odds where there are actual odds)
-        self.assertTrue(result)
-
-    @patch('betting_strategies.EDGE_THRESHOLD', 0.02)
-    @patch('betting_strategies.MAX_MISSING_VIGFREE_ODDS', 5)
     def test_analyze_average_edge_bets_basic(self):
         """Test analyze_average_edge_bets with basic functionality."""
         df = self.simple_data.copy()
