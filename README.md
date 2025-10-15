@@ -64,15 +64,25 @@ This project tracks sports bets and results using Python scripts and CSV files. 
 │   │   ├── master_zscore_bets.csv
 │   │   └── master_zscore_full.csv
 │   └── constants.py          # Shared constants across packages
-│   └── __init__.py           # 
+│   └── __init__.py           
 ├── testing/                  # Test suite for all packages (UNDER CONSTRUCTION)
-│   ├── fetch_odds/           # Tests for fetch_odds package
+│   ├── fetch_odds/          
 │   │   ├── test_fetch_odds_configs.py
 │   │   └── test_fetch_odds.py
-│   └── find_bets/            # Tests for find_bets package
-│       ├── test_data_processing.py
-│       ├── unprocessed.csv   # Test data file
-│       └── processed.csv     # Test data file
+│   └── find_bets/            
+│       ├── betting_strategies/
+│       │   ├── test_betting_strategies.py
+│       │   └── vf.csv
+│       └── data_processing/
+│       │   ├── pre_clean.csv
+│       │   ├── pre_max_odds_check.csv
+│       │   ├── pre_metadata.csv
+│       │   ├── pre_min_bookmaker_check.csv
+│       │   ├── pre_outcome_check.csv
+│       │   ├── pre_prettify.csv
+│       │   ├── processed.csv
+│       │   ├── test_data_processing.py
+│       │   └── unprocessed.csv
 ├── .github/                  # GitHub Actions workflows for automated running
 │   └── workflows/
 │       ├── hourly-bet-finder.yml
@@ -97,7 +107,7 @@ This project tracks sports bets and results using Python scripts and CSV files. 
    ```
 
 ## Automation
-- GitHub Actions workflows automatically runs bet finding script 2 times an hour and results updating script 1 time every 6 hours.
+- GitHub Actions workflows automatically runs bet finding script 3 times an hour and results updating script 1 time every 6 hours.
 - Updated CSVs are committed to the repository.
 
 ## Author
