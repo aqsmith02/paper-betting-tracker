@@ -34,10 +34,10 @@ class BetFileManager:
     Manages CSV file operations for betting data.
     """
 
-    # Central lookup table for both strategy + scoring columns
+    # Central lookup table for both strategy columns
     STRATEGY_INFO: Dict[str, Dict[str, List[str]]] = {
         "master_avg": {
-            "strategy": ["Avg Edge Pct", "Fair Odds Avg"],
+            "strategy": ["Fair Odds Avg", "Avg Edge Pct"],
         },
         "master_mod_zscore": {
             "strategy": ["Modified Z Score", "Avg Edge Pct"],
@@ -49,6 +49,21 @@ class BetFileManager:
             "strategy": ["Z Score", "Avg Edge Pct"],
         },
         "master_random": {
+            "strategy": ["Random Bet Odds"],
+        },
+        "master_nc_avg": {
+            "strategy": ["Avg Edge Pct", "Fair Odds Avg"],
+        },
+        "master_nc_mod_zscore": {
+            "strategy": ["Modified Z Score", "Avg Edge Pct"],
+        },
+        "master_nc_pin": {
+            "strategy": ["Pinnacle Fair Odds", "Pin Edge Pct"],
+        },
+        "master_nc_zscore": {
+            "strategy": ["Z Score", "Avg Edge Pct"],
+        },
+        "master_nc_random": {
             "strategy": ["Random Bet Odds"],
         },
     }
