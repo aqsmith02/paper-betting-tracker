@@ -119,3 +119,35 @@ jobs:
           echo "================================================"
           git diff --diff-filter=U
           echo ""
+          
+          echo "================================================"
+          echo "CONFLICTED FILE CONTENTS (first/last 100 lines):"
+          echo "================================================"
+          for file in $(git diff --name-only --diff-filter=U); do
+            echo "=== $file (first 100) ==="
+            head -n 100 "$file"
+            echo ""
+            echo "=== $file (last 100) ==="
+            tail -n 100 "$file"
+            echo ""
+          done
+          
+          echo "================================================"
+          echo "GIT STATUS:"
+          echo "================================================"
+          git status
+          echo ""
+          
+          git rebase --abort
+          exit 1
+        fi
+        
+        echo "✅ Rebase successful"
+        echo ""
+        
+        echo "================================================"
+        echo "PUSHING TO REMOTE"
+        echo "================================================"
+        git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/aqsmith02/paper-betting-tracker.git HEAD:master
+        
+        echo "✅✅✅ Successfully pushed changes ✅✅✅"
