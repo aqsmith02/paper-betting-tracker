@@ -131,7 +131,7 @@ Tennessee Volunteers @ Alabama Crimson Tide,Tennessee Volunteers,2025-10-18 19:4
 Nashville Predators @ Winnipeg Jets,Nashville Predators,2025-10-18 19:21:18,NHL,8.58,11.0,12.0,12.0,12.0,10.5,,,8.94,34.16,12.0,FanDuel,Winnipeg Jets,2,Not Found,2025-10-18 20:51:51
 Dallas Stars @ St Louis Blues,Dallas Stars,2025-10-18 19:08:49,NHL,6.63,7.4,8.0,8.5,8.0,8.25,,,6.92,22.84,8.5,FanDuel,Not Found,2,Not Found,2025-10-18 20:51:51
 New York Rangers @ Montréal Canadiens,New York Rangers,2025-10-18 19:15:21,NHL,3.43,3.4,3.6,4.0,3.5,3.8,,,3.6,11.16,4.0,FanDuel,New York Rangers,2,Not Found,2025-10-18 20:51:51
-Texas Longhorns @ Kentucky Wildcats,Texas Longhorns,2025-10-18 19:10:43,NCAAF,1.14,1.62,1.95,2.18,2.05,1.59,,,1.2,82.14,2.18,FanDuel,API Error,2,Not Found,2025-10-18 22:43:57
+Texas Longhorns @ Kentucky Wildcats,Texas Longhorns,2025-10-18 19:10:43,NCAAF,1.14,1.62,1.95,2.18,2.05,1.59,,,1.2,82.14,2.18,FanDuel,Not Found,2,Not Found,2025-10-18 22:43:57
 Carolina Hurricanes @ Los Angeles Kings,Carolina Hurricanes,2025-10-18 21:08:59,NHL,1.1,1.29,1.24,1.26,1.24,1.31,,,1.15,13.89,1.31,BetMGM,Carolina Hurricanes,2,Not Found,2025-10-18 22:43:57
 Boston Bruins @ Colorado Avalanche,Boston Bruins,2025-10-18 21:08:39,NHL,4.9,5.0,5.5,5.3,5.75,4.75,,,5.12,12.36,5.75,Fanatics,Colorado Avalanche,2,Not Found,2025-10-18 22:43:57
 Florida State Seminoles @ Stanford Cardinal,Florida State Seminoles,2025-10-18 22:35:21,NCAAF,1.11,1.11,1.19,1.23,1.18,1.22,1.11,,1.15,7.01,1.23,FanDuel,Stanford Cardinal,2,Not Found,2025-10-18 22:43:57
@@ -146,12 +146,12 @@ Philadelphia Eagles @ Minnesota Vikings,Minnesota Vikings,2025-10-19 13:02:38,NF
 New Orleans Saints @ Chicago Bears,Chicago Bears,2025-10-19 13:02:33,NFL,1.49,1.59,1.53,1.56,1.56,1.57,1.48,,1.53,3.9,1.59,Caesars,Chicago Bears,2,Not Found,2025-10-19 13:08:04
 Miami Dolphins @ Cleveland Browns,Miami Dolphins,2025-10-19 13:02:25,NFL,2.05,8.5,7.5,8.5,7.5,7.75,,,2.13,298.58,8.5,FanDuel,Cleveland Browns,2,Not Found,2025-10-19 14:12:30
 New England Patriots @ Tennessee Titans,Tennessee Titans,2025-10-19 13:03:23,NFL,2.56,2.75,2.9,2.9,3.1,2.85,,,2.68,15.49,3.1,Fanatics,New England Patriots,2,Not Found,2025-10-19 14:12:30
-Indianapolis Colts @ Los Angeles Chargers,Los Angeles Chargers,2025-10-19 16:05:38,NFL,1.74,1.91,1.95,1.93,1.91,1.91,1.68,,1.78,9.53,1.95,DraftKings,API Error,2,Not Found,2025-10-19 16:10:02
+Indianapolis Colts @ Los Angeles Chargers,Los Angeles Chargers,2025-10-19 16:05:38,NFL,1.74,1.91,1.95,1.93,1.91,1.91,1.68,,1.78,9.53,1.95,DraftKings,Indianapolis Colts,2,Not Found,2025-10-19 16:10:02
 Edmonton Oilers @ Detroit Red Wings,Edmonton Oilers,2025-10-19 15:10:19,NHL,2.84,6.0,7.5,8.5,8.0,7.75,,,2.97,185.98,8.5,FanDuel,Detroit Red Wings,2,Not Found,2025-10-19 16:37:36
-Washington Commanders @ Dallas Cowboys,Washington Commanders,2025-10-19 16:25:20,NFL,2.07,3.2,2.95,3.0,2.85,3.25,2.05,,2.12,52.94,3.25,BetMGM,API Error,2,Not Found,2025-10-19 16:37:36
-Green Bay Packers @ Arizona Cardinals,Green Bay Packers,2025-10-19 16:25:23,NFL,1.28,1.32,1.32,1.32,1.35,1.33,1.32,,1.32,2.46,1.35,Fanatics,API Error,2,Not Found,2025-10-19 16:37:36
-New York Giants @ Denver Broncos,Denver Broncos,2025-10-19 16:05:30,NFL,1.7,2.75,2.75,2.72,2.65,2.75,,,1.77,55.43,2.75,DraftKings,API Error,2,Not Found,2025-10-19 17:08:02
-Boston Bruins @ Utah Mammoth,Boston Bruins,2025-10-19 19:08:47,NHL,4.06,3.9,4.4,4.3,4.0,4.1,,,4.25,3.58,4.4,DraftKings,API Error,2,Not Found,2025-10-19 19:35:30
+Washington Commanders @ Dallas Cowboys,Washington Commanders,2025-10-19 16:25:20,NFL,2.07,3.2,2.95,3.0,2.85,3.25,2.05,,2.12,52.94,3.25,BetMGM,Dallas Cowboys,2,Not Found,2025-10-19 16:37:36
+Green Bay Packers @ Arizona Cardinals,Green Bay Packers,2025-10-19 16:25:23,NFL,1.28,1.32,1.32,1.32,1.35,1.33,1.32,,1.32,2.46,1.35,Fanatics,Green Bay Packers,2,Not Found,2025-10-19 16:37:36
+New York Giants @ Denver Broncos,Denver Broncos,2025-10-19 16:05:30,NFL,1.7,2.75,2.75,2.72,2.65,2.75,,,1.77,55.43,2.75,DraftKings,Denver Broncos,2,Not Found,2025-10-19 17:08:02
+Boston Bruins @ Utah Mammoth,Boston Bruins,2025-10-19 19:08:47,NHL,4.06,3.9,4.4,4.3,4.0,4.1,,,4.25,3.58,4.4,DraftKings,Utah Mammoth,2,Not Found,2025-10-19 19:35:30
 Atlanta Falcons @ San Francisco 49ers,San Francisco 49ers,2025-10-19 20:22:59,NFL,1.82,2.25,2.24,2.4,2.25,2.35,,,1.91,25.95,2.4,FanDuel,San Francisco 49ers,2,Not Found,2025-10-19 20:50:19
 Seattle Mariners @ Toronto Blue Jays,Toronto Blue Jays,2025-10-19 20:04:00,MLB,1.14,1.31,1.3,1.32,1.25,1.29,,,1.2,10.41,1.32,FanDuel,Toronto Blue Jays,2,Not Found,2025-10-19 20:50:19
 Hokkaido Nippon-Ham Fighters @ Fukuoka SoftBank Hawks,Hokkaido Nippon-Ham Fighters,2025-10-20 05:00:00,NPB,4.77,4.2,6.75,7.3,5.4,8.25,,Not Found,5.04,63.61,8.25,BetMGM,Not Found,2,,2025-10-20 07:08:54

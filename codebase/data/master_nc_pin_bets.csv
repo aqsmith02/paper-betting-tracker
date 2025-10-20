@@ -131,7 +131,7 @@ Tennessee Volunteers @ Alabama Crimson Tide,NCAAF,Tennessee Volunteers,2025-10-1
 Nashville Predators @ Winnipeg Jets,NHL,Nashville Predators,2025-10-18 19:21:18,FanDuel,12.0,8.94,34.16,Winnipeg Jets,2025-10-18 20:51:51
 Dallas Stars @ St Louis Blues,NHL,Dallas Stars,2025-10-18 19:08:49,FanDuel,8.5,6.92,22.84,Not Found,2025-10-18 20:51:51
 New York Rangers @ Montréal Canadiens,NHL,New York Rangers,2025-10-18 19:15:21,FanDuel,4.0,3.6,11.16,New York Rangers,2025-10-18 20:51:51
-Texas Longhorns @ Kentucky Wildcats,NCAAF,Texas Longhorns,2025-10-18 19:10:43,FanDuel,2.18,1.2,82.14,API Error,2025-10-18 22:43:57
+Texas Longhorns @ Kentucky Wildcats,NCAAF,Texas Longhorns,2025-10-18 19:10:43,FanDuel,2.18,1.2,82.14,Not Found,2025-10-18 22:43:57
 Carolina Hurricanes @ Los Angeles Kings,NHL,Carolina Hurricanes,2025-10-18 21:08:59,BetMGM,1.31,1.15,13.89,Carolina Hurricanes,2025-10-18 22:43:57
 Boston Bruins @ Colorado Avalanche,NHL,Boston Bruins,2025-10-18 21:08:39,Fanatics,5.75,5.12,12.36,Colorado Avalanche,2025-10-18 22:43:57
 Florida State Seminoles @ Stanford Cardinal,NCAAF,Florida State Seminoles,2025-10-18 22:35:21,FanDuel,1.23,1.15,7.01,Stanford Cardinal,2025-10-18 22:43:57
@@ -146,12 +146,12 @@ Philadelphia Eagles @ Minnesota Vikings,NFL,Minnesota Vikings,2025-10-19 13:02:3
 New Orleans Saints @ Chicago Bears,NFL,Chicago Bears,2025-10-19 13:02:33,Caesars,1.59,1.53,3.9,Chicago Bears,2025-10-19 13:08:03
 Miami Dolphins @ Cleveland Browns,NFL,Miami Dolphins,2025-10-19 13:02:25,FanDuel,8.5,2.13,298.58,Cleveland Browns,2025-10-19 14:12:30
 New England Patriots @ Tennessee Titans,NFL,Tennessee Titans,2025-10-19 13:03:23,Fanatics,3.1,2.68,15.49,New England Patriots,2025-10-19 14:12:30
-Indianapolis Colts @ Los Angeles Chargers,NFL,Los Angeles Chargers,2025-10-19 16:05:38,DraftKings,1.95,1.78,9.53,API Error,2025-10-19 16:10:02
+Indianapolis Colts @ Los Angeles Chargers,NFL,Los Angeles Chargers,2025-10-19 16:05:38,DraftKings,1.95,1.78,9.53,Indianapolis Colts,2025-10-19 16:10:02
 Edmonton Oilers @ Detroit Red Wings,NHL,Edmonton Oilers,2025-10-19 15:10:19,FanDuel,8.5,2.97,185.98,Detroit Red Wings,2025-10-19 16:37:36
-Washington Commanders @ Dallas Cowboys,NFL,Washington Commanders,2025-10-19 16:25:20,BetMGM,3.25,2.12,52.94,API Error,2025-10-19 16:37:36
-Green Bay Packers @ Arizona Cardinals,NFL,Green Bay Packers,2025-10-19 16:25:23,Fanatics,1.35,1.32,2.46,API Error,2025-10-19 16:37:36
-New York Giants @ Denver Broncos,NFL,Denver Broncos,2025-10-19 16:05:30,DraftKings,2.75,1.77,55.43,API Error,2025-10-19 17:08:02
-Boston Bruins @ Utah Mammoth,NHL,Boston Bruins,2025-10-19 19:08:47,DraftKings,4.4,4.25,3.58,API Error,2025-10-19 19:35:30
+Washington Commanders @ Dallas Cowboys,NFL,Washington Commanders,2025-10-19 16:25:20,BetMGM,3.25,2.12,52.94,Dallas Cowboys,2025-10-19 16:37:36
+Green Bay Packers @ Arizona Cardinals,NFL,Green Bay Packers,2025-10-19 16:25:23,Fanatics,1.35,1.32,2.46,Green Bay Packers,2025-10-19 16:37:36
+New York Giants @ Denver Broncos,NFL,Denver Broncos,2025-10-19 16:05:30,DraftKings,2.75,1.77,55.43,Denver Broncos,2025-10-19 17:08:02
+Boston Bruins @ Utah Mammoth,NHL,Boston Bruins,2025-10-19 19:08:47,DraftKings,4.4,4.25,3.58,Utah Mammoth,2025-10-19 19:35:30
 Atlanta Falcons @ San Francisco 49ers,NFL,San Francisco 49ers,2025-10-19 20:22:59,FanDuel,2.4,1.91,25.95,San Francisco 49ers,2025-10-19 20:50:18
 Seattle Mariners @ Toronto Blue Jays,MLB,Toronto Blue Jays,2025-10-19 20:04:00,FanDuel,1.32,1.2,10.41,Toronto Blue Jays,2025-10-19 20:50:18
 Hokkaido Nippon-Ham Fighters @ Fukuoka SoftBank Hawks,NPB,Hokkaido Nippon-Ham Fighters,2025-10-20 05:00:00,BetMGM,8.25,5.04,63.61,Not Found,2025-10-20 07:08:54
