@@ -185,6 +185,7 @@ class BetFileManager:
             "Best Bookmaker",
             "Result",
             "Outcomes",
+            "Event ID",
             "Scrape Time",
         ]
 
