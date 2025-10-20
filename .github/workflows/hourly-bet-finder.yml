@@ -48,4 +48,4 @@ jobs:
 
         git pull --rebase origin master
 
-        git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/asmith7654/paper-betting-tracker.git HEAD:master
+        git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/aqsmith02/paper-betting-tracker.git HEAD:master
