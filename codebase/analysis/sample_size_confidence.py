@@ -112,7 +112,11 @@ def simulate_all_files():
         odds_col_name = STRATEGY_INFO[file]["odds"]
         odds = df[odds_col_name]
         edge_col_name = STRATEGY_INFO[file]["edge"]
-        edge = df[edge_col_name]
+        if edge_col_name == "":
+            # Create a list/column of zeros of the same length as odds
+            edge = [0] * len(odds)
+        else:
+            edge = df[edge_col_name]
         roi_dist = simulate_profit_distribution(odds, edge, n_sims=100000)
 
         # Summary stats
