@@ -2,7 +2,7 @@ name: Bet Finder
 
 on:
   schedule:
-    - cron: "7,26,54 * * * *"
+    - cron: "4,12,20,28,36,44,52 * * * *"
   workflow_dispatch:
 
 permissions:
