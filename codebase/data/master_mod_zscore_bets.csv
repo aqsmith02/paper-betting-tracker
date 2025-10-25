@@ -1540,7 +1540,6 @@ Colorado Avalanche @ Utah Mammoth,NHL,Colorado Avalanche,2025-10-21 22:20:46,Coo
 IF Gnistan @ FC Inter Turku,Veikkausliiga - Finland,Draw,2025-10-22 11:00:00,Coolbet,5.65,3.15,3.87,FC Inter Turku,2025-10-21 22:24:56
 Golden State Warriors @ Los Angeles Lakers,NBA,Los Angeles Lakers,2025-10-21 22:17:41,FanDuel,2.4,2.29,2.03,Golden State Warriors,2025-10-21 22:24:56
 Santos Laguna @ Mazatlán FC,Liga MX,Santos Laguna,2025-10-21 23:05:00,Coolbet,9.0,2.7,20.42,Draw,2025-10-21 23:32:07
-South Africa @ Pakistan,Test Matches,Draw,2025-10-22 01:00:00,Unibet,12.0,2.02,8.53,Not Found,2025-10-22 01:10:52
 Hanwha Eagles @ Samsung Lions,KBO,Hanwha Eagles,2025-10-22 05:30:00,Unibet,2.95,2.78,5.63,Samsung Lions,2025-10-22 02:15:58
 Afghanistan @ Zimbabwe,Test Matches,Draw,2025-10-22 04:00:00,William Hill,41.0,2.7,31.94,Not Found,2025-10-22 04:15:48
 Perth Wildcats @ Cairns Taipans,NBL,Cairns Taipans,2025-10-22 04:36:00,Unibet,9.5,2.02,9.37,Perth Wildcats,2025-10-22 05:12:49
@@ -1662,48 +1661,48 @@ Yunnan Yukun @ Meizhou Hakka,Super League - China,Yunnan Yukun,2025-10-24 07:35:
 Sri Lanka @ Pakistan,ICC Women's World Cup,Pakistan,2025-10-24 05:30:00,Pinnacle,2.97,3.48,4.72,Not Found,2025-10-24 02:39:04
 Shenzhen Peng City FC @ Wuhan Three Towns,Super League - China,Shenzhen Peng City FC,2025-10-24 07:35:00,Pinnacle,3.39,3.31,5.46,Shenzhen Peng City FC,2025-10-24 02:53:05
 Melbourne Victory @ Newcastle Jets FC,A-League,Melbourne Victory,2025-10-24 04:35:00,Coolbet,10.0,2.02,15.97,Not Found,2025-10-24 04:58:35
-Karlsruher SC @ Greuther Fürth,Bundesliga 2 - Germany,Karlsruher SC,2025-10-24 12:30:00,Pinnacle,2.35,4.05,5.75,Not Found,2025-10-24 11:38:26
-FC Nordsjaelland @ AGF Aarhus,Denmark Superliga,FC Nordsjaelland,2025-10-24 13:00:00,Pinnacle,4.55,3.04,2.69,Not Found,2025-10-24 11:38:26
-HPK @ KooKoo,Liiga,Draw,2025-10-24 11:30:00,Coolbet,5.0,2.7,5.64,Not Found,2025-10-24 11:38:26
-SV Darmstadt 98 @ FC Schalke 04,Bundesliga 2 - Germany,SV Darmstadt 98,2025-10-24 12:30:00,Tipico,3.8,2.8,2.03,Not Found,2025-10-24 11:49:22
-Ässät @ Lukko,Liiga,Ässät,2025-10-24 11:30:00,Tipico,6.0,5.78,131.6,Not Found,2025-10-24 11:57:09
-Ilves @ Tappara,Liiga,Draw,2025-10-24 11:30:00,Tipico,3.8,3.88,2.4,Not Found,2025-10-24 12:28:14
-Zagłębie Lubin @ Nieciecza,Ekstraklasa - Poland,Nieciecza,2025-10-24 12:00:00,DraftKings,3.0,2.02,2.8,Not Found,2025-10-24 12:28:14
-Kayserispor @ Fatih Karagümrük,Turkey Super League,Kayserispor,2025-10-24 13:00:00,Tipico,3.4,4.72,2.46,Not Found,2025-10-24 12:47:22
-IF Björklöven @ IF Troja-Ljungby,HockeyAllsvenskan,Draw,2025-10-24 13:00:00,Marathon Bet,5.2,2.36,5.12,Not Found,2025-10-24 12:47:22
-TPS @ Jukurit,Liiga,Draw,2025-10-24 11:30:00,Winamax (DE),14.0,2.01,10.48,Not Found,2025-10-24 12:47:22
-Vimmerby HC @ Nybro Vikings IF,HockeyAllsvenskan,Draw,2025-10-24 13:00:00,Coolbet,4.5,4.95,2.29,Not Found,2025-10-24 13:19:26
-IK Oskarshamn @ Kalmar HC,HockeyAllsvenskan,Draw,2025-10-24 13:00:00,Coolbet,5.0,4.38,3.87,Not Found,2025-10-24 13:34:09
+Karlsruher SC @ Greuther Fürth,Bundesliga 2 - Germany,Karlsruher SC,2025-10-24 12:30:00,Pinnacle,2.35,4.05,5.75,Karlsruher SC,2025-10-24 11:38:26
+FC Nordsjaelland @ AGF Aarhus,Denmark Superliga,FC Nordsjaelland,2025-10-24 13:00:00,Pinnacle,4.55,3.04,2.69,AGF Aarhus,2025-10-24 11:38:26
+HPK @ KooKoo,Liiga,Draw,2025-10-24 11:30:00,Coolbet,5.0,2.7,5.64,API Error,2025-10-24 11:38:26
+SV Darmstadt 98 @ FC Schalke 04,Bundesliga 2 - Germany,SV Darmstadt 98,2025-10-24 12:30:00,Tipico,3.8,2.8,2.03,FC Schalke 04,2025-10-24 11:49:22
+Ässät @ Lukko,Liiga,Ässät,2025-10-24 11:30:00,Tipico,6.0,5.78,131.6,API Error,2025-10-24 11:57:09
+Ilves @ Tappara,Liiga,Draw,2025-10-24 11:30:00,Tipico,3.8,3.88,2.4,API Error,2025-10-24 12:28:14
+Zagłębie Lubin @ Nieciecza,Ekstraklasa - Poland,Nieciecza,2025-10-24 12:00:00,DraftKings,3.0,2.02,2.8,Draw,2025-10-24 12:28:14
+Kayserispor @ Fatih Karagümrük,Turkey Super League,Kayserispor,2025-10-24 13:00:00,Tipico,3.4,4.72,2.46,Draw,2025-10-24 12:47:22
+IF Björklöven @ IF Troja-Ljungby,HockeyAllsvenskan,Draw,2025-10-24 13:00:00,Marathon Bet,5.2,2.36,5.12,API Error,2025-10-24 12:47:22
+TPS @ Jukurit,Liiga,Draw,2025-10-24 11:30:00,Winamax (DE),14.0,2.01,10.48,API Error,2025-10-24 12:47:22
+Vimmerby HC @ Nybro Vikings IF,HockeyAllsvenskan,Draw,2025-10-24 13:00:00,Coolbet,4.5,4.95,2.29,API Error,2025-10-24 13:19:26
+IK Oskarshamn @ Kalmar HC,HockeyAllsvenskan,Draw,2025-10-24 13:00:00,Coolbet,5.0,4.38,3.87,Kalmar HC,2025-10-24 13:34:09
 Stade Lavallois @ SC Bastia,Ligue 2 - France,Stade Lavallois,2025-10-24 14:00:00,Bovada,4.3,3.6,11.66,Not Found,2025-10-24 13:34:09
-GWD Minden @ ThSV Eisenach,Handball-Bundesliga,GWD Minden,2025-10-24 13:00:10,Nordic Bet,4.2,2.47,23.46,Not Found,2025-10-24 13:34:09
+GWD Minden @ ThSV Eisenach,Handball-Bundesliga,GWD Minden,2025-10-24 13:00:10,Nordic Bet,4.2,2.47,23.46,ThSV Eisenach,2025-10-24 13:34:09
 Fenerbahce SK @ Anadolu Efes,Basketball Euroleague,Anadolu Efes,2025-10-24 13:31:00,LowVig.ag,1.88,2.7,13.93,Not Found,2025-10-24 13:44:06
-Alemannia Aachen @ Wehen Wiesbaden,3. Liga - Germany,Wehen Wiesbaden,2025-10-24 13:00:00,Winamax (DE),19.0,2.02,17.61,Not Found,2025-10-24 13:51:53
-Widzew Łódź @ Motor Lublin,Ekstraklasa - Poland,Motor Lublin,2025-10-24 14:30:00,Pinnacle,3.11,4.86,3.02,Not Found,2025-10-24 14:00:11
-NAC Breda @ Heerenveen,Dutch Eredivisie,NAC Breda,2025-10-24 14:00:00,1xBet,6.43,3.18,14.21,Not Found,2025-10-24 14:00:11
-Clermont @ Guingamp,Ligue 2 - France,Clermont,2025-10-24 14:00:00,Pinnacle,5.85,2.87,5.7,Not Found,2025-10-24 14:00:11
-USL Dunkerque @ Pau FC,Ligue 2 - France,USL Dunkerque,2025-10-24 14:00:00,Pinnacle,3.18,2.23,3.09,Not Found,2025-10-24 14:00:11
-Boulogne @ Le Mans FC,Ligue 2 - France,Boulogne,2025-10-24 14:00:00,FanDuel,5.2,5.06,6.21,Not Found,2025-10-24 14:30:29
-Grenoble @ Red Star,Ligue 2 - France,Grenoble,2025-10-24 13:59:00,Unibet (UK),5.5,4.05,7.63,Not Found,2025-10-24 14:30:29
-Västerås SK @ Örgryte IS,Superettan - Sweden,Örgryte IS,2025-10-24 13:00:00,DraftKings,15.0,3.37,17.42,Not Found,2025-10-24 14:30:29
-Troyes @ Stade de Reims,Ligue 2 - France,Draw,2025-10-24 14:00:00,Pinnacle,3.27,2.5,3.11,Not Found,2025-10-24 14:30:29
-Empoli @ Modena,Serie B - Italy,Empoli,2025-10-24 14:30:00,Pinnacle,5.15,2.4,7.86,Not Found,2025-10-24 14:30:29
-Pisa @ AC Milan,Serie A - Italy,Pisa,2025-10-24 14:45:00,BetOnline.ag,12.0,2.36,7.97,Not Found,2025-10-24 14:30:29
-Drogheda United @ Galway United,League of Ireland,Drogheda United,2025-10-24 14:45:00,Pinnacle,4.81,2.06,2.96,Not Found,2025-10-24 14:30:29
+Alemannia Aachen @ Wehen Wiesbaden,3. Liga - Germany,Wehen Wiesbaden,2025-10-24 13:00:00,Winamax (DE),19.0,2.02,17.61,Alemannia Aachen,2025-10-24 13:51:53
+Widzew Łódź @ Motor Lublin,Ekstraklasa - Poland,Motor Lublin,2025-10-24 14:30:00,Pinnacle,3.11,4.86,3.02,Motor Lublin,2025-10-24 14:00:11
+NAC Breda @ Heerenveen,Dutch Eredivisie,NAC Breda,2025-10-24 14:00:00,1xBet,6.43,3.18,14.21,Draw,2025-10-24 14:00:11
+Clermont @ Guingamp,Ligue 2 - France,Clermont,2025-10-24 14:00:00,Pinnacle,5.85,2.87,5.7,Clermont,2025-10-24 14:00:11
+USL Dunkerque @ Pau FC,Ligue 2 - France,USL Dunkerque,2025-10-24 14:00:00,Pinnacle,3.18,2.23,3.09,USL Dunkerque,2025-10-24 14:00:11
+Boulogne @ Le Mans FC,Ligue 2 - France,Boulogne,2025-10-24 14:00:00,FanDuel,5.2,5.06,6.21,Le Mans FC,2025-10-24 14:30:29
+Grenoble @ Red Star,Ligue 2 - France,Grenoble,2025-10-24 13:59:00,Unibet (UK),5.5,4.05,7.63,Red Star,2025-10-24 14:30:29
+Västerås SK @ Örgryte IS,Superettan - Sweden,Örgryte IS,2025-10-24 13:00:00,DraftKings,15.0,3.37,17.42,Västerås SK,2025-10-24 14:30:29
+Troyes @ Stade de Reims,Ligue 2 - France,Draw,2025-10-24 14:00:00,Pinnacle,3.27,2.5,3.11,Draw,2025-10-24 14:30:29
+Empoli @ Modena,Serie B - Italy,Empoli,2025-10-24 14:30:00,Pinnacle,5.15,2.4,7.86,Modena,2025-10-24 14:30:29
+Pisa @ AC Milan,Serie A - Italy,Pisa,2025-10-24 14:45:00,BetOnline.ag,12.0,2.36,7.97,Draw,2025-10-24 14:30:29
+Drogheda United @ Galway United,League of Ireland,Drogheda United,2025-10-24 14:45:00,Pinnacle,4.81,2.06,2.96,Draw,2025-10-24 14:30:29
 Paris Basketball @ KK Partizan NIS,Basketball Euroleague,Paris Basketball,2025-10-24 14:30:00,Bovada,2.7,4.84,29.13,Not Found,2025-10-24 14:49:29
-Anderlecht @ Charleroi,Belgium First Div,Draw,2025-10-24 14:47:00,Sky Bet,3.6,4.72,3.52,Not Found,2025-10-24 14:49:29
-Waterford FC @ St Patricks Athletic,League of Ireland,Draw,2025-10-24 14:45:00,Pinnacle,4.8,4.05,3.67,Not Found,2025-10-24 14:49:29
+Anderlecht @ Charleroi,Belgium First Div,Draw,2025-10-24 14:47:00,Sky Bet,3.6,4.72,3.52,Charleroi,2025-10-24 14:49:29
+Waterford FC @ St Patricks Athletic,League of Ireland,Draw,2025-10-24 14:45:00,Pinnacle,4.8,4.05,3.67,Draw,2025-10-24 14:49:29
 Everton de Viña del Mar @ Palestino,Primera División - Chile,Everton de Viña del Mar,2025-10-24 16:00:00,Coolbet,4.1,4.05,7.06,Not Found,2025-10-24 14:49:29
-Almtuna IS @ Östersunds IK,HockeyAllsvenskan,Draw,2025-10-24 13:00:00,Coolbet,2.75,3.47,3.95,Not Found,2025-10-24 14:49:29
+Almtuna IS @ Östersunds IK,HockeyAllsvenskan,Draw,2025-10-24 13:00:00,Coolbet,2.75,3.47,3.95,Östersunds IK,2025-10-24 14:49:29
 Platense @ Independiente,Primera División - Argentina,Platense,2025-10-24 17:00:00,LowVig.ag,5.0,3.37,3.19,Not Found,2025-10-24 14:49:29
 Botafogo @ Grêmio Novorizontino,Brazil Série B,Botafogo,2025-10-24 18:00:00,Pinnacle,7.26,2.05,3.39,Not Found,2025-10-24 14:49:29
 West Ham United @ Leeds United,EPL,West Ham United,2025-10-24 15:00:00,Unibet (NL),5.2,4.05,6.69,Not Found,2025-10-24 14:57:13
-Union Berlin @ Werder Bremen,Bundesliga - Germany,Draw,2025-10-24 14:30:00,Bet Victor,3.4,3.37,2.84,Not Found,2025-10-24 14:57:13
-Nantes @ Paris FC,Ligue 1 - France,Draw,2025-10-24 14:45:00,BetOnline.ag,4.4,3.04,14.39,Not Found,2025-10-24 14:57:13
+Union Berlin @ Werder Bremen,Bundesliga - Germany,Draw,2025-10-24 14:30:00,Bet Victor,3.4,3.37,2.84,Werder Bremen,2025-10-24 14:57:13
+Nantes @ Paris FC,Ligue 1 - France,Draw,2025-10-24 14:45:00,BetOnline.ag,4.4,3.04,14.39,Nantes,2025-10-24 14:57:13
 Panathinaikos @ Virtus Segafredo Bologna,Basketball Euroleague,Panathinaikos,2025-10-24 14:00:00,FanDuel,4.0,2.55,9.25,Not Found,2025-10-24 14:57:13
 Gil Vicente @ Alverca,Primeira Liga - Portugal,Draw,2025-10-24 15:15:00,Unibet,4.75,5.86,30.7,Not Found,2025-10-24 15:18:06
 Sevilla @ Real Sociedad,La Liga - Spain,Sevilla,2025-10-24 15:01:00,William Hill,3.75,2.56,5.79,Not Found,2025-10-24 15:18:06
-Las Palmas @ SD Huesca,La Liga 2 - Spain,Draw,2025-10-24 14:30:00,Tipico,4.0,2.16,9.08,Not Found,2025-10-24 15:18:06
-Olympiacos @ FC Bayern München,Basketball Euroleague,FC Bayern München,2025-10-24 14:46:00,Winamax (DE),15.0,2.12,51.63,Not Found,2025-10-24 15:28:27
+Las Palmas @ SD Huesca,La Liga 2 - Spain,Draw,2025-10-24 14:30:00,Tipico,4.0,2.16,9.08,API Error,2025-10-24 15:18:06
+Olympiacos @ FC Bayern München,Basketball Euroleague,FC Bayern München,2025-10-24 14:46:00,Winamax (DE),15.0,2.12,51.63,API Error,2025-10-24 15:28:27
 Sheffield United @ Preston North End,Championship,Draw,2025-10-24 15:00:00,FanDuel,7.5,2.02,15.46,Not Found,2025-10-24 15:28:27
 Ottawa Redblacks @ Hamilton Tiger-Cats,CFL,Ottawa Redblacks,2025-10-24 19:05:00,Pinnacle,7.4,2.7,4.75,Not Found,2025-10-24 17:19:09
 North Texas Mean Green @ Charlotte 49ers,NCAAF,Charlotte 49ers,2025-10-24 19:00:00,Pinnacle,17.94,2.66,26.09,Not Found,2025-10-24 18:20:27
