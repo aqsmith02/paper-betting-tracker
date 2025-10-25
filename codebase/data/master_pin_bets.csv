@@ -1654,7 +1654,6 @@ Hanwha Eagles @ Samsung Lions,KBO,Hanwha Eagles,2025-10-22 05:30:00,BetOnline.ag
 Kiekko-Vantaa @ KeuPa HT,Mestis,KeuPa HT,2025-10-22 11:30:00,LeoVegas,3.3,2.34,41.18,Not Found,2025-10-22 02:15:59
 IF Gnistan @ FC Inter Turku,Veikkausliiga - Finland,IF Gnistan,2025-10-22 11:00:00,FanDuel,9.0,8.51,5.74,FC Inter Turku,2025-10-22 04:48:22
 Qarabağ FK @ Athletic Bilbao,UEFA Champions League,Qarabağ FK,2025-10-22 12:45:00,Suprabets,11.0,10.13,8.55,Not Found,2025-10-22 05:41:56
-England @ Australia,ICC Women's World Cup,Australia,2025-10-22 05:30:00,Bet Victor,1.53,1.44,6.33,Not Found,2025-10-22 05:41:56
 SJK Seinäjoki @ HJK Helsinki,Veikkausliiga - Finland,SJK Seinäjoki,2025-10-22 12:00:00,Bovada,3.85,3.43,12.28,SJK Seinäjoki,2025-10-22 06:11:59
 Bodø/Glimt @ Galatasaray,UEFA Champions League,Draw,2025-10-22 12:45:00,1xBet,4.9,4.76,2.91,Galatasaray,2025-10-22 11:10:23
 Club Brugge @ Bayern Munich,UEFA Champions League,Club Brugge,2025-10-22 15:00:00,Nordic Bet,21.0,18.11,15.93,Bayern Munich,2025-10-22 13:09:55
@@ -1728,28 +1727,28 @@ Kenneth Taylor @ Felix Parrilla,Boxing,Kenneth Taylor,2025-10-23 17:00:00,LowVig
 Chicago Blackhawks @ Tampa Bay Lightning,NHL,Chicago Blackhawks,2025-10-23 18:55:00,LeoVegas (SE),5.1,3.72,37.03,Chicago Blackhawks,2025-10-23 15:08:33
 Detroit Red Wings @ New York Islanders,NHL,Detroit Red Wings,2025-10-23 19:10:00,Unibet (UK),2.88,2.18,31.91,New York Islanders,2025-10-23 15:08:33
 Anaheim Ducks @ Boston Bruins,NHL,Anaheim Ducks,2025-10-23 19:10:00,LeoVegas (SE),2.63,2.03,29.48,Anaheim Ducks,2025-10-23 15:08:33
-HŠK Zrinjski Mostar @ FSV Mainz 05,UEFA Europa Conference League,HŠK Zrinjski Mostar,2025-10-23 15:00:00,Bet Victor,15.0,12.28,22.19,Not Found,2025-10-23 15:08:33
-Saski Baskonia @ KK Crvena zvezda,Basketball Euroleague,Saski Baskonia,2025-10-23 15:00:00,Unibet,4.7,3.96,18.65,Not Found,2025-10-23 15:08:33
-Lech Poznań @ Lincoln Red Imps FC,UEFA Europa Conference League,Lincoln Red Imps FC,2025-10-23 15:00:00,Bovada,12.0,10.19,17.76,Not Found,2025-10-23 15:08:33
-Alfredo Cruz @ Carlos Arrieta-Torres,Boxing,Alfredo Cruz,2025-10-23 17:00:00,Betsson,7.0,6.0,16.67,Not Found,2025-10-23 15:08:33
-FC Noah @ Universitatea Craiova,UEFA Europa Conference League,Universitatea Craiova,2025-10-23 15:00:00,Coolbet,2.1,2.03,3.53,Not Found,2025-10-23 15:08:33
-NK Celje @ Shamrock Rovers,UEFA Europa Conference League,Shamrock Rovers,2025-10-23 15:00:00,Coolbet,3.65,3.53,3.3,Not Found,2025-10-23 15:08:33
+HŠK Zrinjski Mostar @ FSV Mainz 05,UEFA Europa Conference League,HŠK Zrinjski Mostar,2025-10-23 15:00:00,Bet Victor,15.0,12.28,22.19,API Error,2025-10-23 15:08:33
+Saski Baskonia @ KK Crvena zvezda,Basketball Euroleague,Saski Baskonia,2025-10-23 15:00:00,Unibet,4.7,3.96,18.65,API Error,2025-10-23 15:08:33
+Lech Poznań @ Lincoln Red Imps FC,UEFA Europa Conference League,Lincoln Red Imps FC,2025-10-23 15:00:00,Bovada,12.0,10.19,17.76,API Error,2025-10-23 15:08:33
+Alfredo Cruz @ Carlos Arrieta-Torres,Boxing,Alfredo Cruz,2025-10-23 17:00:00,Betsson,7.0,6.0,16.67,API Error,2025-10-23 15:08:33
+FC Noah @ Universitatea Craiova,UEFA Europa Conference League,Universitatea Craiova,2025-10-23 15:00:00,Coolbet,2.1,2.03,3.53,API Error,2025-10-23 15:08:33
+NK Celje @ Shamrock Rovers,UEFA Europa Conference League,Shamrock Rovers,2025-10-23 15:00:00,Coolbet,3.65,3.53,3.3,API Error,2025-10-23 15:08:33
 Raków Częstochowa @ Sigma Olomouc,UEFA Europa Conference League,Draw,2025-10-23 15:00:00,Sky Bet,3.4,3.29,3.25,Draw,2025-10-23 15:08:33
 FC Midtjylland @ Maccabi Tel Aviv,UEFA Europa League,Maccabi Tel Aviv,2025-10-23 15:01:00,1xBet,3.41,3.31,3.08,FC Midtjylland,2025-10-23 15:08:33
-PFC Ludogorets Razgrad @ Young Boys,UEFA Europa League,Draw,2025-10-23 15:00:00,Suprabets,4.15,4.06,2.19,Not Found,2025-10-23 15:08:33
-FC Utrecht @ SC Freiburg,UEFA Europa League,FC Utrecht,2025-10-23 15:01:00,Coolbet,26.0,6.78,283.68,Not Found,2025-10-23 15:35:35
+PFC Ludogorets Razgrad @ Young Boys,UEFA Europa League,Draw,2025-10-23 15:00:00,Suprabets,4.15,4.06,2.19,API Error,2025-10-23 15:08:33
+FC Utrecht @ SC Freiburg,UEFA Europa League,FC Utrecht,2025-10-23 15:01:00,Coolbet,26.0,6.78,283.68,API Error,2025-10-23 15:35:35
 PAOK @ Lille,UEFA Europa League,Lille,2025-10-23 15:00:00,Unibet,4.8,1.61,198.72,PAOK,2025-10-23 15:35:35
-Porto @ Nottingham Forest,UEFA Europa League,Porto,2025-10-23 15:01:00,Unibet,8.0,3.38,136.55,Not Found,2025-10-23 15:35:35
+Porto @ Nottingham Forest,UEFA Europa League,Porto,2025-10-23 15:01:00,Unibet,8.0,3.38,136.55,API Error,2025-10-23 15:35:35
 Plymouth Argyle @ Exeter City,League 1,Exeter City,2025-10-23 15:00:00,Bovada,2.9,1.74,66.31,Exeter City,2025-10-23 15:35:35
-Žalgiris @ FC Barcelona Bàsquet,Basketball Euroleague,FC Barcelona Bàsquet,2025-10-23 14:30:00,Winamax (FR),27.0,15.3,76.46,Not Found,2025-10-23 16:11:16
-Linomar Rios @ Eric Sanchez-Medina,Boxing,Linomar Rios,2025-10-23 17:00:00,Bovada,15.0,11.29,32.83,Not Found,2025-10-23 16:11:16
-Marianela Soledad Ramirez @ Kiria Tapia,Boxing,Marianela Soledad Ramirez,2025-10-23 17:00:00,Bovada,11.0,10.5,4.72,Not Found,2025-10-23 16:11:16
+Žalgiris @ FC Barcelona Bàsquet,Basketball Euroleague,FC Barcelona Bàsquet,2025-10-23 14:30:00,Winamax (FR),27.0,15.3,76.46,API Error,2025-10-23 16:11:16
+Linomar Rios @ Eric Sanchez-Medina,Boxing,Linomar Rios,2025-10-23 17:00:00,Bovada,15.0,11.29,32.83,API Error,2025-10-23 16:11:16
+Marianela Soledad Ramirez @ Kiria Tapia,Boxing,Marianela Soledad Ramirez,2025-10-23 17:00:00,Bovada,11.0,10.5,4.72,API Error,2025-10-23 16:11:16
 Pittsburgh Penguins @ Florida Panthers,NHL,Pittsburgh Penguins,2025-10-23 19:10:00,Unibet (SE),3.7,2.7,36.87,Pittsburgh Penguins,2025-10-23 17:09:19
 San Jose Sharks @ New York Rangers,NHL,San Jose Sharks,2025-10-23 19:10:00,Unibet (UK),4.8,3.54,35.72,San Jose Sharks,2025-10-23 17:09:19
 Philadelphia Flyers @ Ottawa Senators,NHL,Philadelphia Flyers,2025-10-23 19:10:00,Coolbet,3.1,2.48,24.77,Ottawa Senators,2025-10-23 17:09:19
 Lanus @ Universidad de Chile,Copa Sudamericana,Draw,2025-10-23 18:00:00,Unibet (NL),3.1,3.02,2.5,Draw,2025-10-23 17:09:19
 Vancouver Canucks @ Nashville Predators,NHL,Nashville Predators,2025-10-23 20:10:00,LeoVegas (SE),2.43,1.92,26.78,Nashville Predators,2025-10-23 19:09:14
-Melissa Oddessa Parker @ Ashleyann Lozada,Boxing,Ashleyann Lozada,2025-10-23 20:00:00,Betway,1.25,1.19,5.36,Not Found,2025-10-23 19:09:14
+Melissa Oddessa Parker @ Ashleyann Lozada,Boxing,Ashleyann Lozada,2025-10-23 20:00:00,Betway,1.25,1.19,5.36,API Error,2025-10-23 19:09:14
 Maliek Montgomery @ Joshua James Pagan,Boxing,Joshua James Pagan,2025-10-23 20:00:00,Betway,1.83,1.75,4.7,API Error,2025-10-23 19:09:14
 Seattle Kraken @ Winnipeg Jets,NHL,Seattle Kraken,2025-10-23 20:10:00,Unibet,4.1,2.98,37.6,Seattle Kraken,2025-10-23 19:35:06
 Utah Mammoth @ St Louis Blues,NHL,Utah Mammoth,2025-10-23 20:10:00,LeoVegas (SE),2.75,2.06,33.27,Utah Mammoth,2025-10-23 19:35:06
@@ -1792,31 +1791,31 @@ Nantes @ Paris FC,Ligue 1 - France,Paris FC,2025-10-24 14:45:00,Coral,2.4,1.66,4
 Olympiacos @ FC Bayern München,Basketball Euroleague,Olympiacos,2025-10-24 14:45:00,BetMGM,1.67,1.57,6.67,API Error,2025-10-24 14:49:30
 Waterford FC @ St Patricks Athletic,League of Ireland,Waterford FC,2025-10-24 14:45:00,1xBet,7.54,7.27,3.78,Draw,2025-10-24 14:49:30
 Empoli @ Modena,Serie B - Italy,Empoli,2025-10-24 14:32:00,Bovada,4.75,2.41,97.41,API Error,2025-10-24 14:57:14
-West Ham United @ Leeds United,EPL,West Ham United,2025-10-24 15:00:00,Unibet (NL),5.2,4.92,5.71,Not Found,2025-10-24 14:57:14
+West Ham United @ Leeds United,EPL,West Ham United,2025-10-24 15:00:00,Unibet (NL),5.2,4.92,5.71,Leeds United,2025-10-24 14:57:14
 Las Palmas @ SD Huesca,La Liga 2 - Spain,Draw,2025-10-24 14:30:00,Bet Victor,2.6,2.5,3.8,Not Found,2025-10-24 14:57:14
 Widzew Łódź @ Motor Lublin,Ekstraklasa - Poland,Widzew Łódź,2025-10-24 14:30:00,Coolbet,8.0,2.99,167.28,Motor Lublin,2025-10-24 15:18:07
-Sheffield United @ Preston North End,Championship,Preston North End,2025-10-24 15:00:00,Unibet (UK),13.0,5.17,151.32,Not Found,2025-10-24 15:18:07
-Gil Vicente @ Alverca,Primeira Liga - Portugal,Alverca,2025-10-24 15:15:00,Unibet,8.0,3.48,129.82,Not Found,2025-10-24 15:18:07
+Sheffield United @ Preston North End,Championship,Preston North End,2025-10-24 15:00:00,Unibet (UK),13.0,5.17,151.32,Preston North End,2025-10-24 15:18:07
+Gil Vicente @ Alverca,Primeira Liga - Portugal,Alverca,2025-10-24 15:15:00,Unibet,8.0,3.48,129.82,Gil Vicente,2025-10-24 15:18:07
 Paris Basketball @ KK Partizan NIS,Basketball Euroleague,KK Partizan NIS,2025-10-24 14:30:00,888sport,1.85,1.54,20.07,Not Found,2025-10-24 15:18:07
 Union Berlin @ Werder Bremen,Bundesliga - Germany,Union Berlin,2025-10-24 14:30:00,Coolbet,3.8,3.34,13.74,Werder Bremen,2025-10-24 15:18:07
-Sevilla @ Real Sociedad,La Liga - Spain,Draw,2025-10-24 15:01:00,TAB,3.4,3.1,9.73,Not Found,2025-10-24 15:18:07
+Sevilla @ Real Sociedad,La Liga - Spain,Draw,2025-10-24 15:01:00,TAB,3.4,3.1,9.73,Real Sociedad,2025-10-24 15:18:07
 Drogheda United @ Galway United,League of Ireland,Draw,2025-10-24 14:45:00,Unibet,3.05,2.99,2.0,Draw,2025-10-24 15:18:07
 North Texas Mean Green @ Charlotte 49ers,NCAAF,Charlotte 49ers,2025-10-24 19:00:00,MyBookie.ag,19.77,18.34,7.8,Not Found,2025-10-24 16:24:41
-Everton de Viña del Mar @ Palestino,Primera División - Chile,Draw,2025-10-24 16:00:00,Bovada,3.4,2.91,16.93,Not Found,2025-10-24 16:38:53
-Platense @ Independiente,Primera División - Argentina,Draw,2025-10-24 16:59:00,Sky Bet,3.0,2.91,3.02,Not Found,2025-10-24 17:19:10
+Everton de Viña del Mar @ Palestino,Primera División - Chile,Draw,2025-10-24 16:00:00,Bovada,3.4,2.91,16.93,Palestino,2025-10-24 16:38:53
+Platense @ Independiente,Primera División - Argentina,Draw,2025-10-24 16:59:00,Sky Bet,3.0,2.91,3.02,Independiente,2025-10-24 17:19:10
 Botafogo @ Grêmio Novorizontino,Brazil Série B,Botafogo,2025-10-24 18:00:00,Bovada,8.0,6.86,16.55,Not Found,2025-10-24 18:36:15
 Ottawa Redblacks @ Hamilton Tiger-Cats,CFL,Ottawa Redblacks,2025-10-24 19:05:00,FanDuel,7.6,7.45,2.06,Not Found,2025-10-24 18:36:15
-Milwaukee Bucks @ Toronto Raptors,NBA,Milwaukee Bucks,2025-10-24 18:45:00,Paddy Power,2.5,2.18,14.83,Not Found,2025-10-24 18:55:05
-Atlanta Hawks @ Orlando Magic,NBA,Atlanta Hawks,2025-10-24 19:11:03,FanDuel,3.4,2.93,15.94,Not Found,2025-10-24 19:19:36
-Detroit Pistons @ Houston Rockets,NBA,Detroit Pistons,2025-10-24 20:10:00,Betway,3.25,3.18,2.1,Not Found,2025-10-24 19:19:36
-Nashville SC @ Inter Miami CF,MLS,Nashville SC,2025-10-24 20:00:00,LeoVegas (SE),5.4,5.22,3.52,Not Found,2025-10-24 19:30:28
+Milwaukee Bucks @ Toronto Raptors,NBA,Milwaukee Bucks,2025-10-24 18:45:00,Paddy Power,2.5,2.18,14.83,Milwaukee Bucks,2025-10-24 18:55:05
+Atlanta Hawks @ Orlando Magic,NBA,Atlanta Hawks,2025-10-24 19:11:03,FanDuel,3.4,2.93,15.94,Atlanta Hawks,2025-10-24 19:19:36
+Detroit Pistons @ Houston Rockets,NBA,Detroit Pistons,2025-10-24 20:10:00,Betway,3.25,3.18,2.1,Detroit Pistons,2025-10-24 19:19:36
+Nashville SC @ Inter Miami CF,MLS,Nashville SC,2025-10-24 20:00:00,LeoVegas (SE),5.4,5.22,3.52,Inter Miami CF,2025-10-24 19:30:28
 California Golden Bears @ Virginia Tech Hokies,NCAAF,California Golden Bears,2025-10-24 19:36:33,TAB,3.8,3.0,26.67,Not Found,2025-10-24 19:40:35
-San Antonio Spurs @ New Orleans Pelicans,NBA,New Orleans Pelicans,2025-10-24 20:10:00,Marathon Bet,2.59,2.53,2.45,Not Found,2025-10-24 19:40:35
-Cleveland Cavaliers @ Brooklyn Nets,NBA,Brooklyn Nets,2025-10-24 19:43:29,Nordic Bet,8.3,6.24,32.94,Not Found,2025-10-24 19:48:27
-Boston Celtics @ New York Knicks,NBA,New York Knicks,2025-10-24 19:43:11,Bet Victor,1.75,1.67,4.74,Not Found,2025-10-24 19:48:27
-Remo @ Cuiabá,Brazil Série B,Remo,2025-10-24 20:35:00,Bovada,5.0,1.42,253.06,Not Found,2025-10-24 21:41:09
-Los Angeles Dodgers @ Toronto Blue Jays,MLB,Toronto Blue Jays,2025-10-24 20:14:21,Betsson,3.86,1.88,105.6,Not Found,2025-10-24 21:41:09
-Washington Wizards @ Dallas Mavericks,NBA,Washington Wizards,2025-10-24 20:40:38,Bet Victor,2.9,2.2,32.09,Not Found,2025-10-24 21:41:09
+San Antonio Spurs @ New Orleans Pelicans,NBA,New Orleans Pelicans,2025-10-24 20:10:00,Marathon Bet,2.59,2.53,2.45,San Antonio Spurs,2025-10-24 19:40:35
+Cleveland Cavaliers @ Brooklyn Nets,NBA,Brooklyn Nets,2025-10-24 19:43:29,Nordic Bet,8.3,6.24,32.94,Cleveland Cavaliers,2025-10-24 19:48:27
+Boston Celtics @ New York Knicks,NBA,New York Knicks,2025-10-24 19:43:11,Bet Victor,1.75,1.67,4.74,New York Knicks,2025-10-24 19:48:27
+Remo @ Cuiabá,Brazil Série B,Remo,2025-10-24 20:35:00,Bovada,5.0,1.42,253.06,Remo,2025-10-24 21:41:09
+Los Angeles Dodgers @ Toronto Blue Jays,MLB,Toronto Blue Jays,2025-10-24 20:14:21,Betsson,3.86,1.88,105.6,Toronto Blue Jays,2025-10-24 21:41:09
+Washington Wizards @ Dallas Mavericks,NBA,Washington Wizards,2025-10-24 20:40:38,Bet Victor,2.9,2.2,32.09,Washington Wizards,2025-10-24 21:41:09
 Calgary Stampeders @ Edmonton Elks,CFL,Edmonton Elks,2025-10-24 21:35:00,DraftKings,3.2,2.85,12.45,Not Found,2025-10-24 21:41:09
 Boise State Broncos @ Nevada Wolf Pack,NCAAF,Nevada Wolf Pack,2025-10-24 22:00:00,LeoVegas,12.0,10.92,9.94,Not Found,2025-10-24 21:41:09
 Golden State Warriors @ Portland Trail Blazers,NBA,Portland Trail Blazers,2025-10-24 22:12:47,MyBookie.ag,2.3,1.98,15.91,Not Found,2025-10-24 22:51:19
