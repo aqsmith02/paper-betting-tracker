@@ -3,7 +3,7 @@ from unittest.mock import Mock, patch, MagicMock
 import pandas as pd
 from datetime import datetime
 import pytz
-from codebase.results.pinnacle_clv import OddsAPIEventMatcher
+from codebase.results.event_id import OddsAPIEventMatcher
 from codebase.constants import THEODDS_API_KEY
 
 

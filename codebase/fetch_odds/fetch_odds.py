@@ -91,7 +91,9 @@ def _process_game(game: Dict) -> List[Dict]:
     home_team = game["home_team"]
     away_team = game["away_team"]
     league = game["sport_title"]
+    print(game["commence_time"])
     start_time = _convert_to_eastern_time(game["commence_time"])
+    print(start_time)
     bm_dicts = _create_bm_dict_list(game)
     rows = []
 
