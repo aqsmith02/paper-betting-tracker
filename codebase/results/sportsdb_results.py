@@ -23,12 +23,12 @@ def _start_date(ts: Any) -> str:
     Convert a timestamp / datetime-like / ISO string to "YYYY-MM-DD".
 
     Args:
-        ts (Any): Timestamp to convert to date (adjusted 4 hours forward from UTC to EDT).
+        ts (Any): Timestamp to convert to date (no timezone adjustment needed - already in correct timezone).
 
     Returns:
         str: Date string in YYYY-MM-DD format.
     """
-    dt = pd.to_datetime(ts) + pd.Timedelta(hours=4)
+    dt = pd.to_datetime(ts)
     return dt.strftime("%Y-%m-%d")
 
 
@@ -52,31 +52,32 @@ def _format_match_for_thesportsdb(match: str) -> str:
     return formatted.replace(" ", "_")
 
 
-def _time_since_start(df: pd.DataFrame, thresh: float) -> pd.DataFrame:
+def _time_since_start(df: pd.DataFrame, thresh: float, start_time_col: str = "Start Time UTC") -> pd.DataFrame:
     """
     Filter out games that started less than threshold hours ago.
 
     Args:
-        df (pd.DataFrame): DataFrame containing game data with "Start Time" column.
+        df (pd.DataFrame): DataFrame containing game data with start time column.
         thresh (float): Threshold in hours - games starting less than this many hours ago are filtered out.
+        start_time_col (str): Column name for start time (default "Start Time UTC").
 
     Returns:
         pd.DataFrame: Filtered DataFrame containing only games that started more than thresh hours ago.
     """
-    # Get the current time
-    current_time = datetime.now(ZoneInfo("America/New_York")).strftime(
+    # Get the current time in UTC
+    current_time = datetime.now(ZoneInfo("UTC")).strftime(
         "%Y-%m-%d %H:%M:%S"
     )
     current_time_obj = datetime.strptime(current_time, "%Y-%m-%d %H:%M:%S")
 
-    # Convert "Start Time" column to datetime objects
-    df["Start Time"] = pd.to_datetime(df["Start Time"], format="%Y-%m-%d %H:%M:%S")
+    # Convert start time column to datetime objects
+    df[start_time_col] = pd.to_datetime(df[start_time_col])
 
     # Create conditions for removal
     cutoff = current_time_obj - timedelta(hours=thresh)
 
     # Filter out games that started less than threshold hours ago
-    mask = df["Start Time"] <= cutoff
+    mask = df[start_time_col] <= cutoff
     df = df[mask]
 
     return df
@@ -135,18 +136,19 @@ def _get_results(match: str, date: str) -> str:
         return "Error"
 
 
-def get_finished_games_from_thesportsdb(df: pd.DataFrame) -> pd.DataFrame:
+def get_finished_games_from_thesportsdb(df: pd.DataFrame, start_time_col: str = "Start Time UTC") -> pd.DataFrame:
     """
     Fetch and update game results from TheSportsDB API for games in DataFrame.
 
     Args:
-        df (pd.DataFrame): DataFrame containing game data with columns "Match", "Start Time", and optionally "Result".
+        df (pd.DataFrame): DataFrame containing game data with columns "Match", start time column, and optionally "Result".
+        start_time_col (str): Column name for start time (default "Start Time UTC").
 
     Returns:
         pd.DataFrame: Updated DataFrame with "Result" column populated from API calls.
     """
     # Only loop through games that started more than 12 hours ago
-    indices = _time_since_start(df, 12).index.tolist()
+    indices = _time_since_start(df, 12, start_time_col).index.tolist()
 
     # Track API requests to respect rate limits
     fetches = 0
@@ -160,7 +162,7 @@ def get_finished_games_from_thesportsdb(df: pd.DataFrame) -> pd.DataFrame:
             continue
 
         match = _format_match_for_thesportsdb(row["Match"])
-        date = _start_date(row["Start Time"])
+        date = _start_date(row[start_time_col])
         result = _get_results(match, date)
         fetches += 1
         df.at[i, "Result"] = result

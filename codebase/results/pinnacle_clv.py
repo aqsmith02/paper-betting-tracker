@@ -1,5 +1,6 @@
 import pandas as pd
 import requests
+import pytz
 from typing import Dict, List, Optional, Tuple
 from codebase.constants import THEODDS_API_KEY
 
@@ -25,6 +26,7 @@ class ClosingLineOddsFetcher:
         "Basketball Euroleague": "basketball_euroleague",
         "NBA": "basketball_nba",
         "NBA Championship Winner": "basketball_nba_championship_winner",
+        "NBA Preseason": "basketball_nba_preseason",
         "NBL": "basketball_nbl",
         "NCAAB": "basketball_ncaab",
         "NCAAB Championship Winner": "basketball_ncaab_championship_winner",
@@ -127,7 +129,6 @@ class ClosingLineOddsFetcher:
         for key, value in self.LEAGUE_TO_KEY.items():
             if key.upper() == league_upper:
                 return value
-        print("pass 3")
         
         # If already looks like a sport_key, return as-is
         if '_' in league:
@@ -183,7 +184,7 @@ class ClosingLineOddsFetcher:
             return None
     
     def get_closing_line_odds(self, sport_key: str, event_id: str, 
-                              team_name: str, game_time: str) -> Tuple[Optional[float], Optional[str]]:
+                              team_name: str, game_time: str) -> Tuple[Optional[float], Optional[str], Optional[str]]:
         """
         Get closing line odds for a specific team with bookmaker priority.
         
@@ -194,33 +195,36 @@ class ClosingLineOddsFetcher:
             game_time: Game start time ISO timestamp to get odds near game start
             
         Returns:
-            Tuple of (closing_odds, bookmaker_name) or (None, None) if not found
+            Tuple of (closing_odds, bookmaker_name, timestamp) or (None, None, None) if not found
         """
         # Use the game time as the date parameter to get odds closest to game start
         odds_data = self.fetch_event_odds(sport_key, event_id, game_time)
         
         if not odds_data or 'data' not in odds_data:
-            return None, None
+            return None, None, None
+        
+        # Extract timestamp from the API response
+        snapshot_timestamp = odds_data.get('timestamp')
         
         # The API returns a single snapshot for the specified date
         event_data = odds_data['data']
         bookmakers = event_data.get('bookmakers', [])
         
         if not bookmakers:
-            return None, None
+            return None, None, snapshot_timestamp
         
         # Priority order for bookmakers
         priority_bookmakers = [
             ('pinnacle', 'Pinnacle'),
             ('fanduel', 'FanDuel'),
-            ('draftkings', 'DraftKinngs')
+            ('draftkings', 'DraftKings')
         ]
         
         # Try priority bookmakers first
         for bookmaker_key, bookmaker_name in priority_bookmakers:
             odds = self._extract_odds_from_bookmaker(bookmakers, bookmaker_key, team_name)
             if odds is not None:
-                return odds, bookmaker_name
+                return odds, bookmaker_name, snapshot_timestamp
         
         # If none of the priority bookmakers have odds, use any available bookmaker
         for bookmaker in bookmakers:
@@ -228,9 +232,9 @@ class ClosingLineOddsFetcher:
             bookmaker_title = bookmaker.get('title', bookmaker_key)
             odds = self._extract_odds_from_bookmaker(bookmakers, bookmaker_key, team_name)
             if odds is not None:
-                return odds, bookmaker_title
+                return odds, bookmaker_title, snapshot_timestamp
         
-        return None, None
+        return None, None, snapshot_timestamp
     
     def _extract_odds_from_bookmaker(self, bookmakers: List[Dict], 
                                      bookmaker_key: str, team_name: str) -> Optional[float]:
@@ -261,7 +265,7 @@ class ClosingLineOddsFetcher:
                                event_id_col: str = 'Event ID',
                                team_col: str = 'Team',
                                league_col: str = 'League',
-                               start_time_col: str = 'Start Time',
+                               event_commence_time_col: str = 'Event ID Commence Time',
                                scrape_time_col: str = 'Scrape Time') -> pd.DataFrame:
         """
         Add closing line odds to the dataframe.
@@ -271,11 +275,11 @@ class ClosingLineOddsFetcher:
             event_id_col: Column name containing event IDs (default 'Event ID')
             team_col: Column name containing team names (default 'Team')
             league_col: Column name containing league/sport key (default 'League')
-            start_time_col: Column name containing game start time (default 'Start Time')
+            event_commence_time_col: Column name containing event commence time (default 'Event ID Commence Time')
             scrape_time_col: Column name containing scrape time (default 'Scrape Time')
             
         Returns:
-            DataFrame with added 'Closing Line Odds' and 'Closing Line Book' columns
+            DataFrame with added 'Closing Line Odds', 'Closing Line Book', and 'API Snapshot Timestamp' columns
         """
         df = df.copy()
         
@@ -285,6 +289,8 @@ class ClosingLineOddsFetcher:
                 df['Closing Line Odds'] = None
             if 'Closing Line Book' not in df.columns:
                 df['Closing Line Book'] = None
+            if 'API Snapshot Timestamp' not in df.columns:
+                df['API Snapshot Timestamp'] = None
             return df
         
         # Only create columns if they don't exist
@@ -292,6 +298,8 @@ class ClosingLineOddsFetcher:
             df['Closing Line Odds'] = None
         if 'Closing Line Book' not in df.columns:
             df['Closing Line Book'] = None
+        if 'API Snapshot Timestamp' not in df.columns:
+            df['API Snapshot Timestamp'] = None
         
         # Filter to rows that need closing odds (where closing odds is empty/null)
         rows_needing_odds = df['Closing Line Odds'].isna()
@@ -312,54 +320,74 @@ class ClosingLineOddsFetcher:
             event_id = row[event_id_col]
             team_name = row[team_col]
             league_name = row[league_col]
-            start_time = row[start_time_col]
+            event_commence_time = row[event_commence_time_col]
             scrape_time = row.get(scrape_time_col)
             if pd.isna(event_id) or pd.isna(team_name) or pd.isna(league_name):
                 continue
             
+            # Skip if no commence time available
+            if pd.isna(event_commence_time):
+                print(f"  ⚠ Skipping {team_name}: No event commence time available")
+                continue
+            
             # Convert league name to sport_key
             sport_key = self.convert_league_to_sport_key(league_name)
-            print(sport_key)
             if sport_key is None:
                 print(f"  ⚠ Could not map league '{league_name}' to sport key. Skipping.")
                 continue
-            print("CHECK5")
             
-            # Convert start time to datetime
+            # Convert event commence time to datetime
             try:
-                start_time_dt = pd.to_datetime(start_time)
+                commence_time_dt = pd.to_datetime(event_commence_time)
             except:
-                print(f"    ⚠ Could not parse start time: {start_time}")
+                print(f"    ⚠ Could not parse event commence time: {event_commence_time}")
                 continue
             
-            # Check if scrape time is before game start time
+            # Check if scrape time is after game start time
             if not pd.isna(scrape_time):
                 try:
+                    # Parse scrape time and assume it's in EST/EDT
                     scrape_time_dt = pd.to_datetime(scrape_time)
                     
-                    # If scrape happened before game start, skip this row
-                    if scrape_time_dt < start_time_dt:
-                        print(f"  ⚠ Skipping {team_name}: Scrape time ({scrape_time_dt}) before game start ({start_time_dt})")
+                    # If scrape time is naive (no timezone), localize it to EST
+                    if scrape_time_dt.tzinfo is None:
+                        est = pytz.timezone('America/New_York')
+                        scrape_time_dt = est.localize(scrape_time_dt)
+                    
+                    # Convert scrape time to UTC for comparison
+                    scrape_time_utc = scrape_time_dt.astimezone(pytz.UTC)
+                    
+                    # Ensure commence_time_dt is timezone-aware (should already be UTC from API)
+                    if commence_time_dt.tzinfo is None:
+                        commence_time_dt = pytz.UTC.localize(commence_time_dt)
+                    
+                    # If scrape happened AFTER game start, skip this row (no closing line available)
+                    if scrape_time_utc > commence_time_dt:
+                        print(f"  ⚠ Skipping {team_name}: Scrape time ({scrape_time_utc}) after game start ({commence_time_dt})")
                         skipped_scrape_time += 1
                         continue
-                except:
-                    print(f"    ⚠ Could not parse scrape time: {scrape_time}")
+                except Exception as e:
+                    print(f"    ⚠ Could not parse scrape time: {scrape_time} - {e}")
             
-            # Convert start time to ISO format with Z suffix
-            start_time_iso = start_time_dt.strftime('%Y-%m-%dT%H:%M:%S') + 'Z'
+            # Convert commence time to ISO format with Z suffix
+            commence_time_iso = commence_time_dt.strftime('%Y-%m-%dT%H:%M:%S') + 'Z'
             
             print(f"  Fetching odds for: {team_name} (Event: {event_id[:8]}...)")
             
-            closing_odds, bookmaker_used = self.get_closing_line_odds(
-                sport_key, event_id, team_name, start_time_iso
+            closing_odds, bookmaker_used, snapshot_timestamp = self.get_closing_line_odds(
+                sport_key, event_id, team_name, commence_time_iso
             )
             
             if closing_odds is not None:
                 df.loc[idx, 'Closing Line Odds'] = closing_odds
                 df.loc[idx, 'Closing Line Book'] = bookmaker_used
+                df.loc[idx, 'API Snapshot Timestamp'] = snapshot_timestamp
                 successful_fetches += 1
                 print(f"    ✓ Found: {closing_odds} ({bookmaker_used})")
             else:
+                # Even if no odds found, store timestamp if available
+                if snapshot_timestamp is not None:
+                    df.loc[idx, 'API Snapshot Timestamp'] = snapshot_timestamp
                 print(f"    ⚠ No closing odds found")
         
         print("-" * 70)
@@ -384,7 +412,7 @@ class ClosingLineOddsFetcher:
 # Example usage
 if __name__ == "__main__":
     # Load your dataframe
-    df = pd.read_csv("codebase/data/clv.csv")
+    df = pd.read_csv("codebase/data/clv_mini.csv")
     
     print("Input DataFrame:")
     print(df.head())
@@ -400,7 +428,7 @@ if __name__ == "__main__":
         event_id_col='Event ID',
         team_col='Team',
         league_col='League',
-        start_time_col='Start Time',
+        event_commence_time_col='Event ID Commence Time',
         scrape_time_col='Scrape Time'
     )
     

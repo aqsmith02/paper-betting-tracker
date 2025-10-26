@@ -215,7 +215,7 @@ class OddsAPIEventMatcher:
         return dt.astimezone(pytz.UTC)
     
     def match_event(self, away_team: str, home_team: str, start_time_utc: datetime, 
-                    events: List[Dict]) -> Optional[str]:
+                    events: List[Dict]) -> tuple:
         """
         Match teams and time to an event from the API response.
         
@@ -226,7 +226,7 @@ class OddsAPIEventMatcher:
             events: List of events from the API
             
         Returns:
-            Event ID if match found, None otherwise
+            Tuple of (event_id, commence_time) if match found, (None, None) otherwise
         """
         for event in events:
             event_home = event.get('home_team', '')
@@ -246,17 +246,17 @@ class OddsAPIEventMatcher:
             try:
                 event_time = pd.to_datetime(commence_time).tz_convert(pytz.UTC)
                 
-                # Times must match exactly (within 12 hours for different timezones/delays)
+                # Times must match exactly (within 8 hours for different timezones/delays)
                 time_diff = abs((start_time_utc - event_time).total_seconds())
                 
-                if time_diff <= 60*60*8:  # Within 12 hours
-                    return event.get('id')
+                if time_diff <= 60*60*8:  # Within 8 hours
+                    return event.get('id'), commence_time
                     
             except Exception as e:
                 print(f"    ⚠ Error parsing time for event: {e}")
                 continue
         
-        return None
+        return None, None
     
     def add_event_ids_to_df(self, df: pd.DataFrame, 
                            sport_key_col: str = 'League',
@@ -281,11 +281,15 @@ class OddsAPIEventMatcher:
         if len(df) == 0:
             if 'Event ID' not in df.columns:
                 df['Event ID'] = None
+            if 'Event ID Commence Time' not in df.columns:
+                df['Event ID Commence Time'] = None
             return df
         
-        # Only create Event ID column if it doesn't exist
+        # Only create columns if they don't exist
         if 'Event ID' not in df.columns:
             df['Event ID'] = None
+        if 'Event ID Commence Time' not in df.columns:
+            df['Event ID Commence Time'] = None
         
         # Filter to only rows that need event IDs (where Event ID is empty/null)
         rows_needing_ids = (df['Event ID'].isna()) | (df['Event ID'] == "Not Found")
@@ -361,10 +365,11 @@ class OddsAPIEventMatcher:
                 if pd.isna(away_team) or pd.isna(home_team):
                     continue
                 
-                event_id = self.match_event(away_team, home_team, start_time_utc, events)
+                event_id, commence_time = self.match_event(away_team, home_team, start_time_utc, events)
                 
                 if event_id:
                     df.loc[idx, 'Event ID'] = event_id
+                    df.loc[idx, 'Event ID Commence Time'] = commence_time
                     matched_count += 1
             
             matched_total += matched_count

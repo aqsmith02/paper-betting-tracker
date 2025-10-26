@@ -91,9 +91,9 @@ def _process_game(game: Dict) -> List[Dict]:
     home_team = game["home_team"]
     away_team = game["away_team"]
     league = game["sport_title"]
-    print(game["commence_time"])
-    start_time = _convert_to_eastern_time(game["commence_time"])
-    print(start_time)
+    id = game["id"]
+    start_time_utc = game["commence_time"]
+    start_time_est = _convert_to_eastern_time(game["commence_time"])
     bm_dicts = _create_bm_dict_list(game)
     rows = []
 
@@ -110,8 +110,10 @@ def _process_game(game: Dict) -> List[Dict]:
         row = {
             "match": f"{away_team} @ {home_team}",
             "league": league,
-            "start_time": start_time,
+            "Start Time UTC": start_time_utc,
+            "Start Time EST": start_time_est,
             "team": outcome_team,
+            "Event ID": id
         }
 
         # Add each bookmaker's odds for this outcome

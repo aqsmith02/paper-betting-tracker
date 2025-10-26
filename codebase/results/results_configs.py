@@ -9,7 +9,8 @@ Author: Andrew Smith
 from zoneinfo import ZoneInfo
 
 # Local timezone for measuring how long it has been since each bet
-TIMEZONE = ZoneInfo("America/New_York")
+TIMEZONE_EST = ZoneInfo("America/New_York")
+TIMEZONE_UTC = ZoneInfo("UTC")
 
 # How many days back in The-Odds_API to look back for results (max of 3 days)
 DAYS_CUTOFF = 3

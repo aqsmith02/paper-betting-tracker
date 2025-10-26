@@ -119,7 +119,10 @@ class BetFileManager:
             return
 
         new_data = new_data.copy()
-        new_data["Scrape Time"] = datetime.now(ZoneInfo("America/New_York")).strftime(
+        new_data["Scrape Time UTC"] = datetime.now(ZoneInfo("UTC")).strftime(
+            TIMESTAMP_FORMAT
+        )
+        new_data["Scrape Time EST"] = datetime.now(ZoneInfo("America/New_York")).strftime(
             TIMESTAMP_FORMAT
         )
 
@@ -137,14 +140,14 @@ class BetFileManager:
         new_data = new_data.reindex(columns=all_columns, fill_value=np.nan)
 
         existing_keys = {
-            (row["Match"], _start_date_from_timestamp(row["Start Time"]))
+            (row["Match"], _start_date_from_timestamp(row["Start Time UTC"]))
             for _, row in existing_data.iterrows()
         }
 
         is_new_row = new_data.apply(
             lambda row: (
                 row["Match"],
-                _start_date_from_timestamp(row["Start Time"]),
+                _start_date_from_timestamp(row["Start Time UTC"]),
             )
             not in existing_keys,
             axis=1,
@@ -186,7 +189,8 @@ class BetFileManager:
             "Result",
             "Outcomes",
             "Event ID",
-            "Scrape Time",
+            "Scrape Time UTC",
+            "Scrape Time ETC",
         ]
 
         reordered_columns = [col for col in all_columns if col not in end_columns]
@@ -212,7 +216,7 @@ class BetFileManager:
 
         best_bets = summary_df.sort_values(
             score_column, ascending=False
-        ).drop_duplicates(subset=["Match", "Start Time"], keep="first")
+        ).drop_duplicates(subset=["Match", "Start Time UTC"], keep="first")
 
         self._append_unique_bets(best_bets, filename)
 
@@ -235,7 +239,7 @@ class BetFileManager:
         if filtered_summary_df.empty:
             return
 
-        key_columns = ["Match", "Team", "Start Time"]
+        key_columns = ["Match", "Team", "Start Time UTC"]
         merged_data = pd.merge(
             filtered_summary_df[key_columns], source_df, on=key_columns, how="left"
         )
