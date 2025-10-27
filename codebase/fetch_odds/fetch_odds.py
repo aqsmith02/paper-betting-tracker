@@ -110,8 +110,8 @@ def _process_game(game: Dict) -> List[Dict]:
         row = {
             "match": f"{away_team} @ {home_team}",
             "league": league,
-            "Start Time UTC": start_time_utc,
-            "Start Time EST": start_time_est,
+            "Start Time Utc": start_time_utc,
+            "Start Time Est": start_time_est,
             "team": outcome_team,
             "Event ID": id
         }

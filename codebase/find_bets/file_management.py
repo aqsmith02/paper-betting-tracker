@@ -117,47 +117,51 @@ class BetFileManager:
         if new_data.empty:
             print(f"No data to append to {filename}")
             return
+        print(1)
 
         new_data = new_data.copy()
-        new_data["Scrape Time UTC"] = datetime.now(ZoneInfo("UTC")).strftime(
+        new_data["Scrape Time Utc"] = datetime.now(ZoneInfo("UTC")).strftime(
             TIMESTAMP_FORMAT
         )
-        new_data["Scrape Time EST"] = datetime.now(ZoneInfo("America/New_York")).strftime(
-            TIMESTAMP_FORMAT
-        )
+        print(2)
 
+        new_data["Scrape Time Est"] = datetime.now(ZoneInfo("America/New_York")).strftime(
+            TIMESTAMP_FORMAT
+        )
+        print(3)
         full_path = self.data_dir / filename
-
+        print(4)
         if not full_path.exists():
             new_data.to_csv(full_path, index=False)
             print(f"Created {filename} with {len(new_data)} rows")
             return
-
+        print(5)
         existing_data = pd.read_csv(full_path)
-
+        print(6)
         all_columns = self._align_column_schemas(existing_data, new_data, filename)
         existing_data = existing_data.reindex(columns=all_columns, fill_value=np.nan)
         new_data = new_data.reindex(columns=all_columns, fill_value=np.nan)
-
+        print(7)
         existing_keys = {
-            (row["Match"], _start_date_from_timestamp(row["Start Time UTC"]))
+            (row["Match"], _start_date_from_timestamp(row["Start Time Utc"]))
             for _, row in existing_data.iterrows()
         }
-
+        print(8)
         is_new_row = new_data.apply(
             lambda row: (
                 row["Match"],
-                _start_date_from_timestamp(row["Start Time UTC"]),
+                _start_date_from_timestamp(row["Start Time Utc"]),
             )
             not in existing_keys,
             axis=1,
         )
+        print(9)
         new_rows = new_data[is_new_row]
-
+        print(10)
         if new_rows.empty:
             print(f"No new rows to add to {filename} - all were duplicates")
             return
-
+        print(11)
         combined_data = pd.concat([existing_data, new_rows], ignore_index=True)
         combined_data.to_csv(full_path, index=False)
         print(f"Added {len(new_rows)} new rows to {filename}")
@@ -216,7 +220,7 @@ class BetFileManager:
 
         best_bets = summary_df.sort_values(
             score_column, ascending=False
-        ).drop_duplicates(subset=["Match", "Start Time UTC"], keep="first")
+        ).drop_duplicates(subset=["Match", "Start Time Utc"], keep="first")
 
         self._append_unique_bets(best_bets, filename)
 
@@ -239,7 +243,7 @@ class BetFileManager:
         if filtered_summary_df.empty:
             return
 
-        key_columns = ["Match", "Team", "Start Time UTC"]
+        key_columns = ["Match", "Team", "Start Time Utc"]
         merged_data = pd.merge(
             filtered_summary_df[key_columns], source_df, on=key_columns, how="left"
         )

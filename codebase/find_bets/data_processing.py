@@ -32,7 +32,7 @@ def _find_bookmaker_columns(
         List[str]: List of column names that contain bookmaker odds.
     """
     # Exclude any columns that will be an int or float and are not bookmakers
-    excluded = {"Best Odds", "Start Time UTC", "Start Time EST", "Outcomes", "Event ID"}
+    excluded = {"Best Odds", "Start Time Utc", "Start Time Est", "Outcomes", "Event ID"}
     if exclude_columns:
         excluded.update(exclude_columns)
 
