@@ -223,25 +223,25 @@ Ciryl Gane @ Tom Aspinall,MMA,Ciryl Gane,2025-10-25 16:45:00,Caesars,4.2,4.08,3.
 Texas Longhorns @ Mississippi State Bulldogs,NCAAF,Mississippi State Bulldogs,2025-10-25 16:20:23,FanDuel,4.0,3.74,6.88,Not Found,2025-10-25 16:22:34
 Boston College Eagles @ Louisville Cardinals,NCAAF,Boston College Eagles,2025-10-25 19:30:00,FanDuel,16.0,15.19,5.32,Not Found,2025-10-25 19:18:28
 Chicago Bulls @ Orlando Magic,NBA,Chicago Bulls,2025-10-25 19:11:05,Caesars,3.3,3.19,3.44,Chicago Bulls,2025-10-25 19:18:28
-Colorado State Rams @ Wyoming Cowboys,NCAAF,Colorado State Rams,2025-10-25 19:32:58,BetMGM,3.1,2.93,5.73,Not Found,2025-10-25 19:40:31
+Colorado State Rams @ Wyoming Cowboys,NCAAF,Colorado State Rams,2025-10-25 19:32:58,BetMGM,3.1,2.93,5.73,API Error,2025-10-25 19:40:31
 Charlotte Hornets @ Philadelphia 76ers,NBA,Charlotte Hornets,2025-10-25 19:42:00,FanDuel,3.4,2.8,21.6,Philadelphia 76ers,2025-10-25 19:48:22
 Oklahoma City Thunder @ Atlanta Hawks,NBA,Atlanta Hawks,2025-10-25 19:40:31,DraftKings,4.0,3.84,4.14,Oklahoma City Thunder,2025-10-25 19:48:22
-Michigan Wolverines @ Michigan State Spartans,NCAAF,Michigan State Spartans,2025-10-25 19:45:35,BetMGM,8.25,5.27,56.58,Not Found,2025-10-25 19:55:37
+Michigan Wolverines @ Michigan State Spartans,NCAAF,Michigan State Spartans,2025-10-25 19:45:35,BetMGM,8.25,5.27,56.58,API Error,2025-10-25 19:55:37
 Indiana Pacers @ Memphis Grizzlies,NBA,Indiana Pacers,2025-10-25 20:11:00,FanDuel,16.0,7.83,104.22,Memphis Grizzlies,2025-10-25 21:49:37
 Phoenix Suns @ Denver Nuggets,NBA,Phoenix Suns,2025-10-25 21:13:37,FanDuel,9.0,6.98,28.9,Denver Nuggets,2025-10-25 21:49:37
 Hanshin Tigers @ Fukuoka SoftBank Hawks,NPB,Fukuoka SoftBank Hawks,2025-10-26 05:30:00,FanDuel,2.82,2.16,30.54,Fukuoka SoftBank Hawks,2025-10-26 05:40:50
 Manchester City @ Aston Villa,EPL,Draw,2025-10-26 10:00:00,Caesars,4.0,3.9,2.46,Aston Villa,2025-10-26 09:31:10
 Burnley @ Wolverhampton Wanderers,EPL,Wolverhampton Wanderers,2025-10-26 10:00:00,DraftKings,3.7,2.29,61.49,Burnley,2025-10-26 10:18:41
 Nottingham Forest @ Bournemouth,EPL,Nottingham Forest,2025-10-26 10:01:00,FanDuel,10.5,4.4,138.8,Bournemouth,2025-10-26 10:32:43
-Buffalo Bills @ Carolina Panthers,NFL,Carolina Panthers,2025-10-26 13:00:00,FanDuel,4.3,3.93,9.39,Not Found,2025-10-26 12:42:15
-Miami Dolphins @ Atlanta Falcons,NFL,Miami Dolphins,2025-10-26 13:00:00,BetMGM,4.0,3.79,5.6,Not Found,2025-10-26 12:42:15
-New York Jets @ Cincinnati Bengals,NFL,New York Jets,2025-10-26 13:00:00,FanDuel,3.3,3.19,3.44,Not Found,2025-10-26 12:42:15
-Colorado Avalanche @ New Jersey Devils,NHL,Colorado Avalanche,2025-10-26 13:08:06,DraftKings,5.0,2.22,125.39,Not Found,2025-10-26 13:31:33
-San Francisco 49ers @ Houston Texans,NFL,San Francisco 49ers,2025-10-26 13:03:11,DraftKings,3.5,2.75,27.12,Not Found,2025-10-26 13:31:33
-Chicago Bears @ Baltimore Ravens,NFL,Baltimore Ravens,2025-10-26 13:02:19,BetMGM,2.3,2.16,6.61,Not Found,2025-10-26 13:31:33
-Cleveland Browns @ New England Patriots,NFL,New England Patriots,2025-10-26 13:02:47,Caesars,1.72,1.63,5.68,Not Found,2025-10-26 13:31:33
-New York Giants @ Philadelphia Eagles,NFL,New York Giants,2025-10-26 13:02:47,BetMGM,4.33,3.8,13.9,Not Found,2025-10-26 13:41:20
-Brooklyn Nets @ San Antonio Spurs,NBA,Brooklyn Nets,2025-10-26 14:12:00,FanDuel,5.5,3.48,57.99,Not Found,2025-10-26 14:29:32
+Buffalo Bills @ Carolina Panthers,NFL,Carolina Panthers,2025-10-26 13:00:00,FanDuel,4.3,3.93,9.39,Buffalo Bills,2025-10-26 12:42:15
+Miami Dolphins @ Atlanta Falcons,NFL,Miami Dolphins,2025-10-26 13:00:00,BetMGM,4.0,3.79,5.6,Miami Dolphins,2025-10-26 12:42:15
+New York Jets @ Cincinnati Bengals,NFL,New York Jets,2025-10-26 13:00:00,FanDuel,3.3,3.19,3.44,New York Jets,2025-10-26 12:42:15
+Colorado Avalanche @ New Jersey Devils,NHL,Colorado Avalanche,2025-10-26 13:08:06,DraftKings,5.0,2.22,125.39,New Jersey Devils,2025-10-26 13:31:33
+San Francisco 49ers @ Houston Texans,NFL,San Francisco 49ers,2025-10-26 13:03:11,DraftKings,3.5,2.75,27.12,Houston Texans,2025-10-26 13:31:33
+Chicago Bears @ Baltimore Ravens,NFL,Baltimore Ravens,2025-10-26 13:02:19,BetMGM,2.3,2.16,6.61,Baltimore Ravens,2025-10-26 13:31:33
+Cleveland Browns @ New England Patriots,NFL,New England Patriots,2025-10-26 13:02:47,Caesars,1.72,1.63,5.68,New England Patriots,2025-10-26 13:31:33
+New York Giants @ Philadelphia Eagles,NFL,New York Giants,2025-10-26 13:02:47,BetMGM,4.33,3.8,13.9,Philadelphia Eagles,2025-10-26 13:41:20
+Brooklyn Nets @ San Antonio Spurs,NBA,Brooklyn Nets,2025-10-26 14:12:00,FanDuel,5.5,3.48,57.99,API Error,2025-10-26 14:29:32
 Boston Celtics @ Detroit Pistons,NBA,Detroit Pistons,2025-10-26 15:44:38,FanDuel,2.32,1.81,28.04,Not Found,2025-10-26 15:51:50
 Dallas Cowboys @ Denver Broncos,NFL,Denver Broncos,2025-10-26 16:25:25,FanDuel,2.0,1.54,29.91,Not Found,2025-10-26 16:36:45
 Tampa Bay Buccaneers @ New Orleans Saints,NFL,New Orleans Saints,2025-10-26 16:05:40,BetMGM,3.2,2.5,28.16,Not Found,2025-10-26 16:36:45
