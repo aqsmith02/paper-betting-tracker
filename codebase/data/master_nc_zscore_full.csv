@@ -1,2 +1,2 @@
-Match,Team,Start Time,League,Draftkings,Pinnacle,Fanatics,Betmgm,Fanduel,Betonline.Ag,Caesars,Best Odds,Best Bookmaker,Result,Outcomes,Fair Odds Avg,Avg Edge Pct,Z Score,Event ID,Scrape Time
-Denver Broncos @ New York Jets,New York Jets,2025-10-12 09:30:00,NFL,4.4,4.0,4.0,4.0,4.1,4.0,4.0,4.4,DraftKings,Denver Broncos,2,4.22,4.16,2.15,Not Found,2025-10-12 06:59:21
+Match,Team,Start Time EST,League,Draftkings,Pinnacle,Fanatics,Betmgm,Fanduel,Betonline.Ag,Caesars,Best Odds,Best Bookmaker,Result,Outcomes,Fair Odds Avg,Avg Edge Pct,Z Score,Event ID,Scrape Time EST,Start Time UTC,Scrape Time UTC
+Denver Broncos @ New York Jets,New York Jets,2025-10-12 09:30:00,NFL,4.4,4.0,4.0,4.0,4.1,4.0,4.0,4.4,DraftKings,Denver Broncos,2,4.22,4.16,2.15,Not Found,2025-10-12 06:59:21,2025-10-12 13:30:00,2025-10-12 10:59:21
