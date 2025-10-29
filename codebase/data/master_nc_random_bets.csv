@@ -273,12 +273,12 @@ Daniil Medvedev @ Jaume Munar,ATP Paris Masters,Jaume Munar,2025-10-28 08:20:00,
 Fukuoka SoftBank Hawks @ Hanshin Tigers,NPB,Fukuoka SoftBank Hawks,2025-10-28 05:00:00,BetMGM,1.87,Fukuoka SoftBank Hawks,2025-10-28 01:57:13
 Camilo Ugo Carabelli @ Tomas Martin Etcheverry,ATP Paris Masters,Camilo Ugo Carabelli,2025-10-28 06:00:00,FanDuel,5.4,Not Found,2025-10-28 02:54:52
 Valentin Royer @ Alejandro Davidovich Fokina,ATP Paris Masters,Valentin Royer,2025-10-28 10:00:00,FanDuel,2.76,Not Found,2025-10-28 06:25:23
-Flavio Cobolli @ Ben Shelton,ATP Paris Masters,Ben Shelton,2025-10-28 10:30:00,BetMGM,1.98,Not Found,2025-10-28 07:18:49
-Andrey Rublev @ Learner Tien,ATP Paris Masters,Learner Tien,2025-10-28 12:05:00,FanDuel,1.95,Not Found,2025-10-28 09:20:54
-Aleksandar Vukic @ Taylor Fritz,ATP Paris Masters,Aleksandar Vukic,2025-10-28 15:10:00,FanDuel,7.6,Not Found,2025-10-28 14:34:23
-Maccabi Tel Aviv @ Panathinaikos,Basketball Euroleague,Panathinaikos,2025-10-28 15:16:00,BetMGM,1.2,Not Found,2025-10-28 15:29:35
+Flavio Cobolli @ Ben Shelton,ATP Paris Masters,Ben Shelton,2025-10-28 10:30:00,BetMGM,1.98,API Error,2025-10-28 07:18:49
+Andrey Rublev @ Learner Tien,ATP Paris Masters,Learner Tien,2025-10-28 12:05:00,FanDuel,1.95,API Error,2025-10-28 09:20:54
+Aleksandar Vukic @ Taylor Fritz,ATP Paris Masters,Aleksandar Vukic,2025-10-28 15:10:00,FanDuel,7.6,API Error,2025-10-28 14:34:23
+Maccabi Tel Aviv @ Panathinaikos,Basketball Euroleague,Panathinaikos,2025-10-28 15:16:00,BetMGM,1.2,API Error,2025-10-28 15:29:35
 Anadolu Efes @ Paris Basketball,Basketball Euroleague,Paris Basketball,2025-10-28 15:45:00,DraftKings,2.24,Anadolu Efes SK,2025-10-28 15:56:30
-Fenerbahce SK @ Valencia Basket,Basketball Euroleague,Fenerbahce SK,2025-10-28 16:00:00,BetMGM,2.05,Not Found,2025-10-28 15:56:30
+Fenerbahce SK @ Valencia Basket,Basketball Euroleague,Fenerbahce SK,2025-10-28 16:00:00,BetMGM,2.05,API Error,2025-10-28 15:56:30
 Philadelphia 76ers @ Washington Wizards,NBA,Washington Wizards,2025-10-28 19:10:00,BetMGM,2.65,Philadelphia 76ers,2025-10-28 16:26:21
 Charlotte Hornets @ Miami Heat,NBA,Charlotte Hornets,2025-10-28 19:30:00,Caesars,2.85,Miami Heat,2025-10-28 18:21:38
 Tampa Bay Lightning @ Nashville Predators,NHL,Tampa Bay Lightning,2025-10-28 19:55:00,BetMGM,1.57,Tampa Bay Lightning,2025-10-28 18:38:57
@@ -288,7 +288,7 @@ Toronto Blue Jays @ Los Angeles Dodgers,MLB,Los Angeles Dodgers,2025-10-28 20:08
 Sacramento Kings @ Oklahoma City Thunder,NBA,Sacramento Kings,2025-10-28 20:12:00,BetMGM,2.7,API Error,2025-10-28 21:50:28
 Valentin Vacherot @ Arthur Rinderknech,ATP Paris Masters,Arthur Rinderknech,2025-10-29 06:00:00,Fanatics,2.3,Not Found,2025-10-28 23:08:05
 LG Twins @ Hanwha Eagles,KBO,LG Twins,2025-10-29 05:30:00,Fanatics,2.25,Not Found,2025-10-28 23:08:05
-Los Angeles Clippers @ Golden State Warriors,NBA,Golden State Warriors,2025-10-28 23:10:00,FanDuel,2.08,Not Found,2025-10-28 23:08:05
+Los Angeles Clippers @ Golden State Warriors,NBA,Golden State Warriors,2025-10-28 23:10:00,FanDuel,2.08,API Error,2025-10-28 23:08:05
 Casper Ruud @ Daniel Altmaier,ATP Paris Masters,Casper Ruud,2025-10-29 06:00:00,DraftKings,1.37,Not Found,2025-10-28 23:53:38
 Fukuoka SoftBank Hawks @ Hanshin Tigers,NPB,Hanshin Tigers,2025-10-29 05:00:00,Caesars,1.77,Not Found,2025-10-29 00:29:14
 Alexander Zverev @ Camilo Ugo Carabelli,ATP Paris Masters,Alexander Zverev,2025-10-29 07:10:00,DraftKings,1.04,Not Found,2025-10-29 02:55:00
