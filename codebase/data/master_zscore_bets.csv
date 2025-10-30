@@ -470,10 +470,7 @@ Ferroviária @ Vila Nova,Brazil Série B,Ferroviária,2025-10-26 17:30:00,Bovada
 Chicago Fire @ Philadelphia Union,MLS,Chicago Fire,2025-10-26 17:30:00,1xBet,4.12,2.26,3.27,Draw,2025-10-26 17:29:51
 Cruzeiro @ Palmeiras,Brazil Série A,Cruzeiro,2025-10-26 19:31:00,1xBet,5.7,2.33,5.28,Draw,2025-10-26 19:41:34
 Querétaro @ Santos Laguna,Liga MX,Querétaro,2025-10-26 19:01:00,Coolbet,28.0,2.31,25.75,Santos Laguna,2025-10-26 19:57:27
-Marcos Giron @ Daniel Altmaier,ATP Paris Masters,Daniel Altmaier,2025-10-27 06:00:00,Pinnacle,2.69,2.36,2.4,Not Found,2025-10-27 03:21:45
 Adelaide United @ Macarthur FC,A-League,Adelaide United,2025-10-27 04:00:00,Coolbet,5.0,2.03,3.52,Macarthur FC,2025-10-27 04:31:07
-Arthur Rinderknech @ Fabian Marozsan,ATP Paris Masters,Fabian Marozsan,2025-10-27 07:10:00,Bovada,2.2,2.35,2.03,Not Found,2025-10-27 04:50:40
-Sebastian Baez @ Cameron Norrie,ATP Paris Masters,Sebastian Baez,2025-10-27 08:00:00,Pinnacle,4.94,2.09,4.69,Not Found,2025-10-27 05:43:38
 Çaykur Rizespor @ Samsunspor,Turkey Super League,Çaykur Rizespor,2025-10-27 13:00:00,FanDuel,4.5,2.25,3.2,Draw,2025-10-27 09:46:56
 Fenerbahce @ Gazişehir Gaziantep,Turkey Super League,Gazişehir Gaziantep,2025-10-27 13:00:00,Tipico,5.2,2.45,3.93,Fenerbahce,2025-10-27 10:40:02
 KuPS Kuopio @ SJK Seinäjoki,Veikkausliiga - Finland,KuPS Kuopio,2025-10-27 12:00:00,Bovada,2.4,2.72,2.2,KuPS Kuopio,2025-10-27 11:37:05
@@ -512,29 +509,29 @@ England @ New Zealand,One Day Internationals,England,2025-10-28 21:10:00,Coral,5
 LG Twins @ Hanwha Eagles,KBO,LG Twins,2025-10-29 05:30:00,LowVig.ag,2.37,2.1,2.12,Hanwha Eagles,2025-10-29 00:49:00
 Perth Wildcats @ Tasmania JackJumpers,NBL,Perth Wildcats,2025-10-29 04:30:00,PointsBet (AU),2.6,2.03,2.36,Perth Wildcats,2025-10-29 01:40:33
 Miomir Kecmanovic @ Francisco Cerundolo,ATP Paris Masters,Miomir Kecmanovic,2025-10-29 07:10:00,Pinnacle,3.03,2.08,2.48,Not Found,2025-10-29 04:51:03
-Daniil Medvedev @ Grigor Dimitrov,ATP Paris Masters,Grigor Dimitrov,2025-10-29 08:20:00,SportsBet,3.85,2.0,4.05,API Error,2025-10-29 06:25:00
-Afghanistan @ Zimbabwe,International Twenty20,Zimbabwe,2025-10-29 07:30:00,SportsBet,3.02,2.09,2.58,API Error,2025-10-29 07:19:48
-Alexandre Muller @ Felix Auger-Aliassime,ATP Paris Masters,Alexandre Muller,2025-10-29 07:40:00,Betsson,4.15,2.04,3.67,API Error,2025-10-29 07:49:56
+Daniil Medvedev @ Grigor Dimitrov,ATP Paris Masters,Grigor Dimitrov,2025-10-29 08:20:00,SportsBet,3.85,2.0,4.05,Not Found,2025-10-29 06:25:00
+Afghanistan @ Zimbabwe,International Twenty20,Zimbabwe,2025-10-29 07:30:00,SportsBet,3.02,2.09,2.58,Not Found,2025-10-29 07:19:48
+Alexandre Muller @ Felix Auger-Aliassime,ATP Paris Masters,Alexandre Muller,2025-10-29 07:40:00,Betsson,4.15,2.04,3.67,Not Found,2025-10-29 07:49:56
 Udinese @ Juventus,Serie A - Italy,Udinese,2025-10-29 13:30:00,Pinnacle,8.96,2.29,7.98,Juventus,2025-10-29 12:52:52
 Parma @ AS Roma,Serie A - Italy,Draw,2025-10-29 13:30:00,BetOnline.ag,4.3,2.03,3.79,AS Roma,2025-10-29 13:39:21
 Hellas Verona @ Como,Serie A - Italy,Hellas Verona,2025-10-29 13:33:00,Coolbet,22.0,2.1,18.4,Como,2025-10-29 13:56:01
-FC Zurich @ FC Basel,Swiss Superleague,Draw,2025-10-29 15:30:00,Tipico,5.2,2.29,3.46,Not Found,2025-10-29 14:33:25
-AIK @ Modo Hockey,HockeyAllsvenskan,Draw,2025-10-29 14:00:00,Coolbet,4.0,2.14,3.61,API Error,2025-10-29 14:33:25
-Südtirol @ Venezia,Serie B - Italy,Draw,2025-10-29 15:30:00,1xBet,4.25,3.21,3.81,Not Found,2025-10-29 15:17:56
+FC Zurich @ FC Basel,Swiss Superleague,Draw,2025-10-29 15:30:00,Tipico,5.2,2.29,3.46,FC Basel,2025-10-29 14:33:25
+AIK @ Modo Hockey,HockeyAllsvenskan,Draw,2025-10-29 14:00:00,Coolbet,4.0,2.14,3.61,Modo Hockey,2025-10-29 14:33:25
+Südtirol @ Venezia,Serie B - Italy,Draw,2025-10-29 15:30:00,1xBet,4.25,3.21,3.81,Venezia,2025-10-29 15:17:56
 US Catanzaro 1929 @ Mantova,Serie B - Italy,US Catanzaro 1929,2025-10-29 15:30:00,Pinnacle,3.15,2.28,2.4,Not Found,2025-10-29 15:17:56
 RC Lens @ Metz,Ligue 1 - France,Metz,2025-10-29 14:00:00,DraftKings,5.75,2.92,5.09,Metz,2025-10-29 15:28:35
 Bodø/Glimt @ SK Brann,Eliteserien - Norway,Draw,2025-10-29 14:01:00,Pinnacle,3.8,2.44,2.9,Bodø/Glimt,2025-10-29 15:28:35
-Fiorentina @ Inter Milan,Serie A - Italy,Draw,2025-10-29 15:45:00,Sky Bet,5.5,2.5,4.5,Not Found,2025-10-29 15:48:18
-Dundee United @ Motherwell,Premiership - Scotland,Draw,2025-10-29 15:45:00,1xBet,4.06,2.49,3.1,Not Found,2025-10-29 15:48:18
-Angers @ Marseille,Ligue 1 - France,Angers,2025-10-29 16:05:00,Coolbet,14.0,2.16,8.66,Not Found,2025-10-29 15:48:18
-Cremonese @ Genoa,Serie A - Italy,Draw,2025-10-29 15:45:00,Marathon Bet,3.65,2.01,2.55,Not Found,2025-10-29 15:55:36
-Torino @ Bologna,Serie A - Italy,Torino,2025-10-29 15:47:00,Coolbet,6.0,2.11,4.65,Not Found,2025-10-29 16:25:36
-Auxerre @ Strasbourg,Ligue 1 - France,Auxerre,2025-10-29 16:05:00,Coolbet,5.5,2.06,5.17,Not Found,2025-10-29 16:25:36
-Rennes @ Toulouse,Ligue 1 - France,Draw,2025-10-29 16:05:00,Pinnacle,2.95,2.68,2.62,Not Found,2025-10-29 16:41:04
-Tottenham Hotspur @ Newcastle United,EFL Cup,Tottenham Hotspur,2025-10-29 16:00:00,Bovada,12.0,2.28,9.74,Not Found,2025-10-29 16:41:04
-Lyon @ Paris FC,Ligue 1 - France,Draw,2025-10-29 16:05:00,Bet Victor,4.6,2.07,3.98,Not Found,2025-10-29 16:41:04
-Chelsea @ Wolverhampton Wanderers,EFL Cup,Draw,2025-10-29 15:45:00,FanDuel,13.0,2.15,10.24,Not Found,2025-10-29 16:58:30
-Crystal Palace @ Liverpool,EFL Cup,Liverpool,2025-10-29 15:45:00,Unibet (UK),41.0,2.01,21.61,Not Found,2025-10-29 16:58:30
+Fiorentina @ Inter Milan,Serie A - Italy,Draw,2025-10-29 15:45:00,Sky Bet,5.5,2.5,4.5,Inter Milan,2025-10-29 15:48:18
+Dundee United @ Motherwell,Premiership - Scotland,Draw,2025-10-29 15:45:00,1xBet,4.06,2.49,3.1,Motherwell,2025-10-29 15:48:18
+Angers @ Marseille,Ligue 1 - France,Angers,2025-10-29 16:05:00,Coolbet,14.0,2.16,8.66,Draw,2025-10-29 15:48:18
+Cremonese @ Genoa,Serie A - Italy,Draw,2025-10-29 15:45:00,Marathon Bet,3.65,2.01,2.55,Cremonese,2025-10-29 15:55:36
+Torino @ Bologna,Serie A - Italy,Torino,2025-10-29 15:47:00,Coolbet,6.0,2.11,4.65,Draw,2025-10-29 16:25:36
+Auxerre @ Strasbourg,Ligue 1 - France,Auxerre,2025-10-29 16:05:00,Coolbet,5.5,2.06,5.17,Strasbourg,2025-10-29 16:25:36
+Rennes @ Toulouse,Ligue 1 - France,Draw,2025-10-29 16:05:00,Pinnacle,2.95,2.68,2.62,Draw,2025-10-29 16:41:04
+Tottenham Hotspur @ Newcastle United,EFL Cup,Tottenham Hotspur,2025-10-29 16:00:00,Bovada,12.0,2.28,9.74,Newcastle United,2025-10-29 16:41:04
+Lyon @ Paris FC,Ligue 1 - France,Draw,2025-10-29 16:05:00,Bet Victor,4.6,2.07,3.98,Draw,2025-10-29 16:41:04
+Chelsea @ Wolverhampton Wanderers,EFL Cup,Draw,2025-10-29 15:45:00,FanDuel,13.0,2.15,10.24,Chelsea,2025-10-29 16:58:30
+Crystal Palace @ Liverpool,EFL Cup,Liverpool,2025-10-29 15:45:00,Unibet (UK),41.0,2.01,21.61,Crystal Palace,2025-10-29 16:58:30
 Austin FC @ Los Angeles FC,MLS,Austin FC,2025-10-29 22:30:00,1xBet,9.75,2.19,9.7,Not Found,2025-10-29 21:50:03
 Cairns Taipans @ Brisbane Bullets,NBL,Cairns Taipans,2025-10-30 04:36:00,Marathon Bet,3.08,2.07,3.03,Not Found,2025-10-30 00:59:26
 Daniel Altmaier @ Felix Auger-Aliassime,ATP Paris Masters,Daniel Altmaier,2025-10-30 07:10:00,BoyleSports,2.88,2.09,2.77,Not Found,2025-10-30 03:50:52
