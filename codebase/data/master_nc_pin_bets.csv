@@ -243,7 +243,6 @@ New York Rangers @ Calgary Flames,NHL,New York Rangers,2025-10-26 20:08:01,FanDu
 Edmonton Oilers @ Vancouver Canucks,NHL,Edmonton Oilers,2025-10-26 22:08:10,FanDuel,5.2,4.24,22.64,Vancouver Canucks,2025-10-26 23:22:29
 Hanwha Eagles @ LG Twins,KBO,LG Twins,2025-10-27 05:30:27,FanDuel,3.85,1.88,105.07,LG Twins,2025-10-27 05:43:41
 Boston Celtics @ New Orleans Pelicans,NBA,New Orleans Pelicans,2025-10-27 20:00:00,Caesars,2.43,2.17,11.92,Boston Celtics,2025-10-27 18:20:15
-St Louis Blues @ Pittsburgh Penguins,NHL,St Louis Blues,2025-10-27 19:08:28,Caesars,2.6,1.94,34.0,Not Found,2025-10-27 19:19:52
 Cleveland Cavaliers @ Detroit Pistons,NBA,Cleveland Cavaliers,2025-10-27 19:13:09,DraftKings,2.1,1.85,13.28,Cleveland Cavaliers,2025-10-27 19:19:52
 Washington Commanders @ Kansas City Chiefs,NFL,Washington Commanders,2025-10-27 20:15:00,FanDuel,6.0,5.39,11.39,Kansas City Chiefs,2025-10-27 19:19:52
 Orlando Magic @ Philadelphia 76ers,NBA,Orlando Magic,2025-10-27 19:10:39,FanDuel,1.76,1.68,4.97,Philadelphia 76ers,2025-10-27 19:19:52
@@ -271,15 +270,15 @@ UTEP Miners @ Kennesaw State Owls,NCAAF,UTEP Miners,2025-10-28 20:00:00,FanDuel,
 Sacramento Kings @ Oklahoma City Thunder,NBA,Oklahoma City Thunder,2025-10-28 20:12:00,FanDuel,1.82,1.37,32.4,Oklahoma City Thunder,2025-10-28 21:50:26
 New York Knicks @ Milwaukee Bucks,NBA,Milwaukee Bucks,2025-10-28 20:13:09,BetMGM,2.54,2.13,18.98,Milwaukee Bucks,2025-10-28 21:50:26
 Los Angeles Clippers @ Golden State Warriors,NBA,Los Angeles Clippers,2025-10-28 23:13:31,Caesars,3.4,2.46,38.05,Golden State Warriors,2025-10-28 23:53:37
-Alexander Zverev @ Camilo Ugo Carabelli,ATP Paris Masters,Camilo Ugo Carabelli,2025-10-29 07:10:00,DraftKings,17.4,14.31,21.61,Not Found,2025-10-29 04:31:32
+Alexander Zverev @ Camilo Ugo Carabelli,ATP Paris Masters,Camilo Ugo Carabelli,2025-10-29 07:10:00,DraftKings,17.4,14.31,21.61,API Error,2025-10-29 04:31:32
 LG Twins @ Hanwha Eagles,KBO,LG Twins,2025-10-29 05:30:00,BetMGM,2.55,2.38,7.33,Hanwha Eagles,2025-10-29 04:31:32
-Alexandre Muller @ Felix Auger-Aliassime,ATP Paris Masters,Alexandre Muller,2025-10-29 07:10:00,FanDuel,4.1,3.98,3.09,Not Found,2025-10-29 04:31:32
-Valentin Vacherot @ Arthur Rinderknech,ATP Paris Masters,Arthur Rinderknech,2025-10-29 06:00:00,DraftKings,3.55,2.37,49.99,Not Found,2025-10-29 06:25:04
-Jannik Sinner @ Zizou Bergs,ATP Paris Masters,Zizou Bergs,2025-10-29 08:20:00,DraftKings,23.0,21.46,7.17,Not Found,2025-10-29 06:25:04
-Miomir Kecmanovic @ Francisco Cerundolo,ATP Paris Masters,Miomir Kecmanovic,2025-10-29 07:35:00,DraftKings,5.31,3.09,71.83,Not Found,2025-10-29 07:50:00
-Arthur Cazaux @ Alejandro Davidovich Fokina,ATP Paris Masters,Alejandro Davidovich Fokina,2025-10-29 11:05:00,BetMGM,1.67,1.6,4.53,Not Found,2025-10-29 11:26:20
-Lorenzo Sonego @ Lorenzo Musetti,ATP Paris Masters,Lorenzo Sonego,2025-10-29 13:10:00,FanDuel,4.0,3.89,2.75,Not Found,2025-10-29 12:52:56
-AS Monaco @ Olympiacos,Basketball Euroleague,Olympiacos,2025-10-29 15:15:00,FanDuel,1.53,1.5,2.12,Not Found,2025-10-29 15:28:39
+Alexandre Muller @ Felix Auger-Aliassime,ATP Paris Masters,Alexandre Muller,2025-10-29 07:10:00,FanDuel,4.1,3.98,3.09,API Error,2025-10-29 04:31:32
+Valentin Vacherot @ Arthur Rinderknech,ATP Paris Masters,Arthur Rinderknech,2025-10-29 06:00:00,DraftKings,3.55,2.37,49.99,API Error,2025-10-29 06:25:04
+Jannik Sinner @ Zizou Bergs,ATP Paris Masters,Zizou Bergs,2025-10-29 08:20:00,DraftKings,23.0,21.46,7.17,API Error,2025-10-29 06:25:04
+Miomir Kecmanovic @ Francisco Cerundolo,ATP Paris Masters,Miomir Kecmanovic,2025-10-29 07:35:00,DraftKings,5.31,3.09,71.83,API Error,2025-10-29 07:50:00
+Arthur Cazaux @ Alejandro Davidovich Fokina,ATP Paris Masters,Alejandro Davidovich Fokina,2025-10-29 11:05:00,BetMGM,1.67,1.6,4.53,API Error,2025-10-29 11:26:20
+Lorenzo Sonego @ Lorenzo Musetti,ATP Paris Masters,Lorenzo Sonego,2025-10-29 13:10:00,FanDuel,4.0,3.89,2.75,API Error,2025-10-29 12:52:56
+AS Monaco @ Olympiacos,Basketball Euroleague,Olympiacos,2025-10-29 15:15:00,FanDuel,1.53,1.5,2.12,API Error,2025-10-29 15:28:39
 Cleveland Cavaliers @ Boston Celtics,NBA,Boston Celtics,2025-10-29 19:10:00,DraftKings,2.45,2.18,12.21,Boston Celtics,2025-10-29 18:38:46
 Houston Rockets @ Toronto Raptors,NBA,Houston Rockets,2025-10-29 18:42:00,DraftKings,1.6,1.49,7.63,Houston Rockets,2025-10-29 18:47:42
 Orlando Magic @ Detroit Pistons,NBA,Orlando Magic,2025-10-29 19:10:00,Caesars,1.83,1.79,2.13,Detroit Pistons,2025-10-29 18:47:42
@@ -289,10 +288,10 @@ Sacramento Kings @ Chicago Bulls,NBA,Sacramento Kings,2025-10-29 20:11:00,Caesar
 Los Angeles Lakers @ Minnesota Timberwolves,NBA,Los Angeles Lakers,2025-10-29 21:43:00,BetMGM,5.25,3.59,46.44,Los Angeles Lakers,2025-10-29 21:50:07
 Indiana Pacers @ Dallas Mavericks,NBA,Indiana Pacers,2025-10-29 20:41:00,DraftKings,2.14,1.7,25.88,Dallas Mavericks,2025-10-29 21:50:07
 Memphis Grizzlies @ Phoenix Suns,NBA,Memphis Grizzlies,2025-10-29 22:10:00,FanDuel,2.32,1.93,20.27,Memphis Grizzlies,2025-10-29 23:04:05
-Daniel Altmaier @ Felix Auger-Aliassime,ATP Paris Masters,Daniel Altmaier,2025-10-30 07:10:00,FanDuel,2.84,2.78,2.05,Not Found,2025-10-30 03:21:27
-Fukuoka SoftBank Hawks @ Hanshin Tigers,NPB,Hanshin Tigers,2025-10-30 05:00:00,BetMGM,1.95,1.9,2.5,Not Found,2025-10-30 03:43:09
-LG Twins @ Hanwha Eagles,KBO,LG Twins,2025-10-30 05:30:00,BetMGM,2.05,1.94,5.72,Not Found,2025-10-30 03:50:56
-Andrey Rublev @ Ben Shelton,ATP Paris Masters,Andrey Rublev,2025-10-30 09:30:00,FanDuel,2.3,2.23,3.06,Not Found,2025-10-30 09:45:32
+Daniel Altmaier @ Felix Auger-Aliassime,ATP Paris Masters,Daniel Altmaier,2025-10-30 07:10:00,FanDuel,2.84,2.78,2.05,API Error,2025-10-30 03:21:27
+Fukuoka SoftBank Hawks @ Hanshin Tigers,NPB,Hanshin Tigers,2025-10-30 05:00:00,BetMGM,1.95,1.9,2.5,API Error,2025-10-30 03:43:09
+LG Twins @ Hanwha Eagles,KBO,LG Twins,2025-10-30 05:30:00,BetMGM,2.05,1.94,5.72,API Error,2025-10-30 03:50:56
+Andrey Rublev @ Ben Shelton,ATP Paris Masters,Andrey Rublev,2025-10-30 09:30:00,FanDuel,2.3,2.23,3.06,API Error,2025-10-30 09:45:32
 Alex de Minaur @ Karen Khachanov,ATP Paris Masters,Karen Khachanov,2025-10-30 11:43:09,DraftKings,2.66,2.36,12.67,Not Found,2025-10-30 11:42:16
 Jannik Sinner @ Francisco Cerundolo,ATP Paris Masters,Francisco Cerundolo,2025-10-30 14:00:00,DraftKings,14.0,13.3,5.28,Not Found,2025-10-30 12:50:58
 Daniil Medvedev @ Lorenzo Sonego,ATP Paris Masters,Daniil Medvedev,2025-10-30 13:14:31,BetMGM,1.62,1.28,26.9,Not Found,2025-10-30 13:21:56
