@@ -1236,12 +1236,10 @@ Annecy FC @ Rodez AF,Ligue 2 - France,Annecy FC,2025-10-28 15:30:00,Tipico,3.6,R
 Lincoln City @ Bradford City,League 1,Bradford City,2025-10-28 15:45:00,Paddy Power,2.38,Draw,2025-10-28 15:49:15
 Pittsburgh Penguins @ Philadelphia Flyers,NHL,Philadelphia Flyers,2025-10-28 18:00:00,1xBet,2.04,Philadelphia Flyers,2025-10-28 15:49:15
 Vegas Golden Knights @ Carolina Hurricanes,NHL,Vegas Golden Knights,2025-10-28 18:30:00,LeoVegas (SE),3.05,Vegas Golden Knights,2025-10-28 15:56:29
-Cardiff City @ Wrexham AFC,EFL Cup,Wrexham AFC,2025-10-28 16:00:00,Coolbet,2.45,Not Found,2025-10-28 15:56:29
 Calgary Flames @ Toronto Maple Leafs,NHL,Toronto Maple Leafs,2025-10-28 18:00:00,1xBet,2.0,Toronto Maple Leafs,2025-10-28 16:26:20
 Tranmere Rovers @ Accrington Stanley,League 2,Accrington Stanley,2025-10-28 15:45:00,Pinnacle,1.55,Draw,2025-10-28 16:26:20
 Philadelphia 76ers @ Washington Wizards,NBA,Philadelphia 76ers,2025-10-28 19:10:00,Coolbet,1.55,Philadelphia 76ers,2025-10-28 16:41:40
 Modena @ Reggiana,Serie B - Italy,Modena,2025-10-28 15:31:00,Unibet (UK),11.0,Reggiana,2025-10-28 16:59:21
-Aleksandar Vukic @ Taylor Fritz,ATP Paris Masters,Aleksandar Vukic,2025-10-28 16:40:00,FanDuel,8.0,Not Found,2025-10-28 16:59:21
 AC Milan @ Atalanta BC,Serie A - Italy,AC Milan,2025-10-28 15:45:00,FanDuel,5.6,Draw,2025-10-28 17:20:16
 Anaheim Ducks @ Florida Panthers,NHL,Florida Panthers,2025-10-28 19:00:00,1xBet,1.93,Anaheim Ducks,2025-10-28 17:20:16
 Fulham @ Wycombe Wanderers,EFL Cup,Fulham,2025-10-28 15:45:00,Coral,6.0,Draw,2025-10-28 17:32:21
@@ -1333,45 +1331,45 @@ Sassuolo @ Cagliari,Serie A - Italy,Sassuolo,2025-10-30 13:30:00,Coolbet,3.13,Sa
 Australia @ India,ICC Women's World Cup,India,2025-10-30 05:30:00,TAB,2.5,Not Found,2025-10-30 11:52:35
 Daniil Medvedev @ Lorenzo Sonego,ATP Paris Masters,Lorenzo Sonego,2025-10-30 14:00:00,LowVig.ag,4.5,Not Found,2025-10-30 13:00:11
 Jannik Sinner @ Francisco Cerundolo,ATP Paris Masters,Francisco Cerundolo,2025-10-30 14:00:00,Paddy Power,15.0,Not Found,2025-10-30 13:39:13
-Brynäs IF @ Skellefteå AIK,SHL,Brynäs IF,2025-10-30 14:00:00,Coolbet,2.9,API Error,2025-10-30 13:39:13
-HV71 @ Djurgårdens IF,SHL,Djurgårdens IF,2025-10-30 14:00:00,LeoVegas (SE),2.0,API Error,2025-10-30 13:39:13
-Växjö Lakers @ Frölunda HC,SHL,Växjö Lakers,2025-10-30 14:00:00,LeoVegas (SE),3.9,API Error,2025-10-30 13:55:27
-Virtus Segafredo Bologna @ FC Bayern München,Basketball Euroleague,Virtus Segafredo Bologna,2025-10-30 15:30:00,Unibet (NL),2.8,API Error,2025-10-30 14:32:45
+Brynäs IF @ Skellefteå AIK,SHL,Brynäs IF,2025-10-30 14:00:00,Coolbet,2.9,Brynäs IF,2025-10-30 13:39:13
+HV71 @ Djurgårdens IF,SHL,Djurgårdens IF,2025-10-30 14:00:00,LeoVegas (SE),2.0,HV71,2025-10-30 13:39:13
+Växjö Lakers @ Frölunda HC,SHL,Växjö Lakers,2025-10-30 14:00:00,LeoVegas (SE),3.9,Frölunda HC,2025-10-30 13:55:27
+Virtus Segafredo Bologna @ FC Bayern München,Basketball Euroleague,Virtus Segafredo Bologna,2025-10-30 15:30:00,Unibet (NL),2.8,Not Found,2025-10-30 14:32:45
 Lazio @ Pisa,Serie A - Italy,Lazio,2025-10-30 15:45:00,1xBet,2.21,Draw,2025-10-30 14:32:45
-Dubai Basketball @ Valencia Basket,Basketball Euroleague,Dubai Basketball,2025-10-30 15:30:00,SportsBet,3.6,API Error,2025-10-30 15:18:08
-Timrå IK @ Malmö Redhawks,SHL,Draw,2025-10-30 14:00:00,Betway,3.2,API Error,2025-10-30 15:29:01
-Paris Basketball @ Pallacanestro Olimpia Milano,Basketball Euroleague,Pallacanestro Olimpia Milano,2025-10-30 15:30:00,Betway,1.61,API Error,2025-10-30 15:29:01
-Alexander Zverev @ Alejandro Davidovich Fokina,ATP Paris Masters,Alexander Zverev,2025-10-30 15:40:00,1xBet,1.49,API Error,2025-10-30 15:29:01
-KK Crvena zvezda @ Maccabi Tel Aviv,Basketball Euroleague,KK Crvena zvezda,2025-10-30 15:05:00,Bovada,1.83,API Error,2025-10-30 15:41:34
-Williams Andres Herrera @ Christopher Gurrero,Boxing,Christopher Gurrero,2025-10-30 17:00:00,Nordic Bet,1.09,API Error,2025-10-30 15:41:34
+Dubai Basketball @ Valencia Basket,Basketball Euroleague,Dubai Basketball,2025-10-30 15:30:00,SportsBet,3.6,Valencia Basket,2025-10-30 15:18:08
+Timrå IK @ Malmö Redhawks,SHL,Draw,2025-10-30 14:00:00,Betway,3.2,Malmö Redhawks,2025-10-30 15:29:01
+Paris Basketball @ Pallacanestro Olimpia Milano,Basketball Euroleague,Pallacanestro Olimpia Milano,2025-10-30 15:30:00,Betway,1.61,Not Found,2025-10-30 15:29:01
+Alexander Zverev @ Alejandro Davidovich Fokina,ATP Paris Masters,Alexander Zverev,2025-10-30 15:40:00,1xBet,1.49,Not Found,2025-10-30 15:29:01
+KK Crvena zvezda @ Maccabi Tel Aviv,Basketball Euroleague,KK Crvena zvezda,2025-10-30 15:05:00,Bovada,1.83,Not Found,2025-10-30 15:41:34
+Williams Andres Herrera @ Christopher Gurrero,Boxing,Christopher Gurrero,2025-10-30 17:00:00,Nordic Bet,1.09,Not Found,2025-10-30 15:41:34
 Universidad de Chile @ Lanus,Copa Sudamericana,Universidad de Chile,2025-10-30 18:00:00,Pinnacle,5.16,Lanús,2025-10-30 15:57:29
 Buffalo Sabres @ Boston Bruins,NHL,Draw,2025-10-30 19:00:00,1xBet,4.57,Boston Bruins,2025-10-30 15:57:29
-Fenerbahce SK @ Real Madrid,Basketball Euroleague,Fenerbahce SK,2025-10-30 16:00:00,Unibet (NL),2.85,API Error,2025-10-30 15:57:29
+Fenerbahce SK @ Real Madrid,Basketball Euroleague,Fenerbahce SK,2025-10-30 16:00:00,Unibet (NL),2.85,Not Found,2025-10-30 15:57:29
 BSC Young Boys @ Grasshopper Zürich,Swiss Superleague,Draw,2025-10-30 15:30:00,Unibet (IT),3.75,Draw,2025-10-30 16:48:50
 FC Luzern @ FC Lugano,Swiss Superleague,FC Lugano,2025-10-30 15:30:00,Bovada,1.83,FC Lugano,2025-10-30 16:48:50
-Ralfs Vilcans @ Mehmet Unal,Boxing,Ralfs Vilcans,2025-10-30 18:00:00,LowVig.ag,17.0,API Error,2025-10-30 17:41:59
+Ralfs Vilcans @ Mehmet Unal,Boxing,Ralfs Vilcans,2025-10-30 18:00:00,LowVig.ag,17.0,Not Found,2025-10-30 17:41:59
 New York Islanders @ Carolina Hurricanes,NHL,New York Islanders,2025-10-30 19:30:00,LeoVegas (SE),4.0,Carolina Hurricanes,2025-10-30 17:41:59
 Orlando Magic @ Charlotte Hornets,NBA,Orlando Magic,2025-10-30 19:10:00,888sport,1.75,Orlando Magic,2025-10-30 17:41:59
 Nashville Predators @ Philadelphia Flyers,NHL,Draw,2025-10-30 19:00:00,1xBet,4.46,Philadelphia Flyers,2025-10-30 17:49:56
 Dallas Stars @ Tampa Bay Lightning,NHL,Dallas Stars,2025-10-30 19:00:00,Tipico,3.0,Tampa Bay Lightning,2025-10-30 17:49:56
 Calgary Flames @ Ottawa Senators,NHL,Calgary Flames,2025-10-30 19:00:00,LeoVegas (SE),3.35,Ottawa Senators,2025-10-30 17:57:12
-Marshall Thundering Herd @ Coastal Carolina Chanticleers,NCAAF,Coastal Carolina Chanticleers,2025-10-30 19:30:00,Betway,3.25,API Error,2025-10-30 18:48:22
+Marshall Thundering Herd @ Coastal Carolina Chanticleers,NCAAF,Coastal Carolina Chanticleers,2025-10-30 19:30:00,Betway,3.25,Not Found,2025-10-30 18:48:22
 Chicago Blackhawks @ Winnipeg Jets,NHL,Chicago Blackhawks,2025-10-30 20:00:00,LeoVegas (SE),3.8,Winnipeg Jets,2025-10-30 19:31:09
 Pittsburgh Penguins @ Minnesota Wild,NHL,Draw,2025-10-30 20:00:00,1xBet,4.71,Pittsburgh Penguins,2025-10-30 19:41:12
 Washington Wizards @ Oklahoma City Thunder,NBA,Oklahoma City Thunder,2025-10-30 20:10:00,1xBet,1.1,Oklahoma City Thunder,2025-10-30 19:41:12
 Vancouver Canucks @ St Louis Blues,NHL,Draw,2025-10-30 20:00:00,Unibet (UK),4.5,Vancouver Canucks,2025-10-30 19:56:18
-Tulane Green Wave @ UTSA Roadrunners,NCAAF,Tulane Green Wave,2025-10-30 19:37:00,FanDuel,9.3,API Error,2025-10-30 21:46:30
-Zhejiang @ Shanghai SIPG FC,Super League - China,Draw,2025-10-31 06:00:00,Bovada,4.95,Not Found,2025-10-30 21:46:30
-San Diego Gulls @ Coachella Valley Firebirds,AHL,Coachella Valley Firebirds,2025-10-30 21:30:00,GTbets,2.3,API Error,2025-10-30 21:46:30
+Tulane Green Wave @ UTSA Roadrunners,NCAAF,Tulane Green Wave,2025-10-30 19:37:00,FanDuel,9.3,Not Found,2025-10-30 21:46:30
+Zhejiang @ Shanghai SIPG FC,Super League - China,Draw,2025-10-31 06:00:00,Bovada,4.95,Shanghai SIPG FC,2025-10-30 21:46:30
+San Diego Gulls @ Coachella Valley Firebirds,AHL,Coachella Valley Firebirds,2025-10-30 21:30:00,GTbets,2.3,Coachella Valley Firebirds,2025-10-30 21:46:30
 India @ Australia,International Twenty20,India,2025-10-31 04:15:00,William Hill,1.91,Not Found,2025-10-30 23:48:15
-New Zealand Breakers @ Illawarra Hawks,NBL,Illawarra Hawks,2025-10-31 04:36:00,Bet Right,1.45,Not Found,2025-10-31 00:31:36
-Henan FC @ Chengdu Rongcheng FC,Super League - China,Henan FC,2025-10-31 07:35:00,Pinnacle,8.32,Not Found,2025-10-31 01:39:34
-Melbourne Victory @ Perth Glory,A-League,Perth Glory,2025-10-31 06:45:00,Unibet,3.25,Not Found,2025-10-31 01:39:34
-LG Twins @ Hanwha Eagles,KBO,Hanwha Eagles,2025-10-31 05:30:00,Fanatics,2.15,Not Found,2025-10-31 01:55:51
-Melbourne City @ Brisbane Roar,A-League,Melbourne City,2025-10-31 04:35:00,Pinnacle,1.96,Not Found,2025-10-31 01:55:51
+New Zealand Breakers @ Illawarra Hawks,NBL,Illawarra Hawks,2025-10-31 04:36:00,Bet Right,1.45,New Zealand Breakers,2025-10-31 00:31:36
+Henan FC @ Chengdu Rongcheng FC,Super League - China,Henan FC,2025-10-31 07:35:00,Pinnacle,8.32,Henan FC,2025-10-31 01:39:34
+Melbourne Victory @ Perth Glory,A-League,Perth Glory,2025-10-31 06:45:00,Unibet,3.25,Melbourne Victory,2025-10-31 01:39:34
+LG Twins @ Hanwha Eagles,KBO,Hanwha Eagles,2025-10-31 05:30:00,Fanatics,2.15,LG Twins,2025-10-31 01:55:51
+Melbourne City @ Brisbane Roar,A-League,Melbourne City,2025-10-31 04:35:00,Pinnacle,1.96,Draw,2025-10-31 01:55:51
 Afghanistan @ Zimbabwe,International Twenty20,Zimbabwe,2025-10-31 07:30:00,BoyleSports,4.0,Not Found,2025-10-31 03:20:56
 Felix Auger-Aliassime @ Valentin Vacherot,ATP Paris Masters,Valentin Vacherot,2025-10-31 09:00:00,Pinnacle,2.4,Not Found,2025-10-31 04:49:12
-Shenzhen Peng City FC @ Shanghai Shenhua FC,Super League - China,Shenzhen Peng City FC,2025-10-31 08:00:00,Pinnacle,11.77,Not Found,2025-10-31 05:48:32
+Shenzhen Peng City FC @ Shanghai Shenhua FC,Super League - China,Shenzhen Peng City FC,2025-10-31 08:00:00,Pinnacle,11.77,Shanghai Shenhua FC,2025-10-31 05:48:32
 HIFK @ Tappara,Liiga,HIFK,2025-10-31 12:30:00,Everygame,10.0,Not Found,2025-10-31 06:50:47
 South Africa @ Pakistan,International Twenty20,South Africa,2025-10-31 11:00:00,Betway,2.15,Not Found,2025-10-31 06:50:47
 Alex de Minaur @ Alexander Bublik,ATP Paris Masters,Alex de Minaur,2025-10-31 10:10:00,Betway,1.8,Not Found,2025-10-31 06:50:47

@@ -487,8 +487,6 @@ Annecy FC @ Rodez AF,Ligue 2 - France,Annecy FC,2025-10-28 15:30:00,FanDuel,4.0,
 Sampdoria @ Empoli,Serie B - Italy,Sampdoria,2025-10-28 15:30:00,Pinnacle,3.54,2.37,3.76,Draw,2025-10-28 15:29:30
 AC Milan @ Atalanta BC,Serie A - Italy,Atalanta BC,2025-10-28 15:45:00,1xBet,2.77,3.2,2.42,Draw,2025-10-28 15:41:00
 Guingamp @ Grenoble,Ligue 2 - France,Guingamp,2025-10-28 15:30:00,Coolbet,2.75,2.32,2.64,Draw,2025-10-28 15:41:00
-Carrarese @ Cesena FC,Serie B - Italy,Draw,2025-10-28 15:33:00,TABtouch,3.25,2.8,2.98,Not Found,2025-10-28 15:49:10
-Cardiff City @ Wrexham AFC,EFL Cup,Cardiff City,2025-10-28 16:00:00,Nordic Bet,3.25,2.59,3.17,Not Found,2025-10-28 15:49:10
 Brentford @ Grimsby Town,EFL Cup,Grimsby Town,2025-10-28 15:45:00,PlayUp,9.5,2.13,8.61,Brentford,2025-10-28 15:49:10
 Stade de Reims @ Boulogne,Ligue 2 - France,Draw,2025-10-28 15:30:00,Bet Victor,3.3,2.47,3.34,Stade de Reims,2025-10-28 15:56:25
 Lincoln City @ Bradford City,League 1,Draw,2025-10-28 15:45:00,Pinnacle,3.46,2.28,2.98,Draw,2025-10-28 15:56:25
@@ -497,7 +495,6 @@ FC St Gallen @ FC Sion,Swiss Superleague,Draw,2025-10-28 15:30:00,FanDuel,10.0,2
 Tranmere Rovers @ Accrington Stanley,League 2,Tranmere Rovers,2025-10-28 15:45:00,DraftKings,9.0,2.35,8.29,Draw,2025-10-28 16:51:21
 Plymouth Argyle @ Mansfield Town,League 1,Plymouth Argyle,2025-10-28 15:45:00,Paddy Power,41.0,2.63,36.47,Mansfield Town,2025-10-28 17:20:12
 New York City FC @ Charlotte FC,MLS,New York City FC,2025-10-28 18:45:00,1xBet,2.81,2.38,2.98,New York City FC,2025-10-28 18:55:22
-England @ New Zealand,One Day Internationals,England,2025-10-28 21:10:00,Coral,5.5,2.22,4.28,Not Found,2025-10-28 23:08:01
 LG Twins @ Hanwha Eagles,KBO,LG Twins,2025-10-29 05:30:00,LowVig.ag,2.37,2.1,2.12,Hanwha Eagles,2025-10-29 00:49:00
 Perth Wildcats @ Tasmania JackJumpers,NBL,Perth Wildcats,2025-10-29 04:30:00,PointsBet (AU),2.6,2.03,2.36,Perth Wildcats,2025-10-29 01:40:33
 Miomir Kecmanovic @ Francisco Cerundolo,ATP Paris Masters,Miomir Kecmanovic,2025-10-29 07:10:00,Pinnacle,3.03,2.08,2.48,Not Found,2025-10-29 04:51:03
@@ -534,15 +531,15 @@ HJK Helsinki @ Ilves Tampere,Veikkausliiga - Finland,Draw,2025-10-30 13:00:00,Pi
 Sassuolo @ Cagliari,Serie A - Italy,Cagliari,2025-10-30 13:30:00,Coolbet,3.14,2.12,2.78,Sassuolo,2025-10-30 13:55:23
 FC Luzern @ FC Lugano,Swiss Superleague,FC Luzern,2025-10-30 15:30:00,Pinnacle,4.06,2.85,3.58,FC Lugano,2025-10-30 14:32:41
 Lazio @ Pisa,Serie A - Italy,Pisa,2025-10-30 15:45:00,LowVig.ag,4.1,2.47,3.19,Draw,2025-10-30 15:28:57
-Alexander Zverev @ Alejandro Davidovich Fokina,ATP Paris Masters,Alejandro Davidovich Fokina,2025-10-30 15:40:00,BetOnline.ag,3.03,2.12,2.88,API Error,2025-10-30 15:49:25
+Alexander Zverev @ Alejandro Davidovich Fokina,ATP Paris Masters,Alejandro Davidovich Fokina,2025-10-30 15:40:00,BetOnline.ag,3.03,2.12,2.88,Not Found,2025-10-30 15:49:25
 Orlando Magic @ Charlotte Hornets,NBA,Charlotte Hornets,2025-10-30 19:10:00,1xBet,2.32,2.11,2.42,Orlando Magic,2025-10-30 17:41:58
-Williams Andres Herrera @ Christopher Gurrero,Boxing,Draw,2025-10-30 20:00:00,Paddy Power,26.0,2.59,24.02,API Error,2025-10-30 19:19:54
-Melbourne City @ Brisbane Roar,A-League,Draw,2025-10-31 04:35:00,Bovada,3.9,2.82,3.3,Not Found,2025-10-31 01:55:47
-Zhejiang @ Shanghai SIPG FC,Super League - China,Draw,2025-10-31 06:00:00,Bovada,4.95,2.03,3.04,Not Found,2025-10-31 03:20:52
-Melbourne Victory @ Perth Glory,A-League,Perth Glory,2025-10-31 06:45:00,Bovada,3.3,3.07,3.25,Not Found,2025-10-31 05:24:39
+Williams Andres Herrera @ Christopher Gurrero,Boxing,Draw,2025-10-30 20:00:00,Paddy Power,26.0,2.59,24.02,Not Found,2025-10-30 19:19:54
+Melbourne City @ Brisbane Roar,A-League,Draw,2025-10-31 04:35:00,Bovada,3.9,2.82,3.3,Draw,2025-10-31 01:55:47
+Zhejiang @ Shanghai SIPG FC,Super League - China,Draw,2025-10-31 06:00:00,Bovada,4.95,2.03,3.04,Shanghai SIPG FC,2025-10-31 03:20:52
+Melbourne Victory @ Perth Glory,A-League,Perth Glory,2025-10-31 06:45:00,Bovada,3.3,3.07,3.25,Melbourne Victory,2025-10-31 05:24:39
 Alex de Minaur @ Alexander Bublik,ATP Paris Masters,Alexander Bublik,2025-10-31 10:10:00,Bovada,2.25,2.09,2.38,Not Found,2025-10-31 06:41:20
 Felix Auger-Aliassime @ Valentin Vacherot,ATP Paris Masters,Valentin Vacherot,2025-10-31 09:00:00,Bovada,2.5,2.35,2.31,Not Found,2025-10-31 06:50:43
-Shenzhen Peng City FC @ Shanghai Shenhua FC,Super League - China,Draw,2025-10-31 08:00:00,FanDuel,7.5,2.14,7.41,Not Found,2025-10-31 07:41:33
+Shenzhen Peng City FC @ Shanghai Shenhua FC,Super League - China,Draw,2025-10-31 08:00:00,FanDuel,7.5,2.14,7.41,Shanghai Shenhua FC,2025-10-31 07:41:33
 Cobresal @ Audax Italiano,Primera División - Chile,Cobresal,2025-10-31 14:00:00,Coolbet,4.25,2.06,2.95,Not Found,2025-10-31 13:38:03
 Rodez AF @ Montpellier,Ligue 2 - France,Draw,2025-10-31 15:00:00,Pinnacle,4.08,2.88,3.08,Not Found,2025-10-31 14:32:44
 Nancy @ Le Mans FC,Ligue 2 - France,Nancy,2025-10-31 15:00:00,Pinnacle,4.25,2.83,4.0,Not Found,2025-10-31 14:32:44
