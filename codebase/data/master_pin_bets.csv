@@ -2210,15 +2210,15 @@ Växjö Lakers @ Frölunda HC,SHL,Växjö Lakers,2025-10-30 14:00:00,Unibet (SE)
 Jannik Sinner @ Francisco Cerundolo,ATP Paris Masters,Francisco Cerundolo,2025-10-30 14:00:00,Paddy Power,15.0,13.3,12.8,Not Found,2025-10-30 12:50:56
 Leksands IF @ Färjestad BK,SHL,Leksands IF,2025-10-30 14:00:00,LeoVegas (SE),5.25,3.64,44.29,Färjestad BK,2025-10-30 13:21:54
 Daniil Medvedev @ Lorenzo Sonego,ATP Paris Masters,Daniil Medvedev,2025-10-30 13:14:31,Bet Victor,1.67,1.28,30.82,Not Found,2025-10-30 13:21:54
-Linköping HC @ Örebro HK,SHL,Örebro HK,2025-10-30 14:00:00,Coolbet,2.13,1.7,25.42,Not Found,2025-10-30 13:21:54
-ASVEL Lyon Villeurbanne @ Žalgiris,Basketball Euroleague,ASVEL Lyon Villeurbanne,2025-10-30 14:00:00,SportsBet,4.15,3.84,8.12,Not Found,2025-10-30 13:39:11
+Linköping HC @ Örebro HK,SHL,Örebro HK,2025-10-30 14:00:00,Coolbet,2.13,1.7,25.42,API Error,2025-10-30 13:21:54
+ASVEL Lyon Villeurbanne @ Žalgiris,Basketball Euroleague,ASVEL Lyon Villeurbanne,2025-10-30 14:00:00,SportsBet,4.15,3.84,8.12,API Error,2025-10-30 13:39:11
 Sassuolo @ Cagliari,Serie A - Italy,Sassuolo,2025-10-30 13:30:00,Bovada,3.1,3.0,3.34,Sassuolo,2025-10-30 13:39:11
 Luleå HF @ Rögle BK,SHL,Luleå HF,2025-10-30 14:01:00,Betway,17.0,4.34,291.81,Rögle BK,2025-10-30 14:32:43
 Timrå IK @ Malmö Redhawks,SHL,Timrå IK,2025-10-30 14:00:00,Coolbet,4.0,2.31,73.23,Malmö Redhawks,2025-10-30 14:32:43
-KK Crvena zvezda @ Maccabi Tel Aviv,Basketball Euroleague,Maccabi Tel Aviv,2025-10-30 15:05:00,Ladbrokes,2.05,1.94,5.69,Not Found,2025-10-30 14:32:43
+KK Crvena zvezda @ Maccabi Tel Aviv,Basketball Euroleague,Maccabi Tel Aviv,2025-10-30 15:05:00,Ladbrokes,2.05,1.94,5.69,API Error,2025-10-30 14:32:43
 Lazio @ Pisa,Serie A - Italy,Pisa,2025-10-30 15:45:00,Unibet (NL),4.1,3.98,3.12,Draw,2025-10-30 14:32:43
 Dubai Basketball @ Valencia Basket,Basketball Euroleague,Valencia Basket,2025-10-30 15:30:00,BetMGM,1.4,1.37,2.13,Valencia Basket,2025-10-30 14:52:28
-Fenerbahce SK @ Real Madrid,Basketball Euroleague,Fenerbahce SK,2025-10-30 16:00:00,Bovada,3.0,2.75,8.89,Not Found,2025-10-30 15:18:06
+Fenerbahce SK @ Real Madrid,Basketball Euroleague,Fenerbahce SK,2025-10-30 16:00:00,Bovada,3.0,2.75,8.89,API Error,2025-10-30 15:18:06
 BSC Young Boys @ Grasshopper Zürich,Swiss Superleague,Grasshopper Zürich,2025-10-30 15:30:00,Bovada,3.75,3.12,20.22,Draw,2025-10-30 15:28:59
 Virtus Segafredo Bologna @ FC Bayern München,Basketball Euroleague,Virtus Segafredo Bologna,2025-10-30 15:31:00,Unibet (NL),4.1,2.77,47.76,API Error,2025-10-30 15:41:32
 Paris Basketball @ Pallacanestro Olimpia Milano,Basketball Euroleague,Paris Basketball,2025-10-30 15:32:00,Betsson,3.25,2.48,30.81,API Error,2025-10-30 15:41:32
@@ -2242,23 +2242,23 @@ Henan FC @ Chengdu Rongcheng FC,Super League - China,Henan FC,2025-10-31 07:35:0
 India @ Australia,International Twenty20,India,2025-10-31 04:15:00,Paddy Power,2.1,1.91,9.9,API Error,2025-10-31 03:50:37
 Shenzhen Peng City FC @ Shanghai Shenhua FC,Super League - China,Shenzhen Peng City FC,2025-10-31 08:00:00,Bovada,13.0,12.37,5.1,Shanghai Shenhua FC,2025-10-31 04:49:11
 Alex de Minaur @ Alexander Bublik,ATP Paris Masters,Alexander Bublik,2025-10-31 10:10:00,Bovada,2.25,2.2,2.17,API Error,2025-10-31 06:41:22
-HIFK @ Tappara,Liiga,HIFK,2025-10-31 12:30:00,Everygame,10.0,5.91,69.16,Not Found,2025-10-31 06:50:45
-HPK @ Pelicans,Liiga,HPK,2025-10-31 12:30:00,Coolbet,2.77,2.05,35.23,Not Found,2025-10-31 07:41:36
+HIFK @ Tappara,Liiga,HIFK,2025-10-31 12:30:00,Everygame,10.0,5.91,69.16,API Error,2025-10-31 06:50:45
+HPK @ Pelicans,Liiga,HPK,2025-10-31 12:30:00,Coolbet,2.77,2.05,35.23,API Error,2025-10-31 07:41:36
 Afghanistan @ Zimbabwe,International Twenty20,Afghanistan,2025-10-31 07:30:00,Betway,1.5,1.38,8.32,API Error,2025-10-31 07:41:36
-Kärpät @ JYP,Liiga,Kärpät,2025-10-31 12:30:00,LeoVegas (SE),4.4,2.84,55.11,Not Found,2025-10-31 08:46:34
-Ketterä @ IPK,Mestis,Ketterä,2025-10-31 12:30:00,LeoVegas (SE),3.4,2.48,37.05,Not Found,2025-10-31 08:46:34
-RoKi @ JoKP,Mestis,RoKi,2025-10-31 12:30:00,LeoVegas (SE),3.0,2.21,35.64,Not Found,2025-10-31 09:20:57
+Kärpät @ JYP,Liiga,Kärpät,2025-10-31 12:30:00,LeoVegas (SE),4.4,2.84,55.11,API Error,2025-10-31 08:46:34
+Ketterä @ IPK,Mestis,Ketterä,2025-10-31 12:30:00,LeoVegas (SE),3.4,2.48,37.05,API Error,2025-10-31 08:46:34
+RoKi @ JoKP,Mestis,RoKi,2025-10-31 12:30:00,LeoVegas (SE),3.0,2.21,35.64,API Error,2025-10-31 09:20:57
 Felix Auger-Aliassime @ Valentin Vacherot,ATP Paris Masters,Valentin Vacherot,2025-10-31 09:00:00,DraftKings,2.74,2.39,14.51,API Error,2025-10-31 09:20:57
-Jukurit @ Kiekko-Espoo,Liiga,Jukurit,2025-10-31 12:30:00,LeoVegas (SE),3.65,2.62,39.13,Not Found,2025-10-31 10:41:34
-KooKoo @ Ässät,Liiga,KooKoo,2025-10-31 12:30:00,Coolbet,3.7,2.67,38.52,Not Found,2025-10-31 11:22:43
-Ilves @ SaiPa,Liiga,Ilves,2025-10-31 13:30:00,Coolbet,2.9,2.17,33.67,Not Found,2025-10-31 12:49:59
-Kocaelispor @ Basaksehir,Turkey Super League,Draw,2025-10-31 13:00:00,1xBet,3.52,3.41,3.13,Not Found,2025-10-31 12:59:02
-GKS Katowice @ Nieciecza,Ekstraklasa - Poland,Nieciecza,2025-10-31 13:00:00,LiveScore Bet,5.5,2.58,113.51,Not Found,2025-10-31 13:20:35
-Panathinaikos @ AS Monaco,Basketball Euroleague,Panathinaikos,2025-10-31 14:00:00,Bovada,2.15,2.05,4.95,Not Found,2025-10-31 13:38:05
-Cobresal @ Audax Italiano,Primera División - Chile,Cobresal,2025-10-31 14:00:00,Coolbet,4.55,4.17,9.14,Not Found,2025-10-31 13:46:55
+Jukurit @ Kiekko-Espoo,Liiga,Jukurit,2025-10-31 12:30:00,LeoVegas (SE),3.65,2.62,39.13,API Error,2025-10-31 10:41:34
+KooKoo @ Ässät,Liiga,KooKoo,2025-10-31 12:30:00,Coolbet,3.7,2.67,38.52,API Error,2025-10-31 11:22:43
+Ilves @ SaiPa,Liiga,Ilves,2025-10-31 13:30:00,Coolbet,2.9,2.17,33.67,API Error,2025-10-31 12:49:59
+Kocaelispor @ Basaksehir,Turkey Super League,Draw,2025-10-31 13:00:00,1xBet,3.52,3.41,3.13,Basaksehir,2025-10-31 12:59:02
+GKS Katowice @ Nieciecza,Ekstraklasa - Poland,Nieciecza,2025-10-31 13:00:00,LiveScore Bet,5.5,2.58,113.51,GKS Katowice,2025-10-31 13:20:35
+Panathinaikos @ AS Monaco,Basketball Euroleague,Panathinaikos,2025-10-31 14:00:00,Bovada,2.15,2.05,4.95,API Error,2025-10-31 13:38:05
+Cobresal @ Audax Italiano,Primera División - Chile,Cobresal,2025-10-31 14:00:00,Coolbet,4.55,4.17,9.14,Cobresal,2025-10-31 13:46:55
 Jannik Sinner @ Ben Shelton,ATP Paris Masters,Ben Shelton,2025-10-31 14:00:00,LeoVegas,5.6,5.42,3.38,Not Found,2025-10-31 13:46:55
-Holstein Kiel @ SC Preußen Münster,Bundesliga 2 - Germany,SC Preußen Münster,2025-10-31 13:30:00,DraftKings,8.0,3.51,127.66,Not Found,2025-10-31 13:55:23
-Hannover 96 @ Elversberg,Bundesliga 2 - Germany,Elversberg,2025-10-31 13:30:00,Coolbet,2.75,1.54,78.58,Not Found,2025-10-31 14:32:46
+Holstein Kiel @ SC Preußen Münster,Bundesliga 2 - Germany,SC Preußen Münster,2025-10-31 13:30:00,DraftKings,8.0,3.51,127.66,SC Preußen Münster,2025-10-31 13:55:23
+Hannover 96 @ Elversberg,Bundesliga 2 - Germany,Elversberg,2025-10-31 13:30:00,Coolbet,2.75,1.54,78.58,Draw,2025-10-31 14:32:46
 Clermont @ SC Bastia,Ligue 2 - France,Clermont,2025-10-31 15:00:00,Bovada,5.15,4.23,21.69,Not Found,2025-10-31 14:32:46
 FC Ingolstadt 04 @ FC Viktoria Köln 1904,3. Liga - Germany,FC Viktoria Köln 1904,2025-10-31 14:00:35,Paddy Power,5.5,4.88,12.77,Not Found,2025-10-31 14:32:46
 Fortuna Sittard @ PSV Eindhoven,Dutch Eredivisie,Fortuna Sittard,2025-10-31 15:00:00,Unibet (NL),20.0,17.82,12.25,Not Found,2025-10-31 14:32:46
