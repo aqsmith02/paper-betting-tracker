@@ -299,17 +299,17 @@ Miami Heat @ San Antonio Spurs,Miami Heat,2025-10-30 20:40:36,NBA,1.86,2.85,2.9,
 LG Twins @ Hanwha Eagles,Hanwha Eagles,2025-10-31 05:30:00,KBO,2.1,2.05,2.1,2.06,2.05,2.05,,1,Not Found,2.1,DraftKings,LG Twins,2,,2025-10-30 23:48:16
 Felix Auger-Aliassime @ Valentin Vacherot,Valentin Vacherot,2025-10-31 09:00:00,ATP Paris Masters,2.4,,2.37,2.38,2.35,2.25,2.36,1,Not Found,2.38,FanDuel,Not Found,2,,2025-10-31 04:49:14
 Alex de Minaur @ Alexander Bublik,Alexander Bublik,2025-10-31 10:10:00,ATP Paris Masters,2.14,,2.1,2.14,2.1,2.05,2.06,1,Not Found,2.14,FanDuel,Not Found,2,,2025-10-31 05:39:38
-Panathinaikos @ AS Monaco,Panathinaikos,2025-10-31 14:00:00,Basketball Euroleague,2.2,,2.14,2.14,2.1,2.1,2.15,1,Not Found,2.14,FanDuel,Not Found,2,,2025-10-31 12:50:02
-Jannik Sinner @ Ben Shelton,Ben Shelton,2025-10-31 14:00:00,ATP Paris Masters,5.44,,4.96,5.4,5.2,5.25,5.0,1,Not Found,5.4,FanDuel,Not Found,2,,2025-10-31 13:38:09
-Hapoel Tel Aviv @ Olympiacos,Hapoel Tel Aviv,2025-10-31 15:15:00,Basketball Euroleague,2.82,,2.85,2.84,2.7,2.7,2.95,1,Not Found,2.85,DraftKings,Not Found,2,,2025-10-31 14:32:49
-Alexander Zverev @ Daniil Medvedev,Alexander Zverev,2025-10-31 15:10:00,ATP Paris Masters,2.19,,2.05,2.14,2.05,2.05,2.12,1,Not Found,2.14,FanDuel,Not Found,2,,2025-10-31 14:32:49
-FC Barcelona Bàsquet @ KK Partizan NIS,KK Partizan NIS,2025-10-31 15:30:00,Basketball Euroleague,1.8,,1.83,1.83,1.83,1.85,1.83,1,Not Found,1.85,BetMGM,Not Found,2,,2025-10-31 15:16:49
-Anadolu Efes @ Saski Baskonia,Anadolu Efes,2025-10-31 15:30:00,Basketball Euroleague,1.6,,1.65,1.59,1.57,1.59,1.62,1,Not Found,1.65,DraftKings,Not Found,2,,2025-10-31 15:16:49
+Panathinaikos @ AS Monaco,Panathinaikos,2025-10-31 14:00:00,Basketball Euroleague,2.2,,2.14,2.14,2.1,2.1,2.15,1,Not Found,2.14,FanDuel,API Error,2,,2025-10-31 12:50:02
+Jannik Sinner @ Ben Shelton,Ben Shelton,2025-10-31 14:00:00,ATP Paris Masters,5.44,,4.96,5.4,5.2,5.25,5.0,1,Not Found,5.4,FanDuel,API Error,2,,2025-10-31 13:38:09
+Hapoel Tel Aviv @ Olympiacos,Hapoel Tel Aviv,2025-10-31 15:15:00,Basketball Euroleague,2.82,,2.85,2.84,2.7,2.7,2.95,1,Not Found,2.85,DraftKings,API Error,2,,2025-10-31 14:32:49
+Alexander Zverev @ Daniil Medvedev,Alexander Zverev,2025-10-31 15:10:00,ATP Paris Masters,2.19,,2.05,2.14,2.05,2.05,2.12,1,Not Found,2.14,FanDuel,API Error,2,,2025-10-31 14:32:49
+FC Barcelona Bàsquet @ KK Partizan NIS,KK Partizan NIS,2025-10-31 15:30:00,Basketball Euroleague,1.8,,1.83,1.83,1.83,1.85,1.83,1,Not Found,1.85,BetMGM,API Error,2,,2025-10-31 15:16:49
+Anadolu Efes @ Saski Baskonia,Anadolu Efes,2025-10-31 15:30:00,Basketball Euroleague,1.6,,1.65,1.59,1.57,1.59,1.62,1,Not Found,1.65,DraftKings,API Error,2,,2025-10-31 15:16:49
 Colorado Avalanche @ Vegas Golden Knights,Colorado Avalanche,2025-10-31 16:10:00,NHL,1.86,1.87,1.83,1.8,1.83,1.85,1.83,1,Not Found,1.87,Caesars,Colorado Avalanche,2,,2025-10-31 15:36:15
 Atlanta Hawks @ Indiana Pacers,Indiana Pacers,2025-10-31 19:00:00,NBA,2.18,2.1,2.14,2.14,2.15,2.15,2.15,1,Not Found,2.15,BetMGM,Atlanta Hawks,2,,2025-10-31 16:38:43
-Memphis Tigers @ Rice Owls,Rice Owls,2025-10-31 19:00:00,NCAAF,5.35,5.25,5.4,5.4,,5.5,5.46,1,Not Found,5.5,BetMGM,Not Found,2,,2025-10-31 18:20:38
+Memphis Tigers @ Rice Owls,Rice Owls,2025-10-31 19:00:00,NCAAF,5.35,5.25,5.4,5.4,,5.5,5.46,1,Not Found,5.5,BetMGM,API Error,2,,2025-10-31 18:20:38
 Boston Celtics @ Philadelphia 76ers,Boston Celtics,2025-10-31 19:00:00,NBA,1.88,1.87,1.87,1.93,1.83,1.85,1.87,1,Not Found,1.93,FanDuel,Boston Celtics,2,,2025-10-31 18:20:38
-North Carolina Tar Heels @ Syracuse Orange,North Carolina Tar Heels,2025-10-31 19:30:00,NCAAF,2.07,2.0,1.95,1.96,,2.0,1.96,1,Not Found,2.0,BetMGM,Not Found,2,,2025-10-31 19:19:49
+North Carolina Tar Heels @ Syracuse Orange,North Carolina Tar Heels,2025-10-31 19:30:00,NCAAF,2.07,2.0,1.95,1.96,,2.0,1.96,1,Not Found,2.0,BetMGM,API Error,2,,2025-10-31 19:19:49
 Sam Houston State Bearkats @ Louisiana Tech Bulldogs,Louisiana Tech Bulldogs,2025-10-31 20:00:00,NCAAF,1.12,1.11,1.12,1.12,,1.12,1.12,1,Not Found,1.12,FanDuel,Louisiana Tech Bulldogs,2,,2025-10-31 19:19:49
 New York Knicks @ Chicago Bulls,Chicago Bulls,2025-10-31 20:00:00,NBA,2.7,2.7,2.64,2.64,2.6,2.65,2.7,1,Not Found,2.7,Caesars,Chicago Bulls,2,,2025-10-31 19:30:33
 Los Angeles Dodgers @ Toronto Blue Jays,Toronto Blue Jays,2025-10-31 20:01:00,MLB,2.23,2.22,2.18,2.2,2.15,2.2,2.23,1,Not Found,2.22,Caesars,Los Angeles Dodgers,2,,2025-10-31 19:47:02
@@ -318,20 +318,20 @@ Denver Nuggets @ Portland Trail Blazers,Portland Trail Blazers,2025-10-31 22:10:
 Detroit Red Wings @ Anaheim Ducks,Anaheim Ducks,2025-10-31 22:10:00,NHL,1.81,1.77,1.77,1.75,1.8,1.71,1.75,1,Not Found,1.8,Fanatics,Anaheim Ducks,2,,2025-10-31 21:49:59
 Los Angeles Lakers @ Memphis Grizzlies,Los Angeles Lakers,2025-10-31 21:42:49,NBA,1.13,1.12,1.04,1.04,1.06,1.11,,1,Not Found,1.12,Caesars,Los Angeles Lakers,2,,2025-10-31 23:47:07
 New Orleans Pelicans @ Los Angeles Clippers,New Orleans Pelicans,2025-10-31 22:40:17,NBA,4.66,8.0,4.7,5.0,5.75,4.33,,1,Not Found,8.0,Caesars,Los Angeles Clippers,2,,2025-10-31 23:59:16
-Alexander Bublik @ Felix Auger-Aliassime,Alexander Bublik,2025-11-01 09:30:00,ATP Paris Masters,1.95,,1.88,1.87,1.87,1.85,1.89,1,Not Found,1.88,DraftKings,Not Found,2,,2025-11-01 09:04:34
-Arsenal @ Burnley,Burnley,2025-11-01 11:00:00,EPL,13.5,12.0,12.0,14.0,12.0,,13.0,1,Not Found,14.0,FanDuel,Not Found,3,,2025-11-01 10:32:41
-Jannik Sinner @ Alexander Zverev,Alexander Zverev,2025-11-01 12:00:00,ATP Paris Masters,6.09,,5.79,5.8,5.8,5.25,5.61,1,Not Found,5.8,FanDuel,Not Found,2,,2025-11-01 11:18:57
-Wolverhampton Wanderers @ Fulham,Draw,2025-11-01 11:01:00,EPL,4.86,4.8,4.9,5.4,4.5,4.8,,1,Not Found,5.4,FanDuel,Not Found,3,,2025-11-01 11:18:57
-Brentford @ Crystal Palace,Draw,2025-11-01 11:01:00,EPL,3.05,3.1,3.2,3.1,2.85,3.0,,1,Not Found,3.2,DraftKings,Not Found,3,,2025-11-01 11:18:57
-Army Black Knights @ Air Force Falcons,Air Force Falcons,2025-11-01 12:00:00,NCAAF,1.94,1.91,1.91,1.86,,1.91,1.93,1,Not Found,1.91,DraftKings,Not Found,2,,2025-11-01 11:18:57
-Leeds United @ Brighton and Hove Albion,Brighton and Hove Albion,2025-11-01 11:01:00,EPL,1.31,1.38,1.29,1.31,1.31,1.31,,1,Not Found,1.38,Caesars,Not Found,3,,2025-11-01 11:18:57
-UCF Knights @ Baylor Bears,Baylor Bears,2025-11-01 12:00:00,NCAAF,1.65,1.62,1.65,1.65,,1.67,1.65,1,Not Found,1.67,BetMGM,Not Found,2,,2025-11-01 11:40:04
-Manchester United @ Nottingham Forest,Nottingham Forest,2025-11-01 11:00:00,EPL,7.83,8.0,8.5,9.0,8.0,9.0,,1,Not Found,9.0,FanDuel,Not Found,3,,2025-11-01 11:47:57
-Arizona State Sun Devils @ Iowa State Cyclones,Iowa State Cyclones,2025-11-01 13:00:00,NCAAF,1.34,1.34,1.34,1.33,,1.33,1.35,1,Not Found,1.34,DraftKings,Not Found,2,,2025-11-01 12:23:43
-Chelsea @ Tottenham Hotspur,Draw,2025-11-01 13:30:00,EPL,3.48,3.4,3.45,3.4,3.4,,3.48,1,Not Found,3.45,DraftKings,Not Found,3,,2025-11-01 13:16:43
-Carolina Hurricanes @ Boston Bruins,Boston Bruins,2025-11-01 13:08:33,NHL,2.6,2.6,2.45,2.54,2.5,2.5,2.65,1,Not Found,2.6,Caesars,Not Found,2,,2025-11-01 13:16:43
-East Carolina Pirates @ Temple Owls,East Carolina Pirates,2025-11-01 14:00:00,NCAAF,1.48,1.45,1.44,1.49,,1.48,1.47,1,Not Found,1.49,FanDuel,Not Found,2,,2025-11-01 13:40:19
-Winnipeg Blue Bombers @ Montreal Alouettes,Montreal Alouettes,2025-11-01 14:05:00,CFL,1.38,1.38,1.4,1.36,1.38,1.36,1.39,1,Not Found,1.4,DraftKings,Not Found,2,,2025-11-01 13:55:45
+Alexander Bublik @ Felix Auger-Aliassime,Alexander Bublik,2025-11-01 09:30:00,ATP Paris Masters,1.95,,1.88,1.87,1.87,1.85,1.89,1,Not Found,1.88,DraftKings,API Error,2,,2025-11-01 09:04:34
+Arsenal @ Burnley,Burnley,2025-11-01 11:00:00,EPL,13.5,12.0,12.0,14.0,12.0,,13.0,1,Not Found,14.0,FanDuel,Arsenal,3,,2025-11-01 10:32:41
+Jannik Sinner @ Alexander Zverev,Alexander Zverev,2025-11-01 12:00:00,ATP Paris Masters,6.09,,5.79,5.8,5.8,5.25,5.61,1,Not Found,5.8,FanDuel,API Error,2,,2025-11-01 11:18:57
+Wolverhampton Wanderers @ Fulham,Draw,2025-11-01 11:01:00,EPL,4.86,4.8,4.9,5.4,4.5,4.8,,1,Not Found,5.4,FanDuel,Fulham,3,,2025-11-01 11:18:57
+Brentford @ Crystal Palace,Draw,2025-11-01 11:01:00,EPL,3.05,3.1,3.2,3.1,2.85,3.0,,1,Not Found,3.2,DraftKings,Crystal Palace,3,,2025-11-01 11:18:57
+Army Black Knights @ Air Force Falcons,Air Force Falcons,2025-11-01 12:00:00,NCAAF,1.94,1.91,1.91,1.86,,1.91,1.93,1,Not Found,1.91,DraftKings,Army Black Knights,2,,2025-11-01 11:18:57
+Leeds United @ Brighton and Hove Albion,Brighton and Hove Albion,2025-11-01 11:01:00,EPL,1.31,1.38,1.29,1.31,1.31,1.31,,1,Not Found,1.38,Caesars,Brighton and Hove Albion,3,,2025-11-01 11:18:57
+UCF Knights @ Baylor Bears,Baylor Bears,2025-11-01 12:00:00,NCAAF,1.65,1.62,1.65,1.65,,1.67,1.65,1,Not Found,1.67,BetMGM,Baylor Bears,2,,2025-11-01 11:40:04
+Manchester United @ Nottingham Forest,Nottingham Forest,2025-11-01 11:00:00,EPL,7.83,8.0,8.5,9.0,8.0,9.0,,1,Not Found,9.0,FanDuel,Draw,3,,2025-11-01 11:47:57
+Arizona State Sun Devils @ Iowa State Cyclones,Iowa State Cyclones,2025-11-01 13:00:00,NCAAF,1.34,1.34,1.34,1.33,,1.33,1.35,1,Not Found,1.34,DraftKings,Arizona State Sun Devils,2,,2025-11-01 12:23:43
+Chelsea @ Tottenham Hotspur,Draw,2025-11-01 13:30:00,EPL,3.48,3.4,3.45,3.4,3.4,,3.48,1,Not Found,3.45,DraftKings,Chelsea,3,,2025-11-01 13:16:43
+Carolina Hurricanes @ Boston Bruins,Boston Bruins,2025-11-01 13:08:33,NHL,2.6,2.6,2.45,2.54,2.5,2.5,2.65,1,Not Found,2.6,Caesars,Boston Bruins,2,,2025-11-01 13:16:43
+East Carolina Pirates @ Temple Owls,East Carolina Pirates,2025-11-01 14:00:00,NCAAF,1.48,1.45,1.44,1.49,,1.48,1.47,1,Not Found,1.49,FanDuel,East Carolina Pirates,2,,2025-11-01 13:40:19
+Winnipeg Blue Bombers @ Montreal Alouettes,Montreal Alouettes,2025-11-01 14:05:00,CFL,1.38,1.38,1.4,1.36,1.38,1.36,1.39,1,Not Found,1.4,DraftKings,Montreal Alouettes,2,,2025-11-01 13:55:45
 Indiana Hoosiers @ Maryland Terrapins,Maryland Terrapins,2025-11-01 15:30:00,NCAAF,11.51,11.5,12.0,11.4,,11.0,11.41,1,Not Found,12.0,DraftKings,Not Found,2,,2025-11-01 15:24:11
 Michigan State Spartans @ Minnesota Golden Gophers,Minnesota Golden Gophers,2025-11-01 15:30:00,NCAAF,1.58,1.53,1.51,1.53,,1.53,1.54,1,Not Found,1.53,FanDuel,Not Found,2,,2025-11-01 15:24:11
 Pittsburgh Panthers @ Stanford Cardinal,Stanford Cardinal,2025-11-01 15:30:00,NCAAF,5.08,5.0,5.25,4.85,,5.25,5.15,1,Not Found,5.25,DraftKings,Not Found,2,,2025-11-01 15:32:08
