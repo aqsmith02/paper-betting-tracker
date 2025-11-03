@@ -286,7 +286,7 @@ Panathinaikos @ AS Monaco,Basketball Euroleague,Panathinaikos,2025-10-31 14:00:0
 Hapoel Tel Aviv @ Olympiacos,Basketball Euroleague,Hapoel Tel Aviv,2025-10-31 15:16:00,BetMGM,3.5,2.61,34.34,Not Found,2025-10-31 15:26:45
 FC Barcelona Bàsquet @ KK Partizan NIS,Basketball Euroleague,KK Partizan NIS,2025-10-31 15:30:00,BetMGM,1.85,1.78,3.88,Not Found,2025-10-31 15:26:45
 Anadolu Efes @ Saski Baskonia,Basketball Euroleague,Saski Baskonia,2025-10-31 15:30:00,FanDuel,2.6,2.51,3.48,Not Found,2025-10-31 15:36:13
-Alexander Zverev @ Daniil Medvedev,ATP Paris Masters,Alexander Zverev,2025-10-31 15:25:00,DraftKings,2.6,2.17,19.75,API Error,2025-10-31 15:44:27
+Alexander Zverev @ Daniil Medvedev,ATP Paris Masters,Alexander Zverev,2025-10-31 15:25:00,DraftKings,2.6,2.17,19.75,Not Found,2025-10-31 15:44:27
 Colorado Avalanche @ Vegas Golden Knights,NHL,Vegas Golden Knights,2025-10-31 16:10:00,DraftKings,2.14,2.1,2.09,Colorado Avalanche,2025-10-31 15:52:02
 Atlanta Hawks @ Indiana Pacers,NBA,Atlanta Hawks,2025-10-31 19:10:40,BetMGM,2.9,1.8,61.28,Atlanta Hawks,2025-10-31 19:19:48
 Boston Celtics @ Philadelphia 76ers,NBA,Philadelphia 76ers,2025-10-31 19:12:51,BetMGM,2.2,2.07,6.05,Boston Celtics,2025-10-31 19:19:48
@@ -338,15 +338,15 @@ Dallas Mavericks @ Detroit Pistons,NBA,Detroit Pistons,2025-11-01 22:20:00,FanDu
 New York Rangers @ Seattle Kraken,NHL,New York Rangers,2025-11-01 22:08:48,Caesars,1.91,1.83,4.18,New York Rangers,2025-11-01 23:51:38
 Jannik Sinner @ Felix Auger-Aliassime,ATP Paris Masters,Felix Auger-Aliassime,2025-11-02 09:00:00,FanDuel,8.4,8.04,4.53,API Error,2025-11-02 08:41:17
 Newcastle United @ West Ham United,EPL,West Ham United,2025-11-02 09:00:00,FanDuel,11.0,5.12,114.88,West Ham United,2025-11-02 09:18:32
-Bournemouth @ Manchester City,EPL,Bournemouth,2025-11-02 11:30:00,FanDuel,19.0,6.65,185.83,Not Found,2025-11-02 11:49:52
-Carolina Panthers @ Green Bay Packers,NFL,Carolina Panthers,2025-11-02 13:00:00,DraftKings,7.5,6.45,16.24,Not Found,2025-11-02 12:17:38
-Minnesota Vikings @ Detroit Lions,NFL,Minnesota Vikings,2025-11-02 13:00:00,Fanatics,5.25,4.92,6.75,Not Found,2025-11-02 12:31:01
-Indianapolis Colts @ Pittsburgh Steelers,NFL,Pittsburgh Steelers,2025-11-02 13:00:00,DraftKings,2.54,2.45,3.74,Not Found,2025-11-02 12:31:01
-Los Angeles Chargers @ Tennessee Titans,NFL,Tennessee Titans,2025-11-02 13:02:45,FanDuel,5.5,4.37,25.83,Not Found,2025-11-02 13:27:36
-Denver Broncos @ Houston Texans,NFL,Denver Broncos,2025-11-02 13:02:56,FanDuel,2.82,2.28,23.56,Not Found,2025-11-02 13:27:36
-San Francisco 49ers @ New York Giants,NFL,New York Giants,2025-11-02 13:02:52,Fanatics,2.35,1.93,21.81,Not Found,2025-11-02 13:27:36
-Atlanta Falcons @ New England Patriots,NFL,Atlanta Falcons,2025-11-02 13:02:21,Caesars,6.0,5.79,3.69,Not Found,2025-11-02 13:27:36
-Chicago Bears @ Cincinnati Bengals,NFL,Cincinnati Bengals,2025-11-02 13:02:36,DraftKings,3.0,2.22,34.96,Not Found,2025-11-02 13:43:15
+Bournemouth @ Manchester City,EPL,Bournemouth,2025-11-02 11:30:00,FanDuel,19.0,6.65,185.83,Manchester City,2025-11-02 11:49:52
+Carolina Panthers @ Green Bay Packers,NFL,Carolina Panthers,2025-11-02 13:00:00,DraftKings,7.5,6.45,16.24,Carolina Panthers,2025-11-02 12:17:38
+Minnesota Vikings @ Detroit Lions,NFL,Minnesota Vikings,2025-11-02 13:00:00,Fanatics,5.25,4.92,6.75,Minnesota Vikings,2025-11-02 12:31:01
+Indianapolis Colts @ Pittsburgh Steelers,NFL,Pittsburgh Steelers,2025-11-02 13:00:00,DraftKings,2.54,2.45,3.74,Pittsburgh Steelers,2025-11-02 12:31:01
+Los Angeles Chargers @ Tennessee Titans,NFL,Tennessee Titans,2025-11-02 13:02:45,FanDuel,5.5,4.37,25.83,Los Angeles Chargers,2025-11-02 13:27:36
+Denver Broncos @ Houston Texans,NFL,Denver Broncos,2025-11-02 13:02:56,FanDuel,2.82,2.28,23.56,Denver Broncos,2025-11-02 13:27:36
+San Francisco 49ers @ New York Giants,NFL,New York Giants,2025-11-02 13:02:52,Fanatics,2.35,1.93,21.81,San Francisco 49ers,2025-11-02 13:27:36
+Atlanta Falcons @ New England Patriots,NFL,Atlanta Falcons,2025-11-02 13:02:21,Caesars,6.0,5.79,3.69,New England Patriots,2025-11-02 13:27:36
+Chicago Bears @ Cincinnati Bengals,NFL,Cincinnati Bengals,2025-11-02 13:02:36,DraftKings,3.0,2.22,34.96,Chicago Bears,2025-11-02 13:43:15
 New Orleans Pelicans @ Oklahoma City Thunder,NBA,New Orleans Pelicans,2025-11-02 15:30:00,BetMGM,6.75,6.39,5.61,Not Found,2025-11-02 15:21:41
 Tampa Bay Lightning @ Utah Mammoth,NHL,Utah Mammoth,2025-11-02 15:38:50,Fanatics,2.1,1.94,8.49,Not Found,2025-11-02 15:43:03
 New Orleans Saints @ Los Angeles Rams,NFL,New Orleans Saints,2025-11-02 16:05:00,FanDuel,8.5,8.31,2.3,Not Found,2025-11-02 15:58:29
