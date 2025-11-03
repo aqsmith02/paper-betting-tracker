@@ -280,9 +280,6 @@ Baltimore Ravens @ Miami Dolphins,NFL,Miami Dolphins,2025-10-30 20:16:07,DraftKi
 Golden State Warriors @ Milwaukee Bucks,NBA,Milwaukee Bucks,2025-10-30 20:13:00,Caesars,3.8,2.95,29.01,Milwaukee Bucks,2025-10-30 21:46:30
 Washington Wizards @ Oklahoma City Thunder,NBA,Oklahoma City Thunder,2025-10-30 20:10:00,Fanatics,1.16,1.06,9.15,Oklahoma City Thunder,2025-10-30 21:46:30
 LG Twins @ Hanwha Eagles,KBO,Hanwha Eagles,2025-10-31 05:30:00,BetMGM,3.1,2.19,41.28,LG Twins,2025-10-31 05:39:37
-Felix Auger-Aliassime @ Valentin Vacherot,ATP Paris Masters,Valentin Vacherot,2025-10-31 09:00:00,DraftKings,2.74,2.39,14.51,Not Found,2025-10-31 09:20:59
-Alex de Minaur @ Alexander Bublik,ATP Paris Masters,Alex de Minaur,2025-10-31 10:40:00,FanDuel,1.95,1.84,5.91,Not Found,2025-10-31 10:59:40
-Panathinaikos @ AS Monaco,Basketball Euroleague,Panathinaikos,2025-10-31 14:00:00,BetMGM,2.1,2.05,2.51,Not Found,2025-10-31 13:38:07
 Hapoel Tel Aviv @ Olympiacos,Basketball Euroleague,Hapoel Tel Aviv,2025-10-31 15:16:00,BetMGM,3.5,2.61,34.34,Not Found,2025-10-31 15:26:45
 FC Barcelona Bàsquet @ KK Partizan NIS,Basketball Euroleague,KK Partizan NIS,2025-10-31 15:30:00,BetMGM,1.85,1.78,3.88,Not Found,2025-10-31 15:26:45
 Anadolu Efes @ Saski Baskonia,Basketball Euroleague,Saski Baskonia,2025-10-31 15:30:00,FanDuel,2.6,2.51,3.48,Not Found,2025-10-31 15:36:13
@@ -329,7 +326,7 @@ Dallas Stars @ Florida Panthers,NHL,Dallas Stars,2025-11-01 18:08:53,BetMGM,7.75
 Orlando Magic @ Washington Wizards,NBA,Washington Wizards,2025-11-01 19:11:00,DraftKings,4.4,4.24,3.87,Orlando Magic,2025-11-01 19:19:18
 Golden State Warriors @ Indiana Pacers,NBA,Golden State Warriors,2025-11-01 19:11:00,Caesars,1.29,1.26,2.64,Indiana Pacers,2025-11-01 19:19:18
 Ottawa Senators @ Montréal Canadiens,NHL,Ottawa Senators,2025-11-01 19:16:23,DraftKings,4.7,2.81,67.21,Montreal Canadiens,2025-11-01 19:40:47
-Georgia Tech Yellow Jackets @ NC State Wolfpack,NCAAF,Georgia Tech Yellow Jackets,2025-11-01 19:35:46,FanDuel,1.68,1.58,6.51,Not Found,2025-11-01 19:40:47
+Georgia Tech Yellow Jackets @ NC State Wolfpack,NCAAF,Georgia Tech Yellow Jackets,2025-11-01 19:35:46,FanDuel,1.68,1.58,6.51,API Error,2025-11-01 19:40:47
 USC Trojans @ Nebraska Cornhuskers,NCAAF,USC Trojans,2025-11-01 19:37:13,DraftKings,1.69,1.6,5.73,API Error,2025-11-01 19:40:47
 Vancouver Canucks @ Minnesota Wild,NHL,Vancouver Canucks,2025-11-01 19:15:46,BetMGM,3.9,2.54,53.46,Minnesota Wild,2025-11-01 19:48:32
 Los Angeles Dodgers @ Toronto Blue Jays,MLB,Los Angeles Dodgers,2025-11-01 20:10:13,Fanatics,4.9,4.56,7.43,Los Angeles Dodgers,2025-11-01 21:52:11
@@ -360,9 +357,9 @@ Utah Jazz @ Charlotte Hornets,NBA,Utah Jazz,2025-11-02 18:10:22,FanDuel,2.5,1.95
 Chicago Bulls @ New York Knicks,NBA,Chicago Bulls,2025-11-02 19:11:19,BetMGM,13.0,7.38,76.06,API Error,2025-11-02 20:51:26
 San Antonio Spurs @ Phoenix Suns,NBA,San Antonio Spurs,2025-11-02 20:11:00,Fanatics,2.4,1.98,20.95,API Error,2025-11-02 20:51:26
 New Jersey Devils @ Anaheim Ducks,NHL,New Jersey Devils,2025-11-02 20:08:18,Caesars,4.5,4.22,6.53,Anaheim Ducks,2025-11-02 20:51:26
-Calgary Flames @ Philadelphia Flyers,NHL,Philadelphia Flyers,2025-11-02 19:08:41,DraftKings,3.6,3.41,5.42,Not Found,2025-11-02 20:51:26
+Calgary Flames @ Philadelphia Flyers,NHL,Philadelphia Flyers,2025-11-02 19:08:41,DraftKings,3.6,3.41,5.42,API Error,2025-11-02 20:51:26
 Detroit Red Wings @ San Jose Sharks,NHL,Detroit Red Wings,2025-11-02 20:11:12,BetMGM,1.67,1.26,32.23,Detroit Red Wings,2025-11-02 22:09:10
 Seattle Seahawks @ Washington Commanders,NFL,Washington Commanders,2025-11-02 20:22:51,Caesars,20.0,18.75,6.68,Seattle Seahawks,2025-11-02 22:09:10
-Miami Heat @ Los Angeles Lakers,NBA,Los Angeles Lakers,2025-11-02 21:40:41,BetMGM,1.29,1.13,13.82,Not Found,2025-11-02 23:31:13
+Miami Heat @ Los Angeles Lakers,NBA,Los Angeles Lakers,2025-11-02 21:40:41,BetMGM,1.29,1.13,13.82,API Error,2025-11-02 23:31:13
 Bradley Braves @ St. Bonaventure Bonnies,NCAAB,Bradley Braves,2025-11-03 11:00:00,FanDuel,2.04,2.0,2.0,Not Found,2025-11-03 10:58:00
 Omaha Mavericks @ Murray St Racers,NCAAB,Omaha Mavericks,2025-11-03 13:30:00,FanDuel,2.84,2.69,5.72,Not Found,2025-11-03 12:20:28
