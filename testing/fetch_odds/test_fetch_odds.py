@@ -7,7 +7,7 @@ Author: Andrew Smith
 """
 
 import unittest
-from .test_fetch_odds_configs import (
+from .configs import (
     TEST_GAME_DATA,
     TEST_GAME_DATA_NO_BM,
     TEST_GAME_DATA_MULT_MARKETS,

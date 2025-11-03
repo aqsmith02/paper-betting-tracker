@@ -110,7 +110,8 @@ def analyze_zscore_outliers(df: pd.DataFrame) -> pd.DataFrame:
     df = analyze_average_edge_bets(df)
 
     vigfree_columns = [col for col in df.columns if col.startswith("Vigfree ")]
-    bookmaker_columns = _find_bookmaker_columns(df, vigfree_columns)
+    cols_to_exclude = vigfree_columns + ["Fair Odds Avg", "Avg Edge Pct"]
+    bookmaker_columns = _find_bookmaker_columns(df, cols_to_exclude)
     z_scores = []
 
     for _, row in df.iterrows():
@@ -151,7 +152,8 @@ def analyze_modified_zscore_outliers(df: pd.DataFrame) -> pd.DataFrame:
     df = analyze_average_edge_bets(df)
 
     vigfree_columns = [col for col in df.columns if col.startswith("Vigfree ")]
-    bookmaker_columns = _find_bookmaker_columns(df, vigfree_columns)
+    cols_to_exclude = vigfree_columns + ["Fair Odds Avg", "Avg Edge Pct"]
+    bookmaker_columns = _find_bookmaker_columns(df, cols_to_exclude)
     modified_z_scores = []
 
     for _, row in df.iterrows():
