@@ -298,7 +298,7 @@ Manchester United @ Nottingham Forest,EPL,Nottingham Forest,2025-11-01 11:00:00,
 Brentford @ Crystal Palace,EPL,Brentford,2025-11-01 11:01:00,FanDuel,10.0,3.76,166.01,Crystal Palace,2025-11-01 11:40:02
 Leeds United @ Brighton and Hove Albion,EPL,Leeds United,2025-11-01 11:01:00,DraftKings,11.0,10.56,4.14,Brighton and Hove Albion,2025-11-01 11:40:02
 Buffalo Bulls @ Bowling Green Falcons,NCAAF,Bowling Green Falcons,2025-11-01 12:00:00,DraftKings,1.77,1.73,2.1,Buffalo Bulls,2025-11-01 11:47:56
-Jannik Sinner @ Alexander Zverev,ATP Paris Masters,Alexander Zverev,2025-11-01 12:10:00,DraftKings,15.0,7.85,91.09,Not Found,2025-11-01 12:23:42
+Jannik Sinner @ Alexander Zverev,ATP Paris Masters,Alexander Zverev,2025-11-01 12:10:00,DraftKings,15.0,7.85,91.09,API Error,2025-11-01 12:23:42
 Chelsea @ Tottenham Hotspur,EPL,Tottenham Hotspur,2025-11-01 13:30:00,DraftKings,10.0,8.98,11.35,Chelsea,2025-11-01 14:28:03
 Carolina Hurricanes @ Boston Bruins,NHL,Carolina Hurricanes,2025-11-01 13:08:33,DraftKings,9.0,1.73,419.49,Boston Bruins,2025-11-01 14:58:51
 Pittsburgh Penguins @ Winnipeg Jets,NHL,Pittsburgh Penguins,2025-11-01 15:08:42,BetMGM,6.25,2.47,153.09,Winnipeg Jets,2025-11-01 15:15:18
@@ -306,7 +306,7 @@ New Mexico State Aggies @ Western Kentucky Hilltoppers,NCAAF,New Mexico State Ag
 Louisiana Ragin Cajuns @ South Alabama Jaguars,NCAAF,South Alabama Jaguars,2025-11-01 15:30:00,DraftKings,1.69,1.61,4.85,Louisiana Ragin Cajuns,2025-11-01 15:40:23
 Delaware Blue Hens @ Liberty Flames,NCAAF,Liberty Flames,2025-11-01 15:30:00,FanDuel,1.71,1.65,3.61,Liberty Flames,2025-11-01 15:40:23
 Virginia Cavaliers @ California Golden Bears,NCAAF,California Golden Bears,2025-11-01 15:50:00,FanDuel,3.8,3.13,21.26,Virginia Cavaliers,2025-11-01 15:55:13
-Ariane Carnelossi @ Talita Alencar,MMA,Talita Alencar,2025-11-01 16:15:00,DraftKings,2.7,1.54,75.78,Not Found,2025-11-01 16:21:22
+Ariane Carnelossi @ Talita Alencar,MMA,Talita Alencar,2025-11-01 16:15:00,DraftKings,2.7,1.54,75.78,API Error,2025-11-01 16:21:22
 Colorado Avalanche @ San Jose Sharks,NHL,San Jose Sharks,2025-11-01 16:08:27,FanDuel,4.5,3.18,41.69,San Jose Sharks,2025-11-01 16:21:22
 Calgary Flames @ Nashville Predators,NHL,Calgary Flames,2025-11-01 15:38:40,FanDuel,11.0,10.19,7.98,Nashville Predators,2025-11-01 16:21:22
 Aston Villa @ Liverpool,EPL,Aston Villa,2025-11-01 16:01:00,FanDuel,4.3,4.05,6.12,Liverpool,2025-11-01 16:33:51
@@ -357,8 +357,8 @@ Calgary Flames @ Philadelphia Flyers,NHL,Philadelphia Flyers,2025-11-02 19:08:41
 Detroit Red Wings @ San Jose Sharks,NHL,Detroit Red Wings,2025-11-02 20:11:12,BetMGM,1.67,1.26,32.23,Detroit Red Wings,2025-11-02 22:09:10
 Seattle Seahawks @ Washington Commanders,NFL,Washington Commanders,2025-11-02 20:22:51,Caesars,20.0,18.75,6.68,Seattle Seahawks,2025-11-02 22:09:10
 Miami Heat @ Los Angeles Lakers,NBA,Los Angeles Lakers,2025-11-02 21:40:41,BetMGM,1.29,1.13,13.82,API Error,2025-11-02 23:31:13
-Bradley Braves @ St. Bonaventure Bonnies,NCAAB,Bradley Braves,2025-11-03 11:00:00,FanDuel,2.04,2.0,2.0,Not Found,2025-11-03 10:58:00
-Omaha Mavericks @ Murray St Racers,NCAAB,Omaha Mavericks,2025-11-03 13:30:00,FanDuel,2.84,2.69,5.72,Not Found,2025-11-03 12:20:28
+Bradley Braves @ St. Bonaventure Bonnies,NCAAB,Bradley Braves,2025-11-03 11:00:00,FanDuel,2.04,2.0,2.0,API Error,2025-11-03 10:58:00
+Omaha Mavericks @ Murray St Racers,NCAAB,Omaha Mavericks,2025-11-03 13:30:00,FanDuel,2.84,2.69,5.72,API Error,2025-11-03 12:20:28
 Northern Arizona Lumberjacks @ Drake Bulldogs,NCAAB,Northern Arizona Lumberjacks,2025-11-03 16:00:02,DraftKings,4.6,4.34,6.09,Not Found,2025-11-03 14:47:33
 Georgia St Panthers @ Eastern Michigan Eagles,NCAAB,Eastern Michigan Eagles,2025-11-03 18:30:00,FanDuel,1.71,1.67,2.34,Not Found,2025-11-03 18:41:59
 Dallas Mavericks @ Houston Rockets,NBA,Dallas Mavericks,2025-11-03 20:11:00,DraftKings,7.5,4.63,62.05,Not Found,2025-11-03 20:47:11
