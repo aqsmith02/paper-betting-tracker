@@ -278,7 +278,6 @@ Wolverhampton Wanderers @ Fulham,EPL,Wolverhampton Wanderers,2025-11-01 11:01:00
 Brentford @ Crystal Palace,EPL,Brentford,2025-11-01 11:01:00,FanDuel,10.0,31.17,Crystal Palace,2025-11-01 11:39:57
 Manchester United @ Nottingham Forest,EPL,Nottingham Forest,2025-11-01 11:00:00,FanDuel,9.0,23.56,Draw,2025-11-01 11:39:57
 Leeds United @ Brighton and Hove Albion,EPL,Leeds United,2025-11-01 11:01:00,DraftKings,11.0,4.07,Brighton and Hove Albion,2025-11-01 11:39:57
-Jannik Sinner @ Alexander Zverev,ATP Paris Masters,Alexander Zverev,2025-11-01 12:10:00,DraftKings,15.0,58.62,Not Found,2025-11-01 12:23:37
 Chelsea @ Tottenham Hotspur,EPL,Tottenham Hotspur,2025-11-01 13:30:00,DraftKings,10.0,8.37,Chelsea,2025-11-01 14:27:58
 Carolina Hurricanes @ Boston Bruins,NHL,Carolina Hurricanes,2025-11-01 13:08:33,DraftKings,9.0,181.77,Boston Bruins,2025-11-01 14:58:47
 Pittsburgh Penguins @ Winnipeg Jets,NHL,Pittsburgh Penguins,2025-11-01 15:08:42,BetMGM,6.25,70.27,Winnipeg Jets,2025-11-01 15:15:13
@@ -305,12 +304,12 @@ Golden State Warriors @ Indiana Pacers,NBA,Indiana Pacers,2025-11-01 19:11:00,Be
 Ottawa Senators @ Montréal Canadiens,NHL,Ottawa Senators,2025-11-01 19:16:23,DraftKings,4.7,10.51,Montreal Canadiens,2025-11-01 19:40:42
 Georgia Tech Yellow Jackets @ NC State Wolfpack,NCAAF,NC State Wolfpack,2025-11-01 19:35:46,Caesars,2.7,5.33,Not Found,2025-11-01 19:40:42
 USC Trojans @ Nebraska Cornhuskers,NCAAF,Nebraska Cornhuskers,2025-11-01 19:37:13,Caesars,2.62,4.57,Not Found,2025-11-01 19:40:42
-Wake Forest Demon Deacons @ Florida State Seminoles,NCAAF,Wake Forest Demon Deacons,2025-11-01 19:35:00,Caesars,4.3,3.08,API Error,2025-11-01 19:40:42
+Wake Forest Demon Deacons @ Florida State Seminoles,NCAAF,Wake Forest Demon Deacons,2025-11-01 19:35:00,Caesars,4.3,3.08,Not Found,2025-11-01 19:40:42
 Vancouver Canucks @ Minnesota Wild,NHL,Vancouver Canucks,2025-11-01 19:15:46,BetMGM,3.9,11.81,Minnesota Wild,2025-11-01 19:48:27
 Los Angeles Dodgers @ Toronto Blue Jays,MLB,Los Angeles Dodgers,2025-11-01 20:10:13,Fanatics,4.9,10.14,Los Angeles Dodgers,2025-11-01 21:52:07
 Chicago Blackhawks @ Edmonton Oilers,NHL,Chicago Blackhawks,2025-11-01 22:11:40,BetMGM,5.0,36.55,Edmonton Oilers,2025-11-01 23:07:41
 Dallas Mavericks @ Detroit Pistons,NBA,Dallas Mavericks,2025-11-01 22:20:00,Fanatics,2.75,9.59,Dallas Mavericks,2025-11-01 23:07:41
-Jannik Sinner @ Felix Auger-Aliassime,ATP Paris Masters,Felix Auger-Aliassime,2025-11-02 09:00:00,FanDuel,8.4,5.49,API Error,2025-11-02 08:41:12
+Jannik Sinner @ Felix Auger-Aliassime,ATP Paris Masters,Felix Auger-Aliassime,2025-11-02 09:00:00,FanDuel,8.4,5.49,Not Found,2025-11-02 08:41:12
 Newcastle United @ West Ham United,EPL,West Ham United,2025-11-02 09:00:00,FanDuel,11.0,22.01,West Ham United,2025-11-02 09:18:27
 Bournemouth @ Manchester City,EPL,Bournemouth,2025-11-02 11:30:00,FanDuel,19.0,41.74,Manchester City,2025-11-02 11:49:47
 Carolina Panthers @ Green Bay Packers,NFL,Carolina Panthers,2025-11-02 13:00:00,DraftKings,7.5,3.8,Carolina Panthers,2025-11-02 12:17:33
@@ -331,20 +330,20 @@ Atlanta Hawks @ Cleveland Cavaliers,NBA,Atlanta Hawks,2025-11-02 18:11:08,BetMGM
 Memphis Grizzlies @ Toronto Raptors,NBA,Memphis Grizzlies,2025-11-02 18:12:00,DraftKings,3.0,3.22,Toronto Raptors,2025-11-02 18:19:24
 Philadelphia 76ers @ Brooklyn Nets,NBA,Philadelphia 76ers,2025-11-02 18:10:58,DraftKings,1.74,2.9,Philadelphia 76ers,2025-11-02 18:19:24
 Utah Jazz @ Charlotte Hornets,NBA,Utah Jazz,2025-11-02 18:10:22,FanDuel,2.5,2.99,Charlotte Hornets,2025-11-02 18:30:04
-Chicago Bulls @ New York Knicks,NBA,Chicago Bulls,2025-11-02 19:11:19,BetMGM,13.0,26.39,API Error,2025-11-02 20:51:22
+Chicago Bulls @ New York Knicks,NBA,Chicago Bulls,2025-11-02 19:11:19,BetMGM,13.0,26.39,Not Found,2025-11-02 20:51:22
 San Antonio Spurs @ Phoenix Suns,NBA,San Antonio Spurs,2025-11-02 20:11:00,Fanatics,2.4,4.55,Phoenix Suns,2025-11-02 20:51:22
 Detroit Red Wings @ San Jose Sharks,NHL,Detroit Red Wings,2025-11-02 20:11:12,BetMGM,1.67,2.96,Detroit Red Wings,2025-11-02 22:09:05
 Seattle Seahawks @ Washington Commanders,NFL,Washington Commanders,2025-11-02 20:22:51,Caesars,20.0,2.15,Seattle Seahawks,2025-11-02 22:09:05
 Miami Heat @ Los Angeles Lakers,NBA,Miami Heat,2025-11-02 21:40:41,FanDuel,7.0,9.3,Los Angeles Lakers,2025-11-02 22:56:16
-Omaha Mavericks @ Murray St Racers,NCAAB,Omaha Mavericks,2025-11-03 13:30:00,FanDuel,2.84,3.38,API Error,2025-11-03 12:20:23
-Northern Arizona Lumberjacks @ Drake Bulldogs,NCAAB,Northern Arizona Lumberjacks,2025-11-03 16:00:02,DraftKings,4.6,3.34,API Error,2025-11-03 14:54:59
-Dallas Mavericks @ Houston Rockets,NBA,Dallas Mavericks,2025-11-03 20:11:00,DraftKings,7.5,30.48,API Error,2025-11-03 20:47:06
-Milwaukee Bucks @ Indiana Pacers,NBA,Indiana Pacers,2025-11-03 19:11:25,BetMGM,5.0,25.32,API Error,2025-11-03 20:47:06
-Washington Wizards @ New York Knicks,NBA,Washington Wizards,2025-11-03 19:40:00,FanDuel,5.5,12.46,API Error,2025-11-03 20:47:06
+Omaha Mavericks @ Murray St Racers,NCAAB,Omaha Mavericks,2025-11-03 13:30:00,FanDuel,2.84,3.38,Not Found,2025-11-03 12:20:23
+Northern Arizona Lumberjacks @ Drake Bulldogs,NCAAB,Northern Arizona Lumberjacks,2025-11-03 16:00:02,DraftKings,4.6,3.34,Not Found,2025-11-03 14:54:59
+Dallas Mavericks @ Houston Rockets,NBA,Dallas Mavericks,2025-11-03 20:11:00,DraftKings,7.5,30.48,Houston Rockets,2025-11-03 20:47:06
+Milwaukee Bucks @ Indiana Pacers,NBA,Indiana Pacers,2025-11-03 19:11:25,BetMGM,5.0,25.32,Not Found,2025-11-03 20:47:06
+Washington Wizards @ New York Knicks,NBA,Washington Wizards,2025-11-03 19:40:00,FanDuel,5.5,12.46,Not Found,2025-11-03 20:47:06
 Arizona Cardinals @ Dallas Cowboys,NFL,Arizona Cardinals,2025-11-03 20:15:45,Caesars,2.2,9.75,Arizona Cardinals,2025-11-03 20:47:06
-Minnesota Timberwolves @ Brooklyn Nets,NBA,Brooklyn Nets,2025-11-03 19:11:00,Fanatics,8.5,8.01,API Error,2025-11-03 20:47:06
-Detroit Pistons @ Memphis Grizzlies,NBA,Memphis Grizzlies,2025-11-03 20:11:00,FanDuel,3.0,6.9,API Error,2025-11-03 20:47:06
-Utah Jazz @ Boston Celtics,NBA,Utah Jazz,2025-11-03 19:42:00,DraftKings,9.0,3.97,API Error,2025-11-03 20:47:06
-Sacramento Kings @ Denver Nuggets,NBA,Sacramento Kings,2025-11-03 21:10:29,DraftKings,10.0,11.19,Not Found,2025-11-03 22:02:49
-Los Angeles Lakers @ Portland Trail Blazers,NBA,Los Angeles Lakers,2025-11-03 22:12:00,FanDuel,9.3,24.18,Not Found,2025-11-03 22:45:59
-Miami Heat @ Los Angeles Clippers,NBA,Miami Heat,2025-11-03 22:41:00,Caesars,2.95,8.52,Not Found,2025-11-03 22:45:59
+Minnesota Timberwolves @ Brooklyn Nets,NBA,Brooklyn Nets,2025-11-03 19:11:00,Fanatics,8.5,8.01,Not Found,2025-11-03 20:47:06
+Detroit Pistons @ Memphis Grizzlies,NBA,Memphis Grizzlies,2025-11-03 20:11:00,FanDuel,3.0,6.9,Detroit Pistons,2025-11-03 20:47:06
+Utah Jazz @ Boston Celtics,NBA,Utah Jazz,2025-11-03 19:42:00,DraftKings,9.0,3.97,Not Found,2025-11-03 20:47:06
+Sacramento Kings @ Denver Nuggets,NBA,Sacramento Kings,2025-11-03 21:10:29,DraftKings,10.0,11.19,Denver Nuggets,2025-11-03 22:02:49
+Los Angeles Lakers @ Portland Trail Blazers,NBA,Los Angeles Lakers,2025-11-03 22:12:00,FanDuel,9.3,24.18,Los Angeles Lakers,2025-11-03 22:45:59
+Miami Heat @ Los Angeles Clippers,NBA,Miami Heat,2025-11-03 22:41:00,Caesars,2.95,8.52,Miami Heat,2025-11-03 22:45:59
