@@ -1,2 +1,3 @@
-Match,Team,Start Time,League,Draftkings,Pinnacle,Fanatics,Betmgm,Fanduel,Betonline.Ag,Caesars,Best Odds,Best Bookmaker,Result,Outcomes,Fair Odds Avg,Avg Edge Pct,Z Score,Event ID,Scrape Time
-Denver Broncos @ New York Jets,New York Jets,2025-10-12 09:30:00,NFL,4.4,4.0,4.0,4.0,4.1,4.0,4.0,4.4,DraftKings,Denver Broncos,2,4.22,4.16,2.15,Not Found,2025-10-12 06:59:21
+Match,Team,Start Time,League,Draftkings,Pinnacle,Fanatics,Betmgm,Fanduel,Betonline.Ag,Caesars,Fair Odds Avg,Event Id,Z Score,Avg Edge Pct,Best Odds,Best Bookmaker,Result,Outcomes,Event ID,Scrape Time
+Denver Broncos @ New York Jets,New York Jets,2025-10-12 09:30:00,NFL,4.4,4.0,4.0,4.0,4.1,4.0,4.0,4.22,,2.15,4.16,4.4,DraftKings,Denver Broncos,2,Not Found,2025-10-12 06:59:21
+Miami Heat @ Los Angeles Clippers,Los Angeles Clippers,2025-11-03 22:41:00,NBA,1.45,1.47,1.61,1.5,2.36,,1.5,1.69,Not Found,2.02,39.51,2.36,FanDuel,Miami Heat,2,,2025-11-04 00:39:22
