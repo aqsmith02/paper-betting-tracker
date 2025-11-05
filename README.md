@@ -2,13 +2,6 @@
 
 This project tracks sports bets and results using Python scripts and CSV files. It fetches odds from The-Odds-API, analyzes profitable bets using several strategies, and logs results for further analysis.
 
-## Features
-- Fetches sports betting odds from The-Odds-API.
-- Identifies profitable bets using the fair average odds, Z-score, modified Z-score, and Pinnacle edge strategies. Tracks a random betting strategy also for comparison.
-- Organizes and saves bet and result data in CSV files under the `data/` folder.
-- Automated workflows for updating bets and results.
-- Testing suites for all code (UNDER CONSTRUCTION).
-
 ## Betting Strategies
 - Fair average odds: Calculates the vig-free (true) probability for an outcome from every bookmaker, then averages these probabilities to determine a consensus fair payout. Identifies betting opportunities where the best available odds offer higher payouts than this fair average suggests the outcome is worth.
 - Z-score: Combines the fair average approach with statistical outlier detection. First filters for bets that exceed the fair average threshold, then applies an additional constraint requiring the best odds to be a certain distance away from the average to be considered profitable. This dual-filtering approach targets bets that are both fundamentally undervalued and anomalously priced.
