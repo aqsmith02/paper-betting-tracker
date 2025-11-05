@@ -103,6 +103,11 @@ This project tracks sports bets and results using Python scripts and CSV files. 
    python3 -m codebase.results.results
    ```
 
+4. View strategy profit/ROI:
+   ```bash
+   python3 -m codebase.analysis.roi
+   ```
+
 ## Automation
 - GitHub Actions workflows automatically runs bet finding script 3 times an hour and results updating script 1 time every 6 hours.
 - Updated CSVs are committed to the repository.
