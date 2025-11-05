@@ -72,16 +72,16 @@ def run_betting_strategy(
 
         if standard_summary.empty:
             print(f"No standard profitable bets found for {strategy.name}")
-        else: 
-            # Save summary (best bets only) and get the filtered data back
-            standard_filtered_summary = file_manager.save_best_bets_only(
-                standard_summary, strategy.standard_summary_file, strategy.score_column
-            )
 
-            # Save full data using the same filtered summary
-            file_manager.save_full_betting_data(
-                standard_analysis_result, standard_filtered_summary, strategy.standard_full_file
-            )
+        # Save summary (best bets only) and get the filtered data back)
+        standard_filtered_summary = file_manager.save_best_bets_only(
+            standard_summary, strategy.standard_summary_file, strategy.score_column
+        )
+
+        # Save full data using the same filtered summary
+        file_manager.save_full_betting_data(
+            standard_analysis_result, standard_filtered_summary, strategy.standard_full_file
+        )
 
     except Exception as e:
         print(f"Error running standard {strategy.name}: {e}")

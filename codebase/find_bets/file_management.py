@@ -114,33 +114,35 @@ class BetFileManager:
         Returns:
             None
         """
+        # Handle empty data
         if new_data.empty:
             print(f"No data to append to {filename}")
             return
 
         new_data = new_data.copy()
+        # Append Scrape Time column for bets
         new_data["Scrape Time"] = datetime.now(ZoneInfo("America/New_York")).strftime(
             TIMESTAMP_FORMAT
         )
 
+        # Check if data file exists, if not, create it
         full_path = self.data_dir / filename
-
         if not full_path.exists():
             new_data.to_csv(full_path, index=False)
             print(f"Created {filename} with {len(new_data)} rows")
             return
 
+        # Align column schemas
         existing_data = pd.read_csv(full_path)
-
         all_columns = self._align_column_schemas(existing_data, new_data, filename)
         existing_data = existing_data.reindex(columns=all_columns, fill_value=np.nan)
         new_data = new_data.reindex(columns=all_columns, fill_value=np.nan)
 
+        # Create existing keys to find non-duplicate bets
         existing_keys = {
             (row["Match"], _start_date_from_timestamp(row["Start Time"]))
             for _, row in existing_data.iterrows()
         }
-
         is_new_row = new_data.apply(
             lambda row: (
                 row["Match"],
@@ -151,10 +153,12 @@ class BetFileManager:
         )
         new_rows = new_data[is_new_row]
 
+        # Handle if only duplicates are found
         if new_rows.empty:
             print(f"No new rows to add to {filename} - all were duplicates")
             return
 
+        # Append the new bets and save
         combined_data = pd.concat([existing_data, new_rows], ignore_index=True)
         combined_data.to_csv(full_path, index=False)
         print(f"Added {len(new_rows)} new rows to {filename}")
@@ -205,7 +209,8 @@ class BetFileManager:
             filename (str): Path to save the filtered best bets.
 
         Returns:
-            pd.DataFrame: Filtered DataFrame containing only the best bet per match.
+            pd.DataFrame: Filtered DataFrame containing only the best bet per match. Returned so it can
+                be used in save_full_betting_data().
         """
         if summary_df.empty:
             return pd.DataFrame()
@@ -235,11 +240,13 @@ class BetFileManager:
         if filtered_summary_df.empty:
             return
 
+        # Merge full data file on the key columns from filtered_summary_df.
         key_columns = ["Match", "Team", "Start Time"]
         merged_data = pd.merge(
             filtered_summary_df[key_columns], source_df, on=key_columns, how="left"
         )
 
+        # Keep all columns except Vigfree probabilities.
         vigfree_columns = [
             col for col in merged_data.columns if col.startswith("Vigfree ")
         ]

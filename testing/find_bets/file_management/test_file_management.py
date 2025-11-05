@@ -139,7 +139,7 @@ class TestBetFileManagerGetColumns(unittest.TestCase):
         self.assertIsNone(result)
 
     def test_get_columns_nc_strategies(self):
-        """Test getting columns for nc (no-correlation) strategies."""
+        """Test getting columns for north carolina dataset."""
         nc_tests = [
             ("master_nc_avg.csv", ["Avg Edge Pct", "Fair Odds Avg"]),
             ("master_nc_zscore.csv", ["Z Score", "Avg Edge Pct"]),
@@ -166,7 +166,7 @@ class TestBetFileManagerAppendUniqueBets(unittest.TestCase):
                 "Start Time": ["2025-11-01 15:00:00", "2025-11-01 18:00:00"],
                 "Best Bookmaker": ["Bet365", "William Hill"],
                 "Best Odds": [2.5, 3.0],
-                "Result": ["Win", "Loss"],
+                "Result": ["Not Found", "Not Found"],
             }
         )
 
@@ -174,7 +174,7 @@ class TestBetFileManagerAppendUniqueBets(unittest.TestCase):
         """Clean up temporary directory."""
         shutil.rmtree(self.test_dir)
 
-    @patch("file_management.datetime")
+    @patch("codebase.find_bets.file_management.datetime")
     def test_append_to_new_file(self, mock_datetime):
         """Test appending data to a new file."""
         mock_datetime.now.return_value.strftime.return_value = "2025-11-01 12:00:00"
@@ -189,7 +189,7 @@ class TestBetFileManagerAppendUniqueBets(unittest.TestCase):
         self.assertEqual(len(result), 2)
         self.assertIn("Scrape Time", result.columns)
 
-    @patch("file_management.datetime")
+    @patch("codebase.find_bets.file_management.datetime")
     def test_append_unique_bets_to_existing_file(self, mock_datetime):
         """Test appending unique bets to existing file."""
         mock_datetime.now.return_value.strftime.return_value = "2025-11-01 12:00:00"
@@ -216,7 +216,7 @@ class TestBetFileManagerAppendUniqueBets(unittest.TestCase):
         result = pd.read_csv(Path(self.test_dir) / filename)
         self.assertEqual(len(result), 3)  # 2 original + 1 new
 
-    @patch("file_management.datetime")
+    @patch("codebase.find_bets.file_management.datetime")
     def test_append_all_duplicates(self, mock_datetime):
         """Test appending when all bets are duplicates."""
         mock_datetime.now.return_value.strftime.return_value = "2025-11-01 12:00:00"
@@ -240,7 +240,7 @@ class TestBetFileManagerAppendUniqueBets(unittest.TestCase):
         file_path = Path(self.test_dir) / filename
         self.assertFalse(file_path.exists())
 
-    @patch("file_management.datetime")
+    @patch("codebase.find_bets.file_management.datetime")
     def test_duplicate_detection_different_date(self, mock_datetime):
         """Test that bets on different dates are not considered duplicates."""
         mock_datetime.now.return_value.strftime.return_value = "2025-11-01 12:00:00"
@@ -380,7 +380,7 @@ class TestBetFileManagerSaveBestBetsOnly(unittest.TestCase):
         """Clean up temporary directory."""
         shutil.rmtree(self.test_dir)
 
-    @patch("file_management.datetime")
+    @patch("codebase.find_bets.file_management.datetime")
     def test_save_best_bet_per_match(self, mock_datetime):
         """Test that only the best bet per match is saved."""
         mock_datetime.now.return_value.strftime.return_value = "2025-11-01 12:00:00"
@@ -394,7 +394,7 @@ class TestBetFileManagerSaveBestBetsOnly(unittest.TestCase):
         match_a_row = result[result["Match"] == "Team A vs Team B"]
         self.assertEqual(match_a_row.iloc[0]["Avg Edge Pct"], 5.2)
 
-    @patch("file_management.datetime")
+    @patch("codebase.find_bets.file_management.datetime")
     def test_save_best_bets_creates_file(self, mock_datetime):
         """Test that file is created when saving best bets."""
         mock_datetime.now.return_value.strftime.return_value = "2025-11-01 12:00:00"
@@ -414,7 +414,7 @@ class TestBetFileManagerSaveBestBetsOnly(unittest.TestCase):
 
         self.assertTrue(result.empty)
 
-    @patch("file_management.datetime")
+    @patch("codebase.find_bets.file_management.datetime")
     def test_descending_sort_for_best_bet(self, mock_datetime):
         """Test that bets are sorted in descending order to get highest score."""
         mock_datetime.now.return_value.strftime.return_value = "2025-11-01 12:00:00"
@@ -470,7 +470,7 @@ class TestBetFileManagerSaveFullBettingData(unittest.TestCase):
         """Clean up temporary directory."""
         shutil.rmtree(self.test_dir)
 
-    @patch("file_management.datetime")
+    @patch("codebase.find_bets.file_management.datetime")
     def test_save_full_data_merges_correctly(self, mock_datetime):
         """Test that full data is merged correctly with filtered summary."""
         mock_datetime.now.return_value.strftime.return_value = "2025-11-01 12:00:00"
@@ -485,7 +485,7 @@ class TestBetFileManagerSaveFullBettingData(unittest.TestCase):
         self.assertEqual(result.iloc[0]["Match"], "Team A vs Team B")
         self.assertIn("League", result.columns)
 
-    @patch("file_management.datetime")
+    @patch("codebase.find_bets.file_management.datetime")
     def test_save_full_data_removes_vigfree_columns(self, mock_datetime):
         """Test that Vigfree columns are removed from output."""
         mock_datetime.now.return_value.strftime.return_value = "2025-11-01 12:00:00"
@@ -509,7 +509,7 @@ class TestBetFileManagerSaveFullBettingData(unittest.TestCase):
         file_path = Path(self.test_dir) / filename
         self.assertFalse(file_path.exists())
 
-    @patch("file_management.datetime")
+    @patch("codebase.find_bets.file_management.datetime")
     def test_save_full_data_preserves_all_source_columns(self, mock_datetime):
         """Test that all non-vigfree columns from source are preserved."""
         mock_datetime.now.return_value.strftime.return_value = "2025-11-01 12:00:00"
@@ -546,7 +546,7 @@ class TestBetFileManagerIntegration(unittest.TestCase):
         """Clean up temporary directory."""
         shutil.rmtree(self.test_dir)
 
-    @patch("file_management.datetime")
+    @patch("codebase.find_bets.file_management.datetime")
     def test_full_workflow(self, mock_datetime):
         """Test complete workflow: save best bets and full data."""
         mock_datetime.now.return_value.strftime.return_value = "2025-11-01 12:00:00"
@@ -590,4 +590,4 @@ class TestBetFileManagerIntegration(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    unittest.main()
+    unittest.main(verbosity=2)
