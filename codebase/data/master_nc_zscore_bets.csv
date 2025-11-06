@@ -1,7 +1,7 @@
 Match,League,Team,Start Time,Outlier Book,Outlier Odds,Z Score,Avg Edge Pct,Result,Scrape Time
 Denver Broncos @ New York Jets,NFL,New York Jets,2025-10-12 09:30:00,DraftKings,4.4,2.15,4.16,Denver Broncos,2025-10-12 06:59:21
 Miami Heat @ Los Angeles Clippers,NBA,Los Angeles Clippers,2025-11-03 22:41:00,FanDuel,2.36,2.02,39.51,Miami Heat,2025-11-04 00:39:22
-Louisiana Tech Bulldogs @ Nevada Wolf Pack,NCAAB,Louisiana Tech Bulldogs,2025-11-04 22:00:00,FanDuel,4.85,2.08,2.4,Not Found,2025-11-04 20:48:12
+Louisiana Tech Bulldogs @ Nevada Wolf Pack,NCAAB,Louisiana Tech Bulldogs,2025-11-04 22:00:00,FanDuel,4.85,2.08,2.4,API Error,2025-11-04 20:48:12
 Edmonton Oilers @ Dallas Stars,NHL,Edmonton Oilers,2025-11-04 20:08:30,FanDuel,2.72,2.03,28.31,Dallas Stars,2025-11-04 22:48:53
-Eastern Washington Eagles @ Loyola Marymount Lions,NCAAB,Eastern Washington Eagles,2025-11-05 22:30:00,Caesars,5.3,2.24,12.0,Not Found,2025-11-05 22:16:35
+Eastern Washington Eagles @ Loyola Marymount Lions,NCAAB,Eastern Washington Eagles,2025-11-05 22:30:00,Caesars,5.3,2.24,12.0,API Error,2025-11-05 22:16:35
 ASVEL Lyon Villeurbanne @ Fenerbahce SK,Basketball Euroleague,ASVEL Lyon Villeurbanne,2025-11-06 12:45:00,FanDuel,11.0,2.03,29.0,Not Found,2025-11-06 11:53:33

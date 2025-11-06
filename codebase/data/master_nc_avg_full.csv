@@ -326,7 +326,6 @@ San Antonio Spurs @ Phoenix Suns,San Antonio Spurs,2025-11-02 20:11:00,NBA,2.15,
 Detroit Red Wings @ San Jose Sharks,Detroit Red Wings,2025-11-02 20:11:12,NHL,1.62,1.57,1.64,1.22,1.61,1.67,,Not Found,2.96,1.62,1.67,BetMGM,Detroit Red Wings,2,,2025-11-02 22:09:05
 Seattle Seahawks @ Washington Commanders,Washington Commanders,2025-11-02 20:22:51,NFL,20.0,19.0,18.0,18.28,19.0,19.0,,Not Found,2.15,19.58,20.0,Caesars,Seattle Seahawks,2,,2025-11-02 22:09:05
 Miami Heat @ Los Angeles Lakers,Miami Heat,2025-11-02 21:40:41,NBA,5.5,5.7,7.0,6.79,5.5,6.25,,Not Found,9.3,6.4,7.0,FanDuel,Los Angeles Lakers,2,,2025-11-02 22:56:16
-Omaha Mavericks @ Murray St Racers,Omaha Mavericks,2025-11-03 13:30:00,NCAAB,,2.64,2.84,2.58,2.6,2.55,2.65,Not Found,3.38,2.75,2.84,FanDuel,Not Found,2,,2025-11-03 12:20:23
 Northern Arizona Lumberjacks @ Drake Bulldogs,Northern Arizona Lumberjacks,2025-11-03 16:00:02,NCAAB,,4.6,4.4,4.2,4.3,4.2,3.99,Not Found,3.34,4.45,4.6,DraftKings,Not Found,2,,2025-11-03 14:54:59
 Dallas Mavericks @ Houston Rockets,Dallas Mavericks,2025-11-03 20:11:00,NBA,4.5,7.5,6.0,4.39,5.0,6.5,,Not Found,30.48,5.75,7.5,DraftKings,Houston Rockets,2,,2025-11-03 20:47:06
 Milwaukee Bucks @ Indiana Pacers,Indiana Pacers,2025-11-03 19:11:25,NBA,2.6,3.9,4.2,3.4,4.75,5.0,,Not Found,25.32,3.99,5.0,BetMGM,Not Found,2,,2025-11-03 20:47:06
@@ -352,10 +351,10 @@ Phoenix Suns @ Golden State Warriors,Phoenix Suns,2025-11-04 22:11:00,NBA,12.0,1
 Hawai'i Rainbow Warriors @ Oregon Ducks,Hawai'i Rainbow Warriors,2025-11-04 22:37:23,NCAAB,6.5,7.5,7.8,5.65,7.0,6.75,,Not Found,8.54,7.19,7.8,FanDuel,Not Found,2,,2025-11-04 23:01:18
 Oklahoma City Thunder @ Los Angeles Clippers,Los Angeles Clippers,2025-11-04 23:14:00,NBA,2.25,2.5,2.72,2.3,2.45,2.75,,Not Found,4.55,2.63,2.75,BetMGM,Oklahoma City Thunder,2,,2025-11-04 23:31:24
 Rider Broncs @ Rutgers Scarlet Knights,Rider Broncs,2025-11-05 18:02:01,NCAAB,13.0,12.0,14.0,15.53,10.0,10.0,,Not Found,10.15,12.71,14.0,FanDuel,Not Found,2,,2025-11-05 18:34:51
-New Orleans Pelicans @ Dallas Mavericks,New Orleans Pelicans,2025-11-05 20:41:00,NBA,3.15,2.45,2.42,3.44,,2.35,3.3,Not Found,7.58,2.93,3.15,Caesars,Not Found,2,,2025-11-05 20:53:14
-South Carolina Upstate Spartans @ Fresno St Bulldogs,South Carolina Upstate Spartans,2025-11-05 21:00:00,NCAAB,5.0,5.0,5.4,5.15,5.0,4.6,,Not Found,2.99,5.24,5.4,FanDuel,Not Found,2,,2025-11-05 20:53:14
-Eastern Washington Eagles @ Loyola Marymount Lions,Eastern Washington Eagles,2025-11-05 22:30:00,NCAAB,5.3,4.5,4.4,4.38,4.5,4.4,4.4,Not Found,12.0,4.73,5.3,Caesars,Not Found,2,,2025-11-05 22:16:34
-Oklahoma City Thunder @ Portland Trail Blazers,Portland Trail Blazers,2025-11-05 22:12:00,NBA,3.3,3.2,3.35,2.5,,3.1,2.49,Not Found,8.79,3.08,3.35,FanDuel,Not Found,2,,2025-11-05 22:16:34
-Golden State Warriors @ Sacramento Kings,Sacramento Kings,2025-11-05 22:10:31,NBA,2.0,2.05,2.14,1.74,,1.91,1.69,Not Found,6.81,2.0,2.14,FanDuel,Not Found,2,,2025-11-05 22:16:34
+New Orleans Pelicans @ Dallas Mavericks,New Orleans Pelicans,2025-11-05 20:41:00,NBA,3.15,2.45,2.42,3.44,,2.35,3.3,Not Found,7.58,2.93,3.15,Caesars,New Orleans Pelicans,2,,2025-11-05 20:53:14
+South Carolina Upstate Spartans @ Fresno St Bulldogs,South Carolina Upstate Spartans,2025-11-05 21:00:00,NCAAB,5.0,5.0,5.4,5.15,5.0,4.6,,Not Found,2.99,5.24,5.4,FanDuel,API Error,2,,2025-11-05 20:53:14
+Eastern Washington Eagles @ Loyola Marymount Lions,Eastern Washington Eagles,2025-11-05 22:30:00,NCAAB,5.3,4.5,4.4,4.38,4.5,4.4,4.4,Not Found,12.0,4.73,5.3,Caesars,API Error,2,,2025-11-05 22:16:34
+Oklahoma City Thunder @ Portland Trail Blazers,Portland Trail Blazers,2025-11-05 22:12:00,NBA,3.3,3.2,3.35,2.5,,3.1,2.49,Not Found,8.79,3.08,3.35,FanDuel,API Error,2,,2025-11-05 22:16:34
+Golden State Warriors @ Sacramento Kings,Sacramento Kings,2025-11-05 22:10:31,NBA,2.0,2.05,2.14,1.74,,1.91,1.69,Not Found,6.81,2.0,2.14,FanDuel,API Error,2,,2025-11-05 22:16:34
 ASVEL Lyon Villeurbanne @ Fenerbahce SK,ASVEL Lyon Villeurbanne,2025-11-06 12:45:00,Basketball Euroleague,,7.5,9.9,8.15,7.7,6.25,8.09,Not Found,21.45,8.15,9.9,FanDuel,Not Found,2,,2025-11-06 07:47:35
 Virtus Segafredo Bologna @ Saski Baskonia,Virtus Segafredo Bologna,2025-11-06 14:30:00,Basketball Euroleague,,3.0,3.3,2.21,2.9,2.7,2.3,Not Found,16.33,2.84,3.3,FanDuel,Not Found,2,,2025-11-06 14:41:04

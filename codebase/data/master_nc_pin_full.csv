@@ -347,36 +347,34 @@ New Jersey Devils @ Anaheim Ducks,New Jersey Devils,2025-11-02 20:08:18,NHL,4.03
 Detroit Red Wings @ San Jose Sharks,Detroit Red Wings,2025-11-02 20:11:12,NHL,1.22,1.62,1.57,1.64,1.61,1.67,,Not Found,1.26,32.23,1.67,BetMGM,Detroit Red Wings,2,,2025-11-02 22:09:10
 Seattle Seahawks @ Washington Commanders,Washington Commanders,2025-11-02 20:22:51,NFL,18.28,20.0,19.0,18.0,19.0,19.0,,Not Found,18.75,6.68,20.0,Caesars,Seattle Seahawks,2,,2025-11-02 22:09:10
 Miami Heat @ Los Angeles Lakers,Los Angeles Lakers,2025-11-02 21:40:41,NBA,1.08,1.14,1.28,1.22,1.27,1.29,,Not Found,1.13,13.82,1.29,BetMGM,Los Angeles Lakers,2,,2025-11-02 23:31:13
-Bradley Braves @ St. Bonaventure Bonnies,Bradley Braves,2025-11-03 11:00:00,NCAAB,1.93,,1.98,2.04,1.91,2.0,2.01,Not Found,2.0,2.0,2.04,FanDuel,Not Found,2,,2025-11-03 10:58:00
-Omaha Mavericks @ Murray St Racers,Omaha Mavericks,2025-11-03 13:30:00,NCAAB,2.58,,2.64,2.84,2.6,2.55,2.65,Not Found,2.69,5.72,2.84,FanDuel,Not Found,2,,2025-11-03 12:20:28
-Northern Arizona Lumberjacks @ Drake Bulldogs,Northern Arizona Lumberjacks,2025-11-03 16:00:02,NCAAB,4.17,,4.6,4.4,4.3,4.33,4.24,Not Found,4.34,6.09,4.6,DraftKings,Not Found,2,,2025-11-03 14:47:33
-Georgia St Panthers @ Eastern Michigan Eagles,Eastern Michigan Eagles,2025-11-03 18:30:00,NCAAB,1.61,,1.62,1.71,1.71,1.61,1.62,Not Found,1.67,2.34,1.71,FanDuel,Not Found,2,,2025-11-03 18:41:59
+Northern Arizona Lumberjacks @ Drake Bulldogs,Northern Arizona Lumberjacks,2025-11-03 16:00:02,NCAAB,4.17,,4.6,4.4,4.3,4.33,4.24,Not Found,4.34,6.09,4.6,DraftKings,API Error,2,,2025-11-03 14:47:33
+Georgia St Panthers @ Eastern Michigan Eagles,Eastern Michigan Eagles,2025-11-03 18:30:00,NCAAB,1.61,,1.62,1.71,1.71,1.61,1.62,Not Found,1.67,2.34,1.71,FanDuel,API Error,2,,2025-11-03 18:41:59
 Dallas Mavericks @ Houston Rockets,Dallas Mavericks,2025-11-03 20:11:00,NBA,4.39,4.5,7.5,6.0,5.0,6.5,,Not Found,4.63,62.05,7.5,DraftKings,Houston Rockets,2,,2025-11-03 20:47:11
-Washington Wizards @ New York Knicks,Washington Wizards,2025-11-03 19:40:00,NBA,3.33,4.8,4.9,5.5,5.0,5.0,,Not Found,3.47,58.65,5.5,FanDuel,Not Found,2,,2025-11-03 20:47:11
-Milwaukee Bucks @ Indiana Pacers,Indiana Pacers,2025-11-03 19:11:25,NBA,3.4,2.6,3.9,4.2,4.75,5.0,,Not Found,3.5,42.86,5.0,BetMGM,Not Found,2,,2025-11-03 20:47:11
-Minnesota Timberwolves @ Brooklyn Nets,Brooklyn Nets,2025-11-03 19:11:00,NBA,5.73,7.7,8.0,7.3,8.5,8.25,,Not Found,6.03,41.05,8.5,Fanatics,Not Found,2,,2025-11-03 20:47:11
+Washington Wizards @ New York Knicks,Washington Wizards,2025-11-03 19:40:00,NBA,3.33,4.8,4.9,5.5,5.0,5.0,,Not Found,3.47,58.65,5.5,FanDuel,API Error,2,,2025-11-03 20:47:11
+Milwaukee Bucks @ Indiana Pacers,Indiana Pacers,2025-11-03 19:11:25,NBA,3.4,2.6,3.9,4.2,4.75,5.0,,Not Found,3.5,42.86,5.0,BetMGM,API Error,2,,2025-11-03 20:47:11
+Minnesota Timberwolves @ Brooklyn Nets,Brooklyn Nets,2025-11-03 19:11:00,NBA,5.73,7.7,8.0,7.3,8.5,8.25,,Not Found,6.03,41.05,8.5,Fanatics,API Error,2,,2025-11-03 20:47:11
 Arizona Cardinals @ Dallas Cowboys,Dallas Cowboys,2025-11-03 20:15:45,NFL,1.75,1.67,1.95,2.08,1.87,2.05,,Not Found,1.83,13.7,2.08,FanDuel,Arizona Cardinals,2,,2025-11-03 20:47:11
 Detroit Pistons @ Memphis Grizzlies,Memphis Grizzlies,2025-11-03 20:11:00,NBA,2.61,2.95,2.45,3.0,2.6,2.45,,Not Found,2.71,10.87,3.0,FanDuel,Detroit Pistons,2,,2025-11-03 20:47:11
-Utah Jazz @ Boston Celtics,Utah Jazz,2025-11-03 19:42:00,NBA,1.52,2.1,1.77,2.2,1.95,1.95,,Not Found,1.59,38.24,2.2,FanDuel,Not Found,2,,2025-11-03 22:02:54
+Utah Jazz @ Boston Celtics,Utah Jazz,2025-11-03 19:42:00,NBA,1.52,2.1,1.77,2.2,1.95,1.95,,Not Found,1.59,38.24,2.2,FanDuel,API Error,2,,2025-11-03 22:02:54
 Sacramento Kings @ Denver Nuggets,Sacramento Kings,2025-11-03 21:10:29,NBA,7.25,9.5,10.0,7.8,9.5,8.0,,Not Found,7.53,32.78,10.0,DraftKings,Denver Nuggets,2,,2025-11-03 22:02:54
 Los Angeles Lakers @ Portland Trail Blazers,Los Angeles Lakers,2025-11-03 22:10:00,NBA,3.91,4.2,4.1,4.0,4.1,4.25,4.06,Not Found,4.03,5.43,4.25,BetMGM,Los Angeles Lakers,2,,2025-11-03 22:02:54
 Miami Heat @ Los Angeles Clippers,Los Angeles Clippers,2025-11-03 22:41:00,NBA,1.35,1.4,1.6,1.7,1.61,1.65,1.32,Not Found,1.39,22.48,1.7,FanDuel,Miami Heat,2,,2025-11-03 22:46:05
 Orlando Magic @ Atlanta Hawks,Orlando Magic,2025-11-04 20:12:00,NBA,2.36,2.6,2.9,2.76,2.75,3.1,,Not Found,2.45,26.64,3.1,BetMGM,Atlanta Hawks,2,,2025-11-04 20:48:17
 Philadelphia 76ers @ Chicago Bulls,Chicago Bulls,2025-11-04 20:11:00,NBA,5.13,5.0,6.75,6.2,5.5,5.25,,Not Found,5.42,24.48,6.75,DraftKings,Chicago Bulls,2,,2025-11-04 20:48:17
-Georgia Southern Eagles @ East Carolina Pirates,East Carolina Pirates,2025-11-04 19:02:41,NCAAB,1.26,1.62,1.43,1.38,1.31,1.33,,Not Found,1.35,20.17,1.62,Caesars,Not Found,2,,2025-11-04 20:48:17
+Georgia Southern Eagles @ East Carolina Pirates,East Carolina Pirates,2025-11-04 19:02:41,NCAAB,1.26,1.62,1.43,1.38,1.31,1.33,,Not Found,1.35,20.17,1.62,Caesars,API Error,2,,2025-11-04 20:48:17
 Charlotte Hornets @ New Orleans Pelicans,Charlotte Hornets,2025-11-04 20:10:00,NBA,2.08,2.45,2.3,2.36,2.35,2.35,,Not Found,2.2,11.6,2.45,Caesars,New Orleans Pelicans,2,,2025-11-04 20:48:17
-Louisiana Tech Bulldogs @ Nevada Wolf Pack,Louisiana Tech Bulldogs,2025-11-04 22:00:00,NCAAB,4.54,4.45,4.5,4.85,4.5,4.4,4.58,Not Found,4.72,2.73,4.85,FanDuel,Not Found,2,,2025-11-04 20:48:17
-Portland St Vikings @ Stanford Cardinal,Stanford Cardinal,2025-11-04 22:00:00,NCAAB,1.16,1.31,1.27,1.19,1.18,1.18,1.15,Not Found,1.21,8.45,1.31,Caesars,Not Found,2,,2025-11-04 22:04:15
-Texas Longhorns @ Duke Blue Devils,Duke Blue Devils,2025-11-04 20:55:58,NCAAB,1.2,1.36,1.32,1.29,1.33,1.27,,Not Found,1.28,5.89,1.36,Caesars,Not Found,2,,2025-11-04 22:04:15
+Louisiana Tech Bulldogs @ Nevada Wolf Pack,Louisiana Tech Bulldogs,2025-11-04 22:00:00,NCAAB,4.54,4.45,4.5,4.85,4.5,4.4,4.58,Not Found,4.72,2.73,4.85,FanDuel,API Error,2,,2025-11-04 20:48:17
+Portland St Vikings @ Stanford Cardinal,Stanford Cardinal,2025-11-04 22:00:00,NCAAB,1.16,1.31,1.27,1.19,1.18,1.18,1.15,Not Found,1.21,8.45,1.31,Caesars,API Error,2,,2025-11-04 22:04:15
+Texas Longhorns @ Duke Blue Devils,Duke Blue Devils,2025-11-04 20:55:58,NCAAB,1.2,1.36,1.32,1.29,1.33,1.27,,Not Found,1.28,5.89,1.36,Caesars,API Error,2,,2025-11-04 22:04:15
 Oklahoma City Thunder @ Los Angeles Clippers,Los Angeles Clippers,2025-11-04 23:10:00,NBA,3.51,3.4,3.5,3.75,3.5,3.6,3.6,Not Found,3.62,3.61,3.75,FanDuel,Oklahoma City Thunder,2,,2025-11-04 22:04:15
 Phoenix Suns @ Golden State Warriors,Phoenix Suns,2025-11-04 22:11:00,NBA,8.4,12.0,12.0,11.6,11.5,12.5,,Not Found,8.71,43.57,12.5,BetMGM,Golden State Warriors,2,,2025-11-04 22:48:57
 Edmonton Oilers @ Dallas Stars,Edmonton Oilers,2025-11-04 20:08:30,NHL,1.97,1.87,1.87,2.72,1.87,1.91,,Not Found,2.06,31.73,2.72,FanDuel,Dallas Stars,2,,2025-11-04 22:48:57
-Hawai'i Rainbow Warriors @ Oregon Ducks,Hawai'i Rainbow Warriors,2025-11-04 22:37:23,NCAAB,5.65,6.5,7.5,7.8,7.0,6.75,,Not Found,6.0,30.0,7.8,FanDuel,Not Found,2,,2025-11-04 23:01:23
+Hawai'i Rainbow Warriors @ Oregon Ducks,Hawai'i Rainbow Warriors,2025-11-04 22:37:23,NCAAB,5.65,6.5,7.5,7.8,7.0,6.75,,Not Found,6.0,30.0,7.8,FanDuel,API Error,2,,2025-11-04 23:01:23
 Panathinaikos @ KK Crvena zvezda,Panathinaikos,2025-11-05 14:00:00,Basketball Euroleague,1.95,,2.05,2.14,2.1,2.15,2.05,Not Found,2.07,4.09,2.15,BetMGM,KK Crvena zvezda,2,,2025-11-05 09:42:22
-Rider Broncs @ Rutgers Scarlet Knights,Rider Broncs,2025-11-05 18:02:01,NCAAB,14.74,15.0,10.0,16.0,12.0,9.25,,Not Found,15.31,4.5,16.0,FanDuel,Not Found,2,,2025-11-05 18:44:45
+Rider Broncs @ Rutgers Scarlet Knights,Rider Broncs,2025-11-05 18:02:01,NCAAB,14.74,15.0,10.0,16.0,12.0,9.25,,Not Found,15.31,4.5,16.0,FanDuel,API Error,2,,2025-11-05 18:44:45
 New Orleans Pelicans @ Dallas Mavericks,Dallas Mavericks,2025-11-05 20:41:00,NBA,1.35,1.36,1.53,1.54,,1.57,1.36,Not Found,1.39,12.75,1.57,BetMGM,New Orleans Pelicans,2,,2025-11-05 20:53:19
-Oklahoma City Thunder @ Portland Trail Blazers,Portland Trail Blazers,2025-11-05 22:12:00,NBA,2.5,3.3,3.2,3.35,,3.1,2.49,Not Found,2.56,30.73,3.35,FanDuel,Not Found,2,,2025-11-05 22:16:39
-Golden State Warriors @ Sacramento Kings,Sacramento Kings,2025-11-05 22:10:31,NBA,1.74,2.0,2.05,2.14,,1.91,1.69,Not Found,1.78,19.97,2.14,FanDuel,Not Found,2,,2025-11-05 22:16:39
-Eastern Washington Eagles @ Loyola Marymount Lions,Eastern Washington Eagles,2025-11-05 22:30:00,NCAAB,4.38,5.3,4.5,4.4,4.5,4.4,4.4,Not Found,4.56,16.2,5.3,Caesars,Not Found,2,,2025-11-05 22:16:39
+Oklahoma City Thunder @ Portland Trail Blazers,Portland Trail Blazers,2025-11-05 22:12:00,NBA,2.5,3.3,3.2,3.35,,3.1,2.49,Not Found,2.56,30.73,3.35,FanDuel,API Error,2,,2025-11-05 22:16:39
+Golden State Warriors @ Sacramento Kings,Sacramento Kings,2025-11-05 22:10:31,NBA,1.74,2.0,2.05,2.14,,1.91,1.69,Not Found,1.78,19.97,2.14,FanDuel,API Error,2,,2025-11-05 22:16:39
+Eastern Washington Eagles @ Loyola Marymount Lions,Eastern Washington Eagles,2025-11-05 22:30:00,NCAAB,4.38,5.3,4.5,4.4,4.5,4.4,4.4,Not Found,4.56,16.2,5.3,Caesars,API Error,2,,2025-11-05 22:16:39
 ASVEL Lyon Villeurbanne @ Fenerbahce SK,ASVEL Lyon Villeurbanne,2025-11-06 12:45:00,Basketball Euroleague,8.15,,7.5,9.9,7.7,6.25,8.09,Not Found,8.41,17.73,9.9,FanDuel,Not Found,2,,2025-11-06 07:47:40
 Virtus Segafredo Bologna @ Saski Baskonia,Virtus Segafredo Bologna,2025-11-06 14:30:00,Basketball Euroleague,2.21,,3.0,3.3,2.9,2.7,2.3,Not Found,2.29,43.95,3.3,FanDuel,Not Found,2,,2025-11-06 14:41:09
