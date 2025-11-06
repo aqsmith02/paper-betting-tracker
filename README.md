@@ -109,7 +109,7 @@ This project tracks sports bets and results using Python scripts and CSV files. 
    ```
 
 ## Automation
-- GitHub Actions workflows automatically runs bet finding script 3 times an hour and results updating script 1 time every 6 hours.
+- GitHub Actions workflows automatically runs bet finding script 7 times an hour and results updating script 1 time every 6 hours.
 - Updated CSVs are committed to the repository.
 
 ## Author
