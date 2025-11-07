@@ -101,7 +101,10 @@ def clean_old_pending_results(
     df_temp["Start Time"] = pd.to_datetime(
         df_temp["Start Time"], format="%Y-%m-%d %H:%M:%S"
     )
-    df_temp["Start Time"] = df_temp["Start Time"].dt.tz_localize(TIMEZONE)
+    # Fix: Handle ambiguous times during DST transitions
+    df_temp["Start Time"] = df_temp["Start Time"].dt.tz_localize(
+        TIMEZONE, ambiguous='NaT', nonexistent='shift_forward'
+    )
 
     # Create filter mask - keep rows that are either recent OR have valid results
     mask = ~(
