@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from dataclasses import dataclass
+from datetime import datetime
 from codebase.results.results_configs import PENDING_RESULTS
 
 # --- Data class for strategies ---
@@ -174,6 +175,18 @@ def roi_edge(df, odds_col, edge_col, method="linear"):
     }
 
 
+def calculate_time_spent(df):
+    """Calculate time interval data has been collected."""
+    time_start = datetime.strptime(df.loc[0, "Scrape Time"], "%Y-%m-%d %H:%M:%S")
+    time_end = datetime.strptime(df.loc[len(df)-1, "Scrape Time"], "%Y-%m-%d %H:%M:%S")
+    time_spent = time_end - time_start
+
+    days = time_spent.days
+    hours, remainder = divmod(time_spent.seconds, 3600)
+    minutes, seconds = divmod(remainder, 60)
+    return f"{days}d {hours}h {minutes}m {seconds}s"
+
+
 # ====================================
 # === Comparison & Reporting =========
 # ====================================
@@ -181,7 +194,10 @@ def roi_edge(df, odds_col, edge_col, method="linear"):
 
 def compare_methods(strategy):
     df = pd.read_csv(strategy.path)
+    time_spent = calculate_time_spent(df)
+    
     print(f"\n=== {strategy.name} ===")
+    print(f"Time Spent: {time_spent}")
     print(
         f"{'Method':<15} {'Wagered':>10} {'Winnings':>10} {'Net Profit':>12} {'ROI %':>8}"
     )
