@@ -2403,7 +2403,6 @@ Detroit Pistons @ Memphis Grizzlies,NBA,Memphis Grizzlies,2025-11-03 20:11:00,Fa
 Sacramento Kings @ Denver Nuggets,NBA,Sacramento Kings,2025-11-03 21:10:29,Unibet (NL),12.0,7.53,59.33,Denver Nuggets,2025-11-03 22:02:52
 Los Angeles Lakers @ Portland Trail Blazers,NBA,Los Angeles Lakers,2025-11-03 22:10:00,Marathon Bet,4.6,4.03,14.12,Los Angeles Lakers,2025-11-03 22:02:52
 Miami Heat @ Los Angeles Clippers,NBA,Miami Heat,2025-11-03 22:40:00,1xBet,3.67,3.52,4.2,Miami Heat,2025-11-03 22:02:52
-Arsenal @ Slavia Praha,UEFA Champions League,Slavia Praha,2025-11-04 12:45:00,LowVig.ag,14.2,12.6,12.66,Not Found,2025-11-03 22:46:03
 Eintracht Frankfurt @ Napoli,UEFA Champions League,Eintracht Frankfurt,2025-11-04 12:45:00,Unibet (NL),5.6,5.15,8.7,Draw,2025-11-03 22:46:03
 Hull City @ Derby County,Championship,Derby County,2025-11-04 14:45:00,LeoVegas (SE),2.35,2.29,2.69,Derby County,2025-11-03 23:43:20
 Millwall @ Birmingham City,Championship,Millwall,2025-11-04 14:45:00,Betr,4.33,4.22,2.6,Birmingham City,2025-11-03 23:52:45
@@ -2476,29 +2475,29 @@ ASVEL Lyon Villeurbanne @ Fenerbahce SK,Basketball Euroleague,ASVEL Lyon Villeur
 Shamrock Rovers @ AEK Athens,UEFA Europa Conference League,Draw,2025-11-06 12:45:00,Sky Bet,8.5,8.33,2.08,Draw,2025-11-06 00:23:06
 Aberdeen @ AEK Larnaca,UEFA Europa Conference League,Aberdeen,2025-11-06 12:45:00,Unibet,8.0,6.2,29.11,Draw,2025-11-06 01:34:47
 Breiðablik @ Shakhtar Donetsk,UEFA Europa Conference League,Breiðablik,2025-11-06 12:45:00,888sport,15.0,13.5,11.12,Shakhtar Donetsk,2025-11-06 01:54:50
-India @ Australia,International Twenty20,India,2025-11-06 03:15:00,DraftKings,1.87,1.81,3.57,Not Found,2025-11-06 02:51:09
-FCSB @ FC Basel,UEFA Europa League,FCSB,2025-11-06 12:45:00,1xBet,6.14,5.93,3.5,Not Found,2025-11-06 05:44:51
+India @ Australia,International Twenty20,India,2025-11-06 03:15:00,DraftKings,1.87,1.81,3.57,API Error,2025-11-06 02:51:09
+FCSB @ FC Basel,UEFA Europa League,FCSB,2025-11-06 12:45:00,1xBet,6.14,5.93,3.5,API Error,2025-11-06 05:44:51
 Celtic @ FC Midtjylland,UEFA Europa League,FC Midtjylland,2025-11-06 12:45:00,Bovada,2.13,2.08,2.38,FC Midtjylland,2025-11-06 05:55:48
 Celta Vigo @ Dinamo Zagreb,UEFA Europa League,Dinamo Zagreb,2025-11-06 12:45:00,Unibet (SE),2.4,2.34,2.73,Celta Vigo,2025-11-06 12:21:37
-ŠK Slovan Bratislava @ KuPS Kuopio,UEFA Europa Conference League,KuPS Kuopio,2025-11-06 12:45:00,Unibet (UK),7.0,3.45,102.82,Not Found,2025-11-06 12:48:53
-Ħamrun Spartans FC @ Samsunspor,UEFA Europa Conference League,Ħamrun Spartans FC,2025-11-06 12:45:00,Sky Bet,18.0,15.85,13.54,Not Found,2025-11-06 12:48:53
+ŠK Slovan Bratislava @ KuPS Kuopio,UEFA Europa Conference League,KuPS Kuopio,2025-11-06 12:45:00,Unibet (UK),7.0,3.45,102.82,API Error,2025-11-06 12:48:53
+Ħamrun Spartans FC @ Samsunspor,UEFA Europa Conference League,Ħamrun Spartans FC,2025-11-06 12:45:00,Sky Bet,18.0,15.85,13.54,API Error,2025-11-06 12:48:53
 Maccabi Tel Aviv @ Aston Villa,UEFA Europa League,Maccabi Tel Aviv,2025-11-06 15:00:00,Unibet (NL),15.0,13.77,8.97,Aston Villa,2025-11-06 12:48:53
 Raków Częstochowa @ Sparta Prague,UEFA Europa Conference League,Raków Częstochowa,2025-11-06 12:45:00,LowVig.ag,4.95,4.65,6.45,Draw,2025-11-06 12:48:53
 Porto @ FC Utrecht,UEFA Europa League,FC Utrecht,2025-11-06 12:45:00,1xBet,5.1,4.83,5.48,Not Found,2025-11-06 12:48:53
 AS Roma @ Rangers FC,UEFA Europa League,Rangers FC,2025-11-06 15:00:00,Unibet (SE),6.25,6.11,2.32,Not Found,2025-11-06 12:48:53
 Sigma Olomouc @ FC Noah,UEFA Europa Conference League,FC Noah,2025-11-06 12:45:00,DraftKings,4.0,2.02,98.09,Not Found,2025-11-06 12:56:21
-Nottingham Forest @ SK Sturm Graz,UEFA Europa League,SK Sturm Graz,2025-11-06 12:45:00,FanDuel,5.5,5.1,7.77,API Error,2025-11-06 12:56:21
-Legia Warszawa @ NK Celje,UEFA Europa Conference League,Legia Warszawa,2025-11-06 12:45:00,Coolbet,3.25,3.11,4.64,API Error,2025-11-06 12:56:21
-Go Ahead Eagles @ Salzburg,UEFA Europa League,Salzburg,2025-11-06 12:45:00,Coolbet,1.75,1.7,3.06,API Error,2025-11-06 12:56:21
-Panathinaikos FC @ Malmo FF,UEFA Europa League,Panathinaikos FC,2025-11-06 12:45:00,Bovada,2.5,2.43,2.95,API Error,2025-11-06 12:56:21
-Lille @ Red Star Belgrade,UEFA Europa League,Lille,2025-11-06 12:45:00,Bovada,2.75,2.7,2.02,API Error,2025-11-06 12:56:21
-SC Freiburg @ Nice,UEFA Europa League,Nice,2025-11-06 12:45:00,Coolbet,42.0,3.4,1134.5,API Error,2025-11-06 13:34:16
-Fiorentina @ FSV Mainz 05,UEFA Europa Conference League,FSV Mainz 05,2025-11-06 12:45:00,Unibet (UK),8.0,5.71,40.17,API Error,2025-11-06 13:34:16
-HŠK Zrinjski Mostar @ Dynamo Kyiv,UEFA Europa Conference League,HŠK Zrinjski Mostar,2025-11-06 15:00:00,Unibet (NL),5.75,4.77,20.5,API Error,2025-11-06 13:34:16
+Nottingham Forest @ SK Sturm Graz,UEFA Europa League,SK Sturm Graz,2025-11-06 12:45:00,FanDuel,5.5,5.1,7.77,Not Found,2025-11-06 12:56:21
+Legia Warszawa @ NK Celje,UEFA Europa Conference League,Legia Warszawa,2025-11-06 12:45:00,Coolbet,3.25,3.11,4.64,Not Found,2025-11-06 12:56:21
+Go Ahead Eagles @ Salzburg,UEFA Europa League,Salzburg,2025-11-06 12:45:00,Coolbet,1.75,1.7,3.06,Not Found,2025-11-06 12:56:21
+Panathinaikos FC @ Malmo FF,UEFA Europa League,Panathinaikos FC,2025-11-06 12:45:00,Bovada,2.5,2.43,2.95,Not Found,2025-11-06 12:56:21
+Lille @ Red Star Belgrade,UEFA Europa League,Lille,2025-11-06 12:45:00,Bovada,2.75,2.7,2.02,Not Found,2025-11-06 12:56:21
+SC Freiburg @ Nice,UEFA Europa League,Nice,2025-11-06 12:45:00,Coolbet,42.0,3.4,1134.5,Not Found,2025-11-06 13:34:16
+Fiorentina @ FSV Mainz 05,UEFA Europa Conference League,FSV Mainz 05,2025-11-06 12:45:00,Unibet (UK),8.0,5.71,40.17,Not Found,2025-11-06 13:34:16
+HŠK Zrinjski Mostar @ Dynamo Kyiv,UEFA Europa Conference League,HŠK Zrinjski Mostar,2025-11-06 15:00:00,Unibet (NL),5.75,4.77,20.5,Not Found,2025-11-06 13:34:16
 Hapoel Tel Aviv @ Dubai Basketball,Basketball Euroleague,Hapoel Tel Aviv,2025-11-06 13:00:00,Unibet,1.92,1.78,8.13,Hapoel Tel Aviv BC,2025-11-06 13:34:16
-SK Brann @ Bologna,UEFA Europa League,SK Brann,2025-11-06 15:00:00,Sky Bet,10.0,9.48,5.45,API Error,2025-11-06 13:34:16
+SK Brann @ Bologna,UEFA Europa League,SK Brann,2025-11-06 15:00:00,Sky Bet,10.0,9.48,5.45,Not Found,2025-11-06 13:34:16
 AZ Alkmaar @ Crystal Palace,UEFA Europa Conference League,AZ Alkmaar,2025-11-06 15:00:00,LowVig.ag,8.4,7.43,13.02,Crystal Palace,2025-11-06 13:54:07
-Strasbourg @ BK Häcken,UEFA Europa Conference League,Strasbourg,2025-11-06 15:00:00,Nordic Bet,2.18,2.01,8.64,API Error,2025-11-06 13:54:07
+Strasbourg @ BK Häcken,UEFA Europa Conference League,Strasbourg,2025-11-06 15:00:00,Nordic Bet,2.18,2.01,8.64,Not Found,2025-11-06 13:54:07
 Virtus Segafredo Bologna @ Saski Baskonia,Basketball Euroleague,Virtus Segafredo Bologna,2025-11-06 14:30:00,Betsson,4.05,2.29,76.67,API Error,2025-11-06 14:41:07
 FC Drita @ Shelbourne Dublin,UEFA Europa Conference League,Shelbourne Dublin,2025-11-06 15:00:00,Unibet (UK),3.8,1.92,98.34,API Error,2025-11-06 15:25:49
 Lech Poznań @ Rayo Vallecano,UEFA Europa Conference League,Rayo Vallecano,2025-11-06 15:00:00,FanDuel,2.65,1.56,69.41,Rayo Vallecano,2025-11-06 15:25:49
@@ -2521,12 +2520,12 @@ LIU Sharks @ IUPUI Jaguars,NCAAB,LIU Sharks,2025-11-06 18:30:00,Bovada,2.7,2.61,
 UTSA Roadrunners @ South Florida Bulls,NCAAF,UTSA Roadrunners,2025-11-06 19:37:00,Paddy Power,41.0,10.46,291.88,API Error,2025-11-06 20:47:22
 Robert Morris Colonials @ Drake Bulldogs,NCAAB,Drake Bulldogs,2025-11-06 19:32:30,Fanatics,2.9,1.86,55.8,API Error,2025-11-06 20:47:22
 Georgia Southern Eagles @ Appalachian State Mountaineers,NCAAF,Appalachian State Mountaineers,2025-11-06 19:40:00,Coolbet,6.2,4.37,42.01,API Error,2025-11-06 20:47:22
-Las Vegas Raiders @ Denver Broncos,NFL,Denver Broncos,2025-11-06 20:16:50,Unibet (NL),1.77,1.4,26.1,Not Found,2025-11-06 20:47:22
+Las Vegas Raiders @ Denver Broncos,NFL,Denver Broncos,2025-11-06 20:16:50,Unibet (NL),1.77,1.4,26.1,Denver Broncos,2025-11-06 20:47:22
 Santos @ Palmeiras,Brazil Série A,Santos,2025-11-06 19:30:00,Unibet (UK),9.5,8.91,6.65,Not Found,2025-11-06 20:47:22
-Los Angeles Clippers @ Phoenix Suns,NBA,Phoenix Suns,2025-11-06 21:10:37,DraftKings,2.45,2.2,11.6,Not Found,2025-11-06 22:03:16
+Los Angeles Clippers @ Phoenix Suns,NBA,Phoenix Suns,2025-11-06 21:10:37,DraftKings,2.45,2.2,11.6,Phoenix Suns,2025-11-06 22:03:16
 Cracovia Kraków @ Radomiak Radom,Ekstraklasa - Poland,Draw,2025-11-07 12:00:00,Unibet,3.35,3.22,4.13,Not Found,2025-11-06 22:03:16
-Arkansas-Pine Bluff Golden Lions @ Portland Pilots,NCAAB,Arkansas-Pine Bluff Golden Lions,2025-11-06 22:35:00,FanDuel,8.3,8.13,2.11,Not Found,2025-11-06 22:03:16
-Wright St Raiders @ California Golden Bears,NCAAB,Wright St Raiders,2025-11-06 22:01:44,DraftKings,16.0,10.1,58.37,Not Found,2025-11-06 22:48:10
+Arkansas-Pine Bluff Golden Lions @ Portland Pilots,NCAAB,Arkansas-Pine Bluff Golden Lions,2025-11-06 22:35:00,FanDuel,8.3,8.13,2.11,Portland Pilots,2025-11-06 22:03:16
+Wright St Raiders @ California Golden Bears,NCAAB,Wright St Raiders,2025-11-06 22:01:44,DraftKings,16.0,10.1,58.37,California Golden Bears,2025-11-06 22:48:10
 1. FC Nürnberg @ Dynamo Dresden,Bundesliga 2 - Germany,Dynamo Dresden,2025-11-07 12:30:00,Coolbet,2.7,2.64,2.09,Not Found,2025-11-06 22:48:10
 Pallacanestro Olimpia Milano @ Anadolu Efes,Basketball Euroleague,Pallacanestro Olimpia Milano,2025-11-07 12:30:00,Bovada,2.9,2.7,7.43,Not Found,2025-11-06 23:00:57
 Basaksehir @ Genclerbirligi SK,Turkey Super League,Basaksehir,2025-11-07 12:00:00,LowVig.ag,2.29,2.19,4.4,Not Found,2025-11-06 23:45:54
