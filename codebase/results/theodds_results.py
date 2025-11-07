@@ -217,6 +217,7 @@ def map_league_to_key(df: pd.DataFrame) -> List[str]:
         "MLB": "baseball_mlb",
         "MLB World Series Winner": "baseball_mlb_world_series_winner",
         "NBA Championship Winner": "basketball_nba_championship_winner",
+        "NCAAB": "ncaa_b",
         "NCAAB Championship Winner": "basketball_ncaab_championship_winner",
         "WNBA": "basketball_wnba",
         "Boxing": "boxing_boxing",
