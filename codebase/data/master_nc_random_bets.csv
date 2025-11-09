@@ -365,11 +365,6 @@ Edmonton Oilers @ Dallas Stars,NHL,Dallas Stars,2025-11-04 20:08:30,BetMGM,1.91,
 Texas Longhorns @ Duke Blue Devils,NCAAB,Duke Blue Devils,2025-11-04 20:55:58,Caesars,1.09,Duke Blue Devils,2025-11-04 22:48:59
 Hawai'i Rainbow Warriors @ Oregon Ducks,NCAAB,Hawai'i Rainbow Warriors,2025-11-04 22:37:23,FanDuel,11.6,Oregon Ducks,2025-11-04 23:31:30
 Panathinaikos @ KK Crvena zvezda,Basketball Euroleague,KK Crvena zvezda,2025-11-05 14:00:00,DraftKings,1.7,KK Crvena zvezda,2025-11-04 23:31:30
-Brooklyn Nets @ Indiana Pacers,NBA,Brooklyn Nets,2025-11-05 19:00:00,FanDuel,3.25,Not Found,2025-11-05 17:21:37
-Kent State Golden Flashes @ Ball State Cardinals,NCAAF,Ball State Cardinals,2025-11-05 19:00:00,BetMGM,1.67,Not Found,2025-11-05 17:21:37
-Rider Broncs @ Rutgers Scarlet Knights,NCAAB,Rider Broncs,2025-11-05 18:02:01,FanDuel,14.0,Not Found,2025-11-05 18:34:57
-Utah Jazz @ Detroit Pistons,NBA,Utah Jazz,2025-11-05 19:00:00,DraftKings,4.5,Not Found,2025-11-05 18:34:57
-Northern Illinois Huskies @ Toledo Rockets,NCAAF,Toledo Rockets,2025-11-05 19:00:00,FanDuel,1.15,Not Found,2025-11-05 18:34:57
 North Dakota St Bison @ UC Davis Aggies,NCAAB,North Dakota St Bison,2025-11-05 21:05:00,FanDuel,2.16,UC Davis Aggies,2025-11-05 20:53:21
 Golden State Warriors @ Sacramento Kings,NBA,Sacramento Kings,2025-11-05 22:10:31,FanDuel,2.14,Sacramento Kings,2025-11-05 22:16:41
 San Antonio Spurs @ Los Angeles Lakers,NBA,San Antonio Spurs,2025-11-05 22:12:58,BetMGM,1.91,Los Angeles Lakers,2025-11-05 22:16:41
@@ -398,10 +393,10 @@ Green Bay Phoenix @ Buffalo Bulls,NCAAB,Buffalo Bulls,2025-11-07 18:30:00,BetMGM
 Tulsa Golden Hurricane @ Rhode Island Rams,NCAAB,Rhode Island Rams,2025-11-07 18:00:00,Caesars,1.62,Not Found,2025-11-07 17:55:25
 Arkansas St Red Wolves @ Stephen F. Austin Lumberjacks,NCAAB,Stephen F. Austin Lumberjacks,2025-11-07 19:00:00,DraftKings,2.05,Not Found,2025-11-07 18:19:39
 Tennessee Tech Golden Eagles @ Charlotte 49ers,NCAAB,Tennessee Tech Golden Eagles,2025-11-07 19:00:00,FanDuel,8.1,Not Found,2025-11-07 18:31:06
-Bucknell Bison @ Mt. St. Mary's Mountaineers,NCAAB,Bucknell Bison,2025-11-07 19:00:00,BetMGM,2.05,Not Found,2025-11-07 18:31:06
-Siena Saints @ Brown Bears,NCAAB,Siena Saints,2025-11-07 19:00:00,BetMGM,1.57,Not Found,2025-11-07 18:41:18
-Toronto Raptors @ Atlanta Hawks,NBA,Toronto Raptors,2025-11-07 19:46:00,DraftKings,3.7,Not Found,2025-11-07 20:41:49
-Detroit Pistons @ Brooklyn Nets,NBA,Brooklyn Nets,2025-11-07 19:40:00,DraftKings,3.1,Not Found,2025-11-07 20:41:49
+Bucknell Bison @ Mt. St. Mary's Mountaineers,NCAAB,Bucknell Bison,2025-11-07 19:00:00,BetMGM,2.05,API Error,2025-11-07 18:31:06
+Siena Saints @ Brown Bears,NCAAB,Siena Saints,2025-11-07 19:00:00,BetMGM,1.57,API Error,2025-11-07 18:41:18
+Toronto Raptors @ Atlanta Hawks,NBA,Toronto Raptors,2025-11-07 19:46:00,DraftKings,3.7,API Error,2025-11-07 20:41:49
+Detroit Pistons @ Brooklyn Nets,NBA,Brooklyn Nets,2025-11-07 19:40:00,DraftKings,3.1,API Error,2025-11-07 20:41:49
 VMI Keydets @ Southern Indiana Screaming Eagles,NCAAB,Southern Indiana Screaming Eagles,2025-11-07 20:45:00,DraftKings,2.2,VMI Keydets,2025-11-07 20:41:49
 Boston Celtics @ Orlando Magic,NBA,Orlando Magic,2025-11-07 19:11:00,DraftKings,1.53,API Error,2025-11-07 20:41:49
 Dallas Mavericks @ Memphis Grizzlies,NBA,Memphis Grizzlies,2025-11-07 20:12:00,FanDuel,1.25,API Error,2025-11-07 20:41:49
@@ -414,7 +409,7 @@ Rice Owls @ Oregon Ducks,NCAAB,Oregon Ducks,2025-11-07 22:05:00,BetMGM,1.22,Oreg
 Golden State Warriors @ Denver Nuggets,NBA,Denver Nuggets,2025-11-07 22:13:00,Fanatics,1.14,Denver Nuggets,2025-11-07 22:49:29
 Northwestern Wildcats @ USC Trojans,NCAAF,Northwestern Wildcats,2025-11-07 21:05:56,DraftKings,19.0,USC Trojans,2025-11-07 23:25:23
 Tulane Green Wave @ Memphis Tigers,NCAAF,Tulane Green Wave,2025-11-07 21:10:53,DraftKings,1.03,Tulane Green Wave,2025-11-07 23:25:23
-Manchester United @ Tottenham Hotspur,EPL,Draw,2025-11-08 07:30:00,FanDuel,3.4,Not Found,2025-11-08 07:40:27
+Manchester United @ Tottenham Hotspur,EPL,Draw,2025-11-08 07:30:00,FanDuel,3.4,Draw,2025-11-08 07:40:27
 Burnley @ West Ham United,EPL,Burnley,2025-11-08 10:00:00,Caesars,4.2,Not Found,2025-11-08 10:31:27
 Alabama Crimson Tide @ St. John's Red Storm,NCAAB,Alabama Crimson Tide,2025-11-08 12:00:00,FanDuel,2.88,Not Found,2025-11-08 10:31:27
 Princeton Tigers @ Akron Zips,NCAAB,Akron Zips,2025-11-08 12:00:00,BetMGM,1.13,Not Found,2025-11-08 10:31:27
