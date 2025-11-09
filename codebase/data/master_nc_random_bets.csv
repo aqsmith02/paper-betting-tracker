@@ -369,7 +369,6 @@ North Dakota St Bison @ UC Davis Aggies,NCAAB,North Dakota St Bison,2025-11-05 2
 Golden State Warriors @ Sacramento Kings,NBA,Sacramento Kings,2025-11-05 22:10:31,FanDuel,2.14,Sacramento Kings,2025-11-05 22:16:41
 San Antonio Spurs @ Los Angeles Lakers,NBA,San Antonio Spurs,2025-11-05 22:12:58,BetMGM,1.91,Los Angeles Lakers,2025-11-05 22:16:41
 Oklahoma City Thunder @ Portland Trail Blazers,NBA,Oklahoma City Thunder,2025-11-05 22:12:00,BetMGM,1.36,Portland Trail Blazers,2025-11-05 22:16:41
-ASVEL Lyon Villeurbanne @ Fenerbahce SK,Basketball Euroleague,Fenerbahce SK,2025-11-06 12:45:00,BetMGM,1.12,Not Found,2025-11-06 07:47:41
 Virtus Segafredo Bologna @ Saski Baskonia,Basketball Euroleague,Virtus Segafredo Bologna,2025-11-06 14:30:00,BetMGM,2.25,Not Found,2025-11-06 12:48:57
 Hapoel Tel Aviv @ Dubai Basketball,Basketball Euroleague,Hapoel Tel Aviv,2025-11-06 13:00:00,FanDuel,1.56,Hapoel Tel Aviv BC,2025-11-06 12:48:57
 AS Monaco @ Maccabi Tel Aviv,Basketball Euroleague,AS Monaco,2025-11-06 15:00:00,BetMGM,1.57,Not Found,2025-11-06 12:56:25
@@ -444,21 +443,21 @@ Max Gimenis @ Josh Hokit,MMA,Josh Hokit,2025-11-08 17:25:00,DraftKings,1.24,Not 
 Charleston Cougars @ Florida Atlantic Owls,NCAAB,Charleston Cougars,2025-11-08 18:00:00,FanDuel,3.35,Not Found,2025-11-08 17:19:09
 Albany Great Danes @ Massachusetts Minutemen,NCAAB,Massachusetts Minutemen,2025-11-08 18:00:00,BetMGM,1.2,Not Found,2025-11-08 17:19:09
 Jacqueline Cavalcanti @ Mayra Bueno Silva,MMA,Jacqueline Cavalcanti,2025-11-08 17:50:00,DraftKings,1.46,Not Found,2025-11-08 17:33:12
-Providence Friars @ Virginia Tech Hokies,NCAAB,Providence Friars,2025-11-08 16:30:00,Caesars,1.33,Not Found,2025-11-08 17:33:12
-Air Force Falcons @ San Jose State Spartans,NCAAF,San Jose State Spartans,2025-11-08 18:00:00,FanDuel,1.43,Not Found,2025-11-08 17:42:28
-East Carolina Pirates @ Richmond Spiders,NCAAB,Richmond Spiders,2025-11-08 18:00:00,BetMGM,1.44,Not Found,2025-11-08 17:50:21
+Providence Friars @ Virginia Tech Hokies,NCAAB,Providence Friars,2025-11-08 16:30:00,Caesars,1.33,API Error,2025-11-08 17:33:12
+Air Force Falcons @ San Jose State Spartans,NCAAF,San Jose State Spartans,2025-11-08 18:00:00,FanDuel,1.43,API Error,2025-11-08 17:42:28
+East Carolina Pirates @ Richmond Spiders,NCAAB,Richmond Spiders,2025-11-08 18:00:00,BetMGM,1.44,API Error,2025-11-08 17:50:21
 BC Lions @ Saskatchewan Roughriders,CFL,BC Lions,2025-11-08 18:30:00,DraftKings,2.85,Saskatchewan Roughriders,2025-11-08 18:40:55
-Jamall Emmers @ Hyder Amil,MMA,Jamall Emmers,2025-11-08 18:40:00,DraftKings,2.4,Not Found,2025-11-08 18:40:55
-Florida State Seminoles @ Clemson Tigers,NCAAF,Florida State Seminoles,2025-11-08 19:00:00,Caesars,2.05,Not Found,2025-11-08 18:40:55
-California Golden Bears @ Louisville Cardinals,NCAAF,California Golden Bears,2025-11-08 19:00:00,FanDuel,8.0,Not Found,2025-11-08 18:56:06
-Arkansas Razorbacks @ Michigan St Spartans,NCAAB,Michigan St Spartans,2025-11-08 19:00:00,Caesars,1.69,Not Found,2025-11-08 18:56:06
-Wake Forest Demon Deacons @ Virginia Cavaliers,NCAAF,Virginia Cavaliers,2025-11-08 16:19:00,Caesars,2.25,Not Found,2025-11-08 20:51:01
-Nebraska Cornhuskers @ UCLA Bruins,NCAAF,Nebraska Cornhuskers,2025-11-08 21:06:00,Caesars,2.1,Not Found,2025-11-08 20:51:01
-Chattanooga Mocs @ UNLV Rebels,NCAAB,UNLV Rebels,2025-11-08 21:00:00,DraftKings,1.31,Not Found,2025-11-08 20:51:01
-Indiana Pacers @ Denver Nuggets,NBA,Indiana Pacers,2025-11-08 21:11:00,FanDuel,10.0,Not Found,2025-11-08 22:49:49
-Phoenix Suns @ Los Angeles Clippers,NBA,Phoenix Suns,2025-11-08 22:42:42,FanDuel,2.16,Not Found,2025-11-08 22:49:49
-San Diego State Aztecs @ Hawaii Rainbow Warriors,NCAAF,San Diego State Aztecs,2025-11-08 23:00:00,FanDuel,1.41,Not Found,2025-11-08 22:49:49
-Anaheim Ducks @ Vegas Golden Knights,NHL,Anaheim Ducks,2025-11-08 22:08:36,DraftKings,2.0,Not Found,2025-11-09 00:55:10
+Jamall Emmers @ Hyder Amil,MMA,Jamall Emmers,2025-11-08 18:40:00,DraftKings,2.4,API Error,2025-11-08 18:40:55
+Florida State Seminoles @ Clemson Tigers,NCAAF,Florida State Seminoles,2025-11-08 19:00:00,Caesars,2.05,API Error,2025-11-08 18:40:55
+California Golden Bears @ Louisville Cardinals,NCAAF,California Golden Bears,2025-11-08 19:00:00,FanDuel,8.0,API Error,2025-11-08 18:56:06
+Arkansas Razorbacks @ Michigan St Spartans,NCAAB,Michigan St Spartans,2025-11-08 19:00:00,Caesars,1.69,API Error,2025-11-08 18:56:06
+Wake Forest Demon Deacons @ Virginia Cavaliers,NCAAF,Virginia Cavaliers,2025-11-08 16:19:00,Caesars,2.25,API Error,2025-11-08 20:51:01
+Nebraska Cornhuskers @ UCLA Bruins,NCAAF,Nebraska Cornhuskers,2025-11-08 21:06:00,Caesars,2.1,Nebraska Cornhuskers,2025-11-08 20:51:01
+Chattanooga Mocs @ UNLV Rebels,NCAAB,UNLV Rebels,2025-11-08 21:00:00,DraftKings,1.31,UNLV Rebels,2025-11-08 20:51:01
+Indiana Pacers @ Denver Nuggets,NBA,Indiana Pacers,2025-11-08 21:11:00,FanDuel,10.0,API Error,2025-11-08 22:49:49
+Phoenix Suns @ Los Angeles Clippers,NBA,Phoenix Suns,2025-11-08 22:42:42,FanDuel,2.16,API Error,2025-11-08 22:49:49
+San Diego State Aztecs @ Hawaii Rainbow Warriors,NCAAF,San Diego State Aztecs,2025-11-08 23:00:00,FanDuel,1.41,Hawaii Rainbow Warriors,2025-11-08 22:49:49
+Anaheim Ducks @ Vegas Golden Knights,NHL,Anaheim Ducks,2025-11-08 22:08:36,DraftKings,2.0,Anaheim Ducks,2025-11-09 00:55:10
 Bournemouth @ Aston Villa,EPL,Draw,2025-11-09 09:00:00,FanDuel,3.4,Not Found,2025-11-09 08:05:03
 Newcastle United @ Brentford,EPL,Brentford,2025-11-09 09:00:00,FanDuel,2.9,Not Found,2025-11-09 08:31:22
 Brighton and Hove Albion @ Crystal Palace,EPL,Crystal Palace,2025-11-09 09:00:00,DraftKings,2.4,Not Found,2025-11-09 08:49:59
