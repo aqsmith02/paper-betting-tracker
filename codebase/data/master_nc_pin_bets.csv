@@ -372,7 +372,6 @@ Las Vegas Raiders @ Denver Broncos,NFL,Denver Broncos,2025-11-06 20:16:50,FanDue
 Los Angeles Clippers @ Phoenix Suns,NBA,Phoenix Suns,2025-11-06 21:10:37,DraftKings,2.45,2.2,11.6,Phoenix Suns,2025-11-06 22:03:18
 Arkansas-Pine Bluff Golden Lions @ Portland Pilots,NCAAB,Arkansas-Pine Bluff Golden Lions,2025-11-06 22:35:00,FanDuel,8.3,8.13,2.11,Portland Pilots,2025-11-06 22:03:18
 Wright St Raiders @ California Golden Bears,NCAAB,Wright St Raiders,2025-11-06 22:01:44,DraftKings,16.0,10.1,58.37,California Golden Bears,2025-11-06 22:48:13
-Pallacanestro Olimpia Milano @ Anadolu Efes,Basketball Euroleague,Anadolu Efes,2025-11-07 12:31:00,BetMGM,1.87,1.76,6.51,Not Found,2025-11-07 12:44:09
 KK Partizan NIS @ Olympiacos,Basketball Euroleague,KK Partizan NIS,2025-11-07 14:15:00,BetMGM,5.0,4.8,4.27,Not Found,2025-11-07 14:18:32
 Real Madrid @ FC Barcelona Bàsquet,Basketball Euroleague,FC Barcelona Bàsquet,2025-11-07 14:31:00,DraftKings,2.24,2.0,12.0,Real Madrid Baloncesto,2025-11-07 14:40:30
 Charleston Cougars @ Liberty Flames,NCAAB,Charleston Cougars,2025-11-07 18:00:00,Caesars,5.0,4.7,6.27,Not Found,2025-11-07 16:37:18
@@ -475,7 +474,7 @@ Detroit Lions @ Washington Commanders,NFL,Washington Commanders,2025-11-09 16:25
 Arizona Cardinals @ Seattle Seahawks,NFL,Arizona Cardinals,2025-11-09 16:06:09,DraftKings,11.0,4.16,164.66,Seattle Seahawks,2025-11-09 16:18:25
 Omaha Mavericks @ Colorado St Rams,NCAAB,Omaha Mavericks,2025-11-09 18:00:00,FanDuel,9.9,9.28,6.71,Not Found,2025-11-09 17:19:46
 Florida Atlantic Owls @ Liberty Flames,NCAAB,Florida Atlantic Owls,2025-11-09 18:00:00,FanDuel,4.0,3.86,3.59,Not Found,2025-11-09 17:19:46
-Brooklyn Nets @ New York Knicks,NBA,Brooklyn Nets,2025-11-09 18:11:45,DraftKings,16.0,9.2,73.88,API Error,2025-11-09 18:19:46
+Brooklyn Nets @ New York Knicks,NBA,Brooklyn Nets,2025-11-09 18:11:45,DraftKings,16.0,9.2,73.88,New York Knicks,2025-11-09 18:19:46
 Oklahoma City Thunder @ Memphis Grizzlies,NBA,Memphis Grizzlies,2025-11-09 18:11:00,DraftKings,7.0,5.07,37.95,API Error,2025-11-09 18:19:46
 Boston Celtics @ Orlando Magic,NBA,Boston Celtics,2025-11-09 18:11:00,FanDuel,3.3,2.49,32.49,API Error,2025-11-09 18:19:46
 Los Angeles Rams @ San Francisco 49ers,NFL,San Francisco 49ers,2025-11-09 16:25:00,Fanatics,12.0,8.03,49.49,API Error,2025-11-09 18:30:38
@@ -483,10 +482,10 @@ Southern Miss Golden Eagles @ South Carolina Gamecocks,NCAAB,Southern Miss Golde
 Carolina Hurricanes @ Toronto Maple Leafs,NHL,Carolina Hurricanes,2025-11-09 19:22:00,DraftKings,6.2,2.62,136.48,API Error,2025-11-09 20:52:49
 Utah Mammoth @ Ottawa Senators,NHL,Utah Mammoth,2025-11-09 19:12:28,FanDuel,3.85,1.96,96.04,API Error,2025-11-09 20:52:49
 Detroit Pistons @ Philadelphia 76ers,NBA,Detroit Pistons,2025-11-09 19:41:11,FanDuel,2.86,1.66,72.32,API Error,2025-11-09 20:52:49
-Indiana Pacers @ Golden State Warriors,NBA,Indiana Pacers,2025-11-09 20:43:00,FanDuel,8.5,5.89,44.34,Not Found,2025-11-09 20:52:49
+Indiana Pacers @ Golden State Warriors,NBA,Indiana Pacers,2025-11-09 20:43:00,FanDuel,8.5,5.89,44.34,API Error,2025-11-09 20:52:49
 Seattle Kraken @ Dallas Stars,NHL,Seattle Kraken,2025-11-09 19:10:02,FanDuel,5.0,4.5,11.21,API Error,2025-11-09 20:52:49
 Pittsburgh Steelers @ Los Angeles Chargers,NFL,Pittsburgh Steelers,2025-11-09 20:24:12,FanDuel,2.76,2.56,7.94,Los Angeles Chargers,2025-11-09 20:52:49
 Calgary Flames @ Minnesota Wild,NHL,Calgary Flames,2025-11-09 20:08:41,FanDuel,6.6,4.15,59.05,Minnesota Wild,2025-11-09 22:21:50
-Colorado Avalanche @ Vancouver Canucks,NHL,Vancouver Canucks,2025-11-09 22:08:07,FanDuel,4.3,2.89,48.65,Not Found,2025-11-09 22:21:50
-Minnesota Timberwolves @ Sacramento Kings,NBA,Sacramento Kings,2025-11-09 21:10:00,FanDuel,9.7,6.56,47.81,Not Found,2025-11-09 22:21:50
-Winnipeg Jets @ Anaheim Ducks,NHL,Winnipeg Jets,2025-11-09 22:10:38,Fanatics,4.5,2.44,84.56,Not Found,2025-11-09 22:59:58
+Colorado Avalanche @ Vancouver Canucks,NHL,Vancouver Canucks,2025-11-09 22:08:07,FanDuel,4.3,2.89,48.65,Colorado Avalanche,2025-11-09 22:21:50
+Minnesota Timberwolves @ Sacramento Kings,NBA,Sacramento Kings,2025-11-09 21:10:00,FanDuel,9.7,6.56,47.81,API Error,2025-11-09 22:21:50
+Winnipeg Jets @ Anaheim Ducks,NHL,Winnipeg Jets,2025-11-09 22:10:38,Fanatics,4.5,2.44,84.56,Anaheim Ducks,2025-11-09 22:59:58
