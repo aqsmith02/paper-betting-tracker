@@ -434,10 +434,10 @@ Iowa State Cyclones @ TCU Horned Frogs,NCAAF,TCU Horned Frogs,2025-11-08 15:35:2
 Max Gimenis @ Josh Hokit,MMA,Josh Hokit,2025-11-08 17:25:00,DraftKings,1.24,Not Found,2025-11-08 16:55:10
 Charleston Cougars @ Florida Atlantic Owls,NCAAB,Charleston Cougars,2025-11-08 18:00:00,FanDuel,3.35,Not Found,2025-11-08 17:19:09
 Albany Great Danes @ Massachusetts Minutemen,NCAAB,Massachusetts Minutemen,2025-11-08 18:00:00,BetMGM,1.2,Not Found,2025-11-08 17:19:09
-Jacqueline Cavalcanti @ Mayra Bueno Silva,MMA,Jacqueline Cavalcanti,2025-11-08 17:50:00,DraftKings,1.46,Not Found,2025-11-08 17:33:12
-Providence Friars @ Virginia Tech Hokies,NCAAB,Providence Friars,2025-11-08 16:30:00,Caesars,1.33,Not Found,2025-11-08 17:33:12
-Air Force Falcons @ San Jose State Spartans,NCAAF,San Jose State Spartans,2025-11-08 18:00:00,FanDuel,1.43,Not Found,2025-11-08 17:42:28
-East Carolina Pirates @ Richmond Spiders,NCAAB,Richmond Spiders,2025-11-08 18:00:00,BetMGM,1.44,Not Found,2025-11-08 17:50:21
+Jacqueline Cavalcanti @ Mayra Bueno Silva,MMA,Jacqueline Cavalcanti,2025-11-08 17:50:00,DraftKings,1.46,API Error,2025-11-08 17:33:12
+Providence Friars @ Virginia Tech Hokies,NCAAB,Providence Friars,2025-11-08 16:30:00,Caesars,1.33,API Error,2025-11-08 17:33:12
+Air Force Falcons @ San Jose State Spartans,NCAAF,San Jose State Spartans,2025-11-08 18:00:00,FanDuel,1.43,API Error,2025-11-08 17:42:28
+East Carolina Pirates @ Richmond Spiders,NCAAB,Richmond Spiders,2025-11-08 18:00:00,BetMGM,1.44,API Error,2025-11-08 17:50:21
 BC Lions @ Saskatchewan Roughriders,CFL,BC Lions,2025-11-08 18:30:00,DraftKings,2.85,Saskatchewan Roughriders,2025-11-08 18:40:55
 Jamall Emmers @ Hyder Amil,MMA,Jamall Emmers,2025-11-08 18:40:00,DraftKings,2.4,Not Found,2025-11-08 18:40:55
 Florida State Seminoles @ Clemson Tigers,NCAAF,Florida State Seminoles,2025-11-08 19:00:00,Caesars,2.05,Not Found,2025-11-08 18:40:55
@@ -455,20 +455,20 @@ Newcastle United @ Brentford,EPL,Brentford,2025-11-09 09:00:00,FanDuel,2.9,Brent
 Brighton and Hove Albion @ Crystal Palace,EPL,Crystal Palace,2025-11-09 09:00:00,DraftKings,2.4,Draw,2025-11-09 08:49:59
 Atlanta Falcons @ Indianapolis Colts,NFL,Atlanta Falcons,2025-11-09 09:30:00,DraftKings,3.5,Indianapolis Colts,2025-11-09 09:17:58
 Leeds United @ Nottingham Forest,EPL,Draw,2025-11-09 09:01:00,Caesars,1.83,Nottingham Forest,2025-11-09 10:30:41
-Liverpool @ Manchester City,EPL,Draw,2025-11-09 11:30:00,DraftKings,4.9,Not Found,2025-11-09 12:17:21
-Western Michigan Broncos @ Campbell Fighting Camels,NCAAB,Campbell Fighting Camels,2025-11-09 12:30:00,DraftKings,1.23,Not Found,2025-11-09 12:17:21
-Cleveland Browns @ New York Jets,NFL,Cleveland Browns,2025-11-09 13:00:00,FanDuel,1.77,Not Found,2025-11-09 12:30:52
-Buffalo Bills @ Miami Dolphins,NFL,Buffalo Bills,2025-11-09 13:00:00,DraftKings,1.23,Not Found,2025-11-09 12:48:44
-Cornell Big Red @ Illinois St Redbirds,NCAAB,Cornell Big Red,2025-11-09 14:00:00,Caesars,3.5,Not Found,2025-11-09 13:44:50
-Vermont Catamounts @ Brown Bears,NCAAB,Vermont Catamounts,2025-11-09 14:00:00,BetMGM,1.43,Not Found,2025-11-09 13:44:50
-Jacksonville Jaguars @ Houston Texans,NFL,Jacksonville Jaguars,2025-11-09 13:03:20,DraftKings,1.14,Not Found,2025-11-09 13:44:50
-Baltimore Ravens @ Minnesota Vikings,NFL,Minnesota Vikings,2025-11-09 13:02:49,BetMGM,1.57,Not Found,2025-11-09 13:55:22
-Chicago Blackhawks @ Detroit Red Wings,NHL,Detroit Red Wings,2025-11-09 13:09:46,Fanatics,1.57,Not Found,2025-11-09 13:55:22
-Indiana Hoosiers @ Marquette Golden Eagles,NCAAB,Indiana Hoosiers,2025-11-09 13:00:00,DraftKings,1.12,Not Found,2025-11-09 14:34:10
-Texas A&M Aggies @ Oklahoma St Cowboys,NCAAB,Texas A&M Aggies,2025-11-09 14:00:00,DraftKings,4.4,Not Found,2025-11-09 14:49:14
-New Orleans Saints @ Carolina Panthers,NFL,Carolina Panthers,2025-11-09 13:02:43,DraftKings,2.54,Not Found,2025-11-09 15:22:13
+Liverpool @ Manchester City,EPL,Draw,2025-11-09 11:30:00,DraftKings,4.9,Manchester City,2025-11-09 12:17:21
+Western Michigan Broncos @ Campbell Fighting Camels,NCAAB,Campbell Fighting Camels,2025-11-09 12:30:00,DraftKings,1.23,Campbell Fighting Camels,2025-11-09 12:17:21
+Cleveland Browns @ New York Jets,NFL,Cleveland Browns,2025-11-09 13:00:00,FanDuel,1.77,New York Jets,2025-11-09 12:30:52
+Buffalo Bills @ Miami Dolphins,NFL,Buffalo Bills,2025-11-09 13:00:00,DraftKings,1.23,Miami Dolphins,2025-11-09 12:48:44
+Cornell Big Red @ Illinois St Redbirds,NCAAB,Cornell Big Red,2025-11-09 14:00:00,Caesars,3.5,Illinois St Redbirds,2025-11-09 13:44:50
+Vermont Catamounts @ Brown Bears,NCAAB,Vermont Catamounts,2025-11-09 14:00:00,BetMGM,1.43,Vermont Catamounts,2025-11-09 13:44:50
+Jacksonville Jaguars @ Houston Texans,NFL,Jacksonville Jaguars,2025-11-09 13:03:20,DraftKings,1.14,Houston Texans,2025-11-09 13:44:50
+Baltimore Ravens @ Minnesota Vikings,NFL,Minnesota Vikings,2025-11-09 13:02:49,BetMGM,1.57,Baltimore Ravens,2025-11-09 13:55:22
+Chicago Blackhawks @ Detroit Red Wings,NHL,Detroit Red Wings,2025-11-09 13:09:46,Fanatics,1.57,Chicago Blackhawks,2025-11-09 13:55:22
+Indiana Hoosiers @ Marquette Golden Eagles,NCAAB,Indiana Hoosiers,2025-11-09 13:00:00,DraftKings,1.12,Indiana Hoosiers,2025-11-09 14:34:10
+Texas A&M Aggies @ Oklahoma St Cowboys,NCAAB,Texas A&M Aggies,2025-11-09 14:00:00,DraftKings,4.4,Oklahoma St Cowboys,2025-11-09 14:49:14
+New Orleans Saints @ Carolina Panthers,NFL,Carolina Panthers,2025-11-09 13:02:43,DraftKings,2.54,New Orleans Saints,2025-11-09 15:22:13
 Houston Rockets @ Milwaukee Bucks,NBA,Houston Rockets,2025-11-09 15:30:00,DraftKings,1.57,Not Found,2025-11-09 15:22:13
-New York Giants @ Chicago Bears,NFL,Chicago Bears,2025-11-09 13:03:06,DraftKings,13.0,Not Found,2025-11-09 15:34:55
+New York Giants @ Chicago Bears,NFL,Chicago Bears,2025-11-09 13:03:06,DraftKings,13.0,Chicago Bears,2025-11-09 15:34:55
 Detroit Lions @ Washington Commanders,NFL,Washington Commanders,2025-11-09 16:25:00,DraftKings,4.8,Not Found,2025-11-09 15:58:58
 Arizona Cardinals @ Seattle Seahawks,NFL,Seattle Seahawks,2025-11-09 16:05:00,BetMGM,1.31,Not Found,2025-11-09 15:58:58
 North Texas Mean Green @ Loyola (Chi) Ramblers,NCAAB,North Texas Mean Green,2025-11-09 17:00:00,FanDuel,2.1,Not Found,2025-11-09 16:29:17
