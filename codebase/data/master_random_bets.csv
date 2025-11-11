@@ -1569,7 +1569,6 @@ Yokohama FC @ Kashima Antlers,J League,Draw,2025-11-08 00:00:00,Pinnacle,3.79,Ka
 Chicago Blackhawks @ Calgary Flames,NHL,Calgary Flames,2025-11-07 21:13:23,Unibet (UK),7.5,Chicago Blackhawks,2025-11-07 22:57:22
 Houston Cougars @ UCF Knights,NCAAF,UCF Knights,2025-11-07 20:15:30,FanDuel,2.72,Houston Cougars,2025-11-07 22:57:22
 Winnipeg Jets @ San Jose Sharks,NHL,Winnipeg Jets,2025-11-07 22:08:20,Unibet (UK),2.0,San Jose Sharks,2025-11-07 22:57:22
-Auckland FC @ Wellington Phoenix FC,A-League,Auckland FC,2025-11-08 01:00:00,Coolbet,1.8,Not Found,2025-11-07 22:57:22
 Necaxa @ Mazatlán FC,Liga MX,Necaxa,2025-11-07 22:10:00,DraftKings,7.5,Draw,2025-11-07 23:49:16
 Fagiano Okayama @ Kawasaki Frontale,J League,Draw,2025-11-08 01:00:00,Pinnacle,4.49,Draw,2025-11-07 23:49:16
 Gangwon FC @ Sangju Sangmu FC,K League 1,Gangwon FC,2025-11-08 02:30:00,Bovada,2.88,Gangwon FC,2025-11-08 00:38:00
@@ -1665,7 +1664,7 @@ Texas State Bobcats @ Tulane Green Wave,NCAAB,Texas State Bobcats,2025-11-08 14:
 Seattle Sounders FC @ Minnesota United FC,MLS,Draw,2025-11-08 16:00:00,MyBookie.ag,3.75,Not Found,2025-11-08 15:58:06
 Texas A&M Aggies @ Missouri Tigers,NCAAF,Texas A&M Aggies,2025-11-08 15:44:00,Betway,1.48,Texas A&M Aggies,2025-11-08 15:58:06
 Eastern Washington Eagles @ Colorado Buffaloes,NCAAB,Eastern Washington Eagles,2025-11-08 16:00:00,BetOnline.ag,10.79,Not Found,2025-11-08 16:17:56
-Providence Friars @ Virginia Tech Hokies,NCAAB,Virginia Tech Hokies,2025-11-08 16:00:00,FanDuel,2.12,API Error,2025-11-08 16:17:56
+Providence Friars @ Virginia Tech Hokies,NCAAB,Virginia Tech Hokies,2025-11-08 16:00:00,FanDuel,2.12,Not Found,2025-11-08 16:17:56
 UNC Asheville Bulldogs @ Georgia Southern Eagles,NCAAB,Georgia Southern Eagles,2025-11-08 15:03:46,Fanatics,2.0,Not Found,2025-11-08 16:17:56
 Georgia State Panthers @ Coastal Carolina Chanticleers,NCAAF,Georgia State Panthers,2025-11-08 16:03:05,Betway,5.0,Not Found,2025-11-08 16:28:40
 William & Mary Tribe @ Norfolk St Spartans,NCAAB,William & Mary Tribe,2025-11-08 16:02:20,Bovada,2.1,Not Found,2025-11-08 16:28:40
@@ -1684,13 +1683,13 @@ Maryland Terrapins @ Rutgers Scarlet Knights,NCAAF,Maryland Terrapins,2025-11-08
 Atlético San Luis @ Tigres,Liga MX,Draw,2025-11-08 18:00:00,BetOnline.ag,5.95,Not Found,2025-11-08 17:33:10
 Maine Black Bears @ Stony Brook Seawolves,NCAAB,Stony Brook Seawolves,2025-11-08 17:02:25,Coral,1.36,Not Found,2025-11-08 17:42:26
 Texas State Bobcats @ Louisiana Ragin Cajuns,NCAAF,Louisiana Ragin Cajuns,2025-11-08 17:02:44,Unibet,2.6,Not Found,2025-11-08 17:50:20
-Albany Great Danes @ Massachusetts Minutemen,NCAAB,Massachusetts Minutemen,2025-11-08 18:00:00,GTbets,1.22,Not Found,2025-11-08 17:50:20
-Iowa State Cyclones @ TCU Horned Frogs,NCAAF,Iowa State Cyclones,2025-11-08 15:35:29,FanDuel,4.1,Not Found,2025-11-08 17:57:45
-Air Force Falcons @ San Jose State Spartans,NCAAF,Air Force Falcons,2025-11-08 18:05:00,DraftKings,3.05,Not Found,2025-11-08 17:57:45
-Charleston Cougars @ Florida Atlantic Owls,NCAAB,Charleston Cougars,2025-11-08 18:05:00,FanDuel,8.5,Not Found,2025-11-08 18:19:30
+Albany Great Danes @ Massachusetts Minutemen,NCAAB,Massachusetts Minutemen,2025-11-08 18:00:00,GTbets,1.22,API Error,2025-11-08 17:50:20
+Iowa State Cyclones @ TCU Horned Frogs,NCAAF,Iowa State Cyclones,2025-11-08 15:35:29,FanDuel,4.1,API Error,2025-11-08 17:57:45
+Air Force Falcons @ San Jose State Spartans,NCAAF,Air Force Falcons,2025-11-08 18:05:00,DraftKings,3.05,API Error,2025-11-08 17:57:45
+Charleston Cougars @ Florida Atlantic Owls,NCAAB,Charleston Cougars,2025-11-08 18:05:00,FanDuel,8.5,API Error,2025-11-08 18:19:30
 Avai @ Vila Nova,Brazil Série B,Avai,2025-11-08 18:30:00,Unibet (SE),3.6,Draw,2025-11-08 18:30:33
 Auburn Tigers @ Vanderbilt Commodores,NCAAF,Vanderbilt Commodores,2025-11-08 11:52:00,MyBookie.ag,1.75,Vanderbilt Commodores,2025-11-08 18:48:52
-Bragantino-SP @ Sao Paulo,Brazil Série A,Draw,2025-11-08 19:00:00,Pinnacle,3.61,Not Found,2025-11-08 18:56:05
+Bragantino-SP @ Sao Paulo,Brazil Série A,Draw,2025-11-08 19:00:00,Pinnacle,3.61,API Error,2025-11-08 18:56:05
 Hartford Wolf Pack @ Belleville Senators,AHL,Hartford Wolf Pack,2025-11-08 19:05:00,Tipico,3.1,API Error,2025-11-08 20:51:00
 Phoenix Suns @ Los Angeles Clippers,NBA,Los Angeles Clippers,2025-11-08 22:30:00,MyBookie.ag,1.6,Phoenix Suns,2025-11-08 22:05:54
 Houston Christian Huskies @ UC San Diego Tritons,NCAAB,UC San Diego Tritons,2025-11-08 22:02:29,DraftKings,1.43,UC San Diego Tritons,2025-11-08 22:05:54
@@ -1776,31 +1775,31 @@ South Dakota St Jackrabbits @ Northern Iowa Panthers,NCAAB,South Dakota St Jackr
 Detroit Lions @ Washington Commanders,NFL,Washington Commanders,2025-11-09 16:25:00,MyBookie.ag,4.62,Detroit Lions,2025-11-09 15:34:54
 Houston Rockets @ Milwaukee Bucks,NBA,Houston Rockets,2025-11-09 15:40:00,LowVig.ag,1.62,Houston Rockets,2025-11-09 15:34:54
 Denver Pioneers @ Montana St Bobcats,NCAAB,Montana St Bobcats,2025-11-09 15:02:08,888sport,1.22,API Error,2025-11-09 15:34:54
-VMI Keydets @ Missouri Tigers,NCAAB,Missouri Tigers,2025-11-09 15:30:44,DraftKings,1.02,Not Found,2025-11-09 15:34:54
-Independiente @ Deportivo Riestra,Primera División - Argentina,Deportivo Riestra,2025-11-09 16:00:00,BetRivers,3.45,Not Found,2025-11-09 15:44:03
+VMI Keydets @ Missouri Tigers,NCAAB,Missouri Tigers,2025-11-09 15:30:44,DraftKings,1.02,API Error,2025-11-09 15:34:54
+Independiente @ Deportivo Riestra,Primera División - Argentina,Deportivo Riestra,2025-11-09 16:00:00,BetRivers,3.45,API Error,2025-11-09 15:44:03
 Deportes Limache @ Universidad de Chile,Primera División - Chile,Universidad de Chile,2025-11-09 15:29:00,Tipico,3.2,Universidad de Chile,2025-11-09 15:44:03
-Real Valladolid CF @ Cádiz CF,La Liga 2 - Spain,Draw,2025-11-09 15:02:00,Pinnacle,2.41,Not Found,2025-11-09 15:44:03
+Real Valladolid CF @ Cádiz CF,La Liga 2 - Spain,Draw,2025-11-09 15:02:00,Pinnacle,2.41,API Error,2025-11-09 15:44:03
 Baltimore Ravens @ Minnesota Vikings,NFL,Minnesota Vikings,2025-11-09 13:02:49,DraftKings,36.0,Baltimore Ravens,2025-11-09 15:58:56
-Belgrano de Cordoba @ Argentinos Juniors,Primera División - Argentina,Draw,2025-11-09 16:00:00,BetRivers,3.55,Not Found,2025-11-09 15:58:56
+Belgrano de Cordoba @ Argentinos Juniors,Primera División - Argentina,Draw,2025-11-09 16:00:00,BetRivers,3.55,API Error,2025-11-09 15:58:56
 Rochester Americans @ Hershey Bears,AHL,Rochester Americans,2025-11-09 17:00:00,Unibet (UK),2.15,Hershey Bears,2025-11-09 16:18:25
 Barcelona @ Celta Vigo,La Liga - Spain,Barcelona,2025-11-09 15:00:00,Pinnacle,1.3,Barcelona,2025-11-09 16:18:25
-North Texas Mean Green @ Loyola (Chi) Ramblers,NCAAB,Loyola (Chi) Ramblers,2025-11-09 17:00:00,PointsBet (AU),1.9,Not Found,2025-11-09 16:29:15
+North Texas Mean Green @ Loyola (Chi) Ramblers,NCAAB,Loyola (Chi) Ramblers,2025-11-09 17:00:00,PointsBet (AU),1.9,API Error,2025-11-09 16:29:15
 Arizona Cardinals @ Seattle Seahawks,NFL,Seattle Seahawks,2025-11-09 16:06:09,Unibet (FR),1.24,Seattle Seahawks,2025-11-09 16:29:15
 Los Angeles Rams @ San Francisco 49ers,NFL,San Francisco 49ers,2025-11-09 16:25:29,BetMGM,5.5,Los Angeles Rams,2025-11-09 16:40:18
 Santos @ Flamengo,Brazil Série A,Flamengo,2025-11-09 16:30:00,BetMGM,1.36,Flamengo,2025-11-09 16:40:18
-UC Davis Aggies @ Portland Pilots,NCAAB,Portland Pilots,2025-11-09 17:00:00,Pinnacle,1.77,Not Found,2025-11-09 16:47:50
-Aldosivi Mar del Plata @ Banfield,Primera División - Argentina,Draw,2025-11-09 17:20:00,Sky Bet,3.0,Not Found,2025-11-09 17:34:09
+UC Davis Aggies @ Portland Pilots,NCAAB,Portland Pilots,2025-11-09 17:00:00,Pinnacle,1.77,API Error,2025-11-09 16:47:50
+Aldosivi Mar del Plata @ Banfield,Primera División - Argentina,Draw,2025-11-09 17:20:00,Sky Bet,3.0,API Error,2025-11-09 17:34:09
 Pachuca @ Santos Laguna,Liga MX,Pachuca,2025-11-09 18:00:00,Unibet,1.77,Santos Laguna,2025-11-09 17:34:09
-Omaha Mavericks @ Colorado St Rams,NCAAB,Omaha Mavericks,2025-11-09 18:00:00,FanDuel,9.9,Not Found,2025-11-09 17:43:29
-Grambling St Tigers @ Howard Bison,NCAAB,Howard Bison,2025-11-09 18:00:00,GTbets,1.59,Not Found,2025-11-09 17:43:29
+Omaha Mavericks @ Colorado St Rams,NCAAB,Omaha Mavericks,2025-11-09 18:00:00,FanDuel,9.9,API Error,2025-11-09 17:43:29
+Grambling St Tigers @ Howard Bison,NCAAB,Howard Bison,2025-11-09 18:00:00,GTbets,1.59,API Error,2025-11-09 17:43:29
 Everton de Viña del Mar @ Cobresal,Primera División - Chile,Cobresal,2025-11-09 18:00:00,Pinnacle,2.0,Everton de Viña del Mar,2025-11-09 17:51:07
-Instituto de Córdoba @ Sarmiento de Junin,Primera División - Argentina,Instituto de Córdoba,2025-11-09 17:20:00,Unibet (UK),31.0,Not Found,2025-11-09 17:58:23
+Instituto de Córdoba @ Sarmiento de Junin,Primera División - Argentina,Instituto de Córdoba,2025-11-09 17:20:00,Unibet (UK),31.0,API Error,2025-11-09 17:58:23
 Brooklyn Nets @ New York Knicks,NBA,Brooklyn Nets,2025-11-09 18:00:00,1xBet,9.6,New York Knicks,2025-11-09 17:58:23
 Coritiba @ Paysandu,Brazil Série B,Paysandu,2025-11-09 18:30:00,PointsBet (AU),8.0,Coritiba,2025-11-09 18:19:46
-Operario PR @ Clube de Regatas Brasil,Brazil Série B,Clube de Regatas Brasil,2025-11-09 16:30:00,Unibet (SE),3.7,Not Found,2025-11-09 18:19:46
-Utah Mammoth @ Ottawa Senators,NHL,Ottawa Senators,2025-11-09 19:10:00,LeoVegas (SE),2.5,Not Found,2025-11-09 18:19:46
+Operario PR @ Clube de Regatas Brasil,Brazil Série B,Clube de Regatas Brasil,2025-11-09 16:30:00,Unibet (SE),3.7,API Error,2025-11-09 18:19:46
+Utah Mammoth @ Ottawa Senators,NHL,Ottawa Senators,2025-11-09 19:10:00,LeoVegas (SE),2.5,API Error,2025-11-09 18:19:46
 Grêmio @ Fortaleza,Brazil Série A,Grêmio,2025-11-09 18:30:00,Pinnacle,4.0,Draw,2025-11-09 18:30:38
-Rockford IceHogs @ Iowa Wild,AHL,Rockford IceHogs,2025-11-09 19:00:00,Unibet,2.35,Not Found,2025-11-09 18:30:38
+Rockford IceHogs @ Iowa Wild,AHL,Rockford IceHogs,2025-11-09 19:00:00,Unibet,2.35,API Error,2025-11-09 18:30:38
 Estudiantes @ CA Tigre BA,Primera División - Argentina,Estudiantes,2025-11-09 19:30:00,Pinnacle,2.49,Not Found,2025-11-09 18:41:05
 West Indies @ New Zealand,International Twenty20,New Zealand,2025-11-09 19:15:00,Ladbrokes,1.6,Not Found,2025-11-09 18:41:05
 Carolina Hurricanes @ Toronto Maple Leafs,NHL,Carolina Hurricanes,2025-11-09 19:10:00,Unibet (SE),2.28,Not Found,2025-11-09 18:56:06
