@@ -1675,7 +1675,6 @@ Suwon FC @ Ulsan Hyundai FC,K League 1,Suwon FC,2025-11-09 02:30:00,Pinnacle,3.6
 Yokohama F Marinos @ Kyoto Purple Sanga,J League,Draw,2025-11-09 00:03:00,Bovada,3.55,Yokohama F Marinos,2025-11-09 01:30:56
 Ilves Tampere @ FC Inter Turku,Veikkausliiga - Finland,FC Inter Turku,2025-11-09 07:00:00,Coolbet,2.25,FC Inter Turku,2025-11-09 01:49:14
 Club Brugge @ Anderlecht,Belgium First Div,Anderlecht,2025-11-09 07:30:00,Tipico,3.1,Anderlecht,2025-11-09 01:56:33
-Alemannia Aachen @ VfB Stuttgart II,3. Liga - Germany,Alemannia Aachen,2025-11-09 07:30:00,Pinnacle,3.0,Not Found,2025-11-09 02:31:08
 SC Paderborn @ 1. FC Magdeburg,Bundesliga 2 - Germany,1. FC Magdeburg,2025-11-09 07:30:00,Pinnacle,3.82,SC Paderborn,2025-11-09 04:20:07
 VfL Bochum @ Eintracht Braunschweig,Bundesliga 2 - Germany,Draw,2025-11-09 07:30:00,Winamax (DE),3.65,VfL Bochum,2025-11-09 04:31:29
 Fortuna Düsseldorf @ Holstein Kiel,Bundesliga 2 - Germany,Holstein Kiel,2025-11-09 07:30:00,Bovada,1.91,Holstein Kiel,2025-11-09 06:16:47
@@ -1777,17 +1776,17 @@ Notts County @ Cheltenham Town,League 2,Notts County,2025-11-10 15:00:00,William
 Amazonas FC @ Botafogo,Brazil Série B,Amazonas FC,2025-11-10 17:00:00,Tipico,3.7,Not Found,2025-11-10 00:23:37
 Independiente @ Deportivo Riestra,Primera División - Argentina,Deportivo Riestra,2025-11-10 17:00:00,Pinnacle,3.52,Independiente,2025-11-10 00:23:37
 Colorado Avalanche @ Vancouver Canucks,NHL,Colorado Avalanche,2025-11-09 22:08:07,GTbets,1.87,Colorado Avalanche,2025-11-10 00:55:48
-New Haven Chargers @ UMass Lowell River Hawks,NCAAB,New Haven Chargers,2025-11-10 18:00:00,FanDuel,5.9,Not Found,2025-11-10 07:49:01
+New Haven Chargers @ UMass Lowell River Hawks,NCAAB,New Haven Chargers,2025-11-10 18:00:00,FanDuel,5.9,API Error,2025-11-10 07:49:01
 Maine Black Bears @ Rutgers Scarlet Knights,NCAAB,Maine Black Bears,2025-11-10 18:30:00,FanDuel,16.0,Not Found,2025-11-10 15:43:40
 Delaware St Hornets @ Niagara Purple Eagles,NCAAB,Niagara Purple Eagles,2025-11-10 18:30:00,PlayUp,1.45,Not Found,2025-11-10 15:43:40
 Eastern Michigan Eagles @ Pittsburgh Panthers,NCAAB,Eastern Michigan Eagles,2025-11-10 19:00:00,William Hill,13.0,Not Found,2025-11-10 17:22:34
 Washington Wizards @ Detroit Pistons,NBA,Detroit Pistons,2025-11-10 19:00:00,Unibet (NL),1.18,Not Found,2025-11-10 17:49:09
 Charleston Southern Buccaneers @ The Citadel Bulldogs,NCAAB,The Citadel Bulldogs,2025-11-10 19:00:00,GTbets,2.35,Not Found,2025-11-10 17:56:59
-Western Kentucky Hilltoppers @ Eastern Kentucky Colonels,NCAAB,Eastern Kentucky Colonels,2025-11-10 19:00:00,LeoVegas,2.08,API Error,2025-11-10 18:51:34
-Fairfield Stags @ Seton Hall Pirates,NCAAB,Fairfield Stags,2025-11-10 19:00:00,FanDuel,9.0,API Error,2025-11-10 18:58:53
-New York Islanders @ New Jersey Devils,NHL,Draw,2025-11-10 19:00:00,Marathon Bet,4.55,API Error,2025-11-10 18:58:53
-Presbyterian Blue Hose @ Georgia St Panthers,NCAAB,Presbyterian Blue Hose,2025-11-10 19:00:00,Betway,2.45,API Error,2025-11-10 18:58:53
-Indiana St Sycamores @ SIU-Edwardsville Cougars,NCAAB,SIU-Edwardsville Cougars,2025-11-10 19:00:00,Virgin Bet,1.78,API Error,2025-11-10 18:58:53
+Western Kentucky Hilltoppers @ Eastern Kentucky Colonels,NCAAB,Eastern Kentucky Colonels,2025-11-10 19:00:00,LeoVegas,2.08,Not Found,2025-11-10 18:51:34
+Fairfield Stags @ Seton Hall Pirates,NCAAB,Fairfield Stags,2025-11-10 19:00:00,FanDuel,9.0,Not Found,2025-11-10 18:58:53
+New York Islanders @ New Jersey Devils,NHL,Draw,2025-11-10 19:00:00,Marathon Bet,4.55,Not Found,2025-11-10 18:58:53
+Presbyterian Blue Hose @ Georgia St Panthers,NCAAB,Presbyterian Blue Hose,2025-11-10 19:00:00,Betway,2.45,Not Found,2025-11-10 18:58:53
+Indiana St Sycamores @ SIU-Edwardsville Cougars,NCAAB,SIU-Edwardsville Cougars,2025-11-10 19:00:00,Virgin Bet,1.78,Not Found,2025-11-10 18:58:53
 SE Louisiana Lions @ Georgia Tech Yellow Jackets,NCAAB,SE Louisiana Lions,2025-11-10 21:00:00,PointsBet (AU),11.0,Georgia Tech Yellow Jackets,2025-11-10 20:49:26
 Milwaukee Bucks @ Dallas Mavericks,NBA,Dallas Mavericks,2025-11-10 20:40:21,FanDuel,3.1,Milwaukee Bucks,2025-11-10 20:49:26
 Arkansas-Little Rock Trojans @ Milwaukee Panthers,NCAAB,Milwaukee Panthers,2025-11-10 20:02:15,Betway,1.57,Milwaukee Panthers,2025-11-10 20:49:26
@@ -1804,30 +1803,30 @@ Iona Gaels @ UMKC Kangaroos,NCAAB,Iona Gaels,2025-11-11 13:00:00,Ladbrokes,1.68,
 Atlanta Hawks @ Los Angeles Clippers,NBA,Los Angeles Clippers,2025-11-10 22:41:27,MyBookie.ag,3.9,Atlanta Hawks,2025-11-11 00:39:51
 Maccabi Tel Aviv @ Fenerbahce SK,Basketball Euroleague,Maccabi Tel Aviv,2025-11-11 14:00:00,FanDuel,3.45,API Error,2025-11-11 00:39:51
 Kiekko-Vantaa @ TUTO Hockey,Mestis,TUTO Hockey,2025-11-11 11:30:00,LeoVegas,2.4,API Error,2025-11-11 02:37:41
-Saski Baskonia @ Hapoel Tel Aviv,Basketball Euroleague,Hapoel Tel Aviv,2025-11-11 14:05:00,Marathon Bet,1.23,Not Found,2025-11-11 05:55:38
-AS Monaco @ KK Partizan NIS,Basketball Euroleague,KK Partizan NIS,2025-11-11 14:30:00,Unibet,2.12,Not Found,2025-11-11 10:41:15
-Real Madrid @ Valencia Basket,Basketball Euroleague,Valencia Basket,2025-11-11 14:30:00,1xBet,2.16,Not Found,2025-11-11 11:51:18
-VfL Wolfsburg @ Lyon,UEFA Champions League Women,Lyon,2025-11-11 15:00:00,Betway,1.17,Not Found,2025-11-11 12:55:59
-Anadolu Efes @ Virtus Segafredo Bologna,Basketball Euroleague,Anadolu Efes,2025-11-11 14:30:00,Ladbrokes,2.15,Not Found,2025-11-11 13:32:26
-Panathinaikos @ Paris Basketball,Basketball Euroleague,Panathinaikos,2025-11-11 15:00:00,Ladbrokes,1.85,Not Found,2025-11-11 14:40:57
-UMBC Retrievers @ Morgan St Bears,NCAAB,Morgan St Bears,2025-11-11 18:00:00,Bovada,2.6,Not Found,2025-11-11 14:49:08
-Paris FC @ Real Madrid,UEFA Champions League Women,Paris FC,2025-11-11 15:00:00,Unibet (NL),11.0,Not Found,2025-11-11 15:25:10
-Syracuse Crunch @ Utica Comets,AHL,Draw,2025-11-11 17:00:00,Unibet (UK),4.2,Not Found,2025-11-11 15:25:10
-Lipscomb Bisons @ UNC Asheville Bulldogs,NCAAB,Lipscomb Bisons,2025-11-11 18:30:00,FanDuel,3.5,Not Found,2025-11-11 15:49:04
-LIU Sharks @ Air Force Falcons,NCAAB,LIU Sharks,2025-11-11 16:00:00,GTbets,1.5,Not Found,2025-11-11 15:56:31
-Navy Midshipmen @ Penn State Nittany Lions,NCAAB,Navy Midshipmen,2025-11-11 18:30:00,BetMGM,7.25,Not Found,2025-11-11 16:20:27
-Wake Forest Demon Deacons @ Michigan Wolverines,NCAAB,Michigan Wolverines,2025-11-11 18:30:00,BetMGM,1.07,Not Found,2025-11-11 16:32:33
+Saski Baskonia @ Hapoel Tel Aviv,Basketball Euroleague,Hapoel Tel Aviv,2025-11-11 14:05:00,Marathon Bet,1.23,API Error,2025-11-11 05:55:38
+AS Monaco @ KK Partizan NIS,Basketball Euroleague,KK Partizan NIS,2025-11-11 14:30:00,Unibet,2.12,API Error,2025-11-11 10:41:15
+Real Madrid @ Valencia Basket,Basketball Euroleague,Valencia Basket,2025-11-11 14:30:00,1xBet,2.16,API Error,2025-11-11 11:51:18
+VfL Wolfsburg @ Lyon,UEFA Champions League Women,Lyon,2025-11-11 15:00:00,Betway,1.17,API Error,2025-11-11 12:55:59
+Anadolu Efes @ Virtus Segafredo Bologna,Basketball Euroleague,Anadolu Efes,2025-11-11 14:30:00,Ladbrokes,2.15,API Error,2025-11-11 13:32:26
+Panathinaikos @ Paris Basketball,Basketball Euroleague,Panathinaikos,2025-11-11 15:00:00,Ladbrokes,1.85,API Error,2025-11-11 14:40:57
+UMBC Retrievers @ Morgan St Bears,NCAAB,Morgan St Bears,2025-11-11 18:00:00,Bovada,2.6,API Error,2025-11-11 14:49:08
+Paris FC @ Real Madrid,UEFA Champions League Women,Paris FC,2025-11-11 15:00:00,Unibet (NL),11.0,API Error,2025-11-11 15:25:10
+Syracuse Crunch @ Utica Comets,AHL,Draw,2025-11-11 17:00:00,Unibet (UK),4.2,API Error,2025-11-11 15:25:10
+Lipscomb Bisons @ UNC Asheville Bulldogs,NCAAB,Lipscomb Bisons,2025-11-11 18:30:00,FanDuel,3.5,API Error,2025-11-11 15:49:04
+LIU Sharks @ Air Force Falcons,NCAAB,LIU Sharks,2025-11-11 16:00:00,GTbets,1.5,API Error,2025-11-11 15:56:31
+Navy Midshipmen @ Penn State Nittany Lions,NCAAB,Navy Midshipmen,2025-11-11 18:30:00,BetMGM,7.25,API Error,2025-11-11 16:20:27
+Wake Forest Demon Deacons @ Michigan Wolverines,NCAAB,Michigan Wolverines,2025-11-11 18:30:00,BetMGM,1.07,API Error,2025-11-11 16:32:33
 Appalachian St Mountaineers @ Ohio State Buckeyes,NCAAB,Appalachian St Mountaineers,2025-11-11 18:30:00,FanDuel,25.0,Not Found,2025-11-11 16:58:22
 Dayton Flyers @ Cincinnati Bearcats,NCAAB,Dayton Flyers,2025-11-11 19:00:00,FanDuel,3.3,Not Found,2025-11-11 18:42:36
 Davidson Wildcats @ Charlotte 49ers,NCAAB,Davidson Wildcats,2025-11-11 19:00:00,GTbets,2.05,Not Found,2025-11-11 18:42:36
 Bucknell Bison @ Princeton Tigers,NCAAB,Bucknell Bison,2025-11-11 19:00:00,PointsBet (AU),3.0,Not Found,2025-11-11 18:50:32
 Pennsylvania Quakers @ Providence Friars,NCAAB,Pennsylvania Quakers,2025-11-11 19:00:00,Fanatics,16.0,Not Found,2025-11-11 18:57:51
 Central Connecticut St Blue Devils @ Boston College Eagles,NCAAB,Central Connecticut St Blue Devils,2025-11-11 19:05:00,FanDuel,13.6,Not Found,2025-11-11 18:57:51
-Ohio Bobcats @ Western Michigan Broncos,NCAAF,Ohio Bobcats,2025-11-11 20:06:00,Pinnacle,2.1,Not Found,2025-11-11 20:48:26
+Ohio Bobcats @ Western Michigan Broncos,NCAAF,Ohio Bobcats,2025-11-11 20:06:00,Pinnacle,2.1,Western Michigan Broncos,2025-11-11 20:48:26
 Toronto Raptors @ Brooklyn Nets,NBA,Brooklyn Nets,2025-11-11 19:43:10,Tipico,50.0,Not Found,2025-11-11 22:04:44
-Murray St Racers @ SMU Mustangs,NCAAB,Murray St Racers,2025-11-11 20:02:11,FanDuel,36.0,Not Found,2025-11-11 22:04:44
-Tulane Green Wave @ Louisiana Ragin' Cajuns,NCAAB,Louisiana Ragin' Cajuns,2025-11-11 20:02:38,FanDuel,15.0,Not Found,2025-11-11 22:04:44
-Boston Celtics @ Philadelphia 76ers,NBA,Boston Celtics,2025-11-11 20:12:54,Pinnacle,1.73,Not Found,2025-11-11 22:04:44
+Murray St Racers @ SMU Mustangs,NCAAB,Murray St Racers,2025-11-11 20:02:11,FanDuel,36.0,SMU Mustangs,2025-11-11 22:04:44
+Tulane Green Wave @ Louisiana Ragin' Cajuns,NCAAB,Louisiana Ragin' Cajuns,2025-11-11 20:02:38,FanDuel,15.0,Tulane Green Wave,2025-11-11 22:04:44
+Boston Celtics @ Philadelphia 76ers,NBA,Boston Celtics,2025-11-11 20:12:54,Pinnacle,1.73,Philadelphia 76ers,2025-11-11 22:04:44
 Western Illinois Leathernecks @ CSU Bakersfield Roadrunners,NCAAB,CSU Bakersfield Roadrunners,2025-11-11 21:34:09,Virgin Bet,1.6,Not Found,2025-11-11 22:04:44
 W-B/Scranton Penguins @ Bridgeport Islanders,AHL,Bridgeport Islanders,2025-11-12 10:30:00,1xBet,3.52,Not Found,2025-11-11 22:50:20
 Montana Grizzlies @ UNLV Rebels,NCAAB,Montana Grizzlies,2025-11-11 22:05:22,FanDuel,3.15,Not Found,2025-11-11 22:50:20
