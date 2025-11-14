@@ -1113,7 +1113,6 @@ Maccabi Tel Aviv @ Fenerbahce SK,Basketball Euroleague,Maccabi Tel Aviv,2025-11-
 Iona Gaels @ UMKC Kangaroos,NCAAB,Iona Gaels,2025-11-11 13:00:00,Ladbrokes,1.68,2.1,2.78,Iona Gaels,2025-11-10 22:51:33
 Atlanta Hawks @ Los Angeles Clippers,NBA,Los Angeles Clippers,2025-11-10 22:41:27,Ladbrokes,1.5,3.6,26.0,Atlanta Hawks,2025-11-10 23:13:13
 Florida Panthers @ Vegas Golden Knights,NHL,Draw,2025-11-10 22:08:00,Unibet (UK),4.0,2.46,2.79,Florida Panthers,2025-11-11 00:23:12
-Sri Lanka @ Pakistan,One Day Internationals,Sri Lanka,2025-11-11 04:30:00,Pinnacle,2.5,2.8,2.22,Not Found,2025-11-11 04:26:10
 Saski Baskonia @ Hapoel Tel Aviv,Basketball Euroleague,Saski Baskonia,2025-11-11 14:05:00,1xBet,5.51,2.05,10.53,Not Found,2025-11-11 04:41:09
 Afghanistan @ Qatar,International Twenty20,Qatar,2025-11-11 09:30:00,FanDuel,6.0,2.19,7.56,Not Found,2025-11-11 09:23:49
 AS Monaco @ KK Partizan NIS,Basketball Euroleague,KK Partizan NIS,2025-11-11 14:30:00,Bovada,2.15,2.03,2.07,Not Found,2025-11-11 09:41:32
@@ -1153,8 +1152,8 @@ Buffalo Bulls @ DePaul Blue Demons,NCAAB,DePaul Blue Demons,2025-11-11 20:03:23,
 Georgia Southern Eagles @ Florida Gulf Coast Eagles,NCAAB,Georgia Southern Eagles,2025-11-11 19:04:13,Betway,1.33,2.16,4.96,Not Found,2025-11-11 20:48:20
 Texas Tech Red Raiders @ Illinois Fighting Illini,NCAAB,Illinois Fighting Illini,2025-11-11 20:45:47,888sport,2.0,2.14,11.11,Illinois Fighting Illini,2025-11-11 20:48:20
 Stephen F. Austin Lumberjacks @ Rice Owls,NCAAB,Stephen F. Austin Lumberjacks,2025-11-11 20:02:20,Caesars,1.71,2.12,3.98,Stephen F. Austin Lumberjacks,2025-11-11 20:48:20
-Florida St Seminoles @ Florida Gators,NCAAB,Florida St Seminoles,2025-11-11 19:00:00,FanDuel,31.0,2.11,104.26,API Error,2025-11-11 20:48:20
-Toronto Maple Leafs @ Boston Bruins,NHL,Toronto Maple Leafs,2025-11-11 19:09:12,Unibet (UK),21.0,2.08,119.36,API Error,2025-11-11 20:48:20
+Florida St Seminoles @ Florida Gators,NCAAB,Florida St Seminoles,2025-11-11 19:00:00,FanDuel,31.0,2.11,104.26,Not Found,2025-11-11 20:48:20
+Toronto Maple Leafs @ Boston Bruins,NHL,Toronto Maple Leafs,2025-11-11 19:09:12,Unibet (UK),21.0,2.08,119.36,Not Found,2025-11-11 20:48:20
 Northwestern St Demons @ North Alabama Lions,NCAAB,Northwestern St Demons,2025-11-11 19:03:06,Unibet (NL),10.5,2.08,40.82,Not Found,2025-11-11 20:48:20
 Indiana Pacers @ Utah Jazz,NBA,Utah Jazz,2025-11-11 21:11:25,Pinnacle,1.63,4.66,20.43,Utah Jazz,2025-11-11 22:04:38
 Austin Peay Governors @ Wyoming Cowboys,NCAAB,Austin Peay Governors,2025-11-11 20:32:17,Caesars,6.0,3.15,65.31,Wyoming Cowboys,2025-11-11 22:04:38
@@ -1223,22 +1222,22 @@ HSV Hamburg @ Frisch Auf Göppingen,Handball-Bundesliga,Draw,2025-11-13 13:00:00
 Pyry @ JoKP,Mestis,JoKP,2025-11-13 11:30:00,Pinnacle,1.21,2.02,5.94,Not Found,2025-11-13 11:49:19
 AS Monaco @ KK Crvena zvezda,Basketball Euroleague,AS Monaco,2025-11-13 14:00:00,1xBet,1.72,3.27,2.43,KK Crvena zvezda,2025-11-13 13:32:50
 Hapoel Tel Aviv @ Fenerbahce SK,Basketball Euroleague,Hapoel Tel Aviv,2025-11-13 14:00:00,Bovada,1.95,3.25,2.68,Not Found,2025-11-13 13:32:50
-Albania @ Andorra,FIFA World Cup Qualifiers - Europe,Andorra,2025-11-13 14:45:00,Marathon Bet,22.0,3.12,23.93,Not Found,2025-11-13 13:32:50
+Albania @ Andorra,FIFA World Cup Qualifiers - Europe,Andorra,2025-11-13 14:45:00,Marathon Bet,22.0,3.12,23.93,Albania,2025-11-13 13:32:50
 Sport @ HPK,Liiga,Sport,2025-11-13 11:30:00,Coolbet,22.0,2.53,193.07,Not Found,2025-11-13 13:32:50
 Timrå IK @ Skellefteå AIK,SHL,Draw,2025-11-13 13:04:00,Coolbet,5.0,2.47,2.74,Skellefteå AIK,2025-11-13 13:32:50
-Italy @ Moldova,FIFA World Cup Qualifiers - Europe,Draw,2025-11-13 14:45:00,Sky Bet,13.0,2.45,15.37,Not Found,2025-11-13 13:32:50
-Malmö Redhawks @ Brynäs IF,SHL,Brynäs IF,2025-11-13 13:03:00,Bovada,1.19,2.26,8.08,API Error,2025-11-13 13:32:50
+Italy @ Moldova,FIFA World Cup Qualifiers - Europe,Draw,2025-11-13 14:45:00,Sky Bet,13.0,2.45,15.37,Italy,2025-11-13 13:32:50
+Malmö Redhawks @ Brynäs IF,SHL,Brynäs IF,2025-11-13 13:03:00,Bovada,1.19,2.26,8.08,Malmö Redhawks,2025-11-13 13:32:50
 TVB Stuttgart @ ThSV Eisenach,Handball-Bundesliga,Draw,2025-11-13 13:00:58,Coolbet,10.0,2.14,28.82,Not Found,2025-11-13 13:32:50
-Ukraine @ France,FIFA World Cup Qualifiers - Europe,Ukraine,2025-11-13 14:45:00,Coolbet,18.0,2.1,10.53,Not Found,2025-11-13 13:32:50
+Ukraine @ France,FIFA World Cup Qualifiers - Europe,Ukraine,2025-11-13 14:45:00,Coolbet,18.0,2.1,10.53,France,2025-11-13 13:32:50
 Växjö Lakers @ HV71,SHL,Draw,2025-11-13 13:00:00,Coolbet,6.5,2.09,2.21,HV71,2025-11-13 13:32:50
-Serbia @ England,FIFA World Cup Qualifiers - Europe,Serbia,2025-11-13 14:45:00,BetOnline.ag,13.0,2.07,10.37,Not Found,2025-11-13 13:32:50
+Serbia @ England,FIFA World Cup Qualifiers - Europe,Serbia,2025-11-13 14:45:00,BetOnline.ag,13.0,2.07,10.37,England,2025-11-13 13:32:50
 Leksands IF @ Linköping HC,SHL,Draw,2025-11-13 13:01:00,Coolbet,7.0,2.65,5.43,Not Found,2025-11-13 13:52:08
-Portugal @ Ireland,FIFA World Cup Qualifiers - Europe,Ireland,2025-11-13 14:45:00,BetOnline.ag,9.0,2.18,4.88,Not Found,2025-11-13 13:52:08
+Portugal @ Ireland,FIFA World Cup Qualifiers - Europe,Ireland,2025-11-13 14:45:00,BetOnline.ag,9.0,2.18,4.88,Ireland,2025-11-13 13:52:08
 Örebro HK @ Frölunda HC,SHL,Frölunda HC,2025-11-13 13:00:00,Bovada,1.43,3.06,30.04,Frölunda HC,2025-11-13 13:59:19
 Djurgårdens IF @ Luleå HF,SHL,Djurgårdens IF,2025-11-13 13:01:00,Coolbet,1.8,2.72,49.28,Luleå HF,2025-11-13 14:18:43
 Saski Baskonia @ Maccabi Tel Aviv,Basketball Euroleague,Saski Baskonia,2025-11-13 15:00:00,Pinnacle,3.05,2.57,2.93,Not Found,2025-11-13 14:18:43
 Färjestad BK @ Rögle BK,SHL,Draw,2025-11-13 13:02:00,Coolbet,10.0,2.13,3.35,Rögle BK,2025-11-13 14:37:23
-Valencia Basket @ Paris Basketball,Basketball Euroleague,Valencia Basket,2025-11-13 14:46:00,LiveScore Bet,2.95,2.67,19.48,Not Found,2025-11-13 14:54:56
+Valencia Basket @ Paris Basketball,Basketball Euroleague,Valencia Basket,2025-11-13 14:46:00,LiveScore Bet,2.95,2.67,19.48,Paris Basketball,2025-11-13 14:54:56
 Panathinaikos @ Real Madrid,Basketball Euroleague,Panathinaikos,2025-11-13 14:45:00,Bovada,2.95,3.22,90.61,Not Found,2025-11-13 15:26:33
 Alcorn St Braves @ Howard Bison,NCAAB,Alcorn St Braves,2025-11-13 19:00:00,TAB,4.0,2.28,6.3,Not Found,2025-11-13 15:59:20
 UMass Lowell River Hawks @ Columbia Lions,NCAAB,UMass Lowell River Hawks,2025-11-13 19:00:00,GTbets,8.8,2.0,9.51,Not Found,2025-11-13 17:22:13
@@ -1251,13 +1250,13 @@ Washington Capitals @ Florida Panthers,NHL,Florida Panthers,2025-11-13 19:13:06,
 Edmonton Oilers @ Columbus Blue Jackets,NHL,Edmonton Oilers,2025-11-13 19:40:30,Coolbet,12.0,3.41,187.65,Not Found,2025-11-13 20:49:11
 Toronto Raptors @ Cleveland Cavaliers,NBA,Toronto Raptors,2025-11-13 19:13:00,Pinnacle,1.48,3.34,7.06,Not Found,2025-11-13 20:49:11
 Anaheim Ducks @ Detroit Red Wings,NHL,Detroit Red Wings,2025-11-13 19:12:26,Pinnacle,1.78,3.15,38.58,Not Found,2025-11-13 20:49:11
-New York Jets @ New England Patriots,NFL,New England Patriots,2025-11-13 20:16:41,Pinnacle,1.25,3.03,2.37,Not Found,2025-11-13 20:49:11
+New York Jets @ New England Patriots,NFL,New England Patriots,2025-11-13 20:16:41,Pinnacle,1.25,3.03,2.37,New England Patriots,2025-11-13 20:49:11
 Buffalo Sabres @ Colorado Avalanche,NHL,Colorado Avalanche,2025-11-13 21:10:00,1xBet,1.5,2.22,16.87,Not Found,2025-11-13 20:49:11
 New York Islanders @ Vegas Golden Knights,NHL,Vegas Golden Knights,2025-11-13 22:10:00,1xBet,1.95,2.09,23.72,Not Found,2025-11-13 20:49:11
 Loyola (Chi) Ramblers @ Wichita St Shockers,NCAAB,Loyola (Chi) Ramblers,2025-11-13 19:32:23,DraftKings,31.0,2.01,160.97,Not Found,2025-11-13 20:49:11
 Indiana Pacers @ Phoenix Suns,NBA,Phoenix Suns,2025-11-13 21:12:00,William Hill,1.57,4.84,15.62,Not Found,2025-11-13 22:05:38
 Atlanta Hawks @ Utah Jazz,NBA,Atlanta Hawks,2025-11-13 21:17:00,William Hill,1.8,4.84,25.3,Not Found,2025-11-13 22:05:38
-Charleston Southern Buccaneers @ Alabama A&M Bulldogs,NCAAB,Alabama A&M Bulldogs,2025-11-13 20:00:22,Bovada,4.15,2.6,147.25,Not Found,2025-11-13 22:05:38
+Charleston Southern Buccaneers @ Alabama A&M Bulldogs,NCAAB,Alabama A&M Bulldogs,2025-11-13 20:00:22,Bovada,4.15,2.6,147.25,Alabama A&M Bulldogs,2025-11-13 22:05:38
 South Africa @ India,Test Matches,South Africa,2025-11-13 23:00:00,DraftKings,5.0,4.31,13.41,Not Found,2025-11-13 22:51:24
 S.E. Melbourne Phoenix @ Cairns Taipans,NBL,Cairns Taipans,2025-11-14 03:36:00,Marathon Bet,4.0,2.6,7.39,Not Found,2025-11-13 23:12:19
 Winnipeg Jets @ Seattle Kraken,NHL,Winnipeg Jets,2025-11-13 22:09:36,Caesars,1.71,2.19,26.81,Not Found,2025-11-13 23:12:19
