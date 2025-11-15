@@ -494,30 +494,30 @@ Winnipeg Jets @ Seattle Kraken,NHL,Seattle Kraken,2025-11-13 22:09:36,FanDuel,3.
 Žalgiris @ Dubai Basketball,Basketball Euroleague,Žalgiris,2025-11-14 11:00:00,BetMGM,2.35,Not Found,2025-11-14 00:40:06
 Coppin St Eagles @ Central Michigan Chippewas,NCAAB,Coppin St Eagles,2025-11-14 11:00:00,FanDuel,4.9,Central Michigan Chippewas,2025-11-14 09:22:38
 FC Bayern München @ Anadolu Efes,Basketball Euroleague,FC Bayern München,2025-11-14 12:00:00,DraftKings,3.05,Not Found,2025-11-14 11:51:36
-KK Partizan NIS @ ASVEL Lyon Villeurbanne,Basketball Euroleague,KK Partizan NIS,2025-11-14 14:00:00,DraftKings,1.36,Not Found,2025-11-14 12:38:32
-Virtus Segafredo Bologna @ FC Barcelona Bàsquet,Basketball Euroleague,Virtus Segafredo Bologna,2025-11-14 14:30:00,FanDuel,4.3,Not Found,2025-11-14 13:51:59
-Olympiacos @ Pallacanestro Olimpia Milano,Basketball Euroleague,Pallacanestro Olimpia Milano,2025-11-14 14:30:00,DraftKings,3.15,Not Found,2025-11-14 14:18:25
-Charleston Southern Buccaneers @ Lindenwood Lions,NCAAB,Charleston Southern Buccaneers,2025-11-14 18:30:00,Caesars,2.4,Not Found,2025-11-14 14:40:45
-Hofstra Pride @ Bucknell Bison,NCAAB,Bucknell Bison,2025-11-14 19:00:00,DraftKings,2.36,Not Found,2025-11-14 14:48:31
-IUPUI Jaguars @ Eastern Michigan Eagles,NCAAB,Eastern Michigan Eagles,2025-11-14 18:30:00,BetMGM,1.43,Not Found,2025-11-14 15:25:59
-Coastal Carolina Chanticleers @ Jacksonville St Gamecocks,NCAAB,Coastal Carolina Chanticleers,2025-11-14 19:00:00,FanDuel,4.0,Not Found,2025-11-14 18:34:29
-Lehigh Mountain Hawks @ Rutgers Scarlet Knights,NCAAB,Rutgers Scarlet Knights,2025-11-14 18:35:00,Caesars,1.11,Not Found,2025-11-14 18:51:25
-Furman Paladins @ Northern Iowa Panthers,NCAAB,Furman Paladins,2025-11-14 19:00:12,Caesars,5.3,Not Found,2025-11-14 18:58:43
-Fordham Rams @ Iona Gaels,NCAAB,Fordham Rams,2025-11-14 19:00:00,Caesars,3.05,Not Found,2025-11-14 18:58:43
+KK Partizan NIS @ ASVEL Lyon Villeurbanne,Basketball Euroleague,KK Partizan NIS,2025-11-14 14:00:00,DraftKings,1.36,API Error,2025-11-14 12:38:32
+Virtus Segafredo Bologna @ FC Barcelona Bàsquet,Basketball Euroleague,Virtus Segafredo Bologna,2025-11-14 14:30:00,FanDuel,4.3,API Error,2025-11-14 13:51:59
+Olympiacos @ Pallacanestro Olimpia Milano,Basketball Euroleague,Pallacanestro Olimpia Milano,2025-11-14 14:30:00,DraftKings,3.15,API Error,2025-11-14 14:18:25
+Charleston Southern Buccaneers @ Lindenwood Lions,NCAAB,Charleston Southern Buccaneers,2025-11-14 18:30:00,Caesars,2.4,API Error,2025-11-14 14:40:45
+Hofstra Pride @ Bucknell Bison,NCAAB,Bucknell Bison,2025-11-14 19:00:00,DraftKings,2.36,API Error,2025-11-14 14:48:31
+IUPUI Jaguars @ Eastern Michigan Eagles,NCAAB,Eastern Michigan Eagles,2025-11-14 18:30:00,BetMGM,1.43,API Error,2025-11-14 15:25:59
+Coastal Carolina Chanticleers @ Jacksonville St Gamecocks,NCAAB,Coastal Carolina Chanticleers,2025-11-14 19:00:00,FanDuel,4.0,API Error,2025-11-14 18:34:29
+Lehigh Mountain Hawks @ Rutgers Scarlet Knights,NCAAB,Rutgers Scarlet Knights,2025-11-14 18:35:00,Caesars,1.11,API Error,2025-11-14 18:51:25
+Furman Paladins @ Northern Iowa Panthers,NCAAB,Furman Paladins,2025-11-14 19:00:12,Caesars,5.3,API Error,2025-11-14 18:58:43
+Fordham Rams @ Iona Gaels,NCAAB,Fordham Rams,2025-11-14 19:00:00,Caesars,3.05,API Error,2025-11-14 18:58:43
 Sacramento Kings @ Minnesota Timberwolves,NBA,Sacramento Kings,2025-11-14 20:11:00,Fanatics,5.25,Minnesota Timberwolves,2025-11-14 20:44:57
-Northwestern Wildcats @ DePaul Blue Demons,NCAAB,Northwestern Wildcats,2025-11-14 20:30:00,Fanatics,1.53,Not Found,2025-11-14 20:44:57
-Brooklyn Nets @ Orlando Magic,NBA,Orlando Magic,2025-11-14 19:12:00,FanDuel,1.21,Not Found,2025-11-14 20:44:57
+Northwestern Wildcats @ DePaul Blue Demons,NCAAB,Northwestern Wildcats,2025-11-14 20:30:00,Fanatics,1.53,Northwestern Wildcats,2025-11-14 20:44:57
+Brooklyn Nets @ Orlando Magic,NBA,Orlando Magic,2025-11-14 19:12:00,FanDuel,1.21,API Error,2025-11-14 20:44:57
 Los Angeles Lakers @ New Orleans Pelicans,NBA,Los Angeles Lakers,2025-11-14 20:12:00,FanDuel,1.19,Los Angeles Lakers,2025-11-14 20:44:57
 UCF Knights @ Texas A&M Aggies,NCAAB,Texas A&M Aggies,2025-11-14 20:04:00,Fanatics,9.0,UCF Knights,2025-11-14 21:59:26
-Golden State Warriors @ San Antonio Spurs,NBA,San Antonio Spurs,2025-11-14 21:45:00,Caesars,1.67,Not Found,2025-11-14 21:59:26
-Troy Trojans @ Loyola Marymount Lions,NCAAB,Loyola Marymount Lions,2025-11-14 22:00:00,Caesars,1.48,Not Found,2025-11-14 21:59:26
+Golden State Warriors @ San Antonio Spurs,NBA,San Antonio Spurs,2025-11-14 21:45:00,Caesars,1.67,Golden State Warriors,2025-11-14 21:59:26
+Troy Trojans @ Loyola Marymount Lions,NCAAB,Loyola Marymount Lions,2025-11-14 22:00:00,Caesars,1.48,Loyola Marymount Lions,2025-11-14 21:59:26
 Clemson Tigers @ Louisville Cardinals,NCAAF,Louisville Cardinals,2025-11-14 19:37:00,DraftKings,1.37,Not Found,2025-11-14 21:59:26
 Philadelphia Flyers @ St Louis Blues,NHL,St Louis Blues,2025-11-14 20:08:42,Caesars,1.25,Philadelphia Flyers,2025-11-14 21:59:26
 Arizona Wildcats @ UCLA Bruins,NCAAB,UCLA Bruins,2025-11-14 20:00:00,BetMGM,1.8,Arizona Wildcats,2025-11-14 22:40:51
-Washington Huskies @ Washington St Cougars,NCAAB,Washington St Cougars,2025-11-14 23:00:00,FanDuel,4.2,Not Found,2025-11-14 22:55:54
-Los Angeles Clippers @ Dallas Mavericks,NBA,Los Angeles Clippers,2025-11-14 20:41:00,FanDuel,1.11,Not Found,2025-11-14 22:55:54
-New York Islanders @ Utah Mammoth,NHL,Utah Mammoth,2025-11-14 21:08:53,DraftKings,1.83,Not Found,2025-11-14 23:41:52
-Gonzaga Bulldogs @ Arizona St Sun Devils,NCAAB,Gonzaga Bulldogs,2025-11-14 23:00:00,Caesars,1.05,Not Found,2025-11-15 00:55:33
+Washington Huskies @ Washington St Cougars,NCAAB,Washington St Cougars,2025-11-14 23:00:00,FanDuel,4.2,Washington Huskies,2025-11-14 22:55:54
+Los Angeles Clippers @ Dallas Mavericks,NBA,Los Angeles Clippers,2025-11-14 20:41:00,FanDuel,1.11,Los Angeles Clippers,2025-11-14 22:55:54
+New York Islanders @ Utah Mammoth,NHL,Utah Mammoth,2025-11-14 21:08:53,DraftKings,1.83,New York Islanders,2025-11-14 23:41:52
+Gonzaga Bulldogs @ Arizona St Sun Devils,NCAAB,Gonzaga Bulldogs,2025-11-14 23:00:00,Caesars,1.05,Gonzaga Bulldogs,2025-11-15 00:55:33
 Arizona Wildcats @ Cincinnati Bearcats,NCAAF,Arizona Wildcats,2025-11-15 12:00:00,DraftKings,2.8,Not Found,2025-11-15 10:20:45
 Air Force Falcons @ UConn Huskies,NCAAF,Air Force Falcons,2025-11-15 12:00:00,DraftKings,3.5,Not Found,2025-11-15 10:33:56
 Eastern Michigan Eagles @ Ball State Cardinals,NCAAF,Ball State Cardinals,2025-11-15 12:00:00,FanDuel,2.2,Not Found,2025-11-15 11:41:04
