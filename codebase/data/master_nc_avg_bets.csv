@@ -516,17 +516,17 @@ UCF Knights @ Texas Tech Red Raiders,NCAAF,UCF Knights,2025-11-15 15:35:00,FanDu
 South Alabama Jaguars @ UL Monroe Warhawks,NCAAF,South Alabama Jaguars,2025-11-15 15:33:00,Fanatics,1.69,2.27,Not Found,2025-11-15 15:35:27
 Middle Tennessee Blue Raiders @ Western Kentucky Hilltoppers,NCAAF,Middle Tennessee Blue Raiders,2025-11-15 15:30:00,FanDuel,7.3,18.93,Not Found,2025-11-15 15:43:46
 Maryland Terrapins @ Illinois Fighting Illini,NCAAF,Maryland Terrapins,2025-11-15 15:35:00,Caesars,7.0,16.01,Illinois Fighting Illini,2025-11-15 15:43:46
-San Jose State Spartans @ Nevada Wolf Pack,NCAAF,Nevada Wolf Pack,2025-11-15 15:30:00,DraftKings,4.5,4.72,API Error,2025-11-15 15:43:46
+San Jose State Spartans @ Nevada Wolf Pack,NCAAF,Nevada Wolf Pack,2025-11-15 15:30:00,DraftKings,4.5,4.72,Not Found,2025-11-15 15:43:46
 Oklahoma Sooners @ Alabama Crimson Tide,NCAAF,Oklahoma Sooners,2025-11-15 12:49:00,Caesars,2.45,7.55,Oklahoma Sooners,2025-11-15 15:59:14
-Youngstown St Penguins @ St. Bonaventure Bonnies,NCAAB,Youngstown St Penguins,2025-11-15 16:03:25,Caesars,5.5,20.3,API Error,2025-11-15 16:18:28
-Drexel Dragons @ Syracuse Orange,NCAAB,Drexel Dragons,2025-11-15 15:30:56,DraftKings,7.5,20.07,API Error,2025-11-15 16:18:28
+Youngstown St Penguins @ St. Bonaventure Bonnies,NCAAB,Youngstown St Penguins,2025-11-15 16:03:25,Caesars,5.5,20.3,Not Found,2025-11-15 16:18:28
+Drexel Dragons @ Syracuse Orange,NCAAB,Drexel Dragons,2025-11-15 15:30:56,DraftKings,7.5,20.07,Not Found,2025-11-15 16:18:28
 Iowa Hawkeyes @ USC Trojans,NCAAF,USC Trojans,2025-11-15 13:00:00,FanDuel,2.8,8.29,USC Trojans,2025-11-15 16:18:28
 Memphis Tigers @ East Carolina Pirates,NCAAF,Memphis Tigers,2025-11-15 13:10:00,BetMGM,2.3,5.42,East Carolina Pirates,2025-11-15 16:18:28
 Memphis Grizzlies @ Cleveland Cavaliers,NBA,Memphis Grizzlies,2025-11-15 17:10:00,Caesars,5.3,2.31,Cleveland Cavaliers,2025-11-15 16:40:20
 Penn State Nittany Lions @ Michigan State Spartans,NCAAF,Michigan State Spartans,2025-11-15 13:00:00,Caesars,5.75,15.95,Penn State Nittany Lions,2025-11-15 16:48:06
-Pacific Tigers @ CSU Fullerton Titans,NCAAB,CSU Fullerton Titans,2025-11-15 17:02:40,DraftKings,12.0,92.23,API Error,2025-11-15 17:17:46
-Matheus Camilo @ Viacheslav Borshchev,MMA,Matheus Camilo,2025-11-15 18:10:00,BetMGM,2.5,21.32,API Error,2025-11-15 18:19:53
-Oklahoma Sooners @ Nebraska Cornhuskers,NCAAB,Oklahoma Sooners,2025-11-15 19:10:00,FanDuel,12.0,119.18,API Error,2025-11-15 20:54:00
+Pacific Tigers @ CSU Fullerton Titans,NCAAB,CSU Fullerton Titans,2025-11-15 17:02:40,DraftKings,12.0,92.23,Not Found,2025-11-15 17:17:46
+Matheus Camilo @ Viacheslav Borshchev,MMA,Matheus Camilo,2025-11-15 18:10:00,BetMGM,2.5,21.32,Not Found,2025-11-15 18:19:53
+Oklahoma Sooners @ Nebraska Cornhuskers,NCAAB,Oklahoma Sooners,2025-11-15 19:10:00,FanDuel,12.0,119.18,Not Found,2025-11-15 20:54:00
 Toronto Raptors @ Indiana Pacers,NBA,Indiana Pacers,2025-11-15 19:13:00,DraftKings,10.5,31.13,Not Found,2025-11-15 20:54:00
 Erin Blanchfield @ Tracy Cortez,MMA,Erin Blanchfield,2025-11-15 20:45:00,FanDuel,2.08,29.29,Not Found,2025-11-15 20:54:00
 Los Angeles Lakers @ Milwaukee Bucks,NBA,Milwaukee Bucks,2025-11-15 20:10:00,BetMGM,3.9,13.61,Los Angeles Lakers,2025-11-15 20:54:00
@@ -539,8 +539,8 @@ Green Bay Phoenix @ Minnesota Golden Gophers,NCAAB,Green Bay Phoenix,2025-11-15 
 TCU Horned Frogs @ BYU Cougars,NCAAF,TCU Horned Frogs,2025-11-15 22:20:00,DraftKings,17.0,17.07,BYU Cougars,2025-11-15 23:28:21
 Utah Tech Trailblazers @ Hawai'i Rainbow Warriors,NCAAB,Utah Tech Trailblazers,2025-11-16 00:00:00,Fanatics,14.0,10.5,Hawai'i Rainbow Warriors,2025-11-15 23:55:14
 Winnipeg Jets @ Calgary Flames,NHL,Winnipeg Jets,2025-11-15 22:10:55,BetMGM,2.2,24.93,Winnipeg Jets,2025-11-16 00:55:29
-Wright St Raiders @ Kent State Golden Flashes,NCAAB,Wright St Raiders,2025-11-16 12:00:00,FanDuel,2.76,2.77,Not Found,2025-11-16 10:20:23
-Notre Dame Fighting Irish @ Ohio State Buckeyes,NCAAB,Notre Dame Fighting Irish,2025-11-16 12:30:00,Caesars,4.2,10.95,Not Found,2025-11-16 12:41:58
+Wright St Raiders @ Kent State Golden Flashes,NCAAB,Wright St Raiders,2025-11-16 12:00:00,FanDuel,2.76,2.77,Kent State Golden Flashes,2025-11-16 10:20:23
+Notre Dame Fighting Irish @ Ohio State Buckeyes,NCAAB,Notre Dame Fighting Irish,2025-11-16 12:30:00,Caesars,4.2,10.95,Ohio State Buckeyes,2025-11-16 12:41:58
 South Florida Bulls @ Kennesaw St Owls,NCAAB,Kennesaw St Owls,2025-11-16 14:03:41,Caesars,4.2,5.25,Not Found,2025-11-16 14:16:49
 Charlotte 49ers @ Virginia Tech Hokies,NCAAB,Charlotte 49ers,2025-11-16 14:00:00,FanDuel,13.0,38.74,Not Found,2025-11-16 15:37:24
 Houston Cougars @ Auburn Tigers,NCAAB,Houston Cougars,2025-11-16 15:05:00,Caesars,1.56,4.86,Not Found,2025-11-16 15:37:24
