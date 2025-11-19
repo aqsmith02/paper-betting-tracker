@@ -1325,7 +1325,6 @@ Los Angeles Lakers @ Milwaukee Bucks,NBA,Los Angeles Lakers,2025-11-15 20:10:00,
 Kennesaw State Owls @ Jacksonville State Gamecocks,NCAAF,Kennesaw State Owls,2025-11-15 20:05:21,Fanatics,2.05,3.27,23.39,Jacksonville State Gamecocks,2025-11-15 20:54:00
 Belmont Bruins @ Oral Roberts Golden Eagles,NCAAB,Belmont Bruins,2025-11-15 20:05:00,Caesars,1.4,3.19,7.55,Belmont Bruins,2025-11-15 20:54:00
 Denver Nuggets @ Minnesota Timberwolves,NBA,Denver Nuggets,2025-11-15 20:11:00,Pinnacle,1.25,3.33,10.97,Denver Nuggets,2025-11-15 22:20:51
-Carlos Prates @ Leon Edwards,MMA,Leon Edwards,2025-11-15 22:45:00,Betsson,2.6,2.98,5.71,Not Found,2025-11-15 22:20:51
 New Mexico Lobos @ New Mexico St Aggies,NCAAB,New Mexico St Aggies,2025-11-15 21:00:00,Caesars,4.5,2.84,92.41,New Mexico St Aggies,2025-11-15 22:20:51
 N Colorado Bears @ Pepperdine Waves,NCAAB,N Colorado Bears,2025-11-15 21:04:06,Caesars,1.38,2.83,7.4,N Colorado Bears,2025-11-15 22:20:51
 Winnipeg Jets @ Calgary Flames,NHL,Draw,2025-11-15 22:10:55,Unibet,4.4,2.71,4.42,Winnipeg Jets,2025-11-15 22:20:51
@@ -1334,12 +1333,8 @@ Bradley Braves @ San Francisco Dons,NCAAB,Bradley Braves,2025-11-15 22:03:00,Cae
 Idaho State Bengals @ Seattle Redhawks,NCAAB,Idaho State Bengals,2025-11-15 22:05:00,Bovada,16.0,2.5,33.47,Seattle Redhawks,2025-11-15 22:20:51
 Louisiana Tech Bulldogs @ Washington State Cougars,NCAAF,Louisiana Tech Bulldogs,2025-11-15 22:11:00,Unibet (SE),7.5,2.42,56.08,Washington State Cougars,2025-11-15 22:20:51
 Green Bay Phoenix @ Minnesota Golden Gophers,NCAAB,Green Bay Phoenix,2025-11-15 21:15:00,PointsBet (AU),11.0,2.4,35.42,Minnesota Golden Gophers,2025-11-15 22:20:51
-Benoit Saint-Denis @ Beneil Dariush,MMA,Beneil Dariush,2025-11-15 22:21:00,Nordic Bet,3.0,2.32,7.3,Not Found,2025-11-15 22:20:51
 Manhattan Jaspers @ Miss Valley St Delta Devils,NCAAB,Miss Valley St Delta Devils,2025-11-15 21:30:00,Paddy Power,36.0,2.22,77.78,Manhattan Jaspers,2025-11-15 22:20:51
 Weber State Wildcats @ UC Irvine Anteaters,NCAAB,Weber State Wildcats,2025-11-15 22:02:08,Caesars,7.0,2.02,19.3,UC Irvine Anteaters,2025-11-15 22:20:51
-Weili Zhang @ Valentina Shevchenko,MMA,Weili Zhang,2025-11-15 23:45:00,Betsson,3.0,4.06,28.96,API Error,2025-11-15 22:58:32
-Sean Brady @ Michael Morales,MMA,Sean Brady,2025-11-15 23:20:00,Betsson,2.1,3.83,18.43,Not Found,2025-11-15 22:58:32
-Islam Makhachev @ Jack Della Maddalena,MMA,Jack Della Maddalena,2025-11-16 00:30:00,Betsson,4.0,2.91,11.7,Not Found,2025-11-15 22:58:32
 Sam Houston St Bearkats @ Utah Utes,NCAAB,Utah Utes,2025-11-15 21:05:00,Bovada,1.22,2.77,6.79,Utah Utes,2025-11-15 22:58:32
 Sydney Kings @ Illawarra Hawks,NBL,Sydney Kings,2025-11-15 22:36:00,Coolbet,1.82,2.14,13.14,Sydney Kings,2025-11-15 22:58:32
 Cairns Taipans @ Adelaide 36ers,NBL,Cairns Taipans,2025-11-16 00:30:00,SportsBet,8.5,2.38,26.52,Adelaide 36ers,2025-11-15 23:28:21
@@ -1441,23 +1436,23 @@ Gimnasia La Plata @ Platense,Primera División - Argentina,Gimnasia La Plata,202
 Union Santa Fe @ Belgrano de Cordoba,Primera División - Argentina,Union Santa Fe,2025-11-17 15:00:00,1xBet,4.23,2.4,2.05,Not Found,2025-11-17 14:56:12
 Indiana Pacers @ Detroit Pistons,NBA,Indiana Pacers,2025-11-17 19:00:00,1xBet,5.45,2.62,6.75,Not Found,2025-11-17 15:26:38
 Atlético Huracán @ Barracas Central,Primera División - Argentina,Atlético Huracán,2025-11-17 15:00:00,Codere (IT),2.75,2.85,85.1,Not Found,2025-11-17 15:39:52
-Milwaukee Bucks @ Cleveland Cavaliers,NBA,Milwaukee Bucks,2025-11-17 19:00:00,Unibet (NL),3.55,2.51,2.4,Not Found,2025-11-17 17:21:46
-New York Knicks @ Miami Heat,NBA,Miami Heat,2025-11-17 19:41:48,Pinnacle,1.98,4.81,17.54,Not Found,2025-11-17 20:47:53
+Milwaukee Bucks @ Cleveland Cavaliers,NBA,Milwaukee Bucks,2025-11-17 19:00:00,Unibet (NL),3.55,2.51,2.4,API Error,2025-11-17 17:21:46
+New York Knicks @ Miami Heat,NBA,Miami Heat,2025-11-17 19:41:48,Pinnacle,1.98,4.81,17.54,API Error,2025-11-17 20:47:53
 Chicago Bulls @ Denver Nuggets,NBA,Chicago Bulls,2025-11-17 21:10:00,1xBet,8.15,3.95,22.26,Chicago Bulls,2025-11-17 20:47:53
-Charlotte Hornets @ Toronto Raptors,NBA,Charlotte Hornets,2025-11-17 19:43:49,Pinnacle,5.82,3.61,23.5,Not Found,2025-11-17 20:47:53
+Charlotte Hornets @ Toronto Raptors,NBA,Charlotte Hornets,2025-11-17 19:43:49,Pinnacle,5.82,3.61,23.5,API Error,2025-11-17 20:47:53
 Dallas Cowboys @ Las Vegas Raiders,NFL,Las Vegas Raiders,2025-11-17 20:16:39,Codere (IT),2.6,3.53,16.39,Dallas Cowboys,2025-11-17 20:47:53
 CSU Bakersfield Roadrunners @ Portland St Vikings,NCAAB,CSU Bakersfield Roadrunners,2025-11-17 22:00:00,SportsBet,4.25,3.26,7.07,Portland St Vikings,2025-11-17 20:47:53
-Saint Joseph's Hawks @ Pennsylvania Quakers,NCAAB,Pennsylvania Quakers,2025-11-17 19:00:00,Pinnacle,1.9,3.19,29.33,Not Found,2025-11-17 20:47:53
-Montréal Canadiens @ Columbus Blue Jackets,NHL,Montréal Canadiens,2025-11-17 19:45:21,Tipico,5.0,3.01,110.59,Not Found,2025-11-17 20:47:53
-Oakland Golden Grizzlies @ UCF Knights,NCAAB,UCF Knights,2025-11-17 19:00:00,Nordic Bet,1.44,2.98,11.95,Not Found,2025-11-17 20:47:53
-Los Angeles Clippers @ Philadelphia 76ers,NBA,Los Angeles Clippers,2025-11-17 19:10:00,Unibet (UK),1.65,2.85,3.64,Not Found,2025-11-17 20:47:53
-Colgate Raiders @ Siena Saints,NCAAB,Colgate Raiders,2025-11-17 19:02:45,Betway,1.5,2.5,10.61,Not Found,2025-11-17 20:47:53
+Saint Joseph's Hawks @ Pennsylvania Quakers,NCAAB,Pennsylvania Quakers,2025-11-17 19:00:00,Pinnacle,1.9,3.19,29.33,API Error,2025-11-17 20:47:53
+Montréal Canadiens @ Columbus Blue Jackets,NHL,Montréal Canadiens,2025-11-17 19:45:21,Tipico,5.0,3.01,110.59,API Error,2025-11-17 20:47:53
+Oakland Golden Grizzlies @ UCF Knights,NCAAB,UCF Knights,2025-11-17 19:00:00,Nordic Bet,1.44,2.98,11.95,API Error,2025-11-17 20:47:53
+Los Angeles Clippers @ Philadelphia 76ers,NBA,Los Angeles Clippers,2025-11-17 19:10:00,Unibet (UK),1.65,2.85,3.64,API Error,2025-11-17 20:47:53
+Colgate Raiders @ Siena Saints,NCAAB,Colgate Raiders,2025-11-17 19:02:45,Betway,1.5,2.5,10.61,API Error,2025-11-17 20:47:53
 Tulsa Golden Hurricane @ Kansas St Wildcats,NCAAB,Tulsa Golden Hurricane,2025-11-17 20:00:00,Paddy Power,12.0,2.5,25.86,Kansas St Wildcats,2025-11-17 20:47:53
 Oregon St Beavers @ Oregon Ducks,NCAAB,Oregon St Beavers,2025-11-17 22:00:00,FanDuel,9.6,2.45,10.23,Oregon Ducks,2025-11-17 20:47:53
-Carolina Hurricanes @ Boston Bruins,NHL,Boston Bruins,2025-11-17 19:08:29,Unibet (UK),34.0,2.42,140.35,Not Found,2025-11-17 20:47:53
-Edmonton Oilers @ Buffalo Sabres,NHL,Buffalo Sabres,2025-11-17 19:08:32,Unibet (UK),1.22,2.11,7.31,Not Found,2025-11-17 20:47:53
+Carolina Hurricanes @ Boston Bruins,NHL,Boston Bruins,2025-11-17 19:08:29,Unibet (UK),34.0,2.42,140.35,API Error,2025-11-17 20:47:53
+Edmonton Oilers @ Buffalo Sabres,NHL,Buffalo Sabres,2025-11-17 19:08:32,Unibet (UK),1.22,2.11,7.31,API Error,2025-11-17 20:47:53
 Alabama St Hornets @ Colorado Buffaloes,NCAAB,Alabama St Hornets,2025-11-17 21:00:00,FanDuel,23.0,2.07,36.8,Colorado Buffaloes,2025-11-17 20:47:53
-Zimbabwe @ Pakistan,International Twenty20,Zimbabwe,2025-11-18 08:00:00,BetOnline.ag,6.61,3.28,23.06,Not Found,2025-11-17 22:04:44
+Zimbabwe @ Pakistan,International Twenty20,Zimbabwe,2025-11-18 08:00:00,BetOnline.ag,6.61,3.28,23.06,API Error,2025-11-17 22:04:44
 Loyola Marymount Lions @ UC Santa Barbara Gauchos,NCAAB,UC Santa Barbara Gauchos,2025-11-17 21:03:04,Pinnacle,1.21,3.06,2.98,Loyola Marymount Lions,2025-11-17 22:04:44
 Greece @ Belarus,FIFA World Cup Qualifiers - Europe,Belarus,2025-11-18 14:45:00,Winamax (DE),11.5,2.12,9.09,Not Found,2025-11-17 22:04:44
 Utah Mammoth @ Anaheim Ducks,NHL,Utah Mammoth,2025-11-17 22:10:00,Unibet (UK),2.5,2.08,31.64,Anaheim Ducks,2025-11-17 22:04:44
