@@ -37,7 +37,6 @@ THEODDS_SPORTS_DICT = {
 # API Configuration
 SPORT = "upcoming"
 SPORT_KEY = THEODDS_SPORTS_DICT[SPORT]
-REGIONS = "us,uk,eu,au"
+REGIONS = "us"
 MARKETS = "h2h"
 ODDS_FORMAT = "decimal"
-DATE_FORMAT = "%Y-%m-%d %H:%M:%S"

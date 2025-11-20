@@ -16,39 +16,10 @@ from .configs import (
 
 # Import the module under test
 from codebase.fetch_odds.fetch_odds import (
-    _convert_to_eastern_time,
     _process_game,
     _create_bm_dict_list,
     fetch_odds,
 )
-
-
-class TestConvertToEasternTime(unittest.TestCase):
-    """Test cases for _convert_to_eastern_time function."""
-
-    def test_convert_utc_to_eastern_standard_time(self):
-        """Test conversion during Eastern Standard Time (EST)."""
-        # January 15, 2025 12:00 UTC should be 7:00 AM EST
-        utc_time = "2025-01-15T12:00:00Z"
-        result = _convert_to_eastern_time(utc_time)
-        self.assertIn("2025-01-15", result)
-        self.assertIn("07:00", result)
-
-    def test_convert_utc_to_eastern_daylight_time(self):
-        """Test conversion during Eastern Daylight Time (EDT)."""
-        # July 15, 2025 12:00 UTC should be 8:00 AM EDT
-        utc_time = "2025-07-15T12:00:00Z"
-        result = _convert_to_eastern_time(utc_time)
-        self.assertIn("2025-07-15", result)
-        self.assertIn("08:00", result)
-
-    def test_convert_edge_case_midnight(self):
-        """Test conversion of midnight UTC."""
-        utc_time = "2025-01-15T00:00:00Z"
-        result = _convert_to_eastern_time(utc_time)
-        # Should be previous day in Eastern time
-        self.assertIn("2025-01-14", result)
-        self.assertIn("19:00", result)
 
 
 class TestCreateBmDictList(unittest.TestCase):
@@ -115,14 +86,15 @@ class TestProcessGame(unittest.TestCase):
 
         self.assertEqual(az_win["match"], "Kansas City Royals @ Los Angeles Angels")
         self.assertEqual(az_win["league"], "MLB")
-        self.assertEqual(az_win["start_time"], "2025-09-23 21:39:00")
+        # UTC time should be stored as-is from commence_time
+        self.assertEqual(az_win["start_time"], self.test_data["commence_time"])
         self.assertEqual(az_win["team"], "Arizona Diamondbacks")
         self.assertEqual(az_win["FanDuel"], 1.67)
         self.assertEqual(az_win["888sport"], 1.95)
 
         self.assertEqual(la_win["match"], "Kansas City Royals @ Los Angeles Angels")
         self.assertEqual(la_win["league"], "MLB")
-        self.assertEqual(la_win["start_time"], "2025-09-23 21:39:00")
+        self.assertEqual(la_win["start_time"], self.test_data["commence_time"])
         self.assertEqual(la_win["team"], "Los Angeles Dodgers")
         self.assertEqual(la_win["FanDuel"], 2.18)
         self.assertEqual(la_win["888sport"], 1.73)
@@ -239,7 +211,6 @@ class TestFetchOddsAPIFailures(unittest.TestCase):
 if __name__ == "__main__":
     # Create test suite
     test_classes = [
-        TestConvertToEasternTime,
         TestCreateBmDictList,
         TestProcessGame,
         TestFetchOddsAPIFailures,

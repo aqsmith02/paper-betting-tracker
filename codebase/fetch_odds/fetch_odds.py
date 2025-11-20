@@ -11,27 +11,9 @@ Date: July 2025
 
 import requests
 import pandas as pd
-from datetime import datetime
-import pytz
 from typing import List, Dict
-from .fetch_configs import DATE_FORMAT, SPORT, SPORT_KEY, REGIONS, MARKETS, ODDS_FORMAT
+from .fetch_configs import SPORT, SPORT_KEY, REGIONS, MARKETS, ODDS_FORMAT
 from codebase.constants import THEODDS_API_KEY
-
-
-def _convert_to_eastern_time(utc_time_str: str) -> str:
-    """
-    Convert UTC time string to Eastern time.
-
-    Args:
-        utc_time_str (str): UTC time string in ISO format without timezone suffix.
-
-    Returns:
-        str: Time string formatted in Eastern timezone using DATE_FORMAT.
-    """
-    eastern = pytz.timezone("US/Eastern")
-    utc_dt = datetime.fromisoformat(utc_time_str[:-1]).replace(tzinfo=pytz.utc)
-    local_dt = utc_dt.astimezone(eastern)
-    return local_dt.strftime(DATE_FORMAT)
 
 
 def fetch_odds() -> pd.DataFrame:
@@ -96,7 +78,7 @@ def _process_game(game: Dict) -> List[Dict]:
     home_team = game["home_team"]
     away_team = game["away_team"]
     league = game["sport_title"]
-    start_time = _convert_to_eastern_time(game["commence_time"])
+    start_time = game["commence_time"]  # Use UTC time directly
     bm_dicts = _create_bm_dict_list(game)
     rows = []
 
