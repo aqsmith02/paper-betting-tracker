@@ -3092,12 +3092,12 @@ Arizona Wildcats @ UConn Huskies,NCAAB,Arizona Wildcats,2025-11-19 19:00:00,Will
 Benfica @ Paris FC,UEFA Champions League Women,Benfica,2025-11-19 15:00:00,Unibet (UK),13.0,5.68,128.7,Not Found,2025-11-19 15:35:06
 Harvard Crimson @ Penn State Nittany Lions,NCAAB,Harvard Crimson,2025-11-19 18:30:00,DraftKings,8.0,7.54,6.09,Not Found,2025-11-19 16:29:27
 Bethune-Cookman Wildcats @ Ohio Bobcats,NCAAB,Bethune-Cookman Wildcats,2025-11-19 19:00:00,Bovada,3.6,3.43,4.97,Not Found,2025-11-19 17:38:49
-William & Mary Tribe @ Bowling Green Falcons,NCAAB,William & Mary Tribe,2025-11-19 19:00:00,Betway,4.3,4.13,4.22,Not Found,2025-11-19 17:38:49
+William & Mary Tribe @ Bowling Green Falcons,NCAAB,William & Mary Tribe,2025-11-19 19:00:00,Betway,4.3,4.13,4.22,API Error,2025-11-19 17:38:49
 Volta Redonda @ Vila Nova,Brazil Série B,Volta Redonda,2025-11-19 17:31:00,Bovada,5.75,2.77,107.84,Draw,2025-11-19 17:48:07
-Chattanooga Mocs @ South Carolina St Bulldogs,NCAAB,South Carolina St Bulldogs,2025-11-19 19:00:00,Betway,6.5,5.65,15.11,Not Found,2025-11-19 18:34:01
-Villanova Wildcats @ La Salle Explorers,NCAAB,La Salle Explorers,2025-11-19 19:00:00,PointsBet (AU),7.0,6.84,2.33,Not Found,2025-11-19 18:58:42
-Vasco da Gama @ Grêmio,Brazil Série A,Vasco da Gama,2025-11-19 19:30:00,Unibet (SE),21.0,5.36,292.02,Not Found,2025-11-19 20:46:51
-Louisiana Tech Bulldogs @ Indiana St Sycamores,NCAAB,Louisiana Tech Bulldogs,2025-11-19 19:02:38,DraftKings,19.0,4.97,281.91,Not Found,2025-11-19 20:46:51
+Chattanooga Mocs @ South Carolina St Bulldogs,NCAAB,South Carolina St Bulldogs,2025-11-19 19:00:00,Betway,6.5,5.65,15.11,API Error,2025-11-19 18:34:01
+Villanova Wildcats @ La Salle Explorers,NCAAB,La Salle Explorers,2025-11-19 19:00:00,PointsBet (AU),7.0,6.84,2.33,API Error,2025-11-19 18:58:42
+Vasco da Gama @ Grêmio,Brazil Série A,Vasco da Gama,2025-11-19 19:30:00,Unibet (SE),21.0,5.36,292.02,API Error,2025-11-19 20:46:51
+Louisiana Tech Bulldogs @ Indiana St Sycamores,NCAAB,Louisiana Tech Bulldogs,2025-11-19 19:02:38,DraftKings,19.0,4.97,281.91,API Error,2025-11-19 20:46:51
 South Florida Bulls @ Oklahoma St Cowboys,NCAAB,Oklahoma St Cowboys,2025-11-19 20:00:00,FanDuel,3.9,1.32,195.94,Oklahoma St Cowboys,2025-11-19 20:46:51
 Charlotte Hornets @ Indiana Pacers,NBA,Indiana Pacers,2025-11-19 19:10:19,Betsson,2.04,1.06,91.83,API Error,2025-11-19 20:46:51
 Denver Nuggets @ New Orleans Pelicans,NBA,New Orleans Pelicans,2025-11-19 20:10:37,Betsson,7.0,3.72,88.19,API Error,2025-11-19 20:46:51
@@ -3110,17 +3110,17 @@ Wyoming Cowboys @ Sam Houston St Bearkats,NCAAB,Sam Houston St Bearkats,2025-11-
 Flamengo @ Fluminense,Brazil Série A,Flamengo,2025-11-19 19:35:00,Unibet,25.0,22.14,12.94,API Error,2025-11-19 20:46:51
 Golden State Warriors @ Miami Heat,NBA,Miami Heat,2025-11-19 19:40:00,Betsson,1.42,1.27,12.05,API Error,2025-11-19 20:46:51
 Mirassol @ Santos,Brazil Série A,Mirassol,2025-11-19 19:32:00,DraftKings,13.0,12.0,8.32,API Error,2025-11-19 20:46:51
-New York Knicks @ Dallas Mavericks,NBA,New York Knicks,2025-11-19 21:30:00,Betsson,1.46,1.35,8.2,Not Found,2025-11-19 20:46:51
-Campbell Fighting Camels @ Weber State Wildcats,NCAAB,Campbell Fighting Camels,2025-11-19 22:00:00,FanDuel,2.25,2.19,2.96,Not Found,2025-11-19 20:46:51
-Dayton Flyers @ Marquette Golden Eagles,NCAAB,Marquette Golden Eagles,2025-11-19 19:30:00,BetMGM,34.0,2.96,1049.3,Not Found,2025-11-19 22:02:27
+New York Knicks @ Dallas Mavericks,NBA,New York Knicks,2025-11-19 21:30:00,Betsson,1.46,1.35,8.2,API Error,2025-11-19 20:46:51
+Campbell Fighting Camels @ Weber State Wildcats,NCAAB,Campbell Fighting Camels,2025-11-19 22:00:00,FanDuel,2.25,2.19,2.96,Weber State Wildcats,2025-11-19 20:46:51
+Dayton Flyers @ Marquette Golden Eagles,NCAAB,Marquette Golden Eagles,2025-11-19 19:30:00,BetMGM,34.0,2.96,1049.3,API Error,2025-11-19 22:02:27
 RoKi @ KeuPa HT,Mestis,KeuPa HT,2025-11-20 11:30:00,1xBet,2.77,2.3,20.28,Not Found,2025-11-19 22:02:27
-Alabama Crimson Tide @ Illinois Fighting Illini,NCAAB,Alabama Crimson Tide,2025-11-19 21:16:10,Caesars,2.45,2.28,7.62,Not Found,2025-11-19 22:02:27
-Southern Utah Thunderbirds @ Washington St Cougars,NCAAB,Southern Utah Thunderbirds,2025-11-19 23:00:00,BetUS,7.5,7.13,5.13,Not Found,2025-11-19 22:02:27
-Chicago Bulls @ Portland Trail Blazers,NBA,Portland Trail Blazers,2025-11-19 22:10:00,1xBet,2.55,2.45,4.15,Not Found,2025-11-19 22:02:27
+Alabama Crimson Tide @ Illinois Fighting Illini,NCAAB,Alabama Crimson Tide,2025-11-19 21:16:10,Caesars,2.45,2.28,7.62,Alabama Crimson Tide,2025-11-19 22:02:27
+Southern Utah Thunderbirds @ Washington St Cougars,NCAAB,Southern Utah Thunderbirds,2025-11-19 23:00:00,BetUS,7.5,7.13,5.13,Washington St Cougars,2025-11-19 22:02:27
+Chicago Bulls @ Portland Trail Blazers,NBA,Portland Trail Blazers,2025-11-19 22:10:00,1xBet,2.55,2.45,4.15,Chicago Bulls,2025-11-19 22:02:27
 FC Barcelona Bàsquet @ Anadolu Efes,Basketball Euroleague,FC Barcelona Bàsquet,2025-11-20 12:30:00,1xBet,1.66,1.6,3.8,Not Found,2025-11-19 22:47:49
 Atlético Madrid @ FC Twente Enschede,UEFA Champions League Women,FC Twente Enschede,2025-11-20 12:45:00,Coolbet,3.75,3.43,9.41,Not Found,2025-11-19 23:00:35
 Zimbabwe @ Sri Lanka,International Twenty20,Zimbabwe,2025-11-20 08:00:00,BoyleSports,4.5,4.34,3.72,Not Found,2025-11-20 00:23:09
-Carolina Hurricanes @ Minnesota Wild,NHL,Minnesota Wild,2025-11-19 21:56:04,Caesars,2.15,1.18,81.72,Not Found,2025-11-20 00:40:05
+Carolina Hurricanes @ Minnesota Wild,NHL,Minnesota Wild,2025-11-19 21:56:04,Caesars,2.15,1.18,81.72,Minnesota Wild,2025-11-20 00:40:05
 Southern Indiana Screaming Eagles @ Incarnate Word Cardinals,NCAAB,Southern Indiana Screaming Eagles,2025-11-20 12:30:00,FanDuel,5.0,4.77,4.85,Not Found,2025-11-20 11:53:01
 Utsiktens BK @ Norrby IF,Superettan - Sweden,Utsiktens BK,2025-11-20 13:00:00,Casumo,10.0,3.73,167.76,Not Found,2025-11-20 13:34:01
 Barcelona @ Chelsea,UEFA Champions League Women,Chelsea,2025-11-20 15:00:00,1xBet,5.72,5.38,6.33,Not Found,2025-11-20 13:34:01
