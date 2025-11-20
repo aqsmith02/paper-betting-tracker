@@ -52,7 +52,12 @@ def fetch_odds() -> pd.DataFrame:
     }
 
     print(f"Fetching odds for sport: {SPORT}")
-    response = requests.get(url, params=params)
+    
+    try:
+        response = requests.get(url, params=params)
+    except Exception as e:
+        print(f"Network error during API request: {e}")
+        return pd.DataFrame()
 
     # Log API usage
     print("Requests Remaining:", response.headers.get("x-requests-remaining"))

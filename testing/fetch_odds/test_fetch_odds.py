@@ -7,6 +7,7 @@ Author: Andrew Smith
 """
 
 import unittest
+from unittest.mock import patch, Mock
 from .configs import (
     TEST_GAME_DATA,
     TEST_GAME_DATA_NO_BM,
@@ -18,6 +19,7 @@ from codebase.fetch_odds.fetch_odds import (
     _convert_to_eastern_time,
     _process_game,
     _create_bm_dict_list,
+    fetch_odds,
 )
 
 
@@ -107,8 +109,7 @@ class TestProcessGame(unittest.TestCase):
         result = _process_game(self.test_data)
         az_win = result[0]
         la_win = result[1]
-        print(result)
-        print(az_win)
+
         # Should have 2 rows (one for each team)
         self.assertEqual(len(result), 2)
 
@@ -132,12 +133,116 @@ class TestProcessGame(unittest.TestCase):
         self.assertEqual(result, [])
 
 
+class TestFetchOddsAPIFailures(unittest.TestCase):
+    """Test cases for fetch_odds function with API failures."""
+
+    @patch('codebase.fetch_odds.fetch_odds.requests.get')
+    def test_fetch_odds_invalid_api_key(self, mock_get):
+        """Test fetch_odds when API key is invalid (401 Unauthorized)."""
+        # Mock a 401 Unauthorized response
+        mock_response = Mock()
+        mock_response.status_code = 401
+        mock_response.text = "Invalid API key"
+        mock_response.headers.get.return_value = "0"
+        mock_get.return_value = mock_response
+
+        result = fetch_odds()
+
+        # Should return empty DataFrame
+        self.assertTrue(result.empty)
+        self.assertEqual(len(result), 0)
+
+    @patch('codebase.fetch_odds.fetch_odds.requests.get')
+    def test_fetch_odds_api_key_quota_exceeded(self, mock_get):
+        """Test fetch_odds when API key quota is exceeded (429 Too Many Requests)."""
+        # Mock a 429 Too Many Requests response
+        mock_response = Mock()
+        mock_response.status_code = 429
+        mock_response.text = "Request quota exceeded"
+        mock_response.headers.get.return_value = "0"
+        mock_get.return_value = mock_response
+
+        result = fetch_odds()
+
+        # Should return empty DataFrame
+        self.assertTrue(result.empty)
+        self.assertEqual(len(result), 0)
+
+    @patch('codebase.fetch_odds.fetch_odds.requests.get')
+    def test_fetch_odds_forbidden_access(self, mock_get):
+        """Test fetch_odds when API returns 403 Forbidden."""
+        # Mock a 403 Forbidden response
+        mock_response = Mock()
+        mock_response.status_code = 403
+        mock_response.text = "Forbidden - API key does not have access to this resource"
+        mock_response.headers.get.return_value = "0"
+        mock_get.return_value = mock_response
+
+        result = fetch_odds()
+
+        # Should return empty DataFrame
+        self.assertTrue(result.empty)
+        self.assertEqual(len(result), 0)
+
+    @patch('codebase.fetch_odds.fetch_odds.requests.get')
+    def test_fetch_odds_server_error(self, mock_get):
+        """Test fetch_odds when API returns 500 Internal Server Error."""
+        # Mock a 500 Internal Server Error response
+        mock_response = Mock()
+        mock_response.status_code = 500
+        mock_response.text = "Internal server error"
+        mock_response.headers.get.return_value = "100"
+        mock_get.return_value = mock_response
+
+        result = fetch_odds()
+
+        # Should return empty DataFrame
+        self.assertTrue(result.empty)
+        self.assertEqual(len(result), 0)
+
+    @patch('codebase.fetch_odds.fetch_odds.requests.get')
+    def test_fetch_odds_network_timeout(self, mock_get):
+        """Test fetch_odds when network request times out."""
+        # Mock a timeout exception
+        mock_get.side_effect = Exception("Connection timeout")
+
+        result = fetch_odds()
+
+        # Should return empty DataFrame
+        self.assertTrue(result.empty)
+        self.assertEqual(len(result), 0)
+
+    @patch('codebase.fetch_odds.fetch_odds.requests.get')
+    def test_fetch_odds_successful_with_valid_key(self, mock_get):
+        """Test fetch_odds with valid API key returning game data."""
+        # Mock a successful response
+        mock_response = Mock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = [TEST_GAME_DATA]
+        mock_response.headers.get.side_effect = lambda x: {
+            'x-requests-remaining': '499',
+            'x-requests-used': '1'
+        }.get(x)
+        mock_get.return_value = mock_response
+
+        result = fetch_odds()
+
+        # Should return non-empty DataFrame
+        self.assertFalse(result.empty)
+        self.assertGreater(len(result), 0)
+        # Check that expected columns exist
+        self.assertIn("match", result.columns)
+        self.assertIn("league", result.columns)
+        self.assertIn("team", result.columns)
+
+
 if __name__ == "__main__":
     # Create test suite
     test_classes = [
         TestConvertToEasternTime,
         TestCreateBmDictList,
         TestProcessGame,
+        TestFetchOddsAPIFailures,
     ]
 
     suite = unittest.TestSuite()
