@@ -4,57 +4,79 @@ from dataclasses import dataclass
 from datetime import datetime
 from codebase.results.results_configs import PENDING_RESULTS
 
+
 # --- Data class for strategies ---
 @dataclass
 class BettingStrategy:
     name: str
     path: str
     odds_column: str
+    fair_odds_column: str = None
     edge_column: str = None
 
 
 STRATEGIES = [
     BettingStrategy(
-        "Average", "codebase/data/master_avg_bets.csv", "Avg Edge Odds", "Avg Edge Pct"
+        "Average",
+        "codebase/data/master_avg_full.csv",
+        "Best Odds",
+        "Fair Odds Avg",
+        "Avg Edge Pct",
     ),
     BettingStrategy(
         "Modified Zscore",
-        "codebase/data/master_mod_zscore_bets.csv",
-        "Outlier Odds",
+        "codebase/data/master_mod_zscore_full.csv",
+        "Best Odds",
+        "Fair Odds Avg",
         "Avg Edge Pct",
     ),
     BettingStrategy(
         "Pinnacle",
-        "codebase/data/master_pin_bets.csv",
-        "Pinnacle Edge Odds",
+        "codebase/data/master_pin_full.csv",
+        "Best Odds",
+        "Pinnacle Fair Odds",
         "Pin Edge Pct",
     ),
     BettingStrategy(
-        "Zscore", "codebase/data/master_zscore_bets.csv", "Outlier Odds", "Avg Edge Pct"
+        "Zscore",
+        "codebase/data/master_zscore_full.csv",
+        "Best Odds",
+        "Fair Odds Avg",
+        "Avg Edge Pct",
     ),
     BettingStrategy(
-        "Random", "codebase/data/master_random_bets.csv", "Random Bet Odds"
+        "Random", "codebase/data/master_random_full.csv", "Best Odds"
     ),
     BettingStrategy(
-        "Average NC", "codebase/data/master_nc_avg_bets.csv", "Avg Edge Odds", "Avg Edge Pct"
+        "Average NC",
+        "codebase/data/master_nc_avg_full.csv",
+        "Best Odds",
+        "Fair Odds Avg",
+        "Avg Edge Pct",
     ),
     BettingStrategy(
         "Modified Zscore NC",
-        "codebase/data/master_nc_mod_zscore_bets.csv",
-        "Outlier Odds",
+        "codebase/data/master_nc_mod_zscore_full.csv",
+        "Best Odds",
+        "Fair Odds Avg",
         "Avg Edge Pct",
     ),
     BettingStrategy(
         "Pinnacle NC",
-        "codebase/data/master_nc_pin_bets.csv",
-        "Pinnacle Edge Odds",
+        "codebase/data/master_nc_pin_full.csv",
+        "Best Odds",
+        "Pinnacle Fair Odds",
         "Pin Edge Pct",
     ),
     BettingStrategy(
-        "Zscore NC", "codebase/data/master_nc_zscore_bets.csv", "Outlier Odds", "Avg Edge Pct"
+        "Zscore NC",
+        "codebase/data/master_nc_zscore_full.csv",
+        "Best Odds",
+        "Fair Odds Avg",
+        "Avg Edge Pct",
     ),
     BettingStrategy(
-        "Random NC", "codebase/data/master_nc_random_bets.csv", "Random Bet Odds"
+        "Random NC", "codebase/data/master_nc_random_full.csv", "Best Odds"
     ),
 ]
 
@@ -62,7 +84,7 @@ STRATEGIES = [
 MSE = 0.04
 
 # Kelly fraction
-KELLY_FRACTION = 0.25
+KELLY_FRACTION = 0.8
 
 # ============================================================
 # === Shrinkage coefficient based on Baker & McHale (2013) ===
@@ -111,25 +133,28 @@ def linear_bet(edge_pct, base_unit=1.0, max_multiplier=5.0):
     return base_unit * multiplier
 
 
-def kelly_bet(edge_pct, odds, max_multiplier=5.0):
+def kelly_bet(odds, fair_odds, max_multiplier=5.0):
     """
     Kelly bet adjusted for parameter uncertainty via shrinkage coefficient.
     """
-    if pd.isna(edge_pct) or pd.isna(odds) or edge_pct <= 0 or odds <= 1:
-        return 1.0
+    if pd.isna(odds) or odds <= 1:
+        return 0
 
-    # Derived probability from implied odds and edge
-    p = 1 / odds + edge_pct / 100
+    p = 1 / fair_odds
     p = max(min(p, 0.9999), 0.0001)
     b = odds - 1
 
     # Raw Kelly fraction
-    f_kelly = (b * p - (1 - p)) / b
+    f_kelly = p - ((1 - p) / b)
+
+    # Only bet if Kelly is positive (positive edge)
+    if f_kelly <= 0:
+        return 0
 
     # Apply shrinkage coefficient
     # shrink = shrinking_coefficient(p, MSE)
     shrink = KELLY_FRACTION
-    f_adjusted = max(f_kelly * shrink, 0)
+    f_adjusted = f_kelly * shrink
 
     return min(f_adjusted * 100, max_multiplier)
 
@@ -152,17 +177,17 @@ def roi_flat(df, odds_col):
     }
 
 
-def roi_edge(df, odds_col, edge_col, method="linear"):
+def roi_edge(df, odds_col, fair_col, method="linear"):
     df = df[~df["Result"].isin(PENDING_RESULTS)].copy()
 
     if method == "linear":
-        df["Bet"] = df[edge_col].apply(linear_bet)
+        df["Bet"] = df[fair_col].apply(linear_bet)
 
     elif method == "kelly":
         df["Bet"] = df.apply(
             lambda row: kelly_bet(
-                edge_pct=row[edge_col],
                 odds=row[odds_col],
+                fair_odds=row[fair_col]
             ),
             axis=1,
         )
@@ -181,7 +206,9 @@ def roi_edge(df, odds_col, edge_col, method="linear"):
 def calculate_time_spent(df):
     """Calculate time interval data has been collected."""
     time_start = datetime.strptime(df.loc[0, "Scrape Time"], "%Y-%m-%d %H:%M:%S")
-    time_end = datetime.strptime(df.loc[len(df)-1, "Scrape Time"], "%Y-%m-%d %H:%M:%S")
+    time_end = datetime.strptime(
+        df.loc[len(df) - 1, "Scrape Time"], "%Y-%m-%d %H:%M:%S"
+    )
     time_spent = time_end - time_start
 
     days = time_spent.days
@@ -198,7 +225,7 @@ def calculate_time_spent(df):
 def compare_methods(strategy):
     df = pd.read_csv(strategy.path)
     time_spent = calculate_time_spent(df)
-    
+
     print(f"\n=== {strategy.name} ===")
     print(f"Time Spent: {time_spent}")
     print(
@@ -221,7 +248,7 @@ def compare_methods(strategy):
         kelly = roi_edge(
             df,
             strategy.odds_column,
-            strategy.edge_column,
+            strategy.fair_odds_column,
             method="kelly",
         )
 
