@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 from datetime import datetime
-from codebase.results.results_configs import PENDING_RESULTS
+from codebase.results_appending.results_configs import PENDING_RESULTS
 from codebase.analysis.roi import (
     STRATEGIES,
     kelly_bet,

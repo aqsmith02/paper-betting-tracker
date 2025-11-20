@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy import stats
-from codebase.results.results_configs import PENDING_RESULTS
+from codebase.results_appending.results_configs import PENDING_RESULTS
 
 # Read your CSV
 df = pd.read_csv('codebase/data/master_nc_mod_zscore_full.csv')

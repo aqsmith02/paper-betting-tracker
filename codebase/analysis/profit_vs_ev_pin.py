@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
-from codebase.results.results_configs import PENDING_RESULTS
+from codebase.results_appending.results_configs import PENDING_RESULTS
 
 # Read the CSV
 df = pd.read_csv('codebase/data/master_nc_pin_full.csv')

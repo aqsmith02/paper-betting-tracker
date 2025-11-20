@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from typing import List, Dict
 from codebase.analysis.roi import STRATEGIES, roi_edge, roi_flat
-from codebase.results.results_configs import PENDING_RESULTS
+from codebase.results_appending.results_configs import PENDING_RESULTS
 
 # Central lookup table for both strategy + scoring columns
 STRATEGY_INFO: Dict[str, Dict[str, List[str]]] = {
