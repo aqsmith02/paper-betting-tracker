@@ -2019,7 +2019,7 @@ Rhode Island Rams @ Yale Bulldogs,NCAAB,Yale Bulldogs,2025-11-18 20:01:54,Betsso
 Wichita St Shockers @ Boise State Broncos,NCAAB,Boise State Broncos,2025-11-18 21:00:00,Caesars,1.21,Boise State Broncos,2025-11-18 20:48:07
 Toronto Marlies @ Belleville Senators,AHL,Belleville Senators,2025-11-19 10:30:00,Unibet (UK),2.5,Belleville Senators,2025-11-18 23:01:49
 Kansas Jayhawks @ Duke Blue Devils,NCAAB,Duke Blue Devils,2025-11-18 21:10:07,Betsson,1.13,Duke Blue Devils,2025-11-18 23:01:49
-West Indies @ New Zealand,One Day Internationals,West Indies,2025-11-18 23:00:00,Betsson,5.0,Not Found,2025-11-18 23:56:44
+West Indies @ New Zealand,One Day Internationals,West Indies,2025-11-18 23:00:00,Betsson,5.0,API Error,2025-11-18 23:56:44
 Kiekko-Espoo @ Kärpät,Liiga,Kiekko-Espoo,2025-11-19 11:30:00,LeoVegas (SE),3.55,Kärpät,2025-11-18 23:56:44
 IF Troja-Ljungby @ AIK,HockeyAllsvenskan,AIK,2025-11-19 13:00:00,Unibet (NL),1.6,Not Found,2025-11-18 23:56:44
 Illawarra Hawks @ Adelaide 36ers,NBL,Adelaide 36ers,2025-11-19 03:36:00,Bet Right,1.54,Adelaide 36ers,2025-11-18 23:56:44
@@ -2035,22 +2035,22 @@ Mora IK @ Nybro Vikings IF,HockeyAllsvenskan,Nybro Vikings IF,2025-11-19 13:00:0
 Södertälje SK @ Kalmar HC,HockeyAllsvenskan,Kalmar HC,2025-11-19 13:00:00,Unibet (UK),1.73,Kalmar HC,2025-11-19 12:24:04
 SKN St. Pölten @ Vålerenga,UEFA Champions League Women,SKN St. Pölten,2025-11-19 15:00:00,Coolbet,20.0,Not Found,2025-11-19 13:51:36
 FC Juárez @ Tijuana,Liga MX,Draw,2025-11-19 16:00:00,Unibet (NL),3.5,Not Found,2025-11-19 13:51:36
-Volta Redonda @ Vila Nova,Brazil Série B,Vila Nova,2025-11-19 17:30:00,LowVig.ag,1.79,Not Found,2025-11-19 13:51:36
+Volta Redonda @ Vila Nova,Brazil Série B,Vila Nova,2025-11-19 17:30:00,LowVig.ag,1.79,Draw,2025-11-19 13:51:36
 Real Madrid @ Arsenal,UEFA Champions League Women,Draw,2025-11-19 15:00:00,Pinnacle,4.88,Not Found,2025-11-19 14:19:01
 Benfica @ Paris FC,UEFA Champions League Women,Benfica,2025-11-19 15:00:00,Nordic Bet,4.45,Not Found,2025-11-19 14:29:46
-AS Monaco @ ASVEL Lyon Villeurbanne,Basketball Euroleague,ASVEL Lyon Villeurbanne,2025-11-19 14:01:00,Unibet,8.0,Not Found,2025-11-19 14:41:20
-Alabama St Hornets @ Air Force Falcons,NCAAB,Alabama St Hornets,2025-11-19 18:00:00,Ladbrokes,2.25,Not Found,2025-11-19 14:41:20
-Vitoria @ Palmeiras,Brazil Série A,Palmeiras,2025-11-19 17:30:00,1xBet,1.35,Not Found,2025-11-19 14:41:20
-Arizona Wildcats @ UConn Huskies,NCAAB,UConn Huskies,2025-11-19 19:00:00,Pinnacle,1.36,Not Found,2025-11-19 15:22:59
-Harvard Crimson @ Penn State Nittany Lions,NCAAB,Harvard Crimson,2025-11-19 18:30:00,Betway,7.5,Not Found,2025-11-19 15:52:22
-William & Mary Tribe @ Bowling Green Falcons,NCAAB,William & Mary Tribe,2025-11-19 19:00:00,Betway,4.3,Not Found,2025-11-19 17:38:52
-Chattanooga Mocs @ South Carolina St Bulldogs,NCAAB,South Carolina St Bulldogs,2025-11-19 19:00:00,Betway,6.5,Not Found,2025-11-19 18:34:04
-Central Michigan Chippewas @ Kent State Golden Flashes,NCAAF,Kent State Golden Flashes,2025-11-19 19:00:00,Betway,3.65,Not Found,2025-11-19 18:34:04
-Miami (OH) RedHawks @ Buffalo Bulls,NCAAF,Miami (OH) RedHawks,2025-11-19 19:00:00,Coolbet,1.82,Not Found,2025-11-19 18:51:01
-Edmonton Oilers @ Washington Capitals,NHL,Edmonton Oilers,2025-11-19 19:00:00,LeoVegas (SE),2.85,Not Found,2025-11-19 18:58:44
-UC Irvine Anteaters @ Utah Valley Wolverines,NCAAB,UC Irvine Anteaters,2025-11-19 20:02:45,DraftKings,3.8,Not Found,2025-11-19 20:46:54
+AS Monaco @ ASVEL Lyon Villeurbanne,Basketball Euroleague,ASVEL Lyon Villeurbanne,2025-11-19 14:01:00,Unibet,8.0,API Error,2025-11-19 14:41:20
+Alabama St Hornets @ Air Force Falcons,NCAAB,Alabama St Hornets,2025-11-19 18:00:00,Ladbrokes,2.25,API Error,2025-11-19 14:41:20
+Vitoria @ Palmeiras,Brazil Série A,Palmeiras,2025-11-19 17:30:00,1xBet,1.35,API Error,2025-11-19 14:41:20
+Arizona Wildcats @ UConn Huskies,NCAAB,UConn Huskies,2025-11-19 19:00:00,Pinnacle,1.36,API Error,2025-11-19 15:22:59
+Harvard Crimson @ Penn State Nittany Lions,NCAAB,Harvard Crimson,2025-11-19 18:30:00,Betway,7.5,API Error,2025-11-19 15:52:22
+William & Mary Tribe @ Bowling Green Falcons,NCAAB,William & Mary Tribe,2025-11-19 19:00:00,Betway,4.3,API Error,2025-11-19 17:38:52
+Chattanooga Mocs @ South Carolina St Bulldogs,NCAAB,South Carolina St Bulldogs,2025-11-19 19:00:00,Betway,6.5,API Error,2025-11-19 18:34:04
+Central Michigan Chippewas @ Kent State Golden Flashes,NCAAF,Kent State Golden Flashes,2025-11-19 19:00:00,Betway,3.65,API Error,2025-11-19 18:34:04
+Miami (OH) RedHawks @ Buffalo Bulls,NCAAF,Miami (OH) RedHawks,2025-11-19 19:00:00,Coolbet,1.82,API Error,2025-11-19 18:51:01
+Edmonton Oilers @ Washington Capitals,NHL,Edmonton Oilers,2025-11-19 19:00:00,LeoVegas (SE),2.85,API Error,2025-11-19 18:58:44
+UC Irvine Anteaters @ Utah Valley Wolverines,NCAAB,UC Irvine Anteaters,2025-11-19 20:02:45,DraftKings,3.8,Utah Valley Wolverines,2025-11-19 20:46:54
 New York Knicks @ Dallas Mavericks,NBA,New York Knicks,2025-11-19 21:30:00,Betsson,1.46,Not Found,2025-11-19 20:46:54
-Howard Bison @ Stetson Hatters,NCAAB,Stetson Hatters,2025-11-19 19:02:06,Caesars,1.31,Not Found,2025-11-19 20:46:54
+Howard Bison @ Stetson Hatters,NCAAB,Stetson Hatters,2025-11-19 19:02:06,Caesars,1.31,API Error,2025-11-19 20:46:54
 Carolina Hurricanes @ Minnesota Wild,NHL,Minnesota Wild,2025-11-19 21:30:00,Unibet,3.8,Not Found,2025-11-19 22:02:30
 RoKi @ KeuPa HT,Mestis,KeuPa HT,2025-11-20 11:30:00,1xBet,2.77,Not Found,2025-11-19 22:02:30
 Southern Utah Thunderbirds @ Washington St Cougars,NCAAB,Southern Utah Thunderbirds,2025-11-19 23:00:00,BetUS,7.5,Not Found,2025-11-19 22:47:52
