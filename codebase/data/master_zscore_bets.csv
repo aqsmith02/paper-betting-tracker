@@ -1444,17 +1444,17 @@ Vermont Catamounts @ Buffalo Bulls,NCAAB,Buffalo Bulls,2025-11-18 18:33:04,Caesa
 Princeton Tigers @ Iona Gaels,NCAAB,Princeton Tigers,2025-11-18 19:00:00,Betsson,2.48,2.75,3.69,Not Found,2025-11-18 18:55:48
 NJIT Highlanders @ Drexel Dragons,NCAAB,NJIT Highlanders,2025-11-18 19:00:00,Marathon Bet,7.9,2.62,10.09,Not Found,2025-11-18 18:55:48
 Golden State Warriors @ Orlando Magic,NBA,Orlando Magic,2025-11-18 19:12:00,MyBookie.ag,1.55,4.43,18.45,Not Found,2025-11-18 20:48:00
-Saint Peter's Peacocks @ Delaware Blue Hens,NCAAB,Delaware Blue Hens,2025-11-18 19:03:00,Betsson,1.41,3.69,23.89,Not Found,2025-11-18 20:48:00
-Towson Tigers @ James Madison Dukes,NCAAB,James Madison Dukes,2025-11-18 19:03:36,Betsson,2.21,3.69,92.3,Not Found,2025-11-18 20:48:00
+Saint Peter's Peacocks @ Delaware Blue Hens,NCAAB,Delaware Blue Hens,2025-11-18 19:03:00,Betsson,1.41,3.69,23.89,API Error,2025-11-18 20:48:00
+Towson Tigers @ James Madison Dukes,NCAAB,James Madison Dukes,2025-11-18 19:03:36,Betsson,2.21,3.69,92.3,API Error,2025-11-18 20:48:00
 Columbus Blue Jackets @ Winnipeg Jets,NHL,Draw,2025-11-18 20:09:00,Codere (IT),4.5,3.38,15.37,Winnipeg Jets,2025-11-18 20:48:00
 Abilene Christian Wildcats @ Texas State Bobcats,NCAAB,Texas State Bobcats,2025-11-18 20:01:35,Betsson,1.73,3.07,22.0,Texas State Bobcats,2025-11-18 20:48:00
-Georgia Southern Eagles @ Georgia Tech Yellow Jackets,NCAAB,Georgia Southern Eagles,2025-11-18 19:32:56,Betsson,5.25,3.04,31.46,Not Found,2025-11-18 20:48:00
+Georgia Southern Eagles @ Georgia Tech Yellow Jackets,NCAAB,Georgia Southern Eagles,2025-11-18 19:32:56,Betsson,5.25,3.04,31.46,API Error,2025-11-18 20:48:00
 New York Islanders @ Dallas Stars,NHL,Draw,2025-11-18 20:12:00,Codere (IT),4.4,3.04,14.1,New York Islanders,2025-11-18 20:48:00
 Memphis Grizzlies @ San Antonio Spurs,NBA,Memphis Grizzlies,2025-11-18 20:13:00,MyBookie.ag,3.4,3.04,34.75,San Antonio Spurs,2025-11-18 20:48:00
 UT-Arlington Mavericks @ Evansville Purple Aces,NCAAB,Evansville Purple Aces,2025-11-18 20:02:07,Caesars,2.35,2.87,20.91,UT-Arlington Mavericks,2025-11-18 20:48:00
-Boston Univ. Terriers @ Columbia Lions,NCAAB,Boston Univ. Terriers,2025-11-18 19:02:27,DraftKings,19.0,2.85,271.69,Not Found,2025-11-18 20:48:00
+Boston Univ. Terriers @ Columbia Lions,NCAAB,Boston Univ. Terriers,2025-11-18 19:02:27,DraftKings,19.0,2.85,271.69,API Error,2025-11-18 20:48:00
 Texas Stars @ Iowa Wild,AHL,Iowa Wild,2025-11-18 20:08:00,Codere (IT),3.4,2.83,99.64,Iowa Wild,2025-11-18 20:48:00
-Akron Zips @ Bowling Green Falcons,NCAAF,Akron Zips,2025-11-18 19:02:26,TAB,2.1,2.75,5.25,Not Found,2025-11-18 20:48:00
+Akron Zips @ Bowling Green Falcons,NCAAF,Akron Zips,2025-11-18 19:02:26,TAB,2.1,2.75,5.25,API Error,2025-11-18 20:48:00
 North Carolina A&T Aggies @ Morgan St Bears,NCAAB,Morgan St Bears,2025-11-18 19:32:29,FanDuel,3.85,2.73,38.53,Not Found,2025-11-18 20:48:00
 Maryland-Eastern Shore Hawks @ Longwood Lancers,NCAAB,Longwood Lancers,2025-11-18 19:02:13,Caesars,1.36,2.48,11.14,Not Found,2025-11-18 20:48:00
 New Jersey Devils @ Tampa Bay Lightning,NHL,Draw,2025-11-18 19:09:00,Tipico,9.0,2.33,11.89,Not Found,2025-11-18 20:48:00
@@ -1483,7 +1483,7 @@ Lyon @ Juventus,UEFA Champions League Women,Juventus,2025-11-19 12:45:00,Coolbet
 West Indies @ New Zealand,One Day Internationals,West Indies,2025-11-18 22:15:00,Sky Bet,4.5,2.3,6.05,Not Found,2025-11-18 22:49:12
 Illawarra Hawks @ Adelaide 36ers,NBL,Illawarra Hawks,2025-11-19 03:36:00,SportsBet,2.92,3.18,6.38,Adelaide 36ers,2025-11-19 02:22:57
 KooKoo @ TPS,Liiga,Draw,2025-11-19 11:30:00,Unibet (UK),3.8,2.09,3.74,Not Found,2025-11-19 12:23:58
-Kiekko-Espoo @ Kärpät,Liiga,Draw,2025-11-19 11:30:00,Betway,3.75,3.3,37.62,Not Found,2025-11-19 12:52:32
+Kiekko-Espoo @ Kärpät,Liiga,Draw,2025-11-19 11:30:00,Betway,3.75,3.3,37.62,Kärpät,2025-11-19 12:52:32
 Manchester United @ VfL Wolfsburg,UEFA Champions League Women,VfL Wolfsburg,2025-11-19 12:45:00,Coolbet,2.75,2.48,2.65,Not Found,2025-11-19 12:52:32
 Vitoria @ Palmeiras,Brazil Série A,Vitoria,2025-11-19 17:30:00,SportsBet,12.0,2.73,10.94,Not Found,2025-11-19 13:34:56
 Real Madrid @ Arsenal,UEFA Champions League Women,Real Madrid,2025-11-19 15:00:00,Coolbet,6.5,2.3,4.46,Not Found,2025-11-19 13:34:56
