@@ -10,8 +10,7 @@ from .betting_configs import DATE_FORMAT, TIMESTAMP_FORMAT
 from codebase.constants import DATA_DIR
 from typing import Any, Optional, List, Dict
 import pandas as pd
-from datetime import datetime
-from zoneinfo import ZoneInfo
+from datetime import datetime, timezone
 import numpy as np
 from pathlib import Path
 
@@ -36,21 +35,6 @@ class BetFileManager:
 
     # Central lookup table for both strategy columns
     STRATEGY_INFO: Dict[str, Dict[str, List[str]]] = {
-        "master_avg": {
-            "strategy": ["Fair Odds Avg", "Avg Edge Pct"],
-        },
-        "master_mod_zscore": {
-            "strategy": ["Modified Z Score", "Avg Edge Pct"],
-        },
-        "master_pin": {
-            "strategy": ["Pinnacle Fair Odds", "Pin Edge Pct"],
-        },
-        "master_zscore": {
-            "strategy": ["Z Score", "Avg Edge Pct"],
-        },
-        "master_random": {
-            "strategy": ["Random Bet Odds"],
-        },
         "master_nc_avg": {
             "strategy": ["Avg Edge Pct", "Fair Odds Avg"],
         },
@@ -121,9 +105,7 @@ class BetFileManager:
 
         new_data = new_data.copy()
         # Append Scrape Time column for bets
-        new_data["Scrape Time"] = datetime.now(ZoneInfo("America/New_York")).strftime(
-            TIMESTAMP_FORMAT
-        )
+        new_data["Scrape Time"] = datetime.now(timezone.utc).strftime(TIMESTAMP_FORMAT)
 
         # Check if data file exists, if not, create it
         full_path = self.data_dir / filename

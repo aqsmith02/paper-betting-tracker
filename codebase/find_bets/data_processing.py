@@ -12,7 +12,6 @@ from typing import List, Optional
 from .betting_configs import (
     MIN_BOOKMAKERS,
     MAX_ODDS,
-    EXCHANGE_BLOCKLIST,
     TARGET_BMS,
     NC_BMS,
 )
@@ -41,22 +40,6 @@ def _find_bookmaker_columns(
         for col in df.select_dtypes(include=["float", "int"]).columns
         if col not in excluded
     ]
-
-
-def _remove_exchanges(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Remove betting exchange columns from df, which behave differently than normal bookmakers.
-
-    Args:
-        df (pd.DataFrame): DataFrame containing odds data.
-
-    Returns:
-        df (pd.DataFrame): DataFrame containing odds data without exchange columns.
-    """
-    df = df.copy()
-    cols_to_drop = [col for col in EXCHANGE_BLOCKLIST if col in df.columns]
-    df = df.drop(columns=cols_to_drop)
-    return df
 
 
 def _remove_non_target_bookmakers(df: pd.DataFrame) -> pd.DataFrame:
@@ -195,26 +178,6 @@ def _prettify_column_headers(df: pd.DataFrame) -> pd.DataFrame:
     return df.rename(columns=column_mapping)
 
 
-def process_odds_data(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Transform fetch_odds df into cleaned df.
-
-    Args:
-        df (pd.DataFrame): DataFrame containing odds data.
-
-    Returns:
-        pd.DataFrame: Cleaned and validated DataFrame.
-    """
-    df = _remove_exchanges(df)
-    df = _add_metadata(df)
-    df = _clean_odds_data(df)
-    df = _min_bookmaker_filter(df)
-    df = _max_odds_filter(df)
-    df = _all_outcomes_present_filter(df)
-    df = _prettify_column_headers(df)
-    return df
-
-
 def process_target_odds_data(df: pd.DataFrame) -> pd.DataFrame:
     """
     Transform fetch_odds df into cleaned df for target bookmakers.
@@ -229,6 +192,7 @@ def process_target_odds_data(df: pd.DataFrame) -> pd.DataFrame:
     df = _add_metadata(df, best_odds_bms=NC_BMS)
     df = _clean_odds_data(df)
     df = _min_bookmaker_filter(df)
+    df = _max_odds_filter(df)
     df = _all_outcomes_present_filter(df)
     df = _prettify_column_headers(df)
     return df

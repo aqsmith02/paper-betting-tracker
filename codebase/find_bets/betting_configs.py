@@ -18,7 +18,7 @@ NC_BMS = ["FanDuel", "DraftKings", "BetMGM", "Caesars", "Fanatics"]
 
 # Formatting
 DATE_FORMAT = "%Y-%m-%d"
-TIMESTAMP_FORMAT = "%Y-%m-%d %H:%M:%S"
+TIMESTAMP_FORMAT = "%Y-%m-%dT%H:%M:%SZ"
 
 # Betting exchanges to exclude (they work differently than traditional bookmakers)
 EXCHANGE_BLOCKLIST = {"Smarkets", "Betfair", "Matchbook", "Betfair Sportsbook"}

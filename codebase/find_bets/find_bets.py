@@ -25,7 +25,6 @@ from .summary_creation import (
     create_modified_zscore_summary,
 )
 from .data_processing import (
-    process_odds_data,
     process_target_odds_data,
     calculate_vigfree_probabilities,
 )
@@ -37,8 +36,6 @@ from dataclasses import dataclass
 @dataclass
 class BettingStrategy:
     name: str
-    standard_summary_file: str
-    standard_full_file: str
     nc_summary_file: str
     nc_full_file: str
     score_column: str
@@ -48,7 +45,6 @@ class BettingStrategy:
 
 def run_betting_strategy(
     strategy: BettingStrategy,
-    standard_df: pd.DataFrame,
     nc_df: pd.DataFrame,
     file_manager: BetFileManager,
 ) -> None:
@@ -64,27 +60,6 @@ def run_betting_strategy(
         None
     """
     print(f"\nRunning {strategy.name} analysis...")
-
-    try:
-        # Run the standard analysis
-        standard_analysis_result = strategy.analysis_func(standard_df)
-        standard_summary = strategy.summary_func(standard_analysis_result)
-
-        if standard_summary.empty:
-            print(f"No standard profitable bets found for {strategy.name}")
-
-        # Save summary (best bets only) and get the filtered data back)
-        standard_filtered_summary = file_manager.save_best_bets_only(
-            standard_summary, strategy.standard_summary_file, strategy.score_column
-        )
-
-        # Save full data using the same filtered summary
-        file_manager.save_full_betting_data(
-            standard_analysis_result, standard_filtered_summary, strategy.standard_full_file
-        )
-
-    except Exception as e:
-        print(f"Error running standard {strategy.name}: {e}")
 
     try:
         # Run the NC analysis
@@ -125,8 +100,6 @@ def main():
     strategies = [
         BettingStrategy(
             name="Average Edge",
-            standard_summary_file="master_avg_bets.csv",
-            standard_full_file="master_avg_full.csv",
             nc_summary_file="master_nc_avg_bets.csv",
             nc_full_file="master_nc_avg_full.csv",
             score_column="Avg Edge Pct",
@@ -135,8 +108,6 @@ def main():
         ),
         BettingStrategy(
             name="Z-Score Outliers",
-            standard_summary_file="master_zscore_bets.csv",
-            standard_full_file="master_zscore_full.csv",
             nc_summary_file="master_nc_zscore_bets.csv",
             nc_full_file="master_nc_zscore_full.csv",
             score_column="Z Score",
@@ -145,8 +116,6 @@ def main():
         ),
         BettingStrategy(
             name="Modified Z-Score Outliers",
-            standard_summary_file="master_mod_zscore_bets.csv",
-            standard_full_file="master_mod_zscore_full.csv",
             nc_summary_file="master_nc_mod_zscore_bets.csv",
             nc_full_file="master_nc_mod_zscore_full.csv",
             score_column="Modified Z Score",
@@ -155,8 +124,6 @@ def main():
         ),
         BettingStrategy(
             name="Pinnacle Edge",
-            standard_summary_file="master_pin_bets.csv",
-            standard_full_file="master_pin_full.csv",
             nc_summary_file="master_nc_pin_bets.csv",
             nc_full_file="master_nc_pin_full.csv",
             score_column="Pin Edge Pct",
@@ -165,8 +132,6 @@ def main():
         ),
         BettingStrategy(
             name="Random Bets",
-            standard_summary_file="master_random_bets.csv",
-            standard_full_file="master_random_full.csv",
             nc_summary_file="master_nc_random_bets.csv",
             nc_full_file="master_nc_random_full.csv",
             score_column="Random Bet Odds",
@@ -183,19 +148,17 @@ def main():
             print("No odds data available")
             return
 
-        standard_processed_odds = process_odds_data(raw_odds)
         nc_processed_odds = process_target_odds_data(raw_odds)
 
-        if standard_processed_odds.empty and nc_processed_odds.empty:
+        if nc_processed_odds.empty:
             print("No data passed cleaning requirements")
             return
 
-        standard_df = calculate_vigfree_probabilities(standard_processed_odds)
         nc_df = calculate_vigfree_probabilities(nc_processed_odds)
 
         # Step 2: Run each betting strategy
         for strategy in strategies:
-            run_betting_strategy(strategy, standard_df, nc_df, file_manager)
+            run_betting_strategy(strategy, nc_df, file_manager)
 
         print("\nBetting analysis pipeline completed successfully")
 
