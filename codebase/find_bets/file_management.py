@@ -137,13 +137,17 @@ class BetFileManager:
 
         # Handle if only duplicates are found
         if new_rows.empty:
-            print(f"No new rows to add to {filename} - all were duplicates")
+            # Print only for bets files to reduce spammy prints 
+            if "bets" in filename: 
+                print(f"No new rows to add to {filename} - all were duplicates")
             return
 
         # Append the new bets and save
         combined_data = pd.concat([existing_data, new_rows], ignore_index=True)
         combined_data.to_csv(full_path, index=False)
-        print(f"Added {len(new_rows)} new rows to {filename}")
+        
+        if "bets" in filename: 
+            print(f"Added {len(new_rows)} new rows to {filename}")
 
     def _align_column_schemas(
         self, existing_df: pd.DataFrame, new_df: pd.DataFrame, filename: str

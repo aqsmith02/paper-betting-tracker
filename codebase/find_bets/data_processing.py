@@ -75,7 +75,8 @@ def _add_metadata(
 
         if existing_bms:
             df["Best Odds"] = df[existing_bms].max(axis=1)
-            df["Best Bookmaker"] = df[existing_bms].idxmax(axis=1)
+            df["Best Bookmaker"] = df[existing_bms].apply(lambda row: row.idxmax() if row.notna().any() else None, axis=1)
+
         else:
             # Fallback if none exist
             df["Best Odds"] = None
