@@ -7,7 +7,7 @@ Author: Andrew Smith
 """
 
 # Betting thresholds
-EDGE_THRESHOLD = 0.02
+EV_THRESHOLD = 0.05
 Z_SCORE_THRESHOLD = 2.0
 MAX_Z_SCORE = 5.0
 MIN_BOOKMAKERS = 5

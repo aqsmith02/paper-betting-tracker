@@ -102,7 +102,7 @@ def main():
             name="Average Edge",
             nc_summary_file="master_nc_avg_bets.csv",
             nc_full_file="master_nc_avg_full.csv",
-            score_column="Avg Edge Pct",
+            score_column="Expected Value",
             summary_func=create_average_edge_summary,
             analysis_func=analyze_average_edge_bets,
         ),

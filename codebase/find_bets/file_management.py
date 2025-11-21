@@ -36,16 +36,16 @@ class BetFileManager:
     # Central lookup table for both strategy columns
     STRATEGY_INFO: Dict[str, Dict[str, List[str]]] = {
         "master_nc_avg": {
-            "strategy": ["Avg Edge Pct", "Fair Odds Avg"],
+            "strategy": ["Expected Value", "Fair Odds Avg"],
         },
         "master_nc_mod_zscore": {
-            "strategy": ["Modified Z Score", "Avg Edge Pct"],
+            "strategy": ["Modified Z Score", "Expected Value"],
         },
         "master_nc_pin": {
-            "strategy": ["Pinnacle Fair Odds", "Pin Edge Pct"],
+            "strategy": ["Pinnacle Fair Odds", "Expected Value"],
         },
         "master_nc_zscore": {
-            "strategy": ["Z Score", "Avg Edge Pct"],
+            "strategy": ["Z Score", "Expected Value"],
         },
         "master_nc_random": {
             "strategy": ["Random Bet Odds"],

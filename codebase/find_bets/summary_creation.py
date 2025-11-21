@@ -32,7 +32,7 @@ def create_average_edge_summary(df: pd.DataFrame) -> pd.DataFrame:
                 "Start Time": row["Start Time"],
                 "Avg Edge Book": row["Best Bookmaker"],
                 "Avg Edge Odds": row["Best Odds"],
-                "Avg Edge Pct": row["Avg Edge Pct"],
+                "Expected Value": row["Expected Value"],
                 "Result": row["Result"],
             }
         )
@@ -63,7 +63,7 @@ def create_zscore_summary(df: pd.DataFrame) -> pd.DataFrame:
                 "Outlier Book": row["Best Bookmaker"],
                 "Outlier Odds": row["Best Odds"],
                 "Z Score": row["Z Score"],
-                "Avg Edge Pct": row["Avg Edge Pct"],
+                "Expected Value": row["Expected Value"],
                 "Result": row.get("Result", "Not Found"),
             }
         )
@@ -95,7 +95,7 @@ def create_modified_zscore_summary(df: pd.DataFrame) -> pd.DataFrame:
                 "Outlier Book": row["Best Bookmaker"],
                 "Outlier Odds": row["Best Odds"],
                 "Modified Z Score": row["Modified Z Score"],
-                "Avg Edge Pct": row["Avg Edge Pct"],
+                "Expected Value": row["Expected Value"],
                 "Result": row.get("Result", "Not Found"),
             }
         )
@@ -130,7 +130,7 @@ def create_pinnacle_edge_summary(df: pd.DataFrame) -> pd.DataFrame:
                 "Start Time": row["Start Time"],
                 "Pinnacle Edge Book": row["Best Bookmaker"],
                 "Pinnacle Edge Odds": row["Best Odds"],
-                "Pin Edge Pct": row["Pin Edge Pct"],
+                "Expected Value": row["Expected Value"],
                 "Pinnacle Fair Odds": row["Pinnacle Fair Odds"],
                 "Result": row.get("Result", "Not Found"),
             }

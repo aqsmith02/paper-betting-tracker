@@ -9,7 +9,7 @@ Author: Andrew Smith
 from typing import List
 import pandas as pd
 from .betting_configs import (
-    EDGE_THRESHOLD,
+    EV_THRESHOLD,
     MAX_MISSING_VF_PCT,
     Z_SCORE_THRESHOLD,
     MAX_Z_SCORE,
@@ -65,7 +65,7 @@ def analyze_average_edge_bets(df: pd.DataFrame) -> pd.DataFrame:
     vigfree_columns = [col for col in df.columns if col.startswith("Vigfree ")]
     bookmaker_columns = _find_bookmaker_columns(df, vigfree_columns)
 
-    edge_percentages = []
+    ev_list = []
     fair_odds_averages = []
 
     for _, row in df.iterrows():
@@ -73,7 +73,7 @@ def analyze_average_edge_bets(df: pd.DataFrame) -> pd.DataFrame:
         if not _missing_vigfree_odds_pct(
             row, bookmaker_columns, MAX_MISSING_VF_PCT
         ):
-            edge_percentages.append(None)
+            ev_list.append(None)
             fair_odds_averages.append(None)
             continue
 
@@ -84,15 +84,16 @@ def analyze_average_edge_bets(df: pd.DataFrame) -> pd.DataFrame:
 
         # Calculate edge percentage
         best_odds = row["Best Odds"]
-        edge = (best_odds / fair_odds) - 1
+        average_probability = max(min(average_probability, 0.9999), 0.0001)  # Clamp between 0.01% and 99.99%
+        ev = (average_probability * (best_odds - 1)) - ((1 - average_probability) * 1)
 
-        if edge > EDGE_THRESHOLD:
-            edge_percentages.append(round(edge * 100, 2))
+        if ev > EV_THRESHOLD:
+            ev_list.append(ev)
         else:
-            edge_percentages.append(None)
+            ev_list.append(None)
 
     df["Fair Odds Avg"] = fair_odds_averages
-    df["Avg Edge Pct"] = edge_percentages
+    df["Expected Value"] = ev_list
     return df
 
 
@@ -195,16 +196,16 @@ def analyze_pinnacle_edge_bets(df: pd.DataFrame) -> pd.DataFrame:
     vigfree_pinnacle = f"Vigfree Pinnacle"
     if vigfree_pinnacle not in df.columns:
         return df
-
+    
+    ev_list = []
     pinnacle_fair_odds = []
-    edge_percentages = []
 
     for _, row in df.iterrows():
         pinnacle_probability = row[vigfree_pinnacle]
 
         if pd.isna(pinnacle_probability):
             pinnacle_fair_odds.append(None)
-            edge_percentages.append(None)
+            ev_list.append(None)
             continue
 
         # Calculate Pinnacle's fair odds
@@ -213,15 +214,16 @@ def analyze_pinnacle_edge_bets(df: pd.DataFrame) -> pd.DataFrame:
 
         # Calculate edge vs Pinnacle
         best_odds = row["Best Odds"]
-        edge = (best_odds / fair_odds) - 1
+        pinnacle_probability = max(min(pinnacle_probability, 0.9999), 0.0001)  # Clamp between 0.01% and 99.99%
+        ev = (pinnacle_probability * (best_odds - 1)) - ((1 - pinnacle_probability) * 1)
 
-        if edge > EDGE_THRESHOLD:
-            edge_percentages.append(round(edge * 100, 2))
+        if ev > EV_THRESHOLD:
+            ev_list.append(ev)
         else:
-            edge_percentages.append(None)
+            ev_list.append(None)
 
     df["Pinnacle Fair Odds"] = pinnacle_fair_odds
-    df["Pin Edge Pct"] = edge_percentages
+    df["Expected Value"] = ev_list
     return df
 
 
