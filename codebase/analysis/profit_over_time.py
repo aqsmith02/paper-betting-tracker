@@ -57,7 +57,7 @@ STRATEGIES = [
 KELLY_FRACTION = 0.75
 
 # EV threshold - only place bets with EV above this percentage
-MIN_EV_THRESHOLD = 0.05  # 2% minimum EV to place bet
+MIN_EV_THRESHOLD = 0.05  # 5% minimum EV to place bet
 
 # Z-score threshold for max bet
 ZSCORE_MAX_BET_THRESHOLD = 3.5
@@ -190,6 +190,8 @@ def calculate_cumulative_profit_kelly(df, odds_col, fair_col, ev_col=None, zscor
 def plot_profit_over_time(strategy, save_fig=False):
     """
     Create profit over time visualization for a strategy.
+    For Random strategy: shows flat betting
+    For others: shows Kelly betting only
     
     Args:
         strategy: BettingStrategy object
@@ -197,38 +199,46 @@ def plot_profit_over_time(strategy, save_fig=False):
     """
     df = pd.read_csv(strategy.path)
     
-    # Calculate profits for both methods
-    flat_profit = calculate_cumulative_profit_flat(df, strategy.odds_column)
+    # Get current date
+    current_date = datetime.now().strftime('%B %d, %Y')
     
-    fig, axes = plt.subplots(2, 1, figsize=(14, 10))
-    fig.suptitle(f'Profit Over Time: {strategy.name}', fontsize=16, fontweight='bold')
+    fig, ax = plt.subplots(1, 1, figsize=(14, 8))
     
-    # Plot 1: Flat Betting
-    axes[0].plot(flat_profit['Bet_Number'], flat_profit['Cumulative_Profit'], 
-                 linewidth=2, color='#2E86AB', label='Flat Betting')
-    axes[0].axhline(y=0, color='red', linestyle='--', linewidth=1, alpha=0.7)
-    axes[0].set_xlabel('Bet Number', fontsize=12)
-    axes[0].set_ylabel('Cumulative Profit ($)', fontsize=12)
-    axes[0].set_title('Flat Betting ($1 per bet)', fontsize=13, fontweight='bold')
-    axes[0].grid(True, alpha=0.3)
-    axes[0].legend(fontsize=11)
-    
-    # Add summary statistics
-    final_profit_flat = flat_profit['Cumulative_Profit'].iloc[-1]
-    total_bets_flat = len(flat_profit)
-    roi_flat = (final_profit_flat / total_bets_flat) * 100
-    
-    axes[0].text(0.02, 0.98, 
+    # Check if this is the Random strategy (no EV column)
+    if not strategy.ev_column:
+        # Plot flat betting for Random strategy
+        fig.suptitle(f'Flat Betting Profit Over Time: {strategy.name}', 
+                     fontsize=16, fontweight='bold')
+        
+        flat_profit = calculate_cumulative_profit_flat(df, strategy.odds_column)
+        
+        ax.plot(flat_profit['Bet_Number'], flat_profit['Cumulative_Profit'], 
+                linewidth=2.5, color='#2E86AB', label='Flat Betting')
+        ax.axhline(y=0, color='red', linestyle='--', linewidth=1.5, alpha=0.7, label='Break-even')
+        ax.set_xlabel('Bet Number', fontsize=13)
+        ax.set_ylabel('Cumulative Profit ($)', fontsize=13)
+        ax.set_title('Flat Betting ($1 per bet)', fontsize=14, fontweight='bold', pad=10)
+        ax.grid(True, alpha=0.3, linestyle='--')
+        ax.legend(fontsize=11)
+        
+        # Add summary statistics
+        final_profit_flat = flat_profit['Cumulative_Profit'].iloc[-1]
+        total_bets_flat = len(flat_profit)
+        roi_flat = (final_profit_flat / total_bets_flat) * 100
+        
+        ax.text(0.02, 0.98, 
                 f'Final Profit: ${final_profit_flat:.2f}\n'
                 f'Total Bets: {total_bets_flat}\n'
                 f'ROI: {roi_flat:.2f}%',
-                transform=axes[0].transAxes,
+                transform=ax.transAxes,
                 verticalalignment='top',
                 bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.8),
                 fontsize=10)
-    
-    # Plot 2: Kelly Betting (if applicable)
-    if strategy.ev_column:
+    else:
+        # Plot Kelly betting for other strategies
+        fig.suptitle(f'Kelly Criterion Profit Over Time: {strategy.name}', 
+                     fontsize=16, fontweight='bold')
+        
         kelly_profit = calculate_cumulative_profit_kelly(
             df, 
             strategy.odds_column, 
@@ -238,14 +248,14 @@ def plot_profit_over_time(strategy, save_fig=False):
         )
         
         if not kelly_profit.empty:
-            axes[1].plot(kelly_profit['Bet_Number'], kelly_profit['Cumulative_Profit'], 
-                        linewidth=2, color='#A23B72', label='Kelly Betting')
-            axes[1].axhline(y=0, color='red', linestyle='--', linewidth=1, alpha=0.7)
-            axes[1].set_xlabel('Bet Number', fontsize=12)
-            axes[1].set_ylabel('Cumulative Profit ($)', fontsize=12)
-            axes[1].set_title('Kelly Betting (Variable Bet Sizing)', fontsize=13, fontweight='bold')
-            axes[1].grid(True, alpha=0.3)
-            axes[1].legend(fontsize=11)
+            ax.plot(kelly_profit['Bet_Number'], kelly_profit['Cumulative_Profit'], 
+                    linewidth=2.5, color='#A23B72', label='Kelly Betting')
+            ax.axhline(y=0, color='red', linestyle='--', linewidth=1.5, alpha=0.7, label='Break-even')
+            ax.set_xlabel('Bet Number', fontsize=13)
+            ax.set_ylabel('Cumulative Profit ($)', fontsize=13)
+            ax.set_title('Kelly Betting (Variable Bet Sizing)', fontsize=14, fontweight='bold', pad=10)
+            ax.grid(True, alpha=0.3, linestyle='--')
+            ax.legend(fontsize=11)
             
             # Add summary statistics
             final_profit_kelly = kelly_profit['Cumulative_Profit'].iloc[-1]
@@ -253,33 +263,34 @@ def plot_profit_over_time(strategy, save_fig=False):
             total_bets_kelly = len(kelly_profit)
             roi_kelly = (final_profit_kelly / total_wagered_kelly) * 100
             
-            axes[1].text(0.02, 0.98, 
-                        f'Final Profit: ${final_profit_kelly:.2f}\n'
-                        f'Total Wagered: ${total_wagered_kelly:.2f}\n'
-                        f'Bets Placed: {total_bets_kelly}\n'
-                        f'ROI: {roi_kelly:.2f}%',
-                        transform=axes[1].transAxes,
-                        verticalalignment='top',
-                        bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.8),
-                        fontsize=10)
+            ax.text(0.02, 0.98, 
+                    f'Final Profit: ${final_profit_kelly:.2f}\n'
+                    f'Total Wagered: ${total_wagered_kelly:.2f}\n'
+                    f'Bets Placed: {total_bets_kelly}\n'
+                    f'ROI: {roi_kelly:.2f}%',
+                    transform=ax.transAxes,
+                    verticalalignment='top',
+                    bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.8),
+                    fontsize=10)
         else:
-            axes[1].text(0.5, 0.5, 'No Kelly bets placed (all filtered out)',
-                        horizontalalignment='center',
-                        verticalalignment='center',
-                        transform=axes[1].transAxes,
-                        fontsize=14)
-            axes[1].set_xlabel('Bet Number', fontsize=12)
-            axes[1].set_ylabel('Cumulative Profit ($)', fontsize=12)
-            axes[1].set_title('Kelly Betting (Variable Bet Sizing)', fontsize=13, fontweight='bold')
-    else:
-        axes[1].text(0.5, 0.5, 'Kelly betting not available (no EV column)',
+            ax.text(0.5, 0.5, 'No Kelly bets placed (all filtered out)',
                     horizontalalignment='center',
                     verticalalignment='center',
-                    transform=axes[1].transAxes,
+                    transform=ax.transAxes,
                     fontsize=14)
-        axes[1].set_xlabel('Bet Number', fontsize=12)
-        axes[1].set_ylabel('Cumulative Profit ($)', fontsize=12)
-        axes[1].set_title('Kelly Betting (Variable Bet Sizing)', fontsize=13, fontweight='bold')
+            ax.set_xlabel('Bet Number', fontsize=13)
+            ax.set_ylabel('Cumulative Profit ($)', fontsize=13)
+            ax.set_title('Kelly Betting (Variable Bet Sizing)', fontsize=14, fontweight='bold', pad=10)
+    
+    # Add date stamp in bottom right corner (LARGER)
+    ax.text(0.98, 0.02, 
+            f'Generated: {current_date}',
+            transform=ax.transAxes,
+            verticalalignment='bottom',
+            horizontalalignment='right',
+            bbox=dict(boxstyle='round', facecolor='white', alpha=0.8, edgecolor='gray', linewidth=1.5),
+            fontsize=14,
+            fontweight='bold')
     
     plt.tight_layout()
     
@@ -293,32 +304,21 @@ def plot_profit_over_time(strategy, save_fig=False):
 
 def plot_comparison_all_strategies(save_fig=False):
     """
-    Create a comparison plot showing all strategies on the same chart.
+    Create a comparison plot showing Kelly betting for all strategies.
     
     Args:
         save_fig: Whether to save the figure to disk
     """
-    fig, axes = plt.subplots(2, 1, figsize=(14, 10))
-    fig.suptitle('Profit Over Time: All Strategies Comparison', fontsize=16, fontweight='bold')
+    fig, ax = plt.subplots(1, 1, figsize=(14, 8))
+    
+    # Get current date
+    current_date = datetime.now().strftime('%B %d, %Y')
+    fig.suptitle(f'Kelly Criterion Profit Over Time - All Strategies', 
+                 fontsize=16, fontweight='bold')
     
     colors = ['#2E86AB', '#A23B72', '#F18F01', '#C73E1D', '#6A994E']
     
-    # Plot 1: Flat Betting Comparison
-    for i, strategy in enumerate(STRATEGIES):
-        df = pd.read_csv(strategy.path)
-        flat_profit = calculate_cumulative_profit_flat(df, strategy.odds_column)
-        
-        axes[0].plot(flat_profit['Bet_Number'], flat_profit['Cumulative_Profit'], 
-                    linewidth=2, color=colors[i % len(colors)], label=strategy.name, alpha=0.8)
-    
-    axes[0].axhline(y=0, color='red', linestyle='--', linewidth=1, alpha=0.7)
-    axes[0].set_xlabel('Bet Number', fontsize=12)
-    axes[0].set_ylabel('Cumulative Profit ($)', fontsize=12)
-    axes[0].set_title('Flat Betting Comparison', fontsize=13, fontweight='bold')
-    axes[0].grid(True, alpha=0.3)
-    axes[0].legend(fontsize=10)
-    
-    # Plot 2: Kelly Betting Comparison
+    # Plot Kelly Betting for all strategies
     for i, strategy in enumerate(STRATEGIES):
         if strategy.ev_column:
             df = pd.read_csv(strategy.path)
@@ -331,15 +331,25 @@ def plot_comparison_all_strategies(save_fig=False):
             )
             
             if not kelly_profit.empty:
-                axes[1].plot(kelly_profit['Bet_Number'], kelly_profit['Cumulative_Profit'], 
-                            linewidth=2, color=colors[i % len(colors)], label=strategy.name, alpha=0.8)
+                ax.plot(kelly_profit['Bet_Number'], kelly_profit['Cumulative_Profit'], 
+                        linewidth=2.5, color=colors[i % len(colors)], label=strategy.name, alpha=0.85)
     
-    axes[1].axhline(y=0, color='red', linestyle='--', linewidth=1, alpha=0.7)
-    axes[1].set_xlabel('Bet Number', fontsize=12)
-    axes[1].set_ylabel('Cumulative Profit ($)', fontsize=12)
-    axes[1].set_title('Kelly Betting Comparison', fontsize=13, fontweight='bold')
-    axes[1].grid(True, alpha=0.3)
-    axes[1].legend(fontsize=10)
+    ax.axhline(y=0, color='red', linestyle='--', linewidth=1.5, alpha=0.7, label='Break-even')
+    ax.set_xlabel('Bet Number', fontsize=13)
+    ax.set_ylabel('Cumulative Profit ($)', fontsize=13)
+    ax.set_title('Kelly Betting Comparison (Variable Bet Sizing)', fontsize=14, fontweight='bold', pad=10)
+    ax.grid(True, alpha=0.3, linestyle='--')
+    ax.legend(fontsize=11, loc='best')
+    
+    # Add date stamp in bottom right corner (LARGER)
+    ax.text(0.98, 0.02, 
+            f'Generated: {current_date}',
+            transform=ax.transAxes,
+            verticalalignment='bottom',
+            horizontalalignment='right',
+            bbox=dict(boxstyle='round', facecolor='white', alpha=0.8, edgecolor='gray', linewidth=1.5),
+            fontsize=14,
+            fontweight='bold')
     
     plt.tight_layout()
     
@@ -369,12 +379,13 @@ def main():
     print("=" * 70)
     
     # Option 1: Plot each strategy individually
+    # Kelly betting for strategies with EV, flat betting for Random
     for strategy in STRATEGIES:
         print(f"\nPlotting: {strategy.name}")
         plot_profit_over_time(strategy, save_fig=True)
     
-    # Option 2: Plot all strategies together for comparison
-    print("\nPlotting comparison of all strategies...")
+    # Option 2: Plot all strategies together for comparison (Kelly only)
+    print("\nPlotting Kelly betting comparison of all strategies...")
     plot_comparison_all_strategies(save_fig=True)
     
     print("\n" + "=" * 70)
