@@ -119,9 +119,9 @@ def clean_old_pending_results(
     return filtered_df, filtered_full_df
 
 
-def process_file_pair(bet_filename: str, full_filename: str) -> None:
+def process_files(bet_filename: str, full_filename: str) -> None:
     """
-    Process a single pair of bet and full files through the complete results pipeline.
+    Process files through the complete results pipeline.
 
     Args:
         bet_filename (str): Name of the betting summary CSV file.
@@ -168,7 +168,7 @@ def main() -> None:
 
     for i, (bet_filename, full_filename) in enumerate(FILE_CONFIGS):
         try:
-            process_file_pair(bet_filename, full_filename)
+            process_files(bet_filename, full_filename)
 
             # Sleep between files (except after the last one)
             if i < len(FILE_CONFIGS) - 1:

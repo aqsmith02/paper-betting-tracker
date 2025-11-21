@@ -14,15 +14,10 @@ SLEEP_DURATION = 60
 
 # File names
 FILE_CONFIGS = [
-    ("master_avg_bets.csv", "master_avg_full.csv"),
     ("master_nc_avg_bets.csv", "master_nc_avg_full.csv"),
-    ("master_mod_zscore_bets.csv", "master_mod_zscore_full.csv"),
     ("master_nc_mod_zscore_bets.csv", "master_nc_mod_zscore_full.csv"),
-    ("master_pin_bets.csv", "master_pin_full.csv"),
     ("master_nc_pin_bets.csv", "master_nc_pin_full.csv"),
-    ("master_zscore_bets.csv", "master_zscore_full.csv"),
     ("master_nc_zscore_bets.csv", "master_nc_zscore_full.csv"),
-    ("master_random_bets.csv", "master_random_full.csv"),
     ("master_nc_random_bets.csv", "master_nc_random_full.csv"),
 ]
 
