@@ -3,9 +3,9 @@
 This project tracks sports bets and results using Python scripts and CSV files. It fetches odds from The-Odds-API, analyzes profitable bets using several strategies, and logs results for further analysis. Currently, only h2h bets are considered, and only North Carolina books are "placed" on. All sports leagues provided by The-Odds-API are considered for betting. This project is inspired by the following paper published by Kaunitz, Zhong, and Kreiner: https://arxiv.org/vc/arxiv/papers/1710/1710.02824v1.pdf.
 
 ## Results
-![Chart](codebase/analysis/profit_over_time_average.png)
 ![Chart](codebase/analysis/profit_over_time_average_with_modified_zscore_constraint.png)
 ![Chart](codebase/analysis/profit_over_time_pinnacle.png)
+![Chart](codebase/analysis/profit_over_time_average.png)
 ![Chart](codebase/analysis/profit_over_time_average_with_zscore_constraint.png)
 ![Chart](codebase/analysis/profit_over_time_random_strategy.png)
 
