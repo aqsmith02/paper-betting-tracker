@@ -6,11 +6,6 @@ Centralized variables for results folder.
 Author: Andrew Smith
 """
 
-from zoneinfo import ZoneInfo
-
-# Local timezone for measuring how long it has been since each bet
-TIMEZONE = ZoneInfo("America/New_York")
-
 # How many days back in The-Odds_API to look back for results (max of 3 days)
 DAYS_CUTOFF = 3
 

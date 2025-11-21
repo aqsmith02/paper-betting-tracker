@@ -10,8 +10,7 @@ Date: July 2025
 
 import requests
 import pandas as pd
-from datetime import datetime, timedelta
-from zoneinfo import ZoneInfo
+from datetime import datetime, timedelta, timezone
 from typing import Any, List, Dict
 from codebase.constants import THEODDS_API_KEY
 from .results_configs import PENDING_RESULTS
@@ -22,12 +21,12 @@ def _start_date(ts: Any) -> str:
     Convert a timestamp / datetime-like / ISO string to "YYYY-MM-DD".
 
     Args:
-        ts (Any): Timestamp to convert to date (adjusted 4 hours forward from UTC to EDT).
+        ts (Any): Timestamp to convert to date (UTC).
 
     Returns:
         str: Date string in YYYY-MM-DD format.
     """
-    dt = pd.to_datetime(ts) + pd.Timedelta(hours=4)
+    dt = pd.to_datetime(ts)
     return dt.strftime("%Y-%m-%d")
 
 
@@ -55,17 +54,14 @@ def _time_since_start(df: pd.DataFrame, thresh: float) -> pd.DataFrame:
     Returns:
         pd.DataFrame: Filtered DataFrame containing only games that started more than thresh hours ago.
     """
-    # Get the current time
-    current_time = datetime.now(ZoneInfo("America/New_York")).strftime(
-        "%Y-%m-%d %H:%M:%S"
-    )
-    current_time_obj = datetime.strptime(current_time, "%Y-%m-%d %H:%M:%S")
+    # Get the current time in UTC
+    current_time = datetime.now(timezone.utc)
 
     # Convert "Start Time" column to datetime objects
-    df["Start Time"] = pd.to_datetime(df["Start Time"], format="%Y-%m-%d %H:%M:%S")
+    df["Start Time"] = pd.to_datetime(df["Start Time"])
 
     # Create conditions for removal
-    cutoff = current_time_obj - timedelta(hours=thresh)
+    cutoff = current_time - timedelta(hours=thresh)
 
     # Filter out games that started less than threshold hours ago
     mask = df["Start Time"] <= cutoff

@@ -10,13 +10,12 @@ Date: July 2025
 
 import pandas as pd
 import time
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Tuple
 from .theodds_results import get_finished_games_from_theodds, map_league_to_key
 from .sportsdb_results import get_finished_games_from_thesportsdb
 from .results_configs import (
     PENDING_RESULTS,
-    TIMEZONE,
     DAYS_CUTOFF,
     FILE_CONFIGS,
     SLEEP_DURATION,
@@ -90,21 +89,15 @@ def clean_old_pending_results(
     Returns:
         Tuple[pd.DataFrame, pd.DataFrame]: Tuple of cleaned DataFrames (filtered_df, filtered_full_df).
     """
-    current_time = datetime.now(TIMEZONE)
+    current_time = datetime.now(timezone.utc)
     cutoff_time = current_time - timedelta(days=DAYS_CUTOFF)
 
     # Store original start time column
     original_start_time = df["Start Time"].copy()
 
-    # Convert to datetime with timezone
+    # Convert to datetime (already in UTC from storage)
     df_temp = df.copy()
-    df_temp["Start Time"] = pd.to_datetime(
-        df_temp["Start Time"], format="%Y-%m-%d %H:%M:%S"
-    )
-    # Fix: Handle ambiguous times during DST transitions
-    df_temp["Start Time"] = df_temp["Start Time"].dt.tz_localize(
-        TIMEZONE, ambiguous='NaT', nonexistent='shift_forward'
-    )
+    df_temp["Start Time"] = pd.to_datetime(df_temp["Start Time"])
 
     # Create filter mask - keep rows that are either recent OR have valid results
     mask = ~(
