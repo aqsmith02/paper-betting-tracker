@@ -103,34 +103,34 @@ class TestBetFileManagerGetColumns(unittest.TestCase):
         """Clean up temporary directory."""
         shutil.rmtree(self.test_dir)
 
-    def test_get_strategy_columns_master_avg(self):
-        """Test getting strategy columns for master_avg."""
-        result = self.manager._get_columns("master_avg_bets.csv", "strategy")
-        self.assertEqual(result, ["Fair Odds Avg", "Avg Edge Pct"])
+    def test_get_strategy_columns_master_nc_avg(self):
+        """Test getting strategy columns for master_nc_avg."""
+        result = self.manager._get_columns("master_nc_avg_bets.csv", "strategy")
+        self.assertEqual(result, ["Avg Edge Pct", "Fair Odds Avg"])
 
-    def test_get_strategy_columns_master_zscore(self):
-        """Test getting strategy columns for master_zscore."""
-        result = self.manager._get_columns("master_zscore_full.csv", "strategy")
+    def test_get_strategy_columns_master_nc_zscore(self):
+        """Test getting strategy columns for master_nc_zscore."""
+        result = self.manager._get_columns("master_nc_zscore_full.csv", "strategy")
         self.assertEqual(result, ["Z Score", "Avg Edge Pct"])
 
-    def test_get_strategy_columns_master_pin(self):
-        """Test getting strategy columns for master_pin."""
-        result = self.manager._get_columns("master_pin.csv", "strategy")
+    def test_get_strategy_columns_master_nc_pin(self):
+        """Test getting strategy columns for master_nc_pin."""
+        result = self.manager._get_columns("master_nc_pin.csv", "strategy")
         self.assertEqual(result, ["Pinnacle Fair Odds", "Pin Edge Pct"])
 
-    def test_get_strategy_columns_master_random(self):
-        """Test getting strategy columns for master_random."""
-        result = self.manager._get_columns("master_random_bets.csv", "strategy")
+    def test_get_strategy_columns_master_nc_random(self):
+        """Test getting strategy columns for master_nc_random."""
+        result = self.manager._get_columns("master_nc_random_bets.csv", "strategy")
         self.assertEqual(result, ["Random Bet Odds"])
 
     def test_get_strategy_columns_with_full_suffix(self):
         """Test getting columns with _full suffix."""
-        result = self.manager._get_columns("master_avg_full.csv", "strategy")
-        self.assertEqual(result, ["Fair Odds Avg", "Avg Edge Pct"])
+        result = self.manager._get_columns("master_nc_avg_full.csv", "strategy")
+        self.assertEqual(result, ["Avg Edge Pct", "Fair Odds Avg"])
 
     def test_get_strategy_columns_with_bets_suffix(self):
         """Test getting columns with _bets suffix."""
-        result = self.manager._get_columns("master_mod_zscore_bets.csv", "strategy")
+        result = self.manager._get_columns("master_nc_mod_zscore_bets.csv", "strategy")
         self.assertEqual(result, ["Modified Z Score", "Avg Edge Pct"])
 
     def test_get_columns_nonexistent_strategy(self):
@@ -163,7 +163,7 @@ class TestBetFileManagerAppendUniqueBets(unittest.TestCase):
                 "Match": ["Team A vs Team B", "Team C vs Team D"],
                 "League": ["Premier League", "La Liga"],
                 "Team": ["Team A", "Team C"],
-                "Start Time": ["2025-11-01 15:00:00", "2025-11-01 18:00:00"],
+                "Start Time": ["2025-11-01T15:00:00Z", "2025-11-01T18:00:00Z"],
                 "Best Bookmaker": ["Bet365", "William Hill"],
                 "Best Odds": [2.5, 3.0],
                 "Result": ["Not Found", "Not Found"],
@@ -177,7 +177,7 @@ class TestBetFileManagerAppendUniqueBets(unittest.TestCase):
     @patch("codebase.find_bets.file_management.datetime")
     def test_append_to_new_file(self, mock_datetime):
         """Test appending data to a new file."""
-        mock_datetime.now.return_value.strftime.return_value = "2025-11-01 12:00:00"
+        mock_datetime.now.return_value.strftime.return_value = "2025-11-01T12:00:00Z"
 
         filename = "test_bets.csv"
         self.manager._append_unique_bets(self.sample_data, filename)
@@ -192,7 +192,7 @@ class TestBetFileManagerAppendUniqueBets(unittest.TestCase):
     @patch("codebase.find_bets.file_management.datetime")
     def test_append_unique_bets_to_existing_file(self, mock_datetime):
         """Test appending unique bets to existing file."""
-        mock_datetime.now.return_value.strftime.return_value = "2025-11-01 12:00:00"
+        mock_datetime.now.return_value.strftime.return_value = "2025-11-01T12:00:00Z"
 
         filename = "test_bets.csv"
         # Create initial file
@@ -204,7 +204,7 @@ class TestBetFileManagerAppendUniqueBets(unittest.TestCase):
                 "Match": ["Team A vs Team B", "Team E vs Team F"],
                 "League": ["Premier League", "Bundesliga"],
                 "Team": ["Team A", "Team E"],
-                "Start Time": ["2025-11-01 15:00:00", "2025-11-02 20:00:00"],
+                "Start Time": ["2025-11-01T15:00:00Z", "2025-11-02T20:00:00Z"],
                 "Best Bookmaker": ["Bet365", "Betway"],
                 "Best Odds": [2.5, 1.8],
                 "Result": ["Win", "Win"],
@@ -219,7 +219,7 @@ class TestBetFileManagerAppendUniqueBets(unittest.TestCase):
     @patch("codebase.find_bets.file_management.datetime")
     def test_append_all_duplicates(self, mock_datetime):
         """Test appending when all bets are duplicates."""
-        mock_datetime.now.return_value.strftime.return_value = "2025-11-01 12:00:00"
+        mock_datetime.now.return_value.strftime.return_value = "2025-11-01T12:00:00Z"
 
         filename = "test_bets.csv"
         self.manager._append_unique_bets(self.sample_data, filename)
@@ -243,7 +243,7 @@ class TestBetFileManagerAppendUniqueBets(unittest.TestCase):
     @patch("codebase.find_bets.file_management.datetime")
     def test_duplicate_detection_different_date(self, mock_datetime):
         """Test that bets on different dates are not considered duplicates."""
-        mock_datetime.now.return_value.strftime.return_value = "2025-11-01 12:00:00"
+        mock_datetime.now.return_value.strftime.return_value = "2025-11-01T12:00:00Z"
 
         filename = "test_bets.csv"
         self.manager._append_unique_bets(self.sample_data, filename)
@@ -254,7 +254,7 @@ class TestBetFileManagerAppendUniqueBets(unittest.TestCase):
                 "Match": ["Team A vs Team B"],
                 "League": ["Premier League"],
                 "Team": ["Team A"],
-                "Start Time": ["2025-11-02 15:00:00"],
+                "Start Time": ["2025-11-02T15:00:00Z"],
                 "Best Bookmaker": ["Bet365"],
                 "Best Odds": [2.5],
                 "Result": ["Win"],
@@ -286,7 +286,7 @@ class TestBetFileManagerAlignColumnSchemas(unittest.TestCase):
         new_df = pd.DataFrame(columns=columns)
 
         result = self.manager._align_column_schemas(
-            existing_df, new_df, "master_avg_bets.csv"
+            existing_df, new_df, "master_nc_avg_bets.csv"
         )
 
         self.assertIsInstance(result, list)
@@ -298,7 +298,7 @@ class TestBetFileManagerAlignColumnSchemas(unittest.TestCase):
         new_df = pd.DataFrame(columns=["Match", "Team", "Best Odds", "New Column"])
 
         result = self.manager._align_column_schemas(
-            existing_df, new_df, "master_avg_bets.csv"
+            existing_df, new_df, "master_nc_avg_bets.csv"
         )
 
         self.assertIn("New Column", result)
@@ -307,19 +307,19 @@ class TestBetFileManagerAlignColumnSchemas(unittest.TestCase):
     def test_column_ordering_strategy_columns_at_end(self):
         """Test that strategy columns are placed at end."""
         existing_df = pd.DataFrame(
-            columns=["Match", "Team", "Fair Odds Avg", "Avg Edge Pct", "Best Odds"]
+            columns=["Match", "Team", "Avg Edge Pct", "Fair Odds Avg", "Best Odds"]
         )
         new_df = pd.DataFrame(
-            columns=["Match", "Team", "League", "Fair Odds Avg", "Avg Edge Pct"]
+            columns=["Match", "Team", "League", "Avg Edge Pct", "Fair Odds Avg"]
         )
 
         result = self.manager._align_column_schemas(
-            existing_df, new_df, "master_avg_bets.csv"
+            existing_df, new_df, "master_nc_avg_bets.csv"
         )
 
         # Strategy columns should be near the end
         strategy_indices = [
-            result.index(col) for col in ["Fair Odds Avg", "Avg Edge Pct"]
+            result.index(col) for col in ["Avg Edge Pct", "Fair Odds Avg"]
         ]
         non_strategy_indices = [
             result.index(col) for col in ["Match", "Team", "League"]
@@ -333,7 +333,7 @@ class TestBetFileManagerAlignColumnSchemas(unittest.TestCase):
             "Match",
             "Team",
             "League",
-            "Fair Odds Avg",
+            "Avg Edge Pct",
             "Best Odds",
             "Best Bookmaker",
             "Result",
@@ -343,7 +343,7 @@ class TestBetFileManagerAlignColumnSchemas(unittest.TestCase):
         new_df = pd.DataFrame(columns=columns)
 
         result = self.manager._align_column_schemas(
-            existing_df, new_df, "master_avg_bets.csv"
+            existing_df, new_df, "master_nc_avg_bets.csv"
         )
 
         # Check that specific columns are at the end
@@ -366,9 +366,9 @@ class TestBetFileManagerSaveBestBetsOnly(unittest.TestCase):
                 "Match": ["Team A vs Team B", "Team A vs Team B", "Team C vs Team D"],
                 "Team": ["Team A", "Team B", "Team C"],
                 "Start Time": [
-                    "2025-11-01 15:00:00",
-                    "2025-11-01 15:00:00",
-                    "2025-11-01 18:00:00",
+                    "2025-11-01T15:00:00Z",
+                    "2025-11-01T15:00:00Z",
+                    "2025-11-01T18:00:00Z",
                 ],
                 "Avg Edge Pct": [5.2, 3.8, 4.5],
                 "Best Bookmaker": ["Bet365", "William Hill", "Betway"],
@@ -383,7 +383,7 @@ class TestBetFileManagerSaveBestBetsOnly(unittest.TestCase):
     @patch("codebase.find_bets.file_management.datetime")
     def test_save_best_bet_per_match(self, mock_datetime):
         """Test that only the best bet per match is saved."""
-        mock_datetime.now.return_value.strftime.return_value = "2025-11-01 12:00:00"
+        mock_datetime.now.return_value.strftime.return_value = "2025-11-01T12:00:00Z"
 
         result = self.manager.save_best_bets_only(
             self.sample_data, "test_bets.csv", "Avg Edge Pct"
@@ -397,7 +397,7 @@ class TestBetFileManagerSaveBestBetsOnly(unittest.TestCase):
     @patch("codebase.find_bets.file_management.datetime")
     def test_save_best_bets_creates_file(self, mock_datetime):
         """Test that file is created when saving best bets."""
-        mock_datetime.now.return_value.strftime.return_value = "2025-11-01 12:00:00"
+        mock_datetime.now.return_value.strftime.return_value = "2025-11-01T12:00:00Z"
 
         filename = "test_bets.csv"
         self.manager.save_best_bets_only(self.sample_data, filename, "Avg Edge Pct")
@@ -417,13 +417,13 @@ class TestBetFileManagerSaveBestBetsOnly(unittest.TestCase):
     @patch("codebase.find_bets.file_management.datetime")
     def test_descending_sort_for_best_bet(self, mock_datetime):
         """Test that bets are sorted in descending order to get highest score."""
-        mock_datetime.now.return_value.strftime.return_value = "2025-11-01 12:00:00"
+        mock_datetime.now.return_value.strftime.return_value = "2025-11-01T12:00:00Z"
 
         data = pd.DataFrame(
             {
                 "Match": ["Team A vs Team B", "Team A vs Team B"],
                 "Team": ["Team A", "Team B"],
-                "Start Time": ["2025-11-01 15:00:00", "2025-11-01 15:00:00"],
+                "Start Time": ["2025-11-01T15:00:00Z", "2025-11-01T15:00:00Z"],
                 "Z Score": [2.5, 3.8],
                 "Best Odds": [2.5, 3.0],
             }
@@ -447,7 +447,7 @@ class TestBetFileManagerSaveFullBettingData(unittest.TestCase):
             {
                 "Match": ["Team A vs Team B", "Team C vs Team D"],
                 "Team": ["Team A", "Team C"],
-                "Start Time": ["2025-11-01 15:00:00", "2025-11-01 18:00:00"],
+                "Start Time": ["2025-11-01T15:00:00Z", "2025-11-01T18:00:00Z"],
                 "League": ["Premier League", "La Liga"],
                 "Vigfree Pinnacle": [2.4, 2.9],
                 "Vigfree Bet365": [2.5, 3.0],
@@ -461,7 +461,7 @@ class TestBetFileManagerSaveFullBettingData(unittest.TestCase):
             {
                 "Match": ["Team A vs Team B"],
                 "Team": ["Team A"],
-                "Start Time": ["2025-11-01 15:00:00"],
+                "Start Time": ["2025-11-01T15:00:00Z"],
                 "Avg Edge Pct": [5.2],
             }
         )
@@ -473,7 +473,7 @@ class TestBetFileManagerSaveFullBettingData(unittest.TestCase):
     @patch("codebase.find_bets.file_management.datetime")
     def test_save_full_data_merges_correctly(self, mock_datetime):
         """Test that full data is merged correctly with filtered summary."""
-        mock_datetime.now.return_value.strftime.return_value = "2025-11-01 12:00:00"
+        mock_datetime.now.return_value.strftime.return_value = "2025-11-01T12:00:00Z"
 
         filename = "test_full.csv"
         self.manager.save_full_betting_data(
@@ -488,7 +488,7 @@ class TestBetFileManagerSaveFullBettingData(unittest.TestCase):
     @patch("codebase.find_bets.file_management.datetime")
     def test_save_full_data_removes_vigfree_columns(self, mock_datetime):
         """Test that Vigfree columns are removed from output."""
-        mock_datetime.now.return_value.strftime.return_value = "2025-11-01 12:00:00"
+        mock_datetime.now.return_value.strftime.return_value = "2025-11-01T12:00:00Z"
 
         filename = "test_full.csv"
         self.manager.save_full_betting_data(
@@ -512,7 +512,7 @@ class TestBetFileManagerSaveFullBettingData(unittest.TestCase):
     @patch("codebase.find_bets.file_management.datetime")
     def test_save_full_data_preserves_all_source_columns(self, mock_datetime):
         """Test that all non-vigfree columns from source are preserved."""
-        mock_datetime.now.return_value.strftime.return_value = "2025-11-01 12:00:00"
+        mock_datetime.now.return_value.strftime.return_value = "2025-11-01T12:00:00Z"
 
         filename = "test_full.csv"
         self.manager.save_full_betting_data(
@@ -549,7 +549,7 @@ class TestBetFileManagerIntegration(unittest.TestCase):
     @patch("codebase.find_bets.file_management.datetime")
     def test_full_workflow(self, mock_datetime):
         """Test complete workflow: save best bets and full data."""
-        mock_datetime.now.return_value.strftime.return_value = "2025-11-01 12:00:00"
+        mock_datetime.now.return_value.strftime.return_value = "2025-11-01T12:00:00Z"
 
         # Create sample data
         full_data = pd.DataFrame(
@@ -557,9 +557,9 @@ class TestBetFileManagerIntegration(unittest.TestCase):
                 "Match": ["Team A vs Team B", "Team A vs Team B", "Team C vs Team D"],
                 "Team": ["Team A", "Team B", "Team C"],
                 "Start Time": [
-                    "2025-11-01 15:00:00",
-                    "2025-11-01 15:00:00",
-                    "2025-11-01 18:00:00",
+                    "2025-11-01T15:00:00Z",
+                    "2025-11-01T15:00:00Z",
+                    "2025-11-01T18:00:00Z",
                 ],
                 "League": ["Premier League", "Premier League", "La Liga"],
                 "Avg Edge Pct": [5.2, 3.8, 4.5],
@@ -571,19 +571,19 @@ class TestBetFileManagerIntegration(unittest.TestCase):
 
         # Save best bets
         best_bets = self.manager.save_best_bets_only(
-            full_data, "master_avg_bets.csv", "Avg Edge Pct"
+            full_data, "master_nc_avg_bets.csv", "Avg Edge Pct"
         )
 
         # Save full data
-        self.manager.save_full_betting_data(full_data, best_bets, "master_avg_full.csv")
+        self.manager.save_full_betting_data(full_data, best_bets, "master_nc_avg_full.csv")
 
         # Verify both files exist
-        self.assertTrue((Path(self.test_dir) / "master_avg_bets.csv").exists())
-        self.assertTrue((Path(self.test_dir) / "master_avg_full.csv").exists())
+        self.assertTrue((Path(self.test_dir) / "master_nc_avg_bets.csv").exists())
+        self.assertTrue((Path(self.test_dir) / "master_nc_avg_full.csv").exists())
 
         # Verify content
-        bets_df = pd.read_csv(Path(self.test_dir) / "master_avg_bets.csv")
-        full_df = pd.read_csv(Path(self.test_dir) / "master_avg_full.csv")
+        bets_df = pd.read_csv(Path(self.test_dir) / "master_nc_avg_bets.csv")
+        full_df = pd.read_csv(Path(self.test_dir) / "master_nc_avg_full.csv")
 
         self.assertEqual(len(bets_df), 2)  # 2 unique matches
         self.assertEqual(len(full_df), 2)  # Same 2 matches in full data
