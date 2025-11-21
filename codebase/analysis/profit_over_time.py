@@ -19,14 +19,14 @@ class BettingStrategy:
 
 STRATEGIES = [
     BettingStrategy(
-        "Average NC",
+        "Average",
         "codebase/data/master_nc_avg_full.csv",
         "Best Odds",
         "Fair Odds Avg",
         "Expected Value",
     ),
     BettingStrategy(
-        "Modified Zscore NC",
+        "Average With Modified Zscore Constraint",
         "codebase/data/master_nc_mod_zscore_full.csv",
         "Best Odds",
         "Fair Odds Avg",
@@ -34,14 +34,14 @@ STRATEGIES = [
         "Modified Z Score",
     ),
     BettingStrategy(
-        "Pinnacle NC",
+        "Pinnacle",
         "codebase/data/master_nc_pin_full.csv",
         "Best Odds",
         "Pinnacle Fair Odds",
         "Expected Value",
     ),
     BettingStrategy(
-        "Zscore NC",
+        "Average With Zscore Constraint",
         "codebase/data/master_nc_zscore_full.csv",
         "Best Odds",
         "Fair Odds Avg",
@@ -49,7 +49,7 @@ STRATEGIES = [
         "Z Score",
     ),
     BettingStrategy(
-        "Random NC", "codebase/data/master_nc_random_full.csv", "Best Odds"
+        "Random Strategy", "codebase/data/master_nc_random_full.csv", "Best Odds"
     ),
 ]
 
@@ -216,8 +216,7 @@ def plot_profit_over_time(strategy, save_fig=False):
                 linewidth=2.5, color='#2E86AB', label='Flat Betting')
         ax.axhline(y=0, color='red', linestyle='--', linewidth=1.5, alpha=0.7, label='Break-even')
         ax.set_xlabel('Bet Number', fontsize=13)
-        ax.set_ylabel('Cumulative Profit ($)', fontsize=13)
-        ax.set_title('Flat Betting ($1 per bet)', fontsize=14, fontweight='bold', pad=10)
+        ax.set_ylabel('Cumulative Profit (Units)', fontsize=13)
         ax.grid(True, alpha=0.3, linestyle='--')
         ax.legend(fontsize=11)
         
@@ -227,7 +226,7 @@ def plot_profit_over_time(strategy, save_fig=False):
         roi_flat = (final_profit_flat / total_bets_flat) * 100
         
         ax.text(0.02, 0.98, 
-                f'Final Profit: ${final_profit_flat:.2f}\n'
+                f'Final Profit: {final_profit_flat:.2f} units\n'
                 f'Total Bets: {total_bets_flat}\n'
                 f'ROI: {roi_flat:.2f}%',
                 transform=ax.transAxes,
@@ -236,7 +235,7 @@ def plot_profit_over_time(strategy, save_fig=False):
                 fontsize=10)
     else:
         # Plot Kelly betting for other strategies
-        fig.suptitle(f'Kelly Criterion Profit Over Time: {strategy.name}', 
+        fig.suptitle(f'3/4 Kelly Criterion Profit Over Time: {strategy.name}', 
                      fontsize=16, fontweight='bold')
         
         kelly_profit = calculate_cumulative_profit_kelly(
@@ -252,8 +251,7 @@ def plot_profit_over_time(strategy, save_fig=False):
                     linewidth=2.5, color='#A23B72', label='Kelly Betting')
             ax.axhline(y=0, color='red', linestyle='--', linewidth=1.5, alpha=0.7, label='Break-even')
             ax.set_xlabel('Bet Number', fontsize=13)
-            ax.set_ylabel('Cumulative Profit ($)', fontsize=13)
-            ax.set_title('Kelly Betting (Variable Bet Sizing)', fontsize=14, fontweight='bold', pad=10)
+            ax.set_ylabel('Cumulative Profit (Units)', fontsize=13)
             ax.grid(True, alpha=0.3, linestyle='--')
             ax.legend(fontsize=11)
             
@@ -264,8 +262,8 @@ def plot_profit_over_time(strategy, save_fig=False):
             roi_kelly = (final_profit_kelly / total_wagered_kelly) * 100
             
             ax.text(0.02, 0.98, 
-                    f'Final Profit: ${final_profit_kelly:.2f}\n'
-                    f'Total Wagered: ${total_wagered_kelly:.2f}\n'
+                    f'Final Profit: {final_profit_kelly:.2f} units\n'
+                    f'Total Wagered: {total_wagered_kelly:.2f} units\n'
                     f'Bets Placed: {total_bets_kelly}\n'
                     f'ROI: {roi_kelly:.2f}%',
                     transform=ax.transAxes,
@@ -279,8 +277,7 @@ def plot_profit_over_time(strategy, save_fig=False):
                     transform=ax.transAxes,
                     fontsize=14)
             ax.set_xlabel('Bet Number', fontsize=13)
-            ax.set_ylabel('Cumulative Profit ($)', fontsize=13)
-            ax.set_title('Kelly Betting (Variable Bet Sizing)', fontsize=14, fontweight='bold', pad=10)
+            ax.set_ylabel('Cumulative Profit (Units)', fontsize=13)
     
     # Add date stamp in bottom right corner (LARGER)
     ax.text(0.98, 0.02, 
@@ -313,7 +310,7 @@ def plot_comparison_all_strategies(save_fig=False):
     
     # Get current date
     current_date = datetime.now().strftime('%B %d, %Y')
-    fig.suptitle(f'Kelly Criterion Profit Over Time - All Strategies', 
+    fig.suptitle(f'3/4 Kelly Criterion Profit Over Time - All Strategies', 
                  fontsize=16, fontweight='bold')
     
     colors = ['#2E86AB', '#A23B72', '#F18F01', '#C73E1D', '#6A994E']
@@ -336,8 +333,7 @@ def plot_comparison_all_strategies(save_fig=False):
     
     ax.axhline(y=0, color='red', linestyle='--', linewidth=1.5, alpha=0.7, label='Break-even')
     ax.set_xlabel('Bet Number', fontsize=13)
-    ax.set_ylabel('Cumulative Profit ($)', fontsize=13)
-    ax.set_title('Kelly Betting Comparison (Variable Bet Sizing)', fontsize=14, fontweight='bold', pad=10)
+    ax.set_ylabel('Cumulative Profit (Units)', fontsize=13)
     ax.grid(True, alpha=0.3, linestyle='--')
     ax.legend(fontsize=11, loc='best')
     
