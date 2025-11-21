@@ -54,6 +54,10 @@ def _time_since_start(df: pd.DataFrame, thresh: float) -> pd.DataFrame:
     Returns:
         pd.DataFrame: Filtered DataFrame containing only games that started more than thresh hours ago.
     """
+    # Handle empty DataFrame
+    if df.empty:
+        return df
+    
     # Get the current time in UTC
     current_time = datetime.now(timezone.utc)
 
