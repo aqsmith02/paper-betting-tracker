@@ -1,238 +1,239 @@
-Match,League,Team,Start Time,Outlier Book,Outlier Odds,Modified Z Score,Result,Scrape Time,Expected Value
-Pittsburgh Panthers @ Florida State Seminoles,NCAAF,Pittsburgh Panthers,2025-10-11 16:00:00,FanDuel,4.5,2.28,Pittsburgh Panthers,2025-10-11T14:59:03Z,0.0344827586206898
-TCU Horned Frogs @ Kansas State Wildcats,NCAAF,Kansas State Wildcats,2025-10-11 16:32:00,Caesars,1.59,2.15,Kansas State Wildcats,2025-10-11T21:59:15Z,0.2045454545454545
-Iowa State Cyclones @ Colorado Buffaloes,NCAAF,Iowa State Cyclones,2025-10-11 16:36:00,Caesars,2.95,3.19,Colorado Buffaloes,2025-10-11T22:27:54Z,0.1614173228346456
-Georgia Bulldogs @ Auburn Tigers,NCAAF,Auburn Tigers,2025-10-11 19:30:00,FanDuel,9.0,3.95,Georgia Bulldogs,2025-10-12T03:09:23Z,0.2465373961218837
-Denver Broncos @ New York Jets,NFL,New York Jets,2025-10-12 13:30:00,DraftKings,4.4,3.82,Denver Broncos,2025-10-12T11:59:14Z,0.0352941176470589
-Arizona Cardinals @ Indianapolis Colts,NFL,Arizona Cardinals,2025-10-12 17:01:00,BetMGM,4.75,2.36,Indianapolis Colts,2025-10-12T16:59:27Z,0.0348583877995644
-Cincinnati Bengals @ Green Bay Packers,NFL,Cincinnati Bengals,2025-10-12 20:28:00,FanDuel,12.0,2.01,Green Bay Packers,2025-10-12T22:58:57Z,0.6973125884016973
-Seattle Mariners @ Toronto Blue Jays,MLB,Toronto Blue Jays,2025-10-13 00:04:45,Caesars,3.6,4.11,Seattle Mariners,2025-10-13T02:08:26Z,0.2857142857142858
-Detroit Lions @ Kansas City Chiefs,NFL,Detroit Lions,2025-10-13 00:22:43,FanDuel,6.4,2.53,Kansas City Chiefs,2025-10-13T02:08:26Z,0.4611872146118724
-Vegas Golden Knights @ Calgary Flames,NHL,Calgary Flames,2025-10-15 01:08:12,Caesars,19.0,3.51,Vegas Golden Knights,2025-10-15T03:43:51Z,0.6033755274261602
-Pittsburgh Penguins @ Anaheim Ducks,NHL,Pittsburgh Penguins,2025-10-15 02:44:38,DraftKings,3.8,2.65,Anaheim Ducks,2025-10-15T03:58:54Z,0.4393939393939393
-Florida Panthers @ New Jersey Devils,NHL,New Jersey Devils,2025-10-16 23:11:50,Caesars,2.45,4.27,New Jersey Devils,2025-10-16T23:35:19Z,0.1187214611872147
-Nashville Predators @ Montréal Canadiens,NHL,Nashville Predators,2025-10-16 23:08:17,Caesars,2.35,2.7,Montreal Canadiens,2025-10-16T23:35:19Z,0.030701754385965
-Winnipeg Jets @ Philadelphia Flyers,NHL,Winnipeg Jets,2025-10-16 23:16:05,Caesars,1.25,2.78,Winnipeg Jets,2025-10-17T00:44:58Z,0.0964912280701755
-Toronto Blue Jays @ Seattle Mariners,MLB,Toronto Blue Jays,2025-10-17 00:34:00,FanDuel,2.62,2.16,Toronto Blue Jays,2025-10-17T00:44:58Z,0.0826446280991736
-Edmonton Oilers @ New York Islanders,NHL,Edmonton Oilers,2025-10-16 23:38:08,BetMGM,34.0,4.2,New York Islanders,2025-10-17T02:18:35Z,4.362776025236593
-Carolina Hurricanes @ Anaheim Ducks,NHL,Anaheim Ducks,2025-10-17 02:08:13,DraftKings,19.0,3.32,Carolina Hurricanes,2025-10-17T04:12:27Z,0.9095477386934674
-Toronto Blue Jays @ Seattle Mariners,MLB,Seattle Mariners,2025-10-17 22:09:00,DraftKings,1.81,4.82,Toronto Blue Jays,2025-10-17T23:08:50Z,0.0838323353293414
-Saskatchewan Roughriders @ Winnipeg Blue Bombers,CFL,Saskatchewan Roughriders,2025-10-18 00:00:00,DraftKings,4.7,2.65,Winnipeg Blue Bombers,2025-10-17T23:34:50Z,0.0854503464203233
-Minnesota Wild @ Washington Capitals,NHL,Washington Capitals,2025-10-17 23:11:02,Fanatics,1.83,3.67,Washington Capitals,2025-10-18T00:42:07Z,0.2797202797202799
-Edmonton Elks @ BC Lions,CFL,Edmonton Elks,2025-10-18 02:37:00,DraftKings,3.75,2.53,BC Lions,2025-10-18T02:12:54Z,0.0416666666666667
-Milwaukee Brewers @ Los Angeles Dodgers,MLB,Milwaukee Brewers,2025-10-18 00:38:51,Fanatics,16.0,2.33,Los Angeles Dodgers,2025-10-18T02:12:54Z,0.1569052783803326
-San Jose Sharks @ Utah Mammoth,NHL,San Jose Sharks,2025-10-18 01:08:49,Caesars,4.5,2.22,Utah Mammoth,2025-10-18T02:12:54Z,0.3392857142857144
-Bournemouth @ Crystal Palace,EPL,Crystal Palace,2025-10-18 14:01:00,FanDuel,76.0,2.83,Draw,2025-10-18T16:10:42Z,1.7407140281283804
-Georgia Tech Yellow Jackets @ Duke Blue Devils,NCAAF,Duke Blue Devils,2025-10-18 16:10:28,BetMGM,13.5,3.43,Georgia Tech Yellow Jackets,2025-10-18T19:07:09Z,1.611218568665377
-Arizona Wildcats @ Houston Cougars,NCAAF,Arizona Wildcats,2025-10-18 16:03:18,BetMGM,5.0,2.97,Houston Cougars,2025-10-18T19:07:09Z,0.3812154696132597
-Akron Zips @ Ball State Cardinals,NCAAF,Akron Zips,2025-10-18 19:32:25,BetMGM,2.5,2.33,Ball State Cardinals,2025-10-18T21:35:01Z,0.3812154696132598
-Florida State Seminoles @ Stanford Cardinal,NCAAF,Florida State Seminoles,2025-10-19 02:35:21,FanDuel,10.0,3.14,Stanford Cardinal,2025-10-19T06:14:05Z,1.3201856148491882
-Aston Villa @ Tottenham Hotspur,EPL,Aston Villa,2025-10-19 13:00:00,DraftKings,8.0,2.01,Aston Villa,2025-10-19T13:29:30Z,0.0781671159029648
-New England Patriots @ Tennessee Titans,NFL,Tennessee Titans,2025-10-19 17:03:23,Fanatics,8.0,2.7,New England Patriots,2025-10-19T18:43:16Z,0.2012012012012012
-Carolina Panthers @ New York Jets,NFL,New York Jets,2025-10-19 17:03:11,BetMGM,9.0,2.57,Carolina Panthers,2025-10-19T19:23:23Z,0.4240506329113922
-New York Giants @ Denver Broncos,NFL,Denver Broncos,2025-10-19 20:05:30,FanDuel,11.6,2.31,Denver Broncos,2025-10-19T22:37:44Z,0.6384180790960453
-Green Bay Packers @ Arizona Cardinals,NFL,Green Bay Packers,2025-10-19 20:25:23,FanDuel,2.46,2.2,Green Bay Packers,2025-10-19T23:08:56Z,0.1441860465116278
-Atlanta Falcons @ San Francisco 49ers,NFL,San Francisco 49ers,2025-10-20 00:22:59,Caesars,1.74,2.47,San Francisco 49ers,2025-10-20T02:30:21Z,0.0545454545454545
-Hokkaido Nippon-Ham Fighters @ Fukuoka SoftBank Hawks,NPB,Hokkaido Nippon-Ham Fighters,2025-10-20 09:00:00,FanDuel,9.7,2.34,Fukuoka SoftBank Hawks,2025-10-20T11:35:58Z,0.0825892857142854
-Hanwha Eagles @ Samsung Lions,KBO,Samsung Lions,2025-10-21 09:30:59,FanDuel,5.7,3.02,Hanwha Eagles,2025-10-21T12:20:07Z,0.2337662337662338
-Toronto Raptors @ Atlanta Hawks,NBA,Toronto Raptors,2025-10-22 23:40:00,DraftKings,3.4,3.71,Toronto Raptors,2025-10-22T23:35:15Z,0.1409395973154362
-Cleveland Cavaliers @ New York Knicks,NBA,Cleveland Cavaliers,2025-10-22 23:13:20,Caesars,4.2,4.83,New York Knicks,2025-10-23T00:45:45Z,0.2462908011869435
-Miami Heat @ Orlando Magic,NBA,Miami Heat,2025-10-22 23:14:53,Caesars,3.15,3.12,Orlando Magic,2025-10-23T00:45:45Z,0.1977186311787072
-Detroit Pistons @ Chicago Bulls,NBA,Chicago Bulls,2025-10-23 00:13:55,Caesars,1.43,2.62,Chicago Bulls,2025-10-23T00:45:45Z,0.0671641791044774
-New Orleans Pelicans @ Memphis Grizzlies,NBA,Memphis Grizzlies,2025-10-23 00:12:46,Caesars,2.25,2.4,Memphis Grizzlies,2025-10-23T00:45:45Z,0.0922330097087378
-Denver Nuggets @ Golden State Warriors,NBA,Denver Nuggets,2025-10-24 02:19:01,Caesars,1.29,2.32,Golden State Warriors,2025-10-24T04:12:04Z,0.075
-Atlanta Hawks @ Orlando Magic,NBA,Atlanta Hawks,2025-10-24 23:11:03,FanDuel,3.4,2.02,Atlanta Hawks,2025-10-24T23:19:36Z,0.0932475884244372
-Milwaukee Bucks @ Toronto Raptors,NBA,Milwaukee Bucks,2025-10-24 22:45:00,FanDuel,3.0,4.5,Milwaukee Bucks,2025-10-24T23:30:28Z,0.1857707509881424
-Cleveland Cavaliers @ Brooklyn Nets,NBA,Brooklyn Nets,2025-10-24 23:43:29,Caesars,7.4,2.02,Cleveland Cavaliers,2025-10-24T23:48:27Z,0.1028315946348733
-Boise State Broncos @ Nevada Wolf Pack,NCAAF,Nevada Wolf Pack,2025-10-25 02:00:00,FanDuel,11.4,2.01,Boise State Broncos,2025-10-25T01:41:09Z,0.0614525139664804
-Phoenix Suns @ Los Angeles Clippers,NBA,Phoenix Suns,2025-10-25 02:43:33,BetMGM,17.0,2.21,Los Angeles Clippers,2025-10-25T03:55:51Z,0.1580381471389647
-UMass Minutemen @ Central Michigan Chippewas,NCAAF,UMass Minutemen,2025-10-25 19:32:29,DraftKings,7.5,2.15,Central Michigan Chippewas,2025-10-25T19:34:59Z,0.0683760683760683
-Charlotte Hornets @ Philadelphia 76ers,NBA,Charlotte Hornets,2025-10-25 23:42:00,FanDuel,3.4,2.7,Philadelphia 76ers,2025-10-25T23:48:20Z,0.0591900311526479
-Phoenix Suns @ Denver Nuggets,NBA,Phoenix Suns,2025-10-26 01:13:37,FanDuel,9.0,2.76,Denver Nuggets,2025-10-26T01:49:35Z,0.1235955056179775
-Hanshin Tigers @ Fukuoka SoftBank Hawks,NPB,Fukuoka SoftBank Hawks,2025-10-26 09:30:00,FanDuel,2.82,2.56,Fukuoka SoftBank Hawks,2025-10-26T09:40:48Z,0.2051282051282051
-Burnley @ Wolverhampton Wanderers,EPL,Burnley,2025-10-26 14:00:00,Caesars,3.7,2.79,Burnley,2025-10-26T14:18:39Z,0.4566929133858266
-Colorado Avalanche @ New Jersey Devils,NHL,New Jersey Devils,2025-10-26 17:08:06,DraftKings,1.77,4.72,New Jersey Devils,2025-10-26T17:41:19Z,0.1568627450980392
-Chicago Bears @ Baltimore Ravens,NFL,Chicago Bears,2025-10-26 17:02:19,DraftKings,5.2,2.85,Baltimore Ravens,2025-10-26T19:26:21Z,0.4689265536723166
-New York Jets @ Cincinnati Bengals,NFL,New York Jets,2025-10-26 17:02:51,Caesars,15.0,2.05,New York Jets,2025-10-26T19:26:21Z,0.2520868113522537
-Tampa Bay Buccaneers @ New Orleans Saints,NFL,New Orleans Saints,2025-10-26 20:05:40,Caesars,4.2,5.78,Tampa Bay Buccaneers,2025-10-26T20:46:56Z,0.3418530351437698
-Boston Celtics @ Detroit Pistons,NBA,Boston Celtics,2025-10-26 19:44:38,DraftKings,4.1,3.62,Detroit Pistons,2025-10-26T21:29:53Z,0.0933333333333331
-Dallas Cowboys @ Denver Broncos,NFL,Dallas Cowboys,2025-10-26 20:25:25,DraftKings,13.0,2.85,Denver Broncos,2025-10-26T21:56:19Z,0.4823261117445839
-Utah Mammoth @ Winnipeg Jets,NHL,Winnipeg Jets,2025-10-26 22:08:41,BetMGM,1.74,5.09,Utah Mammoth,2025-10-26T23:19:28Z,0.2167832167832168
-Milwaukee Bucks @ Cleveland Cavaliers,NBA,Milwaukee Bucks,2025-10-26 22:12:09,BetMGM,6.25,2.82,Cleveland Cavaliers,2025-10-26T23:19:28Z,0.1384335154826957
-Charlotte Hornets @ Washington Wizards,NBA,Washington Wizards,2025-10-26 22:16:00,Caesars,1.42,2.81,Charlotte Hornets,2025-10-26T23:41:36Z,0.0289855072463769
-San Jose Sharks @ Minnesota Wild,NHL,Minnesota Wild,2025-10-26 22:08:46,FanDuel,6.6,2.12,San Jose Sharks,2025-10-26T23:41:36Z,0.0679611650485437
-Los Angeles Lakers @ Sacramento Kings,NBA,Los Angeles Lakers,2025-10-27 01:10:30,Fanatics,2.85,2.02,Los Angeles Lakers,2025-10-27T01:53:43Z,0.1400000000000001
-Cleveland Cavaliers @ Detroit Pistons,NBA,Detroit Pistons,2025-10-27 23:13:09,FanDuel,2.4,2.45,Cleveland Cavaliers,2025-10-27T23:30:49Z,0.1538461538461537
-Boston Celtics @ New Orleans Pelicans,NBA,New Orleans Pelicans,2025-10-28 00:10:51,BetMGM,7.25,2.02,Boston Celtics,2025-10-28T01:43:34Z,0.0507246376811594
-Toronto Blue Jays @ Los Angeles Dodgers,MLB,Toronto Blue Jays,2025-10-28 00:06:00,BetMGM,3.3,2.22,Los Angeles Dodgers,2025-10-28T05:57:11Z,0.2992125984251966
-Philadelphia 76ers @ Washington Wizards,NBA,Washington Wizards,2025-10-28 23:11:00,Caesars,2.85,2.7,Philadelphia 76ers,2025-10-28T23:20:17Z,0.0401459854014598
-LG Twins @ Hanwha Eagles,KBO,LG Twins,2025-10-29 09:30:00,BetMGM,2.55,2.11,Hanwha Eagles,2025-10-29T08:31:30Z,0.0450819672131147
-Indiana Pacers @ Dallas Mavericks,NBA,Indiana Pacers,2025-10-30 00:41:00,FanDuel,16.0,3.36,Dallas Mavericks,2025-10-30T03:04:03Z,1.0151133501259446
-Memphis Grizzlies @ Phoenix Suns,NBA,Phoenix Suns,2025-10-30 02:10:00,DraftKings,3.1,2.34,Memphis Grizzlies,2025-10-30T03:47:26Z,0.1742424242424243
-LG Twins @ Hanwha Eagles,KBO,LG Twins,2025-10-30 09:30:00,BetMGM,2.05,4.5,LG Twins,2025-10-30T07:50:54Z,0.0406091370558373
-Golden State Warriors @ Milwaukee Bucks,NBA,Milwaukee Bucks,2025-10-31 00:13:00,Caesars,3.8,3.49,Milwaukee Bucks,2025-10-31T01:46:28Z,0.371841155234657
-LG Twins @ Hanwha Eagles,KBO,Hanwha Eagles,2025-10-31 09:31:00,DraftKings,3.9,2.27,LG Twins,2025-10-31T11:18:31Z,0.2499999999999999
-Colorado Avalanche @ Vegas Golden Knights,NHL,Vegas Golden Knights,2025-10-31 20:08:31,BetMGM,16.0,5.0,Colorado Avalanche,2025-10-31T22:20:36Z,1.48062015503876
-Boston Celtics @ Philadelphia 76ers,NBA,Philadelphia 76ers,2025-10-31 23:12:51,DraftKings,6.75,2.2,Boston Celtics,2025-10-31T23:54:50Z,0.2523191094619667
-Los Angeles Lakers @ Memphis Grizzlies,NBA,Los Angeles Lakers,2025-11-01 01:42:49,DraftKings,2.1,5.62,Los Angeles Lakers,2025-11-01T01:49:55Z,0.0552763819095476
-New Orleans Pelicans @ Los Angeles Clippers,NBA,New Orleans Pelicans,2025-11-01 02:40:17,Caesars,8.0,3.29,Los Angeles Clippers,2025-11-01T03:59:13Z,0.4571948998178506
-Denver Nuggets @ Portland Trail Blazers,NBA,Denver Nuggets,2025-11-01 02:12:20,FanDuel,2.06,4.72,Portland Trail Blazers,2025-11-01T04:47:23Z,0.3552631578947369
-Wolverhampton Wanderers @ Fulham,EPL,Wolverhampton Wanderers,2025-11-01 15:01:00,FanDuel,11.0,2.26,Fulham,2025-11-01T15:18:54Z,0.0679611650485436
-Chelsea @ Tottenham Hotspur,EPL,Tottenham Hotspur,2025-11-01 17:30:00,DraftKings,10.0,3.21,Chelsea,2025-11-01T18:28:01Z,0.0834236186348863
-New Mexico State Aggies @ Western Kentucky Hilltoppers,NCAAF,New Mexico State Aggies,2025-11-01 19:32:21,FanDuel,4.4,3.06,Western Kentucky Hilltoppers,2025-11-01T19:40:21Z,0.1671087533156501
-Virginia Cavaliers @ California Golden Bears,NCAAF,California Golden Bears,2025-11-01 19:50:00,FanDuel,3.8,2.28,Virginia Cavaliers,2025-11-01T19:55:11Z,0.1949685534591193
-Aston Villa @ Liverpool,EPL,Liverpool,2025-11-01 20:01:00,Caesars,1.95,2.39,Liverpool,2025-11-01T20:49:54Z,0.2745098039215686
-Colorado Avalanche @ San Jose Sharks,NHL,Colorado Avalanche,2025-11-01 20:08:27,Caesars,1.91,5.67,San Jose Sharks,2025-11-01T21:27:38Z,0.1863354037267079
-Sacramento Kings @ Milwaukee Bucks,NBA,Sacramento Kings,2025-11-01 21:11:00,BetMGM,5.75,3.57,Sacramento Kings,2025-11-01T21:59:32Z,0.0511882998171846
-Chicago Blackhawks @ Edmonton Oilers,NHL,Chicago Blackhawks,2025-11-02 02:11:40,BetMGM,5.0,2.24,Edmonton Oilers,2025-11-02T03:07:44Z,0.3661202185792348
-Newcastle United @ West Ham United,EPL,Newcastle United,2025-11-02 14:00:00,Fanatics,401.0,2.62,West Ham United,2025-11-02T15:56:02Z,5.443837377470673
-Bournemouth @ Manchester City,EPL,Bournemouth,2025-11-02 16:30:00,FanDuel,19.0,2.08,Manchester City,2025-11-02T16:49:50Z,0.4179104477611939
-Atlanta Falcons @ New England Patriots,NFL,Atlanta Falcons,2025-11-02 18:02:21,FanDuel,6.4,2.21,New England Patriots,2025-11-02T18:51:05Z,0.1962616822429908
-New Orleans Pelicans @ Oklahoma City Thunder,NBA,New Orleans Pelicans,2025-11-02 20:30:00,BetMGM,6.75,3.15,Oklahoma City Thunder,2025-11-02T20:21:39Z,0.0497667185069984
-Carolina Panthers @ Green Bay Packers,NFL,Green Bay Packers,2025-11-02 18:02:52,FanDuel,2.68,2.7,Carolina Panthers,2025-11-02T20:34:37Z,0.0894308943089431
-Denver Broncos @ Houston Texans,NFL,Houston Texans,2025-11-02 18:02:56,Caesars,2.25,2.02,Denver Broncos,2025-11-02T20:43:01Z,0.125
-New Orleans Saints @ Los Angeles Rams,NFL,New Orleans Saints,2025-11-02 21:05:18,Caesars,23.0,2.53,Los Angeles Rams,2025-11-02T21:28:55Z,0.5312916111850867
-Kansas City Chiefs @ Buffalo Bills,NFL,Kansas City Chiefs,2025-11-02 21:25:35,BetMGM,2.65,3.51,Buffalo Bills,2025-11-02T21:40:26Z,0.0642570281124496
-Tampa Bay Lightning @ Utah Mammoth,NHL,Tampa Bay Lightning,2025-11-02 20:38:50,Caesars,1.95,2.02,Tampa Bay Lightning,2025-11-02T22:42:56Z,0.0372340425531914
-Atlanta Hawks @ Cleveland Cavaliers,NBA,Atlanta Hawks,2025-11-02 23:11:08,FanDuel,4.9,2.29,Cleveland Cavaliers,2025-11-02T23:41:10Z,0.1583924349881796
-Miami Heat @ Los Angeles Lakers,NBA,Miami Heat,2025-11-03 02:40:41,Caesars,5.5,3.6,Los Angeles Lakers,2025-11-03T04:31:11Z,0.1930585683297178
-Arizona Cardinals @ Dallas Cowboys,NFL,Arizona Cardinals,2025-11-04 01:15:45,Caesars,2.2,2.34,Arizona Cardinals,2025-11-04T01:47:09Z,0.1
-Los Angeles Lakers @ Portland Trail Blazers,NBA,Portland Trail Blazers,2025-11-04 03:12:00,Caesars,1.18,2.7,Los Angeles Lakers,2025-11-04T03:46:03Z,0.0260869565217391
-Miami Heat @ Los Angeles Clippers,NBA,Miami Heat,2025-11-04 03:41:00,Caesars,2.95,2.44,Miami Heat,2025-11-04T03:46:03Z,0.0845588235294118
-Louisiana Tech Bulldogs @ Nevada Wolf Pack,NCAAB,Louisiana Tech Bulldogs,2025-11-05 03:00:00,FanDuel,4.85,4.72,Nevada Wolf Pack,2025-11-05T01:48:15Z,0.0232067510548521
-Philadelphia 76ers @ Chicago Bulls,NBA,Chicago Bulls,2025-11-05 01:11:00,DraftKings,6.75,2.99,Chicago Bulls,2025-11-05T01:48:15Z,0.1440677966101694
-Southern Utah Thunderbirds @ Arizona St Sun Devils,NCAAB,Southern Utah Thunderbirds,2025-11-05 02:00:00,FanDuel,13.0,2.86,Arizona St Sun Devils,2025-11-05T01:48:15Z,0.0399999999999999
-Portland St Vikings @ Stanford Cardinal,NCAAB,Stanford Cardinal,2025-11-05 03:00:00,Caesars,1.31,4.38,Stanford Cardinal,2025-11-05T03:04:12Z,0.0314960629921259
-South Carolina Upstate Spartans @ Fresno St Bulldogs,NCAAB,South Carolina Upstate Spartans,2025-11-06 02:00:00,FanDuel,5.4,3.6,South Carolina Upstate Spartans,2025-11-06T01:53:17Z,0.0305343511450381
-Los Angeles Clippers @ Phoenix Suns,NBA,Phoenix Suns,2025-11-07 02:10:37,DraftKings,2.45,4.72,Phoenix Suns,2025-11-07T03:03:16Z,0.079295154185022
-Wright St Raiders @ California Golden Bears,NCAAB,Wright St Raiders,2025-11-07 03:01:44,DraftKings,16.0,4.22,California Golden Bears,2025-11-07T03:48:10Z,0.4324082363473588
-Chicago Bulls @ Milwaukee Bucks,NBA,Chicago Bulls,2025-11-08 01:11:00,DraftKings,2.7,3.37,Milwaukee Bucks,2025-11-08T01:41:45Z,0.0546875000000001
-Houston Cougars @ UCF Knights,NCAAF,Houston Cougars,2025-11-08 01:15:30,DraftKings,2.8,3.91,Houston Cougars,2025-11-08T02:51:21Z,0.0937499999999998
-Northwestern Wildcats @ USC Trojans,NCAAF,USC Trojans,2025-11-08 02:05:56,Caesars,1.25,4.38,USC Trojans,2025-11-08T03:28:14Z,0.0245901639344262
-Burnley @ West Ham United,EPL,Draw,2025-11-08 15:00:00,Caesars,3.2,3.88,West Ham United,2025-11-08T15:48:27Z,0.1072664359861591
-SMU Mustangs @ Boston College Eagles,NCAAF,Boston College Eagles,2025-11-08 16:58:00,Fanatics,10.5,3.53,SMU Mustangs,2025-11-08T17:17:29Z,0.8987341772151899
-BYU Cougars @ Texas Tech Red Raiders,NCAAF,BYU Cougars,2025-11-08 17:08:25,DraftKings,6.5,3.27,Texas Tech Red Raiders,2025-11-08T17:17:29Z,0.2452107279693487
-Indiana Hoosiers @ Penn State Nittany Lions,NCAAF,Penn State Nittany Lions,2025-11-08 17:10:46,Caesars,5.3,2.51,Indiana Hoosiers,2025-11-08T17:17:29Z,0.1205073995771668
-Alabama Crimson Tide @ St. John's Red Storm,NCAAB,St. John's Red Storm,2025-11-08 17:01:34,Caesars,1.62,2.11,Alabama Crimson Tide,2025-11-08T17:17:29Z,0.0253164556962025
-Georgia Bulldogs @ Mississippi State Bulldogs,NCAAF,Mississippi State Bulldogs,2025-11-08 16:54:00,DraftKings,3.8,2.09,Georgia Bulldogs,2025-11-08T17:30:58Z,0.1275964391691394
-Arsenal @ Sunderland,EPL,Sunderland,2025-11-08 17:30:00,FanDuel,8.5,2.08,Draw,2025-11-08T17:40:37Z,0.0625
-Marshall Thundering Herd @ Toledo Rockets,NCAAB,Marshall Thundering Herd,2025-11-08 19:02:01,Caesars,3.6,3.6,Marshall Thundering Herd,2025-11-08T19:16:25Z,0.3235294117647058
-South Florida Bulls @ GW Revolutionaries,NCAAB,South Florida Bulls,2025-11-08 18:32:59,Fanatics,1.69,2.61,GW Revolutionaries,2025-11-08T19:16:25Z,0.0304878048780487
-Temple Owls @ Army Black Knights,NCAAF,Temple Owls,2025-11-08 17:04:00,FanDuel,12.0,3.77,Army Black Knights,2025-11-08T19:50:51Z,0.8126888217522658
-Duke Blue Devils @ UConn Huskies,NCAAF,Duke Blue Devils,2025-11-08 20:35:00,Caesars,1.31,3.6,UConn Huskies,2025-11-08T20:42:50Z,0.0314960629921259
-Kansas Jayhawks @ Arizona Wildcats,NCAAF,Kansas Jayhawks,2025-11-08 20:38:00,Caesars,2.85,3.0,Arizona Wildcats,2025-11-08T20:42:50Z,0.0754716981132076
-Wolverhampton Wanderers @ Chelsea,EPL,Draw,2025-11-08 20:01:00,FanDuel,7.5,2.02,Chelsea,2025-11-08T21:17:54Z,0.1942675159235667
-Washington Huskies @ Wisconsin Badgers,NCAAF,Wisconsin Badgers,2025-11-08 17:59:00,FanDuel,4.9,3.29,Wisconsin Badgers,2025-11-08T21:47:55Z,0.0769230769230769
-Oregon Ducks @ Iowa Hawkeyes,NCAAF,Iowa Hawkeyes,2025-11-08 16:50:00,Caesars,7.4,3.93,Oregon Ducks,2025-11-08T23:30:31Z,0.3627992633517496
-Sam Houston State Bearkats @ Oregon State Beavers,NCAAF,Sam Houston State Bearkats,2025-11-09 03:05:00,FanDuel,12.0,4.64,Sam Houston State Bearkats,2025-11-09T03:05:52Z,0.2036108324974923
-Portland Trail Blazers @ Miami Heat,NBA,Portland Trail Blazers,2025-11-09 01:12:00,FanDuel,2.18,2.17,Miami Heat,2025-11-09T03:05:52Z,0.0531400966183576
-Indiana Pacers @ Denver Nuggets,NBA,Indiana Pacers,2025-11-09 02:11:00,FanDuel,10.0,2.02,Denver Nuggets,2025-11-09T03:49:45Z,0.2195121951219513
-Phoenix Suns @ Los Angeles Clippers,NBA,Los Angeles Clippers,2025-11-09 03:42:42,FanDuel,3.65,2.18,Phoenix Suns,2025-11-09T04:55:29Z,0.0428571428571428
-Leeds United @ Nottingham Forest,EPL,Leeds United,2025-11-09 14:01:00,DraftKings,4.9,4.23,Nottingham Forest,2025-11-09T14:48:47Z,0.0515021459227469
-Newcastle United @ Brentford,EPL,Brentford,2025-11-09 14:00:00,DraftKings,7.5,2.02,Brentford,2025-11-09T14:56:24Z,0.0445682451253482
-Brighton and Hove Albion @ Crystal Palace,EPL,Crystal Palace,2025-11-09 14:00:00,FanDuel,5.6,3.04,Draw,2025-11-09T15:40:44Z,0.1313131313131311
-North Carolina Central Eagles @ Appalachian St Mountaineers,NCAAB,North Carolina Central Eagles,2025-11-09 18:00:00,FanDuel,5.7,2.95,Appalachian St Mountaineers,2025-11-09T17:17:19Z,0.0458715596330274
-Atlanta Falcons @ Indianapolis Colts,NFL,Atlanta Falcons,2025-11-09 14:35:08,DraftKings,2.7,2.53,Indianapolis Colts,2025-11-09T17:40:54Z,0.0931174089068826
-Liverpool @ Manchester City,EPL,Liverpool,2025-11-09 16:30:00,Fanatics,51.0,2.61,Manchester City,2025-11-09T17:48:40Z,0.3877551020408163
-Marist Red Foxes @ Dartmouth Big Green,NCAAB,Dartmouth Big Green,2025-11-09 19:04:22,DraftKings,3.6,3.01,Marist Red Foxes,2025-11-09T19:16:22Z,0.3953488372093023
-New Orleans Saints @ Carolina Panthers,NFL,Carolina Panthers,2025-11-09 18:02:43,BetMGM,2.1,2.7,New Orleans Saints,2025-11-09T19:16:22Z,0.065989847715736
-Baltimore Ravens @ Minnesota Vikings,NFL,Minnesota Vikings,2025-11-09 18:02:49,FanDuel,1.88,2.17,Baltimore Ravens,2025-11-09T19:16:22Z,0.0273224043715845
-Buffalo Bills @ Miami Dolphins,NFL,Buffalo Bills,2025-11-09 18:03:02,FanDuel,3.2,4.72,Miami Dolphins,2025-11-09T19:25:19Z,0.1940298507462686
-Jacksonville Jaguars @ Houston Texans,NFL,Houston Texans,2025-11-09 18:03:20,Caesars,10.0,3.51,Houston Texans,2025-11-09T19:25:19Z,0.2870012870012869
-New York Giants @ Chicago Bears,NFL,Chicago Bears,2025-11-09 18:03:06,FanDuel,2.0,3.04,Chicago Bears,2025-11-09T19:34:05Z,0.0309278350515465
-Texas A&M Aggies @ Oklahoma St Cowboys,NCAAB,Oklahoma St Cowboys,2025-11-09 19:00:00,Fanatics,1.36,3.1,Oklahoma St Cowboys,2025-11-09T19:56:26Z,0.0303030303030303
-Los Angeles Kings @ Pittsburgh Penguins,NHL,Los Angeles Kings,2025-11-09 19:08:18,FanDuel,3.1,2.7,Los Angeles Kings,2025-11-09T20:44:00Z,0.0231023102310231
-New England Patriots @ Tampa Bay Buccaneers,NFL,New England Patriots,2025-11-09 18:02:16,Fanatics,1.87,2.32,New England Patriots,2025-11-09T20:51:09Z,0.0331491712707183
-Detroit Lions @ Washington Commanders,NFL,Washington Commanders,2025-11-09 21:25:00,DraftKings,4.8,4.05,Detroit Lions,2025-11-09T20:58:54Z,0.0322580645161288
-Houston Rockets @ Milwaukee Bucks,NBA,Houston Rockets,2025-11-09 20:40:57,Caesars,2.75,2.85,Houston Rockets,2025-11-09T21:29:13Z,0.211453744493392
-Oklahoma City Thunder @ Memphis Grizzlies,NBA,Memphis Grizzlies,2025-11-09 23:11:00,DraftKings,7.0,2.7,Oklahoma City Thunder,2025-11-09T23:19:44Z,0.238938053097345
-Brooklyn Nets @ New York Knicks,NBA,Brooklyn Nets,2025-11-09 23:11:45,DraftKings,16.0,2.25,New York Knicks,2025-11-09T23:19:44Z,0.4184397163120567
-Colorado Avalanche @ Vancouver Canucks,NHL,Colorado Avalanche,2025-11-10 03:08:07,Caesars,1.5,4.22,Colorado Avalanche,2025-11-10T03:21:47Z,0.0714285714285714
-San Antonio Spurs @ Chicago Bulls,NBA,Chicago Bulls,2025-11-11 01:11:00,Caesars,3.6,2.7,San Antonio Spurs,2025-11-11T01:49:23Z,0.1180124223602483
-Minnesota Timberwolves @ Utah Jazz,NBA,Utah Jazz,2025-11-11 02:11:03,Caesars,3.4,3.85,Minnesota Timberwolves,2025-11-11T03:06:09Z,0.1447811447811446
-Milwaukee Bucks @ Dallas Mavericks,NBA,Dallas Mavericks,2025-11-11 01:40:21,BetMGM,6.5,3.37,Milwaukee Bucks,2025-11-11T03:51:36Z,0.6971279373368144
-Atlanta Hawks @ Los Angeles Clippers,NBA,Atlanta Hawks,2025-11-11 03:41:27,Caesars,3.8,3.37,Atlanta Hawks,2025-11-11T03:51:36Z,0.1515151515151515
-Iona Gaels @ UMKC Kangaroos,NCAAB,UMKC Kangaroos,2025-11-11 18:00:00,Caesars,2.96,2.16,Iona Gaels,2025-11-11T16:29:38Z,0.0206896551724138
-Real Madrid @ Valencia Basket,Basketball Euroleague,Valencia Basket,2025-11-11 19:30:00,BetMGM,2.54,4.86,Valencia Basket,2025-11-11T19:40:54Z,0.0901287553648069
-Golden State Warriors @ Oklahoma City Thunder,NBA,Golden State Warriors,2025-11-12 01:10:50,DraftKings,10.0,2.53,Oklahoma City Thunder,2025-11-12T01:48:24Z,0.4144271570014144
-Boston Celtics @ Philadelphia 76ers,NBA,Philadelphia 76ers,2025-11-12 01:12:54,FanDuel,3.8,4.53,Philadelphia 76ers,2025-11-12T03:04:42Z,0.3475177304964539
-Anaheim Ducks @ Colorado Avalanche,NHL,Colorado Avalanche,2025-11-12 02:53:41,Caesars,1.56,2.51,Colorado Avalanche,2025-11-12T03:50:18Z,0.0399999999999999
-Ohio Bobcats @ Western Michigan Broncos,NCAAF,Ohio Bobcats,2025-11-12 01:06:00,Caesars,8.5,2.09,Western Michigan Broncos,2025-11-12T03:50:18Z,1.0094562647754135
-Calgary Flames @ St Louis Blues,NHL,Calgary Flames,2025-11-12 01:10:04,DraftKings,17.0,2.0,St Louis Blues,2025-11-12T03:50:18Z,0.5356820234869015
-Columbus Blue Jackets @ Seattle Kraken,NHL,Columbus Blue Jackets,2025-11-12 03:11:51,FanDuel,3.2,3.71,Columbus Blue Jackets,2025-11-12T04:02:09Z,0.0958904109589041
-Denver Nuggets @ Sacramento Kings,NBA,Sacramento Kings,2025-11-12 04:12:47,Caesars,5.0,3.65,Denver Nuggets,2025-11-12T04:33:18Z,0.075268817204301
-Winnipeg Jets @ Vancouver Canucks,NHL,Vancouver Canucks,2025-11-12 03:09:08,DraftKings,21.0,2.47,Winnipeg Jets,2025-11-12T05:23:28Z,0.8850987432675045
-Phoenix Suns @ Dallas Mavericks,NBA,Dallas Mavericks,2025-11-13 01:41:00,Caesars,2.1,3.71,Phoenix Suns,2025-11-13T01:50:13Z,0.0880829015544043
-Golden State Warriors @ San Antonio Spurs,NBA,Golden State Warriors,2025-11-13 01:11:00,FanDuel,4.4,2.16,Golden State Warriors,2025-11-13T01:50:13Z,0.1195928753180662
-Montana St Bobcats @ Stanford Cardinal,NCAAB,Montana St Bobcats,2025-11-13 03:01:55,FanDuel,11.0,3.75,Stanford Cardinal,2025-11-13T03:07:18Z,0.2746234067207416
-North Texas Mean Green @ Oregon St Beavers,NCAAB,Oregon St Beavers,2025-11-13 02:32:49,FanDuel,2.32,3.32,Oregon St Beavers,2025-11-13T03:07:18Z,0.0593607305936072
-Los Angeles Lakers @ Oklahoma City Thunder,NBA,Los Angeles Lakers,2025-11-13 02:48:00,Caesars,5.5,2.51,Oklahoma City Thunder,2025-11-13T03:07:18Z,0.0617760617760618
-Portland St Vikings @ San Francisco Dons,NCAAB,Portland St Vikings,2025-11-13 03:01:24,Fanatics,9.0,2.51,San Francisco Dons,2025-11-13T03:07:18Z,0.2064343163538874
-Tulsa Golden Hurricane @ Oral Roberts Golden Eagles,NCAAB,Oral Roberts Golden Eagles,2025-11-13 01:05:01,Caesars,2.45,2.25,Tulsa Golden Hurricane,2025-11-13T03:07:18Z,0.2760416666666668
-Denver Nuggets @ Los Angeles Clippers,NBA,Los Angeles Clippers,2025-11-13 03:40:00,Fanatics,2.9,4.38,Denver Nuggets,2025-11-13T03:53:27Z,0.070110701107011
-Central Michigan Chippewas @ South Alabama Jaguars,NCAAB,Central Michigan Chippewas,2025-11-13 16:00:00,FanDuel,3.35,2.06,South Alabama Jaguars,2025-11-13T13:48:32Z,0.046875
-New York Islanders @ Vegas Golden Knights,NHL,Vegas Golden Knights,2025-11-14 03:08:36,FanDuel,5.5,2.45,New York Islanders,2025-11-14T04:36:14Z,0.1201629327902239
-Winnipeg Jets @ Seattle Kraken,NHL,Winnipeg Jets,2025-11-14 03:09:36,FanDuel,5.0,2.61,Seattle Kraken,2025-11-14T05:22:47Z,0.557632398753894
-Coppin St Eagles @ Central Michigan Chippewas,NCAAB,Coppin St Eagles,2025-11-14 16:00:00,BetMGM,5.5,4.53,Central Michigan Chippewas,2025-11-14T14:39:12Z,0.0318949343339586
-Los Angeles Clippers @ Dallas Mavericks,NBA,Dallas Mavericks,2025-11-15 01:41:00,FanDuel,3.15,3.15,Los Angeles Clippers,2025-11-15T01:44:53Z,0.1753731343283581
-UCF Knights @ Texas A&M Aggies,NCAAB,Texas A&M Aggies,2025-11-15 01:04:00,Fanatics,9.0,2.74,UCF Knights,2025-11-15T02:59:22Z,0.4469453376205787
-Charlotte Hornets @ Milwaukee Bucks,NBA,Milwaukee Bucks,2025-11-15 01:11:00,Caesars,1.26,4.99,Milwaukee Bucks,2025-11-15T03:40:47Z,0.0413223140495868
-Michigan Wolverines @ TCU Horned Frogs,NCAAB,Michigan Wolverines,2025-11-15 02:04:00,Fanatics,2.5,2.79,Michigan Wolverines,2025-11-15T03:40:47Z,0.1415525114155251
-New York Islanders @ Utah Mammoth,NHL,New York Islanders,2025-11-15 02:08:53,DraftKings,5.2,2.66,New York Islanders,2025-11-15T03:40:47Z,0.1040339702760084
-Golden State Warriors @ San Antonio Spurs,NBA,San Antonio Spurs,2025-11-15 02:45:00,Caesars,1.91,3.22,Golden State Warriors,2025-11-15T04:26:09Z,0.0611111111111111
-South Florida Bulls @ Navy Midshipmen,NCAAF,South Florida Bulls,2025-11-15 17:05:00,FanDuel,1.63,2.6,Navy Midshipmen,2025-11-15T17:17:05Z,0.0794701986754967
-Kansas State Wildcats @ Oklahoma State Cowboys,NCAAF,Oklahoma State Cowboys,2025-11-15 17:10:00,FanDuel,9.0,2.25,Kansas State Wildcats,2025-11-15T17:17:05Z,0.0404624277456646
-Notre Dame Fighting Irish @ Pittsburgh Panthers,NCAAF,Pittsburgh Panthers,2025-11-15 16:49:00,Caesars,6.0,2.09,Notre Dame Fighting Irish,2025-11-15T17:17:05Z,0.1952191235059762
-Michigan Wolverines @ Northwestern Wildcats,NCAAF,Northwestern Wildcats,2025-11-15 16:52:00,Fanatics,4.15,4.67,Michigan Wolverines,2025-11-15T17:40:24Z,0.0559796437659034
-Butler Bulldogs @ SMU Mustangs,NCAAB,Butler Bulldogs,2025-11-15 19:00:00,FanDuel,4.1,4.18,SMU Mustangs,2025-11-15T18:28:53Z,0.0275689223057642
-Arizona Wildcats @ Cincinnati Bearcats,NCAAF,Arizona Wildcats,2025-11-15 16:55:00,FanDuel,3.4,3.15,Arizona Wildcats,2025-11-15T18:55:11Z,0.0365853658536585
-South Carolina Gamecocks @ Texas A&M Aggies,NCAAF,Texas A&M Aggies,2025-11-15 16:51:00,BetMGM,9.5,2.02,Texas A&M Aggies,2025-11-15T18:55:11Z,0.1742892459826946
-Arkansas Razorbacks @ LSU Tigers,NCAAF,Arkansas Razorbacks,2025-11-15 16:53:00,Caesars,2.9,2.02,LSU Tigers,2025-11-15T19:48:41Z,0.039426523297491
-Georgia Tech Yellow Jackets @ Boston College Eagles,NCAAF,Boston College Eagles,2025-11-15 20:30:00,FanDuel,7.1,2.64,Georgia Tech Yellow Jackets,2025-11-15T20:22:30Z,0.0245310245310246
-Virginia Cavaliers @ Duke Blue Devils,NCAAF,Virginia Cavaliers,2025-11-15 20:30:00,FanDuel,2.94,2.56,Virginia Cavaliers,2025-11-15T20:22:30Z,0.0315789473684209
-Maryland Terrapins @ Marquette Golden Eagles,NCAAB,Maryland Terrapins,2025-11-15 19:00:00,Fanatics,1.87,4.16,Maryland Terrapins,2025-11-15T20:51:47Z,0.0331491712707183
-Oklahoma Sooners @ Alabama Crimson Tide,NCAAF,Alabama Crimson Tide,2025-11-15 17:49:00,FanDuel,1.87,2.08,Oklahoma Sooners,2025-11-15T20:59:18Z,0.0505617977528091
-Memphis Tigers @ East Carolina Pirates,NCAAF,East Carolina Pirates,2025-11-15 18:10:00,FanDuel,1.94,2.64,East Carolina Pirates,2025-11-15T21:18:32Z,0.0486486486486484
-Memphis Grizzlies @ Cleveland Cavaliers,NBA,Memphis Grizzlies,2025-11-15 22:10:00,Caesars,5.3,2.7,Cleveland Cavaliers,2025-11-15T21:40:24Z,0.0231660231660232
-Iowa Hawkeyes @ USC Trojans,NCAAF,USC Trojans,2025-11-15 18:00:00,FanDuel,3.15,3.15,USC Trojans,2025-11-15T21:48:09Z,0.1091549295774647
-Penn State Nittany Lions @ Michigan State Spartans,NCAAF,Michigan State Spartans,2025-11-15 18:00:00,Caesars,4.5,2.53,Penn State Nittany Lions,2025-11-15T22:42:00Z,0.0638297872340425
-Maryland Terrapins @ Illinois Fighting Illini,NCAAF,Maryland Terrapins,2025-11-15 18:00:00,BetMGM,23.0,2.7,Illinois Fighting Illini,2025-11-15T22:49:52Z,0.4810045074050226
-Louisiana Tech Bulldogs @ Washington State Cougars,NCAAF,Louisiana Tech Bulldogs,2025-11-16 03:11:00,BetMGM,7.0,2.7,Washington State Cougars,2025-11-16T03:20:55Z,0.3565891472868215
-Utah Tech Trailblazers @ Hawai'i Rainbow Warriors,NCAAB,Utah Tech Trailblazers,2025-11-16 05:00:00,Fanatics,14.0,3.14,Hawai'i Rainbow Warriors,2025-11-16T04:55:18Z,0.1049723756906076
-Winnipeg Jets @ Calgary Flames,NHL,Calgary Flames,2025-11-16 03:10:55,DraftKings,2.7,2.88,Winnipeg Jets,2025-11-16T05:55:32Z,0.1688311688311689
-Wright St Raiders @ Kent State Golden Flashes,NCAAB,Wright St Raiders,2025-11-16 17:00:00,FanDuel,2.84,2.7,Kent State Golden Flashes,2025-11-16T16:59:14Z,0.0252707581227437
-Notre Dame Fighting Irish @ Ohio State Buckeyes,NCAAB,Ohio State Buckeyes,2025-11-16 17:30:00,Fanatics,1.67,2.61,Ohio State Buckeyes,2025-11-16T17:56:47Z,0.0503144654088049
-Los Angeles Clippers @ Boston Celtics,NBA,Los Angeles Clippers,2025-11-16 20:40:41,FanDuel,3.85,3.04,Boston Celtics,2025-11-16T20:47:32Z,0.1224489795918366
-Seattle Seahawks @ Los Angeles Rams,NFL,Seattle Seahawks,2025-11-16 21:05:30,Fanatics,2.9,3.06,Los Angeles Rams,2025-11-16T21:19:32Z,0.0861423220973783
-Sacramento Kings @ San Antonio Spurs,NBA,Sacramento Kings,2025-11-16 21:10:34,DraftKings,7.5,2.53,San Antonio Spurs,2025-11-16T21:40:42Z,0.141552511415525
-San Francisco 49ers @ Arizona Cardinals,NFL,Arizona Cardinals,2025-11-16 21:05:27,FanDuel,8.5,3.37,San Francisco 49ers,2025-11-16T22:35:29Z,0.1440107671601616
-Kansas City Chiefs @ Denver Broncos,NFL,Denver Broncos,2025-11-16 21:25:21,BetMGM,3.1,2.15,Denver Broncos,2025-11-16T22:44:53Z,0.0231023102310231
-Vegas Golden Knights @ Minnesota Wild,NHL,Minnesota Wild,2025-11-16 23:08:52,Caesars,1.95,4.38,Minnesota Wild,2025-11-16T23:20:00Z,0.0773480662983425
-Baltimore Ravens @ Cleveland Browns,NFL,Cleveland Browns,2025-11-16 21:25:20,Caesars,3.4,4.54,Baltimore Ravens,2025-11-16T23:42:12Z,0.2830188679245283
-New York Islanders @ Colorado Avalanche,NHL,New York Islanders,2025-11-17 02:12:04,DraftKings,5.5,2.25,Colorado Avalanche,2025-11-17T03:54:14Z,0.0318949343339586
-Milwaukee Bucks @ Cleveland Cavaliers,NBA,Milwaukee Bucks,2025-11-18 00:12:55,Caesars,5.0,4.14,Cleveland Cavaliers,2025-11-18T01:47:57Z,0.149425287356322
-Vancouver Canucks @ Florida Panthers,NHL,Vancouver Canucks,2025-11-18 00:08:43,DraftKings,17.0,4.09,Florida Panthers,2025-11-18T01:47:57Z,0.1854951185495118
-New York Knicks @ Miami Heat,NBA,New York Knicks,2025-11-18 00:41:48,FanDuel,2.54,2.23,Miami Heat,2025-11-18T01:47:57Z,0.049586776859504
-Los Angeles Kings @ Washington Capitals,NHL,Los Angeles Kings,2025-11-18 00:08:28,FanDuel,4.0,2.16,Washington Capitals,2025-11-18T01:47:57Z,0.0282776349614395
-Carolina Hurricanes @ Boston Bruins,NHL,Boston Bruins,2025-11-18 00:08:29,DraftKings,13.0,2.15,Carolina Hurricanes,2025-11-18T01:47:57Z,0.1120615911035072
-Oregon St Beavers @ Oregon Ducks,NCAAB,Oregon St Beavers,2025-11-18 03:00:00,FanDuel,9.6,2.13,Oregon Ducks,2025-11-18T01:47:57Z,0.0389610389610388
-Dallas Cowboys @ Las Vegas Raiders,NFL,Las Vegas Raiders,2025-11-18 01:16:39,DraftKings,15.0,2.01,Dallas Cowboys,2025-11-18T03:04:48Z,0.1152416356877323
-Chicago Bulls @ Denver Nuggets,NBA,Denver Nuggets,2025-11-18 02:11:00,Fanatics,2.85,2.54,Chicago Bulls,2025-11-18T03:50:42Z,0.1632653061224489
-CSU Bakersfield Roadrunners @ Portland St Vikings,NCAAB,CSU Bakersfield Roadrunners,2025-11-18 03:05:00,DraftKings,4.4,2.1,Portland St Vikings,2025-11-18T04:47:54Z,0.1253196930946293
-American Eagles @ Rutgers Scarlet Knights,NCAAB,Rutgers Scarlet Knights,2025-11-18 23:31:31,Caesars,1.36,2.36,Rutgers Scarlet Knights,2025-11-18T23:55:51Z,0.0542635658914728
-Detroit Pistons @ Atlanta Hawks,NBA,Atlanta Hawks,2025-11-19 00:41:00,Caesars,5.2,2.56,Detroit Pistons,2025-11-19T01:48:04Z,0.0216110019646367
-Memphis Grizzlies @ San Antonio Spurs,NBA,Memphis Grizzlies,2025-11-19 01:13:00,FanDuel,2.38,2.19,San Antonio Spurs,2025-11-19T03:04:02Z,0.0577777777777777
-Stephen F. Austin Lumberjacks @ Fresno St Bulldogs,NCAAB,Fresno St Bulldogs,2025-11-19 02:06:40,Caesars,7.7,3.4,Fresno St Bulldogs,2025-11-19T03:49:16Z,2.333333333333333
-Kansas Jayhawks @ Duke Blue Devils,NCAAB,Kansas Jayhawks,2025-11-19 02:10:07,Caesars,12.0,2.34,Duke Blue Devils,2025-11-19T03:49:16Z,0.4134275618374556
-Phoenix Suns @ Portland Trail Blazers,NBA,Portland Trail Blazers,2025-11-19 04:14:00,FanDuel,2.42,2.63,Phoenix Suns,2025-11-19T04:56:41Z,0.03862660944206
-Harvard Crimson @ Penn State Nittany Lions,NCAAB,Harvard Crimson,2025-11-19 23:30:00,DraftKings,8.0,3.54,Penn State Nittany Lions,2025-11-19T21:29:26Z,0.0389610389610388
-Charlotte Hornets @ Indiana Pacers,NBA,Charlotte Hornets,2025-11-20 00:10:19,DraftKings,21.0,4.05,Indiana Pacers,2025-11-20T01:46:51Z,0.4046822742474916
-Miami (OH) RedHawks @ Buffalo Bulls,NCAAF,Buffalo Bulls,2025-11-20 00:05:00,Caesars,5.5,2.45,Miami (OH) RedHawks,2025-11-20T01:46:51Z,0.1956521739130436
-Chicago Bulls @ Portland Trail Blazers,NBA,Portland Trail Blazers,2025-11-20 03:11:00,BetMGM,3.6,4.51,Chicago Bulls,2025-11-20T04:00:35Z,0.25
-Alabama Crimson Tide @ Illinois Fighting Illini,NCAAB,Illinois Fighting Illini,2025-11-20 02:16:10,FanDuel,4.2,2.02,Alabama Crimson Tide,2025-11-20T04:00:35Z,0.1320754716981131
-New York Knicks @ Dallas Mavericks,NBA,Dallas Mavericks,2025-11-20 02:48:08,Caesars,3.6,4.34,New York Knicks,2025-11-20T04:46:31Z,0.358490566037736
-Southern Indiana Screaming Eagles @ Incarnate Word Cardinals,NCAAB,Southern Indiana Screaming Eagles,2025-11-20 17:31:05,Caesars,5.5,4.15,Not Found,2025-11-20T17:44:25Z,0.1133603238866396
-FC Barcelona Bàsquet @ Anadolu Efes,Basketball Euroleague,FC Barcelona Bàsquet,2025-11-20 17:30:00,FanDuel,1.65,2.4,Not Found,2025-11-20T17:44:25Z,0.0248447204968942
-Purdue Boilermakers @ Memphis Tigers,NCAAB,Memphis Tigers,2025-11-20 23:00:00,FanDuel,10.8,3.02,Not Found,2025-11-20T20:41:14Z,0.08
-Saint Joseph's Hawks @ UNLV Rebels,NCAAB,Saint Joseph's Hawks,2025-11-21 03:00:00,FanDuel,5.6,4.76,Not Found,2025-11-21T02:18:29Z,0.0447761194029848
-New York Rangers @ Colorado Avalanche,NHL,Colorado Avalanche,2025-11-21 02:08:45,BetMGM,2.1,2.43,Not Found,2025-11-21T02:18:29Z,0.0294117647058823
+Match,League,Team,Start Time,Outlier Book,Outlier Odds,Modified Z Score,Expected Value,Result,Scrape Time
+Pittsburgh Panthers @ Florida State Seminoles,NCAAF,Pittsburgh Panthers,2025-10-11 16:00:00,FanDuel,4.5,2.28,0.0344827586206898,Pittsburgh Panthers,2025-10-11T14:59:03Z
+TCU Horned Frogs @ Kansas State Wildcats,NCAAF,Kansas State Wildcats,2025-10-11 16:32:00,Caesars,1.59,2.15,0.2045454545454545,Kansas State Wildcats,2025-10-11T21:59:15Z
+Iowa State Cyclones @ Colorado Buffaloes,NCAAF,Iowa State Cyclones,2025-10-11 16:36:00,Caesars,2.95,3.19,0.1614173228346456,Colorado Buffaloes,2025-10-11T22:27:54Z
+Georgia Bulldogs @ Auburn Tigers,NCAAF,Auburn Tigers,2025-10-11 19:30:00,FanDuel,9.0,3.95,0.2465373961218837,Georgia Bulldogs,2025-10-12T03:09:23Z
+Denver Broncos @ New York Jets,NFL,New York Jets,2025-10-12 13:30:00,DraftKings,4.4,3.82,0.0352941176470589,Denver Broncos,2025-10-12T11:59:14Z
+Arizona Cardinals @ Indianapolis Colts,NFL,Arizona Cardinals,2025-10-12 17:01:00,BetMGM,4.75,2.36,0.0348583877995644,Indianapolis Colts,2025-10-12T16:59:27Z
+Cincinnati Bengals @ Green Bay Packers,NFL,Cincinnati Bengals,2025-10-12 20:28:00,FanDuel,12.0,2.01,0.6973125884016973,Green Bay Packers,2025-10-12T22:58:57Z
+Seattle Mariners @ Toronto Blue Jays,MLB,Toronto Blue Jays,2025-10-13 00:04:45,Caesars,3.6,4.11,0.2857142857142858,Seattle Mariners,2025-10-13T02:08:26Z
+Detroit Lions @ Kansas City Chiefs,NFL,Detroit Lions,2025-10-13 00:22:43,FanDuel,6.4,2.53,0.4611872146118724,Kansas City Chiefs,2025-10-13T02:08:26Z
+Vegas Golden Knights @ Calgary Flames,NHL,Calgary Flames,2025-10-15 01:08:12,Caesars,19.0,3.51,0.6033755274261602,Vegas Golden Knights,2025-10-15T03:43:51Z
+Pittsburgh Penguins @ Anaheim Ducks,NHL,Pittsburgh Penguins,2025-10-15 02:44:38,DraftKings,3.8,2.65,0.4393939393939393,Anaheim Ducks,2025-10-15T03:58:54Z
+Florida Panthers @ New Jersey Devils,NHL,New Jersey Devils,2025-10-16 23:11:50,Caesars,2.45,4.27,0.1187214611872147,New Jersey Devils,2025-10-16T23:35:19Z
+Nashville Predators @ Montréal Canadiens,NHL,Nashville Predators,2025-10-16 23:08:17,Caesars,2.35,2.7,0.030701754385965,Montreal Canadiens,2025-10-16T23:35:19Z
+Winnipeg Jets @ Philadelphia Flyers,NHL,Winnipeg Jets,2025-10-16 23:16:05,Caesars,1.25,2.78,0.0964912280701755,Winnipeg Jets,2025-10-17T00:44:58Z
+Toronto Blue Jays @ Seattle Mariners,MLB,Toronto Blue Jays,2025-10-17 00:34:00,FanDuel,2.62,2.16,0.0826446280991736,Toronto Blue Jays,2025-10-17T00:44:58Z
+Edmonton Oilers @ New York Islanders,NHL,Edmonton Oilers,2025-10-16 23:38:08,BetMGM,34.0,4.2,4.362776025236593,New York Islanders,2025-10-17T02:18:35Z
+Carolina Hurricanes @ Anaheim Ducks,NHL,Anaheim Ducks,2025-10-17 02:08:13,DraftKings,19.0,3.32,0.9095477386934674,Carolina Hurricanes,2025-10-17T04:12:27Z
+Toronto Blue Jays @ Seattle Mariners,MLB,Seattle Mariners,2025-10-17 22:09:00,DraftKings,1.81,4.82,0.0838323353293414,Toronto Blue Jays,2025-10-17T23:08:50Z
+Saskatchewan Roughriders @ Winnipeg Blue Bombers,CFL,Saskatchewan Roughriders,2025-10-18 00:00:00,DraftKings,4.7,2.65,0.0854503464203233,Winnipeg Blue Bombers,2025-10-17T23:34:50Z
+Minnesota Wild @ Washington Capitals,NHL,Washington Capitals,2025-10-17 23:11:02,Fanatics,1.83,3.67,0.2797202797202799,Washington Capitals,2025-10-18T00:42:07Z
+Edmonton Elks @ BC Lions,CFL,Edmonton Elks,2025-10-18 02:37:00,DraftKings,3.75,2.53,0.0416666666666667,BC Lions,2025-10-18T02:12:54Z
+Milwaukee Brewers @ Los Angeles Dodgers,MLB,Milwaukee Brewers,2025-10-18 00:38:51,Fanatics,16.0,2.33,0.1569052783803326,Los Angeles Dodgers,2025-10-18T02:12:54Z
+San Jose Sharks @ Utah Mammoth,NHL,San Jose Sharks,2025-10-18 01:08:49,Caesars,4.5,2.22,0.3392857142857144,Utah Mammoth,2025-10-18T02:12:54Z
+Bournemouth @ Crystal Palace,EPL,Crystal Palace,2025-10-18 14:01:00,FanDuel,76.0,2.83,1.7407140281283804,Draw,2025-10-18T16:10:42Z
+Georgia Tech Yellow Jackets @ Duke Blue Devils,NCAAF,Duke Blue Devils,2025-10-18 16:10:28,BetMGM,13.5,3.43,1.611218568665377,Georgia Tech Yellow Jackets,2025-10-18T19:07:09Z
+Arizona Wildcats @ Houston Cougars,NCAAF,Arizona Wildcats,2025-10-18 16:03:18,BetMGM,5.0,2.97,0.3812154696132597,Houston Cougars,2025-10-18T19:07:09Z
+Akron Zips @ Ball State Cardinals,NCAAF,Akron Zips,2025-10-18 19:32:25,BetMGM,2.5,2.33,0.3812154696132598,Ball State Cardinals,2025-10-18T21:35:01Z
+Florida State Seminoles @ Stanford Cardinal,NCAAF,Florida State Seminoles,2025-10-19 02:35:21,FanDuel,10.0,3.14,1.3201856148491882,Stanford Cardinal,2025-10-19T06:14:05Z
+Aston Villa @ Tottenham Hotspur,EPL,Aston Villa,2025-10-19 13:00:00,DraftKings,8.0,2.01,0.0781671159029648,Aston Villa,2025-10-19T13:29:30Z
+New England Patriots @ Tennessee Titans,NFL,Tennessee Titans,2025-10-19 17:03:23,Fanatics,8.0,2.7,0.2012012012012012,New England Patriots,2025-10-19T18:43:16Z
+Carolina Panthers @ New York Jets,NFL,New York Jets,2025-10-19 17:03:11,BetMGM,9.0,2.57,0.4240506329113922,Carolina Panthers,2025-10-19T19:23:23Z
+New York Giants @ Denver Broncos,NFL,Denver Broncos,2025-10-19 20:05:30,FanDuel,11.6,2.31,0.6384180790960453,Denver Broncos,2025-10-19T22:37:44Z
+Green Bay Packers @ Arizona Cardinals,NFL,Green Bay Packers,2025-10-19 20:25:23,FanDuel,2.46,2.2,0.1441860465116278,Green Bay Packers,2025-10-19T23:08:56Z
+Atlanta Falcons @ San Francisco 49ers,NFL,San Francisco 49ers,2025-10-20 00:22:59,Caesars,1.74,2.47,0.0545454545454545,San Francisco 49ers,2025-10-20T02:30:21Z
+Hokkaido Nippon-Ham Fighters @ Fukuoka SoftBank Hawks,NPB,Hokkaido Nippon-Ham Fighters,2025-10-20 09:00:00,FanDuel,9.7,2.34,0.0825892857142854,Fukuoka SoftBank Hawks,2025-10-20T11:35:58Z
+Hanwha Eagles @ Samsung Lions,KBO,Samsung Lions,2025-10-21 09:30:59,FanDuel,5.7,3.02,0.2337662337662338,Hanwha Eagles,2025-10-21T12:20:07Z
+Toronto Raptors @ Atlanta Hawks,NBA,Toronto Raptors,2025-10-22 23:40:00,DraftKings,3.4,3.71,0.1409395973154362,Toronto Raptors,2025-10-22T23:35:15Z
+Cleveland Cavaliers @ New York Knicks,NBA,Cleveland Cavaliers,2025-10-22 23:13:20,Caesars,4.2,4.83,0.2462908011869435,New York Knicks,2025-10-23T00:45:45Z
+Miami Heat @ Orlando Magic,NBA,Miami Heat,2025-10-22 23:14:53,Caesars,3.15,3.12,0.1977186311787072,Orlando Magic,2025-10-23T00:45:45Z
+Detroit Pistons @ Chicago Bulls,NBA,Chicago Bulls,2025-10-23 00:13:55,Caesars,1.43,2.62,0.0671641791044774,Chicago Bulls,2025-10-23T00:45:45Z
+New Orleans Pelicans @ Memphis Grizzlies,NBA,Memphis Grizzlies,2025-10-23 00:12:46,Caesars,2.25,2.4,0.0922330097087378,Memphis Grizzlies,2025-10-23T00:45:45Z
+Denver Nuggets @ Golden State Warriors,NBA,Denver Nuggets,2025-10-24 02:19:01,Caesars,1.29,2.32,0.075,Golden State Warriors,2025-10-24T04:12:04Z
+Atlanta Hawks @ Orlando Magic,NBA,Atlanta Hawks,2025-10-24 23:11:03,FanDuel,3.4,2.02,0.0932475884244372,Atlanta Hawks,2025-10-24T23:19:36Z
+Milwaukee Bucks @ Toronto Raptors,NBA,Milwaukee Bucks,2025-10-24 22:45:00,FanDuel,3.0,4.5,0.1857707509881424,Milwaukee Bucks,2025-10-24T23:30:28Z
+Cleveland Cavaliers @ Brooklyn Nets,NBA,Brooklyn Nets,2025-10-24 23:43:29,Caesars,7.4,2.02,0.1028315946348733,Cleveland Cavaliers,2025-10-24T23:48:27Z
+Boise State Broncos @ Nevada Wolf Pack,NCAAF,Nevada Wolf Pack,2025-10-25 02:00:00,FanDuel,11.4,2.01,0.0614525139664804,Boise State Broncos,2025-10-25T01:41:09Z
+Phoenix Suns @ Los Angeles Clippers,NBA,Phoenix Suns,2025-10-25 02:43:33,BetMGM,17.0,2.21,0.1580381471389647,Los Angeles Clippers,2025-10-25T03:55:51Z
+UMass Minutemen @ Central Michigan Chippewas,NCAAF,UMass Minutemen,2025-10-25 19:32:29,DraftKings,7.5,2.15,0.0683760683760683,Central Michigan Chippewas,2025-10-25T19:34:59Z
+Charlotte Hornets @ Philadelphia 76ers,NBA,Charlotte Hornets,2025-10-25 23:42:00,FanDuel,3.4,2.7,0.0591900311526479,Philadelphia 76ers,2025-10-25T23:48:20Z
+Phoenix Suns @ Denver Nuggets,NBA,Phoenix Suns,2025-10-26 01:13:37,FanDuel,9.0,2.76,0.1235955056179775,Denver Nuggets,2025-10-26T01:49:35Z
+Hanshin Tigers @ Fukuoka SoftBank Hawks,NPB,Fukuoka SoftBank Hawks,2025-10-26 09:30:00,FanDuel,2.82,2.56,0.2051282051282051,Fukuoka SoftBank Hawks,2025-10-26T09:40:48Z
+Burnley @ Wolverhampton Wanderers,EPL,Burnley,2025-10-26 14:00:00,Caesars,3.7,2.79,0.4566929133858266,Burnley,2025-10-26T14:18:39Z
+Colorado Avalanche @ New Jersey Devils,NHL,New Jersey Devils,2025-10-26 17:08:06,DraftKings,1.77,4.72,0.1568627450980392,New Jersey Devils,2025-10-26T17:41:19Z
+Chicago Bears @ Baltimore Ravens,NFL,Chicago Bears,2025-10-26 17:02:19,DraftKings,5.2,2.85,0.4689265536723166,Baltimore Ravens,2025-10-26T19:26:21Z
+New York Jets @ Cincinnati Bengals,NFL,New York Jets,2025-10-26 17:02:51,Caesars,15.0,2.05,0.2520868113522537,New York Jets,2025-10-26T19:26:21Z
+Tampa Bay Buccaneers @ New Orleans Saints,NFL,New Orleans Saints,2025-10-26 20:05:40,Caesars,4.2,5.78,0.3418530351437698,Tampa Bay Buccaneers,2025-10-26T20:46:56Z
+Boston Celtics @ Detroit Pistons,NBA,Boston Celtics,2025-10-26 19:44:38,DraftKings,4.1,3.62,0.0933333333333331,Detroit Pistons,2025-10-26T21:29:53Z
+Dallas Cowboys @ Denver Broncos,NFL,Dallas Cowboys,2025-10-26 20:25:25,DraftKings,13.0,2.85,0.4823261117445839,Denver Broncos,2025-10-26T21:56:19Z
+Utah Mammoth @ Winnipeg Jets,NHL,Winnipeg Jets,2025-10-26 22:08:41,BetMGM,1.74,5.09,0.2167832167832168,Utah Mammoth,2025-10-26T23:19:28Z
+Milwaukee Bucks @ Cleveland Cavaliers,NBA,Milwaukee Bucks,2025-10-26 22:12:09,BetMGM,6.25,2.82,0.1384335154826957,Cleveland Cavaliers,2025-10-26T23:19:28Z
+Charlotte Hornets @ Washington Wizards,NBA,Washington Wizards,2025-10-26 22:16:00,Caesars,1.42,2.81,0.0289855072463769,Charlotte Hornets,2025-10-26T23:41:36Z
+San Jose Sharks @ Minnesota Wild,NHL,Minnesota Wild,2025-10-26 22:08:46,FanDuel,6.6,2.12,0.0679611650485437,San Jose Sharks,2025-10-26T23:41:36Z
+Los Angeles Lakers @ Sacramento Kings,NBA,Los Angeles Lakers,2025-10-27 01:10:30,Fanatics,2.85,2.02,0.1400000000000001,Los Angeles Lakers,2025-10-27T01:53:43Z
+Cleveland Cavaliers @ Detroit Pistons,NBA,Detroit Pistons,2025-10-27 23:13:09,FanDuel,2.4,2.45,0.1538461538461537,Cleveland Cavaliers,2025-10-27T23:30:49Z
+Boston Celtics @ New Orleans Pelicans,NBA,New Orleans Pelicans,2025-10-28 00:10:51,BetMGM,7.25,2.02,0.0507246376811594,Boston Celtics,2025-10-28T01:43:34Z
+Toronto Blue Jays @ Los Angeles Dodgers,MLB,Toronto Blue Jays,2025-10-28 00:06:00,BetMGM,3.3,2.22,0.2992125984251966,Los Angeles Dodgers,2025-10-28T05:57:11Z
+Philadelphia 76ers @ Washington Wizards,NBA,Washington Wizards,2025-10-28 23:11:00,Caesars,2.85,2.7,0.0401459854014598,Philadelphia 76ers,2025-10-28T23:20:17Z
+LG Twins @ Hanwha Eagles,KBO,LG Twins,2025-10-29 09:30:00,BetMGM,2.55,2.11,0.0450819672131147,Hanwha Eagles,2025-10-29T08:31:30Z
+Indiana Pacers @ Dallas Mavericks,NBA,Indiana Pacers,2025-10-30 00:41:00,FanDuel,16.0,3.36,1.0151133501259446,Dallas Mavericks,2025-10-30T03:04:03Z
+Memphis Grizzlies @ Phoenix Suns,NBA,Phoenix Suns,2025-10-30 02:10:00,DraftKings,3.1,2.34,0.1742424242424243,Memphis Grizzlies,2025-10-30T03:47:26Z
+LG Twins @ Hanwha Eagles,KBO,LG Twins,2025-10-30 09:30:00,BetMGM,2.05,4.5,0.0406091370558373,LG Twins,2025-10-30T07:50:54Z
+Golden State Warriors @ Milwaukee Bucks,NBA,Milwaukee Bucks,2025-10-31 00:13:00,Caesars,3.8,3.49,0.371841155234657,Milwaukee Bucks,2025-10-31T01:46:28Z
+LG Twins @ Hanwha Eagles,KBO,Hanwha Eagles,2025-10-31 09:31:00,DraftKings,3.9,2.27,0.2499999999999999,LG Twins,2025-10-31T11:18:31Z
+Colorado Avalanche @ Vegas Golden Knights,NHL,Vegas Golden Knights,2025-10-31 20:08:31,BetMGM,16.0,5.0,1.48062015503876,Colorado Avalanche,2025-10-31T22:20:36Z
+Boston Celtics @ Philadelphia 76ers,NBA,Philadelphia 76ers,2025-10-31 23:12:51,DraftKings,6.75,2.2,0.2523191094619667,Boston Celtics,2025-10-31T23:54:50Z
+Los Angeles Lakers @ Memphis Grizzlies,NBA,Los Angeles Lakers,2025-11-01 01:42:49,DraftKings,2.1,5.62,0.0552763819095476,Los Angeles Lakers,2025-11-01T01:49:55Z
+New Orleans Pelicans @ Los Angeles Clippers,NBA,New Orleans Pelicans,2025-11-01 02:40:17,Caesars,8.0,3.29,0.4571948998178506,Los Angeles Clippers,2025-11-01T03:59:13Z
+Denver Nuggets @ Portland Trail Blazers,NBA,Denver Nuggets,2025-11-01 02:12:20,FanDuel,2.06,4.72,0.3552631578947369,Portland Trail Blazers,2025-11-01T04:47:23Z
+Wolverhampton Wanderers @ Fulham,EPL,Wolverhampton Wanderers,2025-11-01 15:01:00,FanDuel,11.0,2.26,0.0679611650485436,Fulham,2025-11-01T15:18:54Z
+Chelsea @ Tottenham Hotspur,EPL,Tottenham Hotspur,2025-11-01 17:30:00,DraftKings,10.0,3.21,0.0834236186348863,Chelsea,2025-11-01T18:28:01Z
+New Mexico State Aggies @ Western Kentucky Hilltoppers,NCAAF,New Mexico State Aggies,2025-11-01 19:32:21,FanDuel,4.4,3.06,0.1671087533156501,Western Kentucky Hilltoppers,2025-11-01T19:40:21Z
+Virginia Cavaliers @ California Golden Bears,NCAAF,California Golden Bears,2025-11-01 19:50:00,FanDuel,3.8,2.28,0.1949685534591193,Virginia Cavaliers,2025-11-01T19:55:11Z
+Aston Villa @ Liverpool,EPL,Liverpool,2025-11-01 20:01:00,Caesars,1.95,2.39,0.2745098039215686,Liverpool,2025-11-01T20:49:54Z
+Colorado Avalanche @ San Jose Sharks,NHL,Colorado Avalanche,2025-11-01 20:08:27,Caesars,1.91,5.67,0.1863354037267079,San Jose Sharks,2025-11-01T21:27:38Z
+Sacramento Kings @ Milwaukee Bucks,NBA,Sacramento Kings,2025-11-01 21:11:00,BetMGM,5.75,3.57,0.0511882998171846,Sacramento Kings,2025-11-01T21:59:32Z
+Chicago Blackhawks @ Edmonton Oilers,NHL,Chicago Blackhawks,2025-11-02 02:11:40,BetMGM,5.0,2.24,0.3661202185792348,Edmonton Oilers,2025-11-02T03:07:44Z
+Newcastle United @ West Ham United,EPL,Newcastle United,2025-11-02 14:00:00,Fanatics,401.0,2.62,5.443837377470673,West Ham United,2025-11-02T15:56:02Z
+Bournemouth @ Manchester City,EPL,Bournemouth,2025-11-02 16:30:00,FanDuel,19.0,2.08,0.4179104477611939,Manchester City,2025-11-02T16:49:50Z
+Atlanta Falcons @ New England Patriots,NFL,Atlanta Falcons,2025-11-02 18:02:21,FanDuel,6.4,2.21,0.1962616822429908,New England Patriots,2025-11-02T18:51:05Z
+New Orleans Pelicans @ Oklahoma City Thunder,NBA,New Orleans Pelicans,2025-11-02 20:30:00,BetMGM,6.75,3.15,0.0497667185069984,Oklahoma City Thunder,2025-11-02T20:21:39Z
+Carolina Panthers @ Green Bay Packers,NFL,Green Bay Packers,2025-11-02 18:02:52,FanDuel,2.68,2.7,0.0894308943089431,Carolina Panthers,2025-11-02T20:34:37Z
+Denver Broncos @ Houston Texans,NFL,Houston Texans,2025-11-02 18:02:56,Caesars,2.25,2.02,0.125,Denver Broncos,2025-11-02T20:43:01Z
+New Orleans Saints @ Los Angeles Rams,NFL,New Orleans Saints,2025-11-02 21:05:18,Caesars,23.0,2.53,0.5312916111850867,Los Angeles Rams,2025-11-02T21:28:55Z
+Kansas City Chiefs @ Buffalo Bills,NFL,Kansas City Chiefs,2025-11-02 21:25:35,BetMGM,2.65,3.51,0.0642570281124496,Buffalo Bills,2025-11-02T21:40:26Z
+Tampa Bay Lightning @ Utah Mammoth,NHL,Tampa Bay Lightning,2025-11-02 20:38:50,Caesars,1.95,2.02,0.0372340425531914,Tampa Bay Lightning,2025-11-02T22:42:56Z
+Atlanta Hawks @ Cleveland Cavaliers,NBA,Atlanta Hawks,2025-11-02 23:11:08,FanDuel,4.9,2.29,0.1583924349881796,Cleveland Cavaliers,2025-11-02T23:41:10Z
+Miami Heat @ Los Angeles Lakers,NBA,Miami Heat,2025-11-03 02:40:41,Caesars,5.5,3.6,0.1930585683297178,Los Angeles Lakers,2025-11-03T04:31:11Z
+Arizona Cardinals @ Dallas Cowboys,NFL,Arizona Cardinals,2025-11-04 01:15:45,Caesars,2.2,2.34,0.1,Arizona Cardinals,2025-11-04T01:47:09Z
+Los Angeles Lakers @ Portland Trail Blazers,NBA,Portland Trail Blazers,2025-11-04 03:12:00,Caesars,1.18,2.7,0.0260869565217391,Los Angeles Lakers,2025-11-04T03:46:03Z
+Miami Heat @ Los Angeles Clippers,NBA,Miami Heat,2025-11-04 03:41:00,Caesars,2.95,2.44,0.0845588235294118,Miami Heat,2025-11-04T03:46:03Z
+Louisiana Tech Bulldogs @ Nevada Wolf Pack,NCAAB,Louisiana Tech Bulldogs,2025-11-05 03:00:00,FanDuel,4.85,4.72,0.0232067510548521,Nevada Wolf Pack,2025-11-05T01:48:15Z
+Philadelphia 76ers @ Chicago Bulls,NBA,Chicago Bulls,2025-11-05 01:11:00,DraftKings,6.75,2.99,0.1440677966101694,Chicago Bulls,2025-11-05T01:48:15Z
+Southern Utah Thunderbirds @ Arizona St Sun Devils,NCAAB,Southern Utah Thunderbirds,2025-11-05 02:00:00,FanDuel,13.0,2.86,0.0399999999999999,Arizona St Sun Devils,2025-11-05T01:48:15Z
+Portland St Vikings @ Stanford Cardinal,NCAAB,Stanford Cardinal,2025-11-05 03:00:00,Caesars,1.31,4.38,0.0314960629921259,Stanford Cardinal,2025-11-05T03:04:12Z
+South Carolina Upstate Spartans @ Fresno St Bulldogs,NCAAB,South Carolina Upstate Spartans,2025-11-06 02:00:00,FanDuel,5.4,3.6,0.0305343511450381,South Carolina Upstate Spartans,2025-11-06T01:53:17Z
+Los Angeles Clippers @ Phoenix Suns,NBA,Phoenix Suns,2025-11-07 02:10:37,DraftKings,2.45,4.72,0.079295154185022,Phoenix Suns,2025-11-07T03:03:16Z
+Wright St Raiders @ California Golden Bears,NCAAB,Wright St Raiders,2025-11-07 03:01:44,DraftKings,16.0,4.22,0.4324082363473588,California Golden Bears,2025-11-07T03:48:10Z
+Chicago Bulls @ Milwaukee Bucks,NBA,Chicago Bulls,2025-11-08 01:11:00,DraftKings,2.7,3.37,0.0546875000000001,Milwaukee Bucks,2025-11-08T01:41:45Z
+Houston Cougars @ UCF Knights,NCAAF,Houston Cougars,2025-11-08 01:15:30,DraftKings,2.8,3.91,0.0937499999999998,Houston Cougars,2025-11-08T02:51:21Z
+Northwestern Wildcats @ USC Trojans,NCAAF,USC Trojans,2025-11-08 02:05:56,Caesars,1.25,4.38,0.0245901639344262,USC Trojans,2025-11-08T03:28:14Z
+Burnley @ West Ham United,EPL,Draw,2025-11-08 15:00:00,Caesars,3.2,3.88,0.1072664359861591,West Ham United,2025-11-08T15:48:27Z
+SMU Mustangs @ Boston College Eagles,NCAAF,Boston College Eagles,2025-11-08 16:58:00,Fanatics,10.5,3.53,0.8987341772151899,SMU Mustangs,2025-11-08T17:17:29Z
+BYU Cougars @ Texas Tech Red Raiders,NCAAF,BYU Cougars,2025-11-08 17:08:25,DraftKings,6.5,3.27,0.2452107279693487,Texas Tech Red Raiders,2025-11-08T17:17:29Z
+Indiana Hoosiers @ Penn State Nittany Lions,NCAAF,Penn State Nittany Lions,2025-11-08 17:10:46,Caesars,5.3,2.51,0.1205073995771668,Indiana Hoosiers,2025-11-08T17:17:29Z
+Alabama Crimson Tide @ St. John's Red Storm,NCAAB,St. John's Red Storm,2025-11-08 17:01:34,Caesars,1.62,2.11,0.0253164556962025,Alabama Crimson Tide,2025-11-08T17:17:29Z
+Georgia Bulldogs @ Mississippi State Bulldogs,NCAAF,Mississippi State Bulldogs,2025-11-08 16:54:00,DraftKings,3.8,2.09,0.1275964391691394,Georgia Bulldogs,2025-11-08T17:30:58Z
+Arsenal @ Sunderland,EPL,Sunderland,2025-11-08 17:30:00,FanDuel,8.5,2.08,0.0625,Draw,2025-11-08T17:40:37Z
+Marshall Thundering Herd @ Toledo Rockets,NCAAB,Marshall Thundering Herd,2025-11-08 19:02:01,Caesars,3.6,3.6,0.3235294117647058,Marshall Thundering Herd,2025-11-08T19:16:25Z
+South Florida Bulls @ GW Revolutionaries,NCAAB,South Florida Bulls,2025-11-08 18:32:59,Fanatics,1.69,2.61,0.0304878048780487,GW Revolutionaries,2025-11-08T19:16:25Z
+Temple Owls @ Army Black Knights,NCAAF,Temple Owls,2025-11-08 17:04:00,FanDuel,12.0,3.77,0.8126888217522658,Army Black Knights,2025-11-08T19:50:51Z
+Duke Blue Devils @ UConn Huskies,NCAAF,Duke Blue Devils,2025-11-08 20:35:00,Caesars,1.31,3.6,0.0314960629921259,UConn Huskies,2025-11-08T20:42:50Z
+Kansas Jayhawks @ Arizona Wildcats,NCAAF,Kansas Jayhawks,2025-11-08 20:38:00,Caesars,2.85,3.0,0.0754716981132076,Arizona Wildcats,2025-11-08T20:42:50Z
+Wolverhampton Wanderers @ Chelsea,EPL,Draw,2025-11-08 20:01:00,FanDuel,7.5,2.02,0.1942675159235667,Chelsea,2025-11-08T21:17:54Z
+Washington Huskies @ Wisconsin Badgers,NCAAF,Wisconsin Badgers,2025-11-08 17:59:00,FanDuel,4.9,3.29,0.0769230769230769,Wisconsin Badgers,2025-11-08T21:47:55Z
+Oregon Ducks @ Iowa Hawkeyes,NCAAF,Iowa Hawkeyes,2025-11-08 16:50:00,Caesars,7.4,3.93,0.3627992633517496,Oregon Ducks,2025-11-08T23:30:31Z
+Sam Houston State Bearkats @ Oregon State Beavers,NCAAF,Sam Houston State Bearkats,2025-11-09 03:05:00,FanDuel,12.0,4.64,0.2036108324974923,Sam Houston State Bearkats,2025-11-09T03:05:52Z
+Portland Trail Blazers @ Miami Heat,NBA,Portland Trail Blazers,2025-11-09 01:12:00,FanDuel,2.18,2.17,0.0531400966183576,Miami Heat,2025-11-09T03:05:52Z
+Indiana Pacers @ Denver Nuggets,NBA,Indiana Pacers,2025-11-09 02:11:00,FanDuel,10.0,2.02,0.2195121951219513,Denver Nuggets,2025-11-09T03:49:45Z
+Phoenix Suns @ Los Angeles Clippers,NBA,Los Angeles Clippers,2025-11-09 03:42:42,FanDuel,3.65,2.18,0.0428571428571428,Phoenix Suns,2025-11-09T04:55:29Z
+Leeds United @ Nottingham Forest,EPL,Leeds United,2025-11-09 14:01:00,DraftKings,4.9,4.23,0.0515021459227469,Nottingham Forest,2025-11-09T14:48:47Z
+Newcastle United @ Brentford,EPL,Brentford,2025-11-09 14:00:00,DraftKings,7.5,2.02,0.0445682451253482,Brentford,2025-11-09T14:56:24Z
+Brighton and Hove Albion @ Crystal Palace,EPL,Crystal Palace,2025-11-09 14:00:00,FanDuel,5.6,3.04,0.1313131313131311,Draw,2025-11-09T15:40:44Z
+North Carolina Central Eagles @ Appalachian St Mountaineers,NCAAB,North Carolina Central Eagles,2025-11-09 18:00:00,FanDuel,5.7,2.95,0.0458715596330274,Appalachian St Mountaineers,2025-11-09T17:17:19Z
+Atlanta Falcons @ Indianapolis Colts,NFL,Atlanta Falcons,2025-11-09 14:35:08,DraftKings,2.7,2.53,0.0931174089068826,Indianapolis Colts,2025-11-09T17:40:54Z
+Liverpool @ Manchester City,EPL,Liverpool,2025-11-09 16:30:00,Fanatics,51.0,2.61,0.3877551020408163,Manchester City,2025-11-09T17:48:40Z
+Marist Red Foxes @ Dartmouth Big Green,NCAAB,Dartmouth Big Green,2025-11-09 19:04:22,DraftKings,3.6,3.01,0.3953488372093023,Marist Red Foxes,2025-11-09T19:16:22Z
+New Orleans Saints @ Carolina Panthers,NFL,Carolina Panthers,2025-11-09 18:02:43,BetMGM,2.1,2.7,0.065989847715736,New Orleans Saints,2025-11-09T19:16:22Z
+Baltimore Ravens @ Minnesota Vikings,NFL,Minnesota Vikings,2025-11-09 18:02:49,FanDuel,1.88,2.17,0.0273224043715845,Baltimore Ravens,2025-11-09T19:16:22Z
+Buffalo Bills @ Miami Dolphins,NFL,Buffalo Bills,2025-11-09 18:03:02,FanDuel,3.2,4.72,0.1940298507462686,Miami Dolphins,2025-11-09T19:25:19Z
+Jacksonville Jaguars @ Houston Texans,NFL,Houston Texans,2025-11-09 18:03:20,Caesars,10.0,3.51,0.2870012870012869,Houston Texans,2025-11-09T19:25:19Z
+New York Giants @ Chicago Bears,NFL,Chicago Bears,2025-11-09 18:03:06,FanDuel,2.0,3.04,0.0309278350515465,Chicago Bears,2025-11-09T19:34:05Z
+Texas A&M Aggies @ Oklahoma St Cowboys,NCAAB,Oklahoma St Cowboys,2025-11-09 19:00:00,Fanatics,1.36,3.1,0.0303030303030303,Oklahoma St Cowboys,2025-11-09T19:56:26Z
+Los Angeles Kings @ Pittsburgh Penguins,NHL,Los Angeles Kings,2025-11-09 19:08:18,FanDuel,3.1,2.7,0.0231023102310231,Los Angeles Kings,2025-11-09T20:44:00Z
+New England Patriots @ Tampa Bay Buccaneers,NFL,New England Patriots,2025-11-09 18:02:16,Fanatics,1.87,2.32,0.0331491712707183,New England Patriots,2025-11-09T20:51:09Z
+Detroit Lions @ Washington Commanders,NFL,Washington Commanders,2025-11-09 21:25:00,DraftKings,4.8,4.05,0.0322580645161288,Detroit Lions,2025-11-09T20:58:54Z
+Houston Rockets @ Milwaukee Bucks,NBA,Houston Rockets,2025-11-09 20:40:57,Caesars,2.75,2.85,0.211453744493392,Houston Rockets,2025-11-09T21:29:13Z
+Oklahoma City Thunder @ Memphis Grizzlies,NBA,Memphis Grizzlies,2025-11-09 23:11:00,DraftKings,7.0,2.7,0.238938053097345,Oklahoma City Thunder,2025-11-09T23:19:44Z
+Brooklyn Nets @ New York Knicks,NBA,Brooklyn Nets,2025-11-09 23:11:45,DraftKings,16.0,2.25,0.4184397163120567,New York Knicks,2025-11-09T23:19:44Z
+Colorado Avalanche @ Vancouver Canucks,NHL,Colorado Avalanche,2025-11-10 03:08:07,Caesars,1.5,4.22,0.0714285714285714,Colorado Avalanche,2025-11-10T03:21:47Z
+San Antonio Spurs @ Chicago Bulls,NBA,Chicago Bulls,2025-11-11 01:11:00,Caesars,3.6,2.7,0.1180124223602483,San Antonio Spurs,2025-11-11T01:49:23Z
+Minnesota Timberwolves @ Utah Jazz,NBA,Utah Jazz,2025-11-11 02:11:03,Caesars,3.4,3.85,0.1447811447811446,Minnesota Timberwolves,2025-11-11T03:06:09Z
+Milwaukee Bucks @ Dallas Mavericks,NBA,Dallas Mavericks,2025-11-11 01:40:21,BetMGM,6.5,3.37,0.6971279373368144,Milwaukee Bucks,2025-11-11T03:51:36Z
+Atlanta Hawks @ Los Angeles Clippers,NBA,Atlanta Hawks,2025-11-11 03:41:27,Caesars,3.8,3.37,0.1515151515151515,Atlanta Hawks,2025-11-11T03:51:36Z
+Iona Gaels @ UMKC Kangaroos,NCAAB,UMKC Kangaroos,2025-11-11 18:00:00,Caesars,2.96,2.16,0.0206896551724138,Iona Gaels,2025-11-11T16:29:38Z
+Real Madrid @ Valencia Basket,Basketball Euroleague,Valencia Basket,2025-11-11 19:30:00,BetMGM,2.54,4.86,0.0901287553648069,Valencia Basket,2025-11-11T19:40:54Z
+Golden State Warriors @ Oklahoma City Thunder,NBA,Golden State Warriors,2025-11-12 01:10:50,DraftKings,10.0,2.53,0.4144271570014144,Oklahoma City Thunder,2025-11-12T01:48:24Z
+Boston Celtics @ Philadelphia 76ers,NBA,Philadelphia 76ers,2025-11-12 01:12:54,FanDuel,3.8,4.53,0.3475177304964539,Philadelphia 76ers,2025-11-12T03:04:42Z
+Anaheim Ducks @ Colorado Avalanche,NHL,Colorado Avalanche,2025-11-12 02:53:41,Caesars,1.56,2.51,0.0399999999999999,Colorado Avalanche,2025-11-12T03:50:18Z
+Ohio Bobcats @ Western Michigan Broncos,NCAAF,Ohio Bobcats,2025-11-12 01:06:00,Caesars,8.5,2.09,1.0094562647754135,Western Michigan Broncos,2025-11-12T03:50:18Z
+Calgary Flames @ St Louis Blues,NHL,Calgary Flames,2025-11-12 01:10:04,DraftKings,17.0,2.0,0.5356820234869015,St Louis Blues,2025-11-12T03:50:18Z
+Columbus Blue Jackets @ Seattle Kraken,NHL,Columbus Blue Jackets,2025-11-12 03:11:51,FanDuel,3.2,3.71,0.0958904109589041,Columbus Blue Jackets,2025-11-12T04:02:09Z
+Denver Nuggets @ Sacramento Kings,NBA,Sacramento Kings,2025-11-12 04:12:47,Caesars,5.0,3.65,0.075268817204301,Denver Nuggets,2025-11-12T04:33:18Z
+Winnipeg Jets @ Vancouver Canucks,NHL,Vancouver Canucks,2025-11-12 03:09:08,DraftKings,21.0,2.47,0.8850987432675045,Winnipeg Jets,2025-11-12T05:23:28Z
+Phoenix Suns @ Dallas Mavericks,NBA,Dallas Mavericks,2025-11-13 01:41:00,Caesars,2.1,3.71,0.0880829015544043,Phoenix Suns,2025-11-13T01:50:13Z
+Golden State Warriors @ San Antonio Spurs,NBA,Golden State Warriors,2025-11-13 01:11:00,FanDuel,4.4,2.16,0.1195928753180662,Golden State Warriors,2025-11-13T01:50:13Z
+Montana St Bobcats @ Stanford Cardinal,NCAAB,Montana St Bobcats,2025-11-13 03:01:55,FanDuel,11.0,3.75,0.2746234067207416,Stanford Cardinal,2025-11-13T03:07:18Z
+North Texas Mean Green @ Oregon St Beavers,NCAAB,Oregon St Beavers,2025-11-13 02:32:49,FanDuel,2.32,3.32,0.0593607305936072,Oregon St Beavers,2025-11-13T03:07:18Z
+Los Angeles Lakers @ Oklahoma City Thunder,NBA,Los Angeles Lakers,2025-11-13 02:48:00,Caesars,5.5,2.51,0.0617760617760618,Oklahoma City Thunder,2025-11-13T03:07:18Z
+Portland St Vikings @ San Francisco Dons,NCAAB,Portland St Vikings,2025-11-13 03:01:24,Fanatics,9.0,2.51,0.2064343163538874,San Francisco Dons,2025-11-13T03:07:18Z
+Tulsa Golden Hurricane @ Oral Roberts Golden Eagles,NCAAB,Oral Roberts Golden Eagles,2025-11-13 01:05:01,Caesars,2.45,2.25,0.2760416666666668,Tulsa Golden Hurricane,2025-11-13T03:07:18Z
+Denver Nuggets @ Los Angeles Clippers,NBA,Los Angeles Clippers,2025-11-13 03:40:00,Fanatics,2.9,4.38,0.070110701107011,Denver Nuggets,2025-11-13T03:53:27Z
+Central Michigan Chippewas @ South Alabama Jaguars,NCAAB,Central Michigan Chippewas,2025-11-13 16:00:00,FanDuel,3.35,2.06,0.046875,South Alabama Jaguars,2025-11-13T13:48:32Z
+New York Islanders @ Vegas Golden Knights,NHL,Vegas Golden Knights,2025-11-14 03:08:36,FanDuel,5.5,2.45,0.1201629327902239,New York Islanders,2025-11-14T04:36:14Z
+Winnipeg Jets @ Seattle Kraken,NHL,Winnipeg Jets,2025-11-14 03:09:36,FanDuel,5.0,2.61,0.557632398753894,Seattle Kraken,2025-11-14T05:22:47Z
+Coppin St Eagles @ Central Michigan Chippewas,NCAAB,Coppin St Eagles,2025-11-14 16:00:00,BetMGM,5.5,4.53,0.0318949343339586,Central Michigan Chippewas,2025-11-14T14:39:12Z
+Los Angeles Clippers @ Dallas Mavericks,NBA,Dallas Mavericks,2025-11-15 01:41:00,FanDuel,3.15,3.15,0.1753731343283581,Los Angeles Clippers,2025-11-15T01:44:53Z
+UCF Knights @ Texas A&M Aggies,NCAAB,Texas A&M Aggies,2025-11-15 01:04:00,Fanatics,9.0,2.74,0.4469453376205787,UCF Knights,2025-11-15T02:59:22Z
+Charlotte Hornets @ Milwaukee Bucks,NBA,Milwaukee Bucks,2025-11-15 01:11:00,Caesars,1.26,4.99,0.0413223140495868,Milwaukee Bucks,2025-11-15T03:40:47Z
+Michigan Wolverines @ TCU Horned Frogs,NCAAB,Michigan Wolverines,2025-11-15 02:04:00,Fanatics,2.5,2.79,0.1415525114155251,Michigan Wolverines,2025-11-15T03:40:47Z
+New York Islanders @ Utah Mammoth,NHL,New York Islanders,2025-11-15 02:08:53,DraftKings,5.2,2.66,0.1040339702760084,New York Islanders,2025-11-15T03:40:47Z
+Golden State Warriors @ San Antonio Spurs,NBA,San Antonio Spurs,2025-11-15 02:45:00,Caesars,1.91,3.22,0.0611111111111111,Golden State Warriors,2025-11-15T04:26:09Z
+South Florida Bulls @ Navy Midshipmen,NCAAF,South Florida Bulls,2025-11-15 17:05:00,FanDuel,1.63,2.6,0.0794701986754967,Navy Midshipmen,2025-11-15T17:17:05Z
+Kansas State Wildcats @ Oklahoma State Cowboys,NCAAF,Oklahoma State Cowboys,2025-11-15 17:10:00,FanDuel,9.0,2.25,0.0404624277456646,Kansas State Wildcats,2025-11-15T17:17:05Z
+Notre Dame Fighting Irish @ Pittsburgh Panthers,NCAAF,Pittsburgh Panthers,2025-11-15 16:49:00,Caesars,6.0,2.09,0.1952191235059762,Notre Dame Fighting Irish,2025-11-15T17:17:05Z
+Michigan Wolverines @ Northwestern Wildcats,NCAAF,Northwestern Wildcats,2025-11-15 16:52:00,Fanatics,4.15,4.67,0.0559796437659034,Michigan Wolverines,2025-11-15T17:40:24Z
+Butler Bulldogs @ SMU Mustangs,NCAAB,Butler Bulldogs,2025-11-15 19:00:00,FanDuel,4.1,4.18,0.0275689223057642,SMU Mustangs,2025-11-15T18:28:53Z
+Arizona Wildcats @ Cincinnati Bearcats,NCAAF,Arizona Wildcats,2025-11-15 16:55:00,FanDuel,3.4,3.15,0.0365853658536585,Arizona Wildcats,2025-11-15T18:55:11Z
+South Carolina Gamecocks @ Texas A&M Aggies,NCAAF,Texas A&M Aggies,2025-11-15 16:51:00,BetMGM,9.5,2.02,0.1742892459826946,Texas A&M Aggies,2025-11-15T18:55:11Z
+Arkansas Razorbacks @ LSU Tigers,NCAAF,Arkansas Razorbacks,2025-11-15 16:53:00,Caesars,2.9,2.02,0.039426523297491,LSU Tigers,2025-11-15T19:48:41Z
+Georgia Tech Yellow Jackets @ Boston College Eagles,NCAAF,Boston College Eagles,2025-11-15 20:30:00,FanDuel,7.1,2.64,0.0245310245310246,Georgia Tech Yellow Jackets,2025-11-15T20:22:30Z
+Virginia Cavaliers @ Duke Blue Devils,NCAAF,Virginia Cavaliers,2025-11-15 20:30:00,FanDuel,2.94,2.56,0.0315789473684209,Virginia Cavaliers,2025-11-15T20:22:30Z
+Maryland Terrapins @ Marquette Golden Eagles,NCAAB,Maryland Terrapins,2025-11-15 19:00:00,Fanatics,1.87,4.16,0.0331491712707183,Maryland Terrapins,2025-11-15T20:51:47Z
+Oklahoma Sooners @ Alabama Crimson Tide,NCAAF,Alabama Crimson Tide,2025-11-15 17:49:00,FanDuel,1.87,2.08,0.0505617977528091,Oklahoma Sooners,2025-11-15T20:59:18Z
+Memphis Tigers @ East Carolina Pirates,NCAAF,East Carolina Pirates,2025-11-15 18:10:00,FanDuel,1.94,2.64,0.0486486486486484,East Carolina Pirates,2025-11-15T21:18:32Z
+Memphis Grizzlies @ Cleveland Cavaliers,NBA,Memphis Grizzlies,2025-11-15 22:10:00,Caesars,5.3,2.7,0.0231660231660232,Cleveland Cavaliers,2025-11-15T21:40:24Z
+Iowa Hawkeyes @ USC Trojans,NCAAF,USC Trojans,2025-11-15 18:00:00,FanDuel,3.15,3.15,0.1091549295774647,USC Trojans,2025-11-15T21:48:09Z
+Penn State Nittany Lions @ Michigan State Spartans,NCAAF,Michigan State Spartans,2025-11-15 18:00:00,Caesars,4.5,2.53,0.0638297872340425,Penn State Nittany Lions,2025-11-15T22:42:00Z
+Maryland Terrapins @ Illinois Fighting Illini,NCAAF,Maryland Terrapins,2025-11-15 18:00:00,BetMGM,23.0,2.7,0.4810045074050226,Illinois Fighting Illini,2025-11-15T22:49:52Z
+Louisiana Tech Bulldogs @ Washington State Cougars,NCAAF,Louisiana Tech Bulldogs,2025-11-16 03:11:00,BetMGM,7.0,2.7,0.3565891472868215,Washington State Cougars,2025-11-16T03:20:55Z
+Utah Tech Trailblazers @ Hawai'i Rainbow Warriors,NCAAB,Utah Tech Trailblazers,2025-11-16 05:00:00,Fanatics,14.0,3.14,0.1049723756906076,Hawai'i Rainbow Warriors,2025-11-16T04:55:18Z
+Winnipeg Jets @ Calgary Flames,NHL,Calgary Flames,2025-11-16 03:10:55,DraftKings,2.7,2.88,0.1688311688311689,Winnipeg Jets,2025-11-16T05:55:32Z
+Wright St Raiders @ Kent State Golden Flashes,NCAAB,Wright St Raiders,2025-11-16 17:00:00,FanDuel,2.84,2.7,0.0252707581227437,Kent State Golden Flashes,2025-11-16T16:59:14Z
+Notre Dame Fighting Irish @ Ohio State Buckeyes,NCAAB,Ohio State Buckeyes,2025-11-16 17:30:00,Fanatics,1.67,2.61,0.0503144654088049,Ohio State Buckeyes,2025-11-16T17:56:47Z
+Los Angeles Clippers @ Boston Celtics,NBA,Los Angeles Clippers,2025-11-16 20:40:41,FanDuel,3.85,3.04,0.1224489795918366,Boston Celtics,2025-11-16T20:47:32Z
+Seattle Seahawks @ Los Angeles Rams,NFL,Seattle Seahawks,2025-11-16 21:05:30,Fanatics,2.9,3.06,0.0861423220973783,Los Angeles Rams,2025-11-16T21:19:32Z
+Sacramento Kings @ San Antonio Spurs,NBA,Sacramento Kings,2025-11-16 21:10:34,DraftKings,7.5,2.53,0.141552511415525,San Antonio Spurs,2025-11-16T21:40:42Z
+San Francisco 49ers @ Arizona Cardinals,NFL,Arizona Cardinals,2025-11-16 21:05:27,FanDuel,8.5,3.37,0.1440107671601616,San Francisco 49ers,2025-11-16T22:35:29Z
+Kansas City Chiefs @ Denver Broncos,NFL,Denver Broncos,2025-11-16 21:25:21,BetMGM,3.1,2.15,0.0231023102310231,Denver Broncos,2025-11-16T22:44:53Z
+Vegas Golden Knights @ Minnesota Wild,NHL,Minnesota Wild,2025-11-16 23:08:52,Caesars,1.95,4.38,0.0773480662983425,Minnesota Wild,2025-11-16T23:20:00Z
+Baltimore Ravens @ Cleveland Browns,NFL,Cleveland Browns,2025-11-16 21:25:20,Caesars,3.4,4.54,0.2830188679245283,Baltimore Ravens,2025-11-16T23:42:12Z
+New York Islanders @ Colorado Avalanche,NHL,New York Islanders,2025-11-17 02:12:04,DraftKings,5.5,2.25,0.0318949343339586,Colorado Avalanche,2025-11-17T03:54:14Z
+Milwaukee Bucks @ Cleveland Cavaliers,NBA,Milwaukee Bucks,2025-11-18 00:12:55,Caesars,5.0,4.14,0.149425287356322,Cleveland Cavaliers,2025-11-18T01:47:57Z
+Vancouver Canucks @ Florida Panthers,NHL,Vancouver Canucks,2025-11-18 00:08:43,DraftKings,17.0,4.09,0.1854951185495118,Florida Panthers,2025-11-18T01:47:57Z
+New York Knicks @ Miami Heat,NBA,New York Knicks,2025-11-18 00:41:48,FanDuel,2.54,2.23,0.049586776859504,Miami Heat,2025-11-18T01:47:57Z
+Los Angeles Kings @ Washington Capitals,NHL,Los Angeles Kings,2025-11-18 00:08:28,FanDuel,4.0,2.16,0.0282776349614395,Washington Capitals,2025-11-18T01:47:57Z
+Carolina Hurricanes @ Boston Bruins,NHL,Boston Bruins,2025-11-18 00:08:29,DraftKings,13.0,2.15,0.1120615911035072,Carolina Hurricanes,2025-11-18T01:47:57Z
+Oregon St Beavers @ Oregon Ducks,NCAAB,Oregon St Beavers,2025-11-18 03:00:00,FanDuel,9.6,2.13,0.0389610389610388,Oregon Ducks,2025-11-18T01:47:57Z
+Dallas Cowboys @ Las Vegas Raiders,NFL,Las Vegas Raiders,2025-11-18 01:16:39,DraftKings,15.0,2.01,0.1152416356877323,Dallas Cowboys,2025-11-18T03:04:48Z
+Chicago Bulls @ Denver Nuggets,NBA,Denver Nuggets,2025-11-18 02:11:00,Fanatics,2.85,2.54,0.1632653061224489,Chicago Bulls,2025-11-18T03:50:42Z
+CSU Bakersfield Roadrunners @ Portland St Vikings,NCAAB,CSU Bakersfield Roadrunners,2025-11-18 03:05:00,DraftKings,4.4,2.1,0.1253196930946293,Portland St Vikings,2025-11-18T04:47:54Z
+American Eagles @ Rutgers Scarlet Knights,NCAAB,Rutgers Scarlet Knights,2025-11-18 23:31:31,Caesars,1.36,2.36,0.0542635658914728,Rutgers Scarlet Knights,2025-11-18T23:55:51Z
+Detroit Pistons @ Atlanta Hawks,NBA,Atlanta Hawks,2025-11-19 00:41:00,Caesars,5.2,2.56,0.0216110019646367,Detroit Pistons,2025-11-19T01:48:04Z
+Memphis Grizzlies @ San Antonio Spurs,NBA,Memphis Grizzlies,2025-11-19 01:13:00,FanDuel,2.38,2.19,0.0577777777777777,San Antonio Spurs,2025-11-19T03:04:02Z
+Stephen F. Austin Lumberjacks @ Fresno St Bulldogs,NCAAB,Fresno St Bulldogs,2025-11-19 02:06:40,Caesars,7.7,3.4,2.333333333333333,Fresno St Bulldogs,2025-11-19T03:49:16Z
+Kansas Jayhawks @ Duke Blue Devils,NCAAB,Kansas Jayhawks,2025-11-19 02:10:07,Caesars,12.0,2.34,0.4134275618374556,Duke Blue Devils,2025-11-19T03:49:16Z
+Phoenix Suns @ Portland Trail Blazers,NBA,Portland Trail Blazers,2025-11-19 04:14:00,FanDuel,2.42,2.63,0.03862660944206,Phoenix Suns,2025-11-19T04:56:41Z
+Harvard Crimson @ Penn State Nittany Lions,NCAAB,Harvard Crimson,2025-11-19 23:30:00,DraftKings,8.0,3.54,0.0389610389610388,Penn State Nittany Lions,2025-11-19T21:29:26Z
+Charlotte Hornets @ Indiana Pacers,NBA,Charlotte Hornets,2025-11-20 00:10:19,DraftKings,21.0,4.05,0.4046822742474916,Indiana Pacers,2025-11-20T01:46:51Z
+Miami (OH) RedHawks @ Buffalo Bulls,NCAAF,Buffalo Bulls,2025-11-20 00:05:00,Caesars,5.5,2.45,0.1956521739130436,Miami (OH) RedHawks,2025-11-20T01:46:51Z
+Chicago Bulls @ Portland Trail Blazers,NBA,Portland Trail Blazers,2025-11-20 03:11:00,BetMGM,3.6,4.51,0.25,Chicago Bulls,2025-11-20T04:00:35Z
+Alabama Crimson Tide @ Illinois Fighting Illini,NCAAB,Illinois Fighting Illini,2025-11-20 02:16:10,FanDuel,4.2,2.02,0.1320754716981131,Alabama Crimson Tide,2025-11-20T04:00:35Z
+New York Knicks @ Dallas Mavericks,NBA,Dallas Mavericks,2025-11-20 02:48:08,Caesars,3.6,4.34,0.358490566037736,New York Knicks,2025-11-20T04:46:31Z
+Southern Indiana Screaming Eagles @ Incarnate Word Cardinals,NCAAB,Southern Indiana Screaming Eagles,2025-11-20 17:31:05,Caesars,5.5,4.15,0.1133603238866396,Not Found,2025-11-20T17:44:25Z
+FC Barcelona Bàsquet @ Anadolu Efes,Basketball Euroleague,FC Barcelona Bàsquet,2025-11-20 17:30:00,FanDuel,1.65,2.4,0.0248447204968942,Not Found,2025-11-20T17:44:25Z
+Purdue Boilermakers @ Memphis Tigers,NCAAB,Memphis Tigers,2025-11-20 23:00:00,FanDuel,10.8,3.02,0.08,Not Found,2025-11-20T20:41:14Z
+Saint Joseph's Hawks @ UNLV Rebels,NCAAB,Saint Joseph's Hawks,2025-11-21 03:00:00,FanDuel,5.6,4.76,0.0447761194029848,Not Found,2025-11-21T02:18:29Z
+New York Rangers @ Colorado Avalanche,NHL,Colorado Avalanche,2025-11-21 02:08:45,BetMGM,2.1,2.43,0.0294117647058823,Not Found,2025-11-21T02:18:29Z
+Arizona St Sun Devils @ Hawai'i Rainbow Warriors,NCAAB,Hawai'i Rainbow Warriors,2025-11-21T05:00:00Z,Caesars,1.74,3.16,0.1572235898415043,Not Found,2025-11-21T06:12:38Z
