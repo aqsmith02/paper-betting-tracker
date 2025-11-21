@@ -30,7 +30,7 @@ jobs:
 
     - name: Run results.py
       run: |
-        python3 -m codebase.results.results
+        python3 -m codebase.results_appending.results
 
     - name: Commit and push updated CSVs to master branch
       run: |
