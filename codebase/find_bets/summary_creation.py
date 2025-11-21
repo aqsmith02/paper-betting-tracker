@@ -21,7 +21,7 @@ def create_average_edge_summary(df: pd.DataFrame) -> pd.DataFrame:
     """
     summary_rows = []
     for _, row in df.iterrows():
-        if pd.isna(row.get("Avg Edge Pct")) or pd.isna(row.get("Fair Odds Avg")):
+        if pd.isna(row.get("Expected Value")) or pd.isna(row.get("Fair Odds Avg")):
             continue
 
         summary_rows.append(
@@ -51,7 +51,7 @@ def create_zscore_summary(df: pd.DataFrame) -> pd.DataFrame:
     """
     summary_rows = []
     for _, row in df.iterrows():
-        if pd.isna(row.get("Z Score")) or pd.isna(row.get("Avg Edge Pct")):
+        if pd.isna(row.get("Z Score")) or pd.isna(row.get("Expected Value")):
             continue
 
         summary_rows.append(
@@ -83,7 +83,7 @@ def create_modified_zscore_summary(df: pd.DataFrame) -> pd.DataFrame:
     """
     summary_rows = []
     for _, row in df.iterrows():
-        if pd.isna(row.get("Modified Z Score")) or pd.isna(row.get("Avg Edge Pct")):
+        if pd.isna(row.get("Modified Z Score")) or pd.isna(row.get("Expected Value")):
             continue
 
         summary_rows.append(
@@ -119,7 +119,7 @@ def create_pinnacle_edge_summary(df: pd.DataFrame) -> pd.DataFrame:
         return pd.DataFrame(summary_rows)
 
     for _, row in df.iterrows():
-        if pd.isna(row.get("Pinnacle Fair Odds")) or pd.isna(row.get("Pin Edge Pct")):
+        if pd.isna(row.get("Pinnacle Fair Odds")) or pd.isna(row.get("Expected Value")):
             continue
 
         summary_rows.append(

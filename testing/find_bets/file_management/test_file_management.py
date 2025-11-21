@@ -3,7 +3,7 @@ test_file_management.py
 
 Unit tests for file_management.py module.
 
-Author: Test Suite
+Author: Brendon Smith
 """
 
 import unittest
@@ -106,17 +106,17 @@ class TestBetFileManagerGetColumns(unittest.TestCase):
     def test_get_strategy_columns_master_nc_avg(self):
         """Test getting strategy columns for master_nc_avg."""
         result = self.manager._get_columns("master_nc_avg_bets.csv", "strategy")
-        self.assertEqual(result, ["Avg Edge Pct", "Fair Odds Avg"])
+        self.assertEqual(result, ["Expected Value", "Fair Odds Avg"])
 
     def test_get_strategy_columns_master_nc_zscore(self):
         """Test getting strategy columns for master_nc_zscore."""
         result = self.manager._get_columns("master_nc_zscore_full.csv", "strategy")
-        self.assertEqual(result, ["Z Score", "Avg Edge Pct"])
+        self.assertEqual(result, ["Z Score", "Expected Value"])
 
     def test_get_strategy_columns_master_nc_pin(self):
         """Test getting strategy columns for master_nc_pin."""
         result = self.manager._get_columns("master_nc_pin.csv", "strategy")
-        self.assertEqual(result, ["Pinnacle Fair Odds", "Pin Edge Pct"])
+        self.assertEqual(result, ["Pinnacle Fair Odds", "Expected Value"])
 
     def test_get_strategy_columns_master_nc_random(self):
         """Test getting strategy columns for master_nc_random."""
@@ -126,12 +126,12 @@ class TestBetFileManagerGetColumns(unittest.TestCase):
     def test_get_strategy_columns_with_full_suffix(self):
         """Test getting columns with _full suffix."""
         result = self.manager._get_columns("master_nc_avg_full.csv", "strategy")
-        self.assertEqual(result, ["Avg Edge Pct", "Fair Odds Avg"])
+        self.assertEqual(result, ["Expected Value", "Fair Odds Avg"])
 
     def test_get_strategy_columns_with_bets_suffix(self):
         """Test getting columns with _bets suffix."""
         result = self.manager._get_columns("master_nc_mod_zscore_bets.csv", "strategy")
-        self.assertEqual(result, ["Modified Z Score", "Avg Edge Pct"])
+        self.assertEqual(result, ["Modified Z Score", "Expected Value"])
 
     def test_get_columns_nonexistent_strategy(self):
         """Test getting columns for non-existent strategy."""
@@ -141,9 +141,9 @@ class TestBetFileManagerGetColumns(unittest.TestCase):
     def test_get_columns_nc_strategies(self):
         """Test getting columns for north carolina dataset."""
         nc_tests = [
-            ("master_nc_avg.csv", ["Avg Edge Pct", "Fair Odds Avg"]),
-            ("master_nc_zscore.csv", ["Z Score", "Avg Edge Pct"]),
-            ("master_nc_pin.csv", ["Pinnacle Fair Odds", "Pin Edge Pct"]),
+            ("master_nc_avg.csv", ["Expected Value", "Fair Odds Avg"]),
+            ("master_nc_zscore.csv", ["Z Score", "Expected Value"]),
+            ("master_nc_pin.csv", ["Pinnacle Fair Odds", "Expected Value"]),
             ("master_nc_random.csv", ["Random Bet Odds"]),
         ]
         for filename, expected in nc_tests:
@@ -307,10 +307,10 @@ class TestBetFileManagerAlignColumnSchemas(unittest.TestCase):
     def test_column_ordering_strategy_columns_at_end(self):
         """Test that strategy columns are placed at end."""
         existing_df = pd.DataFrame(
-            columns=["Match", "Team", "Avg Edge Pct", "Fair Odds Avg", "Best Odds"]
+            columns=["Match", "Team", "Expected Value", "Fair Odds Avg", "Best Odds"]
         )
         new_df = pd.DataFrame(
-            columns=["Match", "Team", "League", "Avg Edge Pct", "Fair Odds Avg"]
+            columns=["Match", "Team", "League", "Expected Value", "Fair Odds Avg"]
         )
 
         result = self.manager._align_column_schemas(
@@ -319,7 +319,7 @@ class TestBetFileManagerAlignColumnSchemas(unittest.TestCase):
 
         # Strategy columns should be near the end
         strategy_indices = [
-            result.index(col) for col in ["Avg Edge Pct", "Fair Odds Avg"]
+            result.index(col) for col in ["Expected Value", "Fair Odds Avg"]
         ]
         non_strategy_indices = [
             result.index(col) for col in ["Match", "Team", "League"]
@@ -333,7 +333,7 @@ class TestBetFileManagerAlignColumnSchemas(unittest.TestCase):
             "Match",
             "Team",
             "League",
-            "Avg Edge Pct",
+            "Expected Value",
             "Best Odds",
             "Best Bookmaker",
             "Result",
@@ -370,7 +370,7 @@ class TestBetFileManagerSaveBestBetsOnly(unittest.TestCase):
                     "2025-11-01T15:00:00Z",
                     "2025-11-01T18:00:00Z",
                 ],
-                "Avg Edge Pct": [5.2, 3.8, 4.5],
+                "Expected Value": [0.15, 0.08, 0.12],
                 "Best Bookmaker": ["Bet365", "William Hill", "Betway"],
                 "Best Odds": [2.5, 3.0, 1.8],
             }
@@ -386,13 +386,13 @@ class TestBetFileManagerSaveBestBetsOnly(unittest.TestCase):
         mock_datetime.now.return_value.strftime.return_value = "2025-11-01T12:00:00Z"
 
         result = self.manager.save_best_bets_only(
-            self.sample_data, "test_bets.csv", "Avg Edge Pct"
+            self.sample_data, "test_bets.csv", "Expected Value"
         )
 
         self.assertEqual(len(result), 2)  # 2 unique matches
-        # First match should have the highest Avg Edge Pct (5.2)
+        # First match should have the highest Expected Value (0.15)
         match_a_row = result[result["Match"] == "Team A vs Team B"]
-        self.assertEqual(match_a_row.iloc[0]["Avg Edge Pct"], 5.2)
+        self.assertEqual(match_a_row.iloc[0]["Expected Value"], 0.15)
 
     @patch("codebase.find_bets.file_management.datetime")
     def test_save_best_bets_creates_file(self, mock_datetime):
@@ -400,7 +400,7 @@ class TestBetFileManagerSaveBestBetsOnly(unittest.TestCase):
         mock_datetime.now.return_value.strftime.return_value = "2025-11-01T12:00:00Z"
 
         filename = "test_bets.csv"
-        self.manager.save_best_bets_only(self.sample_data, filename, "Avg Edge Pct")
+        self.manager.save_best_bets_only(self.sample_data, filename, "Expected Value")
 
         file_path = Path(self.test_dir) / filename
         self.assertTrue(file_path.exists())
@@ -409,7 +409,7 @@ class TestBetFileManagerSaveBestBetsOnly(unittest.TestCase):
         """Test saving empty DataFrame returns empty DataFrame."""
         empty_df = pd.DataFrame()
         result = self.manager.save_best_bets_only(
-            empty_df, "test_bets.csv", "Avg Edge Pct"
+            empty_df, "test_bets.csv", "Expected Value"
         )
 
         self.assertTrue(result.empty)
@@ -425,6 +425,7 @@ class TestBetFileManagerSaveBestBetsOnly(unittest.TestCase):
                 "Team": ["Team A", "Team B"],
                 "Start Time": ["2025-11-01T15:00:00Z", "2025-11-01T15:00:00Z"],
                 "Z Score": [2.5, 3.8],
+                "Expected Value": [0.10, 0.18],
                 "Best Odds": [2.5, 3.0],
             }
         )
@@ -433,6 +434,7 @@ class TestBetFileManagerSaveBestBetsOnly(unittest.TestCase):
 
         self.assertEqual(len(result), 1)
         self.assertEqual(result.iloc[0]["Z Score"], 3.8)
+        self.assertEqual(result.iloc[0]["Expected Value"], 0.18)
 
 
 class TestBetFileManagerSaveFullBettingData(unittest.TestCase):
@@ -453,7 +455,7 @@ class TestBetFileManagerSaveFullBettingData(unittest.TestCase):
                 "Vigfree Bet365": [2.5, 3.0],
                 "Best Odds": [2.5, 3.0],
                 "Best Bookmaker": ["Bet365", "William Hill"],
-                "Avg Edge Pct": [5.2, 4.5],
+                "Expected Value": [0.15, 0.12],
             }
         )
 
@@ -462,7 +464,7 @@ class TestBetFileManagerSaveFullBettingData(unittest.TestCase):
                 "Match": ["Team A vs Team B"],
                 "Team": ["Team A"],
                 "Start Time": ["2025-11-01T15:00:00Z"],
-                "Avg Edge Pct": [5.2],
+                "Expected Value": [0.15],
             }
         )
 
@@ -527,7 +529,7 @@ class TestBetFileManagerSaveFullBettingData(unittest.TestCase):
             "League",
             "Best Odds",
             "Best Bookmaker",
-            "Avg Edge Pct",
+            "Expected Value",
         ]
 
         for col in expected_columns:
@@ -562,7 +564,7 @@ class TestBetFileManagerIntegration(unittest.TestCase):
                     "2025-11-01T18:00:00Z",
                 ],
                 "League": ["Premier League", "Premier League", "La Liga"],
-                "Avg Edge Pct": [5.2, 3.8, 4.5],
+                "Expected Value": [0.15, 0.08, 0.12],
                 "Vigfree Pinnacle": [2.4, 2.8, 2.9],
                 "Best Odds": [2.5, 3.0, 1.8],
                 "Best Bookmaker": ["Bet365", "William Hill", "Betway"],
@@ -571,7 +573,7 @@ class TestBetFileManagerIntegration(unittest.TestCase):
 
         # Save best bets
         best_bets = self.manager.save_best_bets_only(
-            full_data, "master_nc_avg_bets.csv", "Avg Edge Pct"
+            full_data, "master_nc_avg_bets.csv", "Expected Value"
         )
 
         # Save full data
@@ -587,6 +589,8 @@ class TestBetFileManagerIntegration(unittest.TestCase):
 
         self.assertEqual(len(bets_df), 2)  # 2 unique matches
         self.assertEqual(len(full_df), 2)  # Same 2 matches in full data
+        self.assertIn("Expected Value", bets_df.columns)
+        self.assertIn("Expected Value", full_df.columns)
 
 
 if __name__ == "__main__":
