@@ -1,6 +1,6 @@
 # Paper Betting Tracker
 
-This project tracks sports bets and results using Python scripts and CSV files. It fetches odds from The-Odds-API, analyzes profitable bets using several strategies, and logs results for further analysis. 
+This project tracks sports bets and results using Python scripts and CSV files. It fetches odds from The-Odds-API, analyzes profitable bets using several strategies, and logs results for further analysis. Currently, only h2h bets are considered, and only North Carolina books are "placed" on. All sports leagues provided by The-Odds-API are considered for betting.
 
 ## Results
 ![Chart](codebase/analysis/profit_over_time_average.png)
