@@ -128,7 +128,7 @@ def _min_bookmaker_filter(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
     bookmaker_columns = _find_bookmaker_columns(df)
     num_bookmakers = df[bookmaker_columns].notna().sum(axis=1)
-    df = df[num_bookmakers > MIN_BOOKMAKERS]
+    df = df[num_bookmakers >= MIN_BOOKMAKERS]
     return df
 
 

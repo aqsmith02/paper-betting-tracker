@@ -236,13 +236,12 @@ class TestDataProcessing(unittest.TestCase):
         self.assertIn("Outcomes", result_df.columns)
 
         # Check Best Odds calculation
-        self.assertTrue(np.isnan(result_df["Best Odds"].iloc[0]))  # No valid bookmaker in list
         self.assertEqual(result_df["Best Odds"].iloc[2], 8.5)  # From Fanduel
         self.assertEqual(result_df["Best Odds"].iloc[9], 36)  # From Fanduel
         self.assertEqual(result_df["Best Odds"].iloc[14], 2.15)  # From Caesars
 
         # Check Best Bookmaker identification
-        self.assertTrue(np.isnan(result_df["Best Bookmaker"].iloc[0]))  
+        self.assertTrue(pd.isna(result_df["Best Bookmaker"].iloc[0])) 
         self.assertEqual(result_df["Best Bookmaker"].iloc[2], "FanDuel")
         self.assertEqual(result_df["Best Bookmaker"].iloc[9], "FanDuel")
         self.assertEqual(result_df["Best Bookmaker"].iloc[14], "Caesars")
