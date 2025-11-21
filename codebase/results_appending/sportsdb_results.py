@@ -69,8 +69,8 @@ def _time_since_start(df: pd.DataFrame, thresh: float) -> pd.DataFrame:
     # Get the current time in UTC
     current_time = datetime.now(timezone.utc)
 
-    # Convert "Start Time" column to datetime objects
-    df["Start Time"] = pd.to_datetime(df["Start Time"])
+    # Convert "Start Time" column to datetime objects and make timezone-aware (UTC)
+    df["Start Time"] = pd.to_datetime(df["Start Time"], utc=True)
 
     # Create conditions for removal
     cutoff = current_time - timedelta(hours=thresh)
