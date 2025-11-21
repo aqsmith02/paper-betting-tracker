@@ -3,11 +3,11 @@
 This project tracks sports bets and results using Python scripts and CSV files. It fetches odds from The-Odds-API, analyzes profitable bets using several strategies, and logs results for further analysis. 
 
 ## Results
-![Chart](codebase/analysis/profit_over_time_average_nc.png)
-![Chart](codebase/analysis/profit_over_time_modified_zscore_nc.png)
-![Chart](codebase/analysis/profit_over_time_pinnacle_nc.png)
-![Chart](codebase/analysis/profit_over_time_zscore_nc.png)
-![Chart](codebase/analysis/profit_over_time_random_nc.png)
+![Chart](codebase/analysis/profit_over_time_average.png)
+![Chart](codebase/analysis/profit_over_time_average_with_modified_zscore_constraint.png)
+![Chart](codebase/analysis/profit_over_time_pinnacle.png)
+![Chart](codebase/analysis/profit_over_time_average_with_zscore_constraint.png)
+![Chart](codebase/analysis/profit_over_time_random_strategy.png)
 
 ## Betting Strategies
 - Fair average odds: Calculates the vig-free (true) probability for an outcome from every bookmaker, then averages these probabilities to determine a consensus fair payout. Identifies betting opportunities where the best available odds offer higher payouts than this fair average suggests the outcome is worth.
