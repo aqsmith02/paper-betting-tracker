@@ -1,6 +1,9 @@
 # Paper Betting Tracker
 
-This project tracks sports bets and results using Python scripts and CSV files. It fetches odds from The-Odds-API, analyzes profitable bets using several strategies, and logs results for further analysis.
+This project tracks sports bets and results using Python scripts and CSV files. It fetches odds from The-Odds-API, analyzes profitable bets using several strategies, and logs results for further analysis. 
+
+## Results
+![Chart](codebase/analysis/profit_over_time_average_nc.png)
 
 ## Betting Strategies
 - Fair average odds: Calculates the vig-free (true) probability for an outcome from every bookmaker, then averages these probabilities to determine a consensus fair payout. Identifies betting opportunities where the best available odds offer higher payouts than this fair average suggests the outcome is worth.
@@ -13,82 +16,6 @@ This project tracks sports bets and results using Python scripts and CSV files. 
 - *_bets.csv: A minimal file with only essential information for each bet placed.
 - *_full.csv: A file with all bookmakers and odds that were available, not just the odds of the bookmaker placed.
 
-## Project Structure
-```
-.
-├── codebase/  # Main codebase containing all application logic
-│   ├── analysis/                         # Package for analyzing results
-│   │   ├── roi.py                        # Analyzes ROI for each data file
-│   │   └── sample_size_confidence.py     # Creates ROI distributions that would be expected given win probabilities
-│   ├── data/                 # Contains all bet and result CSV files. Files with "nc" indicate only bookmakers in NC are used for bet-finding.
-│   │   ├── master_avg_bets.csv
-│   │   ├── master_avg_full.csv
-│   │   ├── master_mod_zscore_bets.csv
-│   │   ├── master_mod_zscore_full.csv
-│   │   ├── master_nc_avg_bets.csv
-│   │   ├── master_nc_avg_full.csv
-│   │   ├── master_nc_mod_zscore_bets.csv
-│   │   ├── master_nc_mod_zscore_full.csv
-│   │   ├── master_nc_pin_bets.csv
-│   │   ├── master_nc_pin_full.csv
-│   │   ├── master_nc_random_bets.csv
-│   │   ├── master_nc_random_full.csv
-│   │   ├── master_nc_zscore_bets.csv
-│   │   ├── master_nc_zscore_full.csv
-│   │   ├── master_pin_bets.csv
-│   │   ├── master_pin_full.csv
-│   │   ├── master_random_bets.csv
-│   │   ├── master_random_full.csv
-│   │   ├── master_zscore_bets.csv
-│   │   └── master_zscore_full.csv
-│   ├── fetch_odds/           # Package for fetching and organizing odds data
-│   │   ├── __init__.py
-│   │   ├── fetch_configs.py  # Configuration for odds fetching
-│   │   └── fetch_odds.py     # Main odds fetching logic
-│   ├── find_bets/            # Package for analyzing odds and finding profitable bets
-│   │   ├── __init__.py
-│   │   ├── betting_configs.py    # Betting analysis configuration
-│   │   ├── betting_strategies.py # Core strategy analysis functions
-│   │   ├── data_processing.py    # Data cleaning and validation
-│   │   ├── file_management.py    # File operations and CSV handling
-│   │   ├── find_bets.py          # Main orchestration and pipeline
-│   │   └── summary_creation.py   # Summary generation functions
-│   ├── results/              # Package for updating bet results
-│   │   ├── __init__.py
-│   │   ├── pinnacle_clv.py       # Pulls Pinnacle sportsbook's closing line odds for each bet that is placed before the start of the game
-│   │   ├── results.py            # Main results updating logic
-│   │   ├── results_configs.py    # Configuration for results fetching
-│   │   ├── sportsdb_results.py   # Functions for pulling results from TheSportsDB
-│   │   └── theodds_results.py    # Functions for pulling results from The-Odds-API
-│   └── constants.py          # Shared constants across packages
-│   └── __init__.py           
-├── testing/                  # Test suite for all packages (UNDER CONSTRUCTION)
-│   ├── fetch_odds/          
-│   │   ├── test_fetch_odds_configs.py
-│   │   └── test_fetch_odds.py
-│   └── find_bets/            
-│       ├── betting_strategies/
-│       │   ├── test_betting_strategies.py
-│       │   └── vf.csv
-│       └── data_processing/
-│       │   ├── pre_clean.csv
-│       │   ├── pre_max_odds_check.csv
-│       │   ├── pre_metadata.csv
-│       │   ├── pre_min_bookmaker_check.csv
-│       │   ├── pre_outcome_check.csv
-│       │   ├── pre_prettify.csv
-│       │   ├── processed.csv
-│       │   ├── test_data_processing.py
-│       │   └── unprocessed.csv
-├── .github/                  # GitHub Actions workflows for automated running
-│   └── workflows/
-│       ├── hourly-bet-finder.yml
-│       └── results.yml
-├── .gitignore                # Git ignore rules
-├── README.md                 # Project documentation
-└── requirements.txt          # Python dependencies
-```
-
 ## Usage
 1. Install dependencies:
    ```bash
@@ -100,7 +27,7 @@ This project tracks sports bets and results using Python scripts and CSV files. 
    ```
 3. Update results:
    ```bash
-   python3 -m codebase.results.results
+   python3 -m codebase.results_appending.results
    ```
 
 4. View strategy profit/ROI:
