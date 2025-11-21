@@ -17,7 +17,6 @@ from unittest.mock import patch
 
 from codebase.find_bets.data_processing import (
     _find_bookmaker_columns,
-    _remove_exchanges,
     _remove_non_target_bookmakers,
     _add_metadata,
     _clean_odds_data,
@@ -25,7 +24,6 @@ from codebase.find_bets.data_processing import (
     _max_odds_filter,
     _all_outcomes_present_filter,
     _prettify_column_headers,
-    process_odds_data,
     process_target_odds_data,
     calculate_vigfree_probabilities,
 )
@@ -173,76 +171,6 @@ class TestDataProcessing(unittest.TestCase):
             "Everygame",
         ]
         self.assertEqual(set(bookmaker_cols_excluded), set(expected_excluded))
-
-    def test_remove_exchanges(self):
-        """Test _remove_exchanges function."""
-        df = self.unprocessed
-        result_df = _remove_exchanges(df)
-
-        # Check that exchange columns are removed
-        self.assertNotIn("Smarkets", result_df.columns)
-        self.assertNotIn("Betfair", result_df.columns)
-        self.assertNotIn("Matchbook", result_df.columns)
-        self.assertNotIn("Betfair Sportsbook", result_df.columns)
-
-        # Check that other bookmaker columns remain
-        bookmaker_cols_exclude_exchanges = _find_bookmaker_columns(
-            df,
-            exclude_columns=["Smarkets", "Betfair", "Matchbook", "Betfair Sportsbook"],
-        )
-        expected_exclude_exchanges = [
-            "GTbets",
-            "Bovada",
-            "PointsBet (AU)",
-            "DraftKings",
-            "BetMGM",
-            "Nordic Bet",
-            "Betsson",
-            "Caesars",
-            "FanDuel",
-            "Paddy Power",
-            "LeoVegas",
-            "Unibet",
-            "BetRivers",
-            "Unibet (SE)",
-            "Unibet (NL)",
-            "Unibet (IT)",
-            "Pinnacle",
-            "Betway",
-            "Betclic (FR)",
-            "TAB",
-            "Tipico",
-            "Bet Victor",
-            "Coolbet",
-            "Fanatics",
-            "888sport",
-            "MyBookie.ag",
-            "Winamax (FR)",
-            "Winamax (DE)",
-            "Virgin Bet",
-            "Casumo",
-            "LiveScore Bet",
-            "Grosvenor",
-            "LeoVegas (SE)",
-            "TABtouch",
-            "Ladbrokes",
-            "Marathon Bet",
-            "PlayUp",
-            "LowVig.ag",
-            "Coral",
-            "Neds",
-            "1xBet",
-            "BetOnline.ag",
-            "William Hill",
-            "Betr",
-            "SportsBet",
-            "BetUS",
-            "BoyleSports",
-            "Everygame",
-        ]
-        self.assertEqual(
-            set(bookmaker_cols_exclude_exchanges), set(expected_exclude_exchanges)
-        )
 
     def test_remove_non_target_bookmakers(self):
         """Test _remove_non_target_bookmakers function."""
@@ -459,33 +387,6 @@ class TestDataProcessing(unittest.TestCase):
         ]
         self.assertEqual(list(result_df.columns), expected_cols)
 
-    def test_process_odds_data_integration(self):
-        """Test the complete process_odds_data pipeline."""
-        df = self.unprocessed
-        result_df = process_odds_data(df)
-
-        # Check that all processing steps were applied
-        # 1. Exchanges should be removed
-        self.assertNotIn("Smarkets", result_df.columns)
-        self.assertNotIn("Betfair", result_df.columns)
-        self.assertNotIn("Matchbook", result_df.columns)
-        self.assertNotIn("Betfair Sportsbook", result_df.columns)
-
-        # 2. Metadata should be added
-        self.assertIn("Best Odds", result_df.columns)
-        self.assertIn("Best Bookmaker", result_df.columns)
-        self.assertIn("Result", result_df.columns)
-        self.assertIn("Outcomes", result_df.columns)
-
-        # 3. Check data integrity
-        self.assertEqual(len(result_df), 20)
-
-        # 4. Column headers should be prettified
-        self.assertIn("Match", result_df.columns)
-        self.assertIn("League", result_df.columns)
-        self.assertIn("Start Time", result_df.columns)
-        self.assertIn("Team", result_df.columns)
-
     def test_process_target_odds_data_integration(self):
         """Test the complete process_odds_data pipeline with target bookmakers only."""
         df = self.unprocessed
@@ -643,8 +544,7 @@ class TestDataProcessing(unittest.TestCase):
             }
         )
 
-        result_df = _remove_exchanges(test_data)
-        result_df = _add_metadata(result_df)
+        result_df = _add_metadata(test_data)
         result_df = _clean_odds_data(result_df)
         self.assertTrue(pd.isna(result_df["Best Odds"].iloc[0]))
         self.assertTrue(pd.isna(result_df["Best Bookmaker"].iloc[0]))
