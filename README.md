@@ -3,6 +3,7 @@
 This project is an automated system that tracks sports bets and results using Python scripts and CSV files. It fetches live odds from The-Odds-API, analyzes profitable bets using several strategies, and logs results for further analysis. Currently, only moneyline/head-to-head bets are considered, and only North Carolina books are "placed" on. All sports leagues provided by The-Odds-API are considered for betting. Data collection for the below results began October 11th, 2025. This project is inspired by the following paper published by Kaunitz, Zhong, and Kreiner: https://arxiv.org/vc/arxiv/papers/1710/1710.02824v1.pdf.
 
 ## Results
+![Chart](codebase/analysis/profit_over_time_all_strategies.png)
 ![Chart](codebase/analysis/profit_over_time_average_with_modified_zscore_constraint.png)
 ![Chart](codebase/analysis/profit_over_time_pinnacle.png)
 ![Chart](codebase/analysis/profit_over_time_average.png)
