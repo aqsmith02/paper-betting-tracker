@@ -202,6 +202,10 @@ def plot_profit_over_time(strategy, save_fig=False):
     # Get current date
     current_date = datetime.now().strftime('%B %d, %Y')
     
+    # Get first bet date (data collection start date)
+    df['Start Time'] = pd.to_datetime(df['Start Time'])
+    first_bet_date = df['Start Time'].min().strftime('%B %d, %Y')
+    
     fig, ax = plt.subplots(1, 1, figsize=(14, 8))
     
     # Check if this is the Random strategy (no EV column)
@@ -228,7 +232,8 @@ def plot_profit_over_time(strategy, save_fig=False):
         ax.text(0.02, 0.98, 
                 f'Final Profit: {final_profit_flat:.2f} units\n'
                 f'Total Bets: {total_bets_flat}\n'
-                f'ROI: {roi_flat:.2f}%',
+                f'ROI: {roi_flat:.2f}%\n'
+                f'Data Collection Started: {first_bet_date}',
                 transform=ax.transAxes,
                 verticalalignment='top',
                 bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.8),
@@ -265,7 +270,8 @@ def plot_profit_over_time(strategy, save_fig=False):
                     f'Final Profit: {final_profit_kelly:.2f} units\n'
                     f'Total Wagered: {total_wagered_kelly:.2f} units\n'
                     f'Bets Placed: {total_bets_kelly}\n'
-                    f'ROI: {roi_kelly:.2f}%',
+                    f'ROI: {roi_kelly:.2f}%\n'
+                    f'Data Collection Started: {first_bet_date}',
                     transform=ax.transAxes,
                     verticalalignment='top',
                     bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.8),
@@ -310,6 +316,18 @@ def plot_comparison_all_strategies(save_fig=False):
     
     # Get current date
     current_date = datetime.now().strftime('%B %d, %Y')
+    
+    # Get earliest start date across all strategies
+    earliest_date = None
+    for strategy in STRATEGIES:
+        df = pd.read_csv(strategy.path)
+        df['Start Time'] = pd.to_datetime(df['Start Time'])
+        strategy_start = df['Start Time'].min()
+        if earliest_date is None or strategy_start < earliest_date:
+            earliest_date = strategy_start
+    
+    first_bet_date = earliest_date.strftime('%B %d, %Y')
+    
     fig.suptitle(f'3/4 Kelly Criterion Profit Over Time - All Strategies', 
                  fontsize=16, fontweight='bold')
     
@@ -335,7 +353,19 @@ def plot_comparison_all_strategies(save_fig=False):
     ax.set_xlabel('Bet Number', fontsize=13)
     ax.set_ylabel('Cumulative Profit (Units)', fontsize=13)
     ax.grid(True, alpha=0.3, linestyle='--')
-    ax.legend(fontsize=11, loc='best')
+    
+    # Move legend to upper left to avoid overlapping with date boxes
+    ax.legend(fontsize=11, loc='upper left')
+    
+    # Add data collection start date in bottom left corner
+    ax.text(0.02, 0.02, 
+            f'Data Collection Started: {first_bet_date}',
+            transform=ax.transAxes,
+            verticalalignment='bottom',
+            horizontalalignment='left',
+            bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.8, edgecolor='gray', linewidth=1.5),
+            fontsize=12,
+            fontweight='bold')
     
     # Add date stamp in bottom right corner (LARGER)
     ax.text(0.98, 0.02, 
