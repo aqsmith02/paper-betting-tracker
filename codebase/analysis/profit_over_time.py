@@ -307,7 +307,7 @@ def plot_profit_over_time(strategy, save_fig=False):
 
 def plot_comparison_all_strategies(save_fig=False):
     """
-    Create a comparison plot showing Kelly betting for all strategies.
+    Create a comparison plot showing all strategies (Kelly for most, flat for Random).
     
     Args:
         save_fig: Whether to save the figure to disk
@@ -328,15 +328,17 @@ def plot_comparison_all_strategies(save_fig=False):
     
     first_bet_date = earliest_date.strftime('%B %d, %Y')
     
-    fig.suptitle(f'3/4 Kelly Criterion Profit Over Time - All Strategies', 
+    fig.suptitle(f'Profit Over Time - All Strategies', 
                  fontsize=16, fontweight='bold')
     
     colors = ['#2E86AB', '#A23B72', '#F18F01', '#C73E1D', '#6A994E']
     
-    # Plot Kelly Betting for all strategies
+    # Plot all strategies
     for i, strategy in enumerate(STRATEGIES):
+        df = pd.read_csv(strategy.path)
+        
         if strategy.ev_column:
-            df = pd.read_csv(strategy.path)
+            # Plot Kelly betting for strategies with EV column
             kelly_profit = calculate_cumulative_profit_kelly(
                 df, 
                 strategy.odds_column, 
@@ -348,6 +350,13 @@ def plot_comparison_all_strategies(save_fig=False):
             if not kelly_profit.empty:
                 ax.plot(kelly_profit['Bet_Number'], kelly_profit['Cumulative_Profit'], 
                         linewidth=2.5, color=colors[i % len(colors)], label=strategy.name, alpha=0.85)
+        else:
+            # Plot flat betting for Random strategy
+            flat_profit = calculate_cumulative_profit_flat(df, strategy.odds_column)
+            
+            if not flat_profit.empty:
+                ax.plot(flat_profit['Bet_Number'], flat_profit['Cumulative_Profit'], 
+                        linewidth=2.5, color=colors[i % len(colors)], label=strategy.name, alpha=0.85, linestyle='--')
     
     ax.axhline(y=0, color='red', linestyle='--', linewidth=1.5, alpha=0.7, label='Break-even')
     ax.set_xlabel('Bet Number', fontsize=13)
@@ -410,8 +419,8 @@ def main():
         print(f"\nPlotting: {strategy.name}")
         plot_profit_over_time(strategy, save_fig=True)
     
-    # Option 2: Plot all strategies together for comparison (Kelly only)
-    print("\nPlotting Kelly betting comparison of all strategies...")
+    # Option 2: Plot all strategies together for comparison (Kelly + flat for Random)
+    print("\nPlotting comparison of all strategies...")
     plot_comparison_all_strategies(save_fig=True)
     
     print("\n" + "=" * 70)
