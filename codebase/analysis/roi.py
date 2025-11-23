@@ -56,7 +56,7 @@ STRATEGIES = [
 KELLY_FRACTION = 0.75
 
 # EV threshold - only place bets with EV above this percentage
-MIN_EV_THRESHOLD = 0.05  # 2% minimum EV to place bet
+MIN_EV_THRESHOLD = 0.05 
 
 # Z-score threshold for max bet
 ZSCORE_MAX_BET_THRESHOLD = 3.5
