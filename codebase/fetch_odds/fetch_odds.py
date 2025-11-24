@@ -11,6 +11,7 @@ Date: July 2025
 
 import requests
 import pandas as pd
+import json
 from typing import List, Dict
 from .fetch_configs import SPORT, SPORT_KEY, REGIONS, MARKETS, ODDS_FORMAT
 from codebase.constants import THEODDS_API_KEY
@@ -50,6 +51,7 @@ def fetch_odds() -> pd.DataFrame:
         return pd.DataFrame()
 
     games_data = response.json()
+    print(json.dumps(games_data, indent=2))
     print(f"Retrieved {len(games_data)} games")
 
     # Process each game into rows
