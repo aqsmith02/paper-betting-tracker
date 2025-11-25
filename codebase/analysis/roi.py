@@ -56,10 +56,12 @@ STRATEGIES = [
 KELLY_FRACTION = 0.75
 
 # EV threshold - only place bets with EV above this percentage
-MIN_EV_THRESHOLD = 0.05 
+MIN_EV_THRESHOLD = 0.05
 
 # Z-score threshold for max bet
+EV_MAX_BET_THRESHOLD = 0.2
 ZSCORE_MAX_BET_THRESHOLD = 3.5
+
 
 
 def kelly_bet(odds, fair_odds, ev=None, zscore=None, max_multiplier=5.0):
@@ -83,6 +85,8 @@ def kelly_bet(odds, fair_odds, ev=None, zscore=None, max_multiplier=5.0):
     if ev is not None and not pd.isna(ev):
         if ev < MIN_EV_THRESHOLD:
             return 0
+        if ev > EV_MAX_BET_THRESHOLD:
+            return max_multiplier
 
     p = 1 / fair_odds
     p = max(min(p, 0.9999), 0.0001)
