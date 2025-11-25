@@ -54,7 +54,7 @@ STRATEGIES = [
 ]
 
 # Kelly fraction
-KELLY_FRACTION = 0.75
+KELLY_FRACTION = 0.5
 
 # EV threshold - only place bets with EV above this percentage
 MIN_EV_THRESHOLD = 0.05  # 5% minimum EV to place bet
@@ -64,7 +64,7 @@ EV_MAX_BET_THRESHOLD = 0.2
 ZSCORE_MAX_BET_THRESHOLD = 3.5
 
 
-def kelly_bet(odds, fair_odds, ev=None, zscore=None, max_multiplier=5.0):
+def kelly_bet(odds, fair_odds, ev=None, zscore=None, max_multiplier=2.5):
     """
     Kelly bet adjusted for parameter uncertainty via shrinkage coefficient.
     
@@ -243,7 +243,7 @@ def plot_profit_over_time(strategy, save_fig=False):
                 fontsize=10)
     else:
         # Plot Kelly betting for other strategies
-        fig.suptitle(f'3/4 Kelly Criterion Profit Over Time: {strategy.name}', 
+        fig.suptitle(f'1/2 Kelly Criterion Profit Over Time: {strategy.name}', 
                      fontsize=16, fontweight='bold')
         
         kelly_profit = calculate_cumulative_profit_kelly(

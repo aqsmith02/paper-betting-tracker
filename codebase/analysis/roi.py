@@ -53,7 +53,7 @@ STRATEGIES = [
 ]
 
 # Kelly fraction
-KELLY_FRACTION = 0.75
+KELLY_FRACTION = 0.5
 
 # EV threshold - only place bets with EV above this percentage
 MIN_EV_THRESHOLD = 0.05
@@ -64,7 +64,7 @@ ZSCORE_MAX_BET_THRESHOLD = 3.5
 
 
 
-def kelly_bet(odds, fair_odds, ev=None, zscore=None, max_multiplier=5.0):
+def kelly_bet(odds, fair_odds, ev=None, zscore=None, max_multiplier=2.5):
     """
     Kelly bet adjusted for parameter uncertainty via shrinkage coefficient.
     
