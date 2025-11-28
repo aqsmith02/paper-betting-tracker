@@ -840,15 +840,15 @@ Maryland Terrapins @ Alabama Crimson Tide,NCAAB,Maryland Terrapins,2025-11-27 05
 FC Midtjylland @ AS Roma,UEFA Europa League,FC Midtjylland,2025-11-27 17:45:00,FanDuel,7.0,Not Found,2025-11-27T05:29:38Z
 Houston Rockets @ Golden State Warriors,NBA,Houston Rockets,2025-11-27 03:18:00,FanDuel,2.2,Houston Rockets,2025-11-27T05:29:38Z
 Shelbourne Dublin @ AZ Alkmaar,UEFA Europa Conference League,Shelbourne Dublin,2025-11-27 17:45:00,DraftKings,16.0,Not Found,2025-11-27T10:31:51Z
-Young Boys @ Aston Villa,UEFA Europa League,Young Boys,2025-11-27 17:45:00,Fanatics,13.0,Not Found,2025-11-27T12:57:54Z
-St. Bonaventure Bonnies @ East Carolina Pirates,NCAAB,East Carolina Pirates,2025-11-27 17:00:00,BetMGM,5.25,Not Found,2025-11-27T13:37:24Z
-Richmond Spiders @ Furman Paladins,NCAAB,Furman Paladins,2025-11-27 16:00:00,FanDuel,2.6,Not Found,2025-11-27T13:37:24Z
-Vanderbilt Commodores @ VCU Rams,NCAAB,VCU Rams,2025-11-27 17:00:00,Caesars,3.28,Not Found,2025-11-27T14:28:51Z
+Young Boys @ Aston Villa,UEFA Europa League,Young Boys,2025-11-27 17:45:00,Fanatics,13.0,Aston Villa,2025-11-27T12:57:54Z
+St. Bonaventure Bonnies @ East Carolina Pirates,NCAAB,East Carolina Pirates,2025-11-27 17:00:00,BetMGM,5.25,St. Bonaventure Bonnies,2025-11-27T13:37:24Z
+Richmond Spiders @ Furman Paladins,NCAAB,Furman Paladins,2025-11-27 16:00:00,FanDuel,2.6,Furman Paladins,2025-11-27T13:37:24Z
+Vanderbilt Commodores @ VCU Rams,NCAAB,VCU Rams,2025-11-27 17:00:00,Caesars,3.28,Vanderbilt Commodores,2025-11-27T14:28:51Z
 Celta Vigo @ PFC Ludogorets Razgrad,UEFA Europa League,PFC Ludogorets Razgrad,2025-11-27 17:45:00,FanDuel,5.3,Not Found,2025-11-27T16:34:23Z
 Dynamo Kyiv @ Omonoia FC,UEFA Europa Conference League,Dynamo Kyiv,2025-11-27 17:45:00,FanDuel,3.5,Not Found,2025-11-27T17:09:06Z
-Celtic @ Feyenoord,UEFA Europa League,Feyenoord,2025-11-27 17:45:00,DraftKings,1.71,Not Found,2025-11-27T17:09:06Z
+Celtic @ Feyenoord,UEFA Europa League,Feyenoord,2025-11-27 17:45:00,DraftKings,1.71,Celtic,2025-11-27T17:09:06Z
 BK Häcken @ HŠK Zrinjski Mostar,UEFA Europa Conference League,Draw,2025-11-27 17:45:00,DraftKings,3.45,Not Found,2025-11-27T17:44:00Z
-Dinamo Zagreb @ Lille,UEFA Europa League,Draw,2025-11-27 17:45:00,FanDuel,4.6,Not Found,2025-11-27T17:53:22Z
+Dinamo Zagreb @ Lille,UEFA Europa League,Draw,2025-11-27 17:45:00,FanDuel,4.6,Lille,2025-11-27T17:53:22Z
 Rapid Wien @ Raków Częstochowa,UEFA Europa Conference League,Draw,2025-11-27 17:45:00,FanDuel,3.8,Not Found,2025-11-27T17:53:22Z
 SC Freiburg @ Viktoria Plzeň,UEFA Europa League,Viktoria Plzeň,2025-11-27 17:45:00,FanDuel,2.9,Not Found,2025-11-27T18:37:37Z
 Salzburg @ Bologna,UEFA Europa League,Salzburg,2025-11-27 20:00:00,Caesars,9.0,Not Found,2025-11-27T19:21:30Z
@@ -856,7 +856,7 @@ Ferencváros TC @ Fenerbahce,UEFA Europa League,Draw,2025-11-27 17:45:00,BetMGM,
 Virginia Tech Hokies @ Saint Mary's Gaels,NCAAB,Saint Mary's Gaels,2025-11-27 19:35:00,FanDuel,1.47,Not Found,2025-11-27T19:21:30Z
 FC Basel @ KRC Genk,UEFA Europa League,Draw,2025-11-27 20:00:00,DraftKings,4.1,Not Found,2025-11-27T19:34:10Z
 Colorado Buffaloes @ San Francisco Dons,NCAAB,Colorado Buffaloes,2025-11-27 19:05:56,Caesars,2.5,Not Found,2025-11-27T19:34:10Z
-Green Bay Packers @ Detroit Lions,NFL,Detroit Lions,2025-11-27 18:03:15,FanDuel,1.94,Not Found,2025-11-27T19:34:10Z
+Green Bay Packers @ Detroit Lions,NFL,Detroit Lions,2025-11-27 18:03:15,FanDuel,1.94,Green Bay Packers,2025-11-27T19:34:10Z
 Samsunspor @ Breiðablik,UEFA Europa Conference League,Draw,2025-11-27 20:00:00,Fanatics,4.3,Not Found,2025-11-27T19:43:51Z
 AEK Athens @ Fiorentina,UEFA Europa Conference League,Draw,2025-11-27 20:00:00,DraftKings,3.5,Not Found,2025-11-27T19:43:51Z
 KF Shkëndija @ FC Drita,UEFA Europa Conference League,Draw,2025-11-27 20:00:00,DraftKings,3.3,Not Found,2025-11-27T19:43:51Z
@@ -878,4 +878,4 @@ Georgetown Hoyas @ Dayton Flyers,NCAAB,Dayton Flyers,2025-11-28 00:30:00,FanDuel
 Saint Louis Billikens @ Santa Clara Broncos,NCAAB,Santa Clara Broncos,2025-11-28 00:00:00,DraftKings,2.05,Not Found,2025-11-27T22:41:34Z
 Cincinnati Bengals @ Baltimore Ravens,NFL,Cincinnati Bengals,2025-11-28 01:20:00,Fanatics,4.1,Not Found,2025-11-27T23:38:13Z
 Duke Blue Devils @ UCLA Bruins,WNCAAB,UCLA Bruins,2025-11-28 03:30:00,DraftKings,1.13,Not Found,2025-11-28T02:04:25Z
-Minnesota Golden Gophers @ Stanford Cardinal,NCAAB,Minnesota Golden Gophers,2025-11-28T02:46:01Z,DraftKings,3.2,Not Found,2025-11-28T03:52:59Z
+Minnesota Golden Gophers @ Stanford Cardinal,NCAAB,Minnesota Golden Gophers,2025-11-28 02:46:01,DraftKings,3.2,Not Found,2025-11-28T03:52:59Z
