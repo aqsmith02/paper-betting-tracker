@@ -387,9 +387,6 @@ UNLV Rebels @ Alabama Crimson Tide,UNLV Rebels,2025-11-26T05:05:00Z,NCAAB,21.0,1
 Los Angeles Clippers @ Los Angeles Lakers,Los Angeles Clippers,2025-11-26T04:14:00Z,NBA,2.4,2.64,,2.55,2.35,3.0,,2.72,Not Found,2.44,0.1025316170712346,3.0,Caesars,Los Angeles Lakers,2,,2025-11-26T05:46:06Z
 St. Francis (PA) Red Flash @ Troy Trojans,St. Francis (PA) Red Flash,2025-11-26T16:03:04Z,NCAAB,3.3,4.6,,3.7,3.5,3.9,,3.97,Not Found,2.25,0.1580994652013174,4.6,FanDuel,Troy Trojans,2,,2025-11-26T16:54:52Z
 Western Kentucky Hilltoppers @ Vanderbilt Commodores,Western Kentucky Hilltoppers,2025-11-26T17:01:19Z,NCAAB,9.0,12.0,,8.75,10.0,9.0,,10.14,Not Found,3.24,0.183129141042418,12.0,FanDuel,Vanderbilt Commodores,2,,2025-11-26T18:00:47Z
-FC Kairat @ FC Copenhagen,FC Kairat,2025-11-26T17:45:00Z,UEFA Champions League,11.0,11.0,,10.5,10.0,13.0,,11.79,Not Found,3.04,0.1029082075116127,13.0,Caesars,Not Found,3,,2025-11-26T18:00:47Z
-Anadolu Efes @ AS Monaco,Anadolu Efes,2025-11-26T18:30:00Z,Basketball Euroleague,4.4,5.3,,4.1,4.3,,4.5,4.79,Not Found,3.2,0.1074330021799582,5.3,FanDuel,Not Found,2,,2025-11-26T18:36:40Z
-AS Monaco @ Pafos FC,Pafos FC,2025-11-26T17:45:00Z,UEFA Champions League,23.0,19.0,,19.5,19.0,21.0,,21.64,Not Found,2.53,0.0628736671063678,23.0,DraftKings,Not Found,3,,2025-11-26T18:53:59Z
 Texas Longhorns @ UCLA Bruins,UCLA Bruins,2025-11-26T19:05:57Z,WNCAAB,2.35,2.3,,2.25,2.65,2.3,,2.52,Not Found,4.72,0.0507543717486229,2.65,Fanatics,Not Found,2,,2025-11-26T19:21:20Z
 Brown Bears @ New Hampshire Wildcats,New Hampshire Wildcats,2025-11-26T18:00:00Z,NCAAB,14.0,11.6,,10.0,9.5,9.0,,11.11,Not Found,2.21,0.2600866537590244,14.0,DraftKings,Brown Bears,2,,2025-11-26T19:21:20Z
 Buffalo Bulls @ Bucknell Bison,Bucknell Bison,2025-11-26T18:30:43Z,NCAAB,7.0,9.7,,6.75,7.5,7.4,,7.96,Not Found,4.5,0.2180575936920361,9.7,FanDuel,Buffalo Bulls,2,,2025-11-26T19:34:21Z
@@ -461,12 +458,12 @@ Georgia Bulldogs @ Georgia Tech Yellow Jackets,Georgia Tech Yellow Jackets,2025-
 South Florida Bulls @ Colorado St Rams,South Florida Bulls,2025-11-28T21:31:25Z,NCAAB,2.2,1.93,,1.95,1.95,2.95,,2.27,Not Found,5.0,0.3003337347199418,2.95,Caesars,Colorado St Rams,2,,2025-11-28T22:50:24Z
 Calgary Flames @ Florida Panthers,Florida Panthers,2025-11-28T21:08:28Z,NHL,4.0,14.0,,4.33,4.0,7.7,,5.67,Not Found,4.64,1.471308792032913,14.0,FanDuel,Calgary Flames,2,,2025-11-28T23:25:14Z
 Boise State Broncos @ Utah State Aggies,Boise State Broncos,2025-11-28T20:34:00Z,NCAAF,4.8,5.5,,4.4,4.8,4.25,,5.0,Not Found,2.21,0.1010389963148975,5.5,FanDuel,Boise State Broncos,2,,2025-11-28T23:49:23Z
-Arizona Wildcats @ Arizona State Sun Devils,Arizona State Sun Devils,2025-11-29T02:05:55Z,NCAAF,1.38,1.48,,1.36,1.35,1.77,,1.54,Not Found,4.15,0.1488064605307339,1.77,Caesars,Not Found,2,,2025-11-29T03:18:40Z
-Phoenix Suns @ Oklahoma City Thunder,Phoenix Suns,2025-11-29T02:40:00Z,NBA,5.0,4.5,,6.25,5.5,4.5,,5.38,Not Found,2.02,0.1615368341178605,6.25,BetMGM,Not Found,2,,2025-11-29T03:18:40Z
-San Antonio Spurs @ Denver Nuggets,San Antonio Spurs,2025-11-29T02:41:00Z,NBA,8.5,9.0,,8.5,8.5,10.0,,9.35,Not Found,4.05,0.0697690875151746,10.0,Caesars,Not Found,2,,2025-11-29T03:52:40Z
-Dallas Mavericks @ Los Angeles Lakers,Dallas Mavericks,2025-11-29T03:19:00Z,NBA,6.5,4.2,,5.25,4.3,4.5,,5.11,Not Found,2.7,0.273153172832375,6.5,DraftKings,Not Found,2,,2025-11-29T04:47:58Z
+Arizona Wildcats @ Arizona State Sun Devils,Arizona State Sun Devils,2025-11-29T02:05:55Z,NCAAF,1.38,1.48,,1.36,1.35,1.77,,1.54,Not Found,4.15,0.1488064605307339,1.77,Caesars,Arizona Wildcats,2,,2025-11-29T03:18:40Z
+Phoenix Suns @ Oklahoma City Thunder,Phoenix Suns,2025-11-29T02:40:00Z,NBA,5.0,4.5,,6.25,5.5,4.5,,5.38,Not Found,2.02,0.1615368341178605,6.25,BetMGM,Oklahoma City Thunder,2,,2025-11-29T03:18:40Z
+San Antonio Spurs @ Denver Nuggets,San Antonio Spurs,2025-11-29T02:41:00Z,NBA,8.5,9.0,,8.5,8.5,10.0,,9.35,Not Found,4.05,0.0697690875151746,10.0,Caesars,San Antonio Spurs,2,,2025-11-29T03:52:40Z
+Dallas Mavericks @ Los Angeles Lakers,Dallas Mavericks,2025-11-29T03:19:00Z,NBA,6.5,4.2,,5.25,4.3,4.5,,5.11,Not Found,2.7,0.273153172832375,6.5,DraftKings,Los Angeles Lakers,2,,2025-11-29T04:47:58Z
 Kayserispor @ Çaykur Rizespor,Kayserispor,2025-11-29T11:30:00Z,Turkey Super League,3.6,4.2,,3.5,3.6,,3.2,3.87,Not Found,2.19,0.0840240052564467,4.2,FanDuel,Not Found,3,,2025-11-29T04:47:58Z
-Memphis Grizzlies @ Los Angeles Clippers,Memphis Grizzlies,2025-11-29T03:11:00Z,NBA,2.54,2.54,,2.45,2.1,3.3,,2.69,Not Found,2.47,0.2277080272519159,3.3,Caesars,Not Found,2,,2025-11-29T04:57:04Z
+Memphis Grizzlies @ Los Angeles Clippers,Memphis Grizzlies,2025-11-29T03:11:00Z,NBA,2.54,2.54,,2.45,2.1,3.3,,2.69,Not Found,2.47,0.2277080272519159,3.3,Caesars,Memphis Grizzlies,2,,2025-11-29T04:57:04Z
 Bristol City @ Portsmouth,Portsmouth,2025-11-29T12:30:00Z,Championship,15.0,12.0,,13.0,12.0,12.0,,13.67,Not Found,4.05,0.0973088651815877,15.0,DraftKings,Not Found,3,,2025-11-29T13:44:51Z
 FC St. Pauli @ Bayern Munich,Draw,2025-11-29T14:30:00Z,Bundesliga - Germany,4.9,5.5,,5.25,5.5,7.5,10.75,6.51,Not Found,2.25,0.1515495660703901,7.5,Caesars,Not Found,3,,2025-11-29T14:39:21Z
 Udinese @ Parma,Parma,2025-11-29T14:00:00Z,Serie A - Italy,9.5,8.0,,8.75,8.0,8.0,,9.05,Not Found,2.7,0.0501826062604985,9.5,DraftKings,Not Found,3,,2025-11-29T14:48:51Z
@@ -482,5 +479,5 @@ Houston Cougars @ Baylor Bears,Houston Cougars,2025-11-29T16:51:00Z,NCAAF,1.36,1
 Benfica @ Nacional,Nacional,2025-11-29T18:00:00Z,Primeira Liga - Portugal,7.5,8.0,,7.75,9.0,,7.8,8.52,Not Found,3.31,0.0558320773192728,9.0,Fanatics,Not Found,3,,2025-11-29T17:49:20Z
 Iowa State Cyclones @ Oklahoma State Cowboys,Oklahoma State Cowboys,2025-11-29T17:15:00Z,NCAAF,4.9,5.7,,5.0,4.8,5.2,,5.41,Not Found,2.53,0.0543943050247104,5.7,FanDuel,Not Found,2,,2025-11-29T17:49:20Z
 Kentucky Wildcats @ Louisville Cardinals,Kentucky Wildcats,2025-11-29T16:50:00Z,NCAAF,7.5,3.55,,4.4,4.55,4.5,,4.88,Not Found,4.11,0.538350399301509,7.5,DraftKings,Not Found,2,,2025-11-29T17:58:45Z
-Georgia Southern Eagles @ Marshall Thundering Herd,Georgia Southern Eagles,2025-11-29T18:30:00Z,NCAAF,5.2,5.7,,3.9,3.9,4.3,4.03,4.64,Not Found,4.17,0.22806625239203893,5.7,FanDuel,Not Found,2,,2025-11-29T18:36:30Z
+Georgia Southern Eagles @ Marshall Thundering Herd,Georgia Southern Eagles,2025-11-29T18:30:00Z,NCAAF,5.2,5.7,,3.9,3.9,4.3,4.03,4.64,Not Found,4.17,0.2280662523920389,5.7,FanDuel,Not Found,2,,2025-11-29T18:36:30Z
 SE Louisiana Lions @ Navy Midshipmen,Navy Midshipmen,2025-11-29T17:06:00Z,NCAAB,13.0,18.0,,11.5,11.5,15.0,,14.02,Not Found,2.22,0.2842728913054894,18.0,FanDuel,Not Found,2,,2025-11-29T18:36:30Z
