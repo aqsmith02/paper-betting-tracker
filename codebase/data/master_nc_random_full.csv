@@ -1038,7 +1038,6 @@ Sport Recife @ Bahia,Sport Recife,2025-12-03T23:00:00Z,Brazil Série A,,,11.0,12
 Vitoria @ Bragantino-SP,Draw,2025-12-03T22:00:00Z,Brazil Série A,,,3.5,3.4,3.4,3.4,3.52,1,Not Found,3.5,DraftKings,Bragantino-SP,3,,2025-12-03T20:34:24Z
 Corinthians @ Fortaleza,Draw,2025-12-03T22:00:00Z,Brazil Série A,,,3.3,3.3,3.3,3.3,3.35,1,Not Found,3.3,FanDuel,Fortaleza,3,,2025-12-03T20:34:24Z
 Santos @ Juventude,Juventude,2025-12-03T22:30:00Z,Brazil Série A,,,5.25,5.1,5.5,5.25,5.15,1,Not Found,5.5,Fanatics,Santos,3,,2025-12-03T21:52:49Z
-Virginia Cavaliers @ Vanderbilt Commodores,Vanderbilt Commodores,2025-12-03T22:00:00Z,WNCAAB,,1.18,1.2,1.15,1.24,1.21,,1,Not Found,1.24,Fanatics,Not Found,2,,2025-12-03T21:52:49Z
 Internacional @ Sao Paulo,Sao Paulo,2025-12-03T23:00:00Z,Brazil Série A,,,2.55,2.55,2.6,2.6,2.5,1,Not Found,2.6,BetMGM,Sao Paulo,3,,2025-12-03T22:31:00Z
 Wright St Raiders @ Youngstown St Penguins,Wright St Raiders,2025-12-03T23:30:00Z,NCAAB,,2.58,2.54,2.56,2.5,2.54,2.55,1,Not Found,2.58,Caesars,Youngstown St Penguins,2,,2025-12-03T22:31:00Z
 Austin Peay Governors @ Kent State Golden Flashes,Kent State Golden Flashes,2025-12-04T00:00:00Z,NCAAB,,1.21,1.2,1.17,1.22,1.21,,1,Not Found,1.22,Fanatics,Kent State Golden Flashes,2,,2025-12-03T22:31:00Z
@@ -1100,23 +1099,23 @@ Avispa Fukuoka @ Nagoya Grampus,Draw,2025-12-06T05:00:00Z,J League,,,3.25,3.2,3.
 Washington Capitals @ Anaheim Ducks,Anaheim Ducks,2025-12-06T03:08:18Z,NHL,,2.2,2.0,2.1,2.05,2.1,2.12,1,Not Found,2.2,Caesars,Anaheim Ducks,2,,2025-12-06T03:18:33Z
 Yokohama FC @ Cerezo Osaka,Yokohama FC,2025-12-06T05:00:00Z,J League,,,4.8,5.1,4.75,4.75,4.85,1,Not Found,5.1,FanDuel,Yokohama FC,3,,2025-12-06T04:39:52Z
 Fagiano Okayama @ Shimizu S Pulse,Fagiano Okayama,2025-12-06T05:00:00Z,J League,,,3.2,3.2,3.1,3.1,3.3,1,Not Found,3.2,FanDuel,Fagiano Okayama,3,,2025-12-06T04:39:52Z
-Dynamo Dresden @ 1. FC Kaiserslautern,Draw,2025-12-06T12:00:00Z,Bundesliga 2 - Germany,,,3.7,3.6,3.6,3.75,3.7,1,Not Found,3.75,BetMGM,Not Found,3,,2025-12-06T08:35:00Z
-Kayserispor @ Eyüpspor,Draw,2025-12-06T11:30:00Z,Turkey Super League,,,3.5,3.6,3.6,3.6,3.5,1,Not Found,3.6,FanDuel,Not Found,3,,2025-12-06T08:35:00Z
-Motor Lublin @ Arka Gdynia,Arka Gdynia,2025-12-06T11:15:00Z,Ekstraklasa - Poland,,,2.95,3.0,2.9,2.8,2.91,1,Not Found,3.0,FanDuel,Not Found,3,,2025-12-06T08:35:00Z
-Arminia Bielefeld @ VfL Bochum,Draw,2025-12-06T12:00:00Z,Bundesliga 2 - Germany,,,3.4,3.5,3.4,3.5,3.5,1,Not Found,3.5,FanDuel,Not Found,3,,2025-12-06T09:16:10Z
-Arsenal @ Aston Villa,Draw,2025-12-06T12:30:00Z,EPL,,3.4,3.4,3.5,3.5,3.5,3.46,1,Not Found,3.5,FanDuel,Not Found,3,,2025-12-06T11:36:48Z
+Dynamo Dresden @ 1. FC Kaiserslautern,Draw,2025-12-06T12:00:00Z,Bundesliga 2 - Germany,,,3.7,3.6,3.6,3.75,3.7,1,Not Found,3.75,BetMGM,1. FC Kaiserslautern,3,,2025-12-06T08:35:00Z
+Kayserispor @ Eyüpspor,Draw,2025-12-06T11:30:00Z,Turkey Super League,,,3.5,3.6,3.6,3.6,3.5,1,Not Found,3.6,FanDuel,Draw,3,,2025-12-06T08:35:00Z
+Motor Lublin @ Arka Gdynia,Arka Gdynia,2025-12-06T11:15:00Z,Ekstraklasa - Poland,,,2.95,3.0,2.9,2.8,2.91,1,Not Found,3.0,FanDuel,Arka Gdynia,3,,2025-12-06T08:35:00Z
+Arminia Bielefeld @ VfL Bochum,Draw,2025-12-06T12:00:00Z,Bundesliga 2 - Germany,,,3.4,3.5,3.4,3.5,3.5,1,Not Found,3.5,FanDuel,VfL Bochum,3,,2025-12-06T09:16:10Z
+Arsenal @ Aston Villa,Draw,2025-12-06T12:30:00Z,EPL,,3.4,3.4,3.5,3.5,3.5,3.46,1,Not Found,3.5,FanDuel,Aston Villa,3,,2025-12-06T11:36:48Z
 Almería @ Andorra CF,Draw,2025-12-06T13:00:00Z,La Liga 2 - Spain,,,3.5,3.3,3.4,3.4,3.5,1,Not Found,3.5,DraftKings,Not Found,3,,2025-12-06T12:26:07Z
-Portsmouth @ Charlton Athletic,Charlton Athletic,2025-12-06T12:30:00Z,Championship,,2.15,2.15,2.1,2.15,2.2,2.2,1,Not Found,2.2,BetMGM,Not Found,3,,2025-12-06T12:26:07Z
-SC Freiburg @ 1. FC Heidenheim,1. FC Heidenheim,2025-12-06T14:30:00Z,Bundesliga - Germany,,4.6,4.3,4.5,4.3,4.2,4.62,1,Not Found,4.6,Caesars,Not Found,3,,2025-12-06T13:35:56Z
-Radomiak Radom @ Pogoń Szczecin,Radomiak Radom,2025-12-06T13:45:00Z,Ekstraklasa - Poland,,,3.25,3.4,3.1,3.2,3.05,1,Not Found,3.4,FanDuel,Not Found,3,,2025-12-06T13:35:56Z
-Çaykur Rizespor @ Torku Konyaspor,Draw,2025-12-06T14:00:00Z,Turkey Super League,,,3.25,3.3,3.3,3.25,3.2,1,Not Found,3.3,FanDuel,Not Found,3,,2025-12-06T13:35:56Z
-Fiorentina @ Sassuolo,Fiorentina,2025-12-06T14:00:00Z,Serie A - Italy,,2.6,2.6,2.6,2.65,2.55,2.7,1,Not Found,2.65,Fanatics,Not Found,3,,2025-12-06T13:35:56Z
-Bayer Leverkusen @ Augsburg,Draw,2025-12-06T14:30:00Z,Bundesliga - Germany,,3.6,3.45,3.7,3.5,3.7,3.65,1,Not Found,3.7,FanDuel,Not Found,3,,2025-12-06T13:48:10Z
-Norwich City @ Watford,Norwich City,2025-12-06T12:30:00Z,Championship,,1.69,1.67,1.65,1.69,1.62,,1,Not Found,1.69,Caesars,Not Found,3,,2025-12-06T13:48:10Z
-FC St. Pauli @ 1. FC Köln,Draw,2025-12-06T14:30:00Z,Bundesliga - Germany,,3.4,3.35,3.5,3.5,3.6,3.53,1,Not Found,3.6,BetMGM,Not Found,3,,2025-12-06T14:00:21Z
-Union Berlin @ VfL Wolfsburg,Draw,2025-12-06T14:30:00Z,Bundesliga - Germany,,3.3,3.3,3.4,3.4,3.5,3.52,1,Not Found,3.5,BetMGM,Not Found,3,,2025-12-06T14:27:11Z
+Portsmouth @ Charlton Athletic,Charlton Athletic,2025-12-06T12:30:00Z,Championship,,2.15,2.15,2.1,2.15,2.2,2.2,1,Not Found,2.2,BetMGM,Draw,3,,2025-12-06T12:26:07Z
+SC Freiburg @ 1. FC Heidenheim,1. FC Heidenheim,2025-12-06T14:30:00Z,Bundesliga - Germany,,4.6,4.3,4.5,4.3,4.2,4.62,1,Not Found,4.6,Caesars,1. FC Heidenheim,3,,2025-12-06T13:35:56Z
+Radomiak Radom @ Pogoń Szczecin,Radomiak Radom,2025-12-06T13:45:00Z,Ekstraklasa - Poland,,,3.25,3.4,3.1,3.2,3.05,1,Not Found,3.4,FanDuel,Draw,3,,2025-12-06T13:35:56Z
+Çaykur Rizespor @ Torku Konyaspor,Draw,2025-12-06T14:00:00Z,Turkey Super League,,,3.25,3.3,3.3,3.25,3.2,1,Not Found,3.3,FanDuel,Draw,3,,2025-12-06T13:35:56Z
+Fiorentina @ Sassuolo,Fiorentina,2025-12-06T14:00:00Z,Serie A - Italy,,2.6,2.6,2.6,2.65,2.55,2.7,1,Not Found,2.65,Fanatics,Sassuolo,3,,2025-12-06T13:35:56Z
+Bayer Leverkusen @ Augsburg,Draw,2025-12-06T14:30:00Z,Bundesliga - Germany,,3.6,3.45,3.7,3.5,3.7,3.65,1,Not Found,3.7,FanDuel,Augsburg,3,,2025-12-06T13:48:10Z
+Norwich City @ Watford,Norwich City,2025-12-06T12:30:00Z,Championship,,1.69,1.67,1.65,1.69,1.62,,1,Not Found,1.69,Caesars,Watford,3,,2025-12-06T13:48:10Z
+FC St. Pauli @ 1. FC Köln,Draw,2025-12-06T14:30:00Z,Bundesliga - Germany,,3.4,3.35,3.5,3.5,3.6,3.53,1,Not Found,3.6,BetMGM,Draw,3,,2025-12-06T14:00:21Z
+Union Berlin @ VfL Wolfsburg,Draw,2025-12-06T14:30:00Z,Bundesliga - Germany,,3.3,3.3,3.4,3.4,3.5,3.52,1,Not Found,3.5,BetMGM,VfL Wolfsburg,3,,2025-12-06T14:27:11Z
 Aberdeen @ Dundee FC,Dundee FC,2025-12-06T15:00:00Z,Premiership - Scotland,,,3.35,3.4,3.3,3.2,3.05,1,Not Found,3.4,FanDuel,Not Found,3,,2025-12-06T14:27:11Z
-Bayern Munich @ VfB Stuttgart,Bayern Munich,2025-12-06T14:30:00Z,Bundesliga - Germany,,1.59,1.57,1.61,1.59,1.62,1.61,1,Not Found,1.62,BetMGM,Not Found,3,,2025-12-06T14:27:11Z
+Bayern Munich @ VfB Stuttgart,Bayern Munich,2025-12-06T14:30:00Z,Bundesliga - Germany,,1.59,1.57,1.61,1.59,1.62,1.61,1,Not Found,1.62,BetMGM,Bayern Munich,3,,2025-12-06T14:27:11Z
 Sheffield Wednesday @ Blackburn Rovers,Blackburn Rovers,2025-12-06T15:00:00Z,Championship,,1.61,,1.59,1.62,1.62,1.62,1,Not Found,1.62,BetMGM,Not Found,3,,2025-12-06T14:43:19Z
 Brentford @ Tottenham Hotspur,Brentford,2025-12-06T15:00:00Z,EPL,,3.2,8.0,3.2,3.4,7.25,,1,Not Found,8.0,DraftKings,Not Found,3,,2025-12-06T15:26:51Z
 Coventry City @ Ipswich Town,Draw,2025-12-06T15:00:00Z,Championship,,3.0,2.85,3.0,2.9,2.9,,1,Not Found,3.0,FanDuel,Not Found,3,,2025-12-06T15:26:51Z
