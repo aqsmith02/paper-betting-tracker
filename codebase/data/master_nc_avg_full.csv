@@ -1449,12 +1449,7 @@ Fresno St Bulldogs @ CSU Northridge Matadors,Fresno St Bulldogs,2025-12-11T03:05
 San Antonio Spurs @ Los Angeles Lakers,San Antonio Spurs,2025-12-11T03:13:00Z,NBA,2.25,1.87,2.04,,2.0,1.95,,Not Found,0.0509234980610491,2.14,2.25,Caesars,San Antonio Spurs,2,,2025-12-11T03:45:06Z
 Detroit Red Wings @ Calgary Flames,Calgary Flames,2025-12-11T01:42:14Z,NHL,13.0,10.5,9.7,,9.5,16.0,,Not Found,0.3474955015922333,11.87,16.0,BetMGM,Detroit Red Wings,2,,2025-12-11T04:24:07Z
 Dynamo Kyiv @ Fiorentina,Dynamo Kyiv,2025-12-11T17:45:00Z,UEFA Europa Conference League,,6.5,8.0,,6.5,6.25,7.5,Not Found,0.0813735854831194,7.4,8.0,FanDuel,Fiorentina,3,,2025-12-11T17:49:39Z
-Rangers FC @ Ferencváros TC,Rangers FC,2025-12-11T17:45:00Z,UEFA Europa League,2.15,2.25,4.8,,2.05,2.05,,Not Found,0.8466326432037313,2.6,4.8,FanDuel,Not Found,3,,2025-12-11T18:14:53Z
-SC Braga @ Nice,Nice,2025-12-11T17:46:00Z,UEFA Europa League,3.7,8.0,3.8,,9.0,8.75,,Not Found,0.4734547327789415,6.11,9.0,Fanatics,Not Found,3,,2025-12-11T18:14:53Z
-KRC Genk @ FC Midtjylland,KRC Genk,2025-12-11T17:45:00Z,UEFA Europa League,12.0,16.0,12.0,,12.0,14.0,,Not Found,0.1330099735977361,14.12,16.0,DraftKings,Not Found,3,,2025-12-11T18:50:10Z
-Nottingham Forest @ FC Utrecht,FC Utrecht,2025-12-11T17:45:00Z,UEFA Europa League,21.0,36.0,28.0,,31.0,31.0,,Not Found,0.1690550604999992,30.79,36.0,DraftKings,Not Found,3,,2025-12-11T19:13:38Z
 Lille @ Young Boys,Lille,2025-12-11T17:45:00Z,UEFA Europa League,15.0,21.0,17.0,,15.0,21.0,,Not Found,0.1243015105754856,18.68,21.0,DraftKings,Young Boys,3,,2025-12-11T19:13:38Z
-PAOK @ PFC Ludogorets Razgrad,PFC Ludogorets Razgrad,2025-12-11T17:45:00Z,UEFA Europa League,15.0,18.0,18.0,,16.0,21.0,,Not Found,0.1209488868388725,18.73,21.0,BetMGM,Not Found,3,,2025-12-11T19:13:38Z
 Saski Baskonia @ Real Madrid,Saski Baskonia,2025-12-11T20:00:00Z,Basketball Euroleague,,4.4,4.8,,4.0,3.8,4.5,Not Found,0.0573641141456285,4.54,4.8,FanDuel,Not Found,2,,2025-12-11T20:00:21Z
 Viktoria Plzeň @ Panathinaikos FC,Viktoria Plzeň,2025-12-11T20:00:00Z,UEFA Europa League,5.75,8.5,3.2,,6.0,5.5,,Not Found,0.5048993391086743,5.65,8.5,DraftKings,Not Found,3,,2025-12-11T20:33:12Z
 Fenerbahce @ SK Brann,SK Brann,2025-12-11T20:00:00Z,UEFA Europa League,26.0,29.0,21.0,,31.0,26.0,,Not Found,0.1089226586296228,27.96,31.0,Fanatics,Not Found,3,,2025-12-11T20:33:12Z
@@ -1572,25 +1567,25 @@ SE Louisiana Lions @ Houston Christian Huskies,Houston Christian Huskies,2025-12
 Oakland Golden Grizzlies @ Northern Iowa Panthers,Oakland Golden Grizzlies,2025-12-13T23:00:12Z,NCAAB,4.2,3.1,3.8,,3.2,3.2,,Not Found,0.1476938125867568,3.66,4.2,Caesars,Northern Iowa Panthers,2,,2025-12-13T23:26:52Z
 Northern Arizona Lumberjacks @ San Diego Toreros,Northern Arizona Lumberjacks,2025-12-13T23:03:05Z,NCAAB,3.9,6.2,6.6,,5.5,6.25,,Not Found,0.1349804537228783,5.82,6.6,FanDuel,San Diego Toreros,2,,2025-12-13T23:26:52Z
 Montana St Bobcats @ Oregon St Beavers,Montana St Bobcats,2025-12-13T22:05:00Z,NCAAB,5.2,5.2,5.6,,4.3,6.0,,Not Found,0.0867137801543809,5.52,6.0,BetMGM,Oregon St Beavers,2,,2025-12-13T23:26:52Z
-Florida Panthers @ Dallas Stars,Dallas Stars,2025-12-14T01:19:36Z,NHL,2.75,5.2,2.8,,2.65,5.25,,Not Found,0.4673197715353199,3.58,5.25,BetMGM,Not Found,2,,2025-12-14T02:27:31Z
-Michigan Wolverines @ Maryland Terrapins,Maryland Terrapins,2025-12-14T01:07:03Z,NCAAB,6.0,4.4,6.6,,4.3,4.2,,Not Found,0.2641907920844856,5.22,6.6,FanDuel,Not Found,2,,2025-12-14T02:27:31Z
+Florida Panthers @ Dallas Stars,Dallas Stars,2025-12-14T01:19:36Z,NHL,2.75,5.2,2.8,,2.65,5.25,,Not Found,0.4673197715353199,3.58,5.25,BetMGM,Florida Panthers,2,,2025-12-14T02:27:31Z
+Michigan Wolverines @ Maryland Terrapins,Maryland Terrapins,2025-12-14T01:07:03Z,NCAAB,6.0,4.4,6.6,,4.3,4.2,,Not Found,0.2641907920844856,5.22,6.6,FanDuel,Michigan Wolverines,2,,2025-12-14T02:27:31Z
 Isaac Thomson @ Joanderson Brito,Isaac Thomson,2025-12-14T02:16:00Z,MMA,1.87,3.2,2.54,,,3.5,2.95,Not Found,0.2335654777025303,2.84,3.5,BetMGM,Not Found,2,,2025-12-14T02:27:31Z
-San Francisco Dons @ Saint Louis Billikens,San Francisco Dons,2025-12-14T01:05:33Z,NCAAB,5.5,4.0,6.2,,4.75,4.5,,Not Found,0.1990164237035053,5.17,6.2,FanDuel,Not Found,2,,2025-12-14T02:27:31Z
-San Antonio Spurs @ Oklahoma City Thunder,San Antonio Spurs,2025-12-14T02:26:00Z,NBA,4.6,5.0,4.2,,5.0,5.75,4.5,Not Found,0.1380286387468128,5.05,5.75,BetMGM,Not Found,2,,2025-12-14T02:27:31Z
+San Francisco Dons @ Saint Louis Billikens,San Francisco Dons,2025-12-14T01:05:33Z,NCAAB,5.5,4.0,6.2,,4.75,4.5,,Not Found,0.1990164237035053,5.17,6.2,FanDuel,Saint Louis Billikens,2,,2025-12-14T02:27:31Z
+San Antonio Spurs @ Oklahoma City Thunder,San Antonio Spurs,2025-12-14T02:26:00Z,NBA,4.6,5.0,4.2,,5.0,5.75,4.5,Not Found,0.1380286387468128,5.05,5.75,BetMGM,San Antonio Spurs,2,,2025-12-14T02:27:31Z
 Indiana Hoosiers @ Kentucky Wildcats,Kentucky Wildcats,2025-12-14T00:52:47Z,NCAAB,2.15,1.74,1.78,,1.87,1.74,,Not Found,0.0969295231376777,1.96,2.15,Caesars,Kentucky Wildcats,2,,2025-12-14T02:27:31Z
-Boise State Broncos @ Washington Huskies,Boise State Broncos,2025-12-14T01:16:45Z,NCAAF,9.5,11.0,13.0,,13.0,11.5,,Not Found,0.0813029581724492,12.02,13.0,FanDuel,Not Found,2,,2025-12-14T02:27:31Z
-West Virginia Mountaineers @ Ohio State Buckeyes,Ohio State Buckeyes,2025-12-14T01:12:00Z,NCAAB,4.8,4.1,4.6,,4.3,3.7,,Not Found,0.0616539302307147,4.52,4.8,Caesars,Not Found,2,,2025-12-14T02:27:31Z
-Rutgers Scarlet Knights @ Seton Hall Pirates,Rutgers Scarlet Knights,2025-12-14T01:08:52Z,NCAAB,15.0,14.0,16.0,,15.0,12.5,,Not Found,0.0582113777877248,15.12,16.0,FanDuel,Not Found,2,,2025-12-14T02:27:31Z
-Detroit Red Wings @ Chicago Blackhawks,Chicago Blackhawks,2025-12-14T01:18:06Z,NHL,7.0,9.0,9.0,,8.0,7.75,,Not Found,0.0580239668063838,8.51,9.0,FanDuel,Not Found,2,,2025-12-14T02:27:31Z
-Duquesne Dukes @ Nevada Wolf Pack,Duquesne Dukes,2025-12-14T03:00:00Z,NCAAB,4.6,4.1,4.2,,,4.1,3.92,Not Found,0.0563383537249585,4.35,4.6,Caesars,Not Found,2,,2025-12-14T02:27:31Z
-Tennessee St Tigers @ UNLV Rebels,Tennessee St Tigers,2025-12-14T02:55:00Z,NCAAB,8.5,9.0,11.6,,7.3,8.5,,Not Found,0.2516924663757468,9.27,11.6,FanDuel,Not Found,2,,2025-12-14T03:49:41Z
-Nashville Predators @ Colorado Avalanche,Nashville Predators,2025-12-14T02:08:48Z,NHL,19.0,21.0,18.0,,16.0,13.0,,Not Found,0.1871296623118413,17.69,21.0,DraftKings,Not Found,2,,2025-12-14T03:49:41Z
-UTEP Miners @ Hawai'i Rainbow Warriors,UTEP Miners,2025-12-14T05:00:00Z,NCAAB,8.0,7.25,8.2,,,7.0,6.86,Not Found,0.0599079944549445,7.74,8.2,FanDuel,Not Found,2,,2025-12-14T03:49:41Z
-Pepperdine Waves @ CSU Bakersfield Roadrunners,CSU Bakersfield Roadrunners,2025-12-14T02:33:12Z,NCAAB,15.0,19.0,14.0,,26.0,26.0,,Not Found,0.3380433709673034,19.43,26.0,BetMGM,Not Found,2,,2025-12-14T04:27:54Z
+Boise State Broncos @ Washington Huskies,Boise State Broncos,2025-12-14T01:16:45Z,NCAAF,9.5,11.0,13.0,,13.0,11.5,,Not Found,0.0813029581724492,12.02,13.0,FanDuel,Washington Huskies,2,,2025-12-14T02:27:31Z
+West Virginia Mountaineers @ Ohio State Buckeyes,Ohio State Buckeyes,2025-12-14T01:12:00Z,NCAAB,4.8,4.1,4.6,,4.3,3.7,,Not Found,0.0616539302307147,4.52,4.8,Caesars,Ohio State Buckeyes,2,,2025-12-14T02:27:31Z
+Rutgers Scarlet Knights @ Seton Hall Pirates,Rutgers Scarlet Knights,2025-12-14T01:08:52Z,NCAAB,15.0,14.0,16.0,,15.0,12.5,,Not Found,0.0582113777877248,15.12,16.0,FanDuel,Seton Hall Pirates,2,,2025-12-14T02:27:31Z
+Detroit Red Wings @ Chicago Blackhawks,Chicago Blackhawks,2025-12-14T01:18:06Z,NHL,7.0,9.0,9.0,,8.0,7.75,,Not Found,0.0580239668063838,8.51,9.0,FanDuel,Detroit Red Wings,2,,2025-12-14T02:27:31Z
+Duquesne Dukes @ Nevada Wolf Pack,Duquesne Dukes,2025-12-14T03:00:00Z,NCAAB,4.6,4.1,4.2,,,4.1,3.92,Not Found,0.0563383537249585,4.35,4.6,Caesars,Nevada Wolf Pack,2,,2025-12-14T02:27:31Z
+Tennessee St Tigers @ UNLV Rebels,Tennessee St Tigers,2025-12-14T02:55:00Z,NCAAB,8.5,9.0,11.6,,7.3,8.5,,Not Found,0.2516924663757468,9.27,11.6,FanDuel,Tennessee St Tigers,2,,2025-12-14T03:49:41Z
+Nashville Predators @ Colorado Avalanche,Nashville Predators,2025-12-14T02:08:48Z,NHL,19.0,21.0,18.0,,16.0,13.0,,Not Found,0.1871296623118413,17.69,21.0,DraftKings,Colorado Avalanche,2,,2025-12-14T03:49:41Z
+UTEP Miners @ Hawai'i Rainbow Warriors,UTEP Miners,2025-12-14T05:00:00Z,NCAAB,8.0,7.25,8.2,,,7.0,6.86,Not Found,0.0599079944549445,7.74,8.2,FanDuel,Hawai'i Rainbow Warriors,2,,2025-12-14T03:49:41Z
+Pepperdine Waves @ CSU Bakersfield Roadrunners,CSU Bakersfield Roadrunners,2025-12-14T02:33:12Z,NCAAB,15.0,19.0,14.0,,26.0,26.0,,Not Found,0.3380433709673034,19.43,26.0,BetMGM,Pepperdine Waves,2,,2025-12-14T04:27:54Z
 Cezary Oleksiejczuk @ Cesar Almeida,Cesar Almeida,2025-12-14T04:52:00Z,MMA,2.65,4.9,4.0,,,5.0,2.8,Not Found,0.3143776789717376,3.8,5.0,BetMGM,Not Found,2,,2025-12-14T04:55:32Z
 Kevin Vallejos @ Giga Chikadze,Giga Chikadze,2025-12-14T05:24:00Z,MMA,4.4,3.8,3.25,,,4.25,4.2,Not Found,0.0586066890809903,4.16,4.4,Caesars,Not Found,2,,2025-12-14T05:30:40Z
-Tulane Green Wave @ UC San Diego Tritons,Tulane Green Wave,2025-12-14T05:30:00Z,NCAAB,3.8,3.4,4.4,,3.9,4.0,,Not Found,0.0729426264920554,4.1,4.4,FanDuel,Not Found,2,,2025-12-14T05:47:24Z
-UCLA Bruins @ Gonzaga Bulldogs,UCLA Bruins,2025-12-14T04:50:00Z,NCAAB,6.0,7.0,9.3,,6.0,6.0,,Not Found,0.3168365309277914,7.06,9.3,FanDuel,Not Found,2,,2025-12-14T05:59:37Z
+Tulane Green Wave @ UC San Diego Tritons,Tulane Green Wave,2025-12-14T05:30:00Z,NCAAB,3.8,3.4,4.4,,3.9,4.0,,Not Found,0.0729426264920554,4.1,4.4,FanDuel,UC San Diego Tritons,2,,2025-12-14T05:47:24Z
+UCLA Bruins @ Gonzaga Bulldogs,UCLA Bruins,2025-12-14T04:50:00Z,NCAAB,6.0,7.0,9.3,,6.0,6.0,,Not Found,0.3168365309277914,7.06,9.3,FanDuel,Gonzaga Bulldogs,2,,2025-12-14T05:59:37Z
 Sassuolo @ AC Milan,Draw,2025-12-14T11:30:00Z,Serie A - Italy,6.25,7.0,7.0,,6.5,7.75,,Not Found,0.0602655652405057,7.31,7.75,BetMGM,Not Found,3,,2025-12-14T13:06:40Z
 Zagłębie Lubin @ Raków Częstochowa,Zagłębie Lubin,2025-12-14T13:45:00Z,Ekstraklasa - Poland,,6.5,7.0,,6.0,6.0,5.8,Not Found,0.0509024649306133,6.66,7.0,FanDuel,Not Found,3,,2025-12-14T13:37:28Z
 Aston Villa @ West Ham United,Aston Villa,2025-12-14T14:00:00Z,EPL,3.6,1.95,2.05,,2.15,2.05,2.22,Not Found,0.5123607388518385,2.38,3.6,Caesars,Not Found,3,,2025-12-14T14:13:04Z
@@ -1609,5 +1604,5 @@ Lorient @ Strasbourg,Strasbourg,2025-12-14T16:15:00Z,Ligue 1 - France,5.0,5.75,5
 Las Vegas Raiders @ Philadelphia Eagles,Las Vegas Raiders,2025-12-14T18:03:11Z,NFL,13.0,23.0,14.0,,15.0,20.0,,Not Found,0.3515231561606703,17.02,23.0,DraftKings,Not Found,2,,2025-12-14T18:38:46Z
 Buffalo Bulls @ East Carolina Pirates,East Carolina Pirates,2025-12-14T18:02:45Z,NCAAB,5.5,8.0,6.6,,5.25,5.25,,Not Found,0.2665246031858758,6.32,8.0,DraftKings,Not Found,2,,2025-12-14T18:38:46Z
 New York Jets @ Jacksonville Jaguars,New York Jets,2025-12-14T18:02:28Z,NFL,12.0,14.0,15.0,,14.0,17.5,,Not Found,0.1677250923079172,14.99,17.5,BetMGM,Not Found,2,,2025-12-14T18:38:46Z
-Cleveland Browns @ Chicago Bears,Cleveland Browns,2025-12-14T18:03:32Z,NFL,7.5,10.5,10.0,,9.5,11.0,,Not Found,0.09503600965936665,10.05,11.0,BetMGM,Not Found,2,,2025-12-14T18:38:46Z
-Arizona Cardinals @ Houston Texans,Arizona Cardinals,2025-12-14T18:02:38Z,NFL,15.0,19.0,16.0,,16.0,17.5,,Not Found,0.09404300626227402,17.37,19.0,DraftKings,Not Found,2,,2025-12-14T18:38:46Z
+Cleveland Browns @ Chicago Bears,Cleveland Browns,2025-12-14T18:03:32Z,NFL,7.5,10.5,10.0,,9.5,11.0,,Not Found,0.0950360096593666,10.05,11.0,BetMGM,Not Found,2,,2025-12-14T18:38:46Z
+Arizona Cardinals @ Houston Texans,Arizona Cardinals,2025-12-14T18:02:38Z,NFL,15.0,19.0,16.0,,16.0,17.5,,Not Found,0.094043006262274,17.37,19.0,DraftKings,Not Found,2,,2025-12-14T18:38:46Z
