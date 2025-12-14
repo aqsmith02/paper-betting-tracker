@@ -4,3 +4,4 @@ codebase/reader.ipynb
 codebase/nc_bets.py
 .vscode/
 codebase/old_data
+.venv/
