@@ -301,7 +301,7 @@ def plot_profit_over_time(strategy, save_fig=False):
     plt.tight_layout()
     
     if save_fig:
-        filename = f"codebase/analysis/profit_over_time_{strategy.name.replace(' ', '_').lower()}.png"
+        filename = f"codebase/analysis/profit_over_time/profit_over_time_{strategy.name.replace(' ', '_').lower()}.png"
         plt.savefig(filename, dpi=300, bbox_inches='tight')
         print(f"Saved figure: {filename}")
     
@@ -392,7 +392,7 @@ def plot_comparison_all_strategies(save_fig=False):
     plt.tight_layout()
     
     if save_fig:
-        filename = "codebase/analysis/profit_over_time_all_strategies.png"
+        filename = "codebase/analysis/profit_over_time/profit_over_time_all_strategies.png"
         plt.savefig(filename, dpi=300, bbox_inches='tight')
         print(f"Saved figure: {filename}")
     
