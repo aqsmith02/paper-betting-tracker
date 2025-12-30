@@ -1,7 +1,7 @@
 from pathlib import Path
 
 # API keys
-THEODDS_API_KEY = "9e971bc2de30ec1e46baa52d8cf4dc92"
+THEODDS_API_KEY = "f59d869954199512fe61d505fbf60fb8"
 THESPORTSDB_API_KEY = "123"
 
 # Data directory
