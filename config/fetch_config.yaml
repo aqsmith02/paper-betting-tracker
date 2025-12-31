@@ -1,0 +1,6 @@
+fetch_odds:
+  sport: "upcoming"
+  sport_key: "upcoming"
+  regions: "us"
+  markets: "h2h"
+  odds_format: "decimal"

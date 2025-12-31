@@ -12,9 +12,26 @@ Date: July 2025
 import requests
 import pandas as pd
 import json
+import yaml
 from typing import List, Dict
-from .fetch_configs import SPORT, SPORT_KEY, REGIONS, MARKETS, ODDS_FORMAT
-from src.constants import THEODDS_API_KEY
+from src.constants import CONFIG_DIR
+
+
+# Load config
+
+config_path = CONFIG_DIR / "fetch_config.yaml"
+with open(config_path) as f:
+    config = yaml.safe_load(f)
+
+# API Keys
+THE_ODDS_API_KEY = config["api"]["the_odds_api_key"]
+
+# Fetch settings
+SPORT = config["fetch_odds"]["sport"]
+SPORT_KEY = ["fetch_odds"]["sport_key"]
+REGIONS = config["fetch_odds"]["regions"]
+MARKETS = config["fetch_odds"]["markets"]
+ODDS_FORMAT = config["fetch_odds"]["odds_format"]
 
 
 def fetch_odds() -> pd.DataFrame:
@@ -28,7 +45,7 @@ def fetch_odds() -> pd.DataFrame:
     # Build API request
     url = f"https://api.the-odds-api.com/v4/sports/{SPORT_KEY}/odds"
     params = {
-        "apiKey": THEODDS_API_KEY,
+        "apiKey": THE_ODDS_API_KEY,
         "regions": REGIONS,
         "markets": MARKETS,
         "oddsFormat": ODDS_FORMAT,
