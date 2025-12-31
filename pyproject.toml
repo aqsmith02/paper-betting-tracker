@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "paper-betting-tracker"
+version = "0.1.0"
+description = "Automated sports betting analytics pipeline for tracking and analyzing profitable betting opportunities"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "numpy>=2.0.2",
+    "pandas>=2.2.2",
+    "pytz>=2024.2",
+    "requests>=2.32.3",
+    "matplotlib>=3.9.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "coverage>=7.0.0",      # Code coverage for unittest
+    "black>=23.0.0",        # Code formatter (optional)
+    "flake8>=6.0.0",        # Linter (optional)
+]
