@@ -9,7 +9,7 @@ Author: Andrew Smith
 import numpy as np
 import pandas as pd
 from typing import List, Optional
-from .betting_configs import (
+from src.constants import (
     MIN_BOOKMAKERS,
     MAX_ODDS,
     TARGET_BMS,

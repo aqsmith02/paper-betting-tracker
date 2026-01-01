@@ -10,10 +10,19 @@ Date: July 2025
 
 import requests
 import pandas as pd
+import yaml
 from datetime import datetime, timedelta, timezone
 from typing import Any, List, Dict
-from src.constants import THEODDS_API_KEY
-from .results_configs import PENDING_RESULTS
+from src.constants import PENDING_RESULTS, CONFIG_DIR
+
+# Load config
+
+config_path = CONFIG_DIR / "fetch_config.yaml"
+with open(config_path) as f:
+    config = yaml.safe_load(f)
+
+# API Keys
+THE_ODDS_API_KEY = config["api"]["the_odds_api_key"]
 
 
 def _start_date(ts: Any) -> str:
@@ -86,7 +95,7 @@ def _get_scores_from_api(sports_key: str, days_from: int = 3) -> List[Dict]:
     Returns:
         List[Dict]: List of completed game dictionaries from the API response.
     """
-    url = f"https://api.the-odds-api.com/v4/sports/{sports_key}/scores/?daysFrom={days_from}&apiKey={THEODDS_API_KEY}"
+    url = f"https://api.the-odds-api.com/v4/sports/{sports_key}/scores/?daysFrom={days_from}&apiKey={THE_ODDS_API_KEY}"
     resp = requests.get(url)
     if resp.status_code != 200:
         print(f"Error fetching scores from Odds API: {resp.status_code}")

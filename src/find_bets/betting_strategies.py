@@ -8,7 +8,7 @@ Author: Andrew Smith
 
 from typing import List
 import pandas as pd
-from .betting_configs import (
+from src.constants import (
     EV_THRESHOLD,
     MAX_MISSING_VF_PCT,
     Z_SCORE_THRESHOLD,

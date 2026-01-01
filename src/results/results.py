@@ -14,13 +14,13 @@ from datetime import datetime, timedelta, timezone
 from typing import Tuple
 from .theodds_results import get_finished_games_from_theodds, map_league_to_key
 from .sportsdb_results import get_finished_games_from_thesportsdb
-from .results_configs import (
+from src.constants import (
     PENDING_RESULTS,
     DAYS_CUTOFF,
-    FILE_CONFIGS,
+    FILE_NAMES,
     SLEEP_DURATION,
+    DATA_DIR
 )
-from src.constants import DATA_DIR
 
 
 def filter_rows_to_search(df: pd.DataFrame) -> pd.DataFrame:
@@ -166,12 +166,12 @@ def main() -> None:
     """
     print("Starting sports results pipeline")
 
-    for i, (bet_filename, full_filename) in enumerate(FILE_CONFIGS):
+    for i, (bet_filename, full_filename) in enumerate(FILE_NAMES):
         try:
             process_files(bet_filename, full_filename)
 
             # Sleep between files (except after the last one)
-            if i < len(FILE_CONFIGS) - 1:
+            if i < len(FILE_NAMES) - 1:
                 print(f"Sleeping for {SLEEP_DURATION} seconds...")
                 time.sleep(SLEEP_DURATION)
 
