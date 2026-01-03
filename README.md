@@ -36,16 +36,24 @@ A file with all bookmakers and odds that were available, not just the odds of th
    ```bash
    pip install -r requirements.txt
    ```
-2. Fetch odds and analyze bets:
+   
+2. Create an api_config file and add API keys:
+   ```bash
+   cp src/api_config.example.yaml src/api_config.yaml
+   # Then edit src/api_config.yaml with your API keys
+   ```
+
+3. Fetch odds and analyze bets:
    ```bash
    python3 -m src.find_bets.find_bets
    ```
-3. Update results:
+   
+4. Update results:
    ```bash
    python3 -m src.results.results
    ```
-
-4. View strategy profit/ROI:
+   
+5. View strategy profit/ROI:
    ```bash
    python3 -m src.analysis.roi
    ```
