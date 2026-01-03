@@ -29,6 +29,8 @@ jobs:
         pip install pandas numpy python-dateutil pytz requests PyYAML
 
     - name: Run the bet finder script
+      env:
+        THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
       run: |
         python3 -m src.find_bets.find_bets
 
