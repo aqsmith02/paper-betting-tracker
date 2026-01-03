@@ -1,7 +1,6 @@
 import pandas as pd
-import numpy as np
 from dataclasses import dataclass
-from src.results.results_configs import PENDING_RESULTS
+from src.constants import PENDING_RESULTS
 
 
 # --- Data class for strategies ---
