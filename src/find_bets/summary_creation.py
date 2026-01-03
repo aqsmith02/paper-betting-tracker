@@ -8,7 +8,6 @@ Author: Andrew Smith
 
 import pandas as pd
 
-
 def create_average_edge_summary(df: pd.DataFrame) -> pd.DataFrame:
     """
     Create summary of profitable average edge bets.
