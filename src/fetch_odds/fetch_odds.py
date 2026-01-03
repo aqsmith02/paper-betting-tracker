@@ -19,16 +19,20 @@ from src.constants import CONFIG_DIR
 
 # Load config
 
-config_path = CONFIG_DIR / "fetch_config.yaml"
+config_path = CONFIG_DIR / "api_config.yaml"
 with open(config_path) as f:
     config = yaml.safe_load(f)
 
 # API Keys
 THE_ODDS_API_KEY = config["api"]["the_odds_api_key"]
 
+config_path = CONFIG_DIR / "fetch_config.yaml"
+with open(config_path) as f:
+    config = yaml.safe_load(f)
+
 # Fetch settings
 SPORT = config["fetch_odds"]["sport"]
-SPORT_KEY = ["fetch_odds"]["sport_key"]
+SPORT_KEY = config["fetch_odds"]["sport_key"]
 REGIONS = config["fetch_odds"]["regions"]
 MARKETS = config["fetch_odds"]["markets"]
 ODDS_FORMAT = config["fetch_odds"]["odds_format"]

@@ -18,7 +18,7 @@ from src.constants import PENDING_RESULTS, CONFIG_DIR
 
 # Load config
 
-config_path = CONFIG_DIR / "fetch_config.yaml"
+config_path = CONFIG_DIR / "api_config.yaml"
 with open(config_path) as f:
     config = yaml.safe_load(f)
 
