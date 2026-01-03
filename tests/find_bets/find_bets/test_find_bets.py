@@ -188,11 +188,11 @@ class TestMain(unittest.TestCase):
             }
         )
 
-    @patch("codebase.find_bets.find_bets.BetFileManager")
-    @patch("codebase.find_bets.find_bets.calculate_vigfree_probabilities")
-    @patch("codebase.find_bets.find_bets.process_target_odds_data")
-    @patch("codebase.find_bets.find_bets.fetch_odds")
-    @patch("codebase.find_bets.find_bets.run_betting_strategy")
+    @patch("src.find_bets.find_bets.BetFileManager")
+    @patch("src.find_bets.find_bets.calculate_vigfree_probabilities")
+    @patch("src.find_bets.find_bets.process_target_odds_data")
+    @patch("src.find_bets.find_bets.fetch_odds")
+    @patch("src.find_bets.find_bets.run_betting_strategy")
     def test_main_success(
         self,
         mock_run_strategy,
@@ -219,7 +219,7 @@ class TestMain(unittest.TestCase):
         # Verify all strategies were run (5 strategies)
         self.assertEqual(mock_run_strategy.call_count, 5)
 
-    @patch("codebase.find_bets.find_bets.fetch_odds")
+    @patch("src.find_bets.find_bets.fetch_odds")
     def test_main_empty_raw_odds(self, mock_fetch_odds):
         """Test main when fetch_odds returns empty DataFrame."""
         mock_fetch_odds.return_value = pd.DataFrame()
@@ -229,10 +229,10 @@ class TestMain(unittest.TestCase):
 
         mock_fetch_odds.assert_called_once()
 
-    @patch("codebase.find_bets.find_bets.BetFileManager")
-    @patch("codebase.find_bets.find_bets.calculate_vigfree_probabilities")
-    @patch("codebase.find_bets.find_bets.process_target_odds_data")
-    @patch("codebase.find_bets.find_bets.fetch_odds")
+    @patch("src.find_bets.find_bets.BetFileManager")
+    @patch("src.find_bets.find_bets.calculate_vigfree_probabilities")
+    @patch("src.find_bets.find_bets.process_target_odds_data")
+    @patch("src.find_bets.find_bets.fetch_odds")
     def test_main_empty_processed_odds(
         self,
         mock_fetch_odds,
@@ -252,10 +252,10 @@ class TestMain(unittest.TestCase):
         # Should not proceed to vigfree calculation
         mock_calc_vigfree.assert_not_called()
 
-    @patch("codebase.find_bets.find_bets.BetFileManager")
-    @patch("codebase.find_bets.find_bets.calculate_vigfree_probabilities")
-    @patch("codebase.find_bets.find_bets.process_target_odds_data")
-    @patch("codebase.find_bets.find_bets.fetch_odds")
+    @patch("src.find_bets.find_bets.BetFileManager")
+    @patch("src.find_bets.find_bets.calculate_vigfree_probabilities")
+    @patch("src.find_bets.find_bets.process_target_odds_data")
+    @patch("src.find_bets.find_bets.fetch_odds")
     def test_main_exception_handling(
         self,
         mock_fetch_odds,
@@ -269,11 +269,11 @@ class TestMain(unittest.TestCase):
         with self.assertRaises(Exception):
             main()
 
-    @patch("codebase.find_bets.find_bets.BetFileManager")
-    @patch("codebase.find_bets.find_bets.calculate_vigfree_probabilities")
-    @patch("codebase.find_bets.find_bets.process_target_odds_data")
-    @patch("codebase.find_bets.find_bets.fetch_odds")
-    @patch("codebase.find_bets.find_bets.run_betting_strategy")
+    @patch("src.find_bets.find_bets.BetFileManager")
+    @patch("src.find_bets.find_bets.calculate_vigfree_probabilities")
+    @patch("src.find_bets.find_bets.process_target_odds_data")
+    @patch("src.find_bets.find_bets.fetch_odds")
+    @patch("src.find_bets.find_bets.run_betting_strategy")
     def test_main_all_strategies_executed(
         self,
         mock_run_strategy,
@@ -308,11 +308,11 @@ class TestMain(unittest.TestCase):
         
         self.assertEqual(called_strategies, expected_strategies)
 
-    @patch("codebase.find_bets.find_bets.BetFileManager")
-    @patch("codebase.find_bets.find_bets.calculate_vigfree_probabilities")
-    @patch("codebase.find_bets.find_bets.process_target_odds_data")
-    @patch("codebase.find_bets.find_bets.fetch_odds")
-    @patch("codebase.find_bets.find_bets.run_betting_strategy")
+    @patch("src.find_bets.find_bets.BetFileManager")
+    @patch("src.find_bets.find_bets.calculate_vigfree_probabilities")
+    @patch("src.find_bets.find_bets.process_target_odds_data")
+    @patch("src.find_bets.find_bets.fetch_odds")
+    @patch("src.find_bets.find_bets.run_betting_strategy")
     def test_main_file_manager_initialized_once(
         self,
         mock_run_strategy,
