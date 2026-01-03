@@ -108,7 +108,7 @@ class TestProcessGame(unittest.TestCase):
 class TestFetchOddsAPIFailures(unittest.TestCase):
     """Test cases for fetch_odds function with API failures."""
 
-    @patch('codebase.fetch_odds.fetch_odds.requests.get')
+    @patch('src.fetch_odds.fetch_odds.requests.get')
     def test_fetch_odds_invalid_api_key(self, mock_get):
         """Test fetch_odds when API key is invalid (401 Unauthorized)."""
         # Mock a 401 Unauthorized response
@@ -124,7 +124,7 @@ class TestFetchOddsAPIFailures(unittest.TestCase):
         self.assertTrue(result.empty)
         self.assertEqual(len(result), 0)
 
-    @patch('codebase.fetch_odds.fetch_odds.requests.get')
+    @patch('src.fetch_odds.fetch_odds.requests.get')
     def test_fetch_odds_api_key_quota_exceeded(self, mock_get):
         """Test fetch_odds when API key quota is exceeded (429 Too Many Requests)."""
         # Mock a 429 Too Many Requests response
@@ -140,7 +140,7 @@ class TestFetchOddsAPIFailures(unittest.TestCase):
         self.assertTrue(result.empty)
         self.assertEqual(len(result), 0)
 
-    @patch('codebase.fetch_odds.fetch_odds.requests.get')
+    @patch('src.fetch_odds.fetch_odds.requests.get')
     def test_fetch_odds_forbidden_access(self, mock_get):
         """Test fetch_odds when API returns 403 Forbidden."""
         # Mock a 403 Forbidden response
@@ -156,7 +156,7 @@ class TestFetchOddsAPIFailures(unittest.TestCase):
         self.assertTrue(result.empty)
         self.assertEqual(len(result), 0)
 
-    @patch('codebase.fetch_odds.fetch_odds.requests.get')
+    @patch('src.fetch_odds.fetch_odds.requests.get')
     def test_fetch_odds_server_error(self, mock_get):
         """Test fetch_odds when API returns 500 Internal Server Error."""
         # Mock a 500 Internal Server Error response
@@ -172,7 +172,7 @@ class TestFetchOddsAPIFailures(unittest.TestCase):
         self.assertTrue(result.empty)
         self.assertEqual(len(result), 0)
 
-    @patch('codebase.fetch_odds.fetch_odds.requests.get')
+    @patch('src.fetch_odds.fetch_odds.requests.get')
     def test_fetch_odds_network_timeout(self, mock_get):
         """Test fetch_odds when network request times out."""
         # Mock a timeout exception
@@ -184,7 +184,7 @@ class TestFetchOddsAPIFailures(unittest.TestCase):
         self.assertTrue(result.empty)
         self.assertEqual(len(result), 0)
 
-    @patch('codebase.fetch_odds.fetch_odds.requests.get')
+    @patch('src.fetch_odds.fetch_odds.requests.get')
     def test_fetch_odds_successful_with_valid_key(self, mock_get):
         """Test fetch_odds with valid API key returning game data."""
         # Mock a successful response
