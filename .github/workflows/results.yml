@@ -31,7 +31,7 @@ jobs:
     - name: Run results.py
       env:
         THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
-        THESPORTSDB_API_KEY: ${{ secrets.THESPORTSDB_API_KEY }}
+        THESPORTSDB_API_KEY: ${{ secrets.THE_SPORTS_DB_API_KEY }}
       run: |
         python3 -m src.results.results
 
