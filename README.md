@@ -40,7 +40,7 @@ A file with all bookmakers and odds that were available, not just the odds of th
 2. Create an api_config file and add API keys:
    ```bash
    cp src/api_config.example.yaml src/api_config.yaml
-   # Then edit src/api_config.yaml with your API keys
+   # Then edit src/api_config.yaml with your API keys and add it to .gitignore
    ```
 
 3. Fetch odds and analyze bets:
