@@ -11,18 +11,24 @@ Date: July 2025
 import requests
 import pandas as pd
 import yaml
+import os
 from datetime import datetime, timedelta, timezone
 from typing import Any, List, Dict
 from src.constants import PENDING_RESULTS, CONFIG_DIR
 
-# Load config
+# ============================================================================
+# API KEYS - Load from environment (GitHub) or config file (local)
+# ============================================================================
 
-config_path = CONFIG_DIR / "api_config.yaml"
-with open(config_path) as f:
-    config = yaml.safe_load(f)
+THE_ODDS_API_KEY = os.getenv("THE_ODDS_API_KEY")
 
-# API Keys
-THE_ODDS_API_KEY = config["api"]["the_odds_api_key"]
+if not THE_ODDS_API_KEY:
+    # Fall back to config file for local development
+    config_path = CONFIG_DIR / "api_config.yaml"
+    with open(config_path) as f:
+        config = yaml.safe_load(f)
+    THE_ODDS_API_KEY = config["api"]["the_odds_api_key"]
+
 
 
 def _start_date(ts: Any) -> str:
