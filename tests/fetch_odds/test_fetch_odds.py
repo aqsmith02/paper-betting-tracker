@@ -8,7 +8,7 @@ Author: Andrew Smith
 
 import unittest
 from unittest.mock import patch, Mock
-from .configs import (
+from tests.fetch_odds.test_game_data import (
     TEST_GAME_DATA,
     TEST_GAME_DATA_NO_BM,
     TEST_GAME_DATA_MULT_MARKETS,

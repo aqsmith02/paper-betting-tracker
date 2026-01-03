@@ -8,9 +8,8 @@ Author: Andrew Smith
 """
 
 import unittest
-from unittest.mock import Mock, patch, MagicMock, call
+from unittest.mock import Mock, patch
 import pandas as pd
-from dataclasses import dataclass
 import sys
 from pathlib import Path
 

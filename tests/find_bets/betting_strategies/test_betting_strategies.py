@@ -3,13 +3,13 @@ test_betting_strategies.py
 
 Unit tests for betting_strategies.py module.
 
-Author: Brendon Smith
+Author: Andrew Smith
 """
 
 import unittest
 import pandas as pd
 import numpy as np
-from src.find_bets.betting_configs import (
+from src.constants import (
     MAX_MISSING_VF_PCT,
     EV_THRESHOLD,
     Z_SCORE_THRESHOLD,

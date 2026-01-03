@@ -13,7 +13,6 @@ Author: Andrew Smith
 import unittest
 import numpy as np
 import pandas as pd
-from unittest.mock import patch
 
 from src.find_bets.data_processing import (
     _find_bookmaker_columns,
@@ -34,18 +33,18 @@ class TestDataProcessing(unittest.TestCase):
     def setUp(self):
         """Set up test fixtures before each test method."""
         # Data from an API pull on 2025-09-25
-        self.unprocessed = pd.read_csv("testing/find_bets/data_processing/unprocessed.csv")
-        self.pre_metadata_check = pd.read_csv("testing/find_bets/data_processing/pre_metadata.csv")
-        self.pre_clean = pd.read_csv("testing/find_bets/data_processing/pre_clean.csv")
+        self.unprocessed = pd.read_csv("tests/find_bets/data_processing/test_data/unprocessed.csv")
+        self.pre_metadata_check = pd.read_csv("tests/find_bets/data_processing/test_data/pre_metadata.csv")
+        self.pre_clean = pd.read_csv("tests/find_bets/data_processing/test_data/pre_clean.csv")
         self.pre_min_bookmaker_check = pd.read_csv(
-            "testing/find_bets/data_processing/pre_min_bookmaker_check.csv"
+            "tests/find_bets/data_processing/test_data/pre_min_bookmaker_check.csv"
         )
         self.pre_max_odds_check = pd.read_csv(
-            "testing/find_bets/data_processing/pre_max_odds_check.csv"
+            "tests/find_bets/data_processing/test_data/pre_max_odds_check.csv"
         )
-        self.pre_outcome_check = pd.read_csv("testing/find_bets/data_processing/pre_outcome_check.csv")
-        self.pre_prettify = pd.read_csv("testing/find_bets/data_processing/pre_prettify.csv")
-        self.processed = pd.read_csv("testing/find_bets/data_processing/processed.csv")
+        self.pre_outcome_check = pd.read_csv("tests/find_bets/data_processing/test_data/pre_outcome_check.csv")
+        self.pre_prettify = pd.read_csv("tests/find_bets/data_processing/test_data/pre_prettify.csv")
+        self.processed = pd.read_csv("tests/find_bets/data_processing/test_data/processed.csv")
 
     def test_find_bookmaker_columns(self):
         """Test _find_bookmaker_columns function."""

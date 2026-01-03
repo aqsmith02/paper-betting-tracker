@@ -3,15 +3,14 @@ test_file_management.py
 
 Unit tests for file_management.py module.
 
-Author: Brendon Smith
+Author: Andrew Smith
 """
 
 import unittest
 import pandas as pd
-import numpy as np
 from pathlib import Path
 from datetime import datetime
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 import tempfile
 import shutil
 from src.find_bets.file_management import (
