@@ -26,11 +26,11 @@ jobs:
 
     - name: Install dependencies
       run: |
-            pip install pandas requests
+            pip install pandas requests PyYAML
 
     - name: Run results.py
       run: |
-        python3 -m codebase.results_appending.results
+        python3 -m src.results.results
 
     - name: Commit and push updated CSVs to master branch
       run: |
@@ -39,7 +39,7 @@ jobs:
         git config user.name "github-actions[bot]"
         git config user.email "github-actions@github.com"
         
-        CSV_LIST="codebase/data/*.csv"
+        CSV_LIST="data/*.csv"
         
         # Show what changed
         echo "================================================"
