@@ -1,9 +1,10 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
 from dataclasses import dataclass
 from datetime import datetime
-from src.results.results_configs import PENDING_RESULTS
+from src.constants import PENDING_RESULTS
 
 
 # --- Data class for strategies ---
@@ -20,14 +21,14 @@ class BettingStrategy:
 STRATEGIES = [
     BettingStrategy(
         "Average",
-        "codebase/data/master_nc_avg_full.csv",
+        "data/master_nc_avg_full.csv",
         "Best Odds",
         "Fair Odds Avg",
         "Expected Value",
     ),
     BettingStrategy(
         "Average With Modified Zscore Constraint",
-        "codebase/data/master_nc_mod_zscore_full.csv",
+        "data/master_nc_mod_zscore_full.csv",
         "Best Odds",
         "Fair Odds Avg",
         "Expected Value",
@@ -35,21 +36,21 @@ STRATEGIES = [
     ),
     BettingStrategy(
         "Pinnacle",
-        "codebase/data/master_nc_pin_full.csv",
+        "data/master_nc_pin_full.csv",
         "Best Odds",
         "Pinnacle Fair Odds",
         "Expected Value",
     ),
     BettingStrategy(
         "Average With Zscore Constraint",
-        "codebase/data/master_nc_zscore_full.csv",
+        "data/master_nc_zscore_full.csv",
         "Best Odds",
         "Fair Odds Avg",
         "Expected Value",
         "Z Score",
     ),
     BettingStrategy(
-        "Random Strategy", "codebase/data/master_nc_random_full.csv", "Best Odds"
+        "Random Strategy", "data/master_nc_random_full.csv", "Best Odds"
     ),
 ]
 
@@ -219,13 +220,18 @@ def plot_profit_over_time(strategy, save_fig=False):
         
         flat_profit = calculate_cumulative_profit_flat(df, strategy.odds_column)
         
-        ax.plot(flat_profit['Bet_Number'], flat_profit['Cumulative_Profit'], 
+        ax.plot(flat_profit['Start Time'], flat_profit['Cumulative_Profit'], 
                 linewidth=2.5, color='#2E86AB', label='Flat Betting')
         ax.axhline(y=0, color='red', linestyle='--', linewidth=1.5, alpha=0.7, label='Break-even')
-        ax.set_xlabel('Bet Number', fontsize=13)
+        ax.set_xlabel('Date', fontsize=13)
         ax.set_ylabel('Cumulative Profit (Units)', fontsize=13)
         ax.grid(True, alpha=0.3, linestyle='--')
         ax.legend(fontsize=11)
+        
+        # Format x-axis for dates
+        ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
+        ax.xaxis.set_major_locator(mdates.AutoDateLocator())
+        fig.autofmt_xdate()
         
         # Add summary statistics
         final_profit_flat = flat_profit['Cumulative_Profit'].iloc[-1]
@@ -255,13 +261,18 @@ def plot_profit_over_time(strategy, save_fig=False):
         )
         
         if not kelly_profit.empty:
-            ax.plot(kelly_profit['Bet_Number'], kelly_profit['Cumulative_Profit'], 
+            ax.plot(kelly_profit['Start Time'], kelly_profit['Cumulative_Profit'], 
                     linewidth=2.5, color='#A23B72', label='Kelly Betting')
             ax.axhline(y=0, color='red', linestyle='--', linewidth=1.5, alpha=0.7, label='Break-even')
-            ax.set_xlabel('Bet Number', fontsize=13)
+            ax.set_xlabel('Date', fontsize=13)
             ax.set_ylabel('Cumulative Profit (Units)', fontsize=13)
             ax.grid(True, alpha=0.3, linestyle='--')
             ax.legend(fontsize=11)
+            
+            # Format x-axis for dates
+            ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
+            ax.xaxis.set_major_locator(mdates.AutoDateLocator())
+            fig.autofmt_xdate()
             
             # Add summary statistics
             final_profit_kelly = kelly_profit['Cumulative_Profit'].iloc[-1]
@@ -285,7 +296,7 @@ def plot_profit_over_time(strategy, save_fig=False):
                     verticalalignment='center',
                     transform=ax.transAxes,
                     fontsize=14)
-            ax.set_xlabel('Bet Number', fontsize=13)
+            ax.set_xlabel('Date', fontsize=13)
             ax.set_ylabel('Cumulative Profit (Units)', fontsize=13)
     
     # Add date stamp in bottom right corner (LARGER)
@@ -301,7 +312,7 @@ def plot_profit_over_time(strategy, save_fig=False):
     plt.tight_layout()
     
     if save_fig:
-        filename = f"codebase/analysis/profit_over_time/profit_over_time_{strategy.name.replace(' ', '_').lower()}.png"
+        filename = f"analysis/profit_over_time/profit_over_time_{strategy.name.replace(' ', '_').lower()}.png"
         plt.savefig(filename, dpi=300, bbox_inches='tight')
         print(f"Saved figure: {filename}")
     
@@ -351,20 +362,25 @@ def plot_comparison_all_strategies(save_fig=False):
             )
             
             if not kelly_profit.empty:
-                ax.plot(kelly_profit['Bet_Number'], kelly_profit['Cumulative_Profit'], 
+                ax.plot(kelly_profit['Start Time'], kelly_profit['Cumulative_Profit'], 
                         linewidth=2.5, color=colors[i % len(colors)], label=strategy.name, alpha=0.85)
         else:
             # Plot flat betting for Random strategy
             flat_profit = calculate_cumulative_profit_flat(df, strategy.odds_column)
             
             if not flat_profit.empty:
-                ax.plot(flat_profit['Bet_Number'], flat_profit['Cumulative_Profit'], 
+                ax.plot(flat_profit['Start Time'], flat_profit['Cumulative_Profit'], 
                         linewidth=2.5, color=colors[i % len(colors)], label=strategy.name, alpha=0.85, linestyle='--')
     
     ax.axhline(y=0, color='red', linestyle='--', linewidth=1.5, alpha=0.7, label='Break-even')
-    ax.set_xlabel('Bet Number', fontsize=13)
+    ax.set_xlabel('Date', fontsize=13)
     ax.set_ylabel('Cumulative Profit (Units)', fontsize=13)
     ax.grid(True, alpha=0.3, linestyle='--')
+    
+    # Format x-axis for dates
+    ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
+    ax.xaxis.set_major_locator(mdates.AutoDateLocator())
+    fig.autofmt_xdate()
     
     # Move legend to upper left to avoid overlapping with date boxes
     ax.legend(fontsize=11, loc='upper left')
@@ -392,7 +408,7 @@ def plot_comparison_all_strategies(save_fig=False):
     plt.tight_layout()
     
     if save_fig:
-        filename = "codebase/analysis/profit_over_time/profit_over_time_all_strategies.png"
+        filename = "analysis/profit_over_time/profit_over_time_all_strategies.png"
         plt.savefig(filename, dpi=300, bbox_inches='tight')
         print(f"Saved figure: {filename}")
     
