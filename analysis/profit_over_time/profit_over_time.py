@@ -35,21 +35,6 @@ STRATEGIES = [
         "Modified Z Score",
     ),
     BettingStrategy(
-        "Pinnacle",
-        "data/master_nc_pin_full.csv",
-        "Best Odds",
-        "Pinnacle Fair Odds",
-        "Expected Value",
-    ),
-    BettingStrategy(
-        "Average With Zscore Constraint",
-        "data/master_nc_zscore_full.csv",
-        "Best Odds",
-        "Fair Odds Avg",
-        "Expected Value",
-        "Z Score",
-    ),
-    BettingStrategy(
         "Random Strategy", "data/master_nc_random_full.csv", "Best Odds"
     ),
 ]

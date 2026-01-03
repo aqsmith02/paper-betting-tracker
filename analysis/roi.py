@@ -17,36 +17,21 @@ class BettingStrategy:
 STRATEGIES = [
     BettingStrategy(
         "Average NC",
-        "codebase/data/master_nc_avg_full.csv",
+        "data/master_nc_avg_full.csv",
         "Best Odds",
         "Fair Odds Avg",
         "Expected Value",
     ),
     BettingStrategy(
         "Modified Zscore NC",
-        "codebase/data/master_nc_mod_zscore_full.csv",
+        "data/master_nc_mod_zscore_full.csv",
         "Best Odds",
         "Fair Odds Avg",
         "Expected Value",
         "Modified Z Score",
     ),
     BettingStrategy(
-        "Pinnacle NC",
-        "codebase/data/master_nc_pin_full.csv",
-        "Best Odds",
-        "Pinnacle Fair Odds",
-        "Expected Value",
-    ),
-    BettingStrategy(
-        "Zscore NC",
-        "codebase/data/master_nc_zscore_full.csv",
-        "Best Odds",
-        "Fair Odds Avg",
-        "Expected Value",
-        "Z Score",
-    ),
-    BettingStrategy(
-        "Random NC", "codebase/data/master_nc_random_full.csv", "Best Odds"
+        "Random NC", "data/master_nc_random_full.csv", "Best Odds"
     ),
 ]
 
