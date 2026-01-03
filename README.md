@@ -4,12 +4,12 @@ This project is an automated system that tracks "paper" sports bets (no money is
 
 ## Results
 
-![Chart](codebase/analysis/profit_over_time/profit_over_time_all_strategies.png)
-![Chart](codebase/analysis/profit_over_time/profit_over_time_average_with_modified_zscore_constraint.png)
-![Chart](codebase/analysis/profit_over_time/profit_over_time_pinnacle.png)
-![Chart](codebase/analysis/profit_over_time/profit_over_time_average.png)
-![Chart](codebase/analysis/profit_over_time/profit_over_time_average_with_zscore_constraint.png)
-![Chart](codebase/analysis/profit_over_time/profit_over_time_random_strategy.png)
+![Chart](analysis/profit_over_time/profit_over_time_all_strategies.png)
+![Chart](analysis/profit_over_time/profit_over_time_average_with_modified_zscore_constraint.png)
+![Chart](analysis/profit_over_time/profit_over_time_pinnacle.png)
+![Chart](analysis/profit_over_time/profit_over_time_average.png)
+![Chart](analysis/profit_over_time/profit_over_time_average_with_zscore_constraint.png)
+![Chart](analysis/profit_over_time/profit_over_time_random_strategy.png)
 
 ## Betting Strategies
 
