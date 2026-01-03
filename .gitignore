@@ -1,3 +1,4 @@
 .venv/
 __pycache__/
 config/api_config.yaml
+old_data/

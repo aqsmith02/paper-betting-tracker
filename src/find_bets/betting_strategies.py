@@ -1,7 +1,7 @@
 """
 betting_strategies.py
 
-Logic for 5 different betting strategy methods. Functions append results columns to input pd.DataFrame.
+Logic for 3 different betting strategy methods. Functions append results columns to input pd.DataFrame.
 
 Author: Andrew Smith
 """
@@ -97,47 +97,6 @@ def analyze_average_edge_bets(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def analyze_zscore_outliers(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Find bets where best odds are statistical outliers using Z-score and average edge.
-
-    Args:
-        df (pd.DataFrame): DataFrame containing vig-free odds data.
-
-    Returns:
-        pd.DataFrame: DataFrame with additional Z-score column and average edge columns.
-    """
-    df = df.copy()
-    df = analyze_average_edge_bets(df)
-
-    vigfree_columns = [col for col in df.columns if col.startswith("Vigfree ")]
-    cols_to_exclude = vigfree_columns + ["Fair Odds Avg", "Avg Edge Pct"]
-    bookmaker_columns = _find_bookmaker_columns(df, cols_to_exclude)
-    z_scores = []
-
-    for _, row in df.iterrows():
-        best_odds = row["Best Odds"]
-
-        # Calculate Z-score
-        mean_odds = row[bookmaker_columns].mean()
-        std_odds = row[bookmaker_columns].std()
-
-        if std_odds == 0:  # Avoid division by zero
-            z_scores.append(None)
-            continue
-
-        z_score = max(0, best_odds - mean_odds) / std_odds
-
-        # Only include if within reasonable bounds
-        if Z_SCORE_THRESHOLD < z_score < MAX_Z_SCORE:
-            z_scores.append(round(z_score, 2))
-        else:
-            z_scores.append(None)
-
-    df["Z Score"] = z_scores
-    return df
-
-
 def analyze_modified_zscore_outliers(df: pd.DataFrame) -> pd.DataFrame:
     """
     Find bets where best odds are outliers using Modified Z-score (more robust to outliers) and
@@ -177,53 +136,6 @@ def analyze_modified_zscore_outliers(df: pd.DataFrame) -> pd.DataFrame:
             modified_z_scores.append(None)
 
     df["Modified Z Score"] = modified_z_scores
-    return df
-
-
-def analyze_pinnacle_edge_bets(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Find bets where best odds exceed Pinnacle's fair odds by threshold.
-
-    Args:
-        df (pd.DataFrame): DataFrame containing vig-free probability data including Pinnacle.
-        pinnacle_column (str): Name of the Pinnacle bookmaker column.
-        edge_threshold (float): Minimum edge percentage required for profitable bet.
-
-    Returns:
-        pd.DataFrame: DataFrame with additional columns for Pinnacle fair odds and edge percentage.
-    """
-    df = df.copy()
-    vigfree_pinnacle = f"Vigfree Pinnacle"
-    if vigfree_pinnacle not in df.columns:
-        return df
-    
-    ev_list = []
-    pinnacle_fair_odds = []
-
-    for _, row in df.iterrows():
-        pinnacle_probability = row[vigfree_pinnacle]
-
-        if pd.isna(pinnacle_probability):
-            pinnacle_fair_odds.append(None)
-            ev_list.append(None)
-            continue
-
-        # Calculate Pinnacle's fair odds
-        fair_odds = 1 / pinnacle_probability
-        pinnacle_fair_odds.append(round(fair_odds, 2))
-
-        # Calculate edge vs Pinnacle
-        best_odds = row["Best Odds"]
-        pinnacle_probability = max(min(pinnacle_probability, 0.9999), 0.0001)  # Clamp between 0.01% and 99.99%
-        ev = (pinnacle_probability * (best_odds - 1)) - ((1 - pinnacle_probability) * 1)
-
-        if ev > EV_THRESHOLD:
-            ev_list.append(ev)
-        else:
-            ev_list.append(None)
-
-    df["Pinnacle Fair Odds"] = pinnacle_fair_odds
-    df["Expected Value"] = ev_list
     return df
 
 

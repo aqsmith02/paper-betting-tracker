@@ -59,8 +59,6 @@ SLEEP_DURATION = 60
 FILE_NAMES = [
     ("master_nc_avg_bets.csv", "master_nc_avg_full.csv"),
     ("master_nc_mod_zscore_bets.csv", "master_nc_mod_zscore_full.csv"),
-    ("master_nc_pin_bets.csv", "master_nc_pin_full.csv"),
-    ("master_nc_zscore_bets.csv", "master_nc_zscore_full.csv"),
     ("master_nc_random_bets.csv", "master_nc_random_full.csv"),
 ]
 

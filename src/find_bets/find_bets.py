@@ -2,9 +2,9 @@
 find_bets.py
 
 The file fetches odds using a separate file called fetch_odds.py, then identifies profitable bets from them
-using four different strategies. The strategies are comparing odds to the average fair odds of an outcome,
-computing the Z-score and modified Z-score of the odds of an outcome, and comparing odds to the fair odds of
-Pinnacle sportsbook (a known "sharp" sportsbook). Profitable bets are then saved into a master .csv file.
+using two different strategies. The first strategy is comparing all available odds to the average fair odds of an outcome.
+The second strategy is the same as the first with an additional modified Z-score constraint. 
+A random strategy is also conducted as a control. Profitable bets are then saved into a master .csv file.
 
 Author: Andrew Smith
 """
@@ -14,15 +14,11 @@ from src.find_bets.file_management import BetFileManager
 from src.find_bets.betting_strategies import (
     analyze_average_edge_bets,
     analyze_modified_zscore_outliers,
-    analyze_pinnacle_edge_bets,
-    analyze_zscore_outliers,
     find_random_bets,
 )
 from src.find_bets.summary_creation import (
     create_random_summary,
-    create_zscore_summary,
     create_average_edge_summary,
-    create_pinnacle_edge_summary,
     create_modified_zscore_summary,
 )
 from src.find_bets.data_processing import (
@@ -107,28 +103,12 @@ def main():
             analysis_func=analyze_average_edge_bets,
         ),
         BettingStrategy(
-            name="Z-Score Outliers",
-            nc_summary_file="master_nc_zscore_bets.csv",
-            nc_full_file="master_nc_zscore_full.csv",
-            score_column="Z Score",
-            summary_func=create_zscore_summary,
-            analysis_func=analyze_zscore_outliers,
-        ),
-        BettingStrategy(
             name="Modified Z-Score Outliers",
             nc_summary_file="master_nc_mod_zscore_bets.csv",
             nc_full_file="master_nc_mod_zscore_full.csv",
             score_column="Modified Z Score",
             summary_func=create_modified_zscore_summary,
             analysis_func=analyze_modified_zscore_outliers,
-        ),
-        BettingStrategy(
-            name="Pinnacle Edge",
-            nc_summary_file="master_nc_pin_bets.csv",
-            nc_full_file="master_nc_pin_full.csv",
-            score_column="Pin Edge Pct",
-            summary_func=create_pinnacle_edge_summary,
-            analysis_func=analyze_pinnacle_edge_bets,
         ),
         BettingStrategy(
             name="Random Bets",

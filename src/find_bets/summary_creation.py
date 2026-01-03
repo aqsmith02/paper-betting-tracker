@@ -38,38 +38,6 @@ def create_average_edge_summary(df: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(summary_rows)
 
 
-def create_zscore_summary(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Create summary of profitable Z-score outlier bets.
-
-    Args:
-        df (pd.DataFrame): DataFrame containing Z-score column.
-
-    Returns:
-        pd.DataFrame: Summary DataFrame with only profitable Z-score outlier bets.
-    """
-    summary_rows = []
-    for _, row in df.iterrows():
-        if pd.isna(row.get("Z Score")) or pd.isna(row.get("Expected Value")):
-            continue
-
-        summary_rows.append(
-            {
-                "Match": row["Match"],
-                "League": row["League"],
-                "Team": row["Team"],
-                "Start Time": row["Start Time"],
-                "Outlier Book": row["Best Bookmaker"],
-                "Outlier Odds": row["Best Odds"],
-                "Z Score": row["Z Score"],
-                "Expected Value": row["Expected Value"],
-                "Result": row.get("Result", "Not Found"),
-            }
-        )
-
-    return pd.DataFrame(summary_rows)
-
-
 def create_modified_zscore_summary(df: pd.DataFrame) -> pd.DataFrame:
     """
     Create summary of profitable Modified Z-score outlier bets.
@@ -95,42 +63,6 @@ def create_modified_zscore_summary(df: pd.DataFrame) -> pd.DataFrame:
                 "Outlier Odds": row["Best Odds"],
                 "Modified Z Score": row["Modified Z Score"],
                 "Expected Value": row["Expected Value"],
-                "Result": row.get("Result", "Not Found"),
-            }
-        )
-
-    return pd.DataFrame(summary_rows)
-
-
-def create_pinnacle_edge_summary(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Create summary of profitable Pinnacle edge bets.
-
-    Args:
-        df (pd.DataFrame): DataFrame containing Pinnacle edge column.
-
-    Returns:
-        pd.DataFrame: Summary DataFrame with only profitable Pinnacle edge bets.
-    """
-    summary_rows = []
-    vigfree_pinnacle = f"Vigfree Pinnacle"
-    if vigfree_pinnacle not in df.columns:
-        return pd.DataFrame(summary_rows)
-
-    for _, row in df.iterrows():
-        if pd.isna(row.get("Pinnacle Fair Odds")) or pd.isna(row.get("Expected Value")):
-            continue
-
-        summary_rows.append(
-            {
-                "Match": row["Match"],
-                "League": row["League"],
-                "Team": row["Team"],
-                "Start Time": row["Start Time"],
-                "Pinnacle Edge Book": row["Best Bookmaker"],
-                "Pinnacle Edge Odds": row["Best Odds"],
-                "Expected Value": row["Expected Value"],
-                "Pinnacle Fair Odds": row["Pinnacle Fair Odds"],
                 "Result": row.get("Result", "Not Found"),
             }
         )
