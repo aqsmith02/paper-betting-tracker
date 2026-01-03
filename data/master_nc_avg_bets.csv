@@ -1628,7 +1628,6 @@ Golden State Warriors @ Portland Trail Blazers,NBA,Portland Trail Blazers,2025-1
 Troyes @ Boulogne,Ligue 2 - France,Boulogne,2025-12-15 19:45:00,FanDuel,10.0,0.3411989134235128,Troyes,2025-12-15T19:59:25Z
 Bournemouth @ Manchester United,EPL,Bournemouth,2025-12-15 20:00:00,DraftKings,13.0,0.0639186654746659,Draw,2025-12-15T20:34:54Z
 Vermont Catamounts @ Princeton Tigers,NCAAB,Vermont Catamounts,2025-12-30 18:03:18,Fanatics,3.8,0.2118028108938124,Princeton Tigers,2025-12-30T19:05:01Z
-Paris Basketball @ ASVEL Lyon Villeurbanne,Basketball Euroleague,ASVEL Lyon Villeurbanne,2025-12-30 19:16:00,BetMGM,2.54,0.1073681091490456,Not Found,2025-12-30T19:28:10Z
 Brighton and Hove Albion @ West Ham United,EPL,West Ham United,2025-12-30 19:30:00,Caesars,3.3,0.3787986373635992,Draw,2025-12-30T19:42:56Z
 Bournemouth @ Chelsea,EPL,Chelsea,2025-12-30 19:30:00,FanDuel,2.4,0.0687106428741237,Draw,2025-12-30T19:42:56Z
 Coastal Carolina Chanticleers @ Louisiana Tech Bulldogs,NCAAF,Coastal Carolina Chanticleers,2025-12-30 19:04:10,Caesars,2.54,0.0636543821158593,Louisiana Tech Bulldogs,2025-12-30T19:42:56Z
@@ -1640,71 +1639,61 @@ Wolverhampton Wanderers @ Manchester United,EPL,Wolverhampton Wanderers,2025-12-
 Wyoming Cowboys @ Air Force Falcons,NCAAB,Air Force Falcons,2025-12-30 21:00:00,DraftKings,9.5,0.3733005516681307,Wyoming Cowboys,2025-12-30T21:14:45Z
 East Tennessee St Buccaneers @ The Citadel Bulldogs,NCAAB,The Citadel Bulldogs,2025-12-30 23:00:00,FanDuel,8.1,0.0797678717674803,East Tennessee St Buccaneers,2025-12-30T22:40:05Z
 Western Michigan Broncos @ Toledo Rockets,NCAAB,Western Michigan Broncos,2025-12-30 23:30:00,FanDuel,9.3,0.2454723036118867,Toledo Rockets,2025-12-30T23:44:59Z
-Butler Bulldogs @ Creighton Bluejays,NCAAB,Butler Bulldogs,2025-12-31 02:12:54,DraftKings,6.2,0.3100765381100372,Not Found,2025-12-31T02:23:16Z
-Utah State Aggies @ Fresno St Bulldogs,NCAAB,Fresno St Bulldogs,2025-12-31 02:04:56,FanDuel,15.0,0.1459428707767092,Not Found,2025-12-31T02:23:16Z
-Louisville Cardinals @ California Golden Bears,NCAAB,California Golden Bears,2025-12-31 02:06:16,DraftKings,8.0,0.1392923912610904,Not Found,2025-12-31T02:23:16Z
-Philadelphia 76ers @ Memphis Grizzlies,NBA,Memphis Grizzlies,2025-12-31 01:11:00,Caesars,26.0,1.8881925035469287,Not Found,2025-12-31T03:48:15Z
-San Diego St Aztecs @ San José St Spartans,NCAAB,San José St Spartans,2025-12-31 03:08:00,FanDuel,8.5,0.2113647267088823,Not Found,2025-12-31T03:48:15Z
-San Francisco Dons @ Oregon St Beavers,NCAAB,Oregon St Beavers,2025-12-31 03:10:00,DraftKings,4.25,0.1979829384428202,Not Found,2025-12-31T03:48:15Z
-Washington St Cougars @ Seattle Redhawks,NCAAB,Washington St Cougars,2025-12-31 03:00:00,FanDuel,13.0,0.164554428482413,Not Found,2025-12-31T03:48:15Z
-Santa Clara Broncos @ Portland Pilots,NCAAB,Portland Pilots,2025-12-31 03:00:00,Caesars,6.0,0.0580552100715991,Not Found,2025-12-31T03:48:15Z
-USC Trojans @ TCU Horned Frogs,NCAAF,TCU Horned Frogs,2025-12-31 02:06:10,FanDuel,5.8,0.0834460823270083,Not Found,2025-12-31T04:28:10Z
-Sacramento Kings @ Los Angeles Clippers,NBA,Sacramento Kings,2025-12-31 04:10:00,Caesars,5.5,0.0572940640532231,Not Found,2025-12-31T04:28:10Z
-Philadelphia Flyers @ Vancouver Canucks,NHL,Vancouver Canucks,2025-12-31 03:08:09,FanDuel,11.6,0.0791101453031489,Not Found,2025-12-31T04:59:31Z
-New Mexico Lobos @ Boise State Broncos,NCAAB,Boise State Broncos,2025-12-31 04:08:00,Caesars,2.35,0.3283535177205132,Not Found,2025-12-31T05:36:07Z
-Iowa Hawkeyes @ Vanderbilt Commodores,NCAAF,Vanderbilt Commodores,2025-12-31T17:01:49Z,Fanatics,2.95,0.2552271164021165,Not Found,2025-12-31T17:28:56Z
-Udinese @ Como,Serie A - Italy,Udinese,2026-01-03T11:30:00Z,Fanatics,18.0,0.0672966366042915,Not Found,2026-01-03T11:59:41Z
-Parma @ Sassuolo,Serie A - Italy,Parma,2026-01-03T14:01:00Z,DraftKings,9.0,0.4897258710494646,Not Found,2026-01-03T14:14:48Z
-Livingston @ Hearts,Premiership - Scotland,Livingston,2026-01-03T15:00:00Z,FanDuel,13.0,0.0682715137658095,Not Found,2026-01-03T14:38:14Z
-SD Huesca @ CD Castellón,La Liga 2 - Spain,SD Huesca,2026-01-03T15:16:00Z,Fanatics,21.0,0.4265542380942907,Not Found,2026-01-03T15:28:53Z
-Pisa @ Genoa,Serie A - Italy,Genoa,2026-01-03T14:00:00Z,FanDuel,7.5,0.2403653077052572,Not Found,2026-01-03T15:46:30Z
-Burnley @ Brighton and Hove Albion,EPL,Burnley,2026-01-03T15:00:00Z,DraftKings,26.0,0.0504653707866717,Not Found,2026-01-03T16:00:13Z
-Virginia Cavaliers @ NC State Wolfpack,NCAAB,NC State Wolfpack,2026-01-03T16:01:41Z,FanDuel,11.0,0.0922430854913922,Not Found,2026-01-03T16:55:44Z
-Lecce @ Juventus,Serie A - Italy,Lecce,2026-01-03T17:00:00Z,Caesars,15.0,0.0588404473436069,Not Found,2026-01-03T16:55:44Z
-Northeastern Huskies @ Campbell Fighting Camels,NCAAB,Northeastern Huskies,2026-01-03T17:00:00Z,FanDuel,3.3,0.0850958372170549,Not Found,2026-01-03T17:27:27Z
-VCU Rams @ Duquesne Dukes,NCAAB,Duquesne Dukes,2026-01-03T17:00:00Z,FanDuel,5.4,0.0839500662641623,Not Found,2026-01-03T17:27:27Z
-Virginia Tech Hokies @ Wake Forest Demon Deacons,NCAAB,Virginia Tech Hokies,2026-01-03T17:00:02Z,FanDuel,4.9,0.0823271326082084,Not Found,2026-01-03T17:27:27Z
-Pittsburgh Penguins @ Detroit Red Wings,NHL,Detroit Red Wings,2026-01-03T17:15:57Z,BetMGM,2.55,0.0721280465414362,Not Found,2026-01-03T17:27:27Z
-Kentucky Wildcats @ Alabama Crimson Tide,NCAAB,Kentucky Wildcats,2026-01-03T16:59:33Z,Fanatics,4.3,0.0617023145214196,Not Found,2026-01-03T17:27:27Z
-Providence Friars @ St. John's Red Storm,NCAAB,Providence Friars,2026-01-03T17:00:42Z,DraftKings,16.0,0.0529146265922606,Not Found,2026-01-03T17:27:27Z
-Villanova Wildcats @ Butler Bulldogs,NCAAB,Villanova Wildcats,2026-01-03T17:00:38Z,FanDuel,4.5,0.3429967353292041,Not Found,2026-01-03T17:44:38Z
-UTSA Roadrunners @ Temple Owls,NCAAB,UTSA Roadrunners,2026-01-03T17:00:00Z,Caesars,19.0,0.181695801460155,Not Found,2026-01-03T17:44:38Z
-Arsenal @ Bournemouth,EPL,Arsenal,2026-01-03T17:30:00Z,BetMGM,2.35,0.0521243958619832,Not Found,2026-01-03T17:44:38Z
-Oklahoma St Cowboys @ Texas Tech Red Raiders,NCAAB,Oklahoma St Cowboys,2026-01-03T18:06:15Z,Caesars,19.0,0.2847989755807837,Not Found,2026-01-03T18:40:44Z
-Georgia St Panthers @ Coastal Carolina Chanticleers,NCAAB,Georgia St Panthers,2026-01-03T18:02:43Z,Fanatics,6.0,0.1748964434420654,Not Found,2026-01-03T18:40:44Z
-Wofford Terriers @ The Citadel Bulldogs,NCAAB,The Citadel Bulldogs,2026-01-03T18:02:32Z,Caesars,7.0,0.1645958635104901,Not Found,2026-01-03T18:40:44Z
-Colgate Raiders @ Army Knights,NCAAB,Army Knights,2026-01-03T18:02:49Z,Caesars,4.2,0.1414238222181338,Not Found,2026-01-03T18:40:44Z
-American Eagles @ Boston Univ. Terriers,NCAAB,Boston Univ. Terriers,2026-01-03T18:02:58Z,FanDuel,4.0,0.1228942437014111,Not Found,2026-01-03T18:40:44Z
-Clemson Tigers @ Pittsburgh Panthers,NCAAB,Pittsburgh Panthers,2026-01-03T17:00:18Z,FanDuel,5.0,0.1016339879248964,Not Found,2026-01-03T18:40:44Z
-Chattanooga Mocs @ VMI Keydets,NCAAB,Chattanooga Mocs,2026-01-03T18:03:21Z,FanDuel,7.0,0.2256267896603694,Not Found,2026-01-03T18:58:13Z
-Auburn Tigers @ Georgia Bulldogs,NCAAB,Auburn Tigers,2026-01-03T18:01:41Z,FanDuel,4.5,0.0714787619470134,Not Found,2026-01-03T18:58:13Z
-Ball State Cardinals @ Buffalo Bulls,NCAAB,Ball State Cardinals,2026-01-03T19:02:54Z,FanDuel,8.5,0.1710866293070433,Not Found,2026-01-03T19:24:21Z
-Vanderbilt Commodores @ South Carolina Gamecocks,NCAAB,South Carolina Gamecocks,2026-01-03T19:05:07Z,DraftKings,12.0,0.1063982803227158,Not Found,2026-01-03T19:24:21Z
-Stetson Hatters @ Central Arkansas Bears,NCAAB,Stetson Hatters,2026-01-03T19:02:41Z,BetMGM,9.25,0.0921624742662973,Not Found,2026-01-03T19:24:21Z
-Navy Midshipmen @ Holy Cross Crusaders,NCAAB,Holy Cross Crusaders,2026-01-03T19:02:13Z,DraftKings,4.25,0.0869893875523086,Not Found,2026-01-03T19:24:21Z
-Longwood Lancers @ High Point Panthers,NCAAB,Longwood Lancers,2026-01-03T19:02:50Z,FanDuel,15.0,0.0835228807190046,Not Found,2026-01-03T19:24:21Z
-Houston Cougars @ Cincinnati Bearcats,NCAAB,Cincinnati Bearcats,2026-01-03T19:16:12Z,Caesars,3.4,0.0714831083241457,Not Found,2026-01-03T19:24:21Z
-La Salle Explorers @ GW Revolutionaries,NCAAB,La Salle Explorers,2026-01-03T19:06:00Z,FanDuel,16.0,0.1938094901644526,Not Found,2026-01-03T19:39:04Z
-Ohio Bobcats @ Eastern Michigan Eagles,NCAAB,Ohio Bobcats,2026-01-03T19:02:17Z,DraftKings,8.0,0.1032417526365994,Not Found,2026-01-03T19:39:04Z
-Kansas Jayhawks @ UCF Knights,NCAAB,UCF Knights,2026-01-03T19:02:46Z,DraftKings,2.24,0.0738437496234402,Not Found,2026-01-03T19:39:04Z
-BYU Cougars @ Kansas St Wildcats,NCAAB,Kansas St Wildcats,2026-01-03T18:36:32Z,FanDuel,10.0,0.0712965814216033,Not Found,2026-01-03T19:39:04Z
-Boston College Eagles @ Georgia Tech Yellow Jackets,NCAAB,Boston College Eagles,2026-01-03T19:10:46Z,DraftKings,4.25,0.0710711004562659,Not Found,2026-01-03T19:39:04Z
-North Carolina Tar Heels @ SMU Mustangs,NCAAB,North Carolina Tar Heels,2026-01-03T19:24:07Z,BetMGM,2.75,0.0547379021305569,Not Found,2026-01-03T19:39:04Z
-Hofstra Pride @ Drexel Dragons,NCAAB,Drexel Dragons,2026-01-03T19:05:36Z,Fanatics,11.5,0.2034261696187909,Not Found,2026-01-03T19:52:24Z
-Bryant Bulldogs @ Maine Black Bears,NCAAB,Maine Black Bears,2026-01-03T19:04:35Z,FanDuel,6.4,0.1238195073333315,Not Found,2026-01-03T19:52:24Z
-Baylor Bears @ TCU Horned Frogs,NCAAB,Baylor Bears,2026-01-03T19:00:55Z,Fanatics,4.3,0.1171827944448761,Not Found,2026-01-03T19:52:24Z
-Albany Great Danes @ UMass Lowell River Hawks,NCAAB,Albany Great Danes,2026-01-03T19:03:47Z,Caesars,4.2,0.0539639740876487,Not Found,2026-01-03T19:52:24Z
-Rennes @ Lille,Ligue 1 - France,Lille,2026-01-03T20:05:00Z,DraftKings,4.6,0.8292092054478382,Not Found,2026-01-03T20:20:06Z
-Bowling Green Falcons @ Massachusetts Minutemen,NCAAB,Massachusetts Minutemen,2026-01-03T19:02:33Z,FanDuel,3.3,0.1442675773860795,Not Found,2026-01-03T20:20:06Z
-James Madison Dukes @ Arkansas St Red Wolves,NCAAB,James Madison Dukes,2026-01-03T20:00:56Z,FanDuel,8.5,0.0890168210818067,Not Found,2026-01-03T20:20:06Z
-South Dakota St Jackrabbits @ North Dakota Fighting Hawks,NCAAB,South Dakota St Jackrabbits,2026-01-03T19:04:47Z,FanDuel,3.0,0.0768866264949034,Not Found,2026-01-03T20:20:06Z
-NJIT Highlanders @ Binghamton Bearcats,NCAAB,NJIT Highlanders,2026-01-03T19:02:21Z,FanDuel,3.35,0.0766416272400486,Not Found,2026-01-03T20:20:06Z
-UNC Asheville Bulldogs @ Charleston Southern Buccaneers,NCAAB,UNC Asheville Bulldogs,2026-01-03T19:02:37Z,Fanatics,4.3,0.0746457664370744,Not Found,2026-01-03T20:20:06Z
-Florida Gulf Coast Eagles @ North Alabama Lions,NCAAB,North Alabama Lions,2026-01-03T20:00:00Z,DraftKings,3.9,0.0515977085493152,Not Found,2026-01-03T20:20:06Z
-Toledo Rockets @ Central Michigan Chippewas,NCAAB,Toledo Rockets,2026-01-03T20:00:00Z,BetMGM,2.9,0.1070976432515333,Not Found,2026-01-03T20:41:00Z
-South Carolina Upstate Spartans @ Presbyterian Blue Hose,NCAAB,Presbyterian Blue Hose,2026-01-03T19:02:18Z,Caesars,1.91,0.0930106207718292,Not Found,2026-01-03T20:41:00Z
-Florida A&M Rattlers @ Bethune-Cookman Wildcats,NCAAB,Florida A&M Rattlers,2026-01-03T20:30:00Z,Caesars,4.1,0.0700490640741355,Not Found,2026-01-03T20:41:00Z
-Texas State Bobcats @ UL Monroe Warhawks,NCAAB,UL Monroe Warhawks,2026-01-03T20:30:00Z,FanDuel,5.6,0.0666397611197398,Not Found,2026-01-03T20:41:00Z
-Akron Zips @ Miami (OH) RedHawks,NCAAB,Miami (OH) RedHawks,2026-01-03T20:30:00Z,Caesars,2.52,0.058148075273255,Not Found,2026-01-03T20:41:00Z
-Utah Mammoth @ New Jersey Devils,NHL,Utah Mammoth,2026-01-03T20:08:33Z,DraftKings,5.5,0.056636882965323876,Not Found,2026-01-03T20:54:19Z
-Tennessee Volunteers @ Arkansas Razorbacks,NCAAB,Tennessee Volunteers,2026-01-03T20:00:33Z,Caesars,2.0,0.05235780672792001,Not Found,2026-01-03T20:54:19Z
+Philadelphia 76ers @ Memphis Grizzlies,NBA,Memphis Grizzlies,2025-12-31 01:11:00,Caesars,26.0,1.8881925035469287,Philadelphia 76ers,2025-12-31T03:48:15Z
+Sacramento Kings @ Los Angeles Clippers,NBA,Sacramento Kings,2025-12-31 04:10:00,Caesars,5.5,0.0572940640532231,Los Angeles Clippers,2025-12-31T04:28:10Z
+Philadelphia Flyers @ Vancouver Canucks,NHL,Vancouver Canucks,2025-12-31 03:08:09,FanDuel,11.6,0.0791101453031489,Philadelphia Flyers,2025-12-31T04:59:31Z
+Udinese @ Como,Serie A - Italy,Udinese,2026-01-03 11:30:00,Fanatics,18.0,0.0672966366042915,Not Found,2026-01-03T11:59:41Z
+Parma @ Sassuolo,Serie A - Italy,Parma,2026-01-03 14:01:00,DraftKings,9.0,0.4897258710494646,Not Found,2026-01-03T14:14:48Z
+Livingston @ Hearts,Premiership - Scotland,Livingston,2026-01-03 15:00:00,FanDuel,13.0,0.0682715137658095,Not Found,2026-01-03T14:38:14Z
+SD Huesca @ CD Castellón,La Liga 2 - Spain,SD Huesca,2026-01-03 15:16:00,Fanatics,21.0,0.4265542380942907,Not Found,2026-01-03T15:28:53Z
+Pisa @ Genoa,Serie A - Italy,Genoa,2026-01-03 14:00:00,FanDuel,7.5,0.2403653077052572,Not Found,2026-01-03T15:46:30Z
+Burnley @ Brighton and Hove Albion,EPL,Burnley,2026-01-03 15:00:00,DraftKings,26.0,0.0504653707866717,Not Found,2026-01-03T16:00:13Z
+Virginia Cavaliers @ NC State Wolfpack,NCAAB,NC State Wolfpack,2026-01-03 16:01:41,FanDuel,11.0,0.0922430854913922,Not Found,2026-01-03T16:55:44Z
+Lecce @ Juventus,Serie A - Italy,Lecce,2026-01-03 17:00:00,Caesars,15.0,0.0588404473436069,Not Found,2026-01-03T16:55:44Z
+Northeastern Huskies @ Campbell Fighting Camels,NCAAB,Northeastern Huskies,2026-01-03 17:00:00,FanDuel,3.3,0.0850958372170549,Not Found,2026-01-03T17:27:27Z
+VCU Rams @ Duquesne Dukes,NCAAB,Duquesne Dukes,2026-01-03 17:00:00,FanDuel,5.4,0.0839500662641623,Not Found,2026-01-03T17:27:27Z
+Virginia Tech Hokies @ Wake Forest Demon Deacons,NCAAB,Virginia Tech Hokies,2026-01-03 17:00:02,FanDuel,4.9,0.0823271326082084,Not Found,2026-01-03T17:27:27Z
+Pittsburgh Penguins @ Detroit Red Wings,NHL,Detroit Red Wings,2026-01-03 17:15:57,BetMGM,2.55,0.0721280465414362,Not Found,2026-01-03T17:27:27Z
+Kentucky Wildcats @ Alabama Crimson Tide,NCAAB,Kentucky Wildcats,2026-01-03 16:59:33,Fanatics,4.3,0.0617023145214196,Not Found,2026-01-03T17:27:27Z
+Providence Friars @ St. John's Red Storm,NCAAB,Providence Friars,2026-01-03 17:00:42,DraftKings,16.0,0.0529146265922606,Not Found,2026-01-03T17:27:27Z
+Villanova Wildcats @ Butler Bulldogs,NCAAB,Villanova Wildcats,2026-01-03 17:00:38,FanDuel,4.5,0.3429967353292041,Not Found,2026-01-03T17:44:38Z
+UTSA Roadrunners @ Temple Owls,NCAAB,UTSA Roadrunners,2026-01-03 17:00:00,Caesars,19.0,0.181695801460155,Not Found,2026-01-03T17:44:38Z
+Arsenal @ Bournemouth,EPL,Arsenal,2026-01-03 17:30:00,BetMGM,2.35,0.0521243958619832,Not Found,2026-01-03T17:44:38Z
+Oklahoma St Cowboys @ Texas Tech Red Raiders,NCAAB,Oklahoma St Cowboys,2026-01-03 18:06:15,Caesars,19.0,0.2847989755807837,Not Found,2026-01-03T18:40:44Z
+Georgia St Panthers @ Coastal Carolina Chanticleers,NCAAB,Georgia St Panthers,2026-01-03 18:02:43,Fanatics,6.0,0.1748964434420654,Not Found,2026-01-03T18:40:44Z
+Wofford Terriers @ The Citadel Bulldogs,NCAAB,The Citadel Bulldogs,2026-01-03 18:02:32,Caesars,7.0,0.1645958635104901,Not Found,2026-01-03T18:40:44Z
+Colgate Raiders @ Army Knights,NCAAB,Army Knights,2026-01-03 18:02:49,Caesars,4.2,0.1414238222181338,Not Found,2026-01-03T18:40:44Z
+American Eagles @ Boston Univ. Terriers,NCAAB,Boston Univ. Terriers,2026-01-03 18:02:58,FanDuel,4.0,0.1228942437014111,Not Found,2026-01-03T18:40:44Z
+Clemson Tigers @ Pittsburgh Panthers,NCAAB,Pittsburgh Panthers,2026-01-03 17:00:18,FanDuel,5.0,0.1016339879248964,Not Found,2026-01-03T18:40:44Z
+Chattanooga Mocs @ VMI Keydets,NCAAB,Chattanooga Mocs,2026-01-03 18:03:21,FanDuel,7.0,0.2256267896603694,Not Found,2026-01-03T18:58:13Z
+Auburn Tigers @ Georgia Bulldogs,NCAAB,Auburn Tigers,2026-01-03 18:01:41,FanDuel,4.5,0.0714787619470134,Not Found,2026-01-03T18:58:13Z
+Ball State Cardinals @ Buffalo Bulls,NCAAB,Ball State Cardinals,2026-01-03 19:02:54,FanDuel,8.5,0.1710866293070433,Not Found,2026-01-03T19:24:21Z
+Vanderbilt Commodores @ South Carolina Gamecocks,NCAAB,South Carolina Gamecocks,2026-01-03 19:05:07,DraftKings,12.0,0.1063982803227158,Not Found,2026-01-03T19:24:21Z
+Stetson Hatters @ Central Arkansas Bears,NCAAB,Stetson Hatters,2026-01-03 19:02:41,BetMGM,9.25,0.0921624742662973,Not Found,2026-01-03T19:24:21Z
+Navy Midshipmen @ Holy Cross Crusaders,NCAAB,Holy Cross Crusaders,2026-01-03 19:02:13,DraftKings,4.25,0.0869893875523086,Not Found,2026-01-03T19:24:21Z
+Longwood Lancers @ High Point Panthers,NCAAB,Longwood Lancers,2026-01-03 19:02:50,FanDuel,15.0,0.0835228807190046,Not Found,2026-01-03T19:24:21Z
+Houston Cougars @ Cincinnati Bearcats,NCAAB,Cincinnati Bearcats,2026-01-03 19:16:12,Caesars,3.4,0.0714831083241457,Not Found,2026-01-03T19:24:21Z
+La Salle Explorers @ GW Revolutionaries,NCAAB,La Salle Explorers,2026-01-03 19:06:00,FanDuel,16.0,0.1938094901644526,Not Found,2026-01-03T19:39:04Z
+Ohio Bobcats @ Eastern Michigan Eagles,NCAAB,Ohio Bobcats,2026-01-03 19:02:17,DraftKings,8.0,0.1032417526365994,Not Found,2026-01-03T19:39:04Z
+Kansas Jayhawks @ UCF Knights,NCAAB,UCF Knights,2026-01-03 19:02:46,DraftKings,2.24,0.0738437496234402,Not Found,2026-01-03T19:39:04Z
+BYU Cougars @ Kansas St Wildcats,NCAAB,Kansas St Wildcats,2026-01-03 18:36:32,FanDuel,10.0,0.0712965814216033,Not Found,2026-01-03T19:39:04Z
+Boston College Eagles @ Georgia Tech Yellow Jackets,NCAAB,Boston College Eagles,2026-01-03 19:10:46,DraftKings,4.25,0.0710711004562659,Not Found,2026-01-03T19:39:04Z
+North Carolina Tar Heels @ SMU Mustangs,NCAAB,North Carolina Tar Heels,2026-01-03 19:24:07,BetMGM,2.75,0.0547379021305569,Not Found,2026-01-03T19:39:04Z
+Hofstra Pride @ Drexel Dragons,NCAAB,Drexel Dragons,2026-01-03 19:05:36,Fanatics,11.5,0.2034261696187909,Not Found,2026-01-03T19:52:24Z
+Bryant Bulldogs @ Maine Black Bears,NCAAB,Maine Black Bears,2026-01-03 19:04:35,FanDuel,6.4,0.1238195073333315,Not Found,2026-01-03T19:52:24Z
+Baylor Bears @ TCU Horned Frogs,NCAAB,Baylor Bears,2026-01-03 19:00:55,Fanatics,4.3,0.1171827944448761,Not Found,2026-01-03T19:52:24Z
+Albany Great Danes @ UMass Lowell River Hawks,NCAAB,Albany Great Danes,2026-01-03 19:03:47,Caesars,4.2,0.0539639740876487,Not Found,2026-01-03T19:52:24Z
+Rennes @ Lille,Ligue 1 - France,Lille,2026-01-03 20:05:00,DraftKings,4.6,0.8292092054478382,Not Found,2026-01-03T20:20:06Z
+Bowling Green Falcons @ Massachusetts Minutemen,NCAAB,Massachusetts Minutemen,2026-01-03 19:02:33,FanDuel,3.3,0.1442675773860795,Not Found,2026-01-03T20:20:06Z
+James Madison Dukes @ Arkansas St Red Wolves,NCAAB,James Madison Dukes,2026-01-03 20:00:56,FanDuel,8.5,0.0890168210818067,Not Found,2026-01-03T20:20:06Z
+South Dakota St Jackrabbits @ North Dakota Fighting Hawks,NCAAB,South Dakota St Jackrabbits,2026-01-03 19:04:47,FanDuel,3.0,0.0768866264949034,Not Found,2026-01-03T20:20:06Z
+NJIT Highlanders @ Binghamton Bearcats,NCAAB,NJIT Highlanders,2026-01-03 19:02:21,FanDuel,3.35,0.0766416272400486,Not Found,2026-01-03T20:20:06Z
+UNC Asheville Bulldogs @ Charleston Southern Buccaneers,NCAAB,UNC Asheville Bulldogs,2026-01-03 19:02:37,Fanatics,4.3,0.0746457664370744,Not Found,2026-01-03T20:20:06Z
+Florida Gulf Coast Eagles @ North Alabama Lions,NCAAB,North Alabama Lions,2026-01-03 20:00:00,DraftKings,3.9,0.0515977085493152,Not Found,2026-01-03T20:20:06Z
+Toledo Rockets @ Central Michigan Chippewas,NCAAB,Toledo Rockets,2026-01-03 20:00:00,BetMGM,2.9,0.1070976432515333,Not Found,2026-01-03T20:41:00Z
+South Carolina Upstate Spartans @ Presbyterian Blue Hose,NCAAB,Presbyterian Blue Hose,2026-01-03 19:02:18,Caesars,1.91,0.0930106207718292,Not Found,2026-01-03T20:41:00Z
+Florida A&M Rattlers @ Bethune-Cookman Wildcats,NCAAB,Florida A&M Rattlers,2026-01-03 20:30:00,Caesars,4.1,0.0700490640741355,Not Found,2026-01-03T20:41:00Z
+Texas State Bobcats @ UL Monroe Warhawks,NCAAB,UL Monroe Warhawks,2026-01-03 20:30:00,FanDuel,5.6,0.0666397611197398,Not Found,2026-01-03T20:41:00Z
+Akron Zips @ Miami (OH) RedHawks,NCAAB,Miami (OH) RedHawks,2026-01-03 20:30:00,Caesars,2.52,0.058148075273255,Not Found,2026-01-03T20:41:00Z
+Utah Mammoth @ New Jersey Devils,NHL,Utah Mammoth,2026-01-03 20:08:33,DraftKings,5.5,0.0566368829653238,Not Found,2026-01-03T20:54:19Z
+Tennessee Volunteers @ Arkansas Razorbacks,NCAAB,Tennessee Volunteers,2026-01-03 20:00:33,Caesars,2.0,0.05235780672792,Not Found,2026-01-03T20:54:19Z
