@@ -2,10 +2,6 @@
 Shared betting calculation utilities.
 
 This module contains common betting functions used across multiple analysis files.
-All Kelly criterion calculations should use the kelly_bet function from this module
-to ensure consistency.
-
-Configuration is loaded from config.py.
 """
 
 import pandas as pd
