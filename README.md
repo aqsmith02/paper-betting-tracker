@@ -6,7 +6,7 @@ Currently, the system considers only moneyline (head-to-head) bets and simulates
 
 ## Results
 
-![Chart](analysis/output/profit_over_time/profit_over_time_all_strategies.png.png)
+![Chart](analysis/output/profit_over_time/profit_over_time_all_strategies.png)
 ![Chart](analysis/output/profit_over_time/profit_over_time_average.png)
 ![Chart](analysis/output/profit_over_time/profit_over_time_average_with_modified_zscore_constraint.png)
 ![Chart](analysis/output/profit_over_time/profit_over_time_random_strategy.png)
