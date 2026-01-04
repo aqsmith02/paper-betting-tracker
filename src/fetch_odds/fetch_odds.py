@@ -12,41 +12,9 @@ Date: July 2025
 import requests
 import pandas as pd
 import json
-import yaml
-import os
 from typing import List, Dict
-from src.constants import CONFIG_DIR
-
-
-# Load config
-
-# ============================================================================
-# API KEYS - Load from environment (GitHub) or config file (local)
-# ============================================================================
-
-THE_ODDS_API_KEY = os.getenv("THE_ODDS_API_KEY")
-
-if not THE_ODDS_API_KEY:
-    # Fall back to config file for local development
-    config_path = CONFIG_DIR / "api_config.yaml"
-    with open(config_path) as f:
-        config = yaml.safe_load(f)
-    THE_ODDS_API_KEY = config["api"]["the_odds_api_key"]
-
-# ============================================================================
-# FETCH CONFIGURATION
-# ============================================================================
-
-config_path = CONFIG_DIR / "fetch_config.yaml"
-with open(config_path) as f:
-    config = yaml.safe_load(f)
-
-# Fetch settings
-SPORT = config["fetch_odds"]["sport"]
-SPORT_KEY = config["fetch_odds"]["sport_key"]
-REGIONS = config["fetch_odds"]["regions"]
-MARKETS = config["fetch_odds"]["markets"]
-ODDS_FORMAT = config["fetch_odds"]["odds_format"]
+from config.fetch_config import SPORT, SPORT_KEY, REGIONS, MARKETS, ODDS_FORMAT
+from config.api_config import THE_ODDS_API_KEY
 
 
 def fetch_odds() -> pd.DataFrame:

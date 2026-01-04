@@ -1,97 +1,20 @@
+"""
+ROI Calculator
+
+Calculate return on investment (ROI) for betting strategies using both
+flat betting and Kelly criterion approaches.
+"""
+
 import pandas as pd
-from dataclasses import dataclass
 from src.constants import PENDING_RESULTS
-
-
-# --- Data class for strategies ---
-@dataclass
-class BettingStrategy:
-    name: str
-    path: str
-    odds_column: str
-    fair_odds_column: str = None
-    ev_column: str = None
-    zscore_column: str = None
-
-
-STRATEGIES = [
-    BettingStrategy(
-        "Average NC",
-        "data/master_nc_avg_full.csv",
-        "Best Odds",
-        "Fair Odds Avg",
-        "Expected Value",
-    ),
-    BettingStrategy(
-        "Modified Zscore NC",
-        "data/master_nc_mod_zscore_full.csv",
-        "Best Odds",
-        "Fair Odds Avg",
-        "Expected Value",
-        "Modified Z Score",
-    ),
-    BettingStrategy(
-        "Random NC", "data/master_nc_random_full.csv", "Best Odds"
-    ),
-]
-
-# Kelly fraction
-KELLY_FRACTION = 0.5
-
-# EV threshold - only place bets with EV between these percentages
-MIN_EV_THRESHOLD = 0.05
-MAX_EV_THRESHOLD = 0.35
-
-# Z-score threshold for max bet
-ZSCORE_MAX_BET_THRESHOLD = 3.5
-
-
-
-def kelly_bet(odds, fair_odds, ev=None, zscore=None, max_multiplier=2.5):
-    """
-    Kelly bet adjusted for parameter uncertainty via shrinkage coefficient.
-    
-    Args:
-        odds: Decimal odds for the bet
-        fair_odds: Fair odds calculated from probability
-        ev: Expected value (optional, used for filtering)
-        zscore: Z-score value (optional, triggers max bet if > threshold)
-        max_multiplier: Maximum bet size as percentage of bankroll
-    
-    Returns:
-        Bet size as percentage of bankroll
-    """
-    if pd.isna(odds) or odds <= 1:
-        return 0
-    
-    # Check EV threshold if provided
-    if ev is not None and not pd.isna(ev):
-        if ev < MIN_EV_THRESHOLD:
-            return 0
-        if ev > MAX_EV_THRESHOLD:
-            return 0
-
-    p = 1 / fair_odds
-    p = max(min(p, 0.9999), 0.0001)
-    b = odds - 1
-
-    # Raw Kelly fraction
-    f_kelly = p - ((1 - p) / b)
-
-    # Only bet if Kelly is positive (positive edge)
-    if f_kelly <= 0:
-        return 0
-
-    # Check if Z-score triggers max bet
-    if zscore is not None and not pd.isna(zscore):
-        if zscore >= ZSCORE_MAX_BET_THRESHOLD:
-            return max_multiplier
-
-    # Apply shrinkage coefficient
-    shrink = KELLY_FRACTION
-    f_adjusted = f_kelly * shrink
-
-    return min(f_adjusted * 100, max_multiplier)
+from config.analysis_config import (
+    KELLY_FRACTION,
+    MIN_EV_THRESHOLD,
+    MAX_EV_THRESHOLD,
+    ZSCORE_MAX_BET_THRESHOLD,
+)
+from analysis.betting_utils import kelly_bet, calculate_time_spent
+from analysis.strategy_definitions import ALL_STRATEGIES
 
 
 # ====================================
@@ -99,8 +22,17 @@ def kelly_bet(odds, fair_odds, ev=None, zscore=None, max_multiplier=2.5):
 # ====================================
 
 
-def roi_flat(df, odds_col):
-    """Calculate ROI using flat betting ($1 per bet)."""
+def flat_betting_results(df, odds_col):
+    """
+    Calculate ROI along with other metrics using flat betting (1 unit per bet).
+    
+    Args:
+        df: DataFrame with betting data
+        odds_col: Column name for odds
+        
+    Returns:
+        Dictionary with total wagered, winnings, profit, ROI
+    """
     df = df[~df["Result"].isin(PENDING_RESULTS)]
     total_wagered = len(df)
     total_winnings = (df[odds_col] * (df["Team"] == df["Result"])).sum()
@@ -113,9 +45,9 @@ def roi_flat(df, odds_col):
     }
 
 
-def roi_ev(df, odds_col, fair_col, ev_col=None, zscore_col=None):
+def kelly_betting_results(df, odds_col, fair_col, ev_col=None, zscore_col=None):
     """
-    Calculate ROI using Kelly criterion with EV and Z-score considerations.
+    Calculate ROI along with other metrics using Kelly criterion with EV and Z-score considerations.
     
     Args:
         df: DataFrame with betting data
@@ -123,6 +55,9 @@ def roi_ev(df, odds_col, fair_col, ev_col=None, zscore_col=None):
         fair_col: Column name for fair odds
         ev_col: Column name for expected value (optional)
         zscore_col: Column name for z-score (optional)
+        
+    Returns:
+        Dictionary with total wagered, winnings, profit, ROI, and bets placed
     """
     df = df[~df["Result"].isin(PENDING_RESULTS)].copy()
 
@@ -152,26 +87,18 @@ def roi_ev(df, odds_col, fair_col, ev_col=None, zscore_col=None):
     }
 
 
-def calculate_time_spent(df):
-    """Calculate time interval data has been collected."""
-    # Use pandas to_datetime for flexible parsing
-    time_start = pd.to_datetime(df.loc[0, "Scrape Time"])
-    time_end = pd.to_datetime(df.loc[len(df) - 1, "Scrape Time"])
-    time_spent = time_end - time_start
-
-    days = time_spent.days
-    hours, remainder = divmod(time_spent.seconds, 3600)
-    minutes, seconds = divmod(remainder, 60)
-    return f"{days}d {hours}h {minutes}m {seconds}s"
-
-
 # ====================================
 # === Comparison & Reporting =========
 # ====================================
 
 
 def compare_methods(strategy):
-    """Compare flat betting vs Kelly betting for a strategy."""
+    """
+    Compare flat betting vs Kelly betting for a strategy.
+    
+    Args:
+        strategy: BettingStrategy object to analyze
+    """
     df = pd.read_csv(strategy.path)
     time_spent = calculate_time_spent(df)
 
@@ -184,15 +111,15 @@ def compare_methods(strategy):
     print("-" * 70)
 
     # Flat betting
-    flat = roi_flat(df, strategy.odds_column)
+    flat = flat_betting_results(df, strategy.odds_column)
     print(
         f"{'Flat':<15} {flat['Total Wagered']:>10.2f} {flat['Total Winnings']:>10.2f} "
         f"{flat['Net Profit']:>12.2f} {flat['ROI']:>8.2f} {flat['Total Wagered']:>6.0f}"
     )
 
-    # Kelly betting
+    # Kelly betting (only if strategy has EV column)
     if strategy.ev_column:
-        kelly = roi_ev(
+        kelly = kelly_betting_results(
             df,
             strategy.odds_column,
             strategy.fair_odds_column,
@@ -213,16 +140,18 @@ def print_config():
     print("=" * 70)
     print(f"Kelly Fraction: {KELLY_FRACTION}")
     print(f"Minimum EV Threshold: {MIN_EV_THRESHOLD:.2%}")
+    print(f"Maximum EV Threshold: {MAX_EV_THRESHOLD:.2%}")
     print(f"Z-Score Max Bet Threshold: {ZSCORE_MAX_BET_THRESHOLD}")
     print("=" * 70)
 
 
 def main():
+    """Run ROI analysis for all strategies."""
     print_config()
     print("\n" + "=" * 70)
     print("COMPARISON: Flat vs Kelly")
     print("=" * 70)
-    for strat in STRATEGIES:
+    for strat in ALL_STRATEGIES:
         compare_methods(strat)
 
 

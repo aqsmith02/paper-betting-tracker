@@ -1,46 +1,7 @@
 import pandas as pd
-from dataclasses import dataclass
 from src.constants import PENDING_RESULTS
-
-
-# --- Data class for strategies ---
-@dataclass
-class BettingStrategy:
-    name: str
-    path: str
-    odds_column: str
-    fair_odds_column: str = None
-    ev_column: str = None
-    zscore_column: str = None
-
-
-STRATEGIES = [
-    BettingStrategy(
-        "Average NC",
-        "data/master_nc_avg_full.csv",
-        "Best Odds",
-        "Fair Odds Avg",
-        "Expected Value",
-    ),
-    BettingStrategy(
-        "Modified Zscore NC",
-        "data/master_nc_mod_zscore_full.csv",
-        "Best Odds",
-        "Fair Odds Avg",
-        "Expected Value",
-        "Modified Z Score",
-    ),
-    BettingStrategy(
-        "Random NC", "data/master_nc_random_full.csv", "Best Odds"
-    ),
-]
-
-# Bin definitions for analysis
-EV_BINS = [0.0, 0.02, 0.05, 0.10, 0.15, 0.20, 1.0]
-EV_LABELS = ['0-2%', '2-5%', '5-10%', '10-15%', '15-20%', '20%+']
-
-ZSCORE_BINS = [0.0, 1.5, 2.0, 2.5, 3.0, 3.5, 10.0]
-ZSCORE_LABELS = ['0-1.5', '1.5-2.0', '2.0-2.5', '2.5-3.0', '3.0-3.5', '3.5+']
+from analysis.strategy_definitions import NON_RANDOM_STRATEGIES
+from config.analysis_config import EV_BINS, EV_LABELS, ZSCORE_BINS, ZSCORE_LABELS
 
 
 def analyze_ev_bins(df, odds_col, ev_col):
@@ -192,7 +153,7 @@ def main():
     print("DETAILED BIN ANALYSIS")
     print("=" * 70)
     
-    for strat in STRATEGIES:
+    for strat in NON_RANDOM_STRATEGIES:
         if strat.ev_column or strat.zscore_column:
             analyze_bins(strat)
 
