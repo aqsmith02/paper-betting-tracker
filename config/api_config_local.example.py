@@ -2,7 +2,7 @@
 API Configuration Example
 
 This is a template file for local development. Copy it to create your actual config:
-    cp api_config.example.py api_config_local.py
+    cp api_config_local.example.py api_config_local.py
 
 Then edit api_config_local.py with your actual API keys.
 
