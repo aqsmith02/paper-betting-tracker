@@ -19,7 +19,7 @@ def get_api_key(key_name):
     
     # Fall back to local config for development
     try:
-        from api_config_local import THE_ODDS_API_KEY, THE_SPORTS_DB_API_KEY
+        from config.api_config_local import THE_ODDS_API_KEY, THE_SPORTS_DB_API_KEY
         local_keys = {
             'THE_ODDS_API_KEY': THE_ODDS_API_KEY,
             'THE_SPORTS_DB_API_KEY': THE_SPORTS_DB_API_KEY
