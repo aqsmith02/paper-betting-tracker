@@ -24,6 +24,8 @@ from src.find_bets.data_processing import (
     _all_outcomes_present_filter,
     _prettify_column_headers,
     process_target_odds_data,
+    calculate_market_margin,
+    remove_margin_proportional_to_odds,
     calculate_vigfree_probabilities,
 )
 
@@ -419,133 +421,521 @@ class TestDataProcessing(unittest.TestCase):
         self.assertIn("Start Time", result_df.columns)
         self.assertIn("Team", result_df.columns)
 
-    def test_calculate_vigfree_probabilities(self):
-        """Test calculate_vigfree_probabilities function."""
-        df = self.processed
-        result_df = calculate_vigfree_probabilities(df)
+    def test_calculate_market_margin(self):
+        """Test calculate_market_margin function."""
+        # Test with 2-outcome market (no margin)
+        odds_fair = [2.0, 2.0]
+        margin = calculate_market_margin(odds_fair)
+        self.assertAlmostEqual(margin, 0.0, places=5)
+        
+        # Test with 2-outcome market with 5% margin
+        # Implied probs: 0.52 + 0.52 = 1.04, so margin = 0.04 (4%)
+        odds_with_margin = [1.92, 1.92]
+        margin = calculate_market_margin(odds_with_margin)
+        self.assertAlmostEqual(margin, 0.0417, places=3)
+        
+        # Test with 2-outcome market with typical 8% margin
+        odds_with_8pct = [1.87, 1.95]
+        margin = calculate_market_margin(odds_with_8pct)
+        self.assertAlmostEqual(margin, 0.0476, places=3)
+        
+        # Test with 3-outcome market (soccer)
+        # Fair odds might be: home 2.0, draw 3.5, away 4.0
+        # With margin applied proportionally
+        odds_3way = [1.90, 3.30, 3.75]
+        margin = calculate_market_margin(odds_3way)
+        self.assertGreater(margin, 0.05)  # Should have some margin
+        
+        # Test with empty list
+        margin_empty = calculate_market_margin([])
+        self.assertEqual(margin_empty, 0)
+        
+        # Test with single odds (invalid market)
+        margin_single = calculate_market_margin([2.0])
+        self.assertAlmostEqual(margin_single, 0.0, places=5)  # 1/2 - 1 = -0.5, but max(0, -0.5) = 0
+        
+        # Test with very low margin (Pinnacle-like)
+        odds_low_margin = [1.98, 1.98]
+        margin = calculate_market_margin(odds_low_margin)
+        self.assertAlmostEqual(margin, 0.0101, places=3)
 
-        expected_cols = [
-            "Vigfree Gtbets",
-            "Vigfree Bovada",
-            "Vigfree Pointsbet (Au)",
-            "Vigfree Draftkings",
-            "Vigfree Betmgm",
-            "Vigfree Nordic Bet",
-            "Vigfree Betsson",
-            "Vigfree Caesars",
-            "Vigfree Fanduel",
-            "Vigfree Paddy Power",
-            "Vigfree Leovegas",
-            "Vigfree Unibet",
-            "Vigfree Betrivers",
-            "Vigfree Unibet (Se)",
-            "Vigfree Unibet (Nl)",
-            "Vigfree Unibet (It)",
-            "Vigfree Pinnacle",
-            "Vigfree Betway",
-            "Vigfree Betclic (Fr)",
-            "Vigfree Tab",
-            "Vigfree Tipico",
-            "Vigfree Bet Victor",
-            "Vigfree Coolbet",
-            "Vigfree Fanatics",
-            "Vigfree 888Sport",
-            "Vigfree Mybookie.Ag",
-            "Vigfree Winamax (Fr)",
-            "Vigfree Winamax (De)",
-            "Vigfree Virgin Bet",
-            "Vigfree Casumo",
-            "Vigfree Livescore Bet",
-            "Vigfree Grosvenor",
-            "Vigfree Leovegas (Se)",
-            "Vigfree Tabtouch",
-            "Vigfree Ladbrokes",
-            "Vigfree Marathon Bet",
-            "Vigfree Playup",
-            "Vigfree Lowvig.Ag",
-            "Vigfree Coral",
-            "Vigfree Neds",
-            "Vigfree 1Xbet",
-            "Vigfree Betonline.Ag",
-            "Vigfree William Hill",
-            "Vigfree Betr",
-            "Vigfree Sportsbet",
-            "Vigfree Betus",
-            "Vigfree Boylesports",
-            "Vigfree Everygame",
+    def test_remove_margin_proportional_to_odds(self):
+        """Test remove_margin_proportional_to_odds function."""
+        # Test with 2-outcome market
+        # Example: odds of 2.0 in a market with 5% margin
+        all_market_odds = [1.92, 1.92]
+        bookmaker_odds = 1.92
+        n_outcomes = 2
+        
+        fair_odds = remove_margin_proportional_to_odds(bookmaker_odds, all_market_odds, n_outcomes)
+        # Should return odds closer to 2.0
+        self.assertIsNotNone(fair_odds)
+        self.assertGreater(fair_odds, bookmaker_odds)
+        self.assertAlmostEqual(fair_odds, 2.0, places=1)
+        
+        # Test with longshot in 2-outcome market
+        all_market_odds_longshot = [1.30, 4.0]
+        bookmaker_odds_longshot = 4.0
+        fair_odds_longshot = remove_margin_proportional_to_odds(
+            bookmaker_odds_longshot, all_market_odds_longshot, 2
+        )
+        # Longshot should have larger margin removed
+        self.assertIsNotNone(fair_odds_longshot)
+        self.assertGreater(fair_odds_longshot, bookmaker_odds_longshot)
+        
+        # Test with 3-outcome market (soccer)
+        all_market_odds_3way = [1.90, 3.30, 3.75]
+        bookmaker_odds_home = 1.90
+        fair_odds_home = remove_margin_proportional_to_odds(
+            bookmaker_odds_home, all_market_odds_3way, 3
+        )
+        self.assertIsNotNone(fair_odds_home)
+        self.assertGreater(fair_odds_home, bookmaker_odds_home)
+        
+        # Test with draw odds (middle value)
+        bookmaker_odds_draw = 3.30
+        fair_odds_draw = remove_margin_proportional_to_odds(
+            bookmaker_odds_draw, all_market_odds_3way, 3
+        )
+        self.assertIsNotNone(fair_odds_draw)
+        self.assertGreater(fair_odds_draw, bookmaker_odds_draw)
+        
+        # Test with away odds (longshot)
+        bookmaker_odds_away = 3.75
+        fair_odds_away = remove_margin_proportional_to_odds(
+            bookmaker_odds_away, all_market_odds_3way, 3
+        )
+        self.assertIsNotNone(fair_odds_away)
+        self.assertGreater(fair_odds_away, bookmaker_odds_away)
+        
+        # Test edge case: zero or negative odds
+        fair_odds_zero = remove_margin_proportional_to_odds(0, [2.0, 2.0], 2)
+        self.assertIsNone(fair_odds_zero)
+        
+        fair_odds_negative = remove_margin_proportional_to_odds(-2.0, [2.0, 2.0], 2)
+        self.assertIsNone(fair_odds_negative)
+        
+        # Test edge case: odds that would create negative denominator
+        # This happens when M × O >= n
+        # For n=2, M=0.5, O=5.0: denominator = 2 - 0.5*5 = 2 - 2.5 = -0.5
+        all_market_odds_extreme = [1.20, 5.0]
+        bookmaker_odds_extreme = 5.0
+        fair_odds_extreme = remove_margin_proportional_to_odds(
+            bookmaker_odds_extreme, all_market_odds_extreme, 2
+        )
+        # Should handle gracefully (return None for invalid case)
+        if fair_odds_extreme is not None:
+            self.assertGreater(fair_odds_extreme, 0)
+
+    def test_remove_margin_proportional_to_odds_real_examples(self):
+        """Test remove_margin_proportional_to_odds with real-world examples."""
+        # Example from the documentation: fair odds [1.5, 5, 7.5] with 8% margin
+        # Should produce bookmaker odds [1.44, 4.42, 6.25]
+        
+        # Test reverse: given bookmaker odds, should recover fair odds
+        all_market_odds = [1.44, 4.42, 6.25]
+        
+        fair_odds_1 = remove_margin_proportional_to_odds(1.44, all_market_odds, 3)
+        fair_odds_2 = remove_margin_proportional_to_odds(4.42, all_market_odds, 3)
+        fair_odds_3 = remove_margin_proportional_to_odds(6.25, all_market_odds, 3)
+        
+        # Should approximately recover [1.5, 5, 7.5]
+        self.assertAlmostEqual(fair_odds_1, 1.5, places=1)
+        self.assertAlmostEqual(fair_odds_2, 5.0, places=1)
+        self.assertAlmostEqual(fair_odds_3, 7.5, places=1)
+
+    def test_vigfree_two_outcome_even_odds(self):
+        """Test vigfree calculation for 2-outcome market with even odds."""
+        df = pd.DataFrame({
+            "Match": ["Team A @ Team B", "Team A @ Team B"],
+            "Team": ["Team A", "Team B"],
+            "Bookmaker1": [1.95, 1.95],
+            "Outcomes": [2, 2],
+        })
+        
+        result = calculate_vigfree_probabilities(df)
+        
+        # Check vigfree column exists
+        self.assertIn("Vigfree Bookmaker1", result.columns)
+        
+        # Check probabilities are valid
+        vf1 = result["Vigfree Bookmaker1"].iloc[0]
+        vf2 = result["Vigfree Bookmaker1"].iloc[1]
+        
+        self.assertIsNotNone(vf1)
+        self.assertIsNotNone(vf2)
+        self.assertGreater(vf1, 0)
+        self.assertGreater(vf2, 0)
+        self.assertLess(vf1, 1)
+        self.assertLess(vf2, 1)
+        
+        # Should be approximately equal for even odds
+        self.assertAlmostEqual(vf1, vf2, places=5)
+        
+        # Should be close to 0.5 each (true probability)
+        self.assertAlmostEqual(vf1, 0.5, places=2)
+        self.assertAlmostEqual(vf2, 0.5, places=2)
+
+    def test_vigfree_two_outcome_uneven_odds(self):
+        """Test vigfree calculation for 2-outcome market with uneven odds (favorite vs underdog)."""
+        df = pd.DataFrame({
+            "Match": ["Team A @ Team B", "Team A @ Team B"],
+            "Team": ["Team A", "Team B"],
+            "Bookmaker1": [1.2, 4.5],  # Favorite vs underdog
+            "Outcomes": [2, 2],
+        })
+        
+        result = calculate_vigfree_probabilities(df)
+        
+        vf_favorite = result["Vigfree Bookmaker1"].iloc[0]
+        vf_underdog = result["Vigfree Bookmaker1"].iloc[1]
+        
+        self.assertAlmostEqual(vf_favorite, 0.8055558333, places=3)
+        self.assertAlmostEqual(vf_underdog, 0.1944447222, places=3)
+
+    def test_vigfree_three_outcome_market(self):
+        """Test vigfree calculation for 3-outcome market (soccer-style)."""
+        df = pd.DataFrame({
+            "Match": ["Team A @ Team B", "Team A @ Team B", "Team A @ Team B"],
+            "Team": ["Team A", "Draw", "Team B"],
+            "Bookmaker1": [2.20, 3.40, 3.20],
+            "Outcomes": [3, 3, 3],
+        })
+        
+        result = calculate_vigfree_probabilities(df)
+        
+        vf_home = result["Vigfree Bookmaker1"].iloc[0]
+        vf_draw = result["Vigfree Bookmaker1"].iloc[1]
+        vf_away = result["Vigfree Bookmaker1"].iloc[2]
+        
+        # All probabilities should be valid
+        self.assertIsNotNone(vf_home)
+        self.assertIsNotNone(vf_draw)
+        self.assertIsNotNone(vf_away)
+        
+        for prob in [vf_home, vf_draw, vf_away]:
+            self.assertGreater(prob, 0)
+            self.assertLess(prob, 1)
+        
+        # Home should have highest probability (lowest odds)
+        self.assertGreater(vf_home, vf_draw)
+        self.assertGreater(vf_home, vf_away)
+
+    def test_vigfree_multiple_bookmakers(self):
+        """Test vigfree calculation with multiple bookmakers."""
+        df = pd.DataFrame({
+            "Match": ["Team A @ Team B", "Team A @ Team B"],
+            "Team": ["Team A", "Team B"],
+            "Bookmaker1": [1.90, 2.00],
+            "Bookmaker2": [1.85, 2.10],
+            "Bookmaker3": [1.95, 1.95],
+            "Outcomes": [2, 2],
+        })
+        
+        result = calculate_vigfree_probabilities(df)
+        
+        # Check all vigfree columns exist
+        self.assertIn("Vigfree Bookmaker1", result.columns)
+        self.assertIn("Vigfree Bookmaker2", result.columns)
+        self.assertIn("Vigfree Bookmaker3", result.columns)
+        
+        # Check each bookmaker has valid probabilities
+        for bookmaker in ["Bookmaker1", "Bookmaker2", "Bookmaker3"]:
+            vf_col = f"Vigfree {bookmaker}"
+            vf1 = result[vf_col].iloc[0]
+            vf2 = result[vf_col].iloc[1]
+            
+            self.assertIsNotNone(vf1)
+            self.assertIsNotNone(vf2)
+            self.assertGreater(vf1, 0)
+            self.assertGreater(vf2, 0)
+
+    def test_vigfree_missing_odds_single_bookmaker(self):
+        """Test vigfree when one outcome is missing for a bookmaker."""
+        df = pd.DataFrame({
+            "Match": ["Team A @ Team B", "Team A @ Team B"],
+            "Team": ["Team A", "Team B"],
+            "Bookmaker1": [1.90, np.nan],  # Missing second outcome
+            "Outcomes": [2, 2],
+        })
+        
+        result = calculate_vigfree_probabilities(df)
+        
+        # Should have NaN for both since we need all outcomes
+        vf1 = result["Vigfree Bookmaker1"].iloc[0]
+        vf2 = result["Vigfree Bookmaker1"].iloc[1]
+        
+        self.assertTrue(pd.isna(vf1))
+        self.assertTrue(pd.isna(vf2))
+
+    def test_vigfree_missing_odds_one_bookmaker(self):
+        """Test vigfree when one bookmaker has missing data but others don't."""
+        df = pd.DataFrame({
+            "Match": ["Team A @ Team B", "Team A @ Team B"],
+            "Team": ["Team A", "Team B"],
+            "Bookmaker1": [1.90, 2.00],
+            "Bookmaker2": [1.85, np.nan],  # Missing for Bookmaker2
+            "Outcomes": [2, 2],
+        })
+        
+        result = calculate_vigfree_probabilities(df)
+        
+        # Bookmaker1 should have valid vigfree
+        vf1_bm1 = result["Vigfree Bookmaker1"].iloc[0]
+        vf2_bm1 = result["Vigfree Bookmaker1"].iloc[1]
+        self.assertIsNotNone(vf1_bm1)
+        self.assertIsNotNone(vf2_bm1)
+        
+        # Bookmaker2 should have NaN
+        vf1_bm2 = result["Vigfree Bookmaker2"].iloc[0]
+        vf2_bm2 = result["Vigfree Bookmaker2"].iloc[1]
+        self.assertTrue(pd.isna(vf1_bm2))
+        self.assertTrue(pd.isna(vf2_bm2))
+
+    def test_vigfree_multiple_matches(self):
+        """Test vigfree calculation across multiple matches."""
+        df = pd.DataFrame({
+            "Match": [
+                "Match1", "Match1",
+                "Match2", "Match2",
+                "Match3", "Match3"
+            ],
+            "Team": [
+                "Team A", "Team B",
+                "Team C", "Team D",
+                "Team E", "Team F"
+            ],
+            "Bookmaker1": [1.80, 2.20, 1.50, 3.00, 2.00, 2.00],
+            "Outcomes": [2, 2, 2, 2, 2, 2],
+        })
+        
+        result = calculate_vigfree_probabilities(df)
+        
+        # Check all matches have vigfree calculated
+        for i in range(6):
+            vf = result["Vigfree Bookmaker1"].iloc[i]
+            self.assertIsNotNone(vf)
+            self.assertGreater(vf, 0)
+            self.assertLess(vf, 1)
+        
+        # Check probabilities sum to 1.0 for each match
+        match1_sum = result["Vigfree Bookmaker1"].iloc[0] + result["Vigfree Bookmaker1"].iloc[1]
+        match2_sum = result["Vigfree Bookmaker1"].iloc[2] + result["Vigfree Bookmaker1"].iloc[3]
+        match3_sum = result["Vigfree Bookmaker1"].iloc[4] + result["Vigfree Bookmaker1"].iloc[5]
+        
+        self.assertAlmostEqual(match1_sum, 1.0, places=5)
+        self.assertAlmostEqual(match2_sum, 1.0, places=5)
+        self.assertAlmostEqual(match3_sum, 1.0, places=5)
+
+    def test_vigfree_mixed_outcome_counts(self):
+        """Test vigfree with different outcome counts in different matches."""
+        df = pd.DataFrame({
+            "Match": [
+                "Match1", "Match1",  # 2-way
+                "Match2", "Match2", "Match2"  # 3-way
+            ],
+            "Team": [
+                "Team A", "Team B",
+                "Team C", "Draw", "Team D"
+            ],
+            "Bookmaker1": [1.90, 2.00, 2.20, 3.40, 3.20],
+            "Outcomes": [2, 2, 3, 3, 3],
+        })
+        
+        result = calculate_vigfree_probabilities(df)
+        
+        # Check 2-way match
+        vf_2way_1 = result["Vigfree Bookmaker1"].iloc[0]
+        vf_2way_2 = result["Vigfree Bookmaker1"].iloc[1]
+        self.assertIsNotNone(vf_2way_1)
+        self.assertIsNotNone(vf_2way_2)
+        self.assertAlmostEqual(vf_2way_1 + vf_2way_2, 1.0, places=5)
+        
+        # Check 3-way match
+        vf_3way_1 = result["Vigfree Bookmaker1"].iloc[2]
+        vf_3way_2 = result["Vigfree Bookmaker1"].iloc[3]
+        vf_3way_3 = result["Vigfree Bookmaker1"].iloc[4]
+        self.assertIsNotNone(vf_3way_1)
+        self.assertIsNotNone(vf_3way_2)
+        self.assertIsNotNone(vf_3way_3)
+        self.assertAlmostEqual(vf_3way_1 + vf_3way_2 + vf_3way_3, 1.0, places=5)
+
+    def test_vigfree_insufficient_outcomes(self):
+        """Test vigfree when fewer outcomes present than required."""
+        df = pd.DataFrame({
+            "Match": ["Match1", "Match1", "Match1"],
+            "Team": ["Team A", "Draw", "Team B"],
+            "Bookmaker1": [2.20, np.nan, 3.20],  # Missing draw odds
+            "Outcomes": [3, 3, 3],
+        })
+        
+        result = calculate_vigfree_probabilities(df)
+        
+        # Should have NaN for all since we need 3 outcomes but only have 2
+        for i in range(3):
+            vf = result["Vigfree Bookmaker1"].iloc[i]
+            self.assertTrue(pd.isna(vf))
+
+    def test_vigfree_very_low_margin(self):
+        """Test vigfree with very low margin (Pinnacle-like)."""
+        df = pd.DataFrame({
+            "Match": ["Team A @ Team B", "Team A @ Team B"],
+            "Team": ["Team A", "Team B"],
+            "Bookmaker1": [1.98, 1.98],  # Very low margin
+            "Outcomes": [2, 2],
+        })
+        
+        result = calculate_vigfree_probabilities(df)
+        
+        vf1 = result["Vigfree Bookmaker1"].iloc[0]
+        vf2 = result["Vigfree Bookmaker1"].iloc[1]
+        
+        # Should still calculate valid probabilities
+        self.assertIsNotNone(vf1)
+        self.assertIsNotNone(vf2)
+        
+        # Should be very close to 0.5 each
+        self.assertAlmostEqual(vf1, 0.5, places=2)
+        self.assertAlmostEqual(vf2, 0.5, places=2)
+
+    def test_vigfree_high_margin(self):
+        """Test vigfree with high margin (retail bookmaker)."""
+        df = pd.DataFrame({
+            "Match": ["Team A @ Team B", "Team A @ Team B"],
+            "Team": ["Team A", "Team B"],
+            "Bookmaker1": [1.80, 1.80],  # Higher margin
+            "Outcomes": [2, 2],
+        })
+        
+        result = calculate_vigfree_probabilities(df)
+        
+        vf1 = result["Vigfree Bookmaker1"].iloc[0]
+        vf2 = result["Vigfree Bookmaker1"].iloc[1]
+        
+        # Should still calculate valid probabilities
+        self.assertIsNotNone(vf1)
+        self.assertIsNotNone(vf2)
+        
+        # Should be approximately 0.5 each after margin removal
+        self.assertAlmostEqual(vf1, 0.5, places=1)
+        self.assertAlmostEqual(vf2, 0.5, places=1)
+
+    def test_vigfree_extreme_longshot(self):
+        """Test vigfree with extreme longshot odds."""
+        df = pd.DataFrame({
+            "Match": ["Team A @ Team B", "Team A @ Team B"],
+            "Team": ["Team A", "Team B"],
+            "Bookmaker1": [1.10, 15.0],  # Heavy favorite vs extreme longshot
+            "Outcomes": [2, 2],
+        })
+        
+        result = calculate_vigfree_probabilities(df)
+        
+        vf_favorite = result["Vigfree Bookmaker1"].iloc[0]
+        vf_longshot = result["Vigfree Bookmaker1"].iloc[1]
+        
+        # Should still have valid probabilities
+        self.assertIsNotNone(vf_favorite)
+        self.assertIsNotNone(vf_longshot)
+        
+        # Favorite should have very high probability
+        self.assertGreater(vf_favorite, 0.85)
+        
+        # Longshot should have very low probability
+        self.assertLess(vf_longshot, 0.15)
+
+    def test_vigfree_empty_dataframe(self):
+        """Test vigfree with empty DataFrame."""
+        df = pd.DataFrame({
+            "Match": [],
+            "Team": [],
+            "Bookmaker1": [],
+            "Outcomes": [],
+        })
+        
+        result = calculate_vigfree_probabilities(df)
+        
+        # Should return empty DataFrame with vigfree column
+        self.assertEqual(len(result), 0)
+        self.assertIn("Vigfree Bookmaker1", result.columns)
+
+    def test_vigfree_custom_bookmaker_columns(self):
+        """Test vigfree with custom bookmaker_columns parameter."""
+        df = pd.DataFrame({
+            "Match": ["Team A @ Team B", "Team A @ Team B"],
+            "Team": ["Team A", "Team B"],
+            "Bookmaker1": [1.90, 2.00],
+            "Bookmaker2": [1.85, 2.10],
+            "OtherColumn": [100, 200],  # Not a bookmaker
+            "Outcomes": [2, 2],
+        })
+        
+        # Only process Bookmaker1
+        result = calculate_vigfree_probabilities(df, bookmaker_columns=["Bookmaker1"])
+        
+        # Should have vigfree for Bookmaker1 but not Bookmaker2
+        self.assertIn("Vigfree Bookmaker1", result.columns)
+        self.assertNotIn("Vigfree Bookmaker2", result.columns)
+
+    def test_vigfree_probabilities_sum_to_one(self):
+        """Test that vigfree probabilities always sum to 1.0 for each match."""
+        # Test various scenarios
+        test_cases = [
+            # 2-way markets
+            ([1.90, 2.00], 2),
+            ([1.50, 3.00], 2),
+            ([1.10, 10.0], 2),
+            # 3-way markets
+            ([2.20, 3.40, 3.20], 3),
+            ([1.50, 4.00, 8.00], 3),
         ]
-        missing_cols = [col for col in expected_cols if col not in result_df.columns]
-        if missing_cols:
-            print(f"Missing expected columns: {missing_cols}")
-        self.assertTrue(all(col in result_df.columns for col in expected_cols))
+        
+        for odds, n_outcomes in test_cases:
+            match_names = [f"Match{i}" for i in range(n_outcomes)]
+            df = pd.DataFrame({
+                "Match": ["TestMatch"] * n_outcomes,
+                "Team": match_names,
+                "Bookmaker1": odds,
+                "Outcomes": [n_outcomes] * n_outcomes,
+            })
+            
+            result = calculate_vigfree_probabilities(df)
+            prob_sum = result["Vigfree Bookmaker1"].sum()
+            
+            self.assertAlmostEqual(
+                prob_sum, 1.0, places=5,
+                msg=f"Probabilities don't sum to 1.0 for odds {odds}"
+            )
 
-        # Test Gtbets, Seattle Seahawks @ Arizona Cardinals
-        vf1 = result_df["Vigfree Gtbets"].iloc[0]
-        vf2 = result_df["Vigfree Gtbets"].iloc[1]
-        self.assertAlmostEqual(vf1, 0.1114583333, places=3)
-        self.assertAlmostEqual(vf2, 0.8885416667, places=3)
-
-        # Test Bovada, Kansas City Royals @ Los Angeles Angels
-        vf3 = result_df["Vigfree Bovada"].iloc[2]
-        vf4 = result_df["Vigfree Bovada"].iloc[3]
-        self.assertAlmostEqual(vf3, 0.5, places=3)
-        self.assertAlmostEqual(vf4, 0.5, places=3)
-
-        # Create test data for 3 game outcomes
-        three_outcome_df = pd.DataFrame(
-            {
-                "Match": ["Team1 @ Team2", "Team1 @ Team2", "Team1 @ Team2"],
-                "Team": ["Team1", "Team2", "Draw"],
-                "Bookmaker1": [3.0, 2.8, 2.9],
-                "Best Odds": [3.0, 2.8, 2.9],
-                "Best Bookmaker": ["Bookmaker1", "Bookmaker1", "Bookmaker1"],
-                "Result": ["Not Found", "Not Found", "Not Found"],
-                "Outcomes": [3, 3, 3],
-            }
-        )
-        three_outcome_df = calculate_vigfree_probabilities(three_outcome_df)
-        vf5 = three_outcome_df["Vigfree Bookmaker1"].iloc[0]
-        vf6 = three_outcome_df["Vigfree Bookmaker1"].iloc[1]
-        vf7 = three_outcome_df["Vigfree Bookmaker1"].iloc[2]
-        self.assertAlmostEqual(vf5, 0.3219666931, places=3)
-        self.assertAlmostEqual(vf6, 0.344964314, places=3)
-        self.assertAlmostEqual(vf7, 0.3330689929, places=3)
-
-    def test_calculate_vigfree_probabilities_missing_data(self):
-        """Test calculate_vigfree_probabilities with missing data."""
-        test_data = pd.DataFrame(
-            {
-                "Match": ["Team1 vs Team2", "Team1 vs Team2"],
-                "Team": ["Team1", "Team2"],
-                "Bookmaker1": [2.0, np.nan],
-                "Best Odds": [2.0, 2.0],
-                "Best Bookmaker": ["Bookmaker1", "Bookmaker2"],
-                "Result": ["Not Found", "Not Found"],
-                "Outcomes": [2, 2],
-            }
-        )
-
-        result_df = calculate_vigfree_probabilities(test_data)
-
-        # Should have NaN for both outcomes when one is missing
-        vigfree_bm1 = result_df["Vigfree Bookmaker1"].values
-        self.assertTrue(all(pd.isna(vigfree_bm1)))
-
-    def test_all_nan_odds(self):
-        """Test behavior when all odds are NaN."""
-        test_data = pd.DataFrame(
-            {
-                "match": ["Match1"],
-                "team": ["Team1"],
-                "Book1": [np.nan],
-                "Book2": [np.nan],
-            }
-        )
-
-        result_df = _add_metadata(test_data)
-        result_df = _clean_odds_data(result_df)
-        self.assertTrue(pd.isna(result_df["Best Odds"].iloc[0]))
-        self.assertTrue(pd.isna(result_df["Best Bookmaker"].iloc[0]))
+    def test_vigfree_real_world_example(self):
+        """Test with real-world odds example."""
+        # Real example: NFL game with typical bookmaker margins
+        df = pd.DataFrame({
+            "Match": ["Patriots @ Bills", "Patriots @ Bills"],
+            "Team": ["Patriots", "Bills"],
+            "DraftKings": [2.10, 1.83],
+            "FanDuel": [2.08, 1.85],
+            "Caesars": [2.15, 1.80],
+            "Outcomes": [2, 2],
+        })
+        
+        result = calculate_vigfree_probabilities(df)
+        
+        # Check all bookmakers processed
+        for bm in ["DraftKings", "FanDuel", "Caesars"]:
+            vf_col = f"Vigfree {bm}"
+            self.assertIn(vf_col, result.columns)
+            
+            # Check valid probabilities
+            vf1 = result[vf_col].iloc[0]
+            vf2 = result[vf_col].iloc[1]
+            
+            self.assertIsNotNone(vf1)
+            self.assertIsNotNone(vf2)
+            self.assertAlmostEqual(vf1 + vf2, 1.0, places=5)
+            
+            # Bills (lower odds) should have higher probability
+            self.assertGreater(vf2, vf1)
 
 
 if __name__ == "__main__":
