@@ -11,25 +11,10 @@ Date: July 2025
 import requests
 import pandas as pd
 import time
-import yaml
-import os
 from datetime import datetime, timedelta, timezone
 from typing import Any
-from src.constants import PENDING_RESULTS, CONFIG_DIR
-
-
-# ============================================================================
-# API KEYS - Load from environment (GitHub) or config file (local)
-# ============================================================================
-
-THE_SPORTS_DB_API_KEY = os.getenv("THE_SPORTS_DB_API_KEY")
-
-if not THE_SPORTS_DB_API_KEY:
-    # Fall back to config file for local development
-    config_path = CONFIG_DIR / "api_config.yaml"
-    with open(config_path) as f:
-        config = yaml.safe_load(f)
-    THE_SPORTS_DB_API_KEY = config["api"]["the_sports_db_api_key"]
+from src.constants import PENDING_RESULTS
+from config.api_config import THE_SPORTS_DB_API_KEY
 
 
 def _start_date(ts: Any) -> str:

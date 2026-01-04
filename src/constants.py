@@ -1,7 +1,6 @@
 from pathlib import Path
 
 # Data directory
-CONFIG_DIR = Path("config")
 DATA_DIR = Path("data")
 
 # Available Sports Keys
