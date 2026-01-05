@@ -50,11 +50,11 @@ A file with all bookmakers and odds that were available, not just the odds of th
    
 2. Create an api_config file and add API keys:
    ```bash
-   cp src/api_config.example.yaml src/api_config.yaml
-   # Then edit src/api_config.yaml with your API keys and add it to .gitignore
+   cp src/api_config_local.example.py src/api_config_local.py
+   # Then edit src/api_config_local.py with your API keys and add it to .gitignore
    ```
 
-3. Fetch odds and analyze bets:
+3. Fetch odds and find bets:
    ```bash
    python3 -m src.find_bets.find_bets
    ```
@@ -66,7 +66,7 @@ A file with all bookmakers and odds that were available, not just the odds of th
    
 5. View strategy profit/ROI:
    ```bash
-   python3 -m src.analysis.roi
+   python3 -m src.analysis.calculations.strategy_results
    ```
 
 ## Automation
