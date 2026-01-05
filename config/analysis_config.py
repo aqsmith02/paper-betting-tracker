@@ -34,7 +34,7 @@ NULL_EV = -0.05  # -5% EV (typical vig)
 N_SIMULATIONS = 10000
 
 # Random seed for reproducibility (None = random seed each run)
-RANDOM_SEED = None
+RANDOM_SEED = 1
 
 # Significance levels for hypothesis testing
 ALPHA_LEVELS = [0.05, 0.01]  # 5% and 1% significance
