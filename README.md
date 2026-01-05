@@ -6,10 +6,19 @@ Currently, the system considers only moneyline (head-to-head) bets and simulates
 
 ## Results
 
+### Profit Over Time
+
+The following showcase profit for each strategy since data collection has started. Bet sizing uses the 1/2 kelly criterion strategy. Bets are only placed when the EV is greater than 5%. The max bet size is 2.5 units. 
+
 ![Chart](analysis/output/profit_over_time/profit_over_time_all_strategies.png)
 ![Chart](analysis/output/profit_over_time/profit_over_time_average.png)
 ![Chart](analysis/output/profit_over_time/profit_over_time_average_with_modified_zscore_constraint.png)
 ![Chart](analysis/output/profit_over_time/profit_over_time_random_strategy.png)
+
+### Hypothesis Testing
+
+The following are Monte Carlo simulations run using the null hypothesis, that the EV of each bet is -5% (a typical number for a random bet). Using the equation **probability = (EV + 1) / odds**, we can calculate the probability of each bet placed in our dataset under the null hypothesis. We then randomly select whether each bet was a win or loss based on this probability, sum the profit, store the results, and repeat. After completion, we have a profit distribution under the null hypothesis.
+
 ![Chart](analysis/output/monte_carlo/monte_carlo_average.png)
 ![Chart](analysis/output/monte_carlo/monte_carlo_average_with_modified_zscore_constraint.png)
 
