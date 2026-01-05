@@ -1,4 +1,4 @@
-name: Update Profit Charts
+name: Update Output
 
 on:
   workflow_run:
