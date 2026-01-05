@@ -35,6 +35,10 @@ jobs:
       run: |
         python3 -m analysis.visualizations.profit_charts
 
+    - name: Run Monte Carlo plots script
+      run: |
+        python3 -m analysis.visualizations.monte_carlo_plots
+
     - name: Commit and push updated charts to master branch
       run: |
         set -x  # Print commands
@@ -42,7 +46,7 @@ jobs:
         git config user.name  "github-actions[bot]"
         git config user.email "github-actions@github.com"
 
-        CHART_FILES="analysis/output/profit_over_time/*"
+        CHART_FILES="analysis/output/profit_over_time/* analysis/output/monte_carlo/*"
 
         echo "================================================"
         echo "FILES MODIFIED BY SCRIPT:"
