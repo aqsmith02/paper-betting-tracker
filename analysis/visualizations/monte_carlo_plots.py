@@ -50,7 +50,7 @@ def plot_simulation_results(results, strategy_name, save_fig=False):
                 label=f'Expected: ${results["simulated_mean_profit"]:.2f}')
     ax.set_xlabel('Total Profit ($)', fontsize=12)
     ax.set_ylabel('Frequency', fontsize=12)
-    ax.set_title(f'{strategy_name}\nNull Hypothesis (-5% EV) Profit Distribution (p={results["p_value"]:.4f})', 
+    ax.set_title(f'{strategy_name} Strategy\nNull Hypothesis (-5% EV) Profit Distribution (p={results["p_value"]:.4f})', 
                  fontsize=14, fontweight='bold')
     ax.legend(fontsize=11)
     ax.grid(alpha=0.3)
