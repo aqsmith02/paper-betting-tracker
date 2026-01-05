@@ -1,9 +1,12 @@
 name: Update Profit Charts
 
 on:
-  schedule:
-    - cron: "0 * * * *"  # Run at the start of every hour
+  workflow_run:
+    workflows: ["Fill Results"]
+    types:
+      - completed
   workflow_dispatch:
+
 
 permissions:
   contents: write
