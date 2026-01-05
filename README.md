@@ -10,6 +10,8 @@ Currently, the system considers only moneyline (head-to-head) bets and simulates
 ![Chart](analysis/output/profit_over_time/profit_over_time_average.png)
 ![Chart](analysis/output/profit_over_time/profit_over_time_average_with_modified_zscore_constraint.png)
 ![Chart](analysis/output/profit_over_time/profit_over_time_random_strategy.png)
+![Chart](analysis/output/monte_carlo/monte_carlo_average.png)
+![Chart](analysis/output/monte_carlo/monte_carlo_average_with_modified_zscore_constraint.png)
 
 ## Betting Strategies
 
