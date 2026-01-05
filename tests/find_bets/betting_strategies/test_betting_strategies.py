@@ -18,8 +18,6 @@ from src.constants import (
 from src.find_bets.betting_strategies import (
     analyze_average_edge_bets,
     analyze_modified_zscore_outliers,
-    analyze_pinnacle_edge_bets,
-    analyze_zscore_outliers,
     _missing_vigfree_odds_pct,
     find_random_bets
 )
@@ -171,87 +169,6 @@ class TestAnalyzeAverageEdgeBets(unittest.TestCase):
         self.assertIn('Fair Odds Avg', result.columns)
         self.assertIn('Expected Value', result.columns)
 
-
-class TestAnalyzeZscoreOutliers(unittest.TestCase):
-    """Test suite for analyze_zscore_outliers function"""
-    
-    def setUp(self):
-        """Set up test data"""
-        self.func = analyze_zscore_outliers
-
-    def test_zscore_calculation_with_valid_outlier(self):
-        """Test Z-score calculation with a valid outlier."""
-        df = pd.DataFrame({
-            'Match': ['Team A @ Team B'],
-            'Team': ['Team A'],
-            'Best Odds': [5.0],
-            'Book1': [3.0],
-            'Book2': [3.1],
-            'Book3': [3.0],
-            'Book4': [3.2],
-            'Book5': [5.0],
-            'Vigfree Book1': [0.32],
-            'Vigfree Book2': [0.31],
-            'Vigfree Book3': [0.32],
-            'Vigfree Book4': [0.30],
-            'Vigfree Book5': [0.19]
-        })
-        
-        result = self.func(df)
-        
-        # Check that columns exist
-        self.assertIn('Z Score', result.columns)
-        self.assertIn('Fair Odds Avg', result.columns)
-        self.assertIn('Expected Value', result.columns)
-        
-        # Z-score should be calculated
-        if result['Z Score'].iloc[0] is not None:
-            self.assertGreater(result['Z Score'].iloc[0], Z_SCORE_THRESHOLD)
-
-    def test_zscore_zero_std(self):
-        """Test Z-score when standard deviation is zero."""
-        df = pd.DataFrame({
-            'Match': ['Team A @ Team B'],
-            'Team': ['Team A'],
-            'Best Odds': [3.0],
-            'Bovada': [3.0],
-            'Pinnacle': [3.0],
-            'Draftkings': [3.0],
-            'Vigfree Bovada': [0.33],
-            'Vigfree Pinnacle': [0.33],
-            'Vigfree Draftkings': [0.33]
-        })
-        
-        result = self.func(df)
-        
-        # Should return None for zero std
-        self.assertIsNone(result['Z Score'].iloc[0])
-
-    def test_zscore_exceeds_max_threshold(self):
-        """Test that Z-scores above MAX_Z_SCORE are filtered."""
-        df = pd.DataFrame({
-            'Match': ['Team A @ Team B'],
-            'Team': ['Team A'],
-            'Best Odds': [20.0],
-            'Book1': [2.0],
-            'Book2': [2.0],
-            'Book3': [2.0],
-            'Book4': [2.0],
-            'Book5': [20.0],
-            'Vigfree Book1': [0.49],
-            'Vigfree Book2': [0.49],
-            'Vigfree Book3': [0.49],
-            'Vigfree Book4': [0.49],
-            'Vigfree Book5': [0.05]
-        })
-        
-        result = self.func(df)
-        
-        # Z-score should be None if it exceeds MAX_Z_SCORE
-        # (unrealistic outlier, likely data error)
-        self.assertIsNone(result['Z Score'].iloc[0])
-
-
 class TestAnalyzeModifiedZscoreOutliers(unittest.TestCase):
     """Test suite for analyze_modified_zscore_outliers function"""
     
@@ -329,86 +246,6 @@ class TestAnalyzeModifiedZscoreOutliers(unittest.TestCase):
         
         # Modified Z-score should be None if exceeds MAX_Z_SCORE
         self.assertIsNone(result['Modified Z Score'].iloc[0])
-
-
-class TestAnalyzePinnacleEdgeBets(unittest.TestCase):
-    """Test suite for analyze_pinnacle_edge_bets function"""
-    
-    def setUp(self):
-        """Set up test data"""
-        self.func = analyze_pinnacle_edge_bets
-
-    def test_pinnacle_positive_ev(self):
-        """Test Pinnacle edge calculation with positive EV."""
-        df = pd.DataFrame({
-            'Match': ['Team A @ Team B'],
-            'Team': ['Team A'],
-            'Best Odds': [4.0],
-            'Pinnacle': [3.5],
-            'Fanduel': [4.0],
-            'Vigfree Pinnacle': [0.28],
-            'Vigfree Fanduel': [0.24]
-        })
-        
-        result = self.func(df)
-        
-        # Check that Pinnacle columns are added
-        self.assertIn('Pinnacle Fair Odds', result.columns)
-        self.assertIn('Expected Value', result.columns)
-        
-        # Pinnacle fair odds = 1 / 0.28 = 3.57
-        self.assertAlmostEqual(result['Pinnacle Fair Odds'].iloc[0], 3.57, places=2)
-        
-        # EV = (0.28 * (4.0 - 1)) - ((1 - 0.28) * 1) = 0.84 - 0.72 = 0.12
-        if result['Expected Value'].iloc[0] is not None:
-            self.assertGreater(result['Expected Value'].iloc[0], 0)
-
-    def test_pinnacle_negative_ev(self):
-        """Test that bets with negative EV are filtered."""
-        df = pd.DataFrame({
-            'Match': ['Team A @ Team B'],
-            'Team': ['Team A'],
-            'Best Odds': [2.0],
-            'Pinnacle': [2.0],
-            'Vigfree Pinnacle': [0.48]
-        })
-        
-        result = self.func(df)
-        
-        # EV should be None since below threshold
-        self.assertIsNone(result['Expected Value'].iloc[0])
-
-    def test_pinnacle_missing_vigfree(self):
-        """Test when Pinnacle vig-free odds are missing."""
-        df = pd.DataFrame({
-            'Match': ['Team A @ Team B'],
-            'Team': ['Team A'],
-            'Best Odds': [10.0],
-            'Pinnacle': [8.0],
-            'Vigfree Pinnacle': [np.nan]
-        })
-        
-        result = self.func(df)
-        
-        # Should return None for missing vig-free
-        self.assertIsNone(result['Pinnacle Fair Odds'].iloc[0])
-        self.assertIsNone(result['Expected Value'].iloc[0])
-    
-    def test_no_pinnacle_column(self):
-        """Test when Pinnacle column doesn't exist."""
-        df = pd.DataFrame({
-            'Match': ['Team A @ Team B'],
-            'Team': ['Team A'],
-            'Best Odds': [10.0],
-            'Bovada': [8.0],
-            'Vigfree Bovada': [0.12]
-        })
-        
-        result = self.func(df)
-        
-        # Should return original DataFrame without new columns
-        self.assertNotIn('Pinnacle Fair Odds', result.columns)
-        self.assertNotIn('Expected Value', result.columns)
 
 
 class TestFindRandomBets(unittest.TestCase):
@@ -502,16 +339,12 @@ class TestIntegration(unittest.TestCase):
         """Test running all analysis functions in sequence."""
         result = self.df.copy()
         result = analyze_average_edge_bets(result)
-        result = analyze_zscore_outliers(result)
         result = analyze_modified_zscore_outliers(result)
-        result = analyze_pinnacle_edge_bets(result)
         result = find_random_bets(result)
         
         # Check all expected columns exist
         expected_columns = [
-            'Fair Odds Avg', 'Expected Value',
-            'Z Score', 'Modified Z Score',
-            'Pinnacle Fair Odds',
+            'Fair Odds Avg', 'Expected Value', 'Modified Z Score',
             'Random Placed Bet'
         ]
         

@@ -11,9 +11,7 @@ import pandas as pd
 import numpy as np
 from src.find_bets.summary_creation import (
     create_average_edge_summary,
-    create_zscore_summary,
     create_modified_zscore_summary,
-    create_pinnacle_edge_summary,
     create_random_summary,
 )
 
@@ -105,91 +103,6 @@ class TestCreateAverageEdgeSummary(unittest.TestCase):
         self.assertEqual(result.iloc[2]["Expected Value"], 0.12)
 
 
-class TestCreateZscoreSummary(unittest.TestCase):
-    """Test cases for create_zscore_summary function."""
-
-    def setUp(self):
-        """Set up test data before each test."""
-        self.sample_data = {
-            "Match": ["Team A vs Team B", "Team C vs Team D", "Team E vs Team F"],
-            "League": ["Premier League", "La Liga", "Bundesliga"],
-            "Team": ["Team A", "Team C", "Team E"],
-            "Start Time": ["2025-11-01 15:00", "2025-11-01 18:00", "2025-11-02 20:00"],
-            "Best Bookmaker": ["Bet365", "William Hill", "Betway"],
-            "Best Odds": [2.5, 3.0, 1.8],
-            "Z Score": [2.5, 3.2, 2.8],
-            "Expected Value": [0.15, 0.08, 0.12],
-            "Result": ["Win", "Loss", "Win"],
-        }
-
-    def test_create_zscore_summary_with_valid_data(self):
-        """Test Z-score summary creation with valid data."""
-        df = pd.DataFrame(self.sample_data)
-        result = create_zscore_summary(df)
-
-        self.assertEqual(len(result), 3)
-        self.assertIn("Z Score", result.columns)
-        self.assertIn("Outlier Book", result.columns)
-        self.assertIn("Outlier Odds", result.columns)
-        self.assertIn("Expected Value", result.columns)
-
-    def test_filters_na_zscore(self):
-        """Test that rows with NaN Z Score are filtered out."""
-        data = self.sample_data.copy()
-        data["Z Score"] = [2.5, np.nan, 2.8]
-        df = pd.DataFrame(data)
-        result = create_zscore_summary(df)
-
-        self.assertEqual(len(result), 2)
-
-    def test_filters_na_expected_value(self):
-        """Test that rows with NaN Expected Value are filtered out."""
-        data = self.sample_data.copy()
-        data["Expected Value"] = [0.15, np.nan, 0.12]
-        df = pd.DataFrame(data)
-        result = create_zscore_summary(df)
-
-        self.assertEqual(len(result), 2)
-
-    def test_result_default_value(self):
-        """Test that Result defaults to 'Not Found' when missing."""
-        data = self.sample_data.copy()
-        del data["Result"]
-        df = pd.DataFrame(data)
-        result = create_zscore_summary(df)
-
-        self.assertTrue(all(result["Result"] == "Not Found"))
-
-    def test_with_empty_dataframe(self):
-        """Test Z-score summary with empty DataFrame."""
-        df = pd.DataFrame()
-        result = create_zscore_summary(df)
-
-        self.assertEqual(len(result), 0)
-        self.assertIsInstance(result, pd.DataFrame)
-
-    def test_expected_value_in_output(self):
-        """Test that Expected Value is included in output."""
-        df = pd.DataFrame(self.sample_data)
-        result = create_zscore_summary(df)
-
-        self.assertEqual(result.iloc[0]["Expected Value"], 0.15)
-        self.assertEqual(result.iloc[1]["Expected Value"], 0.08)
-
-    def test_all_columns_present(self):
-        """Test that all expected columns are present in output."""
-        df = pd.DataFrame(self.sample_data)
-        result = create_zscore_summary(df)
-
-        expected_cols = [
-            "Match", "League", "Team", "Start Time",
-            "Outlier Book", "Outlier Odds", "Z Score",
-            "Expected Value", "Result"
-        ]
-        for col in expected_cols:
-            self.assertIn(col, result.columns)
-
-
 class TestCreateModifiedZscoreSummary(unittest.TestCase):
     """Test cases for create_modified_zscore_summary function."""
 
@@ -261,101 +174,6 @@ class TestCreateModifiedZscoreSummary(unittest.TestCase):
 
         self.assertEqual(len(result), 0)
         self.assertIsInstance(result, pd.DataFrame)
-
-
-class TestCreatePinnacleEdgeSummary(unittest.TestCase):
-    """Test cases for create_pinnacle_edge_summary function."""
-
-    def setUp(self):
-        """Set up test data before each test."""
-        self.sample_data = {
-            "Match": ["Team A vs Team B", "Team C vs Team D"],
-            "League": ["Premier League", "La Liga"],
-            "Team": ["Team A", "Team C"],
-            "Start Time": ["2025-11-01 15:00", "2025-11-01 18:00"],
-            "Best Bookmaker": ["Bet365", "William Hill"],
-            "Best Odds": [2.5, 3.0],
-            "Pinnacle Fair Odds": [2.3, 2.8],
-            "Expected Value": [0.18, 0.10],
-            "Vigfree Pinnacle": [0.43, 0.36],
-            "Result": ["Win", "Loss"],
-        }
-
-    def test_create_pinnacle_edge_summary_valid_data(self):
-        """Test Pinnacle edge summary creation with valid data."""
-        df = pd.DataFrame(self.sample_data)
-        result = create_pinnacle_edge_summary(df)
-
-        self.assertEqual(len(result), 2)
-        self.assertIn("Pinnacle Edge Book", result.columns)
-        self.assertIn("Pinnacle Edge Odds", result.columns)
-        self.assertIn("Expected Value", result.columns)
-        self.assertIn("Pinnacle Fair Odds", result.columns)
-
-    def test_missing_vigfree_pinnacle_column(self):
-        """Test behavior when Vigfree Pinnacle column is missing."""
-        data = self.sample_data.copy()
-        del data["Vigfree Pinnacle"]
-        df = pd.DataFrame(data)
-        result = create_pinnacle_edge_summary(df)
-
-        self.assertEqual(len(result), 0)
-        self.assertIsInstance(result, pd.DataFrame)
-
-    def test_filters_na_pinnacle_fair_odds(self):
-        """Test that rows with NaN Pinnacle Fair Odds are filtered out."""
-        data = self.sample_data.copy()
-        data["Pinnacle Fair Odds"] = [np.nan, 2.8]
-        df = pd.DataFrame(data)
-        result = create_pinnacle_edge_summary(df)
-
-        self.assertEqual(len(result), 1)
-
-    def test_filters_na_expected_value(self):
-        """Test that rows with NaN Expected Value are filtered out."""
-        data = self.sample_data.copy()
-        data["Expected Value"] = [0.18, np.nan]
-        df = pd.DataFrame(data)
-        result = create_pinnacle_edge_summary(df)
-
-        self.assertEqual(len(result), 1)
-
-    def test_result_default_value(self):
-        """Test that Result defaults to 'Not Found' when missing."""
-        data = self.sample_data.copy()
-        del data["Result"]
-        df = pd.DataFrame(data)
-        result = create_pinnacle_edge_summary(df)
-
-        self.assertTrue(all(result["Result"] == "Not Found"))
-
-    def test_empty_dataframe(self):
-        """Test Pinnacle edge summary with empty DataFrame."""
-        df = pd.DataFrame()
-        result = create_pinnacle_edge_summary(df)
-
-        self.assertEqual(len(result), 0)
-
-    def test_expected_value_in_output(self):
-        """Test that Expected Value is correctly included in output."""
-        df = pd.DataFrame(self.sample_data)
-        result = create_pinnacle_edge_summary(df)
-
-        self.assertEqual(result.iloc[0]["Expected Value"], 0.18)
-        self.assertEqual(result.iloc[1]["Expected Value"], 0.10)
-
-    def test_all_columns_present(self):
-        """Test that all expected columns are present in output."""
-        df = pd.DataFrame(self.sample_data)
-        result = create_pinnacle_edge_summary(df)
-
-        expected_cols = [
-            "Match", "League", "Team", "Start Time",
-            "Pinnacle Edge Book", "Pinnacle Edge Odds",
-            "Expected Value", "Pinnacle Fair Odds", "Result"
-        ]
-        for col in expected_cols:
-            self.assertIn(col, result.columns)
 
 
 class TestCreateRandomSummary(unittest.TestCase):
