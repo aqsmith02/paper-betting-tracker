@@ -8,7 +8,7 @@ Currently, the system considers only moneyline (head-to-head) bets and simulates
 
 ### Profit Over Time
 
-The following showcase profit for each strategy since data collection has started. Bet sizing uses the 1/2 kelly criterion strategy. Bets are only placed when the EV is greater than 5%. The max bet size is 2.5 units. 
+The following charts showcase profit for each strategy since data collection started in October. Profit is measured in betting units, which is 1% of the hypothetical bankroll, so it is relative to the size of the bankroll. For example, if the profit is 100 units, then 100% of the bankroll was profited. Bet sizing uses the 1/2 kelly criterion strategy. Bets are only placed when the EV is greater than 5%. The max bet size is 2.5 units. 
 
 ![Chart](analysis/output/profit_over_time/profit_over_time_all_strategies.png)
 ![Chart](analysis/output/profit_over_time/profit_over_time_average.png)
