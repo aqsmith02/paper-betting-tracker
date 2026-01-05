@@ -9,6 +9,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 from datetime import datetime
+import pytz
 from config.analysis_config import (
     KELLY_FRACTION,
     MIN_EV_THRESHOLD,
@@ -33,6 +34,8 @@ from analysis.calculations.profit_over_time import (
     calculate_profit_summary,
 )
 
+EASTERN_TZ = pytz.timezone('America/New_York')
+
 
 def plot_profit_over_time(strategy, save_fig=False):
     """
@@ -47,7 +50,7 @@ def plot_profit_over_time(strategy, save_fig=False):
     df = pd.read_csv(strategy.path)
     
     # Get current date
-    current_date = datetime.now().strftime('%B %d, %Y')
+    current_date = datetime.now(EASTERN_TZ).strftime('%B %d, %Y')
     
     # Get first bet date (data collection start date)
     df['Start Time'] = pd.to_datetime(df['Start Time'])
@@ -171,7 +174,7 @@ def plot_comparison_all_strategies(strategies=None, save_fig=False):
     fig, ax = plt.subplots(1, 1, figsize=FIGURE_SIZE_DEFAULT)
     
     # Get current date
-    current_date = datetime.now().strftime('%B %d, %Y')
+    current_date = datetime.now(EASTERN_TZ).strftime('%B %d, %Y')
     
     # Get earliest start date across all strategies
     earliest_date = None
