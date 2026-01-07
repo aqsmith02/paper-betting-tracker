@@ -17,7 +17,8 @@ from src.results.sportsdb_results import get_finished_games_from_thesportsdb
 from src.constants import (
     PENDING_RESULTS,
     DAYS_CUTOFF,
-    FILE_NAMES,
+    FILE_NAMES_BETS,
+    FILE_NAMES_FULL,
     SLEEP_DURATION,
     DATA_DIR
 )
@@ -166,14 +167,12 @@ def main() -> None:
     """
     print("Starting sports results pipeline")
 
-    for i, (bet_filename, full_filename) in enumerate(FILE_NAMES):
+    for bet_filename, full_filename in zip(FILE_NAMES_BETS, FILE_NAMES_FULL):
         try:
             process_files(bet_filename, full_filename)
 
-            # Sleep between files (except after the last one)
-            if i < len(FILE_NAMES) - 1:
-                print(f"Sleeping for {SLEEP_DURATION} seconds...")
-                time.sleep(SLEEP_DURATION)
+            print(f"Sleeping for {SLEEP_DURATION} seconds...")
+            time.sleep(SLEEP_DURATION)
 
         except Exception as e:
             print(f"Failed to process {bet_filename}: {e}")

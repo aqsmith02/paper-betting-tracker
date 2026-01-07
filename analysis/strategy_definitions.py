@@ -65,14 +65,14 @@ class BettingStrategy:
 ALL_STRATEGIES = [
     BettingStrategy(
         name="Average",
-        path="data/master_nc_avg_full.csv",
+        path="data/nc_avg_full.csv",
         odds_column="Best Odds",
         fair_odds_column="Fair Odds Avg",
         ev_column="Expected Value",
     ),
     BettingStrategy(
         name="Average With Modified Zscore Constraint",
-        path="data/master_nc_mod_zscore_full.csv",
+        path="data/nc_mod_zscore_full.csv",
         odds_column="Best Odds",
         fair_odds_column="Fair Odds Avg",
         ev_column="Expected Value",
@@ -80,7 +80,7 @@ ALL_STRATEGIES = [
     ),
     BettingStrategy(
         name="Random Strategy",
-        path="data/master_nc_random_full.csv",
+        path="data/nc_random_full.csv",
         odds_column="Best Odds",
     ),
 ]
@@ -88,14 +88,14 @@ ALL_STRATEGIES = [
 NON_RANDOM_STRATEGIES = [
     BettingStrategy(
         name="Average",
-        path="data/master_nc_avg_full.csv",
+        path="data/nc_avg_full.csv",
         odds_column="Best Odds",
         fair_odds_column="Fair Odds Avg",
         ev_column="Expected Value",
     ),
     BettingStrategy(
         name="Average With Modified Zscore Constraint",
-        path="data/master_nc_mod_zscore_full.csv",
+        path="data/nc_mod_zscore_full.csv",
         odds_column="Best Odds",
         fair_odds_column="Fair Odds Avg",
         ev_column="Expected Value",

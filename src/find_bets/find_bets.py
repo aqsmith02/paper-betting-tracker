@@ -25,6 +25,10 @@ from src.find_bets.data_processing import (
     process_target_odds_data,
     calculate_vigfree_probabilities,
 )
+from src.constants import (
+    FILE_NAMES_BETS,
+    FILE_NAMES_FULL
+)
 import pandas as pd
 from dataclasses import dataclass
 
@@ -96,24 +100,24 @@ def main():
     strategies = [
         BettingStrategy(
             name="Average Edge",
-            nc_summary_file="master_nc_avg_bets.csv",
-            nc_full_file="master_nc_avg_full.csv",
+            nc_summary_file=FILE_NAMES_BETS[0],
+            nc_full_file=FILE_NAMES_FULL[0],
             score_column="Expected Value",
             summary_func=create_average_edge_summary,
             analysis_func=analyze_average_edge_bets,
         ),
         BettingStrategy(
             name="Modified Z-Score Outliers",
-            nc_summary_file="master_nc_mod_zscore_bets.csv",
-            nc_full_file="master_nc_mod_zscore_full.csv",
+            nc_summary_file=FILE_NAMES_BETS[1],
+            nc_full_file=FILE_NAMES_FULL[1],
             score_column="Modified Z Score",
             summary_func=create_modified_zscore_summary,
             analysis_func=analyze_modified_zscore_outliers,
         ),
         BettingStrategy(
             name="Random Bets",
-            nc_summary_file="master_nc_random_bets.csv",
-            nc_full_file="master_nc_random_full.csv",
+            nc_summary_file=FILE_NAMES_BETS[2],
+            nc_full_file=FILE_NAMES_FULL[2],
             score_column="Random Bet Odds",
             summary_func=create_random_summary,
             analysis_func=find_random_bets,

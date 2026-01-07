@@ -55,10 +55,16 @@ DAYS_CUTOFF = 3
 SLEEP_DURATION = 60
 
 # File names
-FILE_NAMES = [
-    ("master_nc_avg_bets.csv", "master_nc_avg_full.csv"),
-    ("master_nc_mod_zscore_bets.csv", "master_nc_mod_zscore_full.csv"),
-    ("master_nc_random_bets.csv", "master_nc_random_full.csv"),
+FILE_NAMES_BETS = [
+    "nc_avg_bets.csv",
+    "nc_mod_zscore_bets.csv",
+    "nc_random_bets.csv",
+]
+
+FILE_NAMES_FULL = [
+    "nc_avg_full.csv",
+    "nc_mod_zscore_full.csv",
+    "nc_random_full.csv",
 ]
 
 # Unfinished results
