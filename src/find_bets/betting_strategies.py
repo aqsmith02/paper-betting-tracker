@@ -94,6 +94,7 @@ def analyze_average_edge_bets(df: pd.DataFrame) -> pd.DataFrame:
 
     df["Fair Odds Avg"] = fair_odds_averages
     df["Expected Value"] = ev_list
+    df["Expected Value Method"] = "New"
     return df
 
 
@@ -113,6 +114,7 @@ def analyze_modified_zscore_outliers(df: pd.DataFrame) -> pd.DataFrame:
 
     vigfree_columns = [col for col in df.columns if col.startswith("Vigfree ")]
     cols_to_exclude = vigfree_columns + ["Fair Odds Avg", "Avg Edge Pct"]
+    # What is this^? Fix names of cols.
     bookmaker_columns = _find_bookmaker_columns(df, cols_to_exclude)
     modified_z_scores = []
 

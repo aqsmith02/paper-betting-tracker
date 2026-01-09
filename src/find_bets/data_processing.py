@@ -31,7 +31,7 @@ def _find_bookmaker_columns(
         List[str]: List of column names that contain bookmaker odds.
     """
     # Exclude any columns that will be an int or float and are not bookmakers
-    excluded = {"Best Odds", "Start Time", "Outcomes", "Event ID"}
+    excluded = {"Best Odds", "Start Time", "Outcomes", "Event Id", "Scrape Time"}
     if exclude_columns:
         excluded.update(exclude_columns)
 
@@ -89,6 +89,7 @@ def _add_metadata(
             df["Best Odds"] = None
             df["Best Bookmaker"] = None
 
+    df["Start Time Accuracy"] = "Exact"
     df["Result"] = "Not Found"
     df["Outcomes"] = df.groupby("match")["team"].transform("count")
     df["Event ID"] = "Not Found"
