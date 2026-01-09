@@ -17,7 +17,7 @@ The following charts showcase profit for each strategy since data collection sta
 
 ### Hypothesis Testing
 
-The following are Monte Carlo simulations run using the null hypothesis, that the EV of each bet is -5% (a typical number for a random bet). Using the equation **probability = (EV + 1) / odds**, we can calculate the probability of each bet placed in our dataset under the null hypothesis. We then randomly select whether each bet was a win or loss based on this probability, sum the profit, store the results, and repeat. After completion, we have a profit distribution under the null hypothesis.
+The following are simulations run using the null hypothesis, that the EV of each bet is -5% (a typical number for a random bet). Using the equation **probability = (EV + 1) / odds**, we can calculate the probability of each bet placed in our dataset under the null hypothesis. We then randomly select whether each bet was a win or loss based on this probability, sum the profit, store the results, and repeat. After completion, we have a profit distribution under the null hypothesis.
 
 ![Chart](analysis/output/monte_carlo/monte_carlo_average.png)
 ![Chart](analysis/output/monte_carlo/monte_carlo_average_with_modified_zscore_constraint.png)
