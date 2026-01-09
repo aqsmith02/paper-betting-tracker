@@ -4,6 +4,17 @@ This project is an automated system for tracking and evaluating “paper” spor
 
 Currently, the system considers only moneyline (head-to-head) bets and simulates placements exclusively on North Carolina sportsbooks, while evaluating all sports leagues supported by The-Odds-API. Data collection for the reported results began on October 11, 2025.
 
+## Betting Strategies
+
+### Fair Average Odds
+Calculates the vig-free (true) probability for an outcome from every bookmaker, then averages these probabilities to determine a consensus fair payout. Identifies betting opportunities where the best available odds offer higher payouts than this fair average suggests the outcome is worth.
+
+### Modified Z-Score
+Combines the fair average approach with statistical outlier detection. First filters for bets that exceed the fair average threshold, then applies an additional constraint requiring the best odds to be a certain distance away from the average to be considered profitable. This dual-filtering approach targets bets that are both fundamentally undervalued and anomalously priced. The modified z-score is used over the traditional z-score because it is more sensitive to outliers in a small dataset.
+
+### Random (Control)
+Randomly selects a small number of outcomes (0–5) and places bets on their best available odds, regardless of any mathematical analysis. This serves as a baseline to measure whether analytical strategies outperform chance-based betting over time.
+
 ## Results
 
 ### Profit Over Time
@@ -21,18 +32,6 @@ The following are simulations run using the null hypothesis, that the EV of each
 
 ![Chart](analysis/output/monte_carlo/monte_carlo_average.png)
 ![Chart](analysis/output/monte_carlo/monte_carlo_average_with_modified_zscore_constraint.png)
-
-## Betting Strategies
-
-### Fair Average Odds
-Calculates the vig-free (true) probability for an outcome from every bookmaker, then averages these probabilities to determine a consensus fair payout. Identifies betting opportunities where the best available odds offer higher payouts than this fair average suggests the outcome is worth.
-
-### Modified Z-Score
-Combines the fair average approach with statistical outlier detection. First filters for bets that exceed the fair average threshold, then applies an additional constraint requiring the best odds to be a certain distance away from the average to be considered profitable. This dual-filtering approach targets bets that are both fundamentally undervalued and anomalously priced. The modified z-score is used over the traditional z-score because it is more sensitive to outliers in a small dataset.
-
-### Random (Control)
-Randomly selects a small number of outcomes (0–5) and places bets on their best available odds, regardless of any mathematical analysis. This serves as a baseline to measure whether analytical strategies outperform chance-based betting over time.
-
 
 ## Data Files Types
 
