@@ -20,18 +20,24 @@ def create_average_edge_summary(df: pd.DataFrame) -> pd.DataFrame:
     """
     summary_rows = []
     for _, row in df.iterrows():
-        if pd.isna(row.get("Expected Value")) or pd.isna(row.get("Fair Odds Avg")):
+        # Do not include rows with NaN in Expected Value or Fair Odds Average
+        if pd.isna(row.get("Expected Value")) or pd.isna(row.get("Fair Odds Average")):
             continue
 
         summary_rows.append(
             {
-                "Match": row["Match"],
-                "League": row["League"],
-                "Team": row["Team"],
+                "ID": row["ID"],
+                "Sport Key": row["Sport Key"],
+                "Sport Title": row["Sport Title"],
                 "Start Time": row["Start Time"],
-                "Avg Edge Book": row["Best Bookmaker"],
-                "Avg Edge Odds": row["Best Odds"],
+                "Scrape Time": row["Scrape Time"],
+                "Match": row["Match"],
+                "Team": row["Team"],
+                "Best Bookmaker": row["Best Bookmaker"],
+                "Best Odds": row["Best Odds"],
+                "Fair Odds Average": row["Fair Odds Average"],
                 "Expected Value": row["Expected Value"],
+                "Outcomes": row["Outcomes"],
                 "Result": row["Result"],
             }
         )
@@ -50,20 +56,26 @@ def create_modified_zscore_summary(df: pd.DataFrame) -> pd.DataFrame:
     """
     summary_rows = []
     for _, row in df.iterrows():
-        if pd.isna(row.get("Modified Z Score")) or pd.isna(row.get("Expected Value")):
+        # Do not include rows with NaN in Modified Z Score or Expected Value
+        if pd.isna(row.get("Modified Z Score")) or pd.isna(row.get("Expected Value")) or pd.isna(row.get("Fair Odds Average")):
             continue
 
         summary_rows.append(
             {
-                "Match": row["Match"],
-                "League": row["League"],
-                "Team": row["Team"],
+                "ID": row["ID"],
+                "Sport Key": row["Sport Key"],
+                "Sport Title": row["Sport Title"],
                 "Start Time": row["Start Time"],
-                "Outlier Book": row["Best Bookmaker"],
-                "Outlier Odds": row["Best Odds"],
-                "Modified Z Score": row["Modified Z Score"],
+                "Scrape Time": row["Scrape Time"],
+                "Match": row["Match"],
+                "Team": row["Team"],
+                "Best Bookmaker": row["Best Bookmaker"],
+                "Best Odds": row["Best Odds"],
+                "Fair Odds Average": row["Fair Odds Average"],
                 "Expected Value": row["Expected Value"],
-                "Result": row.get("Result", "Not Found"),
+                "Modified Z Score": row["Modified Z Score"],
+                "Outcomes": row["Outcomes"],
+                "Result": row["Result"],
             }
         )
 
@@ -87,13 +99,17 @@ def create_random_summary(df: pd.DataFrame) -> pd.DataFrame:
 
         summary_rows.append(
             {
-                "Match": row["Match"],
-                "League": row["League"],
-                "Team": row["Team"],
+                "ID": row["ID"],
+                "Sport Key": row["Sport Key"],
+                "Sport Title": row["Sport Title"],
                 "Start Time": row["Start Time"],
-                "Random Bet Book": row["Best Bookmaker"],
-                "Random Bet Odds": row["Best Odds"],
-                "Result": row.get("Result", "Not Found"),
+                "Scrape Time": row["Scrape Time"],
+                "Match": row["Match"],
+                "Team": row["Team"],
+                "Best Bookmaker": row["Best Bookmaker"],
+                "Best Odds": row["Best Odds"],
+                "Outcomes": row["Outcomes"],
+                "Result": row["Result"],
             }
         )
 

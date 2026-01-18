@@ -64,4 +64,4 @@ FILE_NAMES = [
 PENDING_RESULTS = ["Not Found", "Pending", "API Error"]
 
 # Non Bookmaker Columns
-NON_BM_COLUMNS = {"ID","Sport Key","Sport Title","Start Time","Match","Team","Best Odds","Best Bookmaker","Outcomes","Result","Scrape Time"}
+NON_BM_COLUMNS = {"ID","Sport Key","Sport Title","Start Time","Scrape Time","Match","Team","Best Odds","Best Bookmaker","Outcomes","Result"}
