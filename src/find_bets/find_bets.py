@@ -23,6 +23,8 @@ from src.find_bets.summary_creation import (
 )
 from src.find_bets.data_processing import (
     process_target_odds_data,
+)
+from src.find_bets.vigfree_probabilities import (
     calculate_vigfree_probabilities,
 )
 import pandas as pd
