@@ -994,13 +994,13 @@ Tiantsoa Sarah Rajaonah @ Aryna Sabalenka,Tiantsoa Sarah Rajaonah,2026-01-18T08:
 Cameron Norrie @ Benjamin Bonzi,Cameron Norrie,2026-01-18T09:00:00Z,ATP Australian Open,1.14,1.42,,1.25,1.14,1.14,,1.25,Not Found,3.43,0.1377733276710276,1.42,FanDuel,Not Found,2,,2026-01-18T10:41:53Z
 Zhuoxuan Bai @ Anastasia Pavlyuchenkova,Anastasia Pavlyuchenkova,2026-01-18T08:56:00Z,WTA Australian Open,2.25,3.1,,2.4,2.5,2.15,,2.62,Not Found,2.99,0.1852793919033795,3.1,FanDuel,Not Found,2,,2026-01-18T11:29:14Z
 Union Berlin @ VfB Stuttgart,Union Berlin,2026-01-18T14:30:00Z,Bundesliga - Germany,16.0,11.0,,31.0,13.0,12.0,,22.5,Not Found,4.99,0.377930797961224,31.0,BetMGM,Draw,3,,2026-01-18T16:20:21Z
-Paris FC @ Nantes,Nantes,2026-01-18T16:15:00Z,Ligue 1 - France,8.5,6.5,,6.75,6.5,5.5,,8.03,Not Found,2.16,0.0581078229442282,8.5,DraftKings,Not Found,3,,2026-01-18T16:44:14Z
-Orlando Magic @ Memphis Grizzlies,Orlando Magic,2026-01-18T17:14:00Z,NBA,2.3,2.32,,2.2,2.2,2.65,1.71,2.34,Not Found,2.53,0.13277900556957,2.65,Caesars,Not Found,2,,2026-01-18T17:27:02Z
-Florida Atlantic Owls @ Temple Owls,Temple Owls,2026-01-18T17:01:34Z,NCAAB,1.43,1.38,,1.43,1.48,1.77,,1.56,Not Found,4.59,0.1364557692601173,1.77,Caesars,Not Found,2,,2026-01-18T17:52:48Z
-Everton @ Aston Villa,Everton,2026-01-18T16:30:00Z,EPL,1.2,1.22,,1.4,1.16,1.2,,1.26,Not Found,4.5,0.1076468625734305,1.4,BetMGM,Not Found,3,,2026-01-18T18:18:12Z
+Paris FC @ Nantes,Nantes,2026-01-18T16:15:00Z,Ligue 1 - France,8.5,6.5,,6.75,6.5,5.5,,8.03,Not Found,2.16,0.0581078229442282,8.5,DraftKings,Paris FC,3,,2026-01-18T16:44:14Z
+Orlando Magic @ Memphis Grizzlies,Orlando Magic,2026-01-18T17:14:00Z,NBA,2.3,2.32,,2.2,2.2,2.65,1.71,2.34,Not Found,2.53,0.13277900556957,2.65,Caesars,Memphis Grizzlies,2,,2026-01-18T17:27:02Z
+Florida Atlantic Owls @ Temple Owls,Temple Owls,2026-01-18T17:01:34Z,NCAAB,1.43,1.38,,1.43,1.48,1.77,,1.56,Not Found,4.59,0.1364557692601173,1.77,Caesars,Florida Atlantic Owls,2,,2026-01-18T17:52:48Z
+Everton @ Aston Villa,Everton,2026-01-18T16:30:00Z,EPL,1.2,1.22,,1.4,1.16,1.2,,1.26,Not Found,4.5,0.1076468625734305,1.4,BetMGM,Everton,3,,2026-01-18T18:18:12Z
 Wake Forest Demon Deacons @ Clemson Tigers,Wake Forest Demon Deacons,2026-01-18T17:02:24Z,WNCAAB,2.35,2.94,,2.35,2.9,4.2,,3.1,Not Found,3.6,0.3535303473752262,4.2,Caesars,Not Found,2,,2026-01-18T18:58:24Z
-Milwaukee Panthers @ Fort Wayne Mastodons,Milwaukee Panthers,2026-01-18T19:00:00Z,NCAAB,4.1,5.2,,3.8,4.3,3.9,,4.81,Not Found,3.24,0.0807493659761428,5.2,FanDuel,Not Found,2,,2026-01-18T19:45:22Z
-Wichita St Shockers @ South Florida Bulls,South Florida Bulls,2026-01-18T19:00:00Z,NCAAB,1.08,1.04,,1.08,1.11,1.2,,1.14,Not Found,2.31,0.055496554910348,1.2,Caesars,Not Found,2,,2026-01-18T20:21:13Z
+Milwaukee Panthers @ Fort Wayne Mastodons,Milwaukee Panthers,2026-01-18T19:00:00Z,NCAAB,4.1,5.2,,3.8,4.3,3.9,,4.81,Not Found,3.24,0.0807493659761428,5.2,FanDuel,Fort Wayne Mastodons,2,,2026-01-18T19:45:22Z
+Wichita St Shockers @ South Florida Bulls,South Florida Bulls,2026-01-18T19:00:00Z,NCAAB,1.08,1.04,,1.08,1.11,1.2,,1.14,Not Found,2.31,0.055496554910348,1.2,Caesars,Wichita St Shockers,2,,2026-01-18T20:21:13Z
 Tennessee Volunteers @ Alabama Crimson Tide,Alabama Crimson Tide,2026-01-18T19:02:00Z,WNCAAB,2.05,1.77,,2.1,1.95,3.0,,2.27,Not Found,4.09,0.3238376460628672,3.0,Caesars,Not Found,2,,2026-01-18T20:40:42Z
 Houston Texans @ New England Patriots,Houston Texans,2026-01-18T20:03:03Z,NFL,1.8,1.87,,1.91,1.95,2.2,,2.06,Not Found,2.79,0.0701210581932111,2.2,Caesars,Not Found,2,,2026-01-18T20:52:35Z
 North Texas Mean Green @ Tulane Green Wave,Tulane Green Wave,2026-01-18T22:10:00Z,NCAAB,2.3,2.44,,2.3,2.5,2.8,,2.65,Not Found,2.9,0.0570302714629158,2.8,Caesars,Not Found,2,,2026-01-18T22:52:30Z
@@ -1008,4 +1008,4 @@ Ottawa Senators @ Detroit Red Wings,Detroit Red Wings,2026-01-18T22:15:00Z,NHL,2
 Felix Auger-Aliassime @ Nuno Borges,Felix Auger-Aliassime,2026-01-19T00:00:00Z,ATP Australian Open,2.4,4.8,,2.75,2.5,3.1,,3.18,Not Found,4.19,0.509696282696681,4.8,FanDuel,Not Found,2,,2026-01-19T02:31:31Z
 Alexander Shevchenko @ Elias Ymer,Elias Ymer,2026-01-19T00:05:00Z,ATP Australian Open,2.14,3.1,,2.05,2.15,2.4,,2.48,Not Found,3.68,0.2500356577025894,3.1,FanDuel,Not Found,2,,2026-01-19T02:31:31Z
 Jordan Thompson @ Juan Manuel Cerundolo,Jordan Thompson,2026-01-19T02:30:00Z,ATP Australian Open,2.43,2.4,,2.3,2.8,2.4,,2.63,Not Found,4.15,0.0633042372159358,2.8,Fanatics,Not Found,2,,2026-01-19T04:04:10Z
-Marcos Giron @ Learner Tien,Marcos Giron,2026-01-19T03:00:00Z,ATP Australian Open,1.9,2.55,,1.98,1.95,2.15,,2.2,Not Found,3.16,0.15808416538494585,2.55,FanDuel,Not Found,2,,2026-01-19T04:59:46Z
+Marcos Giron @ Learner Tien,Marcos Giron,2026-01-19T03:00:00Z,ATP Australian Open,1.9,2.55,,1.98,1.95,2.15,,2.2,Not Found,3.16,0.1580841653849458,2.55,FanDuel,Not Found,2,,2026-01-19T04:59:46Z
