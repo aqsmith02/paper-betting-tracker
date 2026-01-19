@@ -126,12 +126,14 @@ def main():
                 new_df=minimal_summary,
                 filename=strategy.minimal_file_path,
                 score_column=strategy.score_column,
+                print_bets=True,
             )
             save_betting_data(
                 existing_df=full_existing,
                 new_df=full_summary,
                 filename=strategy.full_file_path,
                 score_column=strategy.score_column,
+                print_bets=False,
             )
 
         print("\nBetting analysis pipeline completed successfully")

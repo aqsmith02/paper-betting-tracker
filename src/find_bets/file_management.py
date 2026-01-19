@@ -121,7 +121,8 @@ def _align_column_schemas(
 
 
 def save_betting_data(
-    existing_df: pd.DataFrame, new_df: pd.DataFrame, filename: str, score_column: str
+    existing_df: pd.DataFrame, new_df: pd.DataFrame, filename: str, score_column: str, 
+    print_bets: bool = False
 ) -> None:
     """
     Save complete betting data for bets identified in filtered summary.
@@ -146,6 +147,12 @@ def save_betting_data(
 
     # Remove duplicates of new_df based on existing_df
     unique_new_df = _remove_duplicates(existing_df, filtered_new_df)
+
+    if print_bets:
+        pd.set_option('display.max_rows', None)
+        print(f"{len(unique_new_df)} bets found for {filename}:")
+        print(unique_new_df)
+        pd.reset_option('display.max_rows')
 
     # Get list of merged column schemas
     column_schema = _align_column_schemas(existing_df, unique_new_df)

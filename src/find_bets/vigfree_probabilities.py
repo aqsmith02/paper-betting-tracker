@@ -76,22 +76,19 @@ def _remove_margin_proportional_to_odds(bookmaker_odds, all_market_odds, n_outco
     
     # Calculate market margin
     margin = _calculate_market_margin(all_market_odds)
-    print(margin)
     
     # Apply formula: Fair_Odds = (n × O) / (n - M × O)
     denominator = n_outcomes - (margin * bookmaker_odds)
-    print(n_outcomes)
-    print(bookmaker_odds)
-    print(denominator)
 
     # Avoid division by zero or negative denominators
     if denominator <= 0:
         raise ValueError(
-            f"Margin removal error: non-positive denominator ({denominator}). "
+            f"Margin removal error: non-positive denominator ({denominator}).\n"
+            f"Components: n_outcomes={n_outcomes}, "
+            f"bookmaker_odds={bookmaker_odds}, margin={margin}."
         )
     
     fair_odds = (n_outcomes * bookmaker_odds) / denominator
-    
     return fair_odds
 
 
