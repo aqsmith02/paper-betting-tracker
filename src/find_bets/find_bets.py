@@ -117,7 +117,7 @@ def main():
             full_summary = strategy.full_summary_func(analyzed)
 
             if minimal_summary.empty or full_summary.empty:
-                print(f"No profitable bets found for {strategy.name}")
+                print(f"No bets found for {strategy.name}")
                 continue
 
             # Save updated data
