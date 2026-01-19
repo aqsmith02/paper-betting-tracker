@@ -1,25 +1,27 @@
 """
 find_bets.py
 
-The file fetches odds using a separate file called fetch_odds.py, then identifies profitable bets from them
-using two different strategies. The first strategy is comparing all available odds to the average fair odds of an outcome.
-The second strategy is the same as the first with an additional modified Z-score constraint. 
-A random strategy is also conducted as a control. Profitable bets are then saved into a master .csv file.
+Main pipeline for finding and saving betting opportunities. Starts by fetching odds data,
+processing it, calculating vig-free probabilities, and then applying various betting strategies.
+Profitable bets are stored, then appended to existing records.
 
 Author: Andrew Smith
 """
 
 from src.fetch_odds.fetch_odds import fetch_odds
-from src.find_bets.file_management import BetFileManager
+from src.find_bets.file_management import save_betting_data
 from src.find_bets.betting_strategies import (
-    analyze_average_edge_bets,
-    analyze_modified_zscore_outliers,
+    find_average_bets,
+    find_modified_zscore_bets,
     find_random_bets,
 )
 from src.find_bets.summary_creation import (
-    create_random_summary,
-    create_average_edge_summary,
-    create_modified_zscore_summary,
+    create_random_summary_minimal,
+    create_average_summary_minimal,
+    create_modified_zscore_summary_minimal,
+    create_random_summary_full,
+    create_average_summary_full,
+    create_modified_zscore_summary_full,
 )
 from src.find_bets.data_processing import (
     process_target_odds_data,
@@ -34,51 +36,42 @@ from dataclasses import dataclass
 @dataclass
 class BettingStrategy:
     name: str
-    nc_summary_file: str
-    nc_full_file: str
+    minimal_file_path: str
+    full_file_path: str
     score_column: str
-    summary_func: callable
     analysis_func: callable
+    minimal_summary_func: callable
+    full_summary_func: callable
 
-
-def run_betting_strategy(
-    strategy: BettingStrategy,
-    nc_df: pd.DataFrame,
-    file_manager: BetFileManager,
-) -> None:
-    """
-    Execute a complete betting strategy analysis and save results.
-
-    Args:
-        strategy (BettingStrategy): Betting strategy configuration object.
-        vigfree_data (pd.DataFrame): Betting data with vig-free probability calculations.
-        file_manager (BetFileManager): File manager for saving results.
-
-    Returns:
-        None
-    """
-    print(f"\nRunning {strategy.name} analysis...")
-
-    try:
-        # Run the NC analysis
-        nc_analysis_result = strategy.analysis_func(nc_df)
-        nc_summary = strategy.summary_func(nc_analysis_result)
-
-        if nc_summary.empty:
-            print(f"No NC profitable bets found for {strategy.name}")
-        else:
-            # Save summary (best bets only) and get the filtered data back
-            nc_filtered_summary = file_manager.save_best_bets_only(
-                nc_summary, strategy.nc_summary_file, strategy.score_column
-            )
-
-            # Save full data using the same filtered summary
-            file_manager.save_full_betting_data(
-                nc_analysis_result, nc_filtered_summary, strategy.nc_full_file
-            )
-
-    except Exception as e:
-        print(f"Error running NC {strategy.name}: {e}")
+strategies = [
+    BettingStrategy(
+        name="Average",
+        minimal_file_path="data/nc_avg_minimal.csv",
+        full_file_path="data/nc_avg_full.csv",
+        score_column="Expected Value",
+        analysis_func=find_average_bets,
+        minimal_summary_func=create_average_summary_minimal,
+        full_summary_func=create_average_summary_full,
+    ),
+    BettingStrategy(
+        name="Modified Z-Score",
+        minimal_file_path="data/nc_mod_zscore_bets.csv",
+        full_file_path="data/nc_mod_zscore_full.csv",
+        score_column="Modified Z-Score",
+        analysis_func=find_modified_zscore_bets,
+        minimal_summary_func=create_modified_zscore_summary_minimal,
+        full_summary_func=create_modified_zscore_summary_full,
+    ),
+    BettingStrategy(
+        name="Random",
+        minimal_file_path="data/nc_random_bets.csv",
+        full_file_path="data/nc_random_full.csv",
+        score_column="Best Odds",
+        analysis_func=find_random_bets,
+        minimal_summary_func=create_random_summary_minimal,
+        full_summary_func=create_random_summary_full,
+    ),
+]
 
 
 def main():
@@ -91,56 +84,46 @@ def main():
     Returns:
         None
     """
-    # Initialize file manager
-    file_manager = BetFileManager()
-
-    # Define betting strategies
-    strategies = [
-        BettingStrategy(
-            name="Average Edge",
-            nc_summary_file="master_nc_avg_bets.csv",
-            nc_full_file="master_nc_avg_full.csv",
-            score_column="Expected Value",
-            summary_func=create_average_edge_summary,
-            analysis_func=analyze_average_edge_bets,
-        ),
-        BettingStrategy(
-            name="Modified Z-Score Outliers",
-            nc_summary_file="master_nc_mod_zscore_bets.csv",
-            nc_full_file="master_nc_mod_zscore_full.csv",
-            score_column="Modified Z Score",
-            summary_func=create_modified_zscore_summary,
-            analysis_func=analyze_modified_zscore_outliers,
-        ),
-        BettingStrategy(
-            name="Random Bets",
-            nc_summary_file="master_nc_random_bets.csv",
-            nc_full_file="master_nc_random_full.csv",
-            score_column="Random Bet Odds",
-            summary_func=create_random_summary,
-            analysis_func=find_random_bets,
-        ),
-    ]
-
     # Run pipeline
     try:
-        # Step 1: Fetch and prepare data
+        # Fetch data
         raw_odds = fetch_odds()
         if raw_odds.empty:
             print("No odds data available")
             return
 
-        nc_processed_odds = process_target_odds_data(raw_odds)
+        # Process data
+        processed_odds = process_target_odds_data(raw_odds)
 
-        if nc_processed_odds.empty:
+        if processed_odds.empty:
             print("No data passed cleaning requirements")
             return
 
-        nc_df = calculate_vigfree_probabilities(nc_processed_odds)
+        # Calculate vig-free probabilities
+        vf = calculate_vigfree_probabilities(processed_odds)
 
-        # Step 2: Run each betting strategy
+        # Find profitable bets, create summaries, and save results
         for strategy in strategies:
-            run_betting_strategy(strategy, nc_df, file_manager)
+            analyzed = strategy.analysis_func(vf)
+            minimal_summary = strategy.minimal_summary_func(analyzed)
+            full_summary = strategy.full_summary_func(analyzed)
+
+            if minimal_summary.empty or full_summary.empty:
+                print(f"No profitable bets found for {strategy.name}")
+                continue
+
+            save_betting_data(
+                existing_df=pd.read_csv(strategy.minimal_file_path),
+                new_df=minimal_summary,
+                filename=strategy.minimal_file_path,
+                score_column=strategy.score_column,
+            )
+            save_betting_data(
+                existing_df=pd.read_csv(strategy.full_file_path),
+                new_df=full_summary,
+                filename=strategy.full_file_path,
+                score_column=strategy.score_column,
+            )
 
         print("\nBetting analysis pipeline completed successfully")
 

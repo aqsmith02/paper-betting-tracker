@@ -109,38 +109,7 @@ def _align_column_schemas(
     return final_columns
 
 
-def save_minimal_betting_data(
-    existing_df: pd.DataFrame, new_df: pd.DataFrame, filename: str, score_column: str
-) -> None:
-    """
-    Save minimal betting data for bets identified in filtered summary.
-
-    Args:
-        source_df (pd.DataFrame): Full DataFrame containing all betting analysis data.
-        filtered_summary_df (pd.DataFrame): Filtered summary containing only best bets.
-        filename (str): Path to save the minimal betting data.
-
-    Returns:
-        None
-    """
-    new_df = new_df.copy()
-    existing_df = existing_df.copy()
-    if new_df.empty:
-        return
-
-    # Filter new_df to only include best bets
-    filtered_new_df = _filter_best_bets_only(new_df, score_column)
-
-    # Remove duplicates of new_df based on existing_df
-    unique_new_df = _remove_duplicates(existing_df, filtered_new_df)
-
-    # Combine and save
-    combined = pd.concat([existing_df, unique_new_df], ignore_index=True)
-    combined.to_csv(filename, index=False)
-
-
-
-def save_full_betting_data(
+def save_betting_data(
     existing_df: pd.DataFrame, new_df: pd.DataFrame, filename: str, score_column: str
 ) -> None:
     """
