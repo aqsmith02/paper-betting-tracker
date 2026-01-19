@@ -1,0 +1,9 @@
+ID,Sport Key,Sport Title,Start Time,Scrape Time,Match,Team,Start Date,Best Bookmaker,Best Odds,Fair Odds Average,Expected Value,Outcomes,Result
+3cb03f5ff8d371b94e8b55c7e58b7a34,americanfootball_nfl,NFL,2026-01-18T23:40:30Z,2026-01-19T03:09:03Z,Los Angeles Rams @ Chicago Bears,Chicago Bears,,Caesars,8.5,7.89,0.0779686235926347,2.0,Not Found
+6c0dfebe98ff87b6b6582ff30c3aad11,tennis_atp_aus_open_singles,ATP Australian Open,2026-01-19T04:00:00Z,2026-01-19T03:09:03Z,Marcos Giron @ Learner Tien,Learner Tien,,Caesars,2.25,2.09,0.0775271947588628,2.0,Not Found
+3cb03f5ff8d371b94e8b55c7e58b7a34,americanfootball_nfl,NFL,2026-01-18T23:40:30Z,2026-01-19T03:15:22Z,Los Angeles Rams @ Chicago Bears,Chicago Bears,2026-01-18,Caesars,8.5,7.89,0.0779686235926347,2.0,Not Found
+573814d8025d415e7ee1a7e0a5fc14cb,tennis_wta_aus_open_singles,WTA Australian Open,2026-01-19T01:35:00Z,2026-01-19T03:18:50Z,Marina Stakusic @ Priscilla Hon,Marina Stakusic,2026-01-19,FanDuel,5.7,4.85,0.1754611946304668,2.0,Not Found
+866935fe34784b0465c7f2fd8349be9e,tennis_atp_aus_open_singles,ATP Australian Open,2026-01-19T02:30:00Z,2026-01-19T03:18:50Z,Jordan Thompson @ Juan Manuel Cerundolo,Juan Manuel Cerundolo,2026-01-19,Caesars,2.75,2.52,0.0898787276172486,2.0,Not Found
+ac3878c691b8bbdbdcc9abc5edd6e5f7,tennis_wta_aus_open_singles,WTA Australian Open,2026-01-19T02:15:00Z,2026-01-19T03:21:01Z,Francesca Jones @ Linda Klimovicova,Francesca Jones,2026-01-19,FanDuel,7.0,6.43,0.0878711156843464,2.0,Not Found
+39bff39f540b5a23d1630f96edbdefb9,tennis_atp_aus_open_singles,ATP Australian Open,2026-01-19T03:23:29Z,2026-01-19T03:21:01Z,Alejandro Davidovich Fokina @ Filip Misolic,Filip Misolic,2026-01-19,FanDuel,13.8,12.84,0.0751558358514591,2.0,Not Found
+e6912002f8fd69349b2425510251c7ad,basketball_nba,NBA,2026-01-19T02:12:00Z,2026-01-19T03:23:20Z,Portland Trail Blazers @ Sacramento Kings,Sacramento Kings,2026-01-19,FanDuel,4.5,3.89,0.1556933733365201,2.0,Not Found

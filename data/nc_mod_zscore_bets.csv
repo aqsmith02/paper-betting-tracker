@@ -1,0 +1,5 @@
+ID,Sport Key,Sport Title,Start Time,Scrape Time,Match,Team,Start Date,Best Bookmaker,Best Odds,Fair Odds Average,Expected Value,Modified Z-Score,Outcomes,Result
+573814d8025d415e7ee1a7e0a5fc14cb,tennis_wta_aus_open_singles,WTA Australian Open,2026-01-19T01:35:00Z,2026-01-19T03:15:22Z,Marina Stakusic @ Priscilla Hon,Marina Stakusic,,DraftKings,5.23,4.6,0.1376900286363905,4.15,2.0,Not Found
+866935fe34784b0465c7f2fd8349be9e,tennis_atp_aus_open_singles,ATP Australian Open,2026-01-19T02:30:00Z,2026-01-19T03:21:01Z,Jordan Thompson @ Juan Manuel Cerundolo,Juan Manuel Cerundolo,2026-01-19,Caesars,2.75,2.49,0.1059698630879386,4.63,2.0,Not Found
+39bff39f540b5a23d1630f96edbdefb9,tennis_atp_aus_open_singles,ATP Australian Open,2026-01-19T03:23:29Z,2026-01-19T03:21:01Z,Alejandro Davidovich Fokina @ Filip Misolic,Filip Misolic,2026-01-19,FanDuel,13.8,12.84,0.0751558358514591,3.37,2.0,Not Found
+6c0dfebe98ff87b6b6582ff30c3aad11,tennis_atp_aus_open_singles,ATP Australian Open,2026-01-19T03:00:00Z,2026-01-19T03:26:33Z,Marcos Giron @ Learner Tien,Marcos Giron,2026-01-19,FanDuel,2.75,2.59,0.06264743775711434,4.34,2.0,Not Found

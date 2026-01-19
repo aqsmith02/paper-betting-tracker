@@ -140,6 +140,8 @@ def create_random_summary_minimal(df: pd.DataFrame) -> pd.DataFrame:
     Returns:
         pd.DataFrame: Summary DataFrame with only random bets.
     """
+    df = df[df['Random Placed Bet'] != 0].reset_index(drop=True)
+
     # Define column order
     columns_to_keep = [
         "ID", "Sport Key", "Sport Title", "Start Time", 
@@ -164,6 +166,8 @@ def create_random_summary_full(df: pd.DataFrame) -> pd.DataFrame:
     Returns:
         pd.DataFrame: Summary DataFrame with only random bets.
     """
+    df = df[df['Random Placed Bet'] != 0].reset_index(drop=True)
+
     # Find vf columns and bookmaker columns
     vigfree_columns = [col for col in df.columns if col.startswith("Vigfree ")]
     bookmaker_columns = find_bookmaker_columns(df, vigfree_columns)

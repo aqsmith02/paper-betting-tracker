@@ -39,7 +39,7 @@ def _filter_best_bets_only(
     """
     if summary_df.empty:
         return pd.DataFrame()
-
+    
     best_bets = summary_df.sort_values(
         score_column, ascending=False
     ).drop_duplicates(subset=["Match", "Start Time"], keep="first")
@@ -61,6 +61,10 @@ def _remove_duplicates(
     Returns:
         pd.DataFrame: DataFrame containing only non-duplicate rows from new_df.
     """
+    # If no existing data, all new data is unique
+    if existing_df.empty:
+        return new_df
+
     # Add date keys
     existing_df = existing_df.copy()
     new_df = new_df.copy()
@@ -77,7 +81,8 @@ def _remove_duplicates(
     )
 
     # Keep only rows that didn't match (NaN in Exists column)
-    result = new_df[merged['Exists'].isna()]
+    # Use the merged DataFrame directly since it contains all the original new_df data
+    result = merged[merged['Exists'].isna()].drop(columns=['Exists'])
     
     return result
 
@@ -94,6 +99,12 @@ def _align_column_schemas(
     Returns:
         List[str]: Unified list of column names in proper order.
     """
+    # If either DataFrame is empty, return columns from the other
+    if existing_df.empty:
+        return list(new_df.columns)
+    if new_df.empty:
+        return list(existing_df.columns)
+    
     existing_columns = list(existing_df.columns)
     new_columns = [c for c in new_df.columns if c not in existing_df.columns]
 
@@ -125,6 +136,8 @@ def save_betting_data(
     """
     new_df = new_df.copy()
     existing_df = existing_df.copy()
+
+    # If no new data, nothing to do
     if new_df.empty:
         return
 

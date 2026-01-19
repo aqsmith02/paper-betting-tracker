@@ -69,21 +69,25 @@ def _remove_margin_proportional_to_odds(bookmaker_odds, all_market_odds, n_outco
     Returns:
         Fair odds with margin removed
     """
-    if bookmaker_odds < 0:
+    if bookmaker_odds < 1:
         raise ValueError(
-            f"Invalid odds: negative odds ({bookmaker_odds}). "
+            f"Invalid odds: less than 1 ({bookmaker_odds}). "
         )
     
     # Calculate market margin
     margin = _calculate_market_margin(all_market_odds)
+    print(margin)
     
     # Apply formula: Fair_Odds = (n × O) / (n - M × O)
     denominator = n_outcomes - (margin * bookmaker_odds)
-    
+    print(n_outcomes)
+    print(bookmaker_odds)
+    print(denominator)
+
     # Avoid division by zero or negative denominators
     if denominator <= 0:
         raise ValueError(
-            f"Margin removal error: non-positive denominator ({bookmaker_odds}). "
+            f"Margin removal error: non-positive denominator ({denominator}). "
         )
     
     fair_odds = (n_outcomes * bookmaker_odds) / denominator

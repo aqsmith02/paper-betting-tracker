@@ -64,7 +64,7 @@ FILE_NAMES = [
 PENDING_RESULTS = ["Not Found", "Pending", "API Error"]
 
 # Non Bookmaker Columns
-NON_BM_COLUMNS = {"ID","Sport Key","Sport Title","Start Time","Scrape Time","Match","Team","Best Odds","Best Bookmaker","Outcomes","Result"}
+NON_BM_COLUMNS = {"ID","Sport Key","Sport Title","Start Time","Scrape Time","Match","Team","Best Odds","Best Bookmaker","Outcomes","Result", "Fair Odds Average", "Expected Value", "Modified Z-Score", "Random Placed Bet"}
 
 # Column to add new columns before when merging DataFrames
 INSERT_BEFORE_COLUMN = "Best Bookmaker"
