@@ -102,8 +102,16 @@ def main():
         # Calculate vig-free probabilities
         vf = calculate_vigfree_probabilities(processed_odds)
 
-        # Find profitable bets, create summaries, and save results
         for strategy in strategies:
+            # Load existing data, if file not found, initialize empty DataFrame
+            try:
+                minimal_existing = pd.read_csv(strategy.minimal_file_path)
+                full_existing = pd.read_csv(strategy.full_file_path)
+            except FileNotFoundError:
+                minimal_existing = pd.DataFrame()
+                full_existing = pd.DataFrame()
+
+            # Analyze and summarize
             analyzed = strategy.analysis_func(vf)
             minimal_summary = strategy.minimal_summary_func(analyzed)
             full_summary = strategy.full_summary_func(analyzed)
@@ -112,14 +120,15 @@ def main():
                 print(f"No profitable bets found for {strategy.name}")
                 continue
 
+            # Save updated data
             save_betting_data(
-                existing_df=pd.read_csv(strategy.minimal_file_path),
+                existing_df=minimal_existing,
                 new_df=minimal_summary,
                 filename=strategy.minimal_file_path,
                 score_column=strategy.score_column,
             )
             save_betting_data(
-                existing_df=pd.read_csv(strategy.full_file_path),
+                existing_df=full_existing,
                 new_df=full_summary,
                 filename=strategy.full_file_path,
                 score_column=strategy.score_column,

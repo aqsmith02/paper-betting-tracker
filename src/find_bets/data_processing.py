@@ -93,7 +93,7 @@ def _add_metadata(
             df["Best Odds"] = None
             df["Best Bookmaker"] = None
 
-    df["Outcomes"] = df.groupby("match")["team"].transform("count")
+    df["Outcomes"] = df.groupby("Match")["Team"].transform("count")
     df["Result"] = "Not Found"
     df["Scrape Time"] = datetime.now(timezone.utc).strftime(TIMESTAMP_FORMAT)
     return df
@@ -163,7 +163,7 @@ def _all_outcomes_present_filter(df: pd.DataFrame) -> pd.DataFrame:
         pd.DataFrame: DataFrame with only rows that contain all outcomes.
     """
     df = df.copy()
-    mask = df["Outcomes"] == df.groupby("match")["team"].transform("count")
+    mask = df["Outcomes"] == df.groupby("Match")["Team"].transform("count")
     df = df[mask]
     return df
 
