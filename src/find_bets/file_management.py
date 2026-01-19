@@ -150,9 +150,11 @@ def save_betting_data(
 
     if print_bets:
         pd.set_option('display.max_rows', None)
+        print("------------------------------------------------------")
         print(f"{len(unique_new_df)} bets found for {filename}:")
-        print(unique_new_df)
+        print(f"{unique_new_df[['Match', 'Team']]}")
         pd.reset_option('display.max_rows')
+        print("------------------------------------------------------")
 
     # Get list of merged column schemas
     column_schema = _align_column_schemas(existing_df, unique_new_df)
