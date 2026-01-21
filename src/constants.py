@@ -52,9 +52,9 @@ SLEEP_DURATION = 60
 
 # File names
 FILE_NAMES = [
-    ("avg_bets.csv", "avg_full.csv"),
-    ("mod_zscore_bets.csv", "mod_zscore_full.csv"),
-    ("random_bets.csv", "random_full.csv"),
+    ("nc_avg_minimal.csv", "nc_avg_full.csv"),
+    ("nc_mod_zscore_minimal.csv", "nc_mod_zscore_full.csv"),
+    ("nc_random_minimal.csv", "nc_random_full.csv"),
 ]
 
 # Unfinished results

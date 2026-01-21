@@ -55,7 +55,7 @@ strategies = [
     ),
     BettingStrategy(
         name="Modified Z-Score",
-        minimal_file_path="data/nc_mod_zscore_bets.csv",
+        minimal_file_path="data/nc_mod_zscore_minimal.csv",
         full_file_path="data/nc_mod_zscore_full.csv",
         score_column="Modified Z-Score",
         analysis_func=find_modified_zscore_bets,
@@ -64,7 +64,7 @@ strategies = [
     ),
     BettingStrategy(
         name="Random",
-        minimal_file_path="data/nc_random_bets.csv",
+        minimal_file_path="data/nc_random_minimal.csv",
         full_file_path="data/nc_random_full.csv",
         score_column="Best Odds",
         analysis_func=find_random_bets,
