@@ -12,7 +12,7 @@ import pandas as pd
 import time
 from datetime import datetime, timedelta, timezone
 from typing import Tuple
-from src.results.theodds_results import get_finished_games_from_theodds, map_league_to_key
+from src.results.theodds_results import get_finished_games_from_theodds
 from src.results.sportsdb_results import get_finished_games_from_thesportsdb
 from src.constants import (
     PENDING_RESULTS,
@@ -21,6 +21,7 @@ from src.constants import (
     SLEEP_DURATION,
     DATA_DIR
 )
+from config.results_config import map_league_to_key
 
 
 def filter_rows_to_search(df: pd.DataFrame) -> pd.DataFrame:

@@ -55,9 +55,9 @@ SLEEP_DURATION = 60
 
 # File names
 FILE_NAMES = [
-    ("master_nc_avg_bets.csv", "master_nc_avg_full.csv"),
-    ("master_nc_mod_zscore_bets.csv", "master_nc_mod_zscore_full.csv"),
-    ("master_nc_random_bets.csv", "master_nc_random_full.csv"),
+    ("nc_avg_bets.csv", "nc_avg_full.csv"),
+    ("nc_mod_zscore_bets.csv", "nc_mod_zscore_full.csv"),
+    ("nc_random_bets.csv", "nc_random_full.csv"),
 ]
 
 # Unfinished results
@@ -68,3 +68,8 @@ NON_BM_COLUMNS = {"ID","Sport Key","Sport Title","Start Time","Scrape Time","Mat
 
 # Column to add new columns before when merging DataFrames
 INSERT_BEFORE_COLUMN = "Best Bookmaker"
+
+# TheSportsDB
+API_REQUEST_THRESHOLD_HOURS = 12
+SPORTSDB_RATE_LIMIT_BATCH = 30
+SPORTSDB_RATE_LIMIT_WAIT = 60
