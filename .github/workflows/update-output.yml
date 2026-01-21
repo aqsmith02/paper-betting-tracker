@@ -29,7 +29,8 @@ jobs:
 
     - name: Install dependencies
       run: |
-         pip install pandas matplotlib python-dateutil
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
 
     - name: Run profit charts script
       run: |
