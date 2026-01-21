@@ -1,6 +1,6 @@
 ID,Sport Key,Sport Title,Start Time,Scrape Time,Match,Team,Start Date,Best Bookmaker,Best Odds,Outcomes,Result
-518f361eaeaea773f33900482163b467,tennis_wta_aus_open_singles,WTA Australian Open,2026-01-19 03:55:29,2026-01-19T03:26:33Z,Jaqueline Cristian @ Karolina Muchova,Jaqueline Cristian,,FanDuel,5.0,2.0,Not Found
-58a64738a04be2c7c6d1be7d69051e09,basketball_nba,NBA,2026-01-19 02:42:00,2026-01-19T03:26:33Z,Toronto Raptors @ Los Angeles Lakers,Toronto Raptors,,FanDuel,3.3,2.0,Los Angeles Lakers
-39bff39f540b5a23d1630f96edbdefb9,tennis_atp_aus_open_singles,ATP Australian Open,2026-01-19 04:30:00,2026-01-19T03:49:08Z,Alejandro Davidovich Fokina @ Filip Misolic,Alejandro Davidovich Fokina,2026-01-19,DraftKings,1.03,2.0,Not Found
-a4e8ccce36990cf2c182d761d4ba6a55,soccer_portugal_primeira_liga,Primeira Liga - Portugal,2026-01-19 20:15:00,2026-01-19T20:24:45Z,Estoril @ CF Estrela,CF Estrela,2026-01-19,BetMGM,5.25,3.0,Estoril
-812e97f2b7fa0eaed8d00e5b8719f6d8,basketball_ncaab,NCAAB,2026-01-19 19:02:58,2026-01-19T20:24:45Z,Mt. St. Mary's Mountaineers @ Niagara Purple Eagles,Niagara Purple Eagles,2026-01-19,DraftKings,4.5,2.0,Mt. St. Mary's Mountaineers
+518f361eaeaea773f33900482163b467,tennis_wta_aus_open_singles,WTA Australian Open,2026-01-19T03:55:29Z,2026-01-19T03:26:33Z,Jaqueline Cristian @ Karolina Muchova,Jaqueline Cristian,,FanDuel,5.0,2.0,Not Found
+58a64738a04be2c7c6d1be7d69051e09,basketball_nba,NBA,2026-01-19T02:42:00Z,2026-01-19T03:26:33Z,Toronto Raptors @ Los Angeles Lakers,Toronto Raptors,,FanDuel,3.3,2.0,Not Found
+39bff39f540b5a23d1630f96edbdefb9,tennis_atp_aus_open_singles,ATP Australian Open,2026-01-19T04:30:00Z,2026-01-19T03:49:08Z,Alejandro Davidovich Fokina @ Filip Misolic,Alejandro Davidovich Fokina,2026-01-19,DraftKings,1.03,2.0,Not Found
+a4e8ccce36990cf2c182d761d4ba6a55,soccer_portugal_primeira_liga,Primeira Liga - Portugal,2026-01-19T20:15:00Z,2026-01-19T20:24:45Z,Estoril @ CF Estrela,CF Estrela,2026-01-19,BetMGM,5.25,3.0,Not Found
+812e97f2b7fa0eaed8d00e5b8719f6d8,basketball_ncaab,NCAAB,2026-01-19T19:02:58Z,2026-01-19T20:24:45Z,Mt. St. Mary's Mountaineers @ Niagara Purple Eagles,Niagara Purple Eagles,2026-01-19,DraftKings,4.5,2.0,Not Found
