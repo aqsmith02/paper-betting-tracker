@@ -44,9 +44,6 @@ NC_BMS = ["FanDuel", "DraftKings", "BetMGM", "Caesars", "Fanatics"]
 DATE_FORMAT = "%Y-%m-%d"
 TIMESTAMP_FORMAT = "%Y-%m-%dT%H:%M:%SZ"
 
-# Betting exchanges to exclude (they work differently than traditional bookmakers)
-EXCHANGE_BLOCKLIST = {"Smarkets", "Betfair", "Matchbook", "Betfair Sportsbook"}
-
 # How many days back in The-Odds_API to look back for results (max of 3 days)
 DAYS_CUTOFF = 3
 
@@ -55,9 +52,9 @@ SLEEP_DURATION = 60
 
 # File names
 FILE_NAMES = [
-    ("nc_avg_bets.csv", "nc_avg_full.csv"),
-    ("nc_mod_zscore_bets.csv", "nc_mod_zscore_full.csv"),
-    ("nc_random_bets.csv", "nc_random_full.csv"),
+    ("avg_bets.csv", "avg_full.csv"),
+    ("mod_zscore_bets.csv", "mod_zscore_full.csv"),
+    ("random_bets.csv", "random_full.csv"),
 ]
 
 # Unfinished results
