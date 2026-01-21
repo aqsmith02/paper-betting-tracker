@@ -1,4 +1,4 @@
-.venv/
+venv/
 __pycache__/
 config/api_config_local.py
 old_data/
