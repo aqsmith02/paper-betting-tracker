@@ -20,8 +20,10 @@ from src.constants import (
     FILE_NAMES,
     SLEEP_DURATION,
     DATA_DIR,
+    SPORT_KEY_COLUMN,
+    START_TIME_COLUMN,
+    RESULT_COLUMN,
 )
-from config.results_config import map_league_to_key
 
 
 def fetch_results_from_theodds(df: pd.DataFrame) -> pd.DataFrame:
@@ -34,9 +36,9 @@ def fetch_results_from_theodds(df: pd.DataFrame) -> pd.DataFrame:
     Returns:
         pd.DataFrame: Updated DataFrame with results fetched from The-Odds-API.
     """
-    keys = map_league_to_key(df)
+    unique_sport_keys = df[SPORT_KEY_COLUMN].unique().tolist()
 
-    for key in keys:
+    for key in unique_sport_keys:
         df = get_finished_games_from_theodds(df, key)
 
     print("Completed The-Odds-API pull")
@@ -75,16 +77,15 @@ def clean_old_pending_results(
     cutoff_time = current_time - timedelta(days=DAYS_CUTOFF)
 
     # Store original start time column
-    original_start_time = df["Start Time"].copy()
+    original_start_time = df[START_TIME_COLUMN].copy()
 
     # Convert to datetime
     df_temp = df.copy()
-    df_temp["Start Time"] = pd.to_datetime(df_temp["Start Time"])
-
+    df_temp[START_TIME_COLUMN] = pd.to_datetime(df_temp[START_TIME_COLUMN])
     # Create filter mask - keep rows that are either recent OR have valid results
     mask = ~(
-        (df_temp["Start Time"] < cutoff_time)
-        & (df_temp["Result"].isin(PENDING_RESULTS))
+        (df_temp[START_TIME_COLUMN] < cutoff_time)
+        & (df_temp[RESULT_COLUMN].isin(PENDING_RESULTS))
     )
 
     # Apply filter to both DataFrames
@@ -92,7 +93,7 @@ def clean_old_pending_results(
     filtered_full_df = full_df[mask].copy()
 
     # Restore original start time format
-    filtered_df["Start Time"] = original_start_time[mask].values
+    filtered_df[START_TIME_COLUMN] = original_start_time[mask].values
 
     removed_count = len(df) - len(filtered_df)
     print(f"Removed {removed_count} old rows with pending results")
@@ -125,7 +126,7 @@ def process_files(bet_filename: str, full_filename: str) -> None:
     bet_df = fetch_results_from_sportsdb(bet_df)
 
     # Update full DataFrame with results
-    full_df["Result"] = bet_df["Result"]
+    full_df[RESULT_COLUMN] = bet_df[RESULT_COLUMN]
 
     # Clean old pending results
     bet_df, full_df = clean_old_pending_results(bet_df, full_df)

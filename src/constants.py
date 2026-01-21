@@ -75,3 +75,8 @@ SPORTSDB_RATE_LIMIT_WAIT = 60
 
 # The-Odds-API
 DAYS_FROM_SCORE_FETCHING = 3
+SPORT_KEY_COLUMN = "Sport Key"
+
+# Column names
+START_TIME_COLUMN = "Start Time"
+RESULT_COLUMN = "Result"
