@@ -66,7 +66,12 @@ NON_BM_COLUMNS = {"ID","Sport Key","Sport Title","Start Time","Scrape Time","Mat
 # Column to add new columns before when merging DataFrames
 INSERT_BEFORE_COLUMN = "Best Bookmaker"
 
-# TheSportsDB
+# API Request Threshold Hours
 API_REQUEST_THRESHOLD_HOURS = 12
+
+# TheSportsDB
 SPORTSDB_RATE_LIMIT_BATCH = 30
 SPORTSDB_RATE_LIMIT_WAIT = 60
+
+# The-Odds-API
+DAYS_FROM_SCORE_FETCHING = 3

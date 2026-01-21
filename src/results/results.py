@@ -19,22 +19,9 @@ from src.constants import (
     DAYS_CUTOFF,
     FILE_NAMES,
     SLEEP_DURATION,
-    DATA_DIR
+    DATA_DIR,
 )
 from config.results_config import map_league_to_key
-
-
-def filter_rows_to_search(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Filter DataFrame to only include rows that need result checking.
-
-    Args:
-        df (pd.DataFrame): DataFrame containing betting data with "Result" column.
-
-    Returns:
-        pd.DataFrame: Filtered DataFrame containing only rows with pending results.
-    """
-    return df[df["Result"].isin(PENDING_RESULTS)]
 
 
 def fetch_results_from_theodds(df: pd.DataFrame) -> pd.DataFrame:
@@ -47,13 +34,7 @@ def fetch_results_from_theodds(df: pd.DataFrame) -> pd.DataFrame:
     Returns:
         pd.DataFrame: Updated DataFrame with results fetched from The-Odds-API.
     """
-    rows_to_search = filter_rows_to_search(df)
-
-    if rows_to_search.empty:
-        print("No rows need checking from The-Odds-API")
-        return df
-
-    keys = map_league_to_key(rows_to_search)
+    keys = map_league_to_key(df)
 
     for key in keys:
         df = get_finished_games_from_theodds(df, key)
@@ -96,7 +77,7 @@ def clean_old_pending_results(
     # Store original start time column
     original_start_time = df["Start Time"].copy()
 
-    # Convert to datetime (already in UTC from storage)
+    # Convert to datetime
     df_temp = df.copy()
     df_temp["Start Time"] = pd.to_datetime(df_temp["Start Time"])
 
@@ -114,8 +95,7 @@ def clean_old_pending_results(
     filtered_df["Start Time"] = original_start_time[mask].values
 
     removed_count = len(df) - len(filtered_df)
-    if removed_count > 0:
-        print(f"Removed {removed_count} old rows with pending results")
+    print(f"Removed {removed_count} old rows with pending results")
 
     return filtered_df, filtered_full_df
 

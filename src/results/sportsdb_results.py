@@ -99,19 +99,15 @@ def get_finished_games_from_thesportsdb(df: pd.DataFrame) -> pd.DataFrame:
     Returns:
         pd.DataFrame: Updated DataFrame with "Result" column populated from API calls.
     """
-    # Only loop through games that started more than API_REQUEST_THRESHOLD_HOURS hours ago
+    # Only loop through games that started more than API_REQUEST_THRESHOLD_HOURS hours ago and have pending results
     indices = _time_since_start(df, API_REQUEST_THRESHOLD_HOURS).index.tolist()
+    indices = [i for i in indices if df.at[i, "Result"] in PENDING_RESULTS]
 
     # Track API requests to respect rate limits
     fetches = 0
 
     for i in indices:
         row = df.iloc[i]
-        existing_result = row.get("Result")
-
-        # Skip rows that already have a result other than "Not Found"
-        if existing_result not in PENDING_RESULTS:
-            continue
 
         match = _format_match_for_thesportsdb(row["Match"])
         date = _start_date(row["Start Time"])

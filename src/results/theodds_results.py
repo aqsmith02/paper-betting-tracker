@@ -11,7 +11,7 @@ Date: July 2025
 import requests
 import pandas as pd
 from typing import List, Dict
-from src.constants import PENDING_RESULTS
+from src.constants import PENDING_RESULTS, API_REQUEST_THRESHOLD_HOURS, DAYS_FROM_SCORE_FETCHING
 from src.results.date_utils import _start_date, _time_since_start
 from config.api_config import THE_ODDS_API_KEY
 
@@ -29,7 +29,7 @@ def _parse_match_teams(match: str) -> List[str]:
     return [t.strip() for t in match.split("@")]
 
 
-def _get_scores_from_api(sports_key: str, days_from: int = 3) -> List[Dict]:
+def _get_scores_from_api(sports_key: str, days_from: int = DAYS_FROM_SCORE_FETCHING) -> List[Dict]:
     """
     Fetch game outcomes from The-Odds-API for the last specified number of days.
 
@@ -118,19 +118,15 @@ def get_finished_games_from_theodds(df: pd.DataFrame, sports_key: str) -> pd.Dat
     Returns:
         pd.DataFrame: Updated DataFrame with "Result" column populated from API calls.
     """
-    # Get a list of the games from the past 3 days in the specified sport
+    # Get a list of recent game scores
     scores = _get_scores_from_api(sports_key)
 
-    # Filter out games that started less than 12 hours ago
-    indices = _time_since_start(df, 12).index.tolist()
+    # Only loop through games that started more than API_REQUEST_THRESHOLD_HOURS hours ago and have pending results
+    indices = _time_since_start(df, API_REQUEST_THRESHOLD_HOURS).index.tolist()
+    indices = [i for i in indices if df.at[i, "Result"] in PENDING_RESULTS]
 
     for i in indices:
         row = df.iloc[i]
-        existing_result = row.get("Result")
-
-        # Skip rows that already have a valid result
-        if existing_result not in PENDING_RESULTS:
-            continue
 
         # Note the necessary args for the filter() function
         start_date = _start_date(row["Start Time"])
