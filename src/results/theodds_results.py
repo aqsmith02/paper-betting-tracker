@@ -10,7 +10,7 @@ Date: July 2025
 import requests
 import pandas as pd
 from typing import List, Dict
-from src.constants import PENDING_RESULTS, API_REQUEST_THRESHOLD_HOURS, DAYS_FROM_SCORE_FETCHING, SPORT_KEYS_WITH_RESULTS
+from src.constants import PENDING_RESULTS, API_REQUEST_THRESHOLD_HOURS, DAYS_FROM_SCORE_FETCHING, SPORT_KEYS_WITH_RESULTS, RESULT_COLUMN, ID_COLUMN, SPORT_KEY_COLUMN
 from src.results.date_utils import _time_since_start
 from config.api_config import THE_ODDS_API_KEY
 
@@ -48,7 +48,7 @@ def _get_pending_event_ids(df: pd.DataFrame) -> str:
     Returns:
         str: Comma-separated string of event IDs with pending results.
     """
-    pending_event_ids = df[df["Result"].isin(PENDING_RESULTS)]["Event ID"]
+    pending_event_ids = df[df[RESULT_COLUMN].isin(PENDING_RESULTS)][ID_COLUMN]
     return ",".join(pending_event_ids)
 
 
@@ -90,7 +90,7 @@ def _append_results(df: pd.DataFrame, game_dicts: List[Dict]) -> None:
         id_to_winner[game_id] = winner
     
     # Update results, fill na with existing results (e.g., "Not Found")
-    df['Result'] = df['ID'].map(id_to_winner).fillna(df['Result'])
+    df[RESULT_COLUMN] = df[ID_COLUMN].map(id_to_winner).fillna(df[RESULT_COLUMN])
 
 
 def get_finished_games_from_theodds(df: pd.DataFrame) -> pd.DataFrame:
@@ -116,7 +116,7 @@ def get_finished_games_from_theodds(df: pd.DataFrame) -> pd.DataFrame:
     event_ids = _get_pending_event_ids(filtered_df)
 
     # Group by Sport Key and combine event IDs
-    grouped = filtered_df.groupby('Sport Key')['ID'].apply(lambda x: ','.join(x)).reset_index()
+    grouped = filtered_df.groupby(SPORT_KEY_COLUMN)[ID_COLUMN].apply(lambda x: ','.join(x)).reset_index()
 
     # Loop through each sport key and fetch scores
     for sport_key, event_ids in grouped.items():

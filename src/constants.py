@@ -80,6 +80,9 @@ SPORT_KEY_COLUMN = "Sport Key"
 # Column names
 START_TIME_COLUMN = "Start Time"
 RESULT_COLUMN = "Result"
+ID_COLUMN = "ID"
+SPORT_KEY_COLUMN = "Sport Key"
+MATCH_COLUMN = "Match"
 
 # Sports with results available on The-Odds-API
 SPORT_KEYS_WITH_RESULTS = [
