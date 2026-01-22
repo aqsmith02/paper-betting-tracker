@@ -7,7 +7,7 @@ bets in a column called "Result".
 Author: Andrew Smith
 Date: July 2025
 """
-
+# https://api.the-odds-api.com/v4/sports/americanfootball_nfl/scores/?daysFrom=3&apiKey=f59d869954199512fe61d505fbf60fb8
 import requests
 import pandas as pd
 from typing import List, Dict
@@ -29,85 +29,85 @@ def _parse_match_teams(match: str) -> List[str]:
     return [t.strip() for t in match.split("@")]
 
 
-def _get_scores_from_api(sports_key: str, days_from: int = DAYS_FROM_SCORE_FETCHING) -> List[Dict]:
+def _get_scores_from_api(sports_key: str, event_ids: str, days_from: int = DAYS_FROM_SCORE_FETCHING) -> List[Dict]:
     """
-    Fetch game outcomes from The-Odds-API for the last specified number of days.
+    Fetch game outcomes from The-Odds-API for the event IDs specified.
 
     Args:
         sports_key (str): Sport key to fetch games for (maximum 3 days lookback).
+        event_ids (str): Comma-separated string of event IDs to filter the scores.
         days_from (int): Number of days back to look for completed games.
 
     Returns:
         List[Dict]: List of completed game dictionaries from the API response.
     """
-    url = f"https://api.the-odds-api.com/v4/sports/{sports_key}/scores/?daysFrom={days_from}&apiKey={THE_ODDS_API_KEY}"
-    resp = requests.get(url)
-    if resp.status_code != 200:
-        print(f"Error fetching scores from Odds API: {resp.status_code}")
+    url = f"https://api.the-odds-api.com/v4/sports/{sports_key}/scores/?daysFrom={days_from}&apiKey={THE_ODDS_API_KEY}&eventIds={event_ids}"
+    print(url)
+
+    try:
+        resp = requests.get(url)
+        return resp.json()
+    except:
+        print("Error connecting to Odds API.")
         return []
-    return resp.json()
+    
 
-
-def _filter(
-    scores: List[Dict], start_date: str, home_team: str, away_team: str
-) -> List[Dict]:
+def _get_pending_event_ids(df: pd.DataFrame) -> str:
     """
-    Filter games list to find matches with specific date and teams.
+    Get a comma-separated string of event IDs for games with pending results.
 
     Args:
-        scores (List[Dict]): List of game dictionaries from _get_scores_from_api().
-        start_date (str): Start date of the desired game in YYYY-MM-DD format.
-        home_team (str): Home team name from the desired game.
-        away_team (str): Away team name from the desired game.
+        df (pd.DataFrame): DataFrame containing betting data with "Event ID" and "Result" columns.
 
     Returns:
-        List[Dict]: List containing the game(s) matching the submitted criteria.
+        str: Comma-separated string of event IDs with pending results.
     """
-    return [
-        game
-        for game in scores
-        if _start_date(game.get("commence_time")) == start_date
-        and game.get("home_team") == home_team
-        and game.get("away_team") == away_team
-    ]
+    pending_event_ids = df[df["Result"].isin(PENDING_RESULTS)]["Event ID"]
+    return ",".join(pending_event_ids)
 
 
-def _get_winner(game: Dict) -> str:
+def _append_results(df: pd.DataFrame, game_dicts: List[Dict]) -> None:
     """
-    Determine the game result by comparing scores from a completed game.
+    Append game results from API data to the DataFrame.
 
     Args:
-        game (Dict): Game dictionary containing score and completion information.
+        df (pd.DataFrame): DataFrame containing betting data with "ID" and "Result" columns.
+        game_dicts (List[Dict]): List of game dictionaries from _get_scores_from_api().
 
     Returns:
-        str: Winning team name or "Pending" if game has not completed.
+        None: The function modifies the DataFrame in place.
     """
-    if not game.get("completed"):
-        return "Pending"
+    # Create a mapping of game ID to winner
+    id_to_winner = {}
+    
+    for game in game_dicts:
+        if not game.get('completed'):
+            continue
+        
+        game_id = game.get('id')
+        scores = game.get('scores', [])
+        
+        if len(scores) < 2:
+            continue
+        
+        # Determine winner
+        team1_score = int(scores[0]['score'])
+        team2_score = int(scores[1]['score'])
+        
+        if team1_score > team2_score:
+            winner = scores[0]['name']
+        elif team2_score > team1_score:
+            winner = scores[1]['name']
+        else:
+            winner = "Draw"
+        
+        id_to_winner[game_id] = winner
+    
+    # Update results, fill na with existing results (e.g., "Not Found")
+    df['Result'] = df['ID'].map(id_to_winner).fillna(df['Result'])
 
-    home_team = game["home_team"]
-    away_team = game["away_team"]
 
-    home_score = None
-    away_score = None
-
-    for item in game["scores"]:
-        if item["name"] == home_team:
-            home_score = int(item["score"])
-        elif item["name"] == away_team:
-            away_score = int(item["score"])
-
-    print(f"{home_team} (H) vs {away_team} (A): {home_score}-{away_score}")
-
-    if home_score > away_score:
-        return home_team
-    elif away_score > home_score:
-        return away_team
-    else:
-        return "Draw"
-
-
-def get_finished_games_from_theodds(df: pd.DataFrame, sports_key: str) -> pd.DataFrame:
+def get_finished_games_from_theodds(df: pd.DataFrame) -> pd.DataFrame:
     """
     Add game results to DataFrame by fetching data from The-Odds-API.
 
@@ -118,29 +118,18 @@ def get_finished_games_from_theodds(df: pd.DataFrame, sports_key: str) -> pd.Dat
     Returns:
         pd.DataFrame: Updated DataFrame with "Result" column populated from API calls.
     """
-    # Get a list of recent game scores
-    scores = _get_scores_from_api(sports_key)
+    # Only use games that finished more than API_REQUEST_THRESHOLD_HOURS days ago
+    filtered_df = _time_since_start(df, API_REQUEST_THRESHOLD_HOURS)
 
-    # Only loop through games that started more than API_REQUEST_THRESHOLD_HOURS hours ago and have pending results
-    indices = _time_since_start(df, API_REQUEST_THRESHOLD_HOURS).index.tolist()
-    indices = [i for i in indices if df.at[i, "Result"] in PENDING_RESULTS]
+    # Get a list of game dictionaries based on pending event IDs
+    event_ids = _get_pending_event_ids(filtered_df)
 
-    for i in indices:
-        row = df.iloc[i]
+    # Group by Sport Key and combine event IDs
+    grouped = filtered_df.groupby('Sport Key')['ID'].apply(lambda x: ','.join(x)).reset_index()
 
-        # Note the necessary args for the filter() function
-        start_date = _start_date(row["Start Time"])
-        teams = _parse_match_teams(row["Match"])
-        away_team, home_team = teams[0], teams[1]
-
-        matches = _filter(scores, start_date, home_team, away_team)
-
-        # With the scores list filtered to match the game at this row, find the result
-        if matches:
-            result = _get_winner(matches[0])
-        else:
-            result = "Not Found"
-
-        df.at[i, "Result"] = result
+    # Loop through each sport key and fetch scores
+    for sport_key, event_ids in grouped.items():
+        game_dicts = _get_scores_from_api(sport_key, event_ids)
+        _append_results(df, game_dicts)
 
     return df
