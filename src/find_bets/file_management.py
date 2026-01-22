@@ -151,7 +151,10 @@ def save_betting_data(
     if print_bets:
         pd.set_option('display.max_rows', None)
         print("----------------------------------------------------")
-        print(f"{len(unique_new_df)} bets found for {filename}:")
+        if len(unique_new_df) == 1:
+            print(f"{len(unique_new_df)} bet found for {filename}:")
+        else:
+            print(f"{len(unique_new_df)} bets found for {filename}:")
         print(f"{unique_new_df[['Match', 'Team']]}")
         pd.reset_option('display.max_rows')
         print("----------------------------------------------------")
