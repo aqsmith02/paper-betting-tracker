@@ -88,7 +88,7 @@ def main():
     try:
         print("----------------------------------------------------")
         print("Starting betting analysis pipeline")
-        print(f"\n")
+
         # Fetch data
         raw_odds = fetch_odds()
         if raw_odds.empty:
