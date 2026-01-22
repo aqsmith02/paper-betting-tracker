@@ -12,21 +12,8 @@ import requests
 import pandas as pd
 from typing import List, Dict
 from src.constants import PENDING_RESULTS, API_REQUEST_THRESHOLD_HOURS, DAYS_FROM_SCORE_FETCHING
-from src.results.date_utils import _start_date, _time_since_start
+from src.results.date_utils import _time_since_start
 from config.api_config import THE_ODDS_API_KEY
-
-
-def _parse_match_teams(match: str) -> List[str]:
-    """
-    Convert a match string to a list containing the individual teams.
-
-    Args:
-        match (str): Match string in format "Team1 @ Team2".
-
-    Returns:
-        List[str]: List containing individual team names [away_team, home_team].
-    """
-    return [t.strip() for t in match.split("@")]
 
 
 def _get_scores_from_api(sports_key: str, event_ids: str, days_from: int = DAYS_FROM_SCORE_FETCHING) -> List[Dict]:
