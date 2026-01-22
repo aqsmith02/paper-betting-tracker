@@ -2130,13 +2130,6 @@ Charlotte 49ers @ East Carolina Pirates,NCAAB,East Carolina Pirates,2026-01-18 1
 North Texas Mean Green @ Tulane Green Wave,NCAAB,Tulane Green Wave,2026-01-18 22:10:00,Caesars,2.8,0.0570302714629158,North Texas Mean Green,2026-01-18T22:52:28Z
 Ottawa Senators @ Detroit Red Wings,NHL,Detroit Red Wings,2026-01-18 22:15:00,Fanatics,3.0,0.0645503061836144,Detroit Red Wings,2026-01-18T23:12:17Z
 Los Angeles Rams @ Chicago Bears,NFL,Chicago Bears,2026-01-18 23:40:30,FanDuel,4.6,0.1635441098289395,Los Angeles Rams,2026-01-19T02:31:28Z
-Amanda Anisimova @ Simona Waltert,WTA Australian Open,Simona Waltert,2026-01-19 03:58:29,DraftKings,24.0,0.1079335603530026,Not Found,2026-01-19T04:04:08Z
-Marcos Giron @ Learner Tien,ATP Australian Open,Marcos Giron,2026-01-19 03:00:00,DraftKings,5.18,0.0628234371749896,Not Found,2026-01-19T04:04:08Z
-Jaqueline Cristian @ Karolina Muchova,WTA Australian Open,Jaqueline Cristian,2026-01-19 03:35:00,Fanatics,10.0,0.2579905559030613,Not Found,2026-01-19T05:40:24Z
-Botic van de Zandschulp @ Brandon Nakashima,ATP Australian Open,Brandon Nakashima,2026-01-19 05:00:00,FanDuel,3.0,0.1218000783875291,Not Found,2026-01-19T05:59:12Z
-Emerson Jones @ Victoria Mboko,WTA Australian Open,Emerson Jones,2026-01-19 06:05:00,FanDuel,35.0,0.0845426334329872,Not Found,2026-01-19T06:53:48Z
-Dalibor Svrcina @ Jaume Munar,ATP Australian Open,Jaume Munar,2026-01-19 06:14:00,DraftKings,1.94,0.053082120927393,Not Found,2026-01-19T06:53:48Z
-Bu Yunchaokete @ Denis Shapovalov,ATP Australian Open,Bu Yunchaokete,2026-01-19 06:11:00,DraftKings,9.2,0.1935137743835336,Not Found,2026-01-19T07:49:15Z
 Marie Bouzkova @ Renata Zarazua,WTA Australian Open,Renata Zarazua,2026-01-19 07:05:00,FanDuel,8.0,0.0769839583841833,Not Found,2026-01-19T07:49:15Z
 Rinky Hijikata @ Adrian Mannarino,ATP Australian Open,Adrian Mannarino,2026-01-19 07:10:00,FanDuel,8.0,0.0552648142752199,Not Found,2026-01-19T08:00:53Z
 Iga Swiatek @ Yue Yuan,WTA Australian Open,Yue Yuan,2026-01-19 08:17:00,FanDuel,13.0,0.1763900607713582,Not Found,2026-01-19T08:47:30Z
@@ -2208,9 +2201,9 @@ Emma Raducanu @ Anastasia Potapova,WTA Australian Open,Emma Raducanu,2026-01-21 
 Nuno Borges @ Jordan Thompson,ATP Australian Open,Jordan Thompson,2026-01-21 04:30:00,FanDuel,2.05,0.0535479334397536,Not Found,2026-01-21T04:52:53Z
 UNLV Rebels @ Utah State Aggies,NCAAB,UNLV Rebels,2026-01-21 04:17:02,DraftKings,21.0,0.2329278851750239,UNLV Rebels,2026-01-21T05:51:07Z
 Corentin Moutet @ Michael Zheng,ATP Australian Open,Michael Zheng,2026-01-21 05:02:00,Caesars,3.6,0.1919118489485608,Not Found,2026-01-21T06:18:50Z
-Ajla Tomljanovic @ Elena Gabriela Ruse,WTA Australian Open,Ajla Tomljanovic,2026-01-21 06:10:00,DraftKings,13.4,0.5145885864062472,Not Found,2026-01-21T07:38:09Z
-Alex de Minaur @ Hamad Medjedovic,ATP Australian Open,Hamad Medjedovic,2026-01-21 08:00:00,FanDuel,5.8,0.0589889317808627,Not Found,2026-01-21T08:31:09Z
-Mirra Andreeva @ Maria Sakkari,WTA Australian Open,Maria Sakkari,2026-01-21 08:11:00,FanDuel,13.0,0.4356019616692825,Not Found,2026-01-21T09:00:04Z
+Ajla Tomljanovic @ Elena Gabriela Ruse,WTA Australian Open,Ajla Tomljanovic,2026-01-21 06:10:00,DraftKings,13.4,0.5145885864062472,API Error,2026-01-21T07:38:09Z
+Alex de Minaur @ Hamad Medjedovic,ATP Australian Open,Hamad Medjedovic,2026-01-21 08:00:00,FanDuel,5.8,0.0589889317808627,API Error,2026-01-21T08:31:09Z
+Mirra Andreeva @ Maria Sakkari,WTA Australian Open,Maria Sakkari,2026-01-21 08:11:00,FanDuel,13.0,0.4356019616692825,API Error,2026-01-21T09:00:04Z
 Alycia Parks @ Karolina Muchova,WTA Australian Open,Alycia Parks,2026-01-21 07:46:00,FanDuel,3.7,0.1841715195968133,API Error,2026-01-21T09:00:04Z
 Cameron Norrie @ Emilio Nava,ATP Australian Open,Cameron Norrie,2026-01-21 06:49:00,Caesars,1.33,0.055637439431235,API Error,2026-01-21T09:41:58Z
 Alexandre Muller @ Alexander Zverev,ATP Australian Open,Alexandre Muller,2026-01-21 08:09:00,FanDuel,27.0,0.1591367513126506,API Error,2026-01-21T11:33:27Z
@@ -2226,18 +2219,18 @@ Atlanta Hawks @ Memphis Grizzlies,NBA,Atlanta Hawks,2026-01-22 01:11:00,Caesars,
 Troy Trojans @ Old Dominion Monarchs,NCAAB,Old Dominion Monarchs,2026-01-22 00:03:17,FanDuel,3.3,0.0790627008368798,Not Found,2026-01-22T01:13:37Z
 Charleston Southern Buccaneers @ Presbyterian Blue Hose,NCAAB,Presbyterian Blue Hose,2026-01-22 00:02:32,Caesars,1.38,0.0788144785236896,Not Found,2026-01-22T01:13:37Z
 Pittsburgh Panthers @ Boston College Eagles,NCAAB,Boston College Eagles,2026-01-22 00:01:35,DraftKings,2.35,0.06541653404131,Not Found,2026-01-22T01:13:37Z
-Utah Valley Wolverines @ Southern Utah Thunderbirds,NCAAB,Utah Valley Wolverines,2026-01-22T01:32:23Z,Fanatics,16.0,0.4605395230993266,Not Found,2026-01-22T03:16:50Z
-Karolina Pliskova @ Janice Tjen,WTA Australian Open,Janice Tjen,2026-01-22T01:39:00Z,DraftKings,11.4,0.2958484641842005,Not Found,2026-01-22T03:16:50Z
-Petra Marcinko @ Peyton Stearns,WTA Australian Open,Petra Marcinko,2026-01-22T01:30:00Z,FanDuel,3.9,0.1186359672398852,Not Found,2026-01-22T03:16:50Z
-Laura Siegemund @ Maddison Inglis,WTA Australian Open,Maddison Inglis,2026-01-22T02:20:00Z,FanDuel,2.55,0.0949889756572627,Not Found,2026-01-22T03:16:50Z
-Ethan Quinn @ Hubert Hurkacz,ATP Australian Open,Ethan Quinn,2026-01-22T01:55:00Z,DraftKings,2.09,0.0922161140068907,Not Found,2026-01-22T03:16:50Z
-Anaheim Ducks @ Colorado Avalanche,NHL,Colorado Avalanche,2026-01-22T02:08:50Z,Caesars,3.9,1.0872385975414116,Not Found,2026-01-22T04:29:59Z
-Philadelphia Flyers @ Utah Mammoth,NHL,Utah Mammoth,2026-01-22T02:08:22Z,FanDuel,13.0,0.925151873875657,Not Found,2026-01-22T04:29:59Z
-Taylah Preston @ Linda Noskova,WTA Australian Open,Taylah Preston,2026-01-22T02:30:00Z,Caesars,5.5,0.0870246519205827,Not Found,2026-01-22T04:29:59Z
-Juncheng Shang @ Botic van de Zandschulp,ATP Australian Open,Juncheng Shang,2026-01-22T03:34:00Z,FanDuel,1.8,0.0762611414627747,Not Found,2026-01-22T04:29:59Z
-Wu Yibing @ Eliot Spizzirri,ATP Australian Open,Wu Yibing,2026-01-22T03:45:00Z,FanDuel,5.0,0.0751680635556091,Not Found,2026-01-22T04:29:59Z
-Belinda Bencic @ Nikola Bartunkova,WTA Australian Open,Nikola Bartunkova,2026-01-22T06:40:32Z,FanDuel,11.6,0.1083971231807966,Not Found,2026-01-22T05:03:54Z
-San Diego St Aztecs @ Grand Canyon Antelopes,NCAAB,Grand Canyon Antelopes,2026-01-22T04:19:00Z,Caesars,2.65,0.0530393608829509,Not Found,2026-01-22T05:03:54Z
-Washington Capitals @ Vancouver Canucks,NHL,Washington Capitals,2026-01-22T03:08:07Z,DraftKings,15.0,0.2213236677123802,Not Found,2026-01-22T05:42:56Z
-Stan Wawrinka @ Arthur Gea,ATP Australian Open,Arthur Gea,2026-01-22T05:06:00Z,BetMGM,1.31,0.056190939096051,Not Found,2026-01-22T05:59:11Z
-Iga Swiatek @ Marie Bouzkova,WTA Australian Open,Marie Bouzkova,2026-01-22T06:05:00Z,DraftKings,24.0,0.22436609649630845,Not Found,2026-01-22T06:49:48Z
+Utah Valley Wolverines @ Southern Utah Thunderbirds,NCAAB,Utah Valley Wolverines,2026-01-22 01:32:23,Fanatics,16.0,0.4605395230993266,Not Found,2026-01-22T03:16:50Z
+Karolina Pliskova @ Janice Tjen,WTA Australian Open,Janice Tjen,2026-01-22 01:39:00,DraftKings,11.4,0.2958484641842005,Not Found,2026-01-22T03:16:50Z
+Petra Marcinko @ Peyton Stearns,WTA Australian Open,Petra Marcinko,2026-01-22 01:30:00,FanDuel,3.9,0.1186359672398852,Not Found,2026-01-22T03:16:50Z
+Laura Siegemund @ Maddison Inglis,WTA Australian Open,Maddison Inglis,2026-01-22 02:20:00,FanDuel,2.55,0.0949889756572627,Not Found,2026-01-22T03:16:50Z
+Ethan Quinn @ Hubert Hurkacz,ATP Australian Open,Ethan Quinn,2026-01-22 01:55:00,DraftKings,2.09,0.0922161140068907,Not Found,2026-01-22T03:16:50Z
+Anaheim Ducks @ Colorado Avalanche,NHL,Colorado Avalanche,2026-01-22 02:08:50,Caesars,3.9,1.0872385975414116,Not Found,2026-01-22T04:29:59Z
+Philadelphia Flyers @ Utah Mammoth,NHL,Utah Mammoth,2026-01-22 02:08:22,FanDuel,13.0,0.925151873875657,Not Found,2026-01-22T04:29:59Z
+Taylah Preston @ Linda Noskova,WTA Australian Open,Taylah Preston,2026-01-22 02:30:00,Caesars,5.5,0.0870246519205827,Not Found,2026-01-22T04:29:59Z
+Juncheng Shang @ Botic van de Zandschulp,ATP Australian Open,Juncheng Shang,2026-01-22 03:34:00,FanDuel,1.8,0.0762611414627747,Not Found,2026-01-22T04:29:59Z
+Wu Yibing @ Eliot Spizzirri,ATP Australian Open,Wu Yibing,2026-01-22 03:45:00,FanDuel,5.0,0.0751680635556091,Not Found,2026-01-22T04:29:59Z
+Belinda Bencic @ Nikola Bartunkova,WTA Australian Open,Nikola Bartunkova,2026-01-22 06:40:32,FanDuel,11.6,0.1083971231807966,Not Found,2026-01-22T05:03:54Z
+San Diego St Aztecs @ Grand Canyon Antelopes,NCAAB,Grand Canyon Antelopes,2026-01-22 04:19:00,Caesars,2.65,0.0530393608829509,Not Found,2026-01-22T05:03:54Z
+Washington Capitals @ Vancouver Canucks,NHL,Washington Capitals,2026-01-22 03:08:07,DraftKings,15.0,0.2213236677123802,Not Found,2026-01-22T05:42:56Z
+Stan Wawrinka @ Arthur Gea,ATP Australian Open,Arthur Gea,2026-01-22 05:06:00,BetMGM,1.31,0.056190939096051,Not Found,2026-01-22T05:59:11Z
+Iga Swiatek @ Marie Bouzkova,WTA Australian Open,Marie Bouzkova,2026-01-22 06:05:00,DraftKings,24.0,0.2243660964963084,Not Found,2026-01-22T06:49:48Z
