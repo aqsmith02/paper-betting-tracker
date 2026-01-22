@@ -129,7 +129,7 @@ def get_finished_games_from_thesportsdb(df: pd.DataFrame) -> pd.DataFrame:
         
         # Fetch result from API
         game_dict = _get_score_from_thesportsdb(match, date)
-        result = _process_individual_result(df, game_dict)
+        result = _process_individual_result(game_dict)
         
         # Update the original DataFrame
         df.at[idx, RESULT_COLUMN] = result
