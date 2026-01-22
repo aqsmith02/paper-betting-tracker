@@ -61,6 +61,7 @@ def clean_old_pending_results(
     filtered_df[START_TIME_COLUMN] = original_start_time[mask].values
 
     removed_count = len(df) - len(filtered_df)
+    print(f"\n")
     print(f"Removed {removed_count} old rows with pending results")
 
     return filtered_df, filtered_full_df
@@ -80,7 +81,9 @@ def process_files(bet_filename: str, full_filename: str) -> None:
     bet_file = DATA_DIR / bet_filename
     full_file = DATA_DIR / full_filename
 
-    print(f"\nProcessing {bet_filename} and {full_filename}")
+    print(f"\n")
+    print("----------------------------------------------------")
+    print(f"Processing {bet_filename} and {full_filename}")
 
     # Load data
     bet_df = pd.read_csv(bet_file)
@@ -100,6 +103,10 @@ def process_files(bet_filename: str, full_filename: str) -> None:
     bet_df.to_csv(bet_file, index=False)
     full_df.to_csv(full_file, index=False)
 
+    print(f"Done processing {bet_filename} and {full_filename}")
+    print("----------------------------------------------------")
+
+
 
 def main() -> None:
     """
@@ -111,6 +118,7 @@ def main() -> None:
     Returns:
         None
     """
+    print("----------------------------------------------------")
     print("Starting sports results pipeline")
 
     for i, (bet_filename, full_filename) in enumerate(FILE_NAMES):
@@ -128,6 +136,7 @@ def main() -> None:
             continue
 
     print("\nCompleted sports results pipeline")
+    print("----------------------------------------------------")
 
 
 if __name__ == "__main__":

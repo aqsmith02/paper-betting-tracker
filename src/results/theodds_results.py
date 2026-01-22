@@ -104,6 +104,9 @@ def get_finished_games_from_theodds(df: pd.DataFrame) -> pd.DataFrame:
     Returns:
         pd.DataFrame: Updated DataFrame with "Result" column populated from API calls.
     """
+    print(f"\n")
+    print("Started fetching results from The-Odds-API")
+
     # Only use games that finished more than API_REQUEST_THRESHOLD_HOURS days ago
     filtered_df = _time_since_start(df, API_REQUEST_THRESHOLD_HOURS)
 
