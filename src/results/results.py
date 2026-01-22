@@ -20,44 +20,9 @@ from src.constants import (
     FILE_NAMES,
     SLEEP_DURATION,
     DATA_DIR,
-    SPORT_KEY_COLUMN,
     START_TIME_COLUMN,
     RESULT_COLUMN,
 )
-
-
-def fetch_results_from_theodds(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Fetch results from The-Odds-API for all relevant leagues.
-
-    Args:
-        df (pd.DataFrame): DataFrame containing betting data with "League" and "Result" columns.
-
-    Returns:
-        pd.DataFrame: Updated DataFrame with results fetched from The-Odds-API.
-    """
-    unique_sport_keys = df[SPORT_KEY_COLUMN].unique().tolist()
-
-    for key in unique_sport_keys:
-        df = get_finished_games_from_theodds(df, key)
-
-    print("Completed The-Odds-API pull")
-    return df
-
-
-def fetch_results_from_sportsdb(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Fetch remaining results from TheSportsDB API.
-
-    Args:
-        df (pd.DataFrame): DataFrame containing betting data with pending results.
-
-    Returns:
-        pd.DataFrame: Updated DataFrame with additional results fetched from TheSportsDB API.
-    """
-    df = get_finished_games_from_thesportsdb(df)
-    print("Completed TheSportsDB pull")
-    return df
 
 
 def clean_old_pending_results(
@@ -122,8 +87,8 @@ def process_files(bet_filename: str, full_filename: str) -> None:
     full_df = pd.read_csv(full_file)
 
     # Fetch results from APIs
-    bet_df = fetch_results_from_theodds(bet_df)
-    bet_df = fetch_results_from_sportsdb(bet_df)
+    bet_df = get_finished_games_from_theodds(bet_df)
+    bet_df = get_finished_games_from_thesportsdb(bet_df)
 
     # Update full DataFrame with results
     full_df[RESULT_COLUMN] = bet_df[RESULT_COLUMN]

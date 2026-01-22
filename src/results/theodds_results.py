@@ -16,7 +16,7 @@ from src.results.date_utils import _time_since_start
 from config.api_config import THE_ODDS_API_KEY
 
 
-def _get_scores_from_api(sports_key: str, event_ids: str, days_from: int = DAYS_FROM_SCORE_FETCHING) -> List[Dict]:
+def _get_scores_from_theodds(sports_key: str, event_ids: str, days_from: int = DAYS_FROM_SCORE_FETCHING) -> List[Dict]:
     """
     Fetch game outcomes from The-Odds-API for the event IDs specified.
 
@@ -35,7 +35,7 @@ def _get_scores_from_api(sports_key: str, event_ids: str, days_from: int = DAYS_
         resp = requests.get(url)
         return resp.json()
     except:
-        print("Error connecting to Odds API.")
+        print("Error connecting to The-Odds-API.")
         return []
     
 
@@ -108,6 +108,11 @@ def get_finished_games_from_theodds(df: pd.DataFrame) -> pd.DataFrame:
     # Only use games that finished more than API_REQUEST_THRESHOLD_HOURS days ago
     filtered_df = _time_since_start(df, API_REQUEST_THRESHOLD_HOURS)
 
+    # If no games to check, return original DataFrame
+    if filtered_df.empty:
+        print("No games to check from TheSportsDB")
+        return df
+
     # Get a list of game dictionaries based on pending event IDs
     event_ids = _get_pending_event_ids(filtered_df)
 
@@ -116,7 +121,7 @@ def get_finished_games_from_theodds(df: pd.DataFrame) -> pd.DataFrame:
 
     # Loop through each sport key and fetch scores
     for sport_key, event_ids in grouped.items():
-        game_dicts = _get_scores_from_api(sport_key, event_ids)
+        game_dicts = _get_scores_from_theodds(sport_key, event_ids)
         _append_results(df, game_dicts)
 
     return df
