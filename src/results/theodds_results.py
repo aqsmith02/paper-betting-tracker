@@ -7,11 +7,10 @@ bets in a column called "Result".
 Author: Andrew Smith
 Date: July 2025
 """
-# https://api.the-odds-api.com/v4/sports/americanfootball_nfl/scores/?daysFrom=3&apiKey=f59d869954199512fe61d505fbf60fb8
 import requests
 import pandas as pd
 from typing import List, Dict
-from src.constants import PENDING_RESULTS, API_REQUEST_THRESHOLD_HOURS, DAYS_FROM_SCORE_FETCHING
+from src.constants import PENDING_RESULTS, API_REQUEST_THRESHOLD_HOURS, DAYS_FROM_SCORE_FETCHING, SPORT_KEYS_WITH_RESULTS
 from src.results.date_utils import _time_since_start
 from config.api_config import THE_ODDS_API_KEY
 
@@ -121,6 +120,8 @@ def get_finished_games_from_theodds(df: pd.DataFrame) -> pd.DataFrame:
 
     # Loop through each sport key and fetch scores
     for sport_key, event_ids in grouped.items():
+        if sport_key not in SPORT_KEYS_WITH_RESULTS:
+            continue
         game_dicts = _get_scores_from_theodds(sport_key, event_ids)
         _append_results(df, game_dicts)
 
