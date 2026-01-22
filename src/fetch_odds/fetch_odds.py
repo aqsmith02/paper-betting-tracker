@@ -32,7 +32,7 @@ def fetch_odds() -> pd.DataFrame:
         "markets": MARKETS,
         "oddsFormat": ODDS_FORMAT,
     }
-
+    print("----------------------------------------------------")
     print(f"Fetching odds for sport: {SPORT}")
     
     try:

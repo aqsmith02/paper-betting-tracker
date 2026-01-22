@@ -86,6 +86,9 @@ def main():
     """
     # Run pipeline
     try:
+        print("----------------------------------------------------")
+        print("Starting betting analysis pipeline")
+        print(f"\n")
         # Fetch data
         raw_odds = fetch_odds()
         if raw_odds.empty:
@@ -117,7 +120,9 @@ def main():
             full_summary = strategy.full_summary_func(analyzed)
 
             if minimal_summary.empty or full_summary.empty:
+                print("----------------------------------------------------")
                 print(f"No bets found for {strategy.name}")
+                print("----------------------------------------------------")
                 continue
 
             # Save updated data
@@ -136,7 +141,8 @@ def main():
                 print_bets=False,
             )
 
-        print("\nBetting analysis pipeline completed successfully")
+        print("----------------------------------------------------")
+        print("Completed betting analysis pipeline")
 
     except Exception as e:
         print(f"Betting pipeline failed with error: {e}")
