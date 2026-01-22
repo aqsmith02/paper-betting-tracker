@@ -132,6 +132,7 @@ def main() -> None:
 
         except Exception as e:
             print(f"Failed to process {bet_filename}: {e}")
+            print("----------------------------------------------------")
             # Continue with next file pair instead of stopping entire pipeline
             continue
 

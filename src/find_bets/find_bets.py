@@ -141,11 +141,12 @@ def main():
                 print_bets=False,
             )
 
-        print("----------------------------------------------------")
         print("Completed betting analysis pipeline")
+        print("----------------------------------------------------")
 
     except Exception as e:
         print(f"Betting pipeline failed with error: {e}")
+        print("----------------------------------------------------")
         raise
 
 
