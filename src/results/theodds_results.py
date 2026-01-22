@@ -125,4 +125,5 @@ def get_finished_games_from_theodds(df: pd.DataFrame) -> pd.DataFrame:
         game_dicts = _get_scores_from_theodds(sport_key, event_ids)
         _append_results(df, game_dicts)
 
+    print("Finished fetching results from The-Odds-API")
     return df

@@ -140,4 +140,5 @@ def get_finished_games_from_thesportsdb(df: pd.DataFrame) -> pd.DataFrame:
             print(f"\nPausing for {SPORTSDB_RATE_LIMIT_WAIT} seconds to respect SportsDB API rate limits...\n")
             time.sleep(SPORTSDB_RATE_LIMIT_WAIT)
 
+    print("Finished fetching results from TheSportsDB")
     return df
