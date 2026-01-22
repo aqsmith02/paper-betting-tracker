@@ -81,7 +81,6 @@ def process_files(bet_filename: str, full_filename: str) -> None:
     bet_file = DATA_DIR / bet_filename
     full_file = DATA_DIR / full_filename
 
-    print(f"\n")
     print("----------------------------------------------------")
     print(f"Processing {bet_filename} and {full_filename}")
 
@@ -136,7 +135,7 @@ def main() -> None:
             # Continue with next file pair instead of stopping entire pipeline
             continue
 
-    print("\nCompleted sports results pipeline")
+    print("Completed sports results pipeline")
     print("----------------------------------------------------")
 
 
