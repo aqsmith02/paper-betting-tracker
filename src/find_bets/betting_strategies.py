@@ -10,48 +10,34 @@ from typing import List
 import pandas as pd
 from src.constants import (
     EV_THRESHOLD,
-    MAX_MISSING_VF_PCT,
     Z_SCORE_THRESHOLD,
     MAX_Z_SCORE,
 )
-from src.find_bets.data_processing import _find_bookmaker_columns
+from src.find_bets.data_processing import find_bookmaker_columns
 import random
 
 
-def _missing_vigfree_odds_pct(
-    row: pd.Series, bookmaker_columns: List[str], max_missing: float
-) -> bool:
+def _missing_vigfree_odds(row: pd.Series, bookmaker_columns: List[str]) -> bool:
     """
-    Check if row has too many bookmakers with odds but no vig-free probability (then average of vf
-    probabilities is not representative of all odds).
+    Check if row has any bookmakers with odds but no vig-free probability.
 
     Args:
         row (pd.Series): Single row to check.
         bookmaker_columns (List[str]): List of bookmaker column names.
-        max_missing (int): Maximum number of missing vig-free odds allowed.
 
     Returns:
-        bool: True if missing vig-free count is within limit, False otherwise.
+        bool: True if all bookmakers with odds have vig-free probabilities, False if any are missing.
     """
-    missing_vigfree_count = 0
-    total_odds_count = 0
-
     for bookmaker in bookmaker_columns:
         if pd.notna(row[bookmaker]):  # Has odds
-            total_odds_count += 1
             vigfree_col = f"Vigfree {bookmaker}"
-            if vigfree_col in row and pd.isna(
-                row[vigfree_col]
-            ):  # Missing vig-free odds
-                missing_vigfree_count += 1
-
-    if missing_vigfree_count/total_odds_count > max_missing:
-        return False
-    else:
-        return True
+            if vigfree_col in row and pd.isna(row[vigfree_col]):  # Missing vig-free odds
+                return True
+    
+    return False
 
 
-def analyze_average_edge_bets(df: pd.DataFrame) -> pd.DataFrame:
+def find_average_bets(df: pd.DataFrame) -> pd.DataFrame:
     """
     Find bets where best odds exceed average fair odds by threshold.
 
@@ -63,16 +49,14 @@ def analyze_average_edge_bets(df: pd.DataFrame) -> pd.DataFrame:
     """
     df = df.copy()
     vigfree_columns = [col for col in df.columns if col.startswith("Vigfree ")]
-    bookmaker_columns = _find_bookmaker_columns(df, vigfree_columns)
+    bookmaker_columns = find_bookmaker_columns(df, vigfree_columns)
 
     ev_list = []
     fair_odds_averages = []
 
     for _, row in df.iterrows():
         # Check if row has sufficient vig-free data
-        if not _missing_vigfree_odds_pct(
-            row, bookmaker_columns, MAX_MISSING_VF_PCT
-        ):
+        if _missing_vigfree_odds(row, bookmaker_columns):
             ev_list.append(None)
             fair_odds_averages.append(None)
             continue
@@ -82,9 +66,12 @@ def analyze_average_edge_bets(df: pd.DataFrame) -> pd.DataFrame:
         fair_odds = 1 / average_probability
         fair_odds_averages.append(round(fair_odds, 2))
 
-        # Calculate edge percentage
+        # Validate average probability
+        if average_probability <= 0 or average_probability >= 1:
+            raise ValueError("Average probability out of bounds for EV calculation.")
+
+        # Calculate EV
         best_odds = row["Best Odds"]
-        average_probability = max(min(average_probability, 0.9999), 0.0001)  # Clamp between 0.01% and 99.99%
         ev = (average_probability * (best_odds - 1)) - ((1 - average_probability) * 1)
 
         if ev > EV_THRESHOLD:
@@ -92,12 +79,12 @@ def analyze_average_edge_bets(df: pd.DataFrame) -> pd.DataFrame:
         else:
             ev_list.append(None)
 
-    df["Fair Odds Avg"] = fair_odds_averages
+    df["Fair Odds Average"] = fair_odds_averages
     df["Expected Value"] = ev_list
     return df
 
 
-def analyze_modified_zscore_outliers(df: pd.DataFrame) -> pd.DataFrame:
+def find_modified_zscore_bets(df: pd.DataFrame) -> pd.DataFrame:
     """
     Find bets where best odds are outliers using Modified Z-score (more robust to outliers) and
     average edge.
@@ -109,11 +96,11 @@ def analyze_modified_zscore_outliers(df: pd.DataFrame) -> pd.DataFrame:
         pd.DataFrame: DataFrame with additional Modified Z-score column and average edge columns.
     """
     df = df.copy()
-    df = analyze_average_edge_bets(df)
+    df = find_average_bets(df)
 
     vigfree_columns = [col for col in df.columns if col.startswith("Vigfree ")]
-    cols_to_exclude = vigfree_columns + ["Fair Odds Avg", "Avg Edge Pct"]
-    bookmaker_columns = _find_bookmaker_columns(df, cols_to_exclude)
+    cols_to_exclude = vigfree_columns + ["Fair Odds Average", "Expected Value"]
+    bookmaker_columns = find_bookmaker_columns(df, cols_to_exclude)
     modified_z_scores = []
 
     for _, row in df.iterrows():
@@ -135,7 +122,7 @@ def analyze_modified_zscore_outliers(df: pd.DataFrame) -> pd.DataFrame:
         else:
             modified_z_scores.append(None)
 
-    df["Modified Z Score"] = modified_z_scores
+    df["Modified Z-Score"] = modified_z_scores
     return df
 
 

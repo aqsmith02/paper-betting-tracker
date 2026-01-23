@@ -11,7 +11,6 @@ Date: July 2025
 
 import requests
 import pandas as pd
-import json
 from typing import List, Dict
 from config.fetch_config import SPORT, SPORT_KEY, REGIONS, MARKETS, ODDS_FORMAT
 from config.api_config import THE_ODDS_API_KEY
@@ -33,7 +32,7 @@ def fetch_odds() -> pd.DataFrame:
         "markets": MARKETS,
         "oddsFormat": ODDS_FORMAT,
     }
-
+    print("----------------------------------------------------")
     print(f"Fetching odds for sport: {SPORT}")
     
     try:
@@ -51,7 +50,6 @@ def fetch_odds() -> pd.DataFrame:
         return pd.DataFrame()
 
     games_data = response.json()
-    print(json.dumps(games_data, indent=2))
     print(f"Retrieved {len(games_data)} games")
 
     # Process each game into rows
@@ -77,35 +75,32 @@ def _process_game(game: Dict) -> List[Dict]:
     Returns:
         List[Dict]: List of dictionaries, where each dictionary is an outcome.
     """
+    id = game["id"]
+    sport_key = game["sport_key"]
+    sport_title = game["sport_title"]
+    start_time = game["commence_time"]
     home_team = game["home_team"]
     away_team = game["away_team"]
-    league = game["sport_title"]
-    start_time = game["commence_time"]  # Use UTC time directly
     bm_dicts = _create_bm_dict_list(game)
     rows = []
 
-    # (Assuming all bookmakers offer odds for the same outcomes)
-    # Get the list of outcomes from the first bookmaker
-    if not bm_dicts:
-        outcomes_list = []
-    else:
-        first_bm_name = list(bm_dicts[0].keys())[0]
-        outcomes_list = list(bm_dicts[0][first_bm_name].keys())
+    outcomes_list = _get_outcomes_list(bm_dicts)
 
     # Create a row for each outcome including match data and all bookmakers
     for outcome_team in outcomes_list:
         row = {
-            "match": f"{away_team} @ {home_team}",
-            "league": league,
-            "start_time": start_time,
-            "team": outcome_team,
+            "ID": id,
+            "Sport Key": sport_key,
+            "Sport Title": sport_title,
+            "Start Time": start_time,
+            "Match": f"{away_team} @ {home_team}",
+            "Team": outcome_team,
         }
 
         # Add each bookmaker's odds for this outcome
         for bm in bm_dicts:
             for bm_name, odds_dict in bm.items():
                 row[bm_name] = odds_dict.get(outcome_team, None)  # None if outcome not found
-
 
         rows.append(row)
 
@@ -148,6 +143,37 @@ def _create_bm_dict_list(game: Dict) -> List[Dict]:
         bm_dicts_list.append(bm_dict)
 
     return bm_dicts_list
+
+
+def _get_outcomes_list(bm_dicts: List[Dict]) -> List[str]:
+    """
+    Extract the list of outcome names from bookmaker dictionaries.
+    
+    Assumes all bookmakers offer odds for the same outcomes and uses the first
+    bookmaker to determine what outcomes are available.
+    
+    Args:
+        bm_dicts: List of bookmaker dictionaries, each mapping bookmaker name
+                  to outcome odds (e.g., [{"DraftKings": {"TeamA": 2.10, "TeamB": 1.85}}])
+    
+    Returns:
+        List of outcome names (e.g., ["TeamA", "TeamB"]).
+        Returns empty list if no bookmakers available.
+    
+    Examples:
+        >>> bm_dicts = [{"DraftKings": {"TeamA": 2.10, "TeamB": 1.85}}]
+        >>> _get_outcomes_list(bm_dicts)
+        ["TeamA", "TeamB"]
+        
+        >>> _get_outcomes_list([])
+        []
+    """
+    if not bm_dicts:
+        return []
+    
+    # Get first bookmaker's name and extract its outcome names
+    first_bm_name = list(bm_dicts[0].keys())[0]
+    return list(bm_dicts[0][first_bm_name].keys())
 
 
 def main() -> None:

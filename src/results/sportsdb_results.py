@@ -11,24 +11,10 @@ Date: July 2025
 import requests
 import pandas as pd
 import time
-from datetime import datetime, timedelta, timezone
-from typing import Any
-from src.constants import PENDING_RESULTS
+from typing import List, Dict
+from src.constants import PENDING_RESULTS, API_REQUEST_THRESHOLD_HOURS, SPORTSDB_RATE_LIMIT_BATCH, SPORTSDB_RATE_LIMIT_WAIT, RESULT_COLUMN, START_TIME_COLUMN, MATCH_COLUMN
+from src.results.date_utils import _start_date, _time_since_start
 from config.api_config import THE_SPORTS_DB_API_KEY
-
-
-def _start_date(ts: Any) -> str:
-    """
-    Convert a timestamp / datetime-like / ISO string to "YYYY-MM-DD".
-
-    Args:
-        ts (Any): Timestamp to convert to date (UTC).
-
-    Returns:
-        str: Date string in YYYY-MM-DD format.
-    """
-    dt = pd.to_datetime(ts)
-    return dt.strftime("%Y-%m-%d")
 
 
 def _format_match_for_thesportsdb(match: str) -> str:
@@ -51,89 +37,64 @@ def _format_match_for_thesportsdb(match: str) -> str:
     return formatted.replace(" ", "_")
 
 
-def _time_since_start(df: pd.DataFrame, thresh: float) -> pd.DataFrame:
+def _get_score_from_thesportsdb(match: str, date: str) -> List[Dict]:
     """
-    Filter out games that started less than threshold hours ago.
-
-    Args:
-        df (pd.DataFrame): DataFrame containing game data with "Start Time" column.
-        thresh (float): Threshold in hours - games starting less than this many hours ago are filtered out.
-
-    Returns:
-        pd.DataFrame: Filtered DataFrame containing only games that started more than thresh hours ago.
-    """
-    # Handle empty DataFrame
-    if df.empty:
-        return df
-    
-    # Get the current time in UTC
-    current_time = datetime.now(timezone.utc)
-
-    # Convert "Start Time" column to datetime objects and make timezone-aware (UTC)
-    # Use format='ISO8601' to handle both ISO format strings and other formats
-    df["Start Time"] = pd.to_datetime(df["Start Time"], format='ISO8601', utc=True)
-
-    # Create conditions for removal
-    cutoff = current_time - timedelta(hours=thresh)
-
-    # Filter out games that started less than threshold hours ago
-    mask = df["Start Time"] <= cutoff
-    df = df[mask]
-
-    return df
-
-
-def _get_results(match: str, date: str) -> str:
-    """
-    Fetch the results of a game from TheSportsDB API.
+    Fetch game outcome from TheSportsDB for the event specified.
 
     Args:
         match (str): Formatted match name for API query.
         date (str): Date of the match in YYYY-MM-DD format.
 
     Returns:
-        str: Game outcome - winning team name, "Draw", "Pending", "Not Found", or "API Error".
+        List[Dict]: List of completed game dictionaries from the API response.
     """
     url = f"https://www.thesportsdb.com/api/v1/json/{THE_SPORTS_DB_API_KEY}/searchevents.php?e={match}&d={date}"
+
     try:
-        # Request url
         resp = requests.get(url)
-        if resp.status_code != 200:
-            return "API Error"
+        return resp.json()
+    except:
+        print("Error connecting to TheSportsDB API.")
+        return []
+    
 
-        # Store data and check if it does not exist
-        data = resp.json()
-        if not data or "event" not in data or not data["event"]:
-            return "Not Found"
+def _process_individual_result(game_dict: List[Dict]) -> None:
+    """
+    Append game result from API data to the DataFrame.
 
-        # Store event
-        event = data["event"][0]
+    Args:
+        game_dicts (List[Dict]): List of game dictionaries from _get_scores_from_api().
 
-        # Store teams
-        home = event.get("strHomeTeam", "Home")
-        away = event.get("strAwayTeam", "Away")
+    Returns:
+        None: The function modifies the DataFrame in place.
+    """
+    if game_dict is None or "event" not in game_dict or not game_dict["event"]:
+        return "Not Found"
+    
+    # Store event
+    event = game_dict["event"][0]
 
-        # Store scores
-        home_score = event.get("intHomeScore")
-        away_score = event.get("intAwayScore")
+    # Store teams
+    home = event.get("strHomeTeam", "Home")
+    away = event.get("strAwayTeam", "Away")
 
-        print(f"{home} (H) vs {away} (A): {home_score}-{away_score}")
+    # Store scores
+    home_score = event.get("intHomeScore")
+    away_score = event.get("intAwayScore")
 
-        if home_score is None or away_score is None:
-            return "Pending"
+    print(f"{home} (H) vs {away} (A): {home_score}-{away_score}")
 
-        # Results
-        home_score, away_score = int(home_score), int(away_score)
-        if home_score > away_score:
-            return home
-        elif away_score > home_score:
-            return away
-        else:
-            return "Draw"
+    if home_score is None or away_score is None:
+        return "Pending"
 
-    except Exception as e:
-        print(f"Error fetching match: {e}")
-        return "Error"
+    # Results
+    home_score, away_score = int(home_score), int(away_score)
+    if home_score > away_score:
+        return home
+    elif away_score > home_score:
+        return away
+    else:
+        return "Draw"
 
 
 def get_finished_games_from_thesportsdb(df: pd.DataFrame) -> pd.DataFrame:
@@ -146,29 +107,41 @@ def get_finished_games_from_thesportsdb(df: pd.DataFrame) -> pd.DataFrame:
     Returns:
         pd.DataFrame: Updated DataFrame with "Result" column populated from API calls.
     """
-    # Only loop through games that started more than 12 hours ago
-    indices = _time_since_start(df, 12).index.tolist()
+    print(f"\n")
+    print("Started fetching results from TheSportsDB")
+
+    # Only use games that finished more than API_REQUEST_THRESHOLD_HOURS days ago and result is pending
+    filtered_df = _time_since_start(df, API_REQUEST_THRESHOLD_HOURS)
+    filtered_df = filtered_df[filtered_df[RESULT_COLUMN].isin(PENDING_RESULTS)]
+
+    # If no games to check, return original DataFrame
+    if filtered_df.empty:
+        print("No games to check from TheSportsDB")
+        return df
 
     # Track API requests to respect rate limits
     fetches = 0
 
-    for i in indices:
-        row = df.iloc[i]
-        existing_result = row.get("Result")
-
-        # Skip rows that already have a result other than "Not Found"
-        if existing_result not in PENDING_RESULTS:
-            continue
-
-        match = _format_match_for_thesportsdb(row["Match"])
-        date = _start_date(row["Start Time"])
-        result = _get_results(match, date)
+    # Loop through filtered games and fetch results
+    for idx in filtered_df.index:
+        row = df.loc[idx]
+        
+        # Format match and get date
+        match = _format_match_for_thesportsdb(row[MATCH_COLUMN])
+        date = _start_date(row[START_TIME_COLUMN])
+        
+        # Fetch result from API
+        game_dict = _get_score_from_thesportsdb(match, date)
+        result = _process_individual_result(game_dict)
+        
+        # Update the original DataFrame
+        df.at[idx, RESULT_COLUMN] = result
         fetches += 1
-        df.at[i, "Result"] = result
 
-        if fetches % 30 == 0:
-            # Every 30 requests, wait 60 seconds
-            print("\nPausing for 60 seconds to respect SportsDB API rate limits...\n")
-            time.sleep(60)
+        # Rate limiting: pause every SPORTSDB_RATE_LIMIT_BATCH requests
+        if fetches % SPORTSDB_RATE_LIMIT_BATCH == 0:
+            print(f"\nPausing for {SPORTSDB_RATE_LIMIT_WAIT} seconds to respect SportsDB API rate limits...\n")
+            time.sleep(SPORTSDB_RATE_LIMIT_WAIT)
 
+    print("Finished fetching results from TheSportsDB")
     return df

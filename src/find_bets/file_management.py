@@ -6,12 +6,9 @@ Logic for appending bet summaries to existing bet .csv files.
 Author: Andrew Smith
 """
 
-from src.constants import DATE_FORMAT, TIMESTAMP_FORMAT, DATA_DIR
-from typing import Any, Optional, List, Dict
+from src.constants import DATE_FORMAT, INSERT_BEFORE_COLUMN
+from typing import Any, List
 import pandas as pd
-from datetime import datetime, timezone
-import numpy as np
-from pathlib import Path
 
 
 def _start_date_from_timestamp(timestamp: Any) -> str:
@@ -27,214 +24,148 @@ def _start_date_from_timestamp(timestamp: Any) -> str:
     return pd.to_datetime(timestamp).strftime(DATE_FORMAT)
 
 
-class BetFileManager:
+def _filter_best_bets_only(
+    summary_df: pd.DataFrame, score_column: str
+) -> pd.DataFrame:
     """
-    Manages CSV file operations for betting data.
+    Save only the best bet per match (highest scoring bet).
+
+    Args:
+        summary_df (pd.DataFrame): Summary DataFrame containing all potential bets.
+        score_column (str): Column name to use for sorting bet values.
+
+    Returns:
+        pd.DataFrame: Filtered DataFrame containing only the best bet per match.
     """
+    if summary_df.empty:
+        return pd.DataFrame()
+    
+    best_bets = summary_df.sort_values(
+        score_column, ascending=False
+    ).drop_duplicates(subset=["Match", "Start Time"], keep="first")
 
-    # Central lookup table for both strategy columns
-    STRATEGY_INFO: Dict[str, Dict[str, List[str]]] = {
-        "master_nc_avg": {
-            "strategy": ["Expected Value", "Fair Odds Avg"],
-        },
-        "master_nc_mod_zscore": {
-            "strategy": ["Modified Z Score", "Expected Value"],
-        },
-        "master_nc_pin": {
-            "strategy": ["Pinnacle Fair Odds", "Expected Value"],
-        },
-        "master_nc_zscore": {
-            "strategy": ["Z Score", "Expected Value"],
-        },
-        "master_nc_random": {
-            "strategy": ["Random Bet Odds"],
-        },
-    }
+    return best_bets
 
-    def __init__(self, data_directory: Path = DATA_DIR):
-        """
-        Initialize BetFileManager with specified data directory.
 
-        Args:
-            data_directory (Path): Directory path for storing betting data files.
+def _remove_duplicates(
+    existing_df: pd.DataFrame, new_df: pd.DataFrame
+) -> pd.DataFrame:
+    """
+    Identify non-duplicate rows in new DataFrame based on (Match, Start Date) key.
+    Use Start Date to avoid issues with exact timestamp mismatches from API.
 
-        Returns:
-            None
-        """
-        self.data_dir = Path(data_directory)
-        self.data_dir.mkdir(parents=True, exist_ok=True)
+    Args:
+        existing_df (pd.DataFrame): Existing data from file.
+        new_df (pd.DataFrame): New data to be added.
 
-    def _get_columns(
-        self, filename: str, col_type: str = "strategy"
-    ) -> Optional[List[str]]:
-        """
-        Generalized column lookup for strategy or scoring columns.
+    Returns:
+        pd.DataFrame: DataFrame containing only non-duplicate rows from new_df.
+    """
+    # If no existing data, all new data is unique
+    if existing_df.empty:
+        return new_df
 
-        Args:
-            filename (str): Name of the strategy file.
-            col_type (str): Either 'strategy' or 'scoring'.
+    # Add date keys
+    existing_df = existing_df.copy()
+    new_df = new_df.copy()
+    
+    existing_df['Start Date'] = existing_df['Start Time'].apply(_start_date_from_timestamp)
+    new_df['Start Date'] = new_df['Start Time'].apply(_start_date_from_timestamp)
+    
+    # Use merge to find duplicates (more efficient than set lookups)
+    existing_df['Exists'] = True
+    merged = new_df.merge(
+        existing_df[['Match', 'Start Date', 'Exists']],
+        on=['Match', 'Start Date'],
+        how='left'
+    )
 
-        Returns:
-            Optional[List[str]]: Matching column names, or None if not found.
-        """
-        name = Path(filename).stem  # e.g., "master_avg_full"
-        # strip known suffixes
-        for suffix in ("_full", "_bets"):
-            if name.endswith(suffix):
-                name = name.replace(suffix, "")
-                break
+    # Keep only rows that didn't match (NaN in Exists column)
+    # Use the merged DataFrame directly since it contains all the original new_df data
+    result = merged[merged['Exists'].isna()].drop(columns=['Exists'])
+    
+    return result
 
-        return self.STRATEGY_INFO.get(name, {}).get(col_type)
 
-    def _append_unique_bets(self, new_data: pd.DataFrame, filename: str) -> None:
-        """
-        Append new betting data, avoiding duplicates based on (Match, Date) key.
+def _align_column_schemas(
+    existing_df: pd.DataFrame, new_df: pd.DataFrame) -> List[str]:
+    """
+    Create unified column schema for existing and new data.
 
-        Args:
-            new_data (pd.DataFrame): New betting data to append.
-            filename (str): Name of the CSV file to update.
+    Args:
+        existing_df (pd.DataFrame): Existing data from file.
+        new_df (pd.DataFrame): New data to be added.
 
-        Returns:
-            None
-        """
-        # Handle empty data
-        if new_data.empty:
-            print(f"No data to append to {filename}")
-            return
+    Returns:
+        List[str]: Unified list of column names in proper order.
+    """
+    # If either DataFrame is empty, return columns from the other
+    if existing_df.empty:
+        return list(new_df.columns)
+    if new_df.empty:
+        return list(existing_df.columns)
+    
+    existing_columns = list(existing_df.columns)
+    new_columns = [c for c in new_df.columns if c not in existing_df.columns]
 
-        new_data = new_data.copy()
-        # Append Scrape Time column for bets
-        new_data["Scrape Time"] = datetime.now(timezone.utc).strftime(TIMESTAMP_FORMAT)
+    insert_before = INSERT_BEFORE_COLUMN
+    idx = existing_columns.index(insert_before)
 
-        # Check if data file exists, if not, create it
-        full_path = self.data_dir / filename
-        if not full_path.exists():
-            new_data.to_csv(full_path, index=False)
-            print(f"Created {filename} with {len(new_data)} rows")
-            return
+    final_columns = (
+        existing_columns[:idx]
+        + new_columns
+        + existing_columns[idx:]
+    )
 
-        # Align column schemas
-        existing_data = pd.read_csv(full_path)
-        all_columns = self._align_column_schemas(existing_data, new_data, filename)
-        existing_data = existing_data.reindex(columns=all_columns, fill_value=np.nan)
-        new_data = new_data.reindex(columns=all_columns, fill_value=np.nan)
+    return final_columns
 
-        # Create existing keys to find non-duplicate bets
-        existing_keys = {
-            (row["Match"], _start_date_from_timestamp(row["Start Time"]))
-            for _, row in existing_data.iterrows()
-        }
-        is_new_row = new_data.apply(
-            lambda row: (
-                row["Match"],
-                _start_date_from_timestamp(row["Start Time"]),
-            )
-            not in existing_keys,
-            axis=1,
-        )
-        new_rows = new_data[is_new_row]
 
-        # Handle if only duplicates are found
-        if new_rows.empty:
-            # Print only for bets files to reduce spammy prints 
-            if "bets" in filename: 
-                print(f"No new rows to add to {filename} - all were duplicates")
-            return
+def save_betting_data(
+    existing_df: pd.DataFrame, new_df: pd.DataFrame, filename: str, score_column: str, 
+    print_bets: bool = False
+) -> None:
+    """
+    Save complete betting data for bets identified in filtered summary.
 
-        # Append the new bets and save
-        combined_data = pd.concat([existing_data, new_rows], ignore_index=True)
-        combined_data.to_csv(full_path, index=False)
-        
-        if "bets" in filename: 
-            print(f"Added {len(new_rows)} new rows to {filename}")
+    Args:
+        source_df (pd.DataFrame): Full DataFrame containing all betting analysis data.
+        filtered_summary_df (pd.DataFrame): Filtered summary containing only best bets.
+        filename (str): Path to save the full betting data.
 
-    def _align_column_schemas(
-        self, existing_df: pd.DataFrame, new_df: pd.DataFrame, filename: str
-    ) -> List[str]:
-        """
-        Create unified column schema for existing and new data.
+    Returns:
+        None
+    """
+    new_df = new_df.copy()
+    existing_df = existing_df.copy()
 
-        Args:
-            existing_df (pd.DataFrame): Existing data from file.
-            new_df (pd.DataFrame): New data to be added.
-            filename (str): Name of file for strategy-specific column ordering.
+    # If no new data, nothing to do
+    if new_df.empty:
+        return
 
-        Returns:
-            List[str]: Unified list of column names in proper order.
-        """
-        all_columns = list(existing_df.columns)
+    # Filter new_df to only include best bets
+    filtered_new_df = _filter_best_bets_only(new_df, score_column)
 
-        for column in new_df.columns:
-            if column not in all_columns:
-                all_columns.append(column)
+    # Remove duplicates of new_df based on existing_df
+    unique_new_df = _remove_duplicates(existing_df, filtered_new_df)
 
-        strategy_columns = self._get_columns(filename, "strategy") or []
-        end_columns = strategy_columns + [
-            "Best Odds",
-            "Best Bookmaker",
-            "Result",
-            "Outcomes",
-            "Event ID",
-            "Scrape Time",
-        ]
+    if print_bets:
+        pd.set_option('display.max_rows', None)
+        print("----------------------------------------------------")
+        if len(unique_new_df) == 1:
+            print(f"{len(unique_new_df)} bet found for {filename}:")
+        else:
+            print(f"{len(unique_new_df)} bets found for {filename}:")
+        print(f"{unique_new_df[['Match', 'Team']]}")
+        pd.reset_option('display.max_rows')
+        print("----------------------------------------------------")
 
-        reordered_columns = [col for col in all_columns if col not in end_columns]
-        reordered_columns.extend([col for col in end_columns if col in all_columns])
+    # Get list of merged column schemas
+    column_schema = _align_column_schemas(existing_df, unique_new_df)
 
-        return reordered_columns
+    # Reindex both DataFrames to the unified schema
+    existing_aligned = existing_df.reindex(columns=column_schema)
+    new_aligned = unique_new_df.reindex(columns=column_schema)
 
-    def save_best_bets_only(
-        self, summary_df: pd.DataFrame, filename: str, score_column: str
-    ) -> pd.DataFrame:
-        """
-        Save only the best bet per match (highest scoring bet).
-
-        Args:
-            summary_df (pd.DataFrame): Summary DataFrame containing all potential bets.
-            filename (str): Path to save the filtered best bets.
-
-        Returns:
-            pd.DataFrame: Filtered DataFrame containing only the best bet per match. Returned so it can
-                be used in save_full_betting_data().
-        """
-        if summary_df.empty:
-            return pd.DataFrame()
-
-        best_bets = summary_df.sort_values(
-            score_column, ascending=False
-        ).drop_duplicates(subset=["Match", "Start Time"], keep="first")
-
-        self._append_unique_bets(best_bets, filename)
-
-        return best_bets
-
-    def save_full_betting_data(
-        self, source_df: pd.DataFrame, filtered_summary_df: pd.DataFrame, filename: str
-    ) -> None:
-        """
-        Save complete betting data for bets identified in filtered summary.
-
-        Args:
-            source_df (pd.DataFrame): Full DataFrame containing all betting analysis data.
-            filtered_summary_df (pd.DataFrame): Filtered summary containing only best bets.
-            filename (str): Path to save the full betting data.
-
-        Returns:
-            None
-        """
-        if filtered_summary_df.empty:
-            return
-
-        # Merge full data file on the key columns from filtered_summary_df.
-        key_columns = ["Match", "Team", "Start Time"]
-        merged_data = pd.merge(
-            filtered_summary_df[key_columns], source_df, on=key_columns, how="left"
-        )
-
-        # Keep all columns except Vigfree probabilities.
-        vigfree_columns = [
-            col for col in merged_data.columns if col.startswith("Vigfree ")
-        ]
-        output_data = merged_data.drop(columns=vigfree_columns)
-
-        self._append_unique_bets(output_data, filename)
+    # Combine and save
+    combined = pd.concat([existing_aligned, new_aligned], ignore_index=True)
+    combined.to_csv(filename, index=False)

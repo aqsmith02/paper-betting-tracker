@@ -12,68 +12,17 @@ import pandas as pd
 import time
 from datetime import datetime, timedelta, timezone
 from typing import Tuple
-from src.results.theodds_results import get_finished_games_from_theodds, map_league_to_key
+from src.results.theodds_results import get_finished_games_from_theodds
 from src.results.sportsdb_results import get_finished_games_from_thesportsdb
 from src.constants import (
     PENDING_RESULTS,
     DAYS_CUTOFF,
     FILE_NAMES,
     SLEEP_DURATION,
-    DATA_DIR
+    DATA_DIR,
+    START_TIME_COLUMN,
+    RESULT_COLUMN,
 )
-
-
-def filter_rows_to_search(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Filter DataFrame to only include rows that need result checking.
-
-    Args:
-        df (pd.DataFrame): DataFrame containing betting data with "Result" column.
-
-    Returns:
-        pd.DataFrame: Filtered DataFrame containing only rows with pending results.
-    """
-    return df[df["Result"].isin(PENDING_RESULTS)]
-
-
-def fetch_results_from_theodds(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Fetch results from The-Odds-API for all relevant leagues.
-
-    Args:
-        df (pd.DataFrame): DataFrame containing betting data with "League" and "Result" columns.
-
-    Returns:
-        pd.DataFrame: Updated DataFrame with results fetched from The-Odds-API.
-    """
-    rows_to_search = filter_rows_to_search(df)
-
-    if rows_to_search.empty:
-        print("No rows need checking from The-Odds-API")
-        return df
-
-    keys = map_league_to_key(rows_to_search)
-
-    for key in keys:
-        df = get_finished_games_from_theodds(df, key)
-
-    print("Completed The-Odds-API pull")
-    return df
-
-
-def fetch_results_from_sportsdb(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Fetch remaining results from TheSportsDB API.
-
-    Args:
-        df (pd.DataFrame): DataFrame containing betting data with pending results.
-
-    Returns:
-        pd.DataFrame: Updated DataFrame with additional results fetched from TheSportsDB API.
-    """
-    df = get_finished_games_from_thesportsdb(df)
-    print("Completed TheSportsDB pull")
-    return df
 
 
 def clean_old_pending_results(
@@ -93,16 +42,15 @@ def clean_old_pending_results(
     cutoff_time = current_time - timedelta(days=DAYS_CUTOFF)
 
     # Store original start time column
-    original_start_time = df["Start Time"].copy()
+    original_start_time = df[START_TIME_COLUMN].copy()
 
-    # Convert to datetime (already in UTC from storage)
+    # Convert to datetime
     df_temp = df.copy()
-    df_temp["Start Time"] = pd.to_datetime(df_temp["Start Time"])
-
+    df_temp[START_TIME_COLUMN] = pd.to_datetime(df_temp[START_TIME_COLUMN])
     # Create filter mask - keep rows that are either recent OR have valid results
     mask = ~(
-        (df_temp["Start Time"] < cutoff_time)
-        & (df_temp["Result"].isin(PENDING_RESULTS))
+        (df_temp[START_TIME_COLUMN] < cutoff_time)
+        & (df_temp[RESULT_COLUMN].isin(PENDING_RESULTS))
     )
 
     # Apply filter to both DataFrames
@@ -110,11 +58,11 @@ def clean_old_pending_results(
     filtered_full_df = full_df[mask].copy()
 
     # Restore original start time format
-    filtered_df["Start Time"] = original_start_time[mask].values
+    filtered_df[START_TIME_COLUMN] = original_start_time[mask].values
 
     removed_count = len(df) - len(filtered_df)
-    if removed_count > 0:
-        print(f"Removed {removed_count} old rows with pending results")
+    print(f"\n")
+    print(f"Removed {removed_count} old rows with pending results")
 
     return filtered_df, filtered_full_df
 
@@ -133,18 +81,19 @@ def process_files(bet_filename: str, full_filename: str) -> None:
     bet_file = DATA_DIR / bet_filename
     full_file = DATA_DIR / full_filename
 
-    print(f"\nProcessing {bet_filename} and {full_filename}")
+    print("----------------------------------------------------")
+    print(f"Processing {bet_filename} and {full_filename}")
 
     # Load data
     bet_df = pd.read_csv(bet_file)
     full_df = pd.read_csv(full_file)
 
     # Fetch results from APIs
-    bet_df = fetch_results_from_theodds(bet_df)
-    bet_df = fetch_results_from_sportsdb(bet_df)
+    bet_df = get_finished_games_from_theodds(bet_df)
+    bet_df = get_finished_games_from_thesportsdb(bet_df)
 
     # Update full DataFrame with results
-    full_df["Result"] = bet_df["Result"]
+    full_df[RESULT_COLUMN] = bet_df[RESULT_COLUMN]
 
     # Clean old pending results
     bet_df, full_df = clean_old_pending_results(bet_df, full_df)
@@ -152,6 +101,10 @@ def process_files(bet_filename: str, full_filename: str) -> None:
     # Save results
     bet_df.to_csv(bet_file, index=False)
     full_df.to_csv(full_file, index=False)
+
+    print(f"Done processing {bet_filename} and {full_filename}")
+    print("----------------------------------------------------")
+
 
 
 def main() -> None:
@@ -164,6 +117,7 @@ def main() -> None:
     Returns:
         None
     """
+    print("----------------------------------------------------")
     print("Starting sports results pipeline")
 
     for i, (bet_filename, full_filename) in enumerate(FILE_NAMES):
@@ -177,10 +131,12 @@ def main() -> None:
 
         except Exception as e:
             print(f"Failed to process {bet_filename}: {e}")
+            print("----------------------------------------------------")
             # Continue with next file pair instead of stopping entire pipeline
             continue
 
-    print("\nCompleted sports results pipeline")
+    print("Completed sports results pipeline")
+    print("----------------------------------------------------")
 
 
 if __name__ == "__main__":
