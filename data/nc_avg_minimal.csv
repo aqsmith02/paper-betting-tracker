@@ -1,0 +1,4 @@
+ID,Sport Key,Sport Title,Start Time,Scrape Time,Match,Team,Best Bookmaker,Best Odds,Fair Odds Average,Expected Value,Outcomes,Result
+e83819ad5f34e5a8b184c7dc2ca1f0e2,basketball_wncaab,WNCAAB,2026-01-22T23:02:03Z,2026-01-23T00:02:01Z,Iowa Hawkeyes @ Maryland Terrapins,Maryland Terrapins,Caesars,3.6,2.69,0.3379750572791972,2.0,Not Found
+30737a38f5e9b25e6aa6044481b77f20,basketball_wncaab,WNCAAB,2026-01-22T23:36:08Z,2026-01-23T00:02:01Z,Kentucky Wildcats @ Tennessee Volunteers,Kentucky Wildcats,Caesars,2.75,2.4,0.14584111940865285,2.0,Not Found
+a400934bf61745a2760b38477a31e31a,basketball_ncaab,NCAAB,2026-01-22T23:32:33Z,2026-01-23T00:02:01Z,Green Bay Phoenix @ Youngstown St Penguins,Green Bay Phoenix,Caesars,6.5,5.78,0.12411848774450596,2.0,Not Found
