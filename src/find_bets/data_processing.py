@@ -14,7 +14,7 @@ from src.constants import (
     NON_BM_COLUMNS,
     MIN_BOOKMAKERS,
     MAX_ODDS,
-    TARGET_BMS,
+    ALL_BMS,
     NC_BMS,
     TIMESTAMP_FORMAT
 )
@@ -33,7 +33,6 @@ def find_bookmaker_columns(
     Returns:
         List[str]: List of column names that contain bookmaker odds.
     """
-    # Exclude any columns that will be an int or float and are not bookmakers
     excluded = NON_BM_COLUMNS.copy()
     if exclude_columns:
         excluded.update(exclude_columns)
@@ -45,19 +44,19 @@ def find_bookmaker_columns(
     ]
 
 
-def _remove_non_target_bookmakers(df: pd.DataFrame) -> pd.DataFrame:
+def _remove_unwanted_bookmakers(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Remove bookmakers that are not in the target list.
+    Remove bookmaker columns that are not in ALL_BMS.
 
     Args:
         df (pd.DataFrame): DataFrame containing odds data.
 
     Returns:
-        df (pd.DataFrame): DataFrame containing odds data without non-no-commission bookmaker columns.
+        df (pd.DataFrame): DataFrame containing odds data with only ALL_BMS bookmaker columns.
     """
     df = df.copy()
     bookmakers = find_bookmaker_columns(df)
-    cols_to_drop = [bm for bm in bookmakers if bm not in TARGET_BMS]
+    cols_to_drop = [bm for bm in bookmakers if bm not in ALL_BMS]
     df = df.drop(columns=cols_to_drop)
     return df
 
@@ -72,7 +71,6 @@ def _add_metadata(
     df = df.copy()
     bms = find_bookmaker_columns(df)
 
-    # If statement for NC BMS
     if best_odds_bms:
         # Only include bookmaker columns that exist
         existing_bms = [bm for bm in best_odds_bms if bm in df.columns]
@@ -178,7 +176,7 @@ def process_target_odds_data(df: pd.DataFrame) -> pd.DataFrame:
     Returns:
         pd.DataFrame: Cleaned and validated DataFrame.
     """
-    df = _remove_non_target_bookmakers(df)
+    df = _remove_unwanted_bookmakers(df)
     df = _add_metadata(df, best_odds_bms=NC_BMS)
     df = _clean_odds_data(df)
     df = _min_bookmaker_filter(df)
