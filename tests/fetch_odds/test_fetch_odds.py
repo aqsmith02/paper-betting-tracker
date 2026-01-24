@@ -1,235 +1,419 @@
 """
-test_fetch_odds.py
+tests/test_fetch_odds.py
 
-Unit tests for the fetch_odds.py module.
+Unit tests for fetch_odds module with mocked API responses.
 
 Author: Andrew Smith
+Date: January 2026
 """
 
-import unittest
+import pytest
 from unittest.mock import patch, Mock
-from tests.fetch_odds.test_game_data import (
-    TEST_GAME_DATA,
-    TEST_GAME_DATA_NO_BM,
-    TEST_GAME_DATA_MULT_MARKETS,
-)
-
-# Import the module under test
+import pandas as pd
 from src.fetch_odds.fetch_odds import (
+    fetch_odds,
     _process_game,
     _create_bm_dict_list,
-    fetch_odds,
+    _get_outcomes_list
 )
 
 
-class TestCreateBmDictList(unittest.TestCase):
-    """Test cases for _create_bm_dict_list function."""
-
-    def setUp(self):
-        """Set up test data."""
-        self.test_data = TEST_GAME_DATA
-        self.test_data_no_bm = TEST_GAME_DATA_NO_BM
-        self.test_data_mult_markets = TEST_GAME_DATA_MULT_MARKETS
-
-    def test_create_bm_dict_list_normal_case(self):
-        """Test normal case with multiple bookmakers."""
-        result = _create_bm_dict_list(self.test_data)
-
-        self.assertEqual(len(result), 2)
-        self.assertIn("FanDuel", result[0])
-        self.assertIn("888sport", result[1])
-
-        # Check FanDuel odds
-        fd_odds = result[0]["FanDuel"]
-        self.assertEqual(fd_odds["Arizona Diamondbacks"], 1.67)
-        self.assertEqual(fd_odds["Los Angeles Dodgers"], 2.18)
-
-        # Check 888sport odds
-        eight_odds = result[1]["888sport"]
-        self.assertEqual(eight_odds["Arizona Diamondbacks"], 1.95)
-        self.assertEqual(eight_odds["Los Angeles Dodgers"], 1.73)
-
-    def test_create_bm_dict_list_no_bookmakers(self):
-        """Test case with no bookmakers."""
-        result = _create_bm_dict_list(self.test_data_no_bm)
-        self.assertEqual(result, [])
-
-    def test_create_bm_dict_list_multiple_markets(self):
-        """Test case with multiple markets."""
-        result = _create_bm_dict_list(self.test_data_mult_markets)
-        smarkets1_odds = result[0]["Smarkets1"]
-        self.assertEqual(smarkets1_odds["Kansas City Royals"], 1.01)
-        self.assertEqual(smarkets1_odds["Los Angeles Angels"], 17.99)
-
-        smarkets2_odds = result[1]["Smarkets2"]
-        self.assertEqual(smarkets2_odds["Kansas City Royals"], 1.01)
-        self.assertEqual(smarkets2_odds["Los Angeles Angels"], 17.99)
-
-
-class TestProcessGame(unittest.TestCase):
-    """Test cases for _process_game function."""
-
-    def setUp(self):
-        """Set up test data."""
-        self.test_data = TEST_GAME_DATA
-        self.test_data_no_bm = TEST_GAME_DATA_NO_BM
-        self.test_data_mult_markets = TEST_GAME_DATA_MULT_MARKETS
-
-    def test_process_game_normal_case(self):
-        """Test normal game processing."""
-        result = _process_game(self.test_data)
-        az_win = result[0]
-        la_win = result[1]
-
-        # Should have 2 rows (one for each team)
-        self.assertEqual(len(result), 2)
-
-        self.assertEqual(az_win["match"], "Kansas City Royals @ Los Angeles Angels")
-        self.assertEqual(az_win["league"], "MLB")
-        # UTC time should be stored as-is from commence_time
-        self.assertEqual(az_win["start_time"], self.test_data["commence_time"])
-        self.assertEqual(az_win["team"], "Arizona Diamondbacks")
-        self.assertEqual(az_win["FanDuel"], 1.67)
-        self.assertEqual(az_win["888sport"], 1.95)
-
-        self.assertEqual(la_win["match"], "Kansas City Royals @ Los Angeles Angels")
-        self.assertEqual(la_win["league"], "MLB")
-        self.assertEqual(la_win["start_time"], self.test_data["commence_time"])
-        self.assertEqual(la_win["team"], "Los Angeles Dodgers")
-        self.assertEqual(la_win["FanDuel"], 2.18)
-        self.assertEqual(la_win["888sport"], 1.73)
-
-    def test_process_game_no_bookmakers(self):
-        """Test game processing with no bookmakers."""
-        result = _process_game(self.test_data_no_bm)
-        self.assertEqual(result, [])
+@pytest.fixture
+def sample_game():
+    """Sample game data matching actual The-Odds-API response format"""
+    return {
+        "id": "a474a3086c863280dfd2b7be0ce30120",
+        "sport_key": "basketball_wncaab",
+        "sport_title": "WNCAAB",
+        "commence_time": "2026-01-18T18:05:37Z",
+        "home_team": "NC State Wolfpack",
+        "away_team": "Louisville Cardinals",
+        "bookmakers": [
+            {
+                "key": "betrivers",
+                "title": "BetRivers",
+                "last_update": "2026-01-18T20:16:55Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-18T20:16:55Z",
+                        "outcomes": [
+                            {"name": "Louisville Cardinals", "price": 1.19},
+                            {"name": "NC State Wolfpack", "price": 4.1}
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "williamhill_us",
+                "title": "Caesars",
+                "last_update": "2026-01-18T20:13:39Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-18T20:13:39Z",
+                        "outcomes": [
+                            {"name": "Louisville Cardinals", "price": 1.62},
+                            {"name": "NC State Wolfpack", "price": 2.25}
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
 
 
-class TestFetchOddsAPIFailures(unittest.TestCase):
-    """Test cases for fetch_odds function with API failures."""
 
+
+
+class TestGetOutcomesList:
+    """Tests for _get_outcomes_list function"""
+    
+    def test_normal_case(self):
+        """Test extracting outcomes from bookmaker dictionary"""
+        bm_dicts = [
+            {"BetRivers": {"Louisville Cardinals": 1.19, "NC State Wolfpack": 4.1}}
+        ]
+        result = _get_outcomes_list(bm_dicts)
+        assert set(result) == {"Louisville Cardinals", "NC State Wolfpack"}
+        assert len(result) == 2
+    
+    def test_empty_list(self):
+        """Test with no bookmakers"""
+        assert _get_outcomes_list([]) == []
+    
+    def test_multiple_bookmakers(self):
+        """Test that it uses only the first bookmaker"""
+        bm_dicts = [
+            {"BetRivers": {"TeamA": 1.85, "TeamB": 2.10}},
+            {"Caesars": {"TeamA": 1.90, "TeamB": 2.05, "TeamC": 3.0}}
+        ]
+        result = _get_outcomes_list(bm_dicts)
+        # Should use first bookmaker only (BetRivers)
+        assert result == ["TeamA", "TeamB"]
+        assert "TeamC" not in result
+
+
+class TestCreateBmDictList:
+    """Tests for _create_bm_dict_list function"""
+    
+    def test_normal_case(self, sample_game):
+        """Test creating bookmaker dictionaries from game data"""
+        result = _create_bm_dict_list(sample_game)
+        
+        assert len(result) == 2
+        assert "BetRivers" in result[0]
+        assert "Caesars" in result[1]
+        
+        # Check BetRivers odds
+        assert result[0]["BetRivers"]["Louisville Cardinals"] == 1.19
+        assert result[0]["BetRivers"]["NC State Wolfpack"] == 4.1
+        
+        # Check Caesars odds
+        assert result[1]["Caesars"]["Louisville Cardinals"] == 1.62
+        assert result[1]["Caesars"]["NC State Wolfpack"] == 2.25
+    
+    def test_no_bookmakers(self):
+        """Test game with no bookmakers"""
+        game = {
+            "id": "123",
+            "sport_key": "basketball_nba",
+            "bookmakers": []
+        }
+        result = _create_bm_dict_list(game)
+        assert result == []
+    
+    def test_no_h2h_market(self):
+        """Test bookmaker with no h2h market (only spreads)"""
+        game = {
+            "id": "123",
+            "bookmakers": [
+                {
+                    "key": "draftkings",
+                    "title": "DraftKings",
+                    "markets": [
+                        {
+                            "key": "spreads",
+                            "outcomes": [
+                                {"name": "TeamA", "price": 1.91}
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        result = _create_bm_dict_list(game)
+        assert result == []
+    
+    def test_missing_markets_key(self):
+        """Test bookmaker with no markets key"""
+        game = {
+            "id": "123",
+            "bookmakers": [
+                {
+                    "key": "draftkings",
+                    "title": "DraftKings"
+                }
+            ]
+        }
+        result = _create_bm_dict_list(game)
+        assert result == []
+    
+    def test_empty_outcomes(self):
+        """Test market with no outcomes"""
+        game = {
+            "id": "123",
+            "bookmakers": [
+                {
+                    "key": "draftkings",
+                    "title": "DraftKings",
+                    "markets": [
+                        {
+                            "key": "h2h",
+                            "outcomes": []
+                        }
+                    ]
+                }
+            ]
+        }
+        result = _create_bm_dict_list(game)
+        # Should create dict but with empty outcomes
+        assert len(result) == 1
+        assert result[0]["DraftKings"] == {}
+
+
+class TestProcessGame:
+    """Tests for _process_game function"""
+    
+    def test_creates_correct_rows(self, sample_game):
+        """Test that game is processed into correct row format"""
+        rows = _process_game(sample_game)
+        
+        # Should create 2 rows (one per outcome)
+        assert len(rows) == 2
+        
+        # Check Louisville row
+        louisville_row = next(r for r in rows if r["Team"] == "Louisville Cardinals")
+        assert louisville_row["ID"] == "a474a3086c863280dfd2b7be0ce30120"
+        assert louisville_row["Sport Key"] == "basketball_wncaab"
+        assert louisville_row["Sport Title"] == "WNCAAB"
+        assert louisville_row["Match"] == "Louisville Cardinals @ NC State Wolfpack"
+        assert louisville_row["Team"] == "Louisville Cardinals"
+        assert louisville_row["Start Time"] == "2026-01-18T18:05:37Z"
+        assert louisville_row["BetRivers"] == 1.19
+        assert louisville_row["Caesars"] == 1.62
+        
+        # Check NC State row
+        ncstate_row = next(r for r in rows if r["Team"] == "NC State Wolfpack")
+        assert ncstate_row["ID"] == "a474a3086c863280dfd2b7be0ce30120"
+        assert ncstate_row["Sport Key"] == "basketball_wncaab"
+        assert ncstate_row["Sport Title"] == "WNCAAB"
+        assert ncstate_row["Match"] == "Louisville Cardinals @ NC State Wolfpack"
+        assert ncstate_row["Team"] == "NC State Wolfpack"
+        assert ncstate_row["Start Time"] == "2026-01-18T18:05:37Z"
+        assert ncstate_row["BetRivers"] == 4.1
+        assert ncstate_row["Caesars"] == 2.25
+    
+    def test_handles_missing_bookmaker_odds(self):
+        """Test when one bookmaker doesn't have odds for all outcomes"""
+        game = {
+            "id": "test123",
+            "sport_key": "basketball_nba",
+            "sport_title": "NBA",
+            "commence_time": "2026-01-25T19:00:00Z",
+            "home_team": "Lakers",
+            "away_team": "Warriors",
+            "bookmakers": [
+                {
+                    "key": "draftkings",
+                    "title": "DraftKings",
+                    "markets": [
+                        {
+                            "key": "h2h",
+                            "outcomes": [
+                                {"name": "Lakers", "price": 1.85}
+                                # Warriors missing - bookmaker suspended odds
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        rows = _process_game(game)
+        
+        # Should still create row for Lakers
+        assert len(rows) == 1
+        lakers_row = rows[0]
+        assert lakers_row["Team"] == "Lakers"
+        assert lakers_row["DraftKings"] == 1.85
+    
+    def test_none_for_missing_odds(self):
+        """Test that None is used when bookmaker doesn't have odds for outcome"""
+        game = {
+            "id": "test123",
+            "sport_key": "basketball_nba",
+            "sport_title": "NBA",
+            "commence_time": "2026-01-25T19:00:00Z",
+            "home_team": "Lakers",
+            "away_team": "Warriors",
+            "bookmakers": [
+                {
+                    "key": "draftkings",
+                    "title": "DraftKings",
+                    "markets": [
+                        {
+                            "key": "h2h",
+                            "outcomes": [
+                                {"name": "Lakers", "price": 1.85},
+                                {"name": "Warriors", "price": 2.10}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "key": "fanduel",
+                    "title": "FanDuel",
+                    "markets": [
+                        {
+                            "key": "h2h",
+                            "outcomes": [
+                                {"name": "Lakers", "price": 1.90}
+                                # Warriors not offered
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        rows = _process_game(game)
+        
+        warriors_row = next(r for r in rows if r["Team"] == "Warriors")
+        assert warriors_row["DraftKings"] == 2.10
+        assert warriors_row["FanDuel"] is None
+
+
+class TestFetchOdds:
+    """Tests for main fetch_odds function"""
+    
     @patch('src.fetch_odds.fetch_odds.requests.get')
-    def test_fetch_odds_invalid_api_key(self, mock_get):
-        """Test fetch_odds when API key is invalid (401 Unauthorized)."""
-        # Mock a 401 Unauthorized response
-        mock_response = Mock()
-        mock_response.status_code = 401
-        mock_response.text = "Invalid API key"
-        mock_response.headers.get.return_value = "0"
-        mock_get.return_value = mock_response
-
-        result = fetch_odds()
-
-        # Should return empty DataFrame
-        self.assertTrue(result.empty)
-        self.assertEqual(len(result), 0)
-
-    @patch('src.fetch_odds.fetch_odds.requests.get')
-    def test_fetch_odds_api_key_quota_exceeded(self, mock_get):
-        """Test fetch_odds when API key quota is exceeded (429 Too Many Requests)."""
-        # Mock a 429 Too Many Requests response
-        mock_response = Mock()
-        mock_response.status_code = 429
-        mock_response.text = "Request quota exceeded"
-        mock_response.headers.get.return_value = "0"
-        mock_get.return_value = mock_response
-
-        result = fetch_odds()
-
-        # Should return empty DataFrame
-        self.assertTrue(result.empty)
-        self.assertEqual(len(result), 0)
-
-    @patch('src.fetch_odds.fetch_odds.requests.get')
-    def test_fetch_odds_forbidden_access(self, mock_get):
-        """Test fetch_odds when API returns 403 Forbidden."""
-        # Mock a 403 Forbidden response
-        mock_response = Mock()
-        mock_response.status_code = 403
-        mock_response.text = "Forbidden - API key does not have access to this resource"
-        mock_response.headers.get.return_value = "0"
-        mock_get.return_value = mock_response
-
-        result = fetch_odds()
-
-        # Should return empty DataFrame
-        self.assertTrue(result.empty)
-        self.assertEqual(len(result), 0)
-
-    @patch('src.fetch_odds.fetch_odds.requests.get')
-    def test_fetch_odds_server_error(self, mock_get):
-        """Test fetch_odds when API returns 500 Internal Server Error."""
-        # Mock a 500 Internal Server Error response
-        mock_response = Mock()
-        mock_response.status_code = 500
-        mock_response.text = "Internal server error"
-        mock_response.headers.get.return_value = "100"
-        mock_get.return_value = mock_response
-
-        result = fetch_odds()
-
-        # Should return empty DataFrame
-        self.assertTrue(result.empty)
-        self.assertEqual(len(result), 0)
-
-    @patch('src.fetch_odds.fetch_odds.requests.get')
-    def test_fetch_odds_network_timeout(self, mock_get):
-        """Test fetch_odds when network request times out."""
-        # Mock a timeout exception
-        mock_get.side_effect = Exception("Connection timeout")
-
-        result = fetch_odds()
-
-        # Should return empty DataFrame
-        self.assertTrue(result.empty)
-        self.assertEqual(len(result), 0)
-
-    @patch('src.fetch_odds.fetch_odds.requests.get')
-    def test_fetch_odds_successful_with_valid_key(self, mock_get):
-        """Test fetch_odds with valid API key returning game data."""
-        # Mock a successful response
+    def test_successful_fetch(self, mock_get, sample_game):
+        """Test successful API call and data processing"""
+        # Mock successful API response
         mock_response = Mock()
         mock_response.status_code = 200
-        mock_response.json.return_value = [TEST_GAME_DATA]
+        mock_response.json.return_value = [sample_game]
         mock_response.headers.get.side_effect = lambda x: {
             'x-requests-remaining': '499',
             'x-requests-used': '1'
-        }.get(x)
+        }.get(x, None)
         mock_get.return_value = mock_response
-
-        result = fetch_odds()
-
-        # Should return non-empty DataFrame
-        self.assertFalse(result.empty)
-        self.assertGreater(len(result), 0)
-        # Check that expected columns exist
-        self.assertIn("match", result.columns)
-        self.assertIn("league", result.columns)
-        self.assertIn("team", result.columns)
-
-
-if __name__ == "__main__":
-    # Create test suite
-    test_classes = [
-        TestCreateBmDictList,
-        TestProcessGame,
-        TestFetchOddsAPIFailures,
-    ]
-
-    suite = unittest.TestSuite()
-    for test_class in test_classes:
-        tests = unittest.TestLoader().loadTestsFromTestCase(test_class)
-        suite.addTests(tests)
-
-    # Run tests
-    runner = unittest.TextTestRunner(verbosity=2)
-    result = runner.run(suite)
-
-    # Print summary
-    print(f"\n{'='*50}")
-    print(f"Tests run: {result.testsRun}")
-    print(f"Failures: {len(result.failures)}")
-    print(f"Errors: {len(result.errors)}")
-    print(
-        f"Success rate: {((result.testsRun - len(result.failures) - len(result.errors)) / result.testsRun * 100):.1f}%"
-    )
+        
+        df = fetch_odds()
+        
+        # Verify DataFrame structure
+        assert not df.empty
+        assert len(df) == 2  # Two outcomes
+        
+        # Verify columns exist
+        expected_columns = ['ID', 'Sport Key', 'Sport Title', 'Start Time', 
+                          'Match', 'Team', 'BetRivers', 'Caesars']
+        for col in expected_columns:
+            assert col in df.columns
+        
+        # Verify first row (Louisville Cardinals)
+        louisville_row = df[df['Team'] == 'Louisville Cardinals'].iloc[0]
+        assert louisville_row['ID'] == 'a474a3086c863280dfd2b7be0ce30120'
+        assert louisville_row['Sport Key'] == 'basketball_wncaab'
+        assert louisville_row['Sport Title'] == 'WNCAAB'
+        assert louisville_row['Start Time'] == '2026-01-18T18:05:37Z'
+        assert louisville_row['Match'] == 'Louisville Cardinals @ NC State Wolfpack'
+        assert louisville_row['Team'] == 'Louisville Cardinals'
+        assert louisville_row['BetRivers'] == 1.19
+        assert louisville_row['Caesars'] == 1.62
+        
+        # Verify second row (NC State Wolfpack)
+        ncstate_row = df[df['Team'] == 'NC State Wolfpack'].iloc[0]
+        assert ncstate_row['ID'] == 'a474a3086c863280dfd2b7be0ce30120'
+        assert ncstate_row['Sport Key'] == 'basketball_wncaab'
+        assert ncstate_row['Sport Title'] == 'WNCAAB'
+        assert ncstate_row['Start Time'] == '2026-01-18T18:05:37Z'
+        assert ncstate_row['Match'] == 'Louisville Cardinals @ NC State Wolfpack'
+        assert ncstate_row['Team'] == 'NC State Wolfpack'
+        assert ncstate_row['BetRivers'] == 4.1
+        assert ncstate_row['Caesars'] == 2.25
+        
+        # Verify API was called
+        mock_get.assert_called_once()
+    
+    @patch('src.fetch_odds.fetch_odds.requests.get')
+    def test_multiple_games(self, mock_get, sample_game):
+        """Test processing multiple games"""
+        game2 = sample_game.copy()
+        game2["id"] = "different_id"
+        game2["home_team"] = "Duke Blue Devils"
+        game2["away_team"] = "UNC Tar Heels"
+        
+        mock_response = Mock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = [sample_game, game2]
+        mock_response.headers.get.return_value = "498"
+        mock_get.return_value = mock_response
+        
+        df = fetch_odds()
+        
+        # Should have 4 rows (2 outcomes per game)
+        assert len(df) == 4
+        assert df["ID"].nunique() == 2
+    
+    @patch('src.fetch_odds.fetch_odds.requests.get')
+    def test_api_error_returns_empty_df(self, mock_get):
+        """Test that API errors return empty DataFrame"""
+        mock_response = Mock()
+        mock_response.status_code = 500
+        mock_response.text = "Internal Server Error"
+        mock_get.return_value = mock_response
+        
+        df = fetch_odds()
+        
+        assert df.empty
+        assert isinstance(df, pd.DataFrame)
+    
+    @patch('src.fetch_odds.fetch_odds.requests.get')
+    def test_network_error_returns_empty_df(self, mock_get):
+        """Test that network errors return empty DataFrame"""
+        mock_get.side_effect = Exception("Network error")
+        
+        df = fetch_odds()
+        
+        assert df.empty
+        assert isinstance(df, pd.DataFrame)
+    
+    @patch('src.fetch_odds.fetch_odds.requests.get')
+    def test_empty_games_list(self, mock_get):
+        """Test API returning no games"""
+        mock_response = Mock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = []
+        mock_response.headers.get.return_value = "500"
+        mock_get.return_value = mock_response
+        
+        df = fetch_odds()
+        
+        assert df.empty
+    
+    @patch('src.fetch_odds.fetch_odds.requests.get')
+    def test_game_processing_error_continues(self, mock_get, sample_game):
+        """Test that errors in individual games don't stop processing"""
+        bad_game = {"id": "bad"}  # Missing required fields
+        mock_response = Mock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = [bad_game, sample_game]
+        mock_response.headers.get.return_value = "499"
+        mock_get.return_value = mock_response
+        
+        df = fetch_odds()
+        
+        # Should still process the good game despite bad game error
+        assert len(df) == 2
+        assert df.iloc[0]["ID"] == "a474a3086c863280dfd2b7be0ce30120"
+    
