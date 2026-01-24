@@ -17,7 +17,7 @@ SPORT_KEY = "upcoming"
 
 # Regions to get odds from
 # Options: "us", "uk", "eu", etc.
-REGIONS = "us"
+REGIONS = "us,us_dfs,us_ex,eu"
 
 # Markets to fetch
 # Options: "h2h" (moneyline), "spreads", etc.
