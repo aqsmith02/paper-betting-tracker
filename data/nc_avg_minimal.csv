@@ -1,4 +1,10 @@
-ID,Sport Key,Sport Title,Start Time,Scrape Time,Match,Team,Best Bookmaker,Best Odds,Fair Odds Average,Expected Value,Outcomes,Result
-e83819ad5f34e5a8b184c7dc2ca1f0e2,basketball_wncaab,WNCAAB,2026-01-22T23:02:03Z,2026-01-23T00:02:01Z,Iowa Hawkeyes @ Maryland Terrapins,Maryland Terrapins,Caesars,3.6,2.69,0.3379750572791972,2.0,Not Found
-30737a38f5e9b25e6aa6044481b77f20,basketball_wncaab,WNCAAB,2026-01-22T23:36:08Z,2026-01-23T00:02:01Z,Kentucky Wildcats @ Tennessee Volunteers,Kentucky Wildcats,Caesars,2.75,2.4,0.14584111940865285,2.0,Not Found
-a400934bf61745a2760b38477a31e31a,basketball_ncaab,NCAAB,2026-01-22T23:32:33Z,2026-01-23T00:02:01Z,Green Bay Phoenix @ Youngstown St Penguins,Green Bay Phoenix,Caesars,6.5,5.78,0.12411848774450596,2.0,Not Found
+ID,Sport Key,Sport Title,Start Time,Scrape Time,Match,Team,Start Date,Best Bookmaker,Best Odds,Fair Odds Average,Expected Value,Outcomes,Result
+e83819ad5f34e5a8b184c7dc2ca1f0e2,basketball_wncaab,WNCAAB,2026-01-22T23:02:03Z,2026-01-23T00:02:01Z,Iowa Hawkeyes @ Maryland Terrapins,Maryland Terrapins,,Caesars,3.6,2.69,0.3379750572791972,2.0,Not Found
+30737a38f5e9b25e6aa6044481b77f20,basketball_wncaab,WNCAAB,2026-01-22T23:36:08Z,2026-01-23T00:02:01Z,Kentucky Wildcats @ Tennessee Volunteers,Kentucky Wildcats,,Caesars,2.75,2.4,0.1458411194086528,2.0,Not Found
+a400934bf61745a2760b38477a31e31a,basketball_ncaab,NCAAB,2026-01-22T23:32:33Z,2026-01-23T00:02:01Z,Green Bay Phoenix @ Youngstown St Penguins,Green Bay Phoenix,,Caesars,6.5,5.78,0.1241184877445059,2.0,Not Found
+51b03b69709b1760c5c54eb745165499,basketball_ncaab,NCAAB,2026-01-24T20:07:20Z,2026-01-24T22:00:01Z,Illinois Fighting Illini @ Purdue Boilermakers,Purdue Boilermakers,2026-01-24,DraftKings,16.0,4.93,2.2478326294647553,2.0,Not Found
+e1fed6f50a86a85e91b1a4b832cdc578,soccer_portugal_primeira_liga,Primeira Liga - Portugal,2026-01-24T20:34:00Z,2026-01-24T22:00:01Z,Vitória SC @ Estoril,Vitória SC,2026-01-24,DraftKings,16.0,5.06,2.1617644331038464,3.0,Not Found
+912f7705ea8e1e7cdeee548d34e5df98,basketball_ncaab,NCAAB,2026-01-24T20:00:00Z,2026-01-24T22:00:01Z,Eastern Kentucky Colonels @ Jacksonville Dolphins,Jacksonville Dolphins,2026-01-24,FanDuel,4.6,2.4,0.9192129187241629,2.0,Not Found
+d43b73f5baf44f07ff8ce64023816f2d,basketball_ncaab,NCAAB,2026-01-24T19:10:00Z,2026-01-24T22:00:01Z,Auburn Tigers @ Florida Gators,Florida Gators,2026-01-24,FanDuel,2.44,2.11,0.153988696017491,2.0,Not Found
+010f12a3d27e09c6c9107b3a04d75d3b,basketball_ncaab,NCAAB,2026-01-24T20:33:55Z,2026-01-24T22:00:01Z,Tennessee St Tigers @ Lindenwood Lions,Lindenwood Lions,2026-01-24,FanDuel,4.05,3.69,0.09624023739958076,2.0,Not Found
+1721e7d05350ba1a3eb58265a650f90f,basketball_ncaab,NCAAB,2026-01-24T21:30:38Z,2026-01-24T22:00:01Z,Texas A&M-CC Islanders @ Incarnate Word Cardinals,Incarnate Word Cardinals,2026-01-24,Fanatics,5.25,4.87,0.07794850647499985,2.0,Not Found

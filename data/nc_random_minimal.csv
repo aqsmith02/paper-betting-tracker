@@ -1,5 +1,6 @@
-ID,Sport Key,Sport Title,Start Time,Scrape Time,Match,Team,Best Bookmaker,Best Odds,Outcomes,Result
-776b3a3de2f5ccc9c6fa9bf8b1666736,icehockey_nhl,NHL,2026-01-23T00:10:00Z,2026-01-23T00:02:01Z,Buffalo Sabres @ Montréal Canadiens,Buffalo Sabres,Fanatics,2.05,2.0,Not Found
-34ed2360b9a442102e03d945479ebbaf,basketball_ncaab,NCAAB,2026-01-23T00:00:00Z,2026-01-23T00:02:01Z,Southern Miss Golden Eagles @ Georgia St Panthers,Georgia St Panthers,Fanatics,1.77,2.0,Not Found
-8b117d6a4ca702734c4a2745c137f9a8,basketball_nba,NBA,2026-01-23T00:10:00Z,2026-01-23T00:02:01Z,Charlotte Hornets @ Orlando Magic,Orlando Magic,FanDuel,1.61,2.0,Not Found
-3c4b64b2faacaa6557a37ee2028d1c1b,basketball_ncaab,NCAAB,2026-01-22T23:00:00Z,2026-01-23T00:02:01Z,Vermont Catamounts @ UMass Lowell River Hawks,Vermont Catamounts,Caesars,1.1,2.0,Not Found
+ID,Sport Key,Sport Title,Start Time,Scrape Time,Match,Team,Start Date,Best Bookmaker,Best Odds,Outcomes,Result
+776b3a3de2f5ccc9c6fa9bf8b1666736,icehockey_nhl,NHL,2026-01-23T00:10:00Z,2026-01-23T00:02:01Z,Buffalo Sabres @ Montréal Canadiens,Buffalo Sabres,,Fanatics,2.05,2.0,Not Found
+34ed2360b9a442102e03d945479ebbaf,basketball_ncaab,NCAAB,2026-01-23T00:00:00Z,2026-01-23T00:02:01Z,Southern Miss Golden Eagles @ Georgia St Panthers,Georgia St Panthers,,Fanatics,1.77,2.0,Not Found
+8b117d6a4ca702734c4a2745c137f9a8,basketball_nba,NBA,2026-01-23T00:10:00Z,2026-01-23T00:02:01Z,Charlotte Hornets @ Orlando Magic,Orlando Magic,,FanDuel,1.61,2.0,Not Found
+3c4b64b2faacaa6557a37ee2028d1c1b,basketball_ncaab,NCAAB,2026-01-22T23:00:00Z,2026-01-23T00:02:01Z,Vermont Catamounts @ UMass Lowell River Hawks,Vermont Catamounts,,Caesars,1.1,2.0,Not Found
+22ff6e528bdbdc30eeec288f71d9f555,basketball_ncaab,NCAAB,2026-01-24T21:00:00Z,2026-01-24T22:00:01Z,Memphis Tigers @ Wichita St Shockers,Memphis Tigers,2026-01-24,FanDuel,12.0,2.0,Not Found
