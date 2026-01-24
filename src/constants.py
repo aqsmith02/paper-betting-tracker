@@ -37,7 +37,7 @@ Z_SCORE_THRESHOLD = 2.0
 MAX_Z_SCORE = 5.0
 MIN_BOOKMAKERS = 5
 MAX_ODDS = 30
-NC_BMS = ["FanDuel", "DraftKings", "BetMGM", "Caesars", "Fanatics", "Kalshi", "Polymarket", "Prophetx", "Prizepicks", "Underdog"]
+NC_BMS = ["FanDuel", "DraftKings", "BetMGM", "Caesars", "Fanatics"]
 NON_NC_BMS = ["Pinnacle", "BetOnline.ag"]
 ALL_BMS = NC_BMS + NON_NC_BMS
 
