@@ -44,6 +44,13 @@ def _calculate_market_margin(odds_list):
             f"Odds: {odds_list}"
         )
     
+    if margin > 0.15:
+        raise ValueError(
+            f"Unusually high market margin ({margin:.4f}). "
+            f"Implied probabilities sum to {implied_prob_sum:.4f}. "
+            f"Odds: {odds_list}"
+        )
+    
     return margin
 
 
