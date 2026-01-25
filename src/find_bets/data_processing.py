@@ -16,6 +16,7 @@ from src.constants import (
     MAX_ODDS,
     ALL_BMS,
     NC_BMS,
+    MIN_OUTCOMES,
     TIMESTAMP_FORMAT
 )
 
@@ -44,6 +45,31 @@ def find_bookmaker_columns(
     ]
 
 
+def _add_outcomes_metadata(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Add Outcomes column.
+    """
+    df = df.copy()
+    df["Outcomes"] = df.groupby("Match")["Team"].transform("count")
+    return df
+
+
+def _minimum_outcomes_filter(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Remove rows where outcomes are less than minimum required.
+
+    Args:
+        df (pd.DataFrame): DataFrame containing odds data with outcomes metadata.
+
+    Returns:
+        pd.DataFrame: DataFrame with only rows that contain sufficient outcomes.
+    """
+    df = df.copy()
+    mask = df["Outcomes"] >= MIN_OUTCOMES
+    df = df[mask]
+    return df
+
+
 def _remove_unwanted_bookmakers(df: pd.DataFrame) -> pd.DataFrame:
     """
     Remove bookmaker columns that are not in ALL_BMS.
@@ -59,43 +85,6 @@ def _remove_unwanted_bookmakers(df: pd.DataFrame) -> pd.DataFrame:
     cols_to_drop = [bm for bm in bookmakers if bm not in ALL_BMS]
     df = df.drop(columns=cols_to_drop)
     return df
-
-
-def _add_metadata(
-    df: pd.DataFrame, best_odds_bms: Optional[List[str]] = None
-) -> pd.DataFrame:
-    """
-    Add Best Odds, Best Bookmaker, Outcomes, Result, and Scrape Time columns.
-    Handles missing bookmaker columns gracefully.
-    """
-    df = df.copy()
-    bms = find_bookmaker_columns(df)
-
-    if best_odds_bms:
-        # Only include bookmaker columns that exist
-        existing_bms = [bm for bm in best_odds_bms if bm in df.columns]
-
-        if existing_bms:
-            df["Best Odds"] = df[existing_bms].max(axis=1)
-            df["Best Bookmaker"] = df[existing_bms].apply(lambda row: row.idxmax() if row.notna().any() else None, axis=1)
-
-        else:
-            # Fallback if none exist
-            df["Best Odds"] = None
-            df["Best Bookmaker"] = None
-    else:
-        if bms:
-            df["Best Odds"] = df[bms].max(axis=1)
-            df["Best Bookmaker"] = df[bms].idxmax(axis=1)
-        else:
-            df["Best Odds"] = None
-            df["Best Bookmaker"] = None
-
-    df["Outcomes"] = df.groupby("Match")["Team"].transform("count")
-    df["Result"] = "Not Found"
-    df["Scrape Time"] = datetime.now(timezone.utc).strftime(TIMESTAMP_FORMAT)
-    return df
-
 
 
 def _clean_odds_data(df: pd.DataFrame) -> pd.DataFrame:
@@ -134,18 +123,51 @@ def _min_bookmaker_filter(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def _max_odds_filter(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Remove rows with best odds greater than MAX_ODDS.
-
-    Args:
-        df (pd.DataFrame): DataFrame containing odds data without exchange columns, and with metadata.
-
-    Returns:
-        pd.DataFrame: DataFrame with only rows that contain odds that are not extreme.
+    """ 
+    Remove rows with best odds greater than MAX_ODDS. 
+    
+    Args: df (pd.DataFrame): DataFrame containing odds data without exchange columns, and with metadata. 
+    
+    Returns: pd.DataFrame: DataFrame with only rows that contain odds that are not extreme. 
     """
     df = df.copy()
-    mask = df["Best Odds"] <= MAX_ODDS
-    df = df[mask]
+    bms = find_bookmaker_columns(df)
+    mask = (df[bms] <= MAX_ODDS).all(axis=1)
+    return df[mask]
+
+
+def _add_metadata(
+    df: pd.DataFrame, best_odds_bms: Optional[List[str]] = None
+) -> pd.DataFrame:
+    """
+    Add Best Odds, Best Bookmaker, Outcomes, Result, and Scrape Time columns.
+    Handles missing bookmaker columns gracefully.
+    """
+    df = df.copy()
+    bms = find_bookmaker_columns(df)
+
+    if best_odds_bms:
+        # Only include bookmaker columns that exist
+        existing_bms = [bm for bm in best_odds_bms if bm in df.columns]
+
+        if existing_bms:
+            df["Best Odds"] = df[existing_bms].max(axis=1)
+            df["Best Bookmaker"] = df[existing_bms].apply(lambda row: row.idxmax() if row.notna().any() else None, axis=1)
+
+        else:
+            # Fallback if none exist
+            df["Best Odds"] = None
+            df["Best Bookmaker"] = None
+    else:
+        if bms:
+            df["Best Odds"] = df[bms].max(axis=1)
+            df["Best Bookmaker"] = df[bms].apply(lambda row: row.idxmax() if row.notna().any() else None, axis=1)
+        else:
+            df["Best Odds"] = None
+            df["Best Bookmaker"] = None
+
+    df["Result"] = "Not Found"
+    df["Scrape Time"] = datetime.now(timezone.utc).strftime(TIMESTAMP_FORMAT)
     return df
 
 
@@ -176,11 +198,14 @@ def process_target_odds_data(df: pd.DataFrame) -> pd.DataFrame:
     Returns:
         pd.DataFrame: Cleaned and validated DataFrame.
     """
+    df = df.copy()
+    df = _add_outcomes_metadata(df)
+    df = _minimum_outcomes_filter(df)
     df = _remove_unwanted_bookmakers(df)
-    df = _add_metadata(df, best_odds_bms=NC_BMS)
     df = _clean_odds_data(df)
     df = _min_bookmaker_filter(df)
     df = _max_odds_filter(df)
+    df = _add_metadata(df, best_odds_bms=NC_BMS)
     df = _all_outcomes_present_filter(df)
     return df
 
