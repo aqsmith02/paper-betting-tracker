@@ -34,7 +34,9 @@ THEODDS_SPORTS_DICT = {
 # Betting thresholds
 EV_THRESHOLD = 0.05
 Z_SCORE_THRESHOLD = 2.0
+MAX_EV = 0.35
 MAX_Z_SCORE = 5.0
+MAX_MARGIN = 0.15
 
 # Data cleaning constants
 MIN_BOOKMAKERS = 5

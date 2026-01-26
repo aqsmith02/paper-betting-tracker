@@ -8,6 +8,7 @@ Author: Andrew Smith
 import pandas as pd
 import numpy as np
 from src.find_bets.data_processing import find_bookmaker_columns
+from src.constants import MAX_MARGIN
 
 def _calculate_market_margin(odds_list):
     """
@@ -44,7 +45,7 @@ def _calculate_market_margin(odds_list):
             f"Odds: {odds_list}"
         )
     
-    if margin > 0.15:
+    if margin > MAX_MARGIN:
         raise ValueError(
             f"Unusually high market margin ({margin:.4f}). "
             f"Implied probabilities sum to {implied_prob_sum:.4f}. "
