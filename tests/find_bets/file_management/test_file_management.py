@@ -1,596 +1,301 @@
 """
 test_file_management.py
 
-Unit tests for file_management.py module.
+Pytest test suite for file_management.py module.
 
 Author: Andrew Smith
 """
 
-import unittest
+import pytest
 import pandas as pd
-from pathlib import Path
+import numpy as np
 from datetime import datetime
 from unittest.mock import patch
-import tempfile
-import shutil
 from src.find_bets.file_management import (
     _start_date_from_timestamp,
-    BetFileManager,
+    _filter_best_bets_only,
+    _remove_duplicates,
+    _align_column_schemas,
+    save_betting_data,
 )
 
 
-class TestStartDateFromTimestamp(unittest.TestCase):
-    """Test cases for _start_date_from_timestamp function."""
-
-    def test_datetime_object(self):
-        """Test conversion of datetime object to date string."""
-        dt = datetime(2025, 11, 1, 15, 30, 0)
-        result = _start_date_from_timestamp(dt)
-        self.assertEqual(result, "2025-11-01")
-
-    def test_string_timestamp(self):
-        """Test conversion of string timestamp to date string."""
-        timestamp_str = "2025-11-01 15:30:00"
-        result = _start_date_from_timestamp(timestamp_str)
-        self.assertEqual(result, "2025-11-01")
-
-    def test_iso_format_string(self):
-        """Test conversion of ISO format string."""
-        timestamp_str = "2025-11-01T15:30:00"
-        result = _start_date_from_timestamp(timestamp_str)
-        self.assertEqual(result, "2025-11-01")
-
-    def test_date_only_string(self):
-        """Test conversion of date-only string."""
-        date_str = "2025-11-01"
-        result = _start_date_from_timestamp(date_str)
-        self.assertEqual(result, "2025-11-01")
-
-    def test_different_date_formats(self):
-        """Test various date format inputs."""
-        test_cases = [
-            ("2025-12-31", "2025-12-31"),
-            ("2025-01-01 00:00:00", "2025-01-01"),
-            ("2025/06/15", "2025-06-15"),
-        ]
-        for input_date, expected in test_cases:
-            result = _start_date_from_timestamp(input_date)
-            self.assertEqual(result, expected)
-
-
-class TestBetFileManagerInit(unittest.TestCase):
-    """Test cases for BetFileManager initialization."""
-
-    def setUp(self):
-        """Set up temporary directory for testing."""
-        self.test_dir = tempfile.mkdtemp()
-
-    def tearDown(self):
-        """Clean up temporary directory."""
-        shutil.rmtree(self.test_dir)
-
-    def test_init_with_default_directory(self):
-        """Test initialization with default directory."""
-        manager = BetFileManager()
-        self.assertIsInstance(manager.data_dir, Path)
-        self.assertTrue(manager.data_dir.exists())
-
-    def test_init_with_custom_directory(self):
-        """Test initialization with custom directory."""
-        custom_dir = Path(self.test_dir) / "custom_data"
-        manager = BetFileManager(custom_dir)
-        self.assertEqual(manager.data_dir, custom_dir)
-        self.assertTrue(manager.data_dir.exists())
-
-    def test_creates_directory_if_not_exists(self):
-        """Test that initialization creates directory if it doesn't exist."""
-        new_dir = Path(self.test_dir) / "new_directory"
-        self.assertFalse(new_dir.exists())
-        manager = BetFileManager(new_dir)
-        self.assertTrue(new_dir.exists())
-
-
-class TestBetFileManagerGetColumns(unittest.TestCase):
-    """Test cases for BetFileManager._get_columns method."""
-
-    def setUp(self):
-        """Set up BetFileManager instance."""
-        self.test_dir = tempfile.mkdtemp()
-        self.manager = BetFileManager(self.test_dir)
-
-    def tearDown(self):
-        """Clean up temporary directory."""
-        shutil.rmtree(self.test_dir)
-
-    def test_get_strategy_columns_master_nc_avg(self):
-        """Test getting strategy columns for master_nc_avg."""
-        result = self.manager._get_columns("master_nc_avg_bets.csv", "strategy")
-        self.assertEqual(result, ["Expected Value", "Fair Odds Avg"])
-
-    def test_get_strategy_columns_master_nc_zscore(self):
-        """Test getting strategy columns for master_nc_zscore."""
-        result = self.manager._get_columns("master_nc_zscore_full.csv", "strategy")
-        self.assertEqual(result, ["Z Score", "Expected Value"])
-
-    def test_get_strategy_columns_master_nc_pin(self):
-        """Test getting strategy columns for master_nc_pin."""
-        result = self.manager._get_columns("master_nc_pin.csv", "strategy")
-        self.assertEqual(result, ["Pinnacle Fair Odds", "Expected Value"])
-
-    def test_get_strategy_columns_master_nc_random(self):
-        """Test getting strategy columns for master_nc_random."""
-        result = self.manager._get_columns("master_nc_random_bets.csv", "strategy")
-        self.assertEqual(result, ["Random Bet Odds"])
-
-    def test_get_strategy_columns_with_full_suffix(self):
-        """Test getting columns with _full suffix."""
-        result = self.manager._get_columns("master_nc_avg_full.csv", "strategy")
-        self.assertEqual(result, ["Expected Value", "Fair Odds Avg"])
-
-    def test_get_strategy_columns_with_bets_suffix(self):
-        """Test getting columns with _bets suffix."""
-        result = self.manager._get_columns("master_nc_mod_zscore_bets.csv", "strategy")
-        self.assertEqual(result, ["Modified Z Score", "Expected Value"])
-
-    def test_get_columns_nonexistent_strategy(self):
-        """Test getting columns for non-existent strategy."""
-        result = self.manager._get_columns("nonexistent.csv", "strategy")
-        self.assertIsNone(result)
-
-    def test_get_columns_nc_strategies(self):
-        """Test getting columns for north carolina dataset."""
-        nc_tests = [
-            ("master_nc_avg.csv", ["Expected Value", "Fair Odds Avg"]),
-            ("master_nc_zscore.csv", ["Z Score", "Expected Value"]),
-            ("master_nc_pin.csv", ["Pinnacle Fair Odds", "Expected Value"]),
-            ("master_nc_random.csv", ["Random Bet Odds"]),
-        ]
-        for filename, expected in nc_tests:
-            result = self.manager._get_columns(filename, "strategy")
-            self.assertEqual(result, expected)
-
-
-class TestBetFileManagerAppendUniqueBets(unittest.TestCase):
-    """Test cases for BetFileManager._append_unique_bets method."""
-
-    def setUp(self):
-        """Set up test environment."""
-        self.test_dir = tempfile.mkdtemp()
-        self.manager = BetFileManager(self.test_dir)
-        self.sample_data = pd.DataFrame(
-            {
-                "Match": ["Team A vs Team B", "Team C vs Team D"],
-                "League": ["Premier League", "La Liga"],
-                "Team": ["Team A", "Team C"],
-                "Start Time": ["2025-11-01T15:00:00Z", "2025-11-01T18:00:00Z"],
-                "Best Bookmaker": ["Bet365", "William Hill"],
-                "Best Odds": [2.5, 3.0],
-                "Result": ["Not Found", "Not Found"],
-            }
-        )
-
-    def tearDown(self):
-        """Clean up temporary directory."""
-        shutil.rmtree(self.test_dir)
-
-    @patch("src.find_bets.file_management.datetime")
-    def test_append_to_new_file(self, mock_datetime):
-        """Test appending data to a new file."""
-        mock_datetime.now.return_value.strftime.return_value = "2025-11-01T12:00:00Z"
-
-        filename = "test_bets.csv"
-        self.manager._append_unique_bets(self.sample_data, filename)
-
-        file_path = Path(self.test_dir) / filename
-        self.assertTrue(file_path.exists())
-
-        result = pd.read_csv(file_path)
-        self.assertEqual(len(result), 2)
-        self.assertIn("Scrape Time", result.columns)
-
-    @patch("src.find_bets.file_management.datetime")
-    def test_append_unique_bets_to_existing_file(self, mock_datetime):
-        """Test appending unique bets to existing file."""
-        mock_datetime.now.return_value.strftime.return_value = "2025-11-01T12:00:00Z"
-
-        filename = "test_bets.csv"
-        # Create initial file
-        self.manager._append_unique_bets(self.sample_data, filename)
-
-        # Create new data with one duplicate and one new bet
-        new_data = pd.DataFrame(
-            {
-                "Match": ["Team A vs Team B", "Team E vs Team F"],
-                "League": ["Premier League", "Bundesliga"],
-                "Team": ["Team A", "Team E"],
-                "Start Time": ["2025-11-01T15:00:00Z", "2025-11-02T20:00:00Z"],
-                "Best Bookmaker": ["Bet365", "Betway"],
-                "Best Odds": [2.5, 1.8],
-                "Result": ["Win", "Win"],
-            }
-        )
-
-        self.manager._append_unique_bets(new_data, filename)
-
-        result = pd.read_csv(Path(self.test_dir) / filename)
-        self.assertEqual(len(result), 3)  # 2 original + 1 new
-
-    @patch("src.find_bets.file_management.datetime")
-    def test_append_all_duplicates(self, mock_datetime):
-        """Test appending when all bets are duplicates."""
-        mock_datetime.now.return_value.strftime.return_value = "2025-11-01T12:00:00Z"
-
-        filename = "test_bets.csv"
-        self.manager._append_unique_bets(self.sample_data, filename)
-
-        # Try to append the same data again
-        self.manager._append_unique_bets(self.sample_data, filename)
-
-        result = pd.read_csv(Path(self.test_dir) / filename)
-        self.assertEqual(len(result), 2)  # Should still be 2
-
-    def test_append_empty_dataframe(self):
-        """Test appending empty DataFrame."""
-        filename = "test_bets.csv"
-        empty_df = pd.DataFrame()
-
-        self.manager._append_unique_bets(empty_df, filename)
-
-        file_path = Path(self.test_dir) / filename
-        self.assertFalse(file_path.exists())
-
-    @patch("src.find_bets.file_management.datetime")
-    def test_duplicate_detection_different_date(self, mock_datetime):
-        """Test that bets on different dates are not considered duplicates."""
-        mock_datetime.now.return_value.strftime.return_value = "2025-11-01T12:00:00Z"
-
-        filename = "test_bets.csv"
-        self.manager._append_unique_bets(self.sample_data, filename)
-
-        # Same match but different date
-        new_data = pd.DataFrame(
-            {
-                "Match": ["Team A vs Team B"],
-                "League": ["Premier League"],
-                "Team": ["Team A"],
-                "Start Time": ["2025-11-02T15:00:00Z"],
-                "Best Bookmaker": ["Bet365"],
-                "Best Odds": [2.5],
-                "Result": ["Win"],
-            }
-        )
-
-        self.manager._append_unique_bets(new_data, filename)
-
-        result = pd.read_csv(Path(self.test_dir) / filename)
-        self.assertEqual(len(result), 3)
-
-
-class TestBetFileManagerAlignColumnSchemas(unittest.TestCase):
-    """Test cases for BetFileManager._align_column_schemas method."""
-
-    def setUp(self):
-        """Set up test environment."""
-        self.test_dir = tempfile.mkdtemp()
-        self.manager = BetFileManager(self.test_dir)
-
-    def tearDown(self):
-        """Clean up temporary directory."""
-        shutil.rmtree(self.test_dir)
-
-    def test_align_identical_schemas(self):
-        """Test alignment when schemas are identical."""
-        columns = ["Match", "Team", "Best Odds", "Result"]
-        existing_df = pd.DataFrame(columns=columns)
-        new_df = pd.DataFrame(columns=columns)
-
-        result = self.manager._align_column_schemas(
-            existing_df, new_df, "master_nc_avg_bets.csv"
-        )
-
-        self.assertIsInstance(result, list)
-        self.assertTrue(all(col in result for col in columns))
-
-    def test_align_with_new_columns(self):
-        """Test alignment when new data has additional columns."""
-        existing_df = pd.DataFrame(columns=["Match", "Team", "Best Odds"])
-        new_df = pd.DataFrame(columns=["Match", "Team", "Best Odds", "New Column"])
-
-        result = self.manager._align_column_schemas(
-            existing_df, new_df, "master_nc_avg_bets.csv"
-        )
-
-        self.assertIn("New Column", result)
-        self.assertEqual(len(result), 4)
-
-    def test_column_ordering_strategy_columns_at_end(self):
-        """Test that strategy columns are placed at end."""
-        existing_df = pd.DataFrame(
-            columns=["Match", "Team", "Expected Value", "Fair Odds Avg", "Best Odds"]
-        )
-        new_df = pd.DataFrame(
-            columns=["Match", "Team", "League", "Expected Value", "Fair Odds Avg"]
-        )
-
-        result = self.manager._align_column_schemas(
-            existing_df, new_df, "master_nc_avg_bets.csv"
-        )
-
-        # Strategy columns should be near the end
-        strategy_indices = [
-            result.index(col) for col in ["Expected Value", "Fair Odds Avg"]
-        ]
-        non_strategy_indices = [
-            result.index(col) for col in ["Match", "Team", "League"]
-        ]
-
-        self.assertTrue(max(non_strategy_indices) < min(strategy_indices))
-
-    def test_end_columns_ordering(self):
-        """Test that end columns (Best Odds, Best Bookmaker, Result, etc.) are at end."""
-        columns = [
-            "Match",
-            "Team",
-            "League",
-            "Expected Value",
-            "Best Odds",
-            "Best Bookmaker",
-            "Result",
-            "Scrape Time",
-        ]
-        existing_df = pd.DataFrame(columns=columns)
-        new_df = pd.DataFrame(columns=columns)
-
-        result = self.manager._align_column_schemas(
-            existing_df, new_df, "master_nc_avg_bets.csv"
-        )
-
-        # Check that specific columns are at the end
-        end_columns = ["Best Odds", "Best Bookmaker", "Result", "Scrape Time"]
-        result_end = result[-len(end_columns) :]
-
-        for col in end_columns:
-            self.assertIn(col, result_end)
-
-
-class TestBetFileManagerSaveBestBetsOnly(unittest.TestCase):
-    """Test cases for BetFileManager.save_best_bets_only method."""
-
-    def setUp(self):
-        """Set up test environment."""
-        self.test_dir = tempfile.mkdtemp()
-        self.manager = BetFileManager(self.test_dir)
-        self.sample_data = pd.DataFrame(
-            {
-                "Match": ["Team A vs Team B", "Team A vs Team B", "Team C vs Team D"],
-                "Team": ["Team A", "Team B", "Team C"],
-                "Start Time": [
-                    "2025-11-01T15:00:00Z",
-                    "2025-11-01T15:00:00Z",
-                    "2025-11-01T18:00:00Z",
-                ],
-                "Expected Value": [0.15, 0.08, 0.12],
-                "Best Bookmaker": ["Bet365", "William Hill", "Betway"],
-                "Best Odds": [2.5, 3.0, 1.8],
-            }
-        )
-
-    def tearDown(self):
-        """Clean up temporary directory."""
-        shutil.rmtree(self.test_dir)
-
-    @patch("src.find_bets.file_management.datetime")
-    def test_save_best_bet_per_match(self, mock_datetime):
-        """Test that only the best bet per match is saved."""
-        mock_datetime.now.return_value.strftime.return_value = "2025-11-01T12:00:00Z"
-
-        result = self.manager.save_best_bets_only(
-            self.sample_data, "test_bets.csv", "Expected Value"
-        )
-
-        self.assertEqual(len(result), 2)  # 2 unique matches
-        # First match should have the highest Expected Value (0.15)
-        match_a_row = result[result["Match"] == "Team A vs Team B"]
-        self.assertEqual(match_a_row.iloc[0]["Expected Value"], 0.15)
-
-    @patch("src.find_bets.file_management.datetime")
-    def test_save_best_bets_creates_file(self, mock_datetime):
-        """Test that file is created when saving best bets."""
-        mock_datetime.now.return_value.strftime.return_value = "2025-11-01T12:00:00Z"
-
-        filename = "test_bets.csv"
-        self.manager.save_best_bets_only(self.sample_data, filename, "Expected Value")
-
-        file_path = Path(self.test_dir) / filename
-        self.assertTrue(file_path.exists())
-
-    def test_save_best_bets_empty_dataframe(self):
-        """Test saving empty DataFrame returns empty DataFrame."""
-        empty_df = pd.DataFrame()
-        result = self.manager.save_best_bets_only(
-            empty_df, "test_bets.csv", "Expected Value"
-        )
-
-        self.assertTrue(result.empty)
-
-    @patch("src.find_bets.file_management.datetime")
-    def test_descending_sort_for_best_bet(self, mock_datetime):
-        """Test that bets are sorted in descending order to get highest score."""
-        mock_datetime.now.return_value.strftime.return_value = "2025-11-01T12:00:00Z"
-
-        data = pd.DataFrame(
-            {
-                "Match": ["Team A vs Team B", "Team A vs Team B"],
-                "Team": ["Team A", "Team B"],
-                "Start Time": ["2025-11-01T15:00:00Z", "2025-11-01T15:00:00Z"],
-                "Z Score": [2.5, 3.8],
-                "Expected Value": [0.10, 0.18],
-                "Best Odds": [2.5, 3.0],
-            }
-        )
-
-        result = self.manager.save_best_bets_only(data, "test_bets.csv", "Z Score")
-
-        self.assertEqual(len(result), 1)
-        self.assertEqual(result.iloc[0]["Z Score"], 3.8)
-        self.assertEqual(result.iloc[0]["Expected Value"], 0.18)
-
-
-class TestBetFileManagerSaveFullBettingData(unittest.TestCase):
-    """Test cases for BetFileManager.save_full_betting_data method."""
-
-    def setUp(self):
-        """Set up test environment."""
-        self.test_dir = tempfile.mkdtemp()
-        self.manager = BetFileManager(self.test_dir)
-
-        self.source_df = pd.DataFrame(
-            {
-                "Match": ["Team A vs Team B", "Team C vs Team D"],
-                "Team": ["Team A", "Team C"],
-                "Start Time": ["2025-11-01T15:00:00Z", "2025-11-01T18:00:00Z"],
-                "League": ["Premier League", "La Liga"],
-                "Vigfree Pinnacle": [2.4, 2.9],
-                "Vigfree Bet365": [2.5, 3.0],
-                "Best Odds": [2.5, 3.0],
-                "Best Bookmaker": ["Bet365", "William Hill"],
-                "Expected Value": [0.15, 0.12],
-            }
-        )
-
-        self.filtered_summary = pd.DataFrame(
-            {
-                "Match": ["Team A vs Team B"],
-                "Team": ["Team A"],
-                "Start Time": ["2025-11-01T15:00:00Z"],
-                "Expected Value": [0.15],
-            }
-        )
-
-    def tearDown(self):
-        """Clean up temporary directory."""
-        shutil.rmtree(self.test_dir)
-
-    @patch("src.find_bets.file_management.datetime")
-    def test_save_full_data_merges_correctly(self, mock_datetime):
-        """Test that full data is merged correctly with filtered summary."""
-        mock_datetime.now.return_value.strftime.return_value = "2025-11-01T12:00:00Z"
-
-        filename = "test_full.csv"
-        self.manager.save_full_betting_data(
-            self.source_df, self.filtered_summary, filename
-        )
-
-        result = pd.read_csv(Path(self.test_dir) / filename)
-        self.assertEqual(len(result), 1)
-        self.assertEqual(result.iloc[0]["Match"], "Team A vs Team B")
-        self.assertIn("League", result.columns)
-
-    @patch("src.find_bets.file_management.datetime")
-    def test_save_full_data_removes_vigfree_columns(self, mock_datetime):
-        """Test that Vigfree columns are removed from output."""
-        mock_datetime.now.return_value.strftime.return_value = "2025-11-01T12:00:00Z"
-
-        filename = "test_full.csv"
-        self.manager.save_full_betting_data(
-            self.source_df, self.filtered_summary, filename
-        )
-
-        result = pd.read_csv(Path(self.test_dir) / filename)
-        vigfree_cols = [col for col in result.columns if col.startswith("Vigfree ")]
-        self.assertEqual(len(vigfree_cols), 0)
-
-    def test_save_full_data_empty_filtered_summary(self):
-        """Test that no file is created when filtered summary is empty."""
-        filename = "test_full.csv"
-        empty_summary = pd.DataFrame()
-
-        self.manager.save_full_betting_data(self.source_df, empty_summary, filename)
-
-        file_path = Path(self.test_dir) / filename
-        self.assertFalse(file_path.exists())
-
-    @patch("src.find_bets.file_management.datetime")
-    def test_save_full_data_preserves_all_source_columns(self, mock_datetime):
-        """Test that all non-vigfree columns from source are preserved."""
-        mock_datetime.now.return_value.strftime.return_value = "2025-11-01T12:00:00Z"
-
-        filename = "test_full.csv"
-        self.manager.save_full_betting_data(
-            self.source_df, self.filtered_summary, filename
-        )
-
-        result = pd.read_csv(Path(self.test_dir) / filename)
-        expected_columns = [
-            "Match",
-            "Team",
-            "Start Time",
-            "League",
-            "Best Odds",
-            "Best Bookmaker",
-            "Expected Value",
-        ]
-
-        for col in expected_columns:
-            self.assertIn(col, result.columns)
-
-
-class TestBetFileManagerIntegration(unittest.TestCase):
-    """Integration tests for BetFileManager."""
-
-    def setUp(self):
-        """Set up test environment."""
-        self.test_dir = tempfile.mkdtemp()
-        self.manager = BetFileManager(self.test_dir)
-
-    def tearDown(self):
-        """Clean up temporary directory."""
-        shutil.rmtree(self.test_dir)
-
-    @patch("src.find_bets.file_management.datetime")
-    def test_full_workflow(self, mock_datetime):
-        """Test complete workflow: save best bets and full data."""
-        mock_datetime.now.return_value.strftime.return_value = "2025-11-01T12:00:00Z"
-
-        # Create sample data
-        full_data = pd.DataFrame(
-            {
-                "Match": ["Team A vs Team B", "Team A vs Team B", "Team C vs Team D"],
-                "Team": ["Team A", "Team B", "Team C"],
-                "Start Time": [
-                    "2025-11-01T15:00:00Z",
-                    "2025-11-01T15:00:00Z",
-                    "2025-11-01T18:00:00Z",
-                ],
-                "League": ["Premier League", "Premier League", "La Liga"],
-                "Expected Value": [0.15, 0.08, 0.12],
-                "Vigfree Pinnacle": [2.4, 2.8, 2.9],
-                "Best Odds": [2.5, 3.0, 1.8],
-                "Best Bookmaker": ["Bet365", "William Hill", "Betway"],
-            }
-        )
-
-        # Save best bets
-        best_bets = self.manager.save_best_bets_only(
-            full_data, "master_nc_avg_bets.csv", "Expected Value"
-        )
-
-        # Save full data
-        self.manager.save_full_betting_data(full_data, best_bets, "master_nc_avg_full.csv")
-
-        # Verify both files exist
-        self.assertTrue((Path(self.test_dir) / "master_nc_avg_bets.csv").exists())
-        self.assertTrue((Path(self.test_dir) / "master_nc_avg_full.csv").exists())
-
-        # Verify content
-        bets_df = pd.read_csv(Path(self.test_dir) / "master_nc_avg_bets.csv")
-        full_df = pd.read_csv(Path(self.test_dir) / "master_nc_avg_full.csv")
-
-        self.assertEqual(len(bets_df), 2)  # 2 unique matches
-        self.assertEqual(len(full_df), 2)  # Same 2 matches in full data
-        self.assertIn("Expected Value", bets_df.columns)
-        self.assertIn("Expected Value", full_df.columns)
-
-
-if __name__ == "__main__":
-    unittest.main(verbosity=2)
+class TestStartDateFromTimestamp:
+    """Test _start_date_from_timestamp function."""
+    
+    def test_converts_string_timestamp(self):
+        """Should convert string timestamp to YYYY-MM-DD format."""
+        timestamp = '2024-01-15 19:30:00'
+        result = _start_date_from_timestamp(timestamp)
+        assert result == '2024-01-15'
+
+    def test_converts_edge_string_timestamp(self):
+        """Should convert string timestamp to YYYY-MM-DD format."""
+        timestamp = '2024-01-15 00:00:00'
+        result = _start_date_from_timestamp(timestamp)
+        assert result == '2024-01-15'
+    
+    def test_converts_datetime_object(self):
+        """Should convert datetime object to YYYY-MM-DD format."""
+        timestamp = datetime(2024, 1, 15, 19, 30, 0)
+        result = _start_date_from_timestamp(timestamp)
+        assert result == '2024-01-15'
+    
+    def test_strips_time_component(self):
+        """Should strip time component, keeping only date."""
+        timestamp = '2024-01-15 23:59:59'
+        result = _start_date_from_timestamp(timestamp)
+        assert result == '2024-01-15'
+
+
+
+class TestFilterBestBetsOnly:
+    """Test _filter_best_bets_only function."""
+    
+    def test_keeps_highest_score_per_match(self):
+        """Should keep only the bet with highest score for each match."""
+        df = pd.DataFrame({
+            'Match': ['Game 1', 'Game 1', 'Game 2'],
+            'Start Time': pd.to_datetime(['2024-01-15 19:00'] * 3),
+            'Expected Value': [0.10, 0.20, 0.15],
+        })
+        
+        result = _filter_best_bets_only(df, 'Expected Value')
+        
+        # Game 1 appears twice, should keep only the 0.20 EV bet
+        game1_bets = result[result['Match'] == 'Game 1']
+        assert len(game1_bets) == 1
+        assert game1_bets['Expected Value'].iloc[0] == 0.20
+    
+    def test_uses_match_and_start_time_as_key(self):
+        """Should use both Match and Start Time to identify duplicates."""
+        df = pd.DataFrame({
+            'Match': ['Game 1', 'Game 1', 'Game 1'],
+            'Start Time': pd.to_datetime(['2024-01-15 19:00', '2024-01-15 19:00', '2024-01-16 19:00']),
+            'Expected Value': [0.10, 0.15, 0.20],
+        })
+        
+        result = _filter_best_bets_only(df, 'Expected Value')
+        
+        # Should keep 2 bets: best from Jan 15 and the one from Jan 16
+        assert len(result) == 2
+        assert 0.15 in result['Expected Value'].values  # Best from Jan 15
+        assert 0.20 in result['Expected Value'].values  # Only one from Jan 16
+    
+    def test_handles_empty_dataframe(self):
+        """Should return empty DataFrame when input is empty."""
+        df = pd.DataFrame()
+        result = _filter_best_bets_only(df, 'Expected Value')
+        
+        assert isinstance(result, pd.DataFrame)
+        assert len(result) == 0
+    
+    def test_works_with_different_score_columns(self):
+        """Should work with any specified score column."""
+        df = pd.DataFrame({
+            'Match': ['Game 1', 'Game 1'],
+            'Start Time': pd.to_datetime(['2024-01-15 19:00'] * 2),
+            'Expected Value': [0.20, 0.10],
+            'Modified Z-Score': [2.0, 3.5],
+        })
+        
+        # Using Expected Value
+        result_ev = _filter_best_bets_only(df, 'Expected Value')
+        assert result_ev['Expected Value'].iloc[0] == 0.20
+        
+        # Using Modified Z-Score
+        result_z = _filter_best_bets_only(df, 'Modified Z-Score')
+        assert result_z['Modified Z-Score'].iloc[0] == 3.5
+
+
+class TestRemoveDuplicates:
+    """Test _remove_duplicates function."""
+    
+    def test_removes_exact_duplicates(self):
+        """Should remove bets that already exist (same Match and Start Date)."""
+        existing = pd.DataFrame({
+            'Match': ['Game 1'],
+            'Start Time': pd.to_datetime(['2024-01-15 19:00']),
+            'Team': ['Team A'],
+        })
+        
+        new = pd.DataFrame({
+            'Match': ['Game 1', 'Game 2'],
+            'Start Time': pd.to_datetime(['2024-01-15 19:30', '2024-01-16 20:00']),
+            'Team': ['Team A', 'Team B'],
+        })
+        
+        result = _remove_duplicates(existing, new)
+        
+        # Game 1 on same date should be removed, Game 2 should remain
+        assert len(result) == 1
+        assert result['Match'].iloc[0] == 'Game 2'
+    
+    def test_keeps_same_match_different_dates(self):
+        """Should keep bets for same match on different dates."""
+        existing = pd.DataFrame({
+            'Match': ['Game 1'],
+            'Start Time': pd.to_datetime(['2024-01-15 19:00']),
+        })
+        
+        new = pd.DataFrame({
+            'Match': ['Game 1'],
+            'Start Time': pd.to_datetime(['2024-01-16 19:00']),
+        })
+        
+        result = _remove_duplicates(existing, new)
+        
+        # Different dates, should keep
+        assert len(result) == 1
+    
+    def test_returns_all_new_when_existing_empty(self):
+        """Should return all new data when existing is empty."""
+        existing = pd.DataFrame()
+        
+        new = pd.DataFrame({
+            'Match': ['Game 1', 'Game 2'],
+            'Start Time': pd.to_datetime(['2024-01-15 19:00', '2024-01-16 20:00']),
+        })
+        
+        result = _remove_duplicates(existing, new)
+        
+        assert len(result) == 2
+
+
+class TestAlignColumnSchemas:
+    """Test _align_column_schemas function."""
+    
+    def test_inserts_new_columns_before_marker(self):
+        """Should insert new columns before the INSERT_BEFORE_COLUMN."""
+        existing = pd.DataFrame({
+            'ID': [1],
+            'Match': ['Game 1'],
+            'Best Bookmaker': ['Bookmaker A'],
+            'Result': [1],
+        })
+        
+        new = pd.DataFrame({
+            'ID': [2],
+            'Match': ['Game 2'],
+            'New Column': [100],
+            'Best Bookmaker': ['Bookmaker A'],
+            'Result': [0],
+        })
+        
+        result = _align_column_schemas(existing, new)
+        
+        assert result == ['ID', 'Match', 'New Column', 'Best Bookmaker', 'Result']
+    
+    def test_returns_new_columns_when_existing_empty(self):
+        """Should return new columns when existing DataFrame is empty."""
+        existing = pd.DataFrame()
+        new = pd.DataFrame({'A': [1], 'B': [2], 'C': [3]})
+        
+        result = _align_column_schemas(existing, new)
+        
+        assert result == ['A', 'B', 'C']
+    
+    def test_returns_existing_columns_when_new_empty(self):
+        """Should return existing columns when new DataFrame is empty."""
+        existing = pd.DataFrame({'A': [1], 'B': [2], 'C': [3]})
+        new = pd.DataFrame()
+        
+        result = _align_column_schemas(existing, new)
+        
+        assert result == ['A', 'B', 'C']
+    
+    def test_handles_no_new_columns(self):
+        """Should handle case where new df has no new columns."""
+        existing = pd.DataFrame({'A': [1], 'B': [2], 'Best Bookmaker': ['Bookmaker A'], 'Result': [3]})
+        new = pd.DataFrame({'A': [4], 'B': [5], 'Best Bookmaker': ['Bookmaker A'], 'Result': [6]})
+        
+        result = _align_column_schemas(existing, new)
+        
+        # Should just return existing columns
+        assert result == ['A', 'B', 'Best Bookmaker', 'Result']
+
+
+class TestSaveBettingData:
+    """Test save_betting_data function."""
+    
+    def test_saves_to_correct_filename(self):
+        """Should save to the specified filename."""
+        existing = pd.DataFrame()
+        new = pd.DataFrame({
+            'Match': ['Game 1'],
+            'Start Time': pd.to_datetime(['2024-01-15 19:00']),
+            'Expected Value': [0.15],
+            'Result': [np.nan],
+        })
+        
+        with patch('src.find_bets.file_management.pd.DataFrame.to_csv') as mock_to_csv:
+            save_betting_data(existing, new, 'my_bets.csv', 'Expected Value')
+            
+            # Check filename in call args
+            assert mock_to_csv.call_args[0][0] == 'my_bets.csv'
+    
+    def test_saves_without_index(self):
+        """Should save with index=False."""
+        existing = pd.DataFrame()
+        new = pd.DataFrame({
+            'Match': ['Game 1'],
+            'Start Time': pd.to_datetime(['2024-01-15 19:00']),
+            'Expected Value': [0.15],
+            'Result': [np.nan],
+        })
+        
+        with patch('src.find_bets.file_management.pd.DataFrame.to_csv') as mock_to_csv:
+            save_betting_data(existing, new, 'test.csv', 'Expected Value')
+            
+            # Check index=False in call args
+            assert mock_to_csv.call_args[1]['index'] == False
+    
+    def test_handles_empty_new_data(self):
+        """Should do nothing when new data is empty."""
+        existing = pd.DataFrame({
+            'Match': ['Game 1'],
+            'Start Time': pd.to_datetime(['2024-01-15 19:00']),
+        })
+        
+        new = pd.DataFrame()
+        
+        with patch('src.find_bets.file_management.pd.DataFrame.to_csv') as mock_to_csv:
+            save_betting_data(existing, new, 'test.csv', 'Expected Value')
+            
+            # Should not call to_csv when new data is empty
+            mock_to_csv.assert_not_called()
+    
+    def test_prints_when_print_bets_true(self, capsys):
+        """Should print bet information when print_bets=True."""
+        existing = pd.DataFrame()
+        new = pd.DataFrame({
+            'Match': ['Game 1', 'Game 2'],
+            'Start Time': pd.to_datetime(['2024-01-15 19:00', '2024-01-16 20:00']),
+            'Team': ['Team A', 'Team B'],
+            'Expected Value': [0.15, 0.20],
+            'Result': [np.nan, np.nan],
+        })
+        
+        with patch('src.find_bets.file_management.pd.DataFrame.to_csv'):
+            save_betting_data(existing, new, 'test.csv', 'Expected Value', print_bets=True)
+            
+            captured = capsys.readouterr()
+            assert 'bets found' in captured.out
+    
+    def test_does_not_print_when_print_bets_false(self, capsys):
+        """Should not print when print_bets=False."""
+        existing = pd.DataFrame()
+        new = pd.DataFrame({
+            'Match': ['Game 1'],
+            'Start Time': pd.to_datetime(['2024-01-15 19:00']),
+            'Team': ['Team A'],
+            'Expected Value': [0.15],
+            'Result': [np.nan],
+        })
+        
+        with patch('src.find_bets.file_management.pd.DataFrame.to_csv'):
+            save_betting_data(existing, new, 'test.csv', 'Expected Value', print_bets=False)
+            
+            captured = capsys.readouterr()
+            # Should not have printed anything about bets
+            assert 'bets found' not in captured.out
