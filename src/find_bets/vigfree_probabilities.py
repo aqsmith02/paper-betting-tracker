@@ -125,7 +125,7 @@ def _calculate_vigfree_probs_for_market(valid_odds, required_outcomes):
             continue
         
         vigfree_prob = 1 / fair_odds
-        vigfree_probs.append(vigfree_prob)
+        vigfree_probs.append(round(vigfree_prob, 4))
     
     return vigfree_probs
 

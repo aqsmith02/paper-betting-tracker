@@ -11,46 +11,27 @@ Date: July 2025
 
 import requests
 import pandas as pd
-from typing import List, Dict
+from typing import List, Dict, Optional
 from config.fetch_config import SPORT, SPORT_KEY, REGIONS, MARKETS, ODDS_FORMAT
 from config.api_config import THE_ODDS_API_KEY
 
 
-def fetch_odds() -> pd.DataFrame:
+def fetch_odds(games_data: Optional[List[Dict]] = None) -> pd.DataFrame:
     """
     Fetches head-to-head (h2h) betting odds from The Odds API.
+
+    Args: 
+        games_data (Optional[List[Dict]]): Pre-fetched game data for testing purposes. If None, data will be fetched from the API.
 
     Returns:
         pd.DataFrame: DataFrame with columns: match, league, start time, team, bookmaker, odds, last update.
                     Each row represents one team's odds from one bookmaker.
     """
-    # Build API request
-    url = f"https://api.the-odds-api.com/v4/sports/{SPORT_KEY}/odds"
-    params = {
-        "apiKey": THE_ODDS_API_KEY,
-        "regions": REGIONS,
-        "markets": MARKETS,
-        "oddsFormat": ODDS_FORMAT,
-    }
     print("----------------------------------------------------")
     print(f"Fetching odds for sport: {SPORT}")
-    
-    try:
-        response = requests.get(url, params=params)
-    except Exception as e:
-        print(f"Network error during API request: {e}")
-        return pd.DataFrame()
 
-    # Log API usage
-    print("Requests Remaining:", response.headers.get("x-requests-remaining"))
-    print("Requests Used:", response.headers.get("x-requests-used"))
-
-    if response.status_code != 200:
-        print(f"API request failed: {response.status_code} - {response.text}")
-        return pd.DataFrame()
-
-    games_data = response.json()
-    print(f"Retrieved {len(games_data)} games")
+    if games_data is None:
+        games_data = _get_json_response()
 
     # Process each game into rows
     rows = []
@@ -62,6 +43,27 @@ def fetch_odds() -> pd.DataFrame:
             print(f"Error processing game: {e}")
             continue
     return pd.DataFrame(rows)
+
+
+def _get_json_response() -> Dict:
+    """
+    Helper function to get JSON response from The Odds API.
+
+    Returns:
+        Dict: JSON response from the API.
+    """
+    url = f"https://api.the-odds-api.com/v4/sports/{SPORT_KEY}/odds"
+    params = {
+        "apiKey": THE_ODDS_API_KEY,
+        "regions": REGIONS,
+        "markets": MARKETS,
+        "oddsFormat": ODDS_FORMAT,
+    }
+    try:
+        response = requests.get(url, params=params)
+        return response.json()
+    except Exception as e:
+        raise Exception(f"Error while fetching API response: {e}")
 
 
 def _process_game(game: Dict) -> List[Dict]:

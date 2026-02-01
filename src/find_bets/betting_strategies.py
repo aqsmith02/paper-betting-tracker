@@ -95,7 +95,7 @@ def _calculate_modified_zscore(
     """
     median_vals = reference_values.median(axis=1)
     mad = (reference_values.sub(median_vals, axis=0)).abs().median(axis=1)
-    
+
     # Initialize with NaN
     modified_z = pd.Series(np.nan, index=values.index)
     
