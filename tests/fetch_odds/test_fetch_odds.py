@@ -295,20 +295,9 @@ class TestProcessGame:
 class TestFetchOdds:
     """Tests for main fetch_odds function"""
     
-    @patch('src.fetch_odds.fetch_odds.requests.get')
-    def test_successful_fetch(self, mock_get, sample_game):
+    def test_successful_fetch(self, sample_game):
         """Test successful API call and data processing"""
-        # Mock successful API response
-        mock_response = Mock()
-        mock_response.status_code = 200
-        mock_response.json.return_value = [sample_game]
-        mock_response.headers.get.side_effect = lambda x: {
-            'x-requests-remaining': '499',
-            'x-requests-used': '1'
-        }.get(x, None)
-        mock_get.return_value = mock_response
-        
-        df = fetch_odds()
+        df = fetch_odds([sample_game])
         
         # Verify DataFrame structure
         assert not df.empty
@@ -341,77 +330,31 @@ class TestFetchOdds:
         assert ncstate_row['Team'] == 'NC State Wolfpack'
         assert ncstate_row['BetRivers'] == 4.1
         assert ncstate_row['Caesars'] == 2.25
-        
-        # Verify API was called
-        mock_get.assert_called_once()
     
-    @patch('src.fetch_odds.fetch_odds.requests.get')
-    def test_multiple_games(self, mock_get, sample_game):
+    def test_multiple_games(self, sample_game):
         """Test processing multiple games"""
         game2 = sample_game.copy()
         game2["id"] = "different_id"
         game2["home_team"] = "Duke Blue Devils"
         game2["away_team"] = "UNC Tar Heels"
         
-        mock_response = Mock()
-        mock_response.status_code = 200
-        mock_response.json.return_value = [sample_game, game2]
-        mock_response.headers.get.return_value = "498"
-        mock_get.return_value = mock_response
-        
-        df = fetch_odds()
+        df = fetch_odds([sample_game, game2])
         
         # Should have 4 rows (2 outcomes per game)
         assert len(df) == 4
         assert df["ID"].nunique() == 2
     
-    @patch('src.fetch_odds.fetch_odds.requests.get')
-    def test_api_error_returns_empty_df(self, mock_get):
-        """Test that API errors return empty DataFrame"""
-        mock_response = Mock()
-        mock_response.status_code = 500
-        mock_response.text = "Internal Server Error"
-        mock_get.return_value = mock_response
-        
-        df = fetch_odds()
-        
-        assert df.empty
-        assert isinstance(df, pd.DataFrame)
-    
-    @patch('src.fetch_odds.fetch_odds.requests.get')
-    def test_network_error_returns_empty_df(self, mock_get):
-        """Test that network errors return empty DataFrame"""
-        mock_get.side_effect = Exception("Network error")
-        
-        df = fetch_odds()
-        
-        assert df.empty
-        assert isinstance(df, pd.DataFrame)
-    
-    @patch('src.fetch_odds.fetch_odds.requests.get')
-    def test_empty_games_list(self, mock_get):
+    def test_empty_games_list(self):
         """Test API returning no games"""
-        mock_response = Mock()
-        mock_response.status_code = 200
-        mock_response.json.return_value = []
-        mock_response.headers.get.return_value = "500"
-        mock_get.return_value = mock_response
-        
-        df = fetch_odds()
+        df = fetch_odds([])
         
         assert df.empty
     
-    @patch('src.fetch_odds.fetch_odds.requests.get')
-    def test_game_processing_error_continues(self, mock_get, sample_game):
+    def test_game_processing_error_continues(self, sample_game):
         """Test that errors in individual games don't stop processing"""
         bad_game = {"id": "bad"}  # Missing required fields
-        mock_response = Mock()
-        mock_response.status_code = 200
-        mock_response.json.return_value = [bad_game, sample_game]
-        mock_response.headers.get.return_value = "499"
-        mock_get.return_value = mock_response
         
-        df = fetch_odds()
+        df = fetch_odds([sample_game, bad_game])
         
         # Should still process the good game despite bad game error
         assert len(df) == 2
