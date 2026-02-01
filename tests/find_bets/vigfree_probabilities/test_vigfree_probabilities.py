@@ -193,8 +193,8 @@ class TestCalculateVigfreeProbs:
         vigfree_probs = _calculate_vigfree_probs_for_market(valid_odds, required_outcomes)
         
         assert len(vigfree_probs) == 2
-        assert abs(vigfree_probs[0] - 0.47) < 0.01 
-        assert abs(vigfree_probs[1] - 0.53) < 0.01
+        assert vigfree_probs[0] == 0.4678
+        assert vigfree_probs[1] == 0.5322
     
     def test_three_way_market(self):
         """Test calculation for 3-way market"""
@@ -204,9 +204,9 @@ class TestCalculateVigfreeProbs:
         vigfree_probs = _calculate_vigfree_probs_for_market(valid_odds, required_outcomes)
         
         assert len(vigfree_probs) == 3
-        assert abs(vigfree_probs[0] - 0.38) < 0.01 
-        assert abs(vigfree_probs[1] - 0.29) < 0.01
-        assert abs(vigfree_probs[2] - 0.33) < 0.01
+        assert vigfree_probs[0] == 0.3768
+        assert vigfree_probs[1] == 0.2893
+        assert vigfree_probs[2] == 0.3339
 
 
 class TestHasCompleteOdds:
@@ -265,9 +265,9 @@ class TestProcessBookmakerForMatch:
         
         # Check that vig-free probabilities were calculated correctly
         match_vigfree = df[df['Match'] == 'A @ B']['Vigfree DraftKings']
-        expected = [0.47, 0.53] # Approximate expected values
+        expected = [0.4678, 0.5322]
         actual = match_vigfree.tolist()
-        assert all(abs(a - e) < 0.01 for a, e in zip(actual, expected))
+        assert all(a == e for a, e in zip(actual, expected))
 
     
     def test_skips_incomplete_market(self, sample_odds_df):
@@ -296,9 +296,9 @@ class TestProcessBookmakerForMatch:
 
         # Check that vig-free probabilities were calculated correctly
         match_vigfree = df[df['Match'] == 'Team1 @ Team2']['Vigfree DraftKings']
-        expected = [0.38, 0.29, 0.33] # Approximate expected values
+        expected = [0.3768, 0.2893, 0.3339]
         actual = match_vigfree.tolist()
-        assert all(abs(a - e) < 0.01 for a, e in zip(actual, expected))
+        assert all(a == e for a, e in zip(actual, expected))
 
 
 class TestCalculateVigfreeProbabilities:
@@ -319,17 +319,17 @@ class TestCalculateVigfreeProbabilities:
         # Match A @ B should have complete odds for all bookmakers
         match_a = result[result['Match'] == 'A @ B']
         
-        draftkings_expected = [0.47, 0.53] 
+        draftkings_expected = [0.4678, 0.5322]
         actual = match_a['Vigfree DraftKings'].tolist()
-        assert all(abs(a - e) < 0.01 for a, e in zip(actual, draftkings_expected))
+        assert all(a == e for a, e in zip(actual, draftkings_expected))
 
-        fanduel_expected = [0.48, 0.52] 
+        fanduel_expected = [0.4807, 0.5193] 
         actual = match_a['Vigfree FanDuel'].tolist()
-        assert all(abs(a - e) < 0.01 for a, e in zip(actual, fanduel_expected))
+        assert all(a == e for a, e in zip(actual, fanduel_expected))
 
-        betmgm_expected = [0.47, 0.53] 
+        betmgm_expected = [0.4701, 0.5299] 
         actual = match_a['Vigfree BetMGM'].tolist()
-        assert all(abs(a - e) < 0.01 for a, e in zip(actual, betmgm_expected))
+        assert all(a == e for a, e in zip(actual, betmgm_expected))
     
     def test_handles_incomplete_markets(self, sample_odds_df):
         """Test handling of incomplete markets"""
@@ -345,13 +345,13 @@ class TestCalculateVigfreeProbabilities:
         """Test calculation for 3-way market"""
         result = calculate_vigfree_probabilities(three_way_market_df)
         
-        draftkings_expected = [0.38, 0.29, 0.33] 
+        draftkings_expected = [0.3768, 0.2893, 0.3339]
         actual = result['Vigfree DraftKings'].tolist()
-        assert all(abs(a - e) < 0.01 for a, e in zip(actual, draftkings_expected))
+        assert all(a == e for a, e in zip(actual, draftkings_expected))
 
-        fanduel_expected = [0.39, 0.28, 0.33] 
+        fanduel_expected = [0.3875, 0.2823, 0.3302] 
         actual = result['Vigfree FanDuel'].tolist()
-        assert all(abs(a - e) < 0.01 for a, e in zip(actual, fanduel_expected))
+        assert all(a == e for a, e in zip(actual, fanduel_expected))
     
     def test_preserves_original_columns(self, sample_odds_df):
         """Test that original columns are preserved"""
