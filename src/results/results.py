@@ -122,12 +122,17 @@ def main() -> None:
 
     for i, (bet_filename, full_filename) in enumerate(FILE_NAMES):
         try:
+            start_time = time.perf_counter()  # Start timing
             process_files(bet_filename, full_filename)
+            elapsed = time.perf_counter() - start_time  # Calculate elapsed time
+            remaining_sleep = SLEEP_DURATION - elapsed
 
-            # Sleep between files (except after the last one)
-            if i < len(FILE_NAMES) - 1:
-                print(f"Sleeping for {SLEEP_DURATION} seconds...")
-                time.sleep(SLEEP_DURATION)
+            # Sleep only if there is remaining time and it's not the last file
+            if i < len(FILE_NAMES) - 1 and remaining_sleep > 0:
+                print(f"Processing took {elapsed:.2f}s, sleeping for {remaining_sleep:.2f}s...")
+                time.sleep(remaining_sleep)
+            elif i < len(FILE_NAMES) - 1:
+                print(f"Processing took {elapsed:.2f}s, no need to sleep.")
 
         except Exception as e:
             print(f"Failed to process {bet_filename}: {e}")
