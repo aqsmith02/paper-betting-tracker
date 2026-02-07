@@ -38,6 +38,11 @@ def clean_old_pending_results(
     Returns:
         Tuple[pd.DataFrame, pd.DataFrame]: Tuple of cleaned DataFrames (filtered_df, filtered_full_df).
     """
+    if df.empty:
+        print(f"\n")
+        print(f"Removed 0 old rows with pending results")
+        return df, full_df
+
     current_time = datetime.now(timezone.utc)
     cutoff_time = current_time - timedelta(days=DAYS_CUTOFF)
 
