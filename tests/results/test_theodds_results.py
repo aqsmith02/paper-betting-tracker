@@ -1,419 +1,462 @@
 """
-test_theodds_results.py
+Tests for theodds_results.py
 
-Unit tests for theodds_results.py module.
-
-Author: Test Suite
+Tests functions that fetch and process sports game results from The-Odds-API.
 """
 
-import unittest
-from unittest.mock import patch, Mock
+import pytest
 import pandas as pd
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta, timezone
+from unittest.mock import patch, MagicMock
 from src.results.theodds_results import (
-    _start_date,
-    _parse_match_teams,
-    _time_since_start,
-    _get_scores_from_api,
-    _filter,
-    _get_winner,
-    get_finished_games_from_theodds,
-    map_league_to_key,
+    _get_scores_from_theodds,
+    _get_pending_event_ids,
+    _append_results,
+    get_finished_games_from_theodds
 )
 
 
-class TestStartDate(unittest.TestCase):
-    """Test cases for _start_date function."""
+class TestGetScoresFromTheOdds:
+    """Test suite for _get_scores_from_theodds function."""
 
-    def test_iso_format_timestamp(self):
-        """Test conversion of ISO format timestamp."""
-        timestamp = "2025-11-04T19:00:00Z"
-        result = _start_date(timestamp)
-        self.assertEqual(result, "2025-11-04")
-
-    def test_datetime_object(self):
-        """Test conversion of datetime object."""
-        dt = datetime(2025, 11, 4, 19, 0, 0)
-        result = _start_date(dt)
-        self.assertEqual(result, "2025-11-04")
-
-    def test_string_date(self):
-        """Test conversion of string date."""
-        date_str = "2025-11-04"
-        result = _start_date(date_str)
-        self.assertEqual(result, "2025-11-04")
-
-    def test_utc_timestamp_with_time(self):
-        """Test that time component is ignored, only date is returned."""
-        timestamp = "2025-11-04T23:59:59Z"
-        result = _start_date(timestamp)
-        self.assertEqual(result, "2025-11-04")
-
-
-class TestParseMatchTeams(unittest.TestCase):
-    """Test cases for _parse_match_teams function."""
-
-    def test_standard_format(self):
-        """Test parsing standard match format."""
-        match = "Team A @ Team B"
-        result = _parse_match_teams(match)
-        self.assertEqual(result, ["Team A", "Team B"])
-
-    def test_no_extra_spaces(self):
-        """Test parsing when there are no extra spaces."""
-        match = "Lakers@Warriors"
-        result = _parse_match_teams(match)
-        self.assertEqual(result, ["Lakers", "Warriors"])
-
-    def test_extra_spaces(self):
-        """Test parsing with extra spaces."""
-        match = "New York Knicks  @  Los Angeles Lakers"
-        result = _parse_match_teams(match)
-        self.assertEqual(result, ["New York Knicks", "Los Angeles Lakers"])
-
-
-class TestTimeSinceStart(unittest.TestCase):
-    """Test cases for _time_since_start function."""
-
-    def test_filter_recent_games(self):
-        """Test that games starting less than threshold hours ago are filtered out."""
-        current_time = datetime.now(timezone.utc)
-        
-        df = pd.DataFrame({
-            "Match": ["Game 1", "Game 2", "Game 3"],
-            "Start Time": [
-                (current_time - timedelta(hours=15)).strftime("%Y-%m-%dT%H:%M:%SZ"),
-                (current_time - timedelta(hours=10)).strftime("%Y-%m-%dT%H:%M:%SZ"),
-                (current_time - timedelta(hours=5)).strftime("%Y-%m-%dT%H:%M:%SZ"),
-            ],
-        })
-
-        result = _time_since_start(df, 12)
-        
-        # Only Game 1 (15 hours ago) should remain
-        self.assertEqual(len(result), 1)
-        self.assertEqual(result.iloc[0]["Match"], "Game 1")
-
-    def test_no_games_filtered(self):
-        """Test when no games should be filtered."""
-        current_time = datetime.now(timezone.utc)
-        
-        df = pd.DataFrame({
-            "Match": ["Game 1", "Game 2"],
-            "Start Time": [
-                (current_time - timedelta(hours=20)).strftime("%Y-%m-%dT%H:%M:%SZ"),
-                (current_time - timedelta(hours=15)).strftime("%Y-%m-%dT%H:%M:%SZ"),
-            ],
-        })
-
-        result = _time_since_start(df, 12)
-        
-        # Both games should remain
-        self.assertEqual(len(result), 2)
-
-    def test_all_games_filtered(self):
-        """Test when all games should be filtered."""
-        current_time = datetime.now(timezone.utc)
-        
-        df = pd.DataFrame({
-            "Match": ["Game 1", "Game 2"],
-            "Start Time": [
-                (current_time - timedelta(hours=5)).strftime("%Y-%m-%dT%H:%M:%SZ"),
-                (current_time - timedelta(hours=3)).strftime("%Y-%m-%dT%H:%M:%SZ"),
-            ],
-        })
-
-        result = _time_since_start(df, 12)
-        
-        # No games should remain
-        self.assertEqual(len(result), 0)
-
-
-class TestGetScoresFromApi(unittest.TestCase):
-    """Test cases for _get_scores_from_api function."""
-
-    @patch('codebase.results_appending.theodds_results.requests.get')
+    @patch('src.results.theodds_results.requests.get')
     def test_successful_api_call(self, mock_get):
-        """Test successful API call."""
-        mock_response = Mock()
-        mock_response.status_code = 200
+        """Test successful API call returns JSON data."""
+        mock_response = MagicMock()
         mock_response.json.return_value = [
-            {"id": "1", "home_team": "Team A", "away_team": "Team B"}
-        ]
-        mock_get.return_value = mock_response
-
-        result = _get_scores_from_api("basketball_nba")
-        
-        self.assertEqual(len(result), 1)
-        self.assertEqual(result[0]["home_team"], "Team A")
-
-    @patch('codebase.results_appending.theodds_results.requests.get')
-    def test_api_error(self, mock_get):
-        """Test API error handling."""
-        mock_response = Mock()
-        mock_response.status_code = 401
-        mock_get.return_value = mock_response
-
-        result = _get_scores_from_api("basketball_nba")
-        
-        self.assertEqual(result, [])
-
-    @patch('codebase.results_appending.theodds_results.requests.get')
-    def test_api_with_days_from(self, mock_get):
-        """Test API call with custom days_from parameter."""
-        mock_response = Mock()
-        mock_response.status_code = 200
-        mock_response.json.return_value = []
-        mock_get.return_value = mock_response
-
-        _get_scores_from_api("basketball_nba", days_from=5)
-        
-        # Verify the URL contains daysFrom=5
-        call_args = mock_get.call_args
-        self.assertIn("daysFrom=5", call_args[0][0])
-
-
-class TestFilter(unittest.TestCase):
-    """Test cases for _filter function."""
-
-    def test_filter_matching_game(self):
-        """Test filtering to find matching game."""
-        scores = [
             {
-                "commence_time": "2025-11-04T19:00:00Z",
-                "home_team": "Lakers",
-                "away_team": "Warriors",
-            },
-            {
-                "commence_time": "2025-11-04T20:00:00Z",
-                "home_team": "Celtics",
-                "away_team": "Heat",
-            },
-        ]
-
-        result = _filter(scores, "2025-11-04", "Lakers", "Warriors")
-        
-        self.assertEqual(len(result), 1)
-        self.assertEqual(result[0]["home_team"], "Lakers")
-
-    def test_filter_no_matches(self):
-        """Test filtering when no games match."""
-        scores = [
-            {
-                "commence_time": "2025-11-04T19:00:00Z",
-                "home_team": "Lakers",
-                "away_team": "Warriors",
-            },
-        ]
-
-        result = _filter(scores, "2025-11-05", "Lakers", "Warriors")
-        
-        self.assertEqual(len(result), 0)
-
-    def test_filter_multiple_matches(self):
-        """Test filtering when multiple games match (edge case)."""
-        scores = [
-            {
-                "commence_time": "2025-11-04T19:00:00Z",
-                "home_team": "Lakers",
-                "away_team": "Warriors",
-            },
-            {
-                "commence_time": "2025-11-04T21:00:00Z",
-                "home_team": "Lakers",
-                "away_team": "Warriors",
-            },
-        ]
-
-        result = _filter(scores, "2025-11-04", "Lakers", "Warriors")
-        
-        self.assertEqual(len(result), 2)
-
-
-class TestGetWinner(unittest.TestCase):
-    """Test cases for _get_winner function."""
-
-    def test_home_team_wins(self):
-        """Test determining winner when home team wins."""
-        game = {
-            "completed": True,
-            "home_team": "Lakers",
-            "away_team": "Warriors",
-            "scores": [
-                {"name": "Lakers", "score": "110"},
-                {"name": "Warriors", "score": "105"},
-            ],
-        }
-
-        result = _get_winner(game)
-        self.assertEqual(result, "Lakers")
-
-    def test_away_team_wins(self):
-        """Test determining winner when away team wins."""
-        game = {
-            "completed": True,
-            "home_team": "Lakers",
-            "away_team": "Warriors",
-            "scores": [
-                {"name": "Lakers", "score": "105"},
-                {"name": "Warriors", "score": "110"},
-            ],
-        }
-
-        result = _get_winner(game)
-        self.assertEqual(result, "Warriors")
-
-    def test_draw(self):
-        """Test determining result when game is a draw."""
-        game = {
-            "completed": True,
-            "home_team": "Team A",
-            "away_team": "Team B",
-            "scores": [
-                {"name": "Team A", "score": "2"},
-                {"name": "Team B", "score": "2"},
-            ],
-        }
-
-        result = _get_winner(game)
-        self.assertEqual(result, "Draw")
-
-    def test_game_not_completed(self):
-        """Test result when game is not completed."""
-        game = {
-            "completed": False,
-            "home_team": "Lakers",
-            "away_team": "Warriors",
-        }
-
-        result = _get_winner(game)
-        self.assertEqual(result, "Pending")
-
-
-class TestGetFinishedGamesFromTheodds(unittest.TestCase):
-    """Test cases for get_finished_games_from_theodds function."""
-
-    @patch('codebase.results_appending.theodds_results._get_scores_from_api')
-    @patch('codebase.results_appending.theodds_results._time_since_start')
-    def test_update_results(self, mock_time_filter, mock_get_scores):
-        """Test updating results for games."""
-        current_time = datetime.now(timezone.utc)
-        
-        df = pd.DataFrame({
-            "Match": ["Warriors @ Lakers"],
-            "Start Time": [(current_time - timedelta(hours=15)).strftime("%Y-%m-%dT%H:%M:%SZ")],
-            "Result": ["Not Found"],
-        })
-
-        mock_time_filter.return_value = df
-        mock_get_scores.return_value = [
-            {
-                "commence_time": (current_time - timedelta(hours=15)).strftime("%Y-%m-%dT%H:%M:%SZ"),
-                "home_team": "Lakers",
-                "away_team": "Warriors",
+                "id": "event123",
                 "completed": True,
                 "scores": [
-                    {"name": "Lakers", "score": "110"},
-                    {"name": "Warriors", "score": "105"},
-                ],
+                    {"name": "Team A", "score": "3"},
+                    {"name": "Team B", "score": "2"}
+                ]
             }
         ]
-
-        result = get_finished_games_from_theodds(df, "basketball_nba")
+        mock_get.return_value = mock_response
         
-        self.assertEqual(result.iloc[0]["Result"], "Lakers")
-
-    @patch('codebase.results_appending.theodds_results._get_scores_from_api')
-    @patch('codebase.results_appending.theodds_results._time_since_start')
-    def test_skip_existing_results(self, mock_time_filter, mock_get_scores):
-        """Test that existing results are not overwritten."""
-        current_time = datetime.now(timezone.utc)
+        result = _get_scores_from_theodds("baseball_mlb", "event123,event456", 3)
         
+        assert len(result) == 1
+        assert result[0]["id"] == "event123"
+        assert result[0]["completed"] is True
+
+    @patch('src.results.theodds_results.requests.get')
+    def test_api_connection_error(self, mock_get):
+        """Test API connection error returns empty list."""
+        mock_get.side_effect = Exception("Connection error")
+        
+        result = _get_scores_from_theodds("baseball_mlb", "event123", 3)
+        
+        assert result == []
+
+
+class TestGetPendingEventIds:
+    """Test suite for _get_pending_event_ids function."""
+
+    def test_single_pending_event(self):
+        """Test with single pending event."""
         df = pd.DataFrame({
-            "Match": ["Warriors @ Lakers"],
-            "Start Time": [(current_time - timedelta(hours=15)).strftime("%Y-%m-%dT%H:%M:%SZ")],
-            "Result": ["Lakers"],
+            "ID": ["event123"],
+            "Result": ["Pending"]
         })
+        
+        result = _get_pending_event_ids(df)
+        assert result == "event123"
 
-        mock_time_filter.return_value = df
-        mock_get_scores.return_value = []
+    def test_no_pending_events(self):
+        """Test with no pending events."""
+        df = pd.DataFrame({
+            "ID": ["event1", "event2"],
+            "Result": ["Team A", "Team B"]
+        })
+        
+        result = _get_pending_event_ids(df)
+        assert result == ""
 
-        result = get_finished_games_from_theodds(df, "basketball_nba")
+    def test_all_pending_results_types(self):
+        """Test with all types of pending results."""
+        df = pd.DataFrame({
+            "ID": ["event1", "event2", "event3", "event4"],
+            "Result": ["Pending", "Not Found", "API Error", "Team A"]
+        })
+        
+        result = _get_pending_event_ids(df)
+        # Should include all PENDING_RESULTS: ["Not Found", "Pending", "API Error"]
+        assert "event1" in result
+        assert "event2" in result
+        assert "event3" in result
+        assert "event4" not in result
+
+    def test_empty_dataframe(self):
+        """Test with empty DataFrame."""
+        df = pd.DataFrame({
+            "ID": [],
+            "Result": []
+        })
+        
+        result = _get_pending_event_ids(df)
+        assert result == ""
+
+
+class TestAppendResults:
+    """Test suite for _append_results function."""
+
+    def test_single_completed_game_home_win(self):
+        """Test appending result for single completed game where home team wins."""
+        df = pd.DataFrame({
+            "ID": ["event123"],
+            "Result": ["Pending"]
+        })
+        
+        game_dicts = [
+            {
+                "id": "event123",
+                "completed": True,
+                "scores": [
+                    {"name": "Home Team", "score": "5"},
+                    {"name": "Away Team", "score": "3"}
+                ]
+            }
+        ]
+        
+        _append_results(df, game_dicts)
+        
+        assert df.loc[0, "Result"] == "Home Team"
+
+    def test_single_completed_game_away_win(self):
+        """Test appending result for single completed game where away team wins."""
+        df = pd.DataFrame({
+            "ID": ["event456"],
+            "Result": ["Pending"]
+        })
+        
+        game_dicts = [
+            {
+                "id": "event456",
+                "completed": True,
+                "scores": [
+                    {"name": "Home Team", "score": "2"},
+                    {"name": "Away Team", "score": "4"}
+                ]
+            }
+        ]
+        
+        _append_results(df, game_dicts)
+        
+        assert df.loc[0, "Result"] == "Away Team"
+
+    def test_draw_game(self):
+        """Test appending result for game that ended in a draw."""
+        df = pd.DataFrame({
+            "ID": ["event789"],
+            "Result": ["Pending"]
+        })
+        
+        game_dicts = [
+            {
+                "id": "event789",
+                "completed": True,
+                "scores": [
+                    {"name": "Team A", "score": "3"},
+                    {"name": "Team B", "score": "3"}
+                ]
+            }
+        ]
+        
+        _append_results(df, game_dicts)
+        
+        assert df.loc[0, "Result"] == "Draw"
+
+    def test_incomplete_game(self):
+        """Test that incomplete games don't update results."""
+        df = pd.DataFrame({
+            "ID": ["event111"],
+            "Result": ["Pending"]
+        })
+        
+        game_dicts = [
+            {
+                "id": "event111",
+                "completed": False,
+                "scores": [
+                    {"name": "Team A", "score": "1"},
+                    {"name": "Team B", "score": "0"}
+                ]
+            }
+        ]
+        
+        _append_results(df, game_dicts)
+        
+        # Should remain Pending since game not completed
+        assert df.loc[0, "Result"] == "Pending"
+
+    def test_multiple_games(self):
+        """Test appending results for multiple games."""
+        df = pd.DataFrame({
+            "ID": ["event1", "event2", "event3"],
+            "Result": ["Pending", "Not Found", "Pending"]
+        })
+        
+        game_dicts = [
+            {
+                "id": "event1",
+                "completed": True,
+                "scores": [
+                    {"name": "Team A", "score": "5"},
+                    {"name": "Team B", "score": "3"}
+                ]
+            },
+            {
+                "id": "event2",
+                "completed": True,
+                "scores": [
+                    {"name": "Team C", "score": "2"},
+                    {"name": "Team D", "score": "2"}
+                ]
+            },
+            {
+                "id": "event3",
+                "completed": True,
+                "scores": [
+                    {"name": "Team E", "score": "1"},
+                    {"name": "Team F", "score": "4"}
+                ]
+            }
+        ]
+        
+        _append_results(df, game_dicts)
+        
+        assert df.loc[0, "Result"] == "Team A"
+        assert df.loc[1, "Result"] == "Draw"
+        assert df.loc[2, "Result"] == "Team F"
+
+    def test_missing_event_in_api_response(self):
+        """Test that events not in API response keep their original result."""
+        df = pd.DataFrame({
+            "ID": ["event1", "event2"],
+            "Result": ["Pending", "Not Found"]
+        })
+        
+        game_dicts = [
+            {
+                "id": "event1",
+                "completed": True,
+                "scores": [
+                    {"name": "Team A", "score": "3"},
+                    {"name": "Team B", "score": "2"}
+                ]
+            }
+            # event2 not in response
+        ]
+        
+        _append_results(df, game_dicts)
+        
+        assert df.loc[0, "Result"] == "Team A"
+        assert df.loc[1, "Result"] == "Not Found"  # Should remain unchanged
+
+    def test_insufficient_scores(self):
+        """Test game with insufficient score data."""
+        df = pd.DataFrame({
+            "ID": ["event1"],
+            "Result": ["Pending"]
+        })
+        
+        game_dicts = [
+            {
+                "id": "event1",
+                "completed": True,
+                "scores": [
+                    {"name": "Team A", "score": "3"}
+                    # Missing second team
+                ]
+            }
+        ]
+        
+        _append_results(df, game_dicts)
+        
+        # Should remain Pending due to insufficient data
+        assert df.loc[0, "Result"] == "Pending"
+
+    def test_empty_game_dicts(self):
+        """Test with empty game_dicts list."""
+        df = pd.DataFrame({
+            "ID": ["event1"],
+            "Result": ["Pending"]
+        })
+        
+        _append_results(df, [])
+        
+        # Should remain unchanged
+        assert df.loc[0, "Result"] == "Pending"
+
+    def test_zero_scores(self):
+        """Test game with zero scores resulting in draw."""
+        df = pd.DataFrame({
+            "ID": ["event1"],
+            "Result": ["Pending"]
+        })
+        
+        game_dicts = [
+            {
+                "id": "event1",
+                "completed": True,
+                "scores": [
+                    {"name": "Team A", "score": "0"},
+                    {"name": "Team B", "score": "0"}
+                ]
+            }
+        ]
+        
+        _append_results(df, game_dicts)
+        
+        assert df.loc[0, "Result"] == "Draw"
+
+
+class TestGetFinishedGamesFromTheOdds:
+    """Test suite for get_finished_games_from_theodds function."""
+
+    def test_empty_dataframe(self):
+        """Test with empty DataFrame."""
+        df = pd.DataFrame()
+        result = get_finished_games_from_theodds(df)
+        assert result.empty
+
+    def test_no_games_to_check(self):
+        """Test when no games meet time threshold."""
+        current_time = datetime.now(timezone.utc)
+        df = pd.DataFrame({
+            "ID": ["event1"],
+            "Sport Key": ["baseball_mlb"],
+            "Start Time": [(current_time - timedelta(hours=6)).isoformat()],
+            "Result": ["Pending"]
+        })
+        
+        result = get_finished_games_from_theodds(df)
+        assert result.equals(df)
+
+    @patch('src.results.theodds_results._get_scores_from_theodds')
+    def test_single_sport_key_with_results(self, mock_get_scores):
+        """Test fetching results for single sport key."""
+        current_time = datetime.now(timezone.utc)
+        df = pd.DataFrame({
+            "ID": ["event1", "event2"],
+            "Sport Key": ["baseball_mlb", "baseball_mlb"],
+            "Start Time": [
+                (current_time - timedelta(hours=24)).isoformat(),
+                (current_time - timedelta(hours=30)).isoformat()
+            ],
+            "Result": ["Pending", "Not Found"]
+        })
+        
+        # Mock API response
+        mock_get_scores.return_value = [
+            {
+                "id": "event1",
+                "completed": True,
+                "scores": [
+                    {"name": "Red Sox", "score": "5"},
+                    {"name": "Yankees", "score": "3"}
+                ]
+            },
+            {
+                "id": "event2",
+                "completed": True,
+                "scores": [
+                    {"name": "Dodgers", "score": "2"},
+                    {"name": "Giants", "score": "4"}
+                ]
+            }
+        ]
+        
+        result = get_finished_games_from_theodds(df)
+        
+        # Verify results were updated
+        assert result.loc[0, "Result"] == "Red Sox"
+        assert result.loc[1, "Result"] == "Giants"
+
+    @patch('src.results.theodds_results._get_scores_from_theodds')
+    def test_multiple_sport_keys(self, mock_get_scores):
+        """Test fetching results for multiple sport keys."""
+        current_time = datetime.now(timezone.utc)
+        df = pd.DataFrame({
+            "ID": ["event1", "event2", "event3"],
+            "Sport Key": ["baseball_mlb", "basketball_nba", "soccer_epl"],
+            "Start Time": [
+                (current_time - timedelta(hours=24)).isoformat(),
+                (current_time - timedelta(hours=30)).isoformat(),
+                (current_time - timedelta(hours=48)).isoformat()
+            ],
+            "Result": ["Pending", "Pending", "Not Found"]
+        })
+        
+        # Mock API responses for different sports
+        def mock_api_response(sport_key, event_ids, days=3):
+            if "baseball_mlb" in sport_key:
+                return [{"id": "event1", "completed": True, "scores": [
+                    {"name": "Team A", "score": "5"}, {"name": "Team B", "score": "3"}
+                ]}]
+            elif "basketball_nba" in sport_key:
+                return [{"id": "event2", "completed": True, "scores": [
+                    {"name": "Team C", "score": "100"}, {"name": "Team D", "score": "98"}
+                ]}]
+            elif "soccer_epl" in sport_key:
+                return [{"id": "event3", "completed": True, "scores": [
+                    {"name": "Team E", "score": "2"}, {"name": "Team F", "score": "2"}
+                ]}]
+            return []
+        
+        mock_get_scores.side_effect = mock_api_response
+        
+        result = get_finished_games_from_theodds(df)
+        
+        # Verify results
+        assert result.loc[0, "Result"] == "Team A"
+        assert result.loc[1, "Result"] == "Team C"
+        assert result.loc[2, "Result"] == "Draw"
+
+    def test_sport_key_without_results_support(self):
+        """Test that sport keys not in SPORT_KEYS_WITH_RESULTS are skipped."""
+        current_time = datetime.now(timezone.utc)
+        df = pd.DataFrame({
+            "ID": ["event1"],
+            "Sport Key": ["unsupported_sport"],  # Not in SPORT_KEYS_WITH_RESULTS
+            "Start Time": [(current_time - timedelta(hours=24)).isoformat()],
+            "Result": ["Pending"]
+        })
+        
+        result = get_finished_games_from_theodds(df)
         
         # Result should remain unchanged
-        self.assertEqual(result.iloc[0]["Result"], "Lakers")
+        assert result.loc[0, "Result"] == "Pending"
 
-    @patch('codebase.results_appending.theodds_results._get_scores_from_api')
-    @patch('codebase.results_appending.theodds_results._time_since_start')
-    def test_game_not_found(self, mock_time_filter, mock_get_scores):
-        """Test handling when game is not found in API results."""
+    @patch('src.results.theodds_results._get_scores_from_theodds')
+    def test_mixed_supported_and_unsupported_sports(self, mock_get_scores):
+        """Test with mix of supported and unsupported sport keys."""
         current_time = datetime.now(timezone.utc)
-        
         df = pd.DataFrame({
-            "Match": ["Warriors @ Lakers"],
-            "Start Time": [(current_time - timedelta(hours=15)).strftime("%Y-%m-%dT%H:%M:%SZ")],
-            "Result": ["Not Found"],
+            "ID": ["event1", "event2"],
+            "Sport Key": ["baseball_mlb", "unsupported_sport"],
+            "Start Time": [
+                (current_time - timedelta(hours=24)).isoformat(),
+                (current_time - timedelta(hours=30)).isoformat()
+            ],
+            "Result": ["Pending", "Pending"]
         })
-
-        mock_time_filter.return_value = df
-        mock_get_scores.return_value = []
-
-        result = get_finished_games_from_theodds(df, "basketball_nba")
         
-        self.assertEqual(result.iloc[0]["Result"], "Not Found")
-
-
-class TestMapLeagueToKey(unittest.TestCase):
-    """Test cases for map_league_to_key function."""
-
-    def test_single_league(self):
-        """Test mapping a single league."""
-        df = pd.DataFrame({
-            "League": ["NBA"],
-        })
-
-        result = map_league_to_key(df)
+        mock_get_scores.return_value = [
+            {
+                "id": "event1",
+                "completed": True,
+                "scores": [
+                    {"name": "Team A", "score": "5"},
+                    {"name": "Team B", "score": "3"}
+                ]
+            }
+        ]
         
-        # NBA is not in the mapping, so result should be empty
-        self.assertEqual(len(result), 0)
-
-    def test_multiple_leagues(self):
-        """Test mapping multiple leagues."""
-        df = pd.DataFrame({
-            "League": ["NFL", "MLB", "NHL"],
-        })
-
-        result = map_league_to_key(df)
+        result = get_finished_games_from_theodds(df)
         
-        self.assertEqual(len(result), 3)
-        self.assertIn("americanfootball_nfl", result)
-        self.assertIn("baseball_mlb", result)
-        self.assertIn("icehockey_nhl", result)
-
-    def test_duplicate_leagues(self):
-        """Test that duplicate leagues result in unique keys."""
-        df = pd.DataFrame({
-            "League": ["NFL", "NFL", "MLB"],
-        })
-
-        result = map_league_to_key(df)
-        
-        self.assertEqual(len(result), 2)
-        self.assertIn("americanfootball_nfl", result)
-        self.assertIn("baseball_mlb", result)
-
-    def test_unknown_league(self):
-        """Test handling of leagues not in mapping."""
-        df = pd.DataFrame({
-            "League": ["Unknown League", "NFL"],
-        })
-
-        result = map_league_to_key(df)
-        
-        # Should only include NFL, unknown league ignored
-        self.assertEqual(len(result), 1)
-        self.assertIn("americanfootball_nfl", result)
-
-
-if __name__ == "__main__":
-    unittest.main(verbosity=2)
+        # Only first event should be updated
+        assert result.loc[0, "Result"] == "Team A"
+        assert result.loc[1, "Result"] == "Pending"

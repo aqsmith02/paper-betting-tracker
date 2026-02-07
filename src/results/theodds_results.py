@@ -107,12 +107,16 @@ def get_finished_games_from_theodds(df: pd.DataFrame) -> pd.DataFrame:
     print(f"\n")
     print("Started fetching results from The-Odds-API")
 
+    if df.empty:
+        print("DataFrame is empty. No games to check.")
+        return df
+
     # Only use games that finished more than API_REQUEST_THRESHOLD_HOURS days ago
     filtered_df = _time_since_start(df, API_REQUEST_THRESHOLD_HOURS)
 
     # If no games to check, return original DataFrame
     if filtered_df.empty:
-        print("No games to check from TheSportsDB")
+        print("No games to check from The-Odds-API.")
         return df
 
     # Get a list of game dictionaries based on pending event IDs
@@ -122,7 +126,9 @@ def get_finished_games_from_theodds(df: pd.DataFrame) -> pd.DataFrame:
     grouped = filtered_df.groupby(SPORT_KEY_COLUMN)[ID_COLUMN].apply(lambda x: ','.join(x)).reset_index()
 
     # Loop through each sport key and fetch scores
-    for sport_key, event_ids in grouped.items():
+    for idx, row in grouped.iterrows():  # FIXED: Use .iterrows() instead of .items()
+        sport_key = row[SPORT_KEY_COLUMN]
+        event_ids = row[ID_COLUMN]
         if sport_key not in SPORT_KEYS_WITH_RESULTS:
             continue
         game_dicts = _get_scores_from_theodds(sport_key, event_ids)

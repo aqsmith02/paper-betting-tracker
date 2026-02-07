@@ -1,294 +1,316 @@
 """
-test_sportsdb_results.py
+Tests for sportsdb_results.py
 
-Unit tests for sportsdb_results.py module.
-
-Author: Test Suite
+Tests functions that fetch and process sports game results from TheSportsDB API.
 """
 
-import unittest
-from unittest.mock import patch, Mock
+import pytest
 import pandas as pd
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta, timezone
+from unittest.mock import patch, MagicMock
 from src.results.sportsdb_results import (
-    _start_date,
     _format_match_for_thesportsdb,
-    _time_since_start,
-    _get_results,
-    get_finished_games_from_thesportsdb,
+    _get_score_from_thesportsdb,
+    _process_individual_result,
+    get_finished_games_from_thesportsdb
 )
 
 
-class TestStartDate(unittest.TestCase):
-    """Test cases for _start_date function."""
+class TestFormatMatchForTheSportsDB:
+    """Test suite for _format_match_for_thesportsdb function."""
 
-    def test_iso_format_timestamp(self):
-        """Test conversion of ISO format timestamp."""
-        timestamp = "2025-11-04T19:00:00Z"
-        result = _start_date(timestamp)
-        self.assertEqual(result, "2025-11-04")
-
-    def test_datetime_object(self):
-        """Test conversion of datetime object."""
-        dt = datetime(2025, 11, 4, 19, 0, 0)
-        result = _start_date(dt)
-        self.assertEqual(result, "2025-11-04")
-
-    def test_string_date(self):
-        """Test conversion of string date."""
-        date_str = "2025-11-04"
-        result = _start_date(date_str)
-        self.assertEqual(result, "2025-11-04")
-
-
-class TestFormatMatchForThesportsdb(unittest.TestCase):
-    """Test cases for _format_match_for_thesportsdb function."""
-
-    def test_format_at_symbol(self):
-        """Test formatting match with @ symbol."""
-        match = "Warriors @ Lakers"
+    def test_format_away_at_home_match(self):
+        """Test formatting of 'Team @ Team' format."""
+        match = "Boston Red Sox @ New York Yankees"
         result = _format_match_for_thesportsdb(match)
-        self.assertEqual(result, "Lakers_vs_Warriors")
+        expected = "New_York_Yankees_vs_Boston_Red_Sox"
+        assert result == expected
 
-    def test_format_vs(self):
-        """Test formatting match with vs."""
-        match = "Lakers vs Warriors"
+    def test_format_match_with_extra_spaces(self):
+        """Test formatting with extra spaces around '@'."""
+        match = "Team A  @  Team B"
         result = _format_match_for_thesportsdb(match)
-        self.assertEqual(result, "Lakers_vs_Warriors")
+        expected = "Team_B_vs_Team_A"
+        assert result == expected
 
-    def test_format_plain(self):
-        """Test formatting plain match string."""
-        match = "Lakers Warriors"
-        result = _format_match_for_thesportsdb(match)
-        self.assertEqual(result, "Lakers_Warriors")
-
-    def test_format_with_extra_spaces(self):
-        """Test formatting with extra spaces."""
-        match = "Golden State Warriors @ Los Angeles Lakers"
-        result = _format_match_for_thesportsdb(match)
-        self.assertEqual(result, "Los_Angeles_Lakers_vs_Golden_State_Warriors")
+    def test_format_match_error(self):
+        """Test match that's in an unrecognized format."""
+        match = "Some Random String"
+        with pytest.raises(ValueError):
+            _format_match_for_thesportsdb(match)
 
 
-class TestTimeSinceStart(unittest.TestCase):
-    """Test cases for _time_since_start function."""
+class TestGetScoreFromTheSportsDB:
+    """Test suite for _get_score_from_thesportsdb function."""
 
-    def test_filter_recent_games(self):
-        """Test that games starting less than threshold hours ago are filtered out."""
-        current_time = datetime.now(timezone.utc)
+    @patch('src.results.sportsdb_results.requests.get')
+    def test_successful_api_call(self, mock_get):
+        """Test successful API call returns JSON data."""
+        mock_response = MagicMock()
+        mock_response.json.return_value = {
+            "event": [{
+                "strHomeTeam": "Home Team",
+                "strAwayTeam": "Away Team",
+                "intHomeScore": "3",
+                "intAwayScore": "2"
+            }]
+        }
+        mock_get.return_value = mock_response
         
-        df = pd.DataFrame({
-            "Match": ["Game 1", "Game 2", "Game 3"],
-            "Start Time": [
-                (current_time - timedelta(hours=15)).strftime("%Y-%m-%dT%H:%M:%SZ"),
-                (current_time - timedelta(hours=10)).strftime("%Y-%m-%dT%H:%M:%SZ"),
-                (current_time - timedelta(hours=5)).strftime("%Y-%m-%dT%H:%M:%SZ"),
-            ],
-        })
-
-        result = _time_since_start(df, 12)
+        result = _get_score_from_thesportsdb("Team_A_vs_Team_B", "2025-07-15")
         
-        # Only Game 1 (15 hours ago) should remain
-        self.assertEqual(len(result), 1)
-        self.assertEqual(result.iloc[0]["Match"], "Game 1")
+        assert result["event"][0]["strHomeTeam"] == "Home Team"
+        assert result["event"][0]["intHomeScore"] == "3"
+
+    @patch('src.results.sportsdb_results.requests.get')
+    def test_api_connection_error(self, mock_get):
+        """Test API connection error returns empty list."""
+        mock_get.side_effect = Exception("Connection error")
+        
+        result = _get_score_from_thesportsdb("Team_A_vs_Team_B", "2025-07-15")
+        
+        assert result == []
+
+
+class TestProcessIndividualResult:
+    """Test suite for _process_individual_result function."""
+
+    def test_none_game_dict(self):
+        """Test when game_dict is None."""
+        result = _process_individual_result(None)
+        assert result == "Not Found"
+
+    def test_empty_game_dict(self):
+        """Test when game_dict is empty."""
+        result = _process_individual_result({})
+        assert result == "Not Found"
+
+    def test_no_event_key(self):
+        """Test when game_dict has no 'event' key."""
+        game_dict = {"other_key": "value"}
+        result = _process_individual_result(game_dict)
+        assert result == "Not Found"
+
+    def test_empty_event_list(self):
+        """Test when event list is empty."""
+        game_dict = {"event": []}
+        result = _process_individual_result(game_dict)
+        assert result == "Not Found"
+
+    def test_home_team_wins(self):
+        """Test when home team wins."""
+        game_dict = {
+            "event": [{
+                "strHomeTeam": "Home Team",
+                "strAwayTeam": "Away Team",
+                "intHomeScore": "5",
+                "intAwayScore": "3"
+            }]
+        }
+        result = _process_individual_result(game_dict)
+        assert result == "Home Team"
+
+    def test_away_team_wins(self):
+        """Test when away team wins."""
+        game_dict = {
+            "event": [{
+                "strHomeTeam": "Home Team",
+                "strAwayTeam": "Away Team",
+                "intHomeScore": "2",
+                "intAwayScore": "4"
+            }]
+        }
+        result = _process_individual_result(game_dict)
+        assert result == "Away Team"
+
+    def test_draw(self):
+        """Test when game is a draw."""
+        game_dict = {
+            "event": [{
+                "strHomeTeam": "Home Team",
+                "strAwayTeam": "Away Team",
+                "intHomeScore": "3",
+                "intAwayScore": "3"
+            }]
+        }
+        result = _process_individual_result(game_dict)
+        assert result == "Draw"
+
+    def test_missing_home_score(self):
+        """Test when home score is missing (game not finished)."""
+        game_dict = {
+            "event": [{
+                "strHomeTeam": "Home Team",
+                "strAwayTeam": "Away Team",
+                "intHomeScore": None,
+                "intAwayScore": "3"
+            }]
+        }
+        result = _process_individual_result(game_dict)
+        assert result == "Pending"
+
+    def test_missing_away_score(self):
+        """Test when away score is missing (game not finished)."""
+        game_dict = {
+            "event": [{
+                "strHomeTeam": "Home Team",
+                "strAwayTeam": "Away Team",
+                "intHomeScore": "3",
+                "intAwayScore": None
+            }]
+        }
+        result = _process_individual_result(game_dict)
+        assert result == "Pending"
+
+    def test_both_scores_missing(self):
+        """Test when both scores are missing."""
+        game_dict = {
+            "event": [{
+                "strHomeTeam": "Home Team",
+                "strAwayTeam": "Away Team",
+                "intHomeScore": None,
+                "intAwayScore": None
+            }]
+        }
+        result = _process_individual_result(game_dict)
+        assert result == "Pending"
+
+    def test_zero_score_game(self):
+        """Test game with zero scores."""
+        game_dict = {
+            "event": [{
+                "strHomeTeam": "Home Team",
+                "strAwayTeam": "Away Team",
+                "intHomeScore": "0",
+                "intAwayScore": "0"
+            }]
+        }
+        result = _process_individual_result(game_dict)
+        assert result == "Draw"
+
+
+class TestGetFinishedGamesFromTheSportsDB:
+    """Test suite for get_finished_games_from_thesportsdb function."""
 
     def test_empty_dataframe(self):
         """Test with empty DataFrame."""
-        df = pd.DataFrame(columns=["Match", "Start Time"])
-        result = _time_since_start(df, 12)
-        self.assertEqual(len(result), 0)
+        df = pd.DataFrame()
+        result = get_finished_games_from_thesportsdb(df)
+        assert result.empty
 
-
-class TestGetResults(unittest.TestCase):
-    """Test cases for _get_results function."""
-
-    @patch('codebase.results_appending.sportsdb_results.requests.get')
-    def test_home_team_wins(self, mock_get):
-        """Test getting result when home team wins."""
-        mock_response = Mock()
-        mock_response.status_code = 200
-        mock_response.json.return_value = {
-            "event": [{
-                "strHomeTeam": "Lakers",
-                "strAwayTeam": "Warriors",
-                "intHomeScore": "110",
-                "intAwayScore": "105",
-            }]
-        }
-        mock_get.return_value = mock_response
-
-        result = _get_results("Lakers_vs_Warriors", "2025-11-04")
-        self.assertEqual(result, "Lakers")
-
-    @patch('codebase.results_appending.sportsdb_results.requests.get')
-    def test_away_team_wins(self, mock_get):
-        """Test getting result when away team wins."""
-        mock_response = Mock()
-        mock_response.status_code = 200
-        mock_response.json.return_value = {
-            "event": [{
-                "strHomeTeam": "Lakers",
-                "strAwayTeam": "Warriors",
-                "intHomeScore": "105",
-                "intAwayScore": "110",
-            }]
-        }
-        mock_get.return_value = mock_response
-
-        result = _get_results("Lakers_vs_Warriors", "2025-11-04")
-        self.assertEqual(result, "Warriors")
-
-    @patch('codebase.results_appending.sportsdb_results.requests.get')
-    def test_draw(self, mock_get):
-        """Test getting result when game is a draw."""
-        mock_response = Mock()
-        mock_response.status_code = 200
-        mock_response.json.return_value = {
-            "event": [{
-                "strHomeTeam": "Team A",
-                "strAwayTeam": "Team B",
-                "intHomeScore": "2",
-                "intAwayScore": "2",
-            }]
-        }
-        mock_get.return_value = mock_response
-
-        result = _get_results("Team_A_vs_Team_B", "2025-11-04")
-        self.assertEqual(result, "Draw")
-
-    @patch('codebase.results_appending.sportsdb_results.requests.get')
-    def test_pending_result(self, mock_get):
-        """Test getting result when game is pending (no scores yet)."""
-        mock_response = Mock()
-        mock_response.status_code = 200
-        mock_response.json.return_value = {
-            "event": [{
-                "strHomeTeam": "Lakers",
-                "strAwayTeam": "Warriors",
-                "intHomeScore": None,
-                "intAwayScore": None,
-            }]
-        }
-        mock_get.return_value = mock_response
-
-        result = _get_results("Lakers_vs_Warriors", "2025-11-04")
-        self.assertEqual(result, "Pending")
-
-    @patch('codebase.results_appending.sportsdb_results.requests.get')
-    def test_not_found(self, mock_get):
-        """Test when event is not found."""
-        mock_response = Mock()
-        mock_response.status_code = 200
-        mock_response.json.return_value = {"event": None}
-        mock_get.return_value = mock_response
-
-        result = _get_results("Lakers_vs_Warriors", "2025-11-04")
-        self.assertEqual(result, "Not Found")
-
-    @patch('codebase.results_appending.sportsdb_results.requests.get')
-    def test_api_error(self, mock_get):
-        """Test API error handling."""
-        mock_response = Mock()
-        mock_response.status_code = 500
-        mock_get.return_value = mock_response
-
-        result = _get_results("Lakers_vs_Warriors", "2025-11-04")
-        self.assertEqual(result, "API Error")
-
-    @patch('codebase.results_appending.sportsdb_results.requests.get')
-    def test_exception_handling(self, mock_get):
-        """Test exception handling."""
-        mock_get.side_effect = Exception("Network error")
-
-        result = _get_results("Lakers_vs_Warriors", "2025-11-04")
-        self.assertEqual(result, "Error")
-
-
-class TestGetFinishedGamesFromThesportsdb(unittest.TestCase):
-    """Test cases for get_finished_games_from_thesportsdb function."""
-
-    @patch('codebase.results_appending.sportsdb_results._get_results')
-    @patch('codebase.results_appending.sportsdb_results._time_since_start')
-    def test_update_results(self, mock_time_filter, mock_get_results):
-        """Test updating results for games."""
+    def test_no_pending_games(self):
+        """Test when no games have pending results."""
         current_time = datetime.now(timezone.utc)
-        
         df = pd.DataFrame({
-            "Match": ["Warriors @ Lakers"],
-            "Start Time": [(current_time - timedelta(hours=15)).strftime("%Y-%m-%dT%H:%M:%SZ")],
-            "Result": ["Not Found"],
+            "Match": ["Team A @ Team B"],
+            "Start Time": [(current_time - timedelta(hours=24)).isoformat()],
+            "Result": ["Team B"]  # Already has result
         })
+        
+        result = get_finished_games_from_thesportsdb(df)
+        assert result.equals(df)
 
-        mock_time_filter.return_value = df
-        mock_get_results.return_value = "Lakers"
-
+    @patch('src.results.sportsdb_results._get_score_from_thesportsdb')
+    def test_fetch_results_for_pending_games(self, mock_get_score):
+        """Test fetching results for games with pending status."""
+        current_time = datetime.now(timezone.utc)
+        df = pd.DataFrame({
+            "Match": ["Team A @ Team B", "Team C @ Team D"],
+            "Start Time": [
+                (current_time - timedelta(hours=24)).isoformat(),
+                (current_time - timedelta(hours=30)).isoformat()
+            ],
+            "Result": ["Pending", "Not Found"]
+        })
+        
+        # Mock API responses
+        mock_get_score.side_effect = [
+            {"event": [{"strHomeTeam": "Team B", "strAwayTeam": "Team A", "intHomeScore": "3", "intAwayScore": "2"}]},
+            {"event": [{"strHomeTeam": "Team D", "strAwayTeam": "Team C", "intHomeScore": "1", "intAwayScore": "4"}]}
+        ]
+        
         result = get_finished_games_from_thesportsdb(df)
         
-        self.assertEqual(result.iloc[0]["Result"], "Lakers")
+        # Verify results were updated
+        assert result.loc[0, "Result"] == "Team B"
+        assert result.loc[1, "Result"] == "Team C"
 
-    @patch('codebase.results_appending.sportsdb_results._get_results')
-    @patch('codebase.results_appending.sportsdb_results._time_since_start')
-    def test_skip_existing_results(self, mock_time_filter, mock_get_results):
-        """Test that existing valid results are not overwritten."""
+    @patch('src.results.sportsdb_results._get_score_from_thesportsdb')
+    @patch('src.results.sportsdb_results._time_since_start')
+    @patch('src.results.sportsdb_results.time.sleep')
+    def test_rate_limiting(self, mock_sleep, mock_time_filter, mock_get_score):
+        """Test that rate limiting is applied after batch of requests."""
         current_time = datetime.now(timezone.utc)
         
-        df = pd.DataFrame({
-            "Match": ["Warriors @ Lakers"],
-            "Start Time": [(current_time - timedelta(hours=15)).strftime("%Y-%m-%dT%H:%M:%SZ")],
-            "Result": ["Lakers"],
-        })
-
+        # Create 35 games to trigger rate limiting (batch size is 30)
+        games = []
+        for i in range(35):
+            games.append({
+                "Match": f"Team {i} @ Team {i+1}",
+                "Start Time": (current_time - timedelta(hours=24)).isoformat(),
+                "Result": "Pending"
+            })
+        
+        df = pd.DataFrame(games)
         mock_time_filter.return_value = df
-        mock_get_results.return_value = "Warriors"
-
+        
+        # Mock API to return pending results
+        mock_get_score.return_value = {"event": [{"strHomeTeam": "Team", "strAwayTeam": "Team", 
+                                                   "intHomeScore": None, "intAwayScore": None}]}
+        
         result = get_finished_games_from_thesportsdb(df)
         
-        # Result should remain unchanged (not overwritten)
-        self.assertEqual(result.iloc[0]["Result"], "Lakers")
+        # Verify sleep was called once (after 30 requests)
+        assert mock_sleep.call_count == 1
+        assert mock_sleep.call_args[0][0] == 60  # SPORTSDB_RATE_LIMIT_WAIT
 
-    @patch('codebase.results_appending.sportsdb_results._get_results')
-    @patch('codebase.results_appending.sportsdb_results._time_since_start')
-    @patch('codebase.results_appending.sportsdb_results.time.sleep')
-    def test_rate_limiting(self, mock_sleep, mock_time_filter, mock_get_results):
-        """Test rate limiting after 30 requests."""
+    @patch('src.results.sportsdb_results._get_score_from_thesportsdb')
+    @patch('src.results.sportsdb_results._time_since_start')
+    def test_mixed_results(self, mock_time_filter, mock_get_score):
+        """Test with mix of pending and completed results."""
         current_time = datetime.now(timezone.utc)
-        
-        # Create 31 games to trigger rate limiting
         df = pd.DataFrame({
-            "Match": [f"Team A @ Team B {i}" for i in range(31)],
-            "Start Time": [(current_time - timedelta(hours=15)).strftime("%Y-%m-%dT%H:%M:%SZ")] * 31,
-            "Result": ["Not Found"] * 31,
+            "Match": ["Game 1 @ Game 2", "Game 3 @ Game 4", "Game 5 @ Game 6"],
+            "Start Time": [
+                (current_time - timedelta(hours=24)).isoformat(),
+                (current_time - timedelta(hours=30)).isoformat(),
+                (current_time - timedelta(hours=48)).isoformat()
+            ],
+            "Result": ["Pending", "Game 4", "Not Found"]  # Only first and third should be fetched
         })
-
-        mock_time_filter.return_value = df
-        mock_get_results.return_value = "Team B"
-
-        get_finished_games_from_thesportsdb(df)
         
-        # Should sleep once after 30 requests
-        mock_sleep.assert_called_once_with(60)
-
-    @patch('codebase.results_appending.sportsdb_results._get_results')
-    @patch('codebase.results_appending.sportsdb_results._time_since_start')
-    def test_multiple_games(self, mock_time_filter, mock_get_results):
-        """Test processing multiple games."""
-        current_time = datetime.now(timezone.utc)
+        # Filter should return only pending games
+        pending_df = df[df["Result"].isin(["Not Found", "Pending"])]
+        mock_time_filter.return_value = pending_df
         
-        df = pd.DataFrame({
-            "Match": ["Game 1", "Game 2", "Game 3"],
-            "Start Time": [(current_time - timedelta(hours=15)).strftime("%Y-%m-%dT%H:%M:%SZ")] * 3,
-            "Result": ["Not Found", "Pending", "Not Found"],
-        })
-
-        mock_time_filter.return_value = df
-        mock_get_results.side_effect = ["Winner 1", "Winner 2", "Winner 3"]
-
+        # Mock API responses
+        mock_get_score.side_effect = [
+            {"event": [{"strHomeTeam": "Game 2", "strAwayTeam": "Game 1", "intHomeScore": "5", "intAwayScore": "3"}]},
+            {"event": [{"strHomeTeam": "Game 6", "strAwayTeam": "Game 5", "intHomeScore": "2", "intAwayScore": "2"}]}
+        ]
+        
         result = get_finished_games_from_thesportsdb(df)
         
-        # All three should be updated
-        self.assertEqual(result.iloc[0]["Result"], "Winner 1")
-        self.assertEqual(result.iloc[1]["Result"], "Winner 2")
-        self.assertEqual(result.iloc[2]["Result"], "Winner 3")
+        # First and third should be updated, second should remain unchanged
+        assert result.loc[0, "Result"] == "Game 2"
+        assert result.loc[1, "Result"] == "Game 4"
+        assert result.loc[2, "Result"] == "Draw"
 
-
-if __name__ == "__main__":
-    unittest.main(verbosity=2)
+    @patch('src.results.sportsdb_results._get_score_from_thesportsdb')
+    @patch('src.results.sportsdb_results._time_since_start')
+    def test_api_not_found_result(self, mock_time_filter, mock_get_score):
+        """Test when API returns no event (not found)."""
+        current_time = datetime.now(timezone.utc)
+        df = pd.DataFrame({
+            "Match": ["Team A @ Team B"],
+            "Start Time": [(current_time - timedelta(hours=24)).isoformat()],
+            "Result": ["Pending"]
+        })
+        
+        mock_time_filter.return_value = df
+        mock_get_score.return_value = {"event": None}  # API returns no event
+        
+        result = get_finished_games_from_thesportsdb(df)
+        
+        # Result should be "Not Found"
+        assert result.loc[0, "Result"] == "Not Found"

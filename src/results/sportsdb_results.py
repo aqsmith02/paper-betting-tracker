@@ -30,11 +30,9 @@ def _format_match_for_thesportsdb(match: str) -> str:
     if "@" in match:
         teams = [t.strip() for t in match.split("@")]
         formatted = f"{teams[1]} vs {teams[0]}"
-    elif "vs" in match.lower():
-        formatted = match
+        return formatted.replace(" ", "_")
     else:
-        return match.replace(" ", "_")
-    return formatted.replace(" ", "_")
+        raise ValueError(f"Match string format not recognized: '{match}'. Expected '@'.")
 
 
 def _get_score_from_thesportsdb(match: str, date: str) -> List[Dict]:
@@ -109,6 +107,10 @@ def get_finished_games_from_thesportsdb(df: pd.DataFrame) -> pd.DataFrame:
     """
     print(f"\n")
     print("Started fetching results from TheSportsDB")
+
+    if df.empty:
+        print("DataFrame is empty. No games to check.")
+        return df
 
     # Only use games that finished more than API_REQUEST_THRESHOLD_HOURS days ago and result is pending
     filtered_df = _time_since_start(df, API_REQUEST_THRESHOLD_HOURS)
