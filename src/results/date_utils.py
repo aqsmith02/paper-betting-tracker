@@ -1,21 +1,21 @@
 from datetime import datetime, timedelta, timezone
 from typing import Any
+from src.constants import DATE_FORMAT
 
 import pandas as pd
 
 
-def _start_date(ts: Any) -> str:
+def _start_date_from_timestamp(timestamp: Any) -> str:
     """
-    Convert a timestamp / datetime-like / ISO string to "YYYY-MM-DD".
+    Convert a timestamp to YYYY-MM-DD format.
 
     Args:
-        ts (Any): Timestamp to convert to date (UTC).
+        timestamp (Any): Timestamp value to convert (can be string, datetime, etc.).
 
     Returns:
         str: Date string in YYYY-MM-DD format.
     """
-    dt = pd.to_datetime(ts)
-    return dt.strftime("%Y-%m-%d")
+    return pd.to_datetime(timestamp).strftime(DATE_FORMAT)
 
 
 def _time_since_start(df: pd.DataFrame, thresh: float) -> pd.DataFrame:
