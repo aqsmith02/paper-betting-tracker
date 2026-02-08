@@ -154,7 +154,7 @@ def fetch_odds(games_data: Optional[List[Dict]] = None) -> pd.DataFrame:
 
     Returns:
         pd.DataFrame: DataFrame with columns: match, league, start time, team, bookmaker, odds, last update.
-                    Each row represents one team's odds from one bookmaker.
+                    Each row represents one team's odds from all available bookmakers.
     """
     print("----------------------------------------------------")
     print(f"Fetching odds for sport: {SPORT}")
