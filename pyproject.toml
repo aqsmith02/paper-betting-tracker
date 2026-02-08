@@ -19,11 +19,14 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-    "coverage>=7.0.0",      # Code coverage for unittest
     "black>=23.0.0",        # Code formatter (optional)
-    "flake8>=6.0.0",        # Linter (optional)
 ]
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
+
+[tool.black]
+line-length = 88
+target-version = ["py38"]
+
 
