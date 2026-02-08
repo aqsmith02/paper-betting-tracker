@@ -4,6 +4,7 @@ data_processing.py
 Cleans and validates data from fetch_odds.py.
 
 Author: Andrew Smith
+Date: July 2025
 """
 
 from datetime import datetime, timezone
@@ -55,12 +56,6 @@ def _add_outcomes_metadata(df: pd.DataFrame) -> pd.DataFrame:
 def _minimum_outcomes_filter(df: pd.DataFrame) -> pd.DataFrame:
     """
     Remove rows where outcomes are less than minimum required.
-
-    Args:
-        df (pd.DataFrame): DataFrame containing odds data with outcomes metadata.
-
-    Returns:
-        pd.DataFrame: DataFrame with only rows that contain sufficient outcomes.
     """
     df = df.copy()
     mask = df["Outcomes"] >= MIN_OUTCOMES
@@ -71,12 +66,6 @@ def _minimum_outcomes_filter(df: pd.DataFrame) -> pd.DataFrame:
 def _remove_unwanted_bookmakers(df: pd.DataFrame) -> pd.DataFrame:
     """
     Remove bookmaker columns that are not in ALL_BMS.
-
-    Args:
-        df (pd.DataFrame): DataFrame containing odds data.
-
-    Returns:
-        df (pd.DataFrame): DataFrame containing odds data with only ALL_BMS bookmaker columns.
     """
     df = df.copy()
     bookmakers = find_bookmaker_columns(df)
@@ -88,12 +77,6 @@ def _remove_unwanted_bookmakers(df: pd.DataFrame) -> pd.DataFrame:
 def _clean_odds_data(df: pd.DataFrame) -> pd.DataFrame:
     """
     Replace odds equal to 1.0 with NaN (invalid odds).
-
-    Args:
-        df (pd.DataFrame): DataFrame containing odds data.
-
-    Returns:
-        pd.DataFrame: DataFrame with invalid odds (1.0) replaced with NaN.
     """
     df = df.copy()
     bookmaker_columns = find_bookmaker_columns(df)
@@ -106,12 +89,6 @@ def _clean_odds_data(df: pd.DataFrame) -> pd.DataFrame:
 def _min_bookmaker_filter(df: pd.DataFrame) -> pd.DataFrame:
     """
     Remove rows with less than MIN_BOOKMAKERS bookmaker columns.
-
-    Args:
-        df (pd.DataFrame): DataFrame containing odds data without exchange columns.
-
-    Returns:
-        pd.DataFrame: DataFrame with only rows that contain sufficient bookmaker counts.
     """
     df = df.copy()
     bookmaker_columns = find_bookmaker_columns(df)
@@ -123,10 +100,6 @@ def _min_bookmaker_filter(df: pd.DataFrame) -> pd.DataFrame:
 def _max_odds_filter(df: pd.DataFrame) -> pd.DataFrame:
     """
     Remove rows with best odds greater than MAX_ODDS.
-
-    Args: df (pd.DataFrame): DataFrame containing odds data without exchange columns, and with metadata.
-
-    Returns: pd.DataFrame: DataFrame with only rows that contain odds that are not extreme.
     """
     df = df.copy()
     bms = find_bookmaker_columns(df)
@@ -138,8 +111,11 @@ def _add_metadata(
     df: pd.DataFrame, best_odds_bms: Optional[List[str]] = None
 ) -> pd.DataFrame:
     """
-    Add Best Odds, Best Bookmaker, Outcomes, Result, and Scrape Time columns.
-    Handles missing bookmaker columns gracefully.
+    Add Best Odds, Best Bookmaker, Result, and Scrape Time columns.
+
+    Args:
+        df (pd.DataFrame): DataFrame containing odds data.
+        best_odds_bms (Optional[List[str]]): List of bookmakers to consider when calculating best odds. If None, all bookmaker columns will be considered.
     """
     df = df.copy()
     bms = find_bookmaker_columns(df)
@@ -178,11 +154,7 @@ def _all_outcomes_present_filter(df: pd.DataFrame) -> pd.DataFrame:
     Remove rows where not all outcomes are present.
 
     Args:
-        df (pd.DataFrame): DataFrame containing odds data without exchange columns, with metadata, and
-                            and with other data processing filters applied.
-
-    Returns:
-        pd.DataFrame: DataFrame with only rows that contain all outcomes.
+        df (pd.DataFrame): DataFrame containing odds data with outcomes column.
     """
     df = df.copy()
     mask = df["Outcomes"] == df.groupby("Match")["Team"].transform("count")
