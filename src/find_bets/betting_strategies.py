@@ -5,7 +5,7 @@ Vectorized logic for 3 different betting strategy methods.
 Functions append results columns to input pd.DataFrame.
 
 Author: Andrew Smith
-Refactored for vectorization and modularity
+Date: July 2025
 """
 
 import random
@@ -138,13 +138,13 @@ def _filter_by_threshold(
 
 def find_average_bets(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Find bets where best odds exceed average fair odds by threshold (vectorized).
+    Find bets where best odds exceed average fair odds by threshold.
 
     Args:
         df (pd.DataFrame): DataFrame containing vig-free odds data.
 
     Returns:
-        pd.DataFrame: DataFrame with additional columns for fair odds average and edge percentage.
+        pd.DataFrame: DataFrame with additional columns for fair odds average and expected value.
     """
     df = df.copy()
 
@@ -172,9 +172,7 @@ def find_average_bets(df: pd.DataFrame) -> pd.DataFrame:
 
 def find_modified_zscore_bets(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Find bets where best odds are outliers using Modified Z-score (vectorized).
-
-    More robust to outliers than standard Z-score.
+    Find bets where best odds are outliers using Modified Z-score. More robust to outliers than standard Z-score.
 
     Args:
         df (pd.DataFrame): DataFrame containing vig-free odds data.
