@@ -18,54 +18,65 @@ from config.api_config import THE_ODDS_API_KEY
 from config.fetch_config import MARKETS, ODDS_FORMAT, REGIONS, SPORT, SPORT_KEY
 
 
-def fetch_odds(games_data: Optional[List[Dict]] = None) -> pd.DataFrame:
+def _get_outcomes_list(bm_dicts: List[Dict]) -> List[str]:
     """
-    Fetches head-to-head (h2h) betting odds from The Odds API.
+    Extract the list of outcome names from bookmaker dictionaries.
+
+    Assumes all bookmakers offer odds for the same outcomes and uses the first
+    bookmaker to determine what outcomes are available.
 
     Args:
-        games_data (Optional[List[Dict]]): Pre-fetched game data for testing purposes. If None, data will be fetched from the API.
+        bm_dicts: List of bookmaker dictionaries, each mapping bookmaker name
+                  to outcome odds (e.g., [{"DraftKings": {"TeamA": 2.10, "TeamB": 1.85}}])
 
     Returns:
-        pd.DataFrame: DataFrame with columns: match, league, start time, team, bookmaker, odds, last update.
-                    Each row represents one team's odds from one bookmaker.
+        List of outcome names (e.g., ["TeamA", "TeamB"]).
+        Returns empty list if no bookmakers available.
     """
-    print("----------------------------------------------------")
-    print(f"Fetching odds for sport: {SPORT}")
+    if not bm_dicts:
+        return []
 
-    if games_data is None:
-        games_data = _get_json_response()
+    # Get first bookmaker's name and extract its outcome names
+    first_bm_name = list(bm_dicts[0].keys())[0]
+    return list(bm_dicts[0][first_bm_name].keys())
 
-    # Process each game into rows
-    rows = []
-    for game in games_data:
-        try:
-            # After processing the game, a list of dicts are returned, which are added individually as rows here
-            rows.extend(_process_game(game))
-        except Exception as e:
-            print(f"Error processing game: {e}")
+
+def _create_bm_dict_list(game: Dict) -> List[Dict]:
+    """
+    Processes a single game dictionary and builds a list of bookmaker dictionaries, each mapping the
+    bookmaker name to its odds for all outcomes in the game.
+
+    Args:
+        game (Dict): Game data dictionary from The Odds API response.
+
+    Returns:
+        List[Dict]: List of dictionaries, where each dictionary is a bookmaker and it's odds for different
+                    outcomes.
+    """
+    bm_dicts_list = []
+    bookmakers = game.get("bookmakers", [])
+
+    for bm in bookmakers:
+        bookmaker_name = bm["title"]
+        markets = bm.get("markets", [])
+
+        # Find the h2h market specifically
+        h2h_market = None
+        for market in markets:
+            if market.get("key") == "h2h":
+                h2h_market = market
+                break
+
+        # Skip this bookmaker if no h2h market found
+        if h2h_market is None:
             continue
-    return pd.DataFrame(rows)
 
+        # Create a dict for each outcome
+        outcomes = {o["name"]: o["price"] for o in h2h_market.get("outcomes", [])}
+        bm_dict = {bookmaker_name: outcomes}
+        bm_dicts_list.append(bm_dict)
 
-def _get_json_response() -> Dict:
-    """
-    Helper function to get JSON response from The Odds API.
-
-    Returns:
-        Dict: JSON response from the API.
-    """
-    url = f"https://api.the-odds-api.com/v4/sports/{SPORT_KEY}/odds"
-    params = {
-        "apiKey": THE_ODDS_API_KEY,
-        "regions": REGIONS,
-        "markets": MARKETS,
-        "oddsFormat": ODDS_FORMAT,
-    }
-    try:
-        response = requests.get(url, params=params)
-        return response.json()
-    except Exception as e:
-        raise Exception(f"Error while fetching API response: {e}")
+    return bm_dicts_list
 
 
 def _process_game(game: Dict) -> List[Dict]:
@@ -113,73 +124,54 @@ def _process_game(game: Dict) -> List[Dict]:
     return rows
 
 
-def _create_bm_dict_list(game: Dict) -> List[Dict]:
+def _get_json_response() -> Dict:
     """
-    Processes a single game dictionary and builds a list of bookmaker dictionaries, each mapping the
-    bookmaker name to its odds for all outcomes in the game.
-
-    Args:
-        game (Dict): Game data dictionary from The Odds API response.
+    Helper function to get JSON response from The Odds API.
 
     Returns:
-        List[Dict]: List of dictionaries, where each dictionary is a bookmaker and it's odds for different
-                    outcomes.
+        Dict: JSON response from the API.
     """
-    bm_dicts_list = []
-    bookmakers = game.get("bookmakers", [])
+    url = f"https://api.the-odds-api.com/v4/sports/{SPORT_KEY}/odds"
+    params = {
+        "apiKey": THE_ODDS_API_KEY,
+        "regions": REGIONS,
+        "markets": MARKETS,
+        "oddsFormat": ODDS_FORMAT,
+    }
+    try:
+        response = requests.get(url, params=params)
+        return response.json()
+    except Exception as e:
+        raise Exception(f"Error while fetching API response: {e}")
 
-    for bm in bookmakers:
-        bookmaker_name = bm["title"]
-        markets = bm.get("markets", [])
 
-        # Find the h2h market specifically
-        h2h_market = None
-        for market in markets:
-            if market.get("key") == "h2h":
-                h2h_market = market
-                break
+def fetch_odds(games_data: Optional[List[Dict]] = None) -> pd.DataFrame:
+    """
+    Fetches head-to-head (h2h) betting odds from The Odds API.
 
-        # Skip this bookmaker if no h2h market found
-        if h2h_market is None:
+    Args:
+        games_data (Optional[List[Dict]]): Pre-fetched game data for testing purposes. If None, data will be fetched from the API.
+
+    Returns:
+        pd.DataFrame: DataFrame with columns: match, league, start time, team, bookmaker, odds, last update.
+                    Each row represents one team's odds from one bookmaker.
+    """
+    print("----------------------------------------------------")
+    print(f"Fetching odds for sport: {SPORT}")
+
+    if games_data is None:
+        games_data = _get_json_response()
+
+    # Process each game into rows
+    rows = []
+    for game in games_data:
+        try:
+            # After processing the game, a list of dicts are returned, which are added individually as rows here
+            rows.extend(_process_game(game))
+        except Exception as e:
+            print(f"Error processing game: {e}")
             continue
-
-        # Create a dict for each outcome
-        outcomes = {o["name"]: o["price"] for o in h2h_market.get("outcomes", [])}
-        bm_dict = {bookmaker_name: outcomes}
-        bm_dicts_list.append(bm_dict)
-
-    return bm_dicts_list
-
-
-def _get_outcomes_list(bm_dicts: List[Dict]) -> List[str]:
-    """
-    Extract the list of outcome names from bookmaker dictionaries.
-
-    Assumes all bookmakers offer odds for the same outcomes and uses the first
-    bookmaker to determine what outcomes are available.
-
-    Args:
-        bm_dicts: List of bookmaker dictionaries, each mapping bookmaker name
-                  to outcome odds (e.g., [{"DraftKings": {"TeamA": 2.10, "TeamB": 1.85}}])
-
-    Returns:
-        List of outcome names (e.g., ["TeamA", "TeamB"]).
-        Returns empty list if no bookmakers available.
-
-    Examples:
-        >>> bm_dicts = [{"DraftKings": {"TeamA": 2.10, "TeamB": 1.85}}]
-        >>> _get_outcomes_list(bm_dicts)
-        ["TeamA", "TeamB"]
-
-        >>> _get_outcomes_list([])
-        []
-    """
-    if not bm_dicts:
-        return []
-
-    # Get first bookmaker's name and extract its outcome names
-    first_bm_name = list(bm_dicts[0].keys())[0]
-    return list(bm_dicts[0][first_bm_name].keys())
+    return pd.DataFrame(rows)
 
 
 def main() -> None:
