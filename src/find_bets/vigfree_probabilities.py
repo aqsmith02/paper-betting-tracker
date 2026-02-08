@@ -4,8 +4,10 @@ vigfree_probabilities.py
 Calculates vig-free probabilities from odds data.
 
 Author: Andrew Smith
+Date: January 2026
 """
 
+from typing import List
 import numpy as np
 import pandas as pd
 
@@ -13,27 +15,22 @@ from src.constants import MAX_MARGIN
 from src.find_bets.data_processing import find_bookmaker_columns
 
 
-def _calculate_market_margin(odds_list):
+def _calculate_market_margin(odds_list: List[float]) -> float:
     """
     Calculate the total market margin (overround) from a list of odds.
 
     Args:
-        odds_list: List of decimal odds for all outcomes in the market
+        odds_list (List[float]): List of decimal odds for all outcomes in the market
 
     Returns:
-        Margin as a decimal (e.g., 0.08 for 8% margin)
+        float: Margin as a decimal (e.g., 0.08 for 8% margin)
     """
-    # Handle None
-    if odds_list is None:
+    if odds_list is None or not odds_list:
         return 0
 
     # Convert Series to list if needed
     if hasattr(odds_list, "tolist"):
         odds_list = odds_list.tolist()
-
-    # Check empty (handles both empty list and empty Series after conversion)
-    if not odds_list:
-        return 0
 
     # Sum of implied probabilities
     implied_prob_sum = sum(1 / odds for odds in odds_list if odds > 0)
@@ -58,7 +55,7 @@ def _calculate_market_margin(odds_list):
     return margin
 
 
-def _remove_margin_proportional_to_odds(bookmaker_odds, all_market_odds, n_outcomes):
+def _remove_margin_proportional_to_odds(bookmaker_odds: float, all_market_odds: List[float], n_outcomes: int) -> float:
     """
     Remove bookmaker margin using the "proportional to odds" method.
 
@@ -73,12 +70,12 @@ def _remove_margin_proportional_to_odds(bookmaker_odds, all_market_odds, n_outco
         M = total market margin
 
     Args:
-        bookmaker_odds: The specific odds you're evaluating
-        all_market_odds: List of all odds in the market (to calculate margin)
-        n_outcomes: Number of possible outcomes
+        bookmaker_odds (float): The specific odds you're evaluating
+        all_market_odds (List[float]): List of all odds in the market (to calculate margin)
+        n_outcomes (int): Number of possible outcomes
 
     Returns:
-        Fair odds with margin removed
+        float: Fair odds with margin removed
     """
     if bookmaker_odds < 1:
         raise ValueError(f"Invalid odds: less than 1 ({bookmaker_odds}). ")
@@ -101,16 +98,16 @@ def _remove_margin_proportional_to_odds(bookmaker_odds, all_market_odds, n_outco
     return fair_odds
 
 
-def _calculate_vigfree_probs_for_market(valid_odds, required_outcomes):
+def _calculate_vigfree_probs_for_market(valid_odds: pd.Series, required_outcomes: int) -> List[float]:
     """
     Calculate vig-free probabilities for all outcomes in a market.
 
     Args:
-        valid_odds: Series of odds for all outcomes
-        required_outcomes: Number of outcomes in the market
+        valid_odds (pd.Series): Series of odds for all outcomes
+        required_outcomes (int): Number of outcomes in the market
 
     Returns:
-        list: Vig-free probabilities for each outcome (empty list if calculation fails)
+        List[float]: Vig-free probabilities for each outcome (empty list if calculation fails)
     """
     vigfree_probs = []
 
@@ -129,14 +126,14 @@ def _calculate_vigfree_probs_for_market(valid_odds, required_outcomes):
     return vigfree_probs
 
 
-def _has_complete_odds(match_group, bookmaker, required_outcomes):
+def _has_complete_odds(match_group: pd.DataFrame, bookmaker: str, required_outcomes: int) -> tuple:
     """
     Check if a bookmaker has odds for all required outcomes in a match.
 
     Args:
-        match_group: DataFrame group for a single match
-        bookmaker: Name of the bookmaker column
-        required_outcomes: Number of outcomes required for a complete market
+        match_group (pd.DataFrame): DataFrame group for a single match
+        bookmaker (str): Name of the bookmaker column
+        required_outcomes (int): Number of outcomes required for a complete market
 
     Returns:
         tuple: (has_complete_odds: bool, valid_odds: Series or None)
@@ -149,18 +146,18 @@ def _has_complete_odds(match_group, bookmaker, required_outcomes):
     return True, valid_odds
 
 
-def _process_bookmaker_for_match(df, match_group, bookmaker, vigfree_column):
+def _process_bookmaker_for_match(df: pd.DataFrame, match_group: pd.DataFrame, bookmaker: str, vigfree_column: str) -> None:
     """
     Calculate and update vig-free probabilities for a single bookmaker in a single match.
 
     Args:
-        df: Main DataFrame to update
-        match_group: DataFrame group for a single match
-        bookmaker: Name of the bookmaker column
-        vigfree_column: Name of the column to store vig-free probabilities
+        df (pd.DataFrame): Main DataFrame to update
+        match_group (pd.DataFrame): DataFrame group for a single match
+        bookmaker (str): Name of the bookmaker column
+        vigfree_column (str): Name of the column to store vig-free probabilities
 
     Returns:
-        None (modifies df in place)
+        None
     """
     required_outcomes = match_group["Outcomes"].iloc[0]
 
