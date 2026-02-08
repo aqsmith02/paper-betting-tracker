@@ -19,7 +19,8 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-    "black>=23.0.0",        # Code formatter (optional)
+    "black>=23.0.0",        # Code formatter 
+    "isort>=5.13.0",       # Import sorter 
 ]
 
 [tool.pytest.ini_options]
@@ -28,5 +29,10 @@ pythonpath = ["."]
 [tool.black]
 line-length = 88
 target-version = ["py38"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
 
 
