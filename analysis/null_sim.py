@@ -1,7 +1,7 @@
 """
-null_hypothesis_simulation.py
+null_simulation.py
 
-Run Monte Carlo simulation under the null hypothesis that bets have -5% EV.
+Run simulation under the null hypothesis that bets have -5% EV.
 Tests whether observed results are statistically significantly better than
 the null hypothesis of -5% expected value.
 
