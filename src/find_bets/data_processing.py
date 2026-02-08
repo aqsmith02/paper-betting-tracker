@@ -6,18 +6,20 @@ Cleans and validates data from fetch_odds.py.
 Author: Andrew Smith
 """
 
+from datetime import datetime, timezone
+from typing import List, Optional
+
 import numpy as np
 import pandas as pd
-from typing import List, Optional
-from datetime import datetime, timezone
+
 from src.constants import (
-    NON_BM_COLUMNS,
-    MIN_BOOKMAKERS,
-    MAX_ODDS,
     ALL_BMS,
-    NC_BMS,
+    MAX_ODDS,
+    MIN_BOOKMAKERS,
     MIN_OUTCOMES,
-    TIMESTAMP_FORMAT
+    NC_BMS,
+    NON_BM_COLUMNS,
+    TIMESTAMP_FORMAT,
 )
 
 
@@ -38,11 +40,7 @@ def find_bookmaker_columns(
     if exclude_columns:
         excluded.update(exclude_columns)
 
-    return [
-        col
-        for col in df.columns
-        if col not in excluded
-    ]
+    return [col for col in df.columns if col not in excluded]
 
 
 def _add_outcomes_metadata(df: pd.DataFrame) -> pd.DataFrame:
@@ -123,12 +121,12 @@ def _min_bookmaker_filter(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def _max_odds_filter(df: pd.DataFrame) -> pd.DataFrame:
-    """ 
-    Remove rows with best odds greater than MAX_ODDS. 
-    
-    Args: df (pd.DataFrame): DataFrame containing odds data without exchange columns, and with metadata. 
-    
-    Returns: pd.DataFrame: DataFrame with only rows that contain odds that are not extreme. 
+    """
+    Remove rows with best odds greater than MAX_ODDS.
+
+    Args: df (pd.DataFrame): DataFrame containing odds data without exchange columns, and with metadata.
+
+    Returns: pd.DataFrame: DataFrame with only rows that contain odds that are not extreme.
     """
     df = df.copy()
     bms = find_bookmaker_columns(df)
@@ -152,7 +150,9 @@ def _add_metadata(
 
         if existing_bms:
             df["Best Odds"] = df[existing_bms].max(axis=1)
-            df["Best Bookmaker"] = df[existing_bms].apply(lambda row: row.idxmax() if row.notna().any() else None, axis=1)
+            df["Best Bookmaker"] = df[existing_bms].apply(
+                lambda row: row.idxmax() if row.notna().any() else None, axis=1
+            )
 
         else:
             # Fallback if none exist
@@ -161,7 +161,9 @@ def _add_metadata(
     else:
         if bms:
             df["Best Odds"] = df[bms].max(axis=1)
-            df["Best Bookmaker"] = df[bms].apply(lambda row: row.idxmax() if row.notna().any() else None, axis=1)
+            df["Best Bookmaker"] = df[bms].apply(
+                lambda row: row.idxmax() if row.notna().any() else None, axis=1
+            )
         else:
             df["Best Odds"] = None
             df["Best Bookmaker"] = None
@@ -208,4 +210,3 @@ def process_target_odds_data(df: pd.DataFrame) -> pd.DataFrame:
     df = _add_metadata(df, best_odds_bms=NC_BMS)
     df = _all_outcomes_present_filter(df)
     return df
-

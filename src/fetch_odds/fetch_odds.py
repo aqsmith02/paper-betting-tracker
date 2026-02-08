@@ -2,25 +2,27 @@
 fetch_odds.py
 
 The file fetches sports betting odds using The-Odds-API. Pulls in odds from any designated sport,
-region, or market. Organizes a DataFrame with odds to contain one row per outcome, with columns being
+region, or market. Organizes a DataFrame with odds to contain one row per outcome of a game, with columns being
 bookmakers and essential information.
 
 Author: Andrew Smith
 Date: July 2025
 """
 
-import requests
+from typing import Dict, List, Optional
+
 import pandas as pd
-from typing import List, Dict, Optional
-from config.fetch_config import SPORT, SPORT_KEY, REGIONS, MARKETS, ODDS_FORMAT
+import requests
+
 from config.api_config import THE_ODDS_API_KEY
+from config.fetch_config import MARKETS, ODDS_FORMAT, REGIONS, SPORT, SPORT_KEY
 
 
 def fetch_odds(games_data: Optional[List[Dict]] = None) -> pd.DataFrame:
     """
     Fetches head-to-head (h2h) betting odds from The Odds API.
 
-    Args: 
+    Args:
         games_data (Optional[List[Dict]]): Pre-fetched game data for testing purposes. If None, data will be fetched from the API.
 
     Returns:
@@ -102,7 +104,9 @@ def _process_game(game: Dict) -> List[Dict]:
         # Add each bookmaker's odds for this outcome
         for bm in bm_dicts:
             for bm_name, odds_dict in bm.items():
-                row[bm_name] = odds_dict.get(outcome_team, None)  # None if outcome not found
+                row[bm_name] = odds_dict.get(
+                    outcome_team, None
+                )  # None if outcome not found
 
         rows.append(row)
 
@@ -123,22 +127,22 @@ def _create_bm_dict_list(game: Dict) -> List[Dict]:
     """
     bm_dicts_list = []
     bookmakers = game.get("bookmakers", [])
-    
+
     for bm in bookmakers:
         bookmaker_name = bm["title"]
         markets = bm.get("markets", [])
-        
+
         # Find the h2h market specifically
         h2h_market = None
         for market in markets:
             if market.get("key") == "h2h":
                 h2h_market = market
                 break
-        
+
         # Skip this bookmaker if no h2h market found
         if h2h_market is None:
             continue
-            
+
         # Create a dict for each outcome
         outcomes = {o["name"]: o["price"] for o in h2h_market.get("outcomes", [])}
         bm_dict = {bookmaker_name: outcomes}
@@ -150,29 +154,29 @@ def _create_bm_dict_list(game: Dict) -> List[Dict]:
 def _get_outcomes_list(bm_dicts: List[Dict]) -> List[str]:
     """
     Extract the list of outcome names from bookmaker dictionaries.
-    
+
     Assumes all bookmakers offer odds for the same outcomes and uses the first
     bookmaker to determine what outcomes are available.
-    
+
     Args:
         bm_dicts: List of bookmaker dictionaries, each mapping bookmaker name
                   to outcome odds (e.g., [{"DraftKings": {"TeamA": 2.10, "TeamB": 1.85}}])
-    
+
     Returns:
         List of outcome names (e.g., ["TeamA", "TeamB"]).
         Returns empty list if no bookmakers available.
-    
+
     Examples:
         >>> bm_dicts = [{"DraftKings": {"TeamA": 2.10, "TeamB": 1.85}}]
         >>> _get_outcomes_list(bm_dicts)
         ["TeamA", "TeamB"]
-        
+
         >>> _get_outcomes_list([])
         []
     """
     if not bm_dicts:
         return []
-    
+
     # Get first bookmaker's name and extract its outcome names
     first_bm_name = list(bm_dicts[0].keys())[0]
     return list(bm_dicts[0][first_bm_name].keys())

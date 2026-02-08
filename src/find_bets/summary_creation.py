@@ -5,8 +5,10 @@ Logic for creating bet summary DataFrames given betting analysis data.
 
 Author: Andrew Smith
 """
-from src.find_bets.data_processing import find_bookmaker_columns
+
 import pandas as pd
+
+from src.find_bets.data_processing import find_bookmaker_columns
 
 
 def create_average_summary_minimal(df: pd.DataFrame) -> pd.DataFrame:
@@ -24,10 +26,19 @@ def create_average_summary_minimal(df: pd.DataFrame) -> pd.DataFrame:
 
     # Define column order
     columns_to_keep = [
-        "ID", "Sport Key", "Sport Title", "Start Time",
-        "Scrape Time", "Match", "Team",
-        "Best Bookmaker", "Best Odds", "Fair Odds Average", 
-        "Expected Value", "Outcomes", "Result"
+        "ID",
+        "Sport Key",
+        "Sport Title",
+        "Start Time",
+        "Scrape Time",
+        "Match",
+        "Team",
+        "Best Bookmaker",
+        "Best Odds",
+        "Fair Odds Average",
+        "Expected Value",
+        "Outcomes",
+        "Result",
     ]
 
     # Reindex to enforce order, ignore missing columns if needed
@@ -54,19 +65,24 @@ def create_average_summary_full(df: pd.DataFrame) -> pd.DataFrame:
     bookmaker_columns = find_bookmaker_columns(filtered_df, vigfree_columns)
 
     # Define column order
-    columns_to_keep = [
-        "ID", "Sport Key", "Sport Title", "Start Time",
-        "Scrape Time", "Match", "Team"
-    ] + bookmaker_columns + vigfree_columns + [
-        "Best Bookmaker", "Best Odds", "Fair Odds Average", 
-        "Expected Value", "Outcomes", "Result"
-    ]
+    columns_to_keep = (
+        ["ID", "Sport Key", "Sport Title", "Start Time", "Scrape Time", "Match", "Team"]
+        + bookmaker_columns
+        + vigfree_columns
+        + [
+            "Best Bookmaker",
+            "Best Odds",
+            "Fair Odds Average",
+            "Expected Value",
+            "Outcomes",
+            "Result",
+        ]
+    )
 
     # Reindex to enforce order, ignore missing columns if needed
     summary_df = filtered_df.reindex(columns=columns_to_keep)
 
     return summary_df.reset_index(drop=True)
-
 
 
 def create_modified_zscore_summary_minimal(df: pd.DataFrame) -> pd.DataFrame:
@@ -80,15 +96,26 @@ def create_modified_zscore_summary_minimal(df: pd.DataFrame) -> pd.DataFrame:
         pd.DataFrame: Summary DataFrame with only profitable Modified Z-score outlier bets.
     """
     # Filter out rows with NaN in critical columns
-    filtered_df = df.dropna(subset=["Expected Value", "Fair Odds Average", "Modified Z-Score"])
+    filtered_df = df.dropna(
+        subset=["Expected Value", "Fair Odds Average", "Modified Z-Score"]
+    )
 
     # Define column order
     columns_to_keep = [
-        "ID", "Sport Key", "Sport Title", "Start Time", 
-        "Scrape Time", "Match", "Team",
-        "Best Bookmaker", "Best Odds",
-        "Fair Odds Average", "Expected Value", 
-        "Modified Z-Score", "Outcomes", "Result"
+        "ID",
+        "Sport Key",
+        "Sport Title",
+        "Start Time",
+        "Scrape Time",
+        "Match",
+        "Team",
+        "Best Bookmaker",
+        "Best Odds",
+        "Fair Odds Average",
+        "Expected Value",
+        "Modified Z-Score",
+        "Outcomes",
+        "Result",
     ]
 
     # Reindex to enforce order, ignore missing columns if needed
@@ -108,21 +135,29 @@ def create_modified_zscore_summary_full(df: pd.DataFrame) -> pd.DataFrame:
         pd.DataFrame: Summary DataFrame with only profitable Modified Z-score outlier bets.
     """
     # Filter out rows with NaN in critical columns
-    filtered_df = df.dropna(subset=["Expected Value", "Fair Odds Average", "Modified Z-Score"])
+    filtered_df = df.dropna(
+        subset=["Expected Value", "Fair Odds Average", "Modified Z-Score"]
+    )
 
     # Find vf columns and bookmaker columns
     vigfree_columns = [col for col in filtered_df.columns if col.startswith("Vigfree ")]
     bookmaker_columns = find_bookmaker_columns(filtered_df, vigfree_columns)
 
     # Define column order
-    columns_to_keep = [
-        "ID", "Sport Key", "Sport Title", "Start Time", 
-        "Scrape Time", "Match", "Team"
-    ] + bookmaker_columns + vigfree_columns + [
-        "Best Bookmaker", "Best Odds",
-        "Fair Odds Average", "Expected Value", 
-        "Modified Z-Score", "Outcomes", "Result"
-    ]
+    columns_to_keep = (
+        ["ID", "Sport Key", "Sport Title", "Start Time", "Scrape Time", "Match", "Team"]
+        + bookmaker_columns
+        + vigfree_columns
+        + [
+            "Best Bookmaker",
+            "Best Odds",
+            "Fair Odds Average",
+            "Expected Value",
+            "Modified Z-Score",
+            "Outcomes",
+            "Result",
+        ]
+    )
 
     # Reindex to enforce order, ignore missing columns if needed
     summary_df = filtered_df.reindex(columns=columns_to_keep)
@@ -140,14 +175,21 @@ def create_random_summary_minimal(df: pd.DataFrame) -> pd.DataFrame:
     Returns:
         pd.DataFrame: Summary DataFrame with only random bets.
     """
-    df = df[df['Random Placed Bet'] != 0].reset_index(drop=True)
+    df = df[df["Random Placed Bet"] != 0].reset_index(drop=True)
 
     # Define column order
     columns_to_keep = [
-        "ID", "Sport Key", "Sport Title", "Start Time", 
-        "Scrape Time", "Match", "Team",
-        "Best Bookmaker", "Best Odds",
-        "Outcomes", "Result"
+        "ID",
+        "Sport Key",
+        "Sport Title",
+        "Start Time",
+        "Scrape Time",
+        "Match",
+        "Team",
+        "Best Bookmaker",
+        "Best Odds",
+        "Outcomes",
+        "Result",
     ]
 
     # Reindex to enforce order, ignore missing columns if needed
@@ -166,20 +208,19 @@ def create_random_summary_full(df: pd.DataFrame) -> pd.DataFrame:
     Returns:
         pd.DataFrame: Summary DataFrame with only random bets.
     """
-    df = df[df['Random Placed Bet'] != 0].reset_index(drop=True)
+    df = df[df["Random Placed Bet"] != 0].reset_index(drop=True)
 
     # Find vf columns and bookmaker columns
     vigfree_columns = [col for col in df.columns if col.startswith("Vigfree ")]
     bookmaker_columns = find_bookmaker_columns(df, vigfree_columns)
 
     # Define column order
-    columns_to_keep = [
-        "ID", "Sport Key", "Sport Title", "Start Time", 
-        "Scrape Time", "Match", "Team"
-    ] + bookmaker_columns + vigfree_columns + [
-        "Best Bookmaker", "Best Odds",
-        "Outcomes", "Result"
-    ]
+    columns_to_keep = (
+        ["ID", "Sport Key", "Sport Title", "Start Time", "Scrape Time", "Match", "Team"]
+        + bookmaker_columns
+        + vigfree_columns
+        + ["Best Bookmaker", "Best Odds", "Outcomes", "Result"]
+    )
 
     # Reindex to enforce order, ignore missing columns if needed
     summary_df = df.reindex(columns=columns_to_keep)

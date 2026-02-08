@@ -4,9 +4,11 @@ Tests for date_utils.py
 Tests utility functions for date conversion and time-based filtering.
 """
 
-import pytest
-import pandas as pd
 from datetime import datetime, timedelta, timezone
+
+import pandas as pd
+import pytest
+
 from src.results.date_utils import _start_date, _time_since_start
 
 
@@ -57,21 +59,27 @@ class TestTimeSinceStart:
     def test_filter_recent_games(self):
         """Test filtering out games that started less than threshold hours ago."""
         current_time = datetime.now(timezone.utc)
-        
+
         # Create test data with games at different times
         data = {
             "Start Time": [
-                (current_time - timedelta(hours=6)).isoformat(),   # 6 hours ago - should be filtered
-                (current_time - timedelta(hours=15)).isoformat(),  # 15 hours ago - should remain
-                (current_time - timedelta(hours=24)).isoformat(),  # 24 hours ago - should remain
+                (
+                    current_time - timedelta(hours=6)
+                ).isoformat(),  # 6 hours ago - should be filtered
+                (
+                    current_time - timedelta(hours=15)
+                ).isoformat(),  # 15 hours ago - should remain
+                (
+                    current_time - timedelta(hours=24)
+                ).isoformat(),  # 24 hours ago - should remain
             ],
-            "Match": ["Game 1", "Game 2", "Game 3"]
+            "Match": ["Game 1", "Game 2", "Game 3"],
         }
         df = pd.DataFrame(data)
-        
+
         # Filter games starting less than 12 hours ago
         result = _time_since_start(df, 12)
-        
+
         # Should only have 2 games (15 and 24 hours ago)
         assert len(result) == 2
         assert "Game 1" not in result["Match"].values
@@ -81,20 +89,20 @@ class TestTimeSinceStart:
     def test_all_games_recent(self):
         """Test when all games started less than threshold hours ago."""
         current_time = datetime.now(timezone.utc)
-        
+
         data = {
             "Start Time": [
                 (current_time - timedelta(hours=2)).isoformat(),
                 (current_time - timedelta(hours=4)).isoformat(),
                 (current_time - timedelta(hours=6)).isoformat(),
             ],
-            "Match": ["Game 1", "Game 2", "Game 3"]
+            "Match": ["Game 1", "Game 2", "Game 3"],
         }
         df = pd.DataFrame(data)
-        
+
         # Filter games starting less than 12 hours ago
         result = _time_since_start(df, 12)
-        
+
         # All games should be filtered out
         assert len(result) == 0
         assert result.empty
@@ -102,20 +110,20 @@ class TestTimeSinceStart:
     def test_all_games_old(self):
         """Test when all games started more than threshold hours ago."""
         current_time = datetime.now(timezone.utc)
-        
+
         data = {
             "Start Time": [
                 (current_time - timedelta(hours=20)).isoformat(),
                 (current_time - timedelta(hours=30)).isoformat(),
                 (current_time - timedelta(hours=48)).isoformat(),
             ],
-            "Match": ["Game 1", "Game 2", "Game 3"]
+            "Match": ["Game 1", "Game 2", "Game 3"],
         }
         df = pd.DataFrame(data)
-        
+
         # Filter games starting less than 12 hours ago
         result = _time_since_start(df, 12)
-        
+
         # All games should remain
         assert len(result) == 3
         assert list(result["Match"].values) == ["Game 1", "Game 2", "Game 3"]
@@ -123,39 +131,41 @@ class TestTimeSinceStart:
     def test_exact_threshold_boundary(self):
         """Test game that started exactly at threshold hours ago."""
         current_time = datetime.now(timezone.utc)
-        
+
         data = {
             "Start Time": [
-                (current_time - timedelta(hours=12)).isoformat(),  # Exactly 12 hours ago
+                (
+                    current_time - timedelta(hours=12)
+                ).isoformat(),  # Exactly 12 hours ago
             ],
-            "Match": ["Game 1"]
+            "Match": ["Game 1"],
         }
         df = pd.DataFrame(data)
-        
+
         # Filter games starting less than 12 hours ago
         result = _time_since_start(df, 12)
-        
+
         # Game at exactly threshold should remain (<=)
         assert len(result) == 1
 
     def test_different_threshold_values(self):
         """Test with different threshold values."""
         current_time = datetime.now(timezone.utc)
-        
+
         data = {
             "Start Time": [
                 (current_time - timedelta(hours=10)).isoformat(),
                 (current_time - timedelta(hours=25)).isoformat(),
             ],
-            "Match": ["Game 1", "Game 2"]
+            "Match": ["Game 1", "Game 2"],
         }
         df = pd.DataFrame(data)
-        
+
         # Test with 24 hour threshold
         result_24 = _time_since_start(df.copy(), 24)
         assert len(result_24) == 1  # Only Game 2
         assert "Game 2" in result_24["Match"].values
-        
+
         # Test with 8 hour threshold
         result_8 = _time_since_start(df.copy(), 8)
         assert len(result_8) == 2  # Both games
@@ -163,25 +173,27 @@ class TestTimeSinceStart:
     def test_timezone_aware_datetimes(self):
         """Test that function handles timezone-aware datetimes correctly."""
         current_time = datetime.now(timezone.utc)
-        
+
         # Create timezone-aware datetime strings
         data = {
             "Start Time": [
-                (current_time - timedelta(hours=15)).replace(tzinfo=timezone.utc).isoformat(),
+                (current_time - timedelta(hours=15))
+                .replace(tzinfo=timezone.utc)
+                .isoformat(),
             ],
-            "Match": ["Game 1"]
+            "Match": ["Game 1"],
         }
         df = pd.DataFrame(data)
-        
+
         result = _time_since_start(df, 12)
-        
+
         # Should not raise exception and should filter correctly
         assert len(result) == 1
 
     def test_preserves_other_columns(self):
         """Test that other DataFrame columns are preserved."""
         current_time = datetime.now(timezone.utc)
-        
+
         data = {
             "Start Time": [
                 (current_time - timedelta(hours=15)).isoformat(),
@@ -189,12 +201,12 @@ class TestTimeSinceStart:
             ],
             "Match": ["Game 1", "Game 2"],
             "Team": ["Team A", "Team B"],
-            "Result": ["Win", "Loss"]
+            "Result": ["Win", "Loss"],
         }
         df = pd.DataFrame(data)
-        
+
         result = _time_since_start(df, 12)
-        
+
         # Check all columns are preserved
         assert list(result.columns) == ["Start Time", "Match", "Team", "Result"]
         assert len(result) == 2
@@ -202,17 +214,17 @@ class TestTimeSinceStart:
     def test_zero_threshold(self):
         """Test with zero threshold - should filter all future/current games."""
         current_time = datetime.now(timezone.utc)
-        
+
         data = {
             "Start Time": [
                 (current_time - timedelta(hours=1)).isoformat(),
                 (current_time - timedelta(hours=5)).isoformat(),
             ],
-            "Match": ["Game 1", "Game 2"]
+            "Match": ["Game 1", "Game 2"],
         }
         df = pd.DataFrame(data)
-        
+
         result = _time_since_start(df, 0)
-        
+
         # All games should remain (started more than 0 hours ago)
         assert len(result) == 2

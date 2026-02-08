@@ -7,15 +7,28 @@ bets in a column called "Result".
 Author: Andrew Smith
 Date: July 2025
 """
-import requests
+
+from typing import Dict, List
+
 import pandas as pd
-from typing import List, Dict
-from src.constants import PENDING_RESULTS, API_REQUEST_THRESHOLD_HOURS, DAYS_FROM_SCORE_FETCHING, SPORT_KEYS_WITH_RESULTS, RESULT_COLUMN, ID_COLUMN, SPORT_KEY_COLUMN
-from src.results.date_utils import _time_since_start
+import requests
+
 from config.api_config import THE_ODDS_API_KEY
+from src.constants import (
+    API_REQUEST_THRESHOLD_HOURS,
+    DAYS_FROM_SCORE_FETCHING,
+    ID_COLUMN,
+    PENDING_RESULTS,
+    RESULT_COLUMN,
+    SPORT_KEY_COLUMN,
+    SPORT_KEYS_WITH_RESULTS,
+)
+from src.results.date_utils import _time_since_start
 
 
-def _get_scores_from_theodds(sports_key: str, event_ids: str, days_from: int = DAYS_FROM_SCORE_FETCHING) -> List[Dict]:
+def _get_scores_from_theodds(
+    sports_key: str, event_ids: str, days_from: int = DAYS_FROM_SCORE_FETCHING
+) -> List[Dict]:
     """
     Fetch game outcomes from The-Odds-API for the event IDs specified.
 
@@ -36,7 +49,7 @@ def _get_scores_from_theodds(sports_key: str, event_ids: str, days_from: int = D
     except:
         print("Error connecting to The-Odds-API.")
         return []
-    
+
 
 def _get_pending_event_ids(df: pd.DataFrame) -> str:
     """
@@ -65,30 +78,30 @@ def _append_results(df: pd.DataFrame, game_dicts: List[Dict]) -> None:
     """
     # Create a mapping of game ID to winner
     id_to_winner = {}
-    
+
     for game in game_dicts:
-        if not game.get('completed'):
+        if not game.get("completed"):
             continue
-        
-        game_id = game.get('id')
-        scores = game.get('scores', [])
-        
+
+        game_id = game.get("id")
+        scores = game.get("scores", [])
+
         if len(scores) < 2:
             continue
-        
+
         # Determine winner
-        team1_score = int(scores[0]['score'])
-        team2_score = int(scores[1]['score'])
-        
+        team1_score = int(scores[0]["score"])
+        team2_score = int(scores[1]["score"])
+
         if team1_score > team2_score:
-            winner = scores[0]['name']
+            winner = scores[0]["name"]
         elif team2_score > team1_score:
-            winner = scores[1]['name']
+            winner = scores[1]["name"]
         else:
             winner = "Draw"
-        
+
         id_to_winner[game_id] = winner
-    
+
     # Update results, fill na with existing results (e.g., "Not Found")
     df[RESULT_COLUMN] = df[ID_COLUMN].map(id_to_winner).fillna(df[RESULT_COLUMN])
 
@@ -123,7 +136,11 @@ def get_finished_games_from_theodds(df: pd.DataFrame) -> pd.DataFrame:
     event_ids = _get_pending_event_ids(filtered_df)
 
     # Group by Sport Key and combine event IDs
-    grouped = filtered_df.groupby(SPORT_KEY_COLUMN)[ID_COLUMN].apply(lambda x: ','.join(x)).reset_index()
+    grouped = (
+        filtered_df.groupby(SPORT_KEY_COLUMN)[ID_COLUMN]
+        .apply(lambda x: ",".join(x))
+        .reset_index()
+    )
 
     # Loop through each sport key and fetch scores
     for idx, row in grouped.iterrows():  # FIXED: Use .iterrows() instead of .items()

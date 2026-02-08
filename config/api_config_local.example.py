@@ -6,7 +6,7 @@ This is a template file for local development. Copy it to create your actual con
 
 Then edit api_config_local.py with your actual API keys.
 
-IMPORTANT: 
+IMPORTANT:
 - api_config.example.py is committed to version control
 - api_config_local.py is in .gitignore and used for local development only
 - In production (GitHub Actions), keys are loaded from environment variables

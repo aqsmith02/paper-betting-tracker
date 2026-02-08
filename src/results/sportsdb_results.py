@@ -8,13 +8,23 @@ Author: Andrew Smith
 Date: July 2025
 """
 
-import requests
-import pandas as pd
 import time
-from typing import List, Dict
-from src.constants import PENDING_RESULTS, API_REQUEST_THRESHOLD_HOURS, SPORTSDB_RATE_LIMIT_BATCH, SPORTSDB_RATE_LIMIT_WAIT, RESULT_COLUMN, START_TIME_COLUMN, MATCH_COLUMN
-from src.results.date_utils import _start_date, _time_since_start
+from typing import Dict, List
+
+import pandas as pd
+import requests
+
 from config.api_config import THE_SPORTS_DB_API_KEY
+from src.constants import (
+    API_REQUEST_THRESHOLD_HOURS,
+    MATCH_COLUMN,
+    PENDING_RESULTS,
+    RESULT_COLUMN,
+    SPORTSDB_RATE_LIMIT_BATCH,
+    SPORTSDB_RATE_LIMIT_WAIT,
+    START_TIME_COLUMN,
+)
+from src.results.date_utils import _start_date, _time_since_start
 
 
 def _format_match_for_thesportsdb(match: str) -> str:
@@ -32,7 +42,9 @@ def _format_match_for_thesportsdb(match: str) -> str:
         formatted = f"{teams[1]} vs {teams[0]}"
         return formatted.replace(" ", "_")
     else:
-        raise ValueError(f"Match string format not recognized: '{match}'. Expected '@'.")
+        raise ValueError(
+            f"Match string format not recognized: '{match}'. Expected '@'."
+        )
 
 
 def _get_score_from_thesportsdb(match: str, date: str) -> List[Dict]:
@@ -54,7 +66,7 @@ def _get_score_from_thesportsdb(match: str, date: str) -> List[Dict]:
     except:
         print("Error connecting to TheSportsDB API.")
         return []
-    
+
 
 def _process_individual_result(game_dict: List[Dict]) -> None:
     """
@@ -68,7 +80,7 @@ def _process_individual_result(game_dict: List[Dict]) -> None:
     """
     if game_dict is None or "event" not in game_dict or not game_dict["event"]:
         return "Not Found"
-    
+
     # Store event
     event = game_dict["event"][0]
 
@@ -127,22 +139,24 @@ def get_finished_games_from_thesportsdb(df: pd.DataFrame) -> pd.DataFrame:
     # Loop through filtered games and fetch results
     for idx in filtered_df.index:
         row = df.loc[idx]
-        
+
         # Format match and get date
         match = _format_match_for_thesportsdb(row[MATCH_COLUMN])
         date = _start_date(row[START_TIME_COLUMN])
-        
+
         # Fetch result from API
         game_dict = _get_score_from_thesportsdb(match, date)
         result = _process_individual_result(game_dict)
-        
+
         # Update the original DataFrame
         df.at[idx, RESULT_COLUMN] = result
         fetches += 1
 
         # Rate limiting: pause every SPORTSDB_RATE_LIMIT_BATCH requests
         if fetches % SPORTSDB_RATE_LIMIT_BATCH == 0:
-            print(f"\nPausing for {SPORTSDB_RATE_LIMIT_WAIT} seconds to respect SportsDB API rate limits...\n")
+            print(
+                f"\nPausing for {SPORTSDB_RATE_LIMIT_WAIT} seconds to respect SportsDB API rate limits...\n"
+            )
             time.sleep(SPORTSDB_RATE_LIMIT_WAIT)
 
     print("Finished fetching results from TheSportsDB")

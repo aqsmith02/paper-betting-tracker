@@ -8,29 +8,31 @@ Profitable bets are stored, then appended to existing records.
 Author: Andrew Smith
 """
 
+from dataclasses import dataclass
+
+import pandas as pd
+
 from src.fetch_odds.fetch_odds import fetch_odds
-from src.find_bets.file_management import save_betting_data
 from src.find_bets.betting_strategies import (
     find_average_bets,
     find_modified_zscore_bets,
     find_random_bets,
 )
-from src.find_bets.summary_creation import (
-    create_random_summary_minimal,
-    create_average_summary_minimal,
-    create_modified_zscore_summary_minimal,
-    create_random_summary_full,
-    create_average_summary_full,
-    create_modified_zscore_summary_full,
-)
 from src.find_bets.data_processing import (
     process_target_odds_data,
+)
+from src.find_bets.file_management import save_betting_data
+from src.find_bets.summary_creation import (
+    create_average_summary_full,
+    create_average_summary_minimal,
+    create_modified_zscore_summary_full,
+    create_modified_zscore_summary_minimal,
+    create_random_summary_full,
+    create_random_summary_minimal,
 )
 from src.find_bets.vigfree_probabilities import (
     calculate_vigfree_probabilities,
 )
-import pandas as pd
-from dataclasses import dataclass
 
 
 @dataclass
@@ -42,6 +44,7 @@ class BettingStrategy:
     analysis_func: callable
     minimal_summary_func: callable
     full_summary_func: callable
+
 
 strategies = [
     BettingStrategy(

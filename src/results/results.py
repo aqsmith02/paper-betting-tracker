@@ -8,21 +8,23 @@ Author: Andrew Smith
 Date: July 2025
 """
 
-import pandas as pd
 import time
 from datetime import datetime, timedelta, timezone
 from typing import Tuple
-from src.results.theodds_results import get_finished_games_from_theodds
-from src.results.sportsdb_results import get_finished_games_from_thesportsdb
+
+import pandas as pd
+
 from src.constants import (
-    PENDING_RESULTS,
+    DATA_DIR,
     DAYS_CUTOFF,
     FILE_NAMES,
-    SLEEP_DURATION,
-    DATA_DIR,
-    START_TIME_COLUMN,
+    PENDING_RESULTS,
     RESULT_COLUMN,
+    SLEEP_DURATION,
+    START_TIME_COLUMN,
 )
+from src.results.sportsdb_results import get_finished_games_from_thesportsdb
+from src.results.theodds_results import get_finished_games_from_theodds
 
 
 def clean_old_pending_results(
@@ -111,7 +113,6 @@ def process_files(bet_filename: str, full_filename: str) -> None:
     print("----------------------------------------------------")
 
 
-
 def main() -> None:
     """
     Main pipeline for processing all file pairs to fetch and update sports results.
@@ -134,7 +135,9 @@ def main() -> None:
 
             # Sleep only if there is remaining time and it's not the last file
             if i < len(FILE_NAMES) - 1 and remaining_sleep > 0:
-                print(f"Processing took {elapsed:.2f}s, sleeping for {remaining_sleep:.2f}s...")
+                print(
+                    f"Processing took {elapsed:.2f}s, sleeping for {remaining_sleep:.2f}s..."
+                )
                 time.sleep(remaining_sleep)
             elif i < len(FILE_NAMES) - 1:
                 print(f"Processing took {elapsed:.2f}s, no need to sleep.")

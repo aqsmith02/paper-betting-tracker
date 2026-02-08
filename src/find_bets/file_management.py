@@ -6,9 +6,11 @@ Logic for appending bet summaries to existing bet .csv files.
 Author: Andrew Smith
 """
 
-from src.constants import DATE_FORMAT, INSERT_BEFORE_COLUMN
 from typing import Any, List
+
 import pandas as pd
+
+from src.constants import DATE_FORMAT, INSERT_BEFORE_COLUMN
 
 
 def _start_date_from_timestamp(timestamp: Any) -> str:
@@ -24,9 +26,7 @@ def _start_date_from_timestamp(timestamp: Any) -> str:
     return pd.to_datetime(timestamp).strftime(DATE_FORMAT)
 
 
-def _filter_best_bets_only(
-    summary_df: pd.DataFrame, score_column: str
-) -> pd.DataFrame:
+def _filter_best_bets_only(summary_df: pd.DataFrame, score_column: str) -> pd.DataFrame:
     """
     Save only the best bet per match (highest scoring bet).
 
@@ -39,17 +39,15 @@ def _filter_best_bets_only(
     """
     if summary_df.empty:
         return pd.DataFrame()
-    
-    best_bets = summary_df.sort_values(
-        score_column, ascending=False
-    ).drop_duplicates(subset=["Match", "Start Time"], keep="first")
+
+    best_bets = summary_df.sort_values(score_column, ascending=False).drop_duplicates(
+        subset=["Match", "Start Time"], keep="first"
+    )
 
     return best_bets
 
 
-def _remove_duplicates(
-    existing_df: pd.DataFrame, new_df: pd.DataFrame
-) -> pd.DataFrame:
+def _remove_duplicates(existing_df: pd.DataFrame, new_df: pd.DataFrame) -> pd.DataFrame:
     """
     Identify non-duplicate rows in new DataFrame based on (Match, Start Date) key.
     Use Start Date to avoid issues with exact timestamp mismatches from API.
@@ -68,27 +66,28 @@ def _remove_duplicates(
     # Add date keys
     existing_df = existing_df.copy()
     new_df = new_df.copy()
-    
-    existing_df['Start Date'] = existing_df['Start Time'].apply(_start_date_from_timestamp)
-    new_df['Start Date'] = new_df['Start Time'].apply(_start_date_from_timestamp)
-    
+
+    existing_df["Start Date"] = existing_df["Start Time"].apply(
+        _start_date_from_timestamp
+    )
+    new_df["Start Date"] = new_df["Start Time"].apply(_start_date_from_timestamp)
+
     # Use merge to find duplicates (more efficient than set lookups)
-    existing_df['Exists'] = True
+    existing_df["Exists"] = True
     merged = new_df.merge(
-        existing_df[['Match', 'Start Date', 'Exists']],
-        on=['Match', 'Start Date'],
-        how='left'
+        existing_df[["Match", "Start Date", "Exists"]],
+        on=["Match", "Start Date"],
+        how="left",
     )
 
     # Keep only rows that didn't match (NaN in Exists column)
     # Use the merged DataFrame directly since it contains all the original new_df data
-    result = merged[merged['Exists'].isna()].drop(columns=['Exists'])
-    
+    result = merged[merged["Exists"].isna()].drop(columns=["Exists"])
+
     return result
 
 
-def _align_column_schemas(
-    existing_df: pd.DataFrame, new_df: pd.DataFrame) -> List[str]:
+def _align_column_schemas(existing_df: pd.DataFrame, new_df: pd.DataFrame) -> List[str]:
     """
     Create unified column schema for existing and new data.
 
@@ -104,25 +103,24 @@ def _align_column_schemas(
         return list(new_df.columns)
     if new_df.empty:
         return list(existing_df.columns)
-    
+
     existing_columns = list(existing_df.columns)
     new_columns = [c for c in new_df.columns if c not in existing_df.columns]
 
     insert_before = INSERT_BEFORE_COLUMN
     idx = existing_columns.index(insert_before)
 
-    final_columns = (
-        existing_columns[:idx]
-        + new_columns
-        + existing_columns[idx:]
-    )
+    final_columns = existing_columns[:idx] + new_columns + existing_columns[idx:]
 
     return final_columns
 
 
 def save_betting_data(
-    existing_df: pd.DataFrame, new_df: pd.DataFrame, filename: str, score_column: str, 
-    print_bets: bool = False
+    existing_df: pd.DataFrame,
+    new_df: pd.DataFrame,
+    filename: str,
+    score_column: str,
+    print_bets: bool = False,
 ) -> None:
     """
     Save complete betting data for bets identified in filtered summary.
@@ -149,14 +147,14 @@ def save_betting_data(
     unique_new_df = _remove_duplicates(existing_df, filtered_new_df)
 
     if print_bets:
-        pd.set_option('display.max_rows', None)
+        pd.set_option("display.max_rows", None)
         print("----------------------------------------------------")
         if len(unique_new_df) == 1:
             print(f"{len(unique_new_df)} bet found for {filename}:")
         else:
             print(f"{len(unique_new_df)} bets found for {filename}:")
         print(f"{unique_new_df[['Match', 'Team']]}")
-        pd.reset_option('display.max_rows')
+        pd.reset_option("display.max_rows")
         print("----------------------------------------------------")
 
     # Get list of merged column schemas

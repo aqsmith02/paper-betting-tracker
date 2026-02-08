@@ -1,6 +1,8 @@
-import pandas as pd
 from datetime import datetime, timedelta, timezone
 from typing import Any
+
+import pandas as pd
+
 
 def _start_date(ts: Any) -> str:
     """
@@ -30,13 +32,13 @@ def _time_since_start(df: pd.DataFrame, thresh: float) -> pd.DataFrame:
     # Handle empty DataFrame
     if df.empty:
         return df
-    
+
     # Get the current time in UTC
     current_time = datetime.now(timezone.utc)
 
     # Convert "Start Time" column to datetime objects and make timezone-aware (UTC)
     # Use format='ISO8601' to handle both ISO format strings and other formats
-    df["Start Time"] = pd.to_datetime(df["Start Time"], format='ISO8601', utc=True)
+    df["Start Time"] = pd.to_datetime(df["Start Time"], format="ISO8601", utc=True)
 
     # Create conditions for removal
     cutoff = current_time - timedelta(hours=thresh)
