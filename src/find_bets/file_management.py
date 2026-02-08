@@ -4,6 +4,7 @@ file_management.py
 Logic for appending bet summaries to existing bet .csv files.
 
 Author: Andrew Smith
+Date: July 2025
 """
 
 from typing import Any, List
@@ -72,7 +73,7 @@ def _remove_duplicates(existing_df: pd.DataFrame, new_df: pd.DataFrame) -> pd.Da
     )
     new_df["Start Date"] = new_df["Start Time"].apply(_start_date_from_timestamp)
 
-    # Use merge to find duplicates (more efficient than set lookups)
+    # Use merge to find duplicates
     existing_df["Exists"] = True
     merged = new_df.merge(
         existing_df[["Match", "Start Date", "Exists"]],

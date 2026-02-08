@@ -4,6 +4,7 @@ summary_creation.py
 Logic for creating bet summary DataFrames given betting analysis data.
 
 Author: Andrew Smith
+Date: July 2025
 """
 
 import pandas as pd
@@ -13,7 +14,7 @@ from src.find_bets.data_processing import find_bookmaker_columns
 
 def create_average_summary_minimal(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Create minimalsummary of profitable average edge bets.
+    Create minimal summary of profitable average edge bets.
 
     Args:
         df (pd.DataFrame): DataFrame containing average edge columns.
@@ -87,7 +88,7 @@ def create_average_summary_full(df: pd.DataFrame) -> pd.DataFrame:
 
 def create_modified_zscore_summary_minimal(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Create minimalsummary of profitable Modified Z-score outlier bets.
+    Create minimal summary of profitable Modified Z-score outlier bets.
 
     Args:
         df (pd.DataFrame): DataFrame containing Modified Z-score column.
