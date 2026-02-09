@@ -1,3 +1,12 @@
+"""
+date_utils.py
+
+Utility functions for handling date and time operations related to fetching sports game results.
+
+Author: Andrew Smith
+Date: January 2026
+"""
+
 from datetime import datetime, timedelta, timezone
 from typing import Any
 from src.constants import DATE_FORMAT

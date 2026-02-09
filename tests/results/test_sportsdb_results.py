@@ -10,7 +10,7 @@ from unittest.mock import MagicMock, patch
 import pandas as pd
 import pytest
 
-from src.results.sportsdb_results import (
+from src.results.thesportsdb_results import (
     _format_match_for_thesportsdb,
     _get_score_from_thesportsdb,
     _process_individual_result,

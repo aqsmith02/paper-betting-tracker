@@ -19,11 +19,9 @@ from src.constants import (
     DAYS_CUTOFF,
     FILE_NAMES,
     PENDING_RESULTS,
-    RESULT_COLUMN,
     SLEEP_DURATION,
-    START_TIME_COLUMN,
 )
-from src.results.sportsdb_results import get_finished_games_from_thesportsdb
+from src.results.thesportsdb_results import get_finished_games_from_thesportsdb
 from src.results.theodds_results import get_finished_games_from_theodds
 
 
@@ -49,15 +47,15 @@ def clean_old_pending_results(
     cutoff_time = current_time - timedelta(days=DAYS_CUTOFF)
 
     # Store original start time column
-    original_start_time = df[START_TIME_COLUMN].copy()
+    original_start_time = df["Start Time"].copy()
 
     # Convert to datetime
     df_temp = df.copy()
-    df_temp[START_TIME_COLUMN] = pd.to_datetime(df_temp[START_TIME_COLUMN])
+    df_temp["Start Time"] = pd.to_datetime(df_temp["Start Time"])
     # Create filter mask - keep rows that are either recent OR have valid results
     mask = ~(
-        (df_temp[START_TIME_COLUMN] < cutoff_time)
-        & (df_temp[RESULT_COLUMN].isin(PENDING_RESULTS))
+        (df_temp["Start Time"] < cutoff_time)
+        & (df_temp["Result"].isin(PENDING_RESULTS))
     )
 
     # Apply filter to both DataFrames
@@ -65,7 +63,7 @@ def clean_old_pending_results(
     filtered_full_df = full_df[mask].copy()
 
     # Restore original start time format
-    filtered_df[START_TIME_COLUMN] = original_start_time[mask].values
+    filtered_df["Start Time"] = original_start_time[mask].values
 
     removed_count = len(df) - len(filtered_df)
     print(f"\n")
@@ -100,7 +98,7 @@ def process_files(bet_filename: str, full_filename: str) -> None:
     bet_df = get_finished_games_from_thesportsdb(bet_df)
 
     # Update full DataFrame with results
-    full_df[RESULT_COLUMN] = bet_df[RESULT_COLUMN]
+    full_df["Result"] = bet_df["Result"]
 
     # Clean old pending results
     bet_df, full_df = clean_old_pending_results(bet_df, full_df)

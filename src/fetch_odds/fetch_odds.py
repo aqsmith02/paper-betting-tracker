@@ -14,7 +14,7 @@ from typing import Dict, List, Optional
 import pandas as pd
 import requests
 
-from config.api_config import THE_ODDS_API_KEY
+from config.api_config import THEODDSAPI_KEY
 from config.fetch_config import MARKETS, ODDS_FORMAT, REGIONS, SPORT, SPORT_KEY
 
 
@@ -133,7 +133,7 @@ def _get_json_response() -> Dict:
     """
     url = f"https://api.the-odds-api.com/v4/sports/{SPORT_KEY}/odds"
     params = {
-        "apiKey": THE_ODDS_API_KEY,
+        "apiKey": THEODDSAPI_KEY,
         "regions": REGIONS,
         "markets": MARKETS,
         "oddsFormat": ODDS_FORMAT,

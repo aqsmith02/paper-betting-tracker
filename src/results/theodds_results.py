@@ -13,14 +13,11 @@ from typing import Dict, List
 import pandas as pd
 import requests
 
-from config.api_config import THE_ODDS_API_KEY
+from config.api_config import THEODDSAPI_KEY
 from src.constants import (
     API_REQUEST_THRESHOLD_HOURS,
     DAYS_FROM_SCORE_FETCHING,
-    ID_COLUMN,
     PENDING_RESULTS,
-    RESULT_COLUMN,
-    SPORT_KEY_COLUMN,
     SPORT_KEYS_WITH_RESULTS,
 )
 from src.results.date_utils import _time_since_start
@@ -40,7 +37,7 @@ def _get_scores_from_theodds(
     Returns:
         List[Dict]: List of completed game dictionaries from the API response.
     """
-    url = f"https://api.the-odds-api.com/v4/sports/{sports_key}/scores/?daysFrom={days_from}&apiKey={THE_ODDS_API_KEY}&eventIds={event_ids}"
+    url = f"https://api.the-odds-api.com/v4/sports/{sports_key}/scores/?daysFrom={days_from}&apiKey={THEODDSAPI_KEY}&eventIds={event_ids}"
     print(url)
 
     try:
@@ -61,7 +58,7 @@ def _get_pending_event_ids(df: pd.DataFrame) -> str:
     Returns:
         str: Comma-separated string of event IDs with pending results.
     """
-    pending_event_ids = df[df[RESULT_COLUMN].isin(PENDING_RESULTS)][ID_COLUMN]
+    pending_event_ids = df[df["Result"].isin(PENDING_RESULTS)]["ID"]
     return ",".join(pending_event_ids)
 
 
@@ -103,7 +100,7 @@ def _append_results(df: pd.DataFrame, game_dicts: List[Dict]) -> None:
         id_to_winner[game_id] = winner
 
     # Update results, fill na with existing results (e.g., "Not Found")
-    df[RESULT_COLUMN] = df[ID_COLUMN].map(id_to_winner).fillna(df[RESULT_COLUMN])
+    df["Result"] = df["ID"].map(id_to_winner).fillna(df["Result"])
 
 
 def get_finished_games_from_theodds(df: pd.DataFrame) -> pd.DataFrame:
@@ -137,15 +134,15 @@ def get_finished_games_from_theodds(df: pd.DataFrame) -> pd.DataFrame:
 
     # Group by Sport Key and combine event IDs
     grouped = (
-        filtered_df.groupby(SPORT_KEY_COLUMN)[ID_COLUMN]
+        filtered_df.groupby("Sport Key")["ID"]
         .apply(lambda x: ",".join(x))
         .reset_index()
     )
 
     # Loop through each sport key and fetch scores
-    for idx, row in grouped.iterrows():  # FIXED: Use .iterrows() instead of .items()
-        sport_key = row[SPORT_KEY_COLUMN]
-        event_ids = row[ID_COLUMN]
+    for idx, row in grouped.iterrows():
+        sport_key = row["Sport Key"]
+        event_ids = row["ID"]
         if sport_key not in SPORT_KEYS_WITH_RESULTS:
             continue
         game_dicts = _get_scores_from_theodds(sport_key, event_ids)

@@ -18,12 +18,11 @@ IMPORTANT:
 
 # The Odds API key
 # Get your key at: https://the-odds-api.com/
-THE_ODDS_API_KEY = "YOUR_KEY_HERE"
+THEODDSAPI_KEY = "YOUR_KEY_HERE"
 
 # TheSportsDB API key
 # Get your key at: https://www.thesportsdb.com/
-THE_SPORTS_DB_API_KEY = "YOUR_KEY_HERE"
-
+THESPORTSDB_KEY = "YOUR_KEY_HERE"
 
 # ============================================================================
 # Setup Instructions
@@ -44,20 +43,20 @@ GITHUB ACTIONS SETUP:
 1. Go to your repository on GitHub
 2. Navigate to Settings > Secrets and variables > Actions
 3. Add repository secrets:
-   - THE_ODDS_API_KEY
-   - THE_SPORTS_DB_API_KEY
+   - THEODDSAPI_KEY
+   - THESPORTSDB_KEY
 
 4. In your workflow YAML, pass them as environment variables:
    env:
-     THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
-     THE_SPORTS_DB_API_KEY: ${{ secrets.THE_SPORTS_DB_API_KEY }}
+     THEODDSAPI_KEY: ${{ secrets.THEODDSAPI_KEY }}
+     THESPORTSDB_KEY: ${{ secrets.THESPORTSDB_KEY }}
 
 
 USAGE:
 ------
 In your code, import from api_config:
 
-    from config.api_config import THE_ODDS_API_KEY, THE_SPORTS_DB_API_KEY
+    from config.api_config import THEODDSAPI_KEY, THESPORTSDB_KEY
 
 The api_config.py module will automatically:
 - Use environment variables in GitHub Actions

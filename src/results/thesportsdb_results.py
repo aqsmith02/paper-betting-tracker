@@ -14,15 +14,12 @@ from typing import Dict, List
 import pandas as pd
 import requests
 
-from config.api_config import THE_SPORTS_DB_API_KEY
+from config.api_config import THESPORTSDB_KEY
 from src.constants import (
     API_REQUEST_THRESHOLD_HOURS,
-    MATCH_COLUMN,
     PENDING_RESULTS,
-    RESULT_COLUMN,
-    SPORTSDB_RATE_LIMIT_BATCH,
-    SPORTSDB_RATE_LIMIT_WAIT,
-    START_TIME_COLUMN,
+    THESPORTSDB_RATE_LIMIT_BATCH,
+    THESPORTSDB_RATE_LIMIT_WAIT,
 )
 from src.results.date_utils import _start_date, _time_since_start
 
@@ -58,7 +55,7 @@ def _get_score_from_thesportsdb(match: str, date: str) -> List[Dict]:
     Returns:
         List[Dict]: List of completed game dictionaries from the API response.
     """
-    url = f"https://www.thesportsdb.com/api/v1/json/{THE_SPORTS_DB_API_KEY}/searchevents.php?e={match}&d={date}"
+    url = f"https://www.thesportsdb.com/api/v1/json/{THESPORTSDB_KEY}/searchevents.php?e={match}&d={date}"
 
     try:
         resp = requests.get(url)
@@ -126,7 +123,7 @@ def get_finished_games_from_thesportsdb(df: pd.DataFrame) -> pd.DataFrame:
 
     # Only use games that finished more than API_REQUEST_THRESHOLD_HOURS days ago and result is pending
     filtered_df = _time_since_start(df, API_REQUEST_THRESHOLD_HOURS)
-    filtered_df = filtered_df[filtered_df[RESULT_COLUMN].isin(PENDING_RESULTS)]
+    filtered_df = filtered_df[filtered_df["Result"].isin(PENDING_RESULTS)]
 
     # If no games to check, return original DataFrame
     if filtered_df.empty:
@@ -141,23 +138,23 @@ def get_finished_games_from_thesportsdb(df: pd.DataFrame) -> pd.DataFrame:
         row = df.loc[idx]
 
         # Format match and get date
-        match = _format_match_for_thesportsdb(row[MATCH_COLUMN])
-        date = _start_date(row[START_TIME_COLUMN])
+        match = _format_match_for_thesportsdb(row["Match"])
+        date = _start_date(row["Start Time"])
 
         # Fetch result from API
         game_dict = _get_score_from_thesportsdb(match, date)
         result = _process_individual_result(game_dict)
 
         # Update the original DataFrame
-        df.at[idx, RESULT_COLUMN] = result
+        df.at[idx, "Result"] = result
         fetches += 1
 
-        # Rate limiting: pause every SPORTSDB_RATE_LIMIT_BATCH requests
-        if fetches % SPORTSDB_RATE_LIMIT_BATCH == 0:
+        # Rate limiting: pause every THESPORTSDB_RATE_LIMIT_BATCH requests
+        if fetches % THESPORTSDB_RATE_LIMIT_BATCH == 0:
             print(
-                f"\nPausing for {SPORTSDB_RATE_LIMIT_WAIT} seconds to respect SportsDB API rate limits...\n"
+                f"\nPausing for {THESPORTSDB_RATE_LIMIT_WAIT} seconds to respect SportsDB API rate limits...\n"
             )
-            time.sleep(SPORTSDB_RATE_LIMIT_WAIT)
+            time.sleep(THESPORTSDB_RATE_LIMIT_WAIT)
 
     print("Finished fetching results from TheSportsDB")
     return df
