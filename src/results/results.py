@@ -21,8 +21,8 @@ from src.constants import (
     PENDING_RESULTS,
     SLEEP_DURATION,
 )
-from src.results.thesportsdb_results import get_finished_games_from_thesportsdb
 from src.results.theodds_results import get_finished_games_from_theodds
+from src.results.thesportsdb_results import get_finished_games_from_thesportsdb
 
 
 def clean_old_pending_results(

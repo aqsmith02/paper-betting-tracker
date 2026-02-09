@@ -8,6 +8,7 @@ Date: January 2026
 """
 
 from typing import List
+
 import numpy as np
 import pandas as pd
 
@@ -27,11 +28,11 @@ def _calculate_market_margin(odds_list: List[float]) -> float:
     """
     if odds_list is None:
         return 0
-    
+
     # Convert Series to list if needed
     if hasattr(odds_list, "tolist"):
         odds_list = odds_list.tolist()
-    
+
     # Check if list is empty after conversion
     if not odds_list:
         return 0
@@ -59,7 +60,9 @@ def _calculate_market_margin(odds_list: List[float]) -> float:
     return margin
 
 
-def _remove_margin_proportional_to_odds(bookmaker_odds: float, all_market_odds: List[float], n_outcomes: int) -> float:
+def _remove_margin_proportional_to_odds(
+    bookmaker_odds: float, all_market_odds: List[float], n_outcomes: int
+) -> float:
     """
     Remove bookmaker margin using the "proportional to odds" method.
 
@@ -102,7 +105,9 @@ def _remove_margin_proportional_to_odds(bookmaker_odds: float, all_market_odds: 
     return fair_odds
 
 
-def _calculate_vigfree_probs_for_market(valid_odds: pd.Series, required_outcomes: int) -> List[float]:
+def _calculate_vigfree_probs_for_market(
+    valid_odds: pd.Series, required_outcomes: int
+) -> List[float]:
     """
     Calculate vig-free probabilities for all outcomes in a market.
 
@@ -130,7 +135,9 @@ def _calculate_vigfree_probs_for_market(valid_odds: pd.Series, required_outcomes
     return vigfree_probs
 
 
-def _has_complete_odds(match_group: pd.DataFrame, bookmaker: str, required_outcomes: int) -> tuple:
+def _has_complete_odds(
+    match_group: pd.DataFrame, bookmaker: str, required_outcomes: int
+) -> tuple:
     """
     Check if a bookmaker has odds for all required outcomes in a match.
 
@@ -150,7 +157,9 @@ def _has_complete_odds(match_group: pd.DataFrame, bookmaker: str, required_outco
     return True, valid_odds
 
 
-def _process_bookmaker_for_match(df: pd.DataFrame, match_group: pd.DataFrame, bookmaker: str, vigfree_column: str) -> None:
+def _process_bookmaker_for_match(
+    df: pd.DataFrame, match_group: pd.DataFrame, bookmaker: str, vigfree_column: str
+) -> None:
     """
     Calculate and update vig-free probabilities for a single bookmaker in a single match.
 

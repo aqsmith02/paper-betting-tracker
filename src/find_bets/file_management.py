@@ -7,11 +7,11 @@ Author: Andrew Smith
 Date: July 2025
 """
 
+from datetime import datetime
 from typing import Any, List
 
 import pandas as pd
 import requests
-from datetime import datetime
 
 from src.constants import DATE_FORMAT, INSERT_BEFORE_COLUMN
 
@@ -108,29 +108,38 @@ def _notify_user_of_new_bets(new_bets_df: pd.DataFrame) -> None:
     for _, bet in new_bets_df.iterrows():
         # Full Kelly = (bp - q) / b, where b = decimal_odds - 1, p = fair_prob, q = 1 - p
         b = bet["Best Odds"] - 1
-        p = 1/bet["Fair Odds Average"]
+        p = 1 / bet["Fair Odds Average"]
         q = 1 - p
-        kelly = min(((b * p - q) / b)/2, 0.025)  # Cap at 2.5% to avoid overbetting
-        
+        kelly = min(((b * p - q) / b) / 2, 0.025)  # Cap at 2.5% to avoid overbetting
+
         embed = {
             "title": f"New Bet Found",
-            "color": 0x00ff00,  # Green
+            "color": 0x00FF00,  # Green
             "fields": [
-                {"name": "Match", "value": bet['Match'], "inline": False},
-                {"name": "Team", "value": bet['Team'], "inline": True},
-                {"name": "Bookmaker", "value": bet.get('Best Bookmaker', 'N/A'), "inline": True},
-                {"name": "Odds", "value": str(bet.get('Best Odds', 'N/A')), "inline": True},
+                {"name": "Match", "value": bet["Match"], "inline": False},
+                {"name": "Team", "value": bet["Team"], "inline": True},
+                {
+                    "name": "Bookmaker",
+                    "value": bet.get("Best Bookmaker", "N/A"),
+                    "inline": True,
+                },
+                {
+                    "name": "Odds",
+                    "value": str(bet.get("Best Odds", "N/A")),
+                    "inline": True,
+                },
                 {"name": "EV%", "value": f"{bet.get('EV%', 'N/A')}", "inline": True},
                 {"name": "Bet Size", "value": f"{kelly:.2%}", "inline": True},
             ],
             "timestamp": datetime.utcnow().isoformat(),
-            "footer": {"text": f"Total bets found: {len(new_bets_df)}"}
+            "footer": {"text": f"Total bets found: {len(new_bets_df)}"},
         }
-        
+
         data = {"embeds": [embed]}
-        
+
         try:
             from config.discord_config import DISCORD_WEBHOOK
+
             response = requests.post(DISCORD_WEBHOOK, json=data)
             response.raise_for_status()
         except Exception as e:
