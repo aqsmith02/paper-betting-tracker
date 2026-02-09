@@ -45,7 +45,7 @@ class TestFormatMatchForTheSportsDB:
 class TestGetScoreFromTheSportsDB:
     """Test suite for _get_score_from_thesportsdb function."""
 
-    @patch("src.results.sportsdb_results.requests.get")
+    @patch("src.results.thesportsdb_results.requests.get")
     def test_successful_api_call(self, mock_get):
         """Test successful API call returns JSON data."""
         mock_response = MagicMock()
@@ -66,7 +66,7 @@ class TestGetScoreFromTheSportsDB:
         assert result["event"][0]["strHomeTeam"] == "Home Team"
         assert result["event"][0]["intHomeScore"] == "3"
 
-    @patch("src.results.sportsdb_results.requests.get")
+    @patch("src.results.thesportsdb_results.requests.get")
     def test_api_connection_error(self, mock_get):
         """Test API connection error returns empty list."""
         mock_get.side_effect = Exception("Connection error")
@@ -230,7 +230,7 @@ class TestGetFinishedGamesFromTheSportsDB:
         result = get_finished_games_from_thesportsdb(df)
         assert result.equals(df)
 
-    @patch("src.results.sportsdb_results._get_score_from_thesportsdb")
+    @patch("src.results.thesportsdb_results._get_score_from_thesportsdb")
     def test_fetch_results_for_pending_games(self, mock_get_score):
         """Test fetching results for games with pending status."""
         current_time = datetime.now(timezone.utc)
@@ -275,9 +275,9 @@ class TestGetFinishedGamesFromTheSportsDB:
         assert result.loc[0, "Result"] == "Team B"
         assert result.loc[1, "Result"] == "Team C"
 
-    @patch("src.results.sportsdb_results._get_score_from_thesportsdb")
-    @patch("src.results.sportsdb_results._time_since_start")
-    @patch("src.results.sportsdb_results.time.sleep")
+    @patch("src.results.thesportsdb_results._get_score_from_thesportsdb")
+    @patch("src.results.thesportsdb_results._time_since_start")
+    @patch("src.results.thesportsdb_results.time.sleep")
     def test_rate_limiting(self, mock_sleep, mock_time_filter, mock_get_score):
         """Test that rate limiting is applied after batch of requests."""
         current_time = datetime.now(timezone.utc)
@@ -314,8 +314,8 @@ class TestGetFinishedGamesFromTheSportsDB:
         assert mock_sleep.call_count == 1
         assert mock_sleep.call_args[0][0] == 60  # SPORTSDB_RATE_LIMIT_WAIT
 
-    @patch("src.results.sportsdb_results._get_score_from_thesportsdb")
-    @patch("src.results.sportsdb_results._time_since_start")
+    @patch("src.results.thesportsdb_results._get_score_from_thesportsdb")
+    @patch("src.results.thesportsdb_results._time_since_start")
     def test_mixed_results(self, mock_time_filter, mock_get_score):
         """Test with mix of pending and completed results."""
         current_time = datetime.now(timezone.utc)
@@ -370,8 +370,8 @@ class TestGetFinishedGamesFromTheSportsDB:
         assert result.loc[1, "Result"] == "Game 4"
         assert result.loc[2, "Result"] == "Draw"
 
-    @patch("src.results.sportsdb_results._get_score_from_thesportsdb")
-    @patch("src.results.sportsdb_results._time_since_start")
+    @patch("src.results.thesportsdb_results._get_score_from_thesportsdb")
+    @patch("src.results.thesportsdb_results._time_since_start")
     def test_api_not_found_result(self, mock_time_filter, mock_get_score):
         """Test when API returns no event (not found)."""
         current_time = datetime.now(timezone.utc)

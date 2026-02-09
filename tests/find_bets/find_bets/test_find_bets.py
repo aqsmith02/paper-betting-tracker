@@ -6,14 +6,10 @@ Comprehensive tests for the find_bets.py pipeline.
 Author: Test Suite
 """
 
-from datetime import datetime, timezone
-from unittest.mock import MagicMock, patch
-
 import numpy as np
 import pandas as pd
 import pytest
 
-# Import functions to test
 from src.fetch_odds.fetch_odds import fetch_odds
 from src.find_bets.betting_strategies import (
     find_average_bets,
@@ -21,7 +17,6 @@ from src.find_bets.betting_strategies import (
     find_random_bets,
 )
 from src.find_bets.data_processing import process_target_odds_data
-from src.find_bets.file_management import save_betting_data
 from src.find_bets.summary_creation import (
     create_average_summary_full,
     create_average_summary_minimal,

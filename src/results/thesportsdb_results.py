@@ -21,7 +21,7 @@ from src.constants import (
     THESPORTSDB_RATE_LIMIT_BATCH,
     THESPORTSDB_RATE_LIMIT_WAIT,
 )
-from src.results.date_utils import _start_date, _time_since_start
+from src.results.date_utils import _start_date_from_timestamp, _time_since_start
 
 
 def _format_match_for_thesportsdb(match: str) -> str:
@@ -139,7 +139,7 @@ def get_finished_games_from_thesportsdb(df: pd.DataFrame) -> pd.DataFrame:
 
         # Format match and get date
         match = _format_match_for_thesportsdb(row["Match"])
-        date = _start_date(row["Start Time"])
+        date = _start_date_from_timestamp(row["Start Time"])
 
         # Fetch result from API
         game_dict = _get_score_from_thesportsdb(match, date)

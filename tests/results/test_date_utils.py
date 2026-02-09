@@ -9,7 +9,7 @@ from datetime import datetime, timedelta, timezone
 import pandas as pd
 import pytest
 
-from src.results.date_utils import _start_date, _time_since_start
+from src.results.date_utils import _start_date_from_timestamp, _time_since_start
 
 
 class TestStartDate:
@@ -18,31 +18,31 @@ class TestStartDate:
     def test_datetime_object(self):
         """Test conversion of datetime object to date string."""
         dt = datetime(2025, 7, 15, 14, 30, 0)
-        result = _start_date(dt)
+        result = _start_date_from_timestamp(dt)
         assert result == "2025-07-15"
 
     def test_iso_string(self):
         """Test conversion of ISO format string to date string."""
         iso_string = "2025-07-15T14:30:00Z"
-        result = _start_date(iso_string)
+        result = _start_date_from_timestamp(iso_string)
         assert result == "2025-07-15"
 
     def test_iso_string_with_timezone(self):
         """Test conversion of ISO format string with timezone to date string."""
         iso_string = "2025-07-15T14:30:00+05:00"
-        result = _start_date(iso_string)
+        result = _start_date_from_timestamp(iso_string)
         assert result == "2025-07-15"
 
     def test_timestamp(self):
         """Test conversion of timestamp to date string."""
         timestamp = pd.Timestamp("2025-07-15 14:30:00")
-        result = _start_date(timestamp)
+        result = _start_date_from_timestamp(timestamp)
         assert result == "2025-07-15"
 
     def test_simple_date_string(self):
         """Test conversion of simple date string."""
         date_string = "2025-07-15"
-        result = _start_date(date_string)
+        result = _start_date_from_timestamp(date_string)
         assert result == "2025-07-15"
 
 

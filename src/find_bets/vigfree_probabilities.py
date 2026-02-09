@@ -25,12 +25,16 @@ def _calculate_market_margin(odds_list: List[float]) -> float:
     Returns:
         float: Margin as a decimal (e.g., 0.08 for 8% margin)
     """
-    if odds_list is None or not odds_list:
+    if odds_list is None:
         return 0
-
+    
     # Convert Series to list if needed
     if hasattr(odds_list, "tolist"):
         odds_list = odds_list.tolist()
+    
+    # Check if list is empty after conversion
+    if not odds_list:
+        return 0
 
     # Sum of implied probabilities
     implied_prob_sum = sum(1 / odds for odds in odds_list if odds > 0)
