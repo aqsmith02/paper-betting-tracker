@@ -10,7 +10,6 @@ Date: July 2025
 from typing import Any, List
 
 import pandas as pd
-import os
 import requests
 from datetime import datetime
 
@@ -198,7 +197,7 @@ def save_betting_data(
     unique_new_df = _remove_duplicates(existing_df, filtered_new_df)
 
     if print_bets:
-        if filename == "nc_mod_zscore_minimal.csv":
+        if filename == "nc_avg_minimal.csv":
             _notify_user_of_new_bets(unique_new_df, filename)
 
         pd.set_option("display.max_rows", None)
