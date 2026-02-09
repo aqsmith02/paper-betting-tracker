@@ -10,6 +10,9 @@ Date: July 2025
 from typing import Any, List
 
 import pandas as pd
+import os
+import requests
+from datetime import datetime
 
 from src.constants import DATE_FORMAT, INSERT_BEFORE_COLUMN
 
@@ -88,6 +91,54 @@ def _remove_duplicates(existing_df: pd.DataFrame, new_df: pd.DataFrame) -> pd.Da
     return result
 
 
+def _notify_user_of_new_bets(new_bets_df: pd.DataFrame) -> None:
+    """
+    Send a Discord notification about new bets found.
+
+    Args:
+        new_bets_df (pd.DataFrame): DataFrame containing new bets identified.
+        filename (str): Name of the file for which new bets were found.
+
+    Returns:
+        None
+    """
+    if new_bets_df.empty:
+        return
+
+    webhook_url = os.getenv('DISCORD_WEBHOOK_URL')
+
+    # Send Discord notification for each bet
+    for _, bet in new_bets_df.iterrows():
+        # Full Kelly = (bp - q) / b, where b = decimal_odds - 1, p = fair_prob, q = 1 - p
+        b = bet["Best Odds"] - 1
+        p = 1/bet["Fair Odds Average"]
+        q = 1 - p
+        kelly = min(((b * p - q) / b)/2, 0.025)  # Cap at 2.5% to avoid overbetting
+        
+        embed = {
+            "title": f"New Bet Found",
+            "color": 0x00ff00,  # Green
+            "fields": [
+                {"name": "Match", "value": bet['Match'], "inline": False},
+                {"name": "Team", "value": bet['Team'], "inline": True},
+                {"name": "Bookmaker", "value": bet.get('Best Bookmaker', 'N/A'), "inline": True},
+                {"name": "Odds", "value": str(bet.get('Best Odds', 'N/A')), "inline": True},
+                {"name": "EV%", "value": f"{bet.get('EV%', 'N/A')}", "inline": True},
+                {"name": "Bet Size", "value": f"{kelly:.2%}", "inline": True},
+            ],
+            "timestamp": datetime.utcnow().isoformat(),
+            "footer": {"text": f"Total bets found: {len(new_bets_df)}"}
+        }
+        
+        data = {"embeds": [embed]}
+        
+        try:
+            response = requests.post(webhook_url, json=data)
+            response.raise_for_status()
+        except Exception as e:
+            print(f"Failed to send Discord notification: {e}")
+
+
 def _align_column_schemas(existing_df: pd.DataFrame, new_df: pd.DataFrame) -> List[str]:
     """
     Create unified column schema for existing and new data.
@@ -148,6 +199,9 @@ def save_betting_data(
     unique_new_df = _remove_duplicates(existing_df, filtered_new_df)
 
     if print_bets:
+        if filename == "nc_mod_zscore_minimal.csv":
+            _notify_user_of_new_bets(unique_new_df, filename)
+
         pd.set_option("display.max_rows", None)
         print("----------------------------------------------------")
         if len(unique_new_df) == 1:

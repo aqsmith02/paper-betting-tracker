@@ -1,5 +1,6 @@
 venv/
 __pycache__/
 config/api_config_local.py
+config/discord_config_local.py
 .pytest_cache/
 .vscode/
