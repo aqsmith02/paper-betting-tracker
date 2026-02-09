@@ -123,12 +123,6 @@ def main():
             minimal_summary = strategy.minimal_summary_func(analyzed)
             full_summary = strategy.full_summary_func(analyzed)
 
-            if minimal_summary.empty or full_summary.empty:
-                print("----------------------------------------------------")
-                print(f"No bets found for {strategy.name}")
-                print("----------------------------------------------------")
-                continue
-
             # Save updated data
             save_betting_data(
                 existing_df=minimal_existing,

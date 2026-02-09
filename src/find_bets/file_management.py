@@ -205,6 +205,13 @@ def save_betting_data(
     # Remove duplicates of new_df based on existing_df
     unique_new_df = _remove_duplicates(existing_df, filtered_new_df)
 
+    # If no unique new bets, nothing to do
+    if unique_new_df.empty:
+        print("----------------------------------------------------")
+        print(f"No new bets found for {filename}")
+        print("----------------------------------------------------")
+        return
+
     if print_bets:
         if filename == "data/nc_avg_minimal.csv":
             _notify_user_of_new_bets(unique_new_df, filename)
