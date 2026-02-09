@@ -105,8 +105,6 @@ def _notify_user_of_new_bets(new_bets_df: pd.DataFrame) -> None:
     if new_bets_df.empty:
         return
 
-    webhook_url = os.getenv('DISCORD_WEBHOOK_URL')
-
     # Send Discord notification for each bet
     for _, bet in new_bets_df.iterrows():
         # Full Kelly = (bp - q) / b, where b = decimal_odds - 1, p = fair_prob, q = 1 - p
@@ -133,7 +131,8 @@ def _notify_user_of_new_bets(new_bets_df: pd.DataFrame) -> None:
         data = {"embeds": [embed]}
         
         try:
-            response = requests.post(webhook_url, json=data)
+            from config.discord_config import DISCORD_WEBHOOK
+            response = requests.post(DISCORD_WEBHOOK, json=data)
             response.raise_for_status()
         except Exception as e:
             print(f"Failed to send Discord notification: {e}")

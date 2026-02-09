@@ -29,6 +29,7 @@ jobs:
       env:
         THEODDSAPI_KEY: ${{ secrets.THEODDSAPI_KEY }}
         THESPORTSDB_KEY: ${{ secrets.THESPORTSDB_KEY }}
+        DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
       run: python3 -m src.results.results
 
     - name: Commit and push changes
