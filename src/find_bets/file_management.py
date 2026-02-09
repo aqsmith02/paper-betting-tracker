@@ -197,6 +197,9 @@ def save_betting_data(
 
     # If no new data, nothing to do
     if new_df.empty:
+        print("----------------------------------------------------")
+        print(f"No bets found for {filename}")
+        print("----------------------------------------------------")
         return
 
     # Filter new_df to only include best bets
@@ -208,7 +211,7 @@ def save_betting_data(
     # If no unique new bets, nothing to do
     if unique_new_df.empty:
         print("----------------------------------------------------")
-        print(f"No new bets found for {filename}")
+        print(f"No bets found for {filename}")
         print("----------------------------------------------------")
         return
 
