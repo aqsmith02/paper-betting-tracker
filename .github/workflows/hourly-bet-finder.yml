@@ -13,145 +13,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code (master branch)
-      uses: actions/checkout@v4
+    - uses: actions/checkout@v4
       with:
         fetch-depth: 0
         ref: master
 
-    - name: Set up Python 3.11
-      uses: actions/setup-python@v5
+    - uses: actions/setup-python@v5
       with:
         python-version: 3.11
 
     - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      run: pip install -r requirements.txt
 
-    - name: Run the bet finder script
+    - name: Run bet finder
       env:
         THEODDSAPI_KEY: ${{ secrets.THEODDSAPI_KEY }}
         THESPORTSDB_KEY: ${{ secrets.THESPORTSDB_KEY }}
-      run: |
-        python3 -m src.find_bets.find_bets
+      run: python3 -m src.find_bets.find_bets
 
-    - name: Commit and push updated CSVs to master branch
+    - name: Commit and push changes
       run: |
-        set -x  # Print commands
-        
-        git config user.name  "github-actions[bot]"
+        git config user.name "github-actions[bot]"
         git config user.email "github-actions@github.com"
-
-        CSV_LIST="data/*.csv"
-
-        echo "================================================"
-        echo "FILES MODIFIED BY SCRIPT:"
-        echo "================================================"
-        git diff --name-only
-        echo ""
-        
-        echo "================================================"
-        echo "DIFF SUMMARY:"
-        echo "================================================"
-        git diff --stat
-        echo ""
-
-        git add $CSV_LIST
-        
-        if git diff --staged --quiet; then
-          echo "✅ No changes to commit"
-          exit 0
-        fi
-        
-        echo "================================================"
-        echo "COMMITTING CHANGES"
-        echo "================================================"
+        git add data/*.csv
+        git diff --staged --quiet && exit 0
         git commit -m "Update betting logs - $(date -u +"%Y-%m-%d %H:%M:%S")"
-        COMMIT_HASH=$(git rev-parse HEAD)
-        echo "Created commit: $COMMIT_HASH"
-        echo ""
-        
-        echo "================================================"
-        echo "FETCHING REMOTE STATE"
-        echo "================================================"
-        git fetch origin master
-        LOCAL_COMMIT=$(git rev-parse HEAD)
-        REMOTE_COMMIT=$(git rev-parse origin/master)
-        echo "Local:  $LOCAL_COMMIT"
-        echo "Remote: $REMOTE_COMMIT"
-        echo ""
-        
-        echo "================================================"
-        echo "COMMITS ON REMOTE NOT IN LOCAL:"
-        echo "================================================"
-        git log HEAD..origin/master --oneline
-        echo ""
-        
-        echo "================================================"
-        echo "FILES CHANGED ON REMOTE:"
-        echo "================================================"
-        git diff --name-only HEAD origin/master
-        echo ""
-        
-        echo "================================================"
-        echo "ATTEMPTING REBASE..."
-        echo "================================================"
-        
-        if ! git rebase origin/master; then
-          echo ""
-          echo "❌❌❌ REBASE FAILED - CONFLICT DETECTED ❌❌❌"
-          echo ""
-          
-          echo "================================================"
-          echo "CONFLICTED FILES:"
-          echo "================================================"
-          git diff --name-only --diff-filter=U
-          echo ""
-          
-          echo "================================================"
-          echo "CONFLICT MARKERS:"
-          echo "================================================"
-          for file in $(git diff --name-only --diff-filter=U); do
-            echo "--- $file ---"
-            grep -n "^<<<<<<< \|^=======$\|^>>>>>>> " "$file" || echo "No markers found"
-            echo ""
-          done
-          
-          echo "================================================"
-          echo "FULL CONFLICT DIFF:"
-          echo "================================================"
-          git diff --diff-filter=U
-          echo ""
-          
-          echo "================================================"
-          echo "CONFLICTED FILE CONTENTS (first/last 100 lines):"
-          echo "================================================"
-          for file in $(git diff --name-only --diff-filter=U); do
-            echo "=== $file (first 100) ==="
-            head -n 100 "$file"
-            echo ""
-            echo "=== $file (last 100) ==="
-            tail -n 100 "$file"
-            echo ""
-          done
-          
-          echo "================================================"
-          echo "GIT STATUS:"
-          echo "================================================"
-          git status
-          echo ""
-          
-          git rebase --abort
-          exit 1
-        fi
-        
-        echo "✅ Rebase successful"
-        echo ""
-        
-        echo "================================================"
-        echo "PUSHING TO REMOTE"
-        echo "================================================"
-        git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/aqsmith02/paper-betting-tracker.git HEAD:master
-        
-        echo "✅✅✅ Successfully pushed changes ✅✅✅"
+        git pull --rebase origin master
+        git push

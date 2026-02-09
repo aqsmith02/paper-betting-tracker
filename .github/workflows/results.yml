@@ -2,7 +2,7 @@ name: Fill Results
 
 on:
   schedule:
-    - cron: "27 */6 * * *" # Run every 6 hours at the 27 minute mark
+    - cron: "27 */6 * * *"
   workflow_dispatch:
 
 permissions:
@@ -13,174 +13,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code (master branch)
-      uses: actions/checkout@v4
+    - uses: actions/checkout@v4
       with:
         fetch-depth: 0
         ref: master
 
-    - name: Set up Python 3.11
-      uses: actions/setup-python@v5
+    - uses: actions/setup-python@v5
       with:
         python-version: 3.11
 
     - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      run: pip install -r requirements.txt
 
-    - name: Run results.py
+    - name: Run results updater
       env:
         THEODDSAPI_KEY: ${{ secrets.THEODDSAPI_KEY }}
         THESPORTSDB_KEY: ${{ secrets.THESPORTSDB_KEY }}
-      run: |
-        python3 -m src.results.results
+      run: python3 -m src.results.results
 
-    - name: Commit and push updated CSVs to master branch
+    - name: Commit and push changes
       run: |
-        set -x  # Print commands
-        
         git config user.name "github-actions[bot]"
         git config user.email "github-actions@github.com"
-        
-        CSV_LIST="data/*.csv"
-        
-        # Show what changed
-        echo "================================================"
-        echo "FILES MODIFIED BY SCRIPT:"
-        echo "================================================"
-        git diff --name-only
-        echo ""
-        
-        echo "================================================"
-        echo "DIFF SUMMARY (lines changed):"
-        echo "================================================"
-        git diff --stat
-        echo ""
-        
-        git add $CSV_LIST
-        
-        if git diff --staged --quiet; then
-          echo "No changes to commit"
-          exit 0
-        fi
-        
-        echo "================================================"
-        echo "COMMITTING CHANGES"
-        echo "================================================"
+        git add data/*.csv
+        git diff --staged --quiet && exit 0
         git commit -m "Update results - $(date -u +"%Y-%m-%d %H:%M:%S")"
-        COMMIT_HASH=$(git rev-parse HEAD)
-        echo "Created commit: $COMMIT_HASH"
-        echo ""
-        
-        echo "================================================"
-        echo "FETCHING REMOTE STATE"
-        echo "================================================"
-        git fetch origin master
-        LOCAL_COMMIT=$(git rev-parse HEAD)
-        REMOTE_COMMIT=$(git rev-parse origin/master)
-        echo "Local commit:  $LOCAL_COMMIT"
-        echo "Remote commit: $REMOTE_COMMIT"
-        echo ""
-        
-        if [ "$LOCAL_COMMIT" = "$REMOTE_COMMIT" ]; then
-          echo "Already up to date, no rebase needed"
-          exit 0
-        fi
-        
-        echo "================================================"
-        echo "COMMITS ON REMOTE NOT IN LOCAL:"
-        echo "================================================"
-        git log HEAD..origin/master --oneline
-        echo ""
-        
-        echo "================================================"
-        echo "FILES CHANGED ON REMOTE:"
-        echo "================================================"
-        git diff --name-only HEAD origin/master
-        echo ""
-        
-        echo "================================================"
-        echo "DETAILED DIFF OF REMOTE CHANGES:"
-        echo "================================================"
-        git diff HEAD origin/master --stat
-        echo ""
-        
-        echo "================================================"
-        echo "ATTEMPTING REBASE..."
-        echo "================================================"
-        
-        if ! git rebase origin/master; then
-          echo ""
-          echo "❌❌❌ REBASE FAILED - CONFLICT DETECTED ❌❌❌"
-          echo ""
-          
-          echo "================================================"
-          echo "CONFLICTED FILES:"
-          echo "================================================"
-          git diff --name-only --diff-filter=U
-          echo ""
-          
-          echo "================================================"
-          echo "CONFLICT MARKERS IN EACH FILE:"
-          echo "================================================"
-          for file in $(git diff --name-only --diff-filter=U); do
-            echo ""
-            echo "--- Conflicts in: $file ---"
-            grep -n "^<<<<<<< \|^=======$\|^>>>>>>> " "$file" || echo "Could not find conflict markers"
-            echo ""
-          done
-          
-          echo "================================================"
-          echo "FULL CONFLICT DIFF (showing both versions):"
-          echo "================================================"
-          git diff --diff-filter=U
-          echo ""
-          
-          echo "================================================"
-          echo "WHAT YOUR VERSION CHANGED (base -> yours):"
-          echo "================================================"
-          git diff HEAD...origin/master --diff-filter=U
-          echo ""
-          
-          echo "================================================"
-          echo "WHAT REMOTE VERSION CHANGED (base -> theirs):"
-          echo "================================================"
-          git diff origin/master...HEAD --diff-filter=U
-          echo ""
-          
-          echo "================================================"
-          echo "ATTEMPTING TO SHOW CONTENT OF CONFLICTED FILES:"
-          echo "================================================"
-          for file in $(git diff --name-only --diff-filter=U); do
-            echo ""
-            echo "=== Full content of: $file ==="
-            echo "Showing first 100 lines of conflicted file:"
-            head -n 100 "$file"
-            echo ""
-            echo "Showing last 100 lines of conflicted file:"
-            tail -n 100 "$file"
-            echo ""
-          done
-          
-          echo "================================================"
-          echo "GIT STATUS:"
-          echo "================================================"
-          git status
-          echo ""
-          
-          git rebase --abort
-          exit 1
-        fi
-        
-        echo ""
-        echo "✅ Rebase successful"
-        echo ""
-        
-        echo "================================================"
-        echo "PUSHING TO REMOTE"
-        echo "================================================"
-        git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/aqsmith02/paper-betting-tracker.git HEAD:master
-        
-        echo ""
-        echo "✅✅✅ Successfully pushed changes ✅✅✅"
+        git pull --rebase origin master
+        git push
