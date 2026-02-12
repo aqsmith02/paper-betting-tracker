@@ -219,7 +219,7 @@ def save_betting_data(
 
     if print_bets:
         if filename == "data/nc_avg_minimal.csv":
-            _notify_user_of_new_bets(unique_new_df, filename)
+            _notify_user_of_new_bets(unique_new_df)
 
         pd.set_option("display.max_rows", None)
         print("----------------------------------------------------")
