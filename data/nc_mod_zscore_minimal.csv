@@ -1,6 +1,0 @@
-ID,Sport Key,Sport Title,Start Time,Scrape Time,Match,Team,Start Date,Best Bookmaker,Best Odds,Fair Odds Average,Expected Value,Modified Z-Score,Outcomes,Result
-e83819ad5f34e5a8b184c7dc2ca1f0e2,basketball_wncaab,WNCAAB,2026-01-22T23:02:03Z,2026-01-23T00:02:01Z,Iowa Hawkeyes @ Maryland Terrapins,Iowa Hawkeyes,,BetMGM,1.69,1.59,0.0618950425550434,2.7,2.0,Not Found
-30737a38f5e9b25e6aa6044481b77f20,basketball_wncaab,WNCAAB,2026-01-22T23:36:08Z,2026-01-23T00:02:01Z,Kentucky Wildcats @ Tennessee Volunteers,Kentucky Wildcats,,Caesars,2.75,2.4,0.1458411194086528,2.31,2.0,Not Found
-1721e7d05350ba1a3eb58265a650f90f,basketball_ncaab,NCAAB,2026-01-24T21:30:38Z,2026-01-24T22:00:01Z,Texas A&M-CC Islanders @ Incarnate Word Cardinals,Incarnate Word Cardinals,2026-01-24,Fanatics,5.25,4.87,0.0779485064749998,2.36,2.0,Not Found
-d43b73f5baf44f07ff8ce64023816f2d,basketball_ncaab,NCAAB,2026-01-24T19:10:00Z,2026-01-24T22:00:01Z,Auburn Tigers @ Florida Gators,Florida Gators,2026-01-24,FanDuel,2.44,2.11,0.153988696017491,2.1,2.0,Not Found
-b7b537fc62572829b1de31f22a3ac11f,soccer_germany_bundesliga,Bundesliga - Germany,2026-02-14T14:30:00Z,2026-02-14T14:38:31Z,Borussia Monchengladbach @ Eintracht Frankfurt,Eintracht Frankfurt,2026-02-14,FanDuel,2.45,2.3,0.06,2.45,3.0,Not Found
