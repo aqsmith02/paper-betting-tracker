@@ -32,7 +32,7 @@ THEODDS_SPORTS_DICT = {
 }
 
 # Betting thresholds
-EV_THRESHOLD = 0.05
+EV_THRESHOLD = 0.02
 Z_SCORE_THRESHOLD = 2.0
 MAX_EV = 0.35
 MAX_Z_SCORE = 5.0
@@ -42,8 +42,6 @@ MAX_MARGIN = 0.15
 MIN_BOOKMAKERS = 5
 MAX_ODDS = 30
 NC_BMS = ["FanDuel", "DraftKings", "BetMGM", "Caesars", "Fanatics"]
-NON_NC_BMS = ["Pinnacle", "BetOnline.ag"]
-ALL_BMS = NC_BMS + NON_NC_BMS
 MIN_OUTCOMES = 2
 
 # Formatting

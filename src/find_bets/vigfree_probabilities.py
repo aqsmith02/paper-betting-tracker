@@ -43,19 +43,8 @@ def _calculate_market_margin(odds_list: List[float]) -> float:
     # Margin is the amount over 1.0 (100%)
     margin = implied_prob_sum - 1.0
 
-    if margin < 0:
-        raise ValueError(
-            f"Invalid market: negative margin ({margin:.4f}). "
-            f"Implied probabilities sum to {implied_prob_sum:.4f}. "
-            f"Odds: {odds_list}"
-        )
-
-    if margin > MAX_MARGIN:
-        raise ValueError(
-            f"Unusually high market margin ({margin:.4f}). "
-            f"Implied probabilities sum to {implied_prob_sum:.4f}. "
-            f"Odds: {odds_list}"
-        )
+    if margin < 0 or margin > MAX_MARGIN:
+        return np.nan  # Invalid margin, return NaN to indicate an error
 
     return margin
 
@@ -89,6 +78,9 @@ def _remove_margin_proportional_to_odds(
 
     # Calculate market margin
     margin = _calculate_market_margin(all_market_odds)
+
+    if np.isnan(margin):
+        return np.nan  # Return NaN if margin calculation failed
 
     # Apply formula: Fair_Odds = (n × O) / (n - M × O)
     denominator = n_outcomes - (margin * bookmaker_odds)
@@ -126,7 +118,8 @@ def _calculate_vigfree_probs_for_market(
         )
 
         # Skip if fair_odds calculation produces invalid result
-        if fair_odds is None or fair_odds <= 1:
+        if np.isnan(fair_odds) or fair_odds <= 1:
+            vigfree_probs.append(np.nan)  # Append NaN for invalid cases
             continue
 
         vigfree_prob = 1 / fair_odds
@@ -213,4 +206,5 @@ def calculate_vigfree_probabilities(df: pd.DataFrame) -> pd.DataFrame:
         for match_name, match_group in df.groupby("Match", sort=False):
             _process_bookmaker_for_match(df, match_group, bookmaker, vigfree_column)
 
+    df.to_csv("vigfree_probabilities.csv", index=False)  # Save vig-free probabilities for debugging
     return df

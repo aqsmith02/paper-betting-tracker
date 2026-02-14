@@ -128,7 +128,8 @@ def _notify_user_of_new_bets(new_bets_df: pd.DataFrame) -> None:
                     "value": str(bet.get("Best Odds", "N/A")),
                     "inline": True,
                 },
-                {"name": "EV%", "value": f"{bet.get('EV%', 'N/A')}", "inline": True},
+                {"name": "Fair Odds", "value": f"{bet.get('Fair Odds Average', 'N/A')}", "inline": True},
+                {"name": "EV%", "value": f"{bet.get('Expected Value', 'N/A')}", "inline": True},
                 {"name": "Bet Size", "value": f"{kelly:.2%}", "inline": True},
             ],
             "timestamp": datetime.utcnow().isoformat(),
@@ -218,7 +219,7 @@ def save_betting_data(
         return
 
     if print_bets:
-        if filename == "data/nc_avg_minimal.csv":
+        if filename == "data/nc_mod_zscore_minimal.csv":
             _notify_user_of_new_bets(unique_new_df)
 
         pd.set_option("display.max_rows", None)

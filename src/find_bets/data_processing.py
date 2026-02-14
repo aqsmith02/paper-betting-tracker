@@ -14,7 +14,6 @@ import numpy as np
 import pandas as pd
 
 from src.constants import (
-    ALL_BMS,
     MAX_ODDS,
     MIN_BOOKMAKERS,
     MIN_OUTCOMES,
@@ -63,17 +62,6 @@ def _minimum_outcomes_filter(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def _remove_unwanted_bookmakers(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Remove bookmaker columns that are not in ALL_BMS.
-    """
-    df = df.copy()
-    bookmakers = find_bookmaker_columns(df)
-    cols_to_drop = [bm for bm in bookmakers if bm not in ALL_BMS]
-    df = df.drop(columns=cols_to_drop)
-    return df
-
-
 def _clean_odds_data(df: pd.DataFrame) -> pd.DataFrame:
     """
     Replace odds equal to 1.0 with NaN (invalid odds).
@@ -103,7 +91,8 @@ def _max_odds_filter(df: pd.DataFrame) -> pd.DataFrame:
     """
     df = df.copy()
     bms = find_bookmaker_columns(df)
-    mask = (df[bms] <= MAX_ODDS).all(axis=1)
+    mask = (df[bms] <= MAX_ODDS) | df[bms].isna()
+    mask = mask.all(axis=1)
     return df[mask]
 
 
@@ -175,10 +164,10 @@ def process_target_odds_data(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
     df = _add_outcomes_metadata(df)
     df = _minimum_outcomes_filter(df)
-    df = _remove_unwanted_bookmakers(df)
     df = _clean_odds_data(df)
     df = _min_bookmaker_filter(df)
     df = _max_odds_filter(df)
     df = _add_metadata(df, best_odds_bms=NC_BMS)
     df = _all_outcomes_present_filter(df)
+    df.to_csv("processed_odds.csv", index=False)  # Save processed data for debugging
     return df
