@@ -205,6 +205,4 @@ def calculate_vigfree_probabilities(df: pd.DataFrame) -> pd.DataFrame:
         # Process each match separately
         for match_name, match_group in df.groupby("Match", sort=False):
             _process_bookmaker_for_match(df, match_group, bookmaker, vigfree_column)
-
-    df.to_csv("vigfree_probabilities.csv", index=False)  # Save vig-free probabilities for debugging
     return df

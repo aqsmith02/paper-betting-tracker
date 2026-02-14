@@ -169,5 +169,4 @@ def process_target_odds_data(df: pd.DataFrame) -> pd.DataFrame:
     df = _max_odds_filter(df)
     df = _add_metadata(df, best_odds_bms=NC_BMS)
     df = _all_outcomes_present_filter(df)
-    df.to_csv("processed_odds.csv", index=False)  # Save processed data for debugging
     return df
