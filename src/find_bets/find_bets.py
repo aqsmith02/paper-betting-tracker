@@ -100,7 +100,7 @@ def main():
             return
 
         # Process data
-        processed_odds = process_target_odds_data(raw_odds)
+        processed_odds = process_target_odds_data(raw_odds, best_odds_bms="Kalshi")
 
         if processed_odds.empty:
             print("No data passed cleaning requirements")

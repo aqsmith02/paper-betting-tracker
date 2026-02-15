@@ -151,7 +151,7 @@ def _all_outcomes_present_filter(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def process_target_odds_data(df: pd.DataFrame) -> pd.DataFrame:
+def process_target_odds_data(df: pd.DataFrame, best_odds_bms: Optional[List[str]] = None) -> pd.DataFrame:
     """
     Transform fetch_odds df into cleaned df for target bookmakers.
 
@@ -161,12 +161,14 @@ def process_target_odds_data(df: pd.DataFrame) -> pd.DataFrame:
     Returns:
         pd.DataFrame: Cleaned and validated DataFrame.
     """
+    if best_odds_bms is None:
+        best_odds_bms = NC_BMS
     df = df.copy()
     df = _add_outcomes_metadata(df)
     df = _minimum_outcomes_filter(df)
     df = _clean_odds_data(df)
     df = _min_bookmaker_filter(df)
     df = _max_odds_filter(df)
-    df = _add_metadata(df, best_odds_bms=NC_BMS)
+    df = _add_metadata(df, best_odds_bms=best_odds_bms)
     df = _all_outcomes_present_filter(df)
     return df
