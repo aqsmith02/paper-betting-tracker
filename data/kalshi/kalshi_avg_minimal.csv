@@ -1,2 +1,3 @@
-ID,Sport Key,Sport Title,Start Time,Scrape Time,Match,Team,Best Bookmaker,Best Odds,Fair Odds Average,Expected Value,Outcomes,Result
-8221f60b95854b96a55b807b00fbc740,basketball_ncaab,NCAAB,2026-02-15T03:30:00Z,2026-02-15T02:23:54Z,Saint Mary's Gaels @ Pacific Tigers,Pacific Tigers,Kalshi,4.17,3.97,0.05,2.0,Not Found
+ID,Sport Key,Sport Title,Start Time,Scrape Time,Match,Team,Start Date,Best Bookmaker,Best Odds,Fair Odds Average,Expected Value,Outcomes,Result
+8221f60b95854b96a55b807b00fbc740,basketball_ncaab,NCAAB,2026-02-15T03:30:00Z,2026-02-15T02:23:54Z,Saint Mary's Gaels @ Pacific Tigers,Pacific Tigers,,Kalshi,4.17,3.97,0.05,2.0,Not Found
+2af5dd9cc92470be266f4c6f519c62de,basketball_ncaab,NCAAB,2026-02-15T01:06:21Z,2026-02-15T02:34:38Z,Virginia Cavaliers @ Ohio State Buckeyes,Virginia Cavaliers,2026-02-15,Kalshi,2.5,2.41,0.04,2.0,Not Found

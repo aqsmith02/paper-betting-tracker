@@ -1,5 +1,7 @@
-ID,Sport Key,Sport Title,Start Time,Scrape Time,Match,Team,Best Bookmaker,Best Odds,Outcomes,Result
-2af5dd9cc92470be266f4c6f519c62de,basketball_ncaab,NCAAB,2026-02-15T01:06:21Z,2026-02-15T02:23:55Z,Virginia Cavaliers @ Ohio State Buckeyes,Ohio State Buckeyes,Polymarket,2.27,2.0,Not Found
-7a7dc69921d6fe9435ab4735ad67ac00,basketball_ncaab,NCAAB,2026-02-15T02:00:46Z,2026-02-15T02:23:55Z,Minnesota Golden Gophers @ Washington Huskies,Washington Huskies,Polymarket,1.45,2.0,Not Found
-0b5aea2638734481908f855c79b5d627,basketball_ncaab,NCAAB,2026-02-15T01:02:11Z,2026-02-15T02:23:55Z,Middle Tennessee Blue Raiders @ Western Kentucky Hilltoppers,Western Kentucky Hilltoppers,Polymarket,1.14,2.0,Not Found
-d7e33bc485d50f43629eaf4e197d2eb7,soccer_argentina_primera_division,Primera División - Argentina,2026-02-15T01:00:00Z,2026-02-15T02:23:55Z,Belgrano de Cordoba @ Independiente Rivadavia,Draw,,,3.0,Not Found
+ID,Sport Key,Sport Title,Start Time,Scrape Time,Match,Team,Start Date,Best Bookmaker,Best Odds,Outcomes,Result
+2af5dd9cc92470be266f4c6f519c62de,basketball_ncaab,NCAAB,2026-02-15T01:06:21Z,2026-02-15T02:23:55Z,Virginia Cavaliers @ Ohio State Buckeyes,Ohio State Buckeyes,,Polymarket,2.27,2.0,Not Found
+7a7dc69921d6fe9435ab4735ad67ac00,basketball_ncaab,NCAAB,2026-02-15T02:00:46Z,2026-02-15T02:23:55Z,Minnesota Golden Gophers @ Washington Huskies,Washington Huskies,,Polymarket,1.45,2.0,Not Found
+0b5aea2638734481908f855c79b5d627,basketball_ncaab,NCAAB,2026-02-15T01:02:11Z,2026-02-15T02:23:55Z,Middle Tennessee Blue Raiders @ Western Kentucky Hilltoppers,Western Kentucky Hilltoppers,,Polymarket,1.14,2.0,Not Found
+d7e33bc485d50f43629eaf4e197d2eb7,soccer_argentina_primera_division,Primera División - Argentina,2026-02-15T01:00:00Z,2026-02-15T02:23:55Z,Belgrano de Cordoba @ Independiente Rivadavia,Draw,,,,3.0,Not Found
+b39dd43c278a98263c450a070de72d9b,basketball_ncaab,NCAAB,2026-02-15T01:53:28Z,2026-02-15T02:34:38Z,Texas Longhorns @ Missouri Tigers,Texas Longhorns,2026-02-15,Polymarket,2.38,2.0,Not Found
+d588e108bfb467264ce16aaf4907cb25,basketball_ncaab,NCAAB,2026-02-15T02:00:00Z,2026-02-15T02:34:38Z,Cal Baptist Lancers @ Utah Tech Trailblazers,Cal Baptist Lancers,2026-02-15,Polymarket,1.72,2.0,Not Found
