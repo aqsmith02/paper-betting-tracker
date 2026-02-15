@@ -1,5 +1,7 @@
-ID,Sport Key,Sport Title,Start Time,Scrape Time,Match,Team,Best Bookmaker,Best Odds,Outcomes,Result
-5fb7640644461400163fceb8463ec695,basketball_ncaab,NCAAB,2026-02-15T01:30:00Z,2026-02-15T02:34:38Z,Marshall Thundering Herd @ Georgia Southern Eagles,Marshall Thundering Herd,Kalshi,11.11,2.0,Not Found
-2b9b4fc9dfd5a90f4649704f8b4e829d,basketball_ncaab,NCAAB,2026-02-15T03:00:00Z,2026-02-15T02:34:38Z,CSU Fullerton Titans @ UC Irvine Anteaters,CSU Fullerton Titans,Kalshi,4.0,2.0,Not Found
-70d71f54008cc55a3cd1f5251046264d,basketball_ncaab,NCAAB,2026-02-15T03:30:00Z,2026-02-15T02:34:38Z,Gonzaga Bulldogs @ Santa Clara Broncos,Gonzaga Bulldogs,Kalshi,1.45,2.0,Not Found
-d513190b89e339bed96079aa57b72d2d,basketball_ncaab,NCAAB,2026-02-15T01:40:10Z,2026-02-15T02:34:38Z,Auburn Tigers @ Arkansas Razorbacks,Arkansas Razorbacks,Kalshi,1.18,2.0,Not Found
+ID,Sport Key,Sport Title,Start Time,Scrape Time,Match,Team,Start Date,Best Bookmaker,Best Odds,Outcomes,Result
+5fb7640644461400163fceb8463ec695,basketball_ncaab,NCAAB,2026-02-15T01:30:00Z,2026-02-15T02:34:38Z,Marshall Thundering Herd @ Georgia Southern Eagles,Marshall Thundering Herd,,Kalshi,11.11,2.0,Not Found
+2b9b4fc9dfd5a90f4649704f8b4e829d,basketball_ncaab,NCAAB,2026-02-15T03:00:00Z,2026-02-15T02:34:38Z,CSU Fullerton Titans @ UC Irvine Anteaters,CSU Fullerton Titans,,Kalshi,4.0,2.0,Not Found
+70d71f54008cc55a3cd1f5251046264d,basketball_ncaab,NCAAB,2026-02-15T03:30:00Z,2026-02-15T02:34:38Z,Gonzaga Bulldogs @ Santa Clara Broncos,Gonzaga Bulldogs,,Kalshi,1.45,2.0,Not Found
+d513190b89e339bed96079aa57b72d2d,basketball_ncaab,NCAAB,2026-02-15T01:40:10Z,2026-02-15T02:34:38Z,Auburn Tigers @ Arkansas Razorbacks,Arkansas Razorbacks,,Kalshi,1.18,2.0,Not Found
+2af5dd9cc92470be266f4c6f519c62de,basketball_ncaab,NCAAB,2026-02-15T01:06:21Z,2026-02-15T02:50:10Z,Virginia Cavaliers @ Ohio State Buckeyes,Ohio State Buckeyes,2026-02-15,Kalshi,2.33,2.0,Not Found
+8f1eba0bfbd9de74c1554b25c00723cc,icehockey_ahl,AHL,2026-02-15T02:07:00Z,2026-02-15T02:50:10Z,Bakersfield Condors @ San Diego Gulls,San Diego Gulls,2026-02-15,Kalshi,1.54,2.0,Not Found
