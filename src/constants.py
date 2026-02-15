@@ -2,6 +2,10 @@ from pathlib import Path
 
 # Data directory
 DATA_DIR = Path("data")
+NC_DIR = DATA_DIR / "nc"
+KALSHI_DIR = DATA_DIR / "kalshi"
+POLYMARKET_DIR = DATA_DIR / "polymarket"
+DIRECTORIES = [NC_DIR, KALSHI_DIR, POLYMARKET_DIR]
 
 # Available Sports Keys
 THEODDS_SPORTS_DICT = {
@@ -59,6 +63,12 @@ FILE_NAMES = [
     ("nc_avg_minimal.csv", "nc_avg_full.csv"),
     ("nc_mod_zscore_minimal.csv", "nc_mod_zscore_full.csv"),
     ("nc_random_minimal.csv", "nc_random_full.csv"),
+    ("kalshi_avg_minimal.csv", "kalshi_avg_full.csv"),
+    ("kalshi_mod_zscore_minimal.csv", "kalshi_mod_zscore_full.csv"),
+    ("kalshi_random_minimal.csv", "kalshi_random_full.csv"),
+    ("polymarket_avg_minimal.csv", "polymarket_avg_full.csv"),
+    ("polymarket_mod_zscore_minimal.csv", "polymarket_mod_zscore_full.csv"),
+    ("polymarket_random_minimal.csv", "polymarket_random_full.csv"),
 ]
 
 # Unfinished results

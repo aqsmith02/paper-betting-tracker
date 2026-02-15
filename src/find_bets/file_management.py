@@ -179,6 +179,7 @@ def save_betting_data(
     existing_df: pd.DataFrame,
     new_df: pd.DataFrame,
     filename: str,
+    strategy_name: str,
     score_column: str,
     print_bets: bool = False,
 ) -> None:
@@ -219,7 +220,7 @@ def save_betting_data(
         return
 
     if print_bets:
-        if filename == "data/nc_mod_zscore_minimal.csv":
+        if strategy_name == "Modified Z-Score":
             _notify_user_of_new_bets(unique_new_df)
 
         pd.set_option("display.max_rows", None)

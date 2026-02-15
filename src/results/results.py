@@ -15,7 +15,7 @@ from typing import Tuple
 import pandas as pd
 
 from src.constants import (
-    DATA_DIR,
+    DIRECTORIES,
     DAYS_CUTOFF,
     FILE_NAMES,
     PENDING_RESULTS,
@@ -72,19 +72,19 @@ def clean_old_pending_results(
     return filtered_df, filtered_full_df
 
 
-def process_files(bet_filename: str, full_filename: str) -> None:
+def process_files(bet_filename: str, full_filename: str, dir: str) -> None:
     """
     Process files through the complete results pipeline.
 
     Args:
         bet_filename (str): Name of the betting summary CSV file.
         full_filename (str): Name of the full betting data CSV file.
-
+        dir (str): The directory path where the files are located.
     Returns:
         None
     """
-    bet_file = DATA_DIR / bet_filename
-    full_file = DATA_DIR / full_filename
+    bet_file = dir / bet_filename
+    full_file = dir / full_filename
 
     print("----------------------------------------------------")
     print(f"Processing {bet_filename} and {full_filename}")
@@ -127,7 +127,7 @@ def main() -> None:
     for i, (bet_filename, full_filename) in enumerate(FILE_NAMES):
         try:
             start_time = time.perf_counter()  # Start timing
-            process_files(bet_filename, full_filename)
+            process_files(bet_filename, full_filename, DIRECTORIES[i])
             elapsed = time.perf_counter() - start_time  # Calculate elapsed time
             remaining_sleep = SLEEP_DURATION - elapsed
 
