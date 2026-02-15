@@ -2,6 +2,10 @@ from pathlib import Path
 
 # Data directory
 DATA_DIR = Path("data")
+NC_DIR = DATA_DIR / "nc"
+KALSHI_DIR = DATA_DIR / "kalshi"
+POLYMARKET_DIR = DATA_DIR / "polymarket"
+DIRECTORIES = [NC_DIR, KALSHI_DIR, POLYMARKET_DIR]
 
 # Available Sports Keys
 THEODDS_SPORTS_DICT = {
