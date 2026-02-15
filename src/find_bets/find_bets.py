@@ -13,6 +13,7 @@ from dataclasses import dataclass
 
 import pandas as pd
 
+from src.constants import NC_BMS
 from src.fetch_odds.fetch_odds import fetch_odds
 from src.find_bets.betting_strategies import (
     find_average_bets,
@@ -39,6 +40,7 @@ from src.find_bets.vigfree_probabilities import (
 @dataclass
 class BettingStrategy:
     name: str
+    best_odds_bms: str
     minimal_file_path: str
     full_file_path: str
     score_column: str
@@ -47,9 +49,43 @@ class BettingStrategy:
     full_summary_func: callable
 
 
-strategies = [
+nc_strategies = [
     BettingStrategy(
         name="Average",
+        best_odds_bms=NC_BMS,
+        minimal_file_path="data/nc_avg_minimal.csv",
+        full_file_path="data/nc_avg_full.csv",
+        score_column="Expected Value",
+        analysis_func=find_average_bets,
+        minimal_summary_func=create_average_summary_minimal,
+        full_summary_func=create_average_summary_full,
+    ),
+    BettingStrategy(
+        name="Modified Z-Score",
+        best_odds_bms=NC_BMS,
+        minimal_file_path="data/nc_mod_zscore_minimal.csv",
+        full_file_path="data/nc_mod_zscore_full.csv",
+        score_column="Modified Z-Score",
+        analysis_func=find_modified_zscore_bets,
+        minimal_summary_func=create_modified_zscore_summary_minimal,
+        full_summary_func=create_modified_zscore_summary_full,
+    ),
+    BettingStrategy(
+        name="Random",
+        best_odds_bms=NC_BMS,
+        minimal_file_path="data/nc_random_minimal.csv",
+        full_file_path="data/nc_random_full.csv",
+        score_column="Best Odds",
+        analysis_func=find_random_bets,
+        minimal_summary_func=create_random_summary_minimal,
+        full_summary_func=create_random_summary_full,
+    ),
+]
+
+kalshi_strategies = [
+    BettingStrategy(
+        name="Average",
+        best_odds_bms=["Kalshi"],
         minimal_file_path="data/kalshi_avg_minimal.csv",
         full_file_path="data/kalshi_avg_full.csv",
         score_column="Expected Value",
@@ -59,6 +95,7 @@ strategies = [
     ),
     BettingStrategy(
         name="Modified Z-Score",
+        best_odds_bms=["Kalshi"],
         minimal_file_path="data/kalshi_mod_zscore_minimal.csv",
         full_file_path="data/kalshi_mod_zscore_full.csv",
         score_column="Modified Z-Score",
@@ -68,6 +105,7 @@ strategies = [
     ),
     BettingStrategy(
         name="Random",
+        best_odds_bms=["Kalshi"],
         minimal_file_path="data/kalshi_random_minimal.csv",
         full_file_path="data/kalshi_random_full.csv",
         score_column="Best Odds",
@@ -77,33 +115,47 @@ strategies = [
     ),
 ]
 
+polymarket_strategies = [
+    BettingStrategy(
+        name="Average",
+        best_odds_bms=["Polymarket"],
+        minimal_file_path="data/polymarket_avg_minimal.csv",
+        full_file_path="data/polymarket_avg_full.csv",
+        score_column="Expected Value",
+        analysis_func=find_average_bets,
+        minimal_summary_func=create_average_summary_minimal,
+        full_summary_func=create_average_summary_full,
+    ),
+    BettingStrategy(
+        name="Modified Z-Score",
+        best_odds_bms=["Polymarket"],
+        minimal_file_path="data/polymarket_mod_zscore_minimal.csv",
+        full_file_path="data/polymarket_mod_zscore_full.csv",
+        score_column="Modified Z-Score",
+        analysis_func=find_modified_zscore_bets,
+        minimal_summary_func=create_modified_zscore_summary_minimal,
+        full_summary_func=create_modified_zscore_summary_full,
+    ),
+    BettingStrategy(
+        name="Random",
+        best_odds_bms=["Polymarket"],
+        minimal_file_path="data/polymarket_random_minimal.csv",
+        full_file_path="data/polymarket_random_full.csv",
+        score_column="Best Odds",
+        analysis_func=find_random_bets,
+        minimal_summary_func=create_random_summary_minimal,
+        full_summary_func=create_random_summary_full,
+    ),
+]
 
-def main():
-    """
-    Main betting analysis pipeline.
-
-    Args:
-        None
-
-    Returns:
-        None
-    """
-    # Run pipeline
-    try:
-        print("----------------------------------------------------")
-        print("Starting betting analysis pipeline")
-
-        # Fetch data
-        raw_odds = fetch_odds()
-        if raw_odds.empty:
-            print("No odds data available")
-            return
-
-        # Process data
-        processed_odds = process_target_odds_data(raw_odds, best_odds_bms="Kalshi")
+def strategy_run(strategies: list[BettingStrategy], fetched: pd.DataFrame):
+        # Process data (all strategies use same best_odds_bms, so can process once)
+        processed_odds = process_target_odds_data(fetched, best_odds_bms=strategies[0].best_odds_bms)
 
         if processed_odds.empty:
             print("No data passed cleaning requirements")
+            print("Completed betting analysis pipeline")
+            print("----------------------------------------------------")
             return
 
         # Calculate vig-free probabilities
@@ -128,6 +180,7 @@ def main():
                 existing_df=minimal_existing,
                 new_df=minimal_summary,
                 filename=strategy.minimal_file_path,
+                strategy_name=strategy.name,
                 score_column=strategy.score_column,
                 print_bets=True,
             )
@@ -135,9 +188,37 @@ def main():
                 existing_df=full_existing,
                 new_df=full_summary,
                 filename=strategy.full_file_path,
+                strategy_name=strategy.name,
                 score_column=strategy.score_column,
                 print_bets=False,
             )
+
+
+def main():
+    """
+    Main betting analysis pipeline.
+
+    Args:
+        None
+
+    Returns:
+        None
+    """
+    # Run pipeline
+    try:
+        print("----------------------------------------------------")
+        print("Starting betting analysis pipeline")
+
+        # Fetch data
+        raw_odds = fetch_odds()
+        if raw_odds.empty:
+            print("No odds data available")
+            return
+
+        # Run strategies for each betting platform
+        strategy_run(nc_strategies, raw_odds)
+        strategy_run(kalshi_strategies, raw_odds)
+        strategy_run(polymarket_strategies, raw_odds)
 
         print("Completed betting analysis pipeline")
         print("----------------------------------------------------")

@@ -108,7 +108,7 @@ def _add_metadata(
     """
     df = df.copy()
     bms = find_bookmaker_columns(df)
-
+    
     if best_odds_bms:
         # Only include bookmaker columns that exist
         existing_bms = [bm for bm in best_odds_bms if bm in df.columns]
