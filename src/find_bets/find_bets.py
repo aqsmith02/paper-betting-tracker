@@ -50,8 +50,8 @@ class BettingStrategy:
 strategies = [
     BettingStrategy(
         name="Average",
-        minimal_file_path="data/nc_avg_minimal.csv",
-        full_file_path="data/nc_avg_full.csv",
+        minimal_file_path="data/kalshi_avg_minimal.csv",
+        full_file_path="data/kalshi_avg_full.csv",
         score_column="Expected Value",
         analysis_func=find_average_bets,
         minimal_summary_func=create_average_summary_minimal,
@@ -59,8 +59,8 @@ strategies = [
     ),
     BettingStrategy(
         name="Modified Z-Score",
-        minimal_file_path="data/nc_mod_zscore_minimal.csv",
-        full_file_path="data/nc_mod_zscore_full.csv",
+        minimal_file_path="data/kalshi_mod_zscore_minimal.csv",
+        full_file_path="data/kalshi_mod_zscore_full.csv",
         score_column="Modified Z-Score",
         analysis_func=find_modified_zscore_bets,
         minimal_summary_func=create_modified_zscore_summary_minimal,
@@ -68,8 +68,8 @@ strategies = [
     ),
     BettingStrategy(
         name="Random",
-        minimal_file_path="data/nc_random_minimal.csv",
-        full_file_path="data/nc_random_full.csv",
+        minimal_file_path="data/kalshi_random_minimal.csv",
+        full_file_path="data/kalshi_random_full.csv",
         score_column="Best Odds",
         analysis_func=find_random_bets,
         minimal_summary_func=create_random_summary_minimal,
