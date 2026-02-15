@@ -1,0 +1,5 @@
+ID,Sport Key,Sport Title,Start Time,Scrape Time,Match,Team,Best Bookmaker,Best Odds,Fair Odds Average,Expected Value,Outcomes,Result
+d513190b89e339bed96079aa57b72d2d,basketball_ncaab,NCAAB,2026-02-15T01:40:10Z,2026-02-15T02:23:53Z,Auburn Tigers @ Arkansas Razorbacks,Auburn Tigers,FanDuel,7.8,6.47,0.2,2.0,Not Found
+531ff55eb1f66846536613df8c48205d,basketball_ncaab,NCAAB,2026-02-15T03:00:00Z,2026-02-15T02:23:53Z,Nevada Wolf Pack @ San Diego St Aztecs,Nevada Wolf Pack,FanDuel,4.9,4.51,0.09,2.0,Not Found
+7a7dc69921d6fe9435ab4735ad67ac00,basketball_ncaab,NCAAB,2026-02-15T02:00:46Z,2026-02-15T02:23:53Z,Minnesota Golden Gophers @ Washington Huskies,Minnesota Golden Gophers,FanDuel,3.4,3.27,0.04,2.0,Not Found
+58564179183276c59432842cd6dfaca6,basketball_ncaab,NCAAB,2026-02-15T01:00:00Z,2026-02-15T02:23:53Z,Sacramento St Hornets @ Northern Arizona Lumberjacks,Northern Arizona Lumberjacks,BetMGM,1.15,1.12,0.03,2.0,Not Found
