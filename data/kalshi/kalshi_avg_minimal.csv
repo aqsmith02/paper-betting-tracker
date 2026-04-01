@@ -169,3 +169,6 @@ b3d5cc326a93d01a72cc0f4b3868eb80,basketball_ncaab,NCAAB,2026-03-06T03:03:06Z,202
 0fee871b4f5cc68f4c933d5eb56d25c8,basketball_nba,NBA,2026-04-01T00:13:00Z,2026-04-01T01:10:21Z,New York Knicks @ Houston Rockets,New York Knicks,2026-04-01,Kalshi,7.14,6.63,0.08,2.0,Not Found
 5fa4f7bd1d1be2a30a40c0d7f653d9ff,baseball_mlb,MLB,2026-04-01T00:11:08Z,2026-04-01T01:10:21Z,Boston Red Sox @ Houston Astros,Boston Red Sox,2026-04-01,Kalshi,9.09,8.47,0.07,2.0,Not Found
 3606100715aa7a59a44cebf83296c1ee,baseball_mlb,MLB,2026-04-01T02:10:35Z,2026-04-01T04:21:52Z,Cleveland Guardians @ Los Angeles Dodgers,Cleveland Guardians,2026-04-01,Kalshi,16.67,15.62,0.07,2.0,Not Found
+6adbbe821c88271b3ccca51eb9d54dee,baseball_mlb,MLB,2026-04-01T17:40:21Z,2026-04-01T18:32:31Z,Tampa Bay Rays @ Milwaukee Brewers,Tampa Bay Rays,2026-04-01,Kalshi,2.0,1.74,0.15,2.0,Not Found
+c6fc2fa06234827ff4283352d566f19e,soccer_spain_segunda_division,La Liga 2 - Spain,2026-04-01T17:00:00Z,2026-04-01T18:32:31Z,Málaga @ Andorra CF,Málaga,2026-04-01,Kalshi,6.25,5.93,0.05,3.0,Not Found
+bdae690ae030bd8c713b1b5a3f21cfee,baseball_mlb,MLB,2026-04-01T18:15:22Z,2026-04-01T18:32:31Z,New York Mets @ St. Louis Cardinals,St. Louis Cardinals,2026-04-01,Kalshi,2.56,2.46,0.04,2.0,Not Found
