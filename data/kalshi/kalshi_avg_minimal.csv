@@ -725,3 +725,7 @@ b552ecd25e0e2e615532c65ff294144f,baseball_mlb,MLB,2026-07-11T20:11:00Z,2026-07-1
 a966a77164d3f84560ba479282f723f1,soccer_korea_kleague1,K League 1,2026-07-12T10:30:00Z,2026-07-12T11:39:02Z,Gangwon FC @ FC Seoul,Gangwon FC,2026-07-12,Kalshi,4.17,4.0,0.04,3.0,Not Found
 44263373c8152cfeef60f3501f9f0cbc,baseball_mlb,MLB,2026-07-12T17:41:00Z,2026-07-12T18:30:25Z,Philadelphia Phillies @ Detroit Tigers,Detroit Tigers,2026-07-12,Kalshi,2.63,2.46,0.07,2.0,Not Found
 fe2a389f5cf40c61156a794804ec0fff,baseball_mlb,MLB,2026-07-12T17:41:00Z,2026-07-12T18:30:25Z,Cleveland Guardians @ Miami Marlins,Miami Marlins,2026-07-12,Kalshi,3.45,3.25,0.06,2.0,Not Found
+fd0e4e074c09a0148b633ff72e4450d7,baseball_mlb,MLB,2026-07-12T17:41:00Z,2026-07-12T19:43:03Z,Boston Red Sox @ New York Mets,Boston Red Sox,2026-07-12,Kalshi,14.29,11.83,0.21,2.0,Not Found
+9cabe1742d3e487a116781a9b61b41ce,baseball_mlb,MLB,2026-07-12T17:36:00Z,2026-07-12T19:43:03Z,Kansas City Royals @ Baltimore Orioles,Kansas City Royals,2026-07-12,Kalshi,16.67,14.13,0.18,2.0,Not Found
+a82c548dd13bf0b9134cd20a43ac88de,basketball_wnba,WNBA,2026-07-12T19:03:02Z,2026-07-12T19:43:03Z,Seattle Storm @ Washington Mystics,Seattle Storm,2026-07-12,Kalshi,3.12,2.72,0.15,2.0,Not Found
+07753111ee3b354abbe8fab4987bb817,baseball_mlb,MLB,2026-07-12T17:42:00Z,2026-07-12T19:43:03Z,Chicago Cubs @ Cincinnati Reds,Cincinnati Reds,2026-07-12,Kalshi,4.55,4.18,0.09,2.0,Not Found
