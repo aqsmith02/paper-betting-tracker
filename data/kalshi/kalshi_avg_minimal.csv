@@ -734,3 +734,7 @@ f1d16b70bce98d0cea5eb7551dfbe37f,baseball_mlb,MLB,2026-07-12T20:11:00Z,2026-07-1
 b4977d853e9f601495f2a4a03c741589,baseball_mlb,MLB,2026-07-12T18:11:00Z,2026-07-12T20:28:40Z,Los Angeles Angels @ Minnesota Twins,Los Angeles Angels,2026-07-12,Kalshi,14.29,13.87,0.03,2.0,Not Found
 7a7ba7018aa8c14997cbbcb0170fe203,basketball_wnba,WNBA,2026-07-13T01:03:00Z,2026-07-13T01:04:26Z,Indiana Fever @ Las Vegas Aces,Las Vegas Aces,2026-07-13,Kalshi,1.79,1.63,0.1,2.0,Not Found
 59e806dd41a1cdd33be91c732ab446be,basketball_wnba,WNBA,2026-07-13T23:08:15Z,2026-07-14T00:58:25Z,Los Angeles Sparks @ Atlanta Dream,Atlanta Dream,2026-07-13,Kalshi,1.49,1.44,0.04,2.0,Not Found
+df9eba7a564b0b80a2a4fbd790388ee4,baseball_mlb,MLB,2026-07-31T23:06:00Z,2026-08-01T01:13:15Z,Philadelphia Phillies @ Baltimore Orioles,Philadelphia Phillies,2026-07-31,Kalshi,2.56,2.31,0.11,2.0,Not Found
+c48b3f4c59b1778723509354afa588c5,soccer_mexico_ligamx,Liga MX,2026-08-01T01:00:00Z,2026-08-01T01:13:15Z,Guadalajara @ Puebla,Draw,2026-08-01,Kalshi,5.56,5.01,0.11,3.0,Not Found
+ea0ee6a34b3c09534e603775fb85d6e6,baseball_mlb,MLB,2026-07-31T23:08:00Z,2026-08-01T01:13:15Z,St. Louis Cardinals @ Toronto Blue Jays,Toronto Blue Jays,2026-07-31,Kalshi,1.79,1.72,0.04,2.0,Not Found
+52ee1a586957d4579ee0448ba6dab22f,soccer_usa_mls,MLS,2026-07-31T23:40:00Z,2026-08-01T01:13:15Z,Toronto FC @ New York City FC,New York City FC,2026-07-31,Kalshi,2.78,2.71,0.03,3.0,Not Found
