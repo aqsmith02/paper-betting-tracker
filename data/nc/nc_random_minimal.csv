@@ -1568,3 +1568,7 @@ ce6bb6cdb9e9ae2280b10ab5ed96b888,aussierules_afl,AFL,2026-08-02T05:15:45Z,2026-0
 698d01455e90991aeb3e3bef6e890072,rugbyleague_nrl,NRL,2026-08-02T04:01:00Z,2026-08-02T04:37:39Z,South Sydney Rabbitohs @ Cronulla Sutherland Sharks,Cronulla Sutherland Sharks,2026-08-02,,,3.0,Not Found
 1321c1215121fca5a59f0510bc4cda81,baseball_npb,NPB,2026-08-02T09:00:00Z,2026-08-02T07:16:38Z,Hanshin Tigers @ Tokyo Yakult Swallows,Tokyo Yakult Swallows,2026-08-02,DraftKings,2.4,2.0,Not Found
 cfb38602454d7e96ea35631fb2ad7063,baseball_npb,NPB,2026-08-02T08:00:00Z,2026-08-02T07:16:38Z,Orix Buffaloes @ Saitama Seibu Lions,Saitama Seibu Lions,2026-08-02,BetMGM,1.65,2.0,Not Found
+0f7db9d9276cca9716b78e38f6895f00,soccer_poland_ekstraklasa,Ekstraklasa - Poland,2026-08-02T12:45:00Z,2026-08-02T13:55:07Z,Zagłębie Lubin @ Legia Warszawa,Zagłębie Lubin,2026-08-02,FanDuel,7.5,3.0,Not Found
+53911ea55f77b922cf5167730596f197,soccer_sweden_superettan,Superettan - Sweden,2026-08-02T13:00:00Z,2026-08-02T13:55:07Z,Ljungskile SK @ Nordic United FC,Nordic United FC,2026-08-02,FanDuel,2.8,3.0,Not Found
+13550bcc2513df984d5bc4e2486f8a5a,soccer_spl,Premiership - Scotland,2026-08-02T13:00:00Z,2026-08-02T13:55:07Z,Kilmarnock @ St Johnstone,St Johnstone,2026-08-02,DraftKings,2.3,3.0,Not Found
+82dd629264999ca4ff163c6264aadbe7,soccer_norway_eliteserien,Eliteserien - Norway,2026-08-02T15:00:00Z,2026-08-02T13:55:07Z,Tromso @ Aalesund,Tromso,2026-08-02,DraftKings,2.0,3.0,Not Found
