@@ -1765,3 +1765,6 @@ ec6df00d6ff1a488ee18af9e4028e959,aussierules_afl,AFL,2026-08-09T06:10:00Z,2026-0
 490ed630ea62450193a80cbb0a977d72,baseball_npb,NPB,2026-08-09T09:00:00Z,2026-08-09T05:16:46Z,Hiroshima Toyo Carp @ Yokohama DeNA BayStars,Yokohama DeNA BayStars,2026-08-09,,,2.0,Not Found
 9b035d57f008b9857733bdec6a4de689,baseball_npb,NPB,2026-08-09T05:00:00Z,2026-08-09T06:03:07Z,Tokyo Yakult Swallows @ Yomiuri Giants,Tokyo Yakult Swallows,2026-08-09,,,2.0,Not Found
 1afdd90fb326807c8a4e824c4ae6a4d2,baseball_npb,NPB,2026-08-09T09:00:00Z,2026-08-09T06:03:07Z,Chunichi Dragons @ Hanshin Tigers,Chunichi Dragons,2026-08-09,,,2.0,Not Found
+17a73b865a7079e033b766f62dc0522c,soccer_japan_j_league,J League,2026-08-09T09:00:00Z,2026-08-09T08:56:37Z,Kawasaki Frontale @ Tokyo Verdy,Tokyo Verdy,2026-08-09,,,3.0,Not Found
+71380de391bf4c904602a3c91be5ecb8,soccer_japan_j_league,J League,2026-08-09T10:00:00Z,2026-08-09T08:56:37Z,Kyoto Purple Sanga @ V-Varen Nagasaki,V-Varen Nagasaki,2026-08-09,,,3.0,Not Found
+15e1158fdc0c9c48e61c8ca477902202,soccer_netherlands_eredivisie,Dutch Eredivisie,2026-08-09T10:15:00Z,2026-08-09T08:56:37Z,Feyenoord @ Sparta Rotterdam,Sparta Rotterdam,2026-08-09,,,3.0,Not Found
