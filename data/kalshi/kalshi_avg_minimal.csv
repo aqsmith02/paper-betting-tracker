@@ -1095,3 +1095,9 @@ a09736b1c232b3bc0b3e9938db6f2337,baseball_mlb,MLB,2026-09-18T22:41:00Z,2026-09-1
 042985f4157bf2837a03506fd2fedeb7,baseball_mlb,MLB,2026-09-18T23:06:00Z,2026-09-19T00:34:46Z,Milwaukee Brewers @ Baltimore Orioles,Milwaukee Brewers,2026-09-18,Kalshi,1.96,1.87,0.05,2.0,Not Found
 ba420794fe974233579a5168b03e3743,baseball_mlb,MLB,2026-09-18T22:41:00Z,2026-09-19T00:34:46Z,Kansas City Royals @ Pittsburgh Pirates,Kansas City Royals,2026-09-18,Kalshi,2.38,2.32,0.03,2.0,Not Found
 8258a63c7c03590cc61bc6ab3b6bdac7,soccer_japan_j_league,J League,2026-09-19T09:00:00Z,2026-09-19T09:24:36Z,Kashima Antlers @ Kawasaki Frontale,Kawasaki Frontale,2026-09-19,Kalshi,2.13,1.85,0.15,3.0,Not Found
+c7b8233ea02650f1055ae086b169b7a1,soccer_italy_serie_a,Serie A - Italy,2026-09-19T13:00:00Z,2026-09-19T13:17:13Z,Torino @ Bologna,Torino,2026-09-19,Kalshi,9.09,7.21,0.26,3.0,Not Found
+9a70cbf505030f8bfe5c7864f5ac75b5,soccer_spain_la_liga,La Liga - Spain,2026-09-19T12:00:00Z,2026-09-19T13:17:13Z,Rayo Vallecano @ CA Osasuna,Rayo Vallecano,2026-09-19,Kalshi,3.85,3.37,0.14,3.0,Not Found
+29669fe91a7068ed539da73ce394a717,soccer_spain_segunda_division,La Liga 2 - Spain,2026-09-19T12:02:00Z,2026-09-19T13:17:13Z,Mallorca @ Real Sociedad B,Mallorca,2026-09-19,Kalshi,3.45,3.25,0.06,3.0,Not Found
+c11148f7ed032d5e99313ee1942fd4c2,soccer_italy_serie_a,Serie A - Italy,2026-09-19T13:00:00Z,2026-09-19T13:17:13Z,Cagliari @ Udinese,Udinese,2026-09-19,Kalshi,2.5,2.37,0.05,3.0,Not Found
+3f55c15c31fa4b4809fcdcad70826447,soccer_efl_champ,Championship,2026-09-19T11:30:00Z,2026-09-19T13:17:13Z,West Ham United @ Millwall,Draw,2026-09-19,Kalshi,1.37,1.32,0.04,3.0,Not Found
+128629c41bc6d9372b1e299f0394d14c,soccer_poland_ekstraklasa,Ekstraklasa - Poland,2026-09-19T12:45:00Z,2026-09-19T13:17:13Z,Raków Częstochowa @ Korona Kielce,Draw,2026-09-19,Kalshi,5.0,4.86,0.03,3.0,Not Found
